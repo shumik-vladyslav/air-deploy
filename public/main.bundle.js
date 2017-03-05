@@ -69,11 +69,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_core__ = __webpack_require__(446);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_core__ = __webpack_require__(447);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "assertPlatform", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_22"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "destroyPlatform", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_23"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "getPlatform", function() { return __WEBPACK_IMPORTED_MODULE_0__src_core__["_24"]; });
@@ -224,10 +220,10 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-var global    = __webpack_require__(10)
+var global    = __webpack_require__(11)
   , core      = __webpack_require__(12)
   , hide      = __webpack_require__(29)
-  , redefine  = __webpack_require__(25)
+  , redefine  = __webpack_require__(24)
   , ctx       = __webpack_require__(72)
   , PROTOTYPE = 'prototype';
 
@@ -273,19 +269,11 @@ module.exports = $export;
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_location__ = __webpack_require__(403);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_localization__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_common_module__ = __webpack_require__(394);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_directives_index__ = __webpack_require__(249);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_pipes_index__ = __webpack_require__(252);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_location__ = __webpack_require__(404);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_localization__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_common_module__ = __webpack_require__(395);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_directives_index__ = __webpack_require__(252);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_pipes_index__ = __webpack_require__(255);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "PlatformLocation", function() { return __WEBPACK_IMPORTED_MODULE_0__src_location__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "LocationStrategy", function() { return __WEBPACK_IMPORTED_MODULE_0__src_location__["b"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "APP_BASE_HREF", function() { return __WEBPACK_IMPORTED_MODULE_0__src_location__["f"]; });
@@ -840,14 +828,6 @@ var DomHandler = (function () {
         return (typeof HTMLElement === "object" ? obj instanceof HTMLElement :
             obj && typeof obj === "object" && obj !== null && obj.nodeType === 1 && typeof obj.nodeName === "string");
     };
-    DomHandler.prototype.calculateScrollbarWidth = function () {
-        var scrollDiv = document.createElement("div");
-        scrollDiv.className = "ui-scrollbar-measure";
-        document.body.appendChild(scrollDiv);
-        var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
-        document.body.removeChild(scrollDiv);
-        return scrollbarWidth;
-    };
     DomHandler.zindex = 1000;
     DomHandler = __decorate([
         core_1.Injectable(), 
@@ -862,7 +842,7 @@ exports.DomHandler = DomHandler;
 /* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(9);
+var isObject = __webpack_require__(10);
 module.exports = function(it){
   if(!isObject(it))throw TypeError(it + ' is not an object!');
   return it;
@@ -2059,23 +2039,6 @@ function literal(value, type) {
 
 /***/ },
 /* 9 */
-/***/ function(module, exports) {
-
-module.exports = function(it){
-  return typeof it === 'object' ? it !== null : typeof it === 'function';
-};
-
-/***/ },
-/* 10 */
-/***/ function(module, exports) {
-
-// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
-var global = module.exports = typeof window != 'undefined' && window.Math == Math
-  ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
-if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
-
-/***/ },
-/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2097,7 +2060,7 @@ var Header = (function () {
     }
     Header = __decorate([
         core_2.Component({
-            selector: 'p-header',
+            selector: 'header',
             template: '<ng-content></ng-content>'
         }), 
         __metadata('design:paramtypes', [])
@@ -2110,7 +2073,7 @@ var Footer = (function () {
     }
     Footer = __decorate([
         core_2.Component({
-            selector: 'p-footer',
+            selector: 'footer',
             template: '<ng-content></ng-content>'
         }), 
         __metadata('design:paramtypes', [])
@@ -2200,9 +2163,6 @@ var Column = (function () {
                 case 'filter':
                     _this.filterTemplate = item.template;
                     break;
-                case 'editor':
-                    _this.editorTemplate = item.template;
-                    break;
                 default:
                     _this.bodyTemplate = item.template;
                     break;
@@ -2213,10 +2173,6 @@ var Column = (function () {
         core_1.Input(), 
         __metadata('design:type', String)
     ], Column.prototype, "field", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], Column.prototype, "sortField", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', String)
@@ -2273,10 +2229,6 @@ var Column = (function () {
         core_1.Input(), 
         __metadata('design:type', String)
     ], Column.prototype, "filterPlaceholder", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], Column.prototype, "frozen", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
@@ -2452,34 +2404,6 @@ var ColumnFilterTemplateLoader = (function () {
     return ColumnFilterTemplateLoader;
 }());
 exports.ColumnFilterTemplateLoader = ColumnFilterTemplateLoader;
-var ColumnEditorTemplateLoader = (function () {
-    function ColumnEditorTemplateLoader(viewContainer) {
-        this.viewContainer = viewContainer;
-    }
-    ColumnEditorTemplateLoader.prototype.ngOnInit = function () {
-        var view = this.viewContainer.createEmbeddedView(this.column.editorTemplate, {
-            '\$implicit': this.column,
-            'rowData': this.rowData
-        });
-    };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], ColumnEditorTemplateLoader.prototype, "column", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], ColumnEditorTemplateLoader.prototype, "rowData", void 0);
-    ColumnEditorTemplateLoader = __decorate([
-        core_2.Component({
-            selector: 'p-columnEditorTemplateLoader',
-            template: ""
-        }), 
-        __metadata('design:paramtypes', [core_1.ViewContainerRef])
-    ], ColumnEditorTemplateLoader);
-    return ColumnEditorTemplateLoader;
-}());
-exports.ColumnEditorTemplateLoader = ColumnEditorTemplateLoader;
 var TemplateLoader = (function () {
     function TemplateLoader(viewContainer) {
         this.viewContainer = viewContainer;
@@ -2515,8 +2439,8 @@ var SharedModule = (function () {
     SharedModule = __decorate([
         core_1.NgModule({
             imports: [common_1.CommonModule],
-            exports: [Header, Footer, Column, TemplateWrapper, ColumnHeaderTemplateLoader, ColumnBodyTemplateLoader, ColumnFooterTemplateLoader, ColumnFilterTemplateLoader, PrimeTemplate, TemplateLoader, Row, HeaderColumnGroup, FooterColumnGroup, ColumnEditorTemplateLoader],
-            declarations: [Header, Footer, Column, TemplateWrapper, ColumnHeaderTemplateLoader, ColumnBodyTemplateLoader, ColumnFooterTemplateLoader, ColumnFilterTemplateLoader, PrimeTemplate, TemplateLoader, Row, HeaderColumnGroup, FooterColumnGroup, ColumnEditorTemplateLoader]
+            exports: [Header, Footer, Column, TemplateWrapper, ColumnHeaderTemplateLoader, ColumnBodyTemplateLoader, ColumnFooterTemplateLoader, ColumnFilterTemplateLoader, PrimeTemplate, TemplateLoader, Row, HeaderColumnGroup, FooterColumnGroup],
+            declarations: [Header, Footer, Column, TemplateWrapper, ColumnHeaderTemplateLoader, ColumnBodyTemplateLoader, ColumnFooterTemplateLoader, ColumnFilterTemplateLoader, PrimeTemplate, TemplateLoader, Row, HeaderColumnGroup, FooterColumnGroup]
         }), 
         __metadata('design:paramtypes', [])
     ], SharedModule);
@@ -2524,6 +2448,23 @@ var SharedModule = (function () {
 }());
 exports.SharedModule = SharedModule;
 //# sourceMappingURL=shared.js.map
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+module.exports = function(it){
+  return typeof it === 'object' ? it !== null : typeof it === 'function';
+};
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
+var global = module.exports = typeof window != 'undefined' && window.Math == Math
+  ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
+if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
 
 /***/ },
 /* 12 */
@@ -2536,9 +2477,9 @@ if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
 /* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
-var store      = __webpack_require__(152)('wks')
+var store      = __webpack_require__(151)('wks')
   , uid        = __webpack_require__(76)
-  , Symbol     = __webpack_require__(10).Symbol
+  , Symbol     = __webpack_require__(11).Symbol
   , USE_SYMBOL = typeof Symbol == 'function';
 
 var $exports = module.exports = function(name){
@@ -2553,11 +2494,7 @@ $exports.store = store;
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_forms__ = __webpack_require__(468);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_forms__ = __webpack_require__(469);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "AbstractControlDirective", function() { return __WEBPACK_IMPORTED_MODULE_0__src_forms__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "AbstractFormGroupDirective", function() { return __WEBPACK_IMPORTED_MODULE_0__src_forms__["b"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "CheckboxControlValueAccessor", function() { return __WEBPACK_IMPORTED_MODULE_0__src_forms__["c"]; });
@@ -2614,8 +2551,8 @@ $exports.store = store;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compile_metadata__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__private_import_core__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compile_metadata__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__private_import_core__ = __webpack_require__(17);
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return Identifiers; });
 /* unused harmony export assetUrl */
 /* harmony export (immutable) */ exports["d"] = resolveIdentifier;
@@ -2978,15 +2915,11 @@ function resolveEnumIdentifier(enumType, name) {
 /***/ function(module, exports, __webpack_require__) {
 
 var anObject       = __webpack_require__(5)
-<<<<<<< HEAD
   , IE8_DOM_DEFINE = __webpack_require__(348)
-=======
-  , IE8_DOM_DEFINE = __webpack_require__(350)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , toPrimitive    = __webpack_require__(64)
   , dP             = Object.defineProperty;
 
-exports.f = __webpack_require__(19) ? Object.defineProperty : function defineProperty(O, P, Attributes){
+exports.f = __webpack_require__(18) ? Object.defineProperty : function defineProperty(O, P, Attributes){
   anObject(O);
   P = toPrimitive(P, true);
   anObject(Attributes);
@@ -3003,15 +2936,121 @@ exports.f = __webpack_require__(19) ? Object.defineProperty : function definePro
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(exports, "H", function() { return isDefaultChangeDetectionStrategy; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "o", function() { return ChangeDetectorStatus; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "G", function() { return LifecycleHooks; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "L", function() { return LIFECYCLE_HOOKS_VALUES; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "J", function() { return ReflectorReader; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "d", function() { return ViewContainer; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "f", function() { return CodegenComponentFactoryResolver; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "g", function() { return ComponentRef_; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return AppView; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "c", function() { return DebugAppView; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "h", function() { return NgModuleInjector; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "i", function() { return registerModuleFactory; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "k", function() { return ViewType; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return view_utils; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "m", function() { return DebugContext; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "l", function() { return StaticNodeDebugInfo; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "p", function() { return devModeEqual; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "n", function() { return UNINITIALIZED; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "j", function() { return ValueUnwrapper; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "e", function() { return TemplateRef_; });
+/* unused harmony export RenderDebugInfo */
+/* harmony export (binding) */ __webpack_require__.d(exports, "C", function() { return Console; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "B", function() { return reflector; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "M", function() { return Reflector; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "N", function() { return ReflectionCapabilities; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "s", function() { return NoOpAnimationPlayer; });
+/* unused harmony export AnimationPlayer */
+/* harmony export (binding) */ __webpack_require__.d(exports, "u", function() { return AnimationSequencePlayer; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "t", function() { return AnimationGroupPlayer; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "q", function() { return AnimationKeyframe; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "r", function() { return AnimationStyles; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "D", function() { return ANY_STATE; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "E", function() { return DEFAULT_STATE; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "F", function() { return EMPTY_STATE; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "I", function() { return FILL_STYLE_FLAG; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "v", function() { return prepareFinalAnimationStyles; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "w", function() { return balanceAnimationKeyframes; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "x", function() { return clearStyles; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "z", function() { return collectAndResolveStyles; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "y", function() { return renderStyles; });
+/* unused harmony export ViewMetadata */
+/* harmony export (binding) */ __webpack_require__.d(exports, "K", function() { return ComponentStillLoadingError; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "A", function() { return AnimationTransition; });
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+
+var isDefaultChangeDetectionStrategy = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].isDefaultChangeDetectionStrategy;
+var ChangeDetectorStatus = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ChangeDetectorStatus;
+var LifecycleHooks = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].LifecycleHooks;
+var LIFECYCLE_HOOKS_VALUES = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].LIFECYCLE_HOOKS_VALUES;
+var ReflectorReader = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ReflectorReader;
+var ViewContainer = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ViewContainer;
+var CodegenComponentFactoryResolver = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].CodegenComponentFactoryResolver;
+var ComponentRef_ = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ComponentRef_;
+var AppView = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].AppView;
+var DebugAppView = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].DebugAppView;
+var NgModuleInjector = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].NgModuleInjector;
+var registerModuleFactory = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].registerModuleFactory;
+var ViewType = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ViewType;
+var view_utils = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].view_utils;
+var DebugContext = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].DebugContext;
+var StaticNodeDebugInfo = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].StaticNodeDebugInfo;
+var devModeEqual = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].devModeEqual;
+var UNINITIALIZED = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].UNINITIALIZED;
+var ValueUnwrapper = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ValueUnwrapper;
+var TemplateRef_ = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].TemplateRef_;
+var RenderDebugInfo = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].RenderDebugInfo;
+var Console = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].Console;
+var reflector = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].reflector;
+var Reflector = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].Reflector;
+var ReflectionCapabilities = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ReflectionCapabilities;
+var NoOpAnimationPlayer = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].NoOpAnimationPlayer;
+var AnimationPlayer = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].AnimationPlayer;
+var AnimationSequencePlayer = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].AnimationSequencePlayer;
+var AnimationGroupPlayer = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].AnimationGroupPlayer;
+var AnimationKeyframe = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].AnimationKeyframe;
+var AnimationStyles = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].AnimationStyles;
+var ANY_STATE = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ANY_STATE;
+var DEFAULT_STATE = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].DEFAULT_STATE;
+var EMPTY_STATE = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].EMPTY_STATE;
+var FILL_STYLE_FLAG = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].FILL_STYLE_FLAG;
+var prepareFinalAnimationStyles = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].prepareFinalAnimationStyles;
+var balanceAnimationKeyframes = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].balanceAnimationKeyframes;
+var clearStyles = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].clearStyles;
+var collectAndResolveStyles = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].collectAndResolveStyles;
+var renderStyles = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].renderStyles;
+var ViewMetadata = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ViewMetadata;
+var ComponentStillLoadingError = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ComponentStillLoadingError;
+var AnimationTransition = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].AnimationTransition;
+//# sourceMappingURL=private_import_core.js.map
+
+/***/ },
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+// Thank's IE8 for his funny defineProperty
+module.exports = !__webpack_require__(7)(function(){
+  return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
+});
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
 "use strict";
 var root_1 = __webpack_require__(65);
-<<<<<<< HEAD
 var toSubscriber_1 = __webpack_require__(750);
 var observable_1 = __webpack_require__(244);
-=======
-var toSubscriber_1 = __webpack_require__(756);
-var observable_1 = __webpack_require__(247);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /**
  * A representation of any set of values over any amount of time. This the most basic building block
  * of RxJS.
@@ -3150,117 +3189,6 @@ exports.Observable = Observable;
 //# sourceMappingURL=Observable.js.map
 
 /***/ },
-/* 18 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(exports, "H", function() { return isDefaultChangeDetectionStrategy; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "o", function() { return ChangeDetectorStatus; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "G", function() { return LifecycleHooks; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "L", function() { return LIFECYCLE_HOOKS_VALUES; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "J", function() { return ReflectorReader; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "d", function() { return ViewContainer; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "f", function() { return CodegenComponentFactoryResolver; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "g", function() { return ComponentRef_; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return AppView; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "c", function() { return DebugAppView; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "h", function() { return NgModuleInjector; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "i", function() { return registerModuleFactory; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "k", function() { return ViewType; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return view_utils; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "m", function() { return DebugContext; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "l", function() { return StaticNodeDebugInfo; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "p", function() { return devModeEqual; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "n", function() { return UNINITIALIZED; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "j", function() { return ValueUnwrapper; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "e", function() { return TemplateRef_; });
-/* unused harmony export RenderDebugInfo */
-/* harmony export (binding) */ __webpack_require__.d(exports, "C", function() { return Console; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "B", function() { return reflector; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "M", function() { return Reflector; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "N", function() { return ReflectionCapabilities; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "s", function() { return NoOpAnimationPlayer; });
-/* unused harmony export AnimationPlayer */
-/* harmony export (binding) */ __webpack_require__.d(exports, "u", function() { return AnimationSequencePlayer; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "t", function() { return AnimationGroupPlayer; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "q", function() { return AnimationKeyframe; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "r", function() { return AnimationStyles; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "D", function() { return ANY_STATE; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "E", function() { return DEFAULT_STATE; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "F", function() { return EMPTY_STATE; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "I", function() { return FILL_STYLE_FLAG; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "v", function() { return prepareFinalAnimationStyles; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "w", function() { return balanceAnimationKeyframes; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "x", function() { return clearStyles; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "z", function() { return collectAndResolveStyles; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "y", function() { return renderStyles; });
-/* unused harmony export ViewMetadata */
-/* harmony export (binding) */ __webpack_require__.d(exports, "K", function() { return ComponentStillLoadingError; });
-/* harmony export (binding) */ __webpack_require__.d(exports, "A", function() { return AnimationTransition; });
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-
-var isDefaultChangeDetectionStrategy = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].isDefaultChangeDetectionStrategy;
-var ChangeDetectorStatus = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ChangeDetectorStatus;
-var LifecycleHooks = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].LifecycleHooks;
-var LIFECYCLE_HOOKS_VALUES = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].LIFECYCLE_HOOKS_VALUES;
-var ReflectorReader = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ReflectorReader;
-var ViewContainer = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ViewContainer;
-var CodegenComponentFactoryResolver = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].CodegenComponentFactoryResolver;
-var ComponentRef_ = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ComponentRef_;
-var AppView = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].AppView;
-var DebugAppView = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].DebugAppView;
-var NgModuleInjector = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].NgModuleInjector;
-var registerModuleFactory = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].registerModuleFactory;
-var ViewType = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ViewType;
-var view_utils = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].view_utils;
-var DebugContext = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].DebugContext;
-var StaticNodeDebugInfo = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].StaticNodeDebugInfo;
-var devModeEqual = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].devModeEqual;
-var UNINITIALIZED = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].UNINITIALIZED;
-var ValueUnwrapper = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ValueUnwrapper;
-var TemplateRef_ = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].TemplateRef_;
-var RenderDebugInfo = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].RenderDebugInfo;
-var Console = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].Console;
-var reflector = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].reflector;
-var Reflector = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].Reflector;
-var ReflectionCapabilities = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ReflectionCapabilities;
-var NoOpAnimationPlayer = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].NoOpAnimationPlayer;
-var AnimationPlayer = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].AnimationPlayer;
-var AnimationSequencePlayer = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].AnimationSequencePlayer;
-var AnimationGroupPlayer = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].AnimationGroupPlayer;
-var AnimationKeyframe = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].AnimationKeyframe;
-var AnimationStyles = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].AnimationStyles;
-var ANY_STATE = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ANY_STATE;
-var DEFAULT_STATE = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].DEFAULT_STATE;
-var EMPTY_STATE = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].EMPTY_STATE;
-var FILL_STYLE_FLAG = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].FILL_STYLE_FLAG;
-var prepareFinalAnimationStyles = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].prepareFinalAnimationStyles;
-var balanceAnimationKeyframes = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].balanceAnimationKeyframes;
-var clearStyles = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].clearStyles;
-var collectAndResolveStyles = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].collectAndResolveStyles;
-var renderStyles = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].renderStyles;
-var ViewMetadata = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ViewMetadata;
-var ComponentStillLoadingError = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].ComponentStillLoadingError;
-var AnimationTransition = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].AnimationTransition;
-//# sourceMappingURL=private_import_core.js.map
-
-/***/ },
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
-// Thank's IE8 for his funny defineProperty
-module.exports = !__webpack_require__(7)(function(){
-  return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
-});
-
-/***/ },
 /* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -3319,58 +3247,6 @@ var DomAdapter = (function () {
 /* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index__ = __webpack_require__(493);
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "RouterLink", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["a"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "RouterLinkWithHref", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["b"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "RouterLinkActive", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["c"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "RouterOutlet", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["d"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "NavigationCancel", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["e"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "NavigationEnd", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["f"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "NavigationError", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["g"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "NavigationStart", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["h"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "Router", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["i"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "RoutesRecognized", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["j"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "ROUTER_CONFIGURATION", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["k"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "ROUTER_INITIALIZER", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["l"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "RouterModule", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["m"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "provideRoutes", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["n"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "RouterOutletMap", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["o"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "NoPreloading", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["p"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "PreloadAllModules", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["q"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "PreloadingStrategy", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["r"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "RouterPreloader", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["s"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "ActivatedRouteSnapshot", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["t"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "RouterState", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["u"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "RouterStateSnapshot", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["v"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "ActivatedRoute", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["w"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "PRIMARY_OUTLET", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["x"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "UrlHandlingStrategy", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["y"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "DefaultUrlSerializer", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["z"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "UrlSegment", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["A"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "UrlSegmentGroup", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["B"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "UrlSerializer", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["C"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "UrlTree", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["D"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "__router_private__", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["E"]; });
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-/**
- * @module
- * @description
- * Entry point for all public APIs of the router package.
- */
-
-//# sourceMappingURL=index.js.map
-
-/***/ },
-/* 22 */
-/***/ function(module, exports, __webpack_require__) {
-
 // 7.1.15 ToLength
 var toInteger = __webpack_require__(63)
   , min       = Math.min;
@@ -3379,14 +3255,14 @@ module.exports = function(it){
 };
 
 /***/ },
-/* 23 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_collection__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__selector__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__selector__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util__ = __webpack_require__(46);
 /* unused harmony export CompileMetadataWithIdentifier */
 /* harmony export (binding) */ __webpack_require__.d(exports, "p", function() { return CompileAnimationEntryMetadata; });
@@ -3951,7 +3827,7 @@ var ProviderMeta = (function () {
 //# sourceMappingURL=compile_metadata.js.map
 
 /***/ },
-/* 24 */
+/* 23 */
 /***/ function(module, exports) {
 
 var hasOwnProperty = {}.hasOwnProperty;
@@ -3960,12 +3836,12 @@ module.exports = function(it, key){
 };
 
 /***/ },
-/* 25 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
-var global    = __webpack_require__(10)
+var global    = __webpack_require__(11)
   , hide      = __webpack_require__(29)
-  , has       = __webpack_require__(24)
+  , has       = __webpack_require__(23)
   , SRC       = __webpack_require__(76)('src')
   , TO_STRING = 'toString'
   , $toString = Function[TO_STRING]
@@ -3997,7 +3873,7 @@ __webpack_require__(12).inspectSource = function(it){
 });
 
 /***/ },
-/* 26 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(1)
@@ -4021,7 +3897,7 @@ module.exports = function(NAME, exec){
 };
 
 /***/ },
-/* 27 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4182,7 +4058,7 @@ function escapeRegExp(s) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(54)))
 
 /***/ },
-/* 28 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4257,7 +4133,6 @@ var WrappedError = (function (_super) {
 //# sourceMappingURL=errors.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -4310,14 +4185,12 @@ var WrappedError = (function (_super) {
 //# sourceMappingURL=index.js.map
 
 /***/ },
-=======
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 var dP         = __webpack_require__(16)
   , createDesc = __webpack_require__(62);
-module.exports = __webpack_require__(19) ? function(object, key, value){
+module.exports = __webpack_require__(18) ? function(object, key, value){
   return dP.f(object, key, createDesc(1, value));
 } : function(object, key, value){
   object[key] = value;
@@ -4439,14 +4312,10 @@ var ParseError = (function () {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__di_metadata__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__di_metadata__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__di_forward_ref__ = __webpack_require__(183);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__di_injector__ = __webpack_require__(94);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__di_reflective_injector__ = __webpack_require__(449);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__di_reflective_injector__ = __webpack_require__(450);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__di_reflective_provider__ = __webpack_require__(186);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__di_reflective_key__ = __webpack_require__(185);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__di_opaque_token__ = __webpack_require__(184);
@@ -4542,17 +4411,10 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-<<<<<<< HEAD
 var isFunction_1 = __webpack_require__(388);
 var Subscription_1 = __webpack_require__(239);
 var Observer_1 = __webpack_require__(737);
 var rxSubscriber_1 = __webpack_require__(245);
-=======
-var isFunction_1 = __webpack_require__(389);
-var Subscription_1 = __webpack_require__(241);
-var Observer_1 = __webpack_require__(741);
-var rxSubscriber_1 = __webpack_require__(248);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /**
  * Implements the {@link Observer} interface and extends the
  * {@link Subscription} class. While the {@link Observer} is the public API for
@@ -4864,7 +4726,7 @@ function createEnumExpression(enumType, enumValue) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__assertions__ = __webpack_require__(258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__assertions__ = __webpack_require__(255);
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return InterpolationConfig; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DEFAULT_INTERPOLATION_CONFIG; });
 /**
@@ -5216,15 +5078,11 @@ function templateVisitAll(visitor, asts, context) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operator_toPromise__ = __webpack_require__(746);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operator_toPromise__ = __webpack_require__(752);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_operator_toPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(311);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(308);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_lang__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__private_import_core__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__private_import_core__ = __webpack_require__(310);
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return NG_VALIDATORS; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "c", function() { return NG_ASYNC_VALIDATORS; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return Validators; });
@@ -5627,13 +5485,8 @@ function defaultUrlMatcher(segments, segmentGroup, route) {
 var ctx      = __webpack_require__(72)
   , IObject  = __webpack_require__(109)
   , toObject = __webpack_require__(30)
-<<<<<<< HEAD
   , toLength = __webpack_require__(21)
   , asc      = __webpack_require__(527);
-=======
-  , toLength = __webpack_require__(22)
-  , asc      = __webpack_require__(523);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 module.exports = function(TYPE, $create){
   var IS_MAP        = TYPE == 1
     , IS_FILTER     = TYPE == 2
@@ -5672,9 +5525,9 @@ module.exports = function(TYPE, $create){
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-var has         = __webpack_require__(24)
+var has         = __webpack_require__(23)
   , toObject    = __webpack_require__(30)
-  , IE_PROTO    = __webpack_require__(232)('IE_PROTO')
+  , IE_PROTO    = __webpack_require__(231)('IE_PROTO')
   , ObjectProto = Object.prototype;
 
 module.exports = Object.getPrototypeOf || function(O){
@@ -5858,29 +5711,21 @@ var ControlContainer = (function (_super) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_fromPromise__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_fromPromise__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_fromPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of__);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_concatAll__ = __webpack_require__(382);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_concatAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_concatAll__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_every__ = __webpack_require__(384);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_every___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_operator_every__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_last__ = __webpack_require__(743);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_concatAll__ = __webpack_require__(383);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_concatAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_concatAll__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_every__ = __webpack_require__(385);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_every___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_operator_every__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_last__ = __webpack_require__(749);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_last___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_operator_last__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_map__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_map__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_mergeAll__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_mergeAll__ = __webpack_require__(242);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_mergeAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_operator_mergeAll__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared__ = __webpack_require__(42);
 /* harmony export (immutable) */ exports["h"] = shallowEqualArrays;
@@ -6032,17 +5877,10 @@ module.exports = function(it){
 /* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 var Map     = __webpack_require__(365)
   , $export = __webpack_require__(1)
   , shared  = __webpack_require__(151)('metadata')
   , store   = shared.store || (shared.store = new (__webpack_require__(373)));
-=======
-var Map     = __webpack_require__(367)
-  , $export = __webpack_require__(1)
-  , shared  = __webpack_require__(152)('metadata')
-  , store   = shared.store || (shared.store = new (__webpack_require__(375)));
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 var getOrCreateMetadataMap = function(target, targetKey, create){
   var targetMetadata = store.get(target);
@@ -6095,20 +5933,15 @@ module.exports = {
 /* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
-var pIE            = __webpack_require__(151)
+var pIE            = __webpack_require__(150)
   , createDesc     = __webpack_require__(62)
   , toIObject      = __webpack_require__(35)
   , toPrimitive    = __webpack_require__(64)
-<<<<<<< HEAD
   , has            = __webpack_require__(23)
   , IE8_DOM_DEFINE = __webpack_require__(348)
-=======
-  , has            = __webpack_require__(24)
-  , IE8_DOM_DEFINE = __webpack_require__(350)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , gOPD           = Object.getOwnPropertyDescriptor;
 
-exports.f = __webpack_require__(19) ? gOPD : function getOwnPropertyDescriptor(O, P){
+exports.f = __webpack_require__(18) ? gOPD : function getOwnPropertyDescriptor(O, P){
   O = toIObject(O);
   P = toPrimitive(P, true);
   if(IE8_DOM_DEFINE)try {
@@ -6123,61 +5956,43 @@ exports.f = __webpack_require__(19) ? gOPD : function getOwnPropertyDescriptor(O
 
 "use strict";
 'use strict';
-if(__webpack_require__(19)){
+if(__webpack_require__(18)){
   var LIBRARY             = __webpack_require__(110)
-    , global              = __webpack_require__(10)
+    , global              = __webpack_require__(11)
     , fails               = __webpack_require__(7)
     , $export             = __webpack_require__(1)
-    , $typed              = __webpack_require__(154)
-    , $buffer             = __webpack_require__(235)
+    , $typed              = __webpack_require__(153)
+    , $buffer             = __webpack_require__(234)
     , ctx                 = __webpack_require__(72)
     , anInstance          = __webpack_require__(108)
     , propertyDesc        = __webpack_require__(62)
     , hide                = __webpack_require__(29)
     , redefineAll         = __webpack_require__(111)
     , toInteger           = __webpack_require__(63)
-    , toLength            = __webpack_require__(22)
+    , toLength            = __webpack_require__(21)
     , toIndex             = __webpack_require__(75)
     , toPrimitive         = __webpack_require__(64)
-<<<<<<< HEAD
     , has                 = __webpack_require__(23)
     , same                = __webpack_require__(360)
     , classof             = __webpack_require__(218)
     , isObject            = __webpack_require__(10)
-=======
-    , has                 = __webpack_require__(24)
-    , same                = __webpack_require__(362)
-    , classof             = __webpack_require__(219)
-    , isObject            = __webpack_require__(9)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
     , toObject            = __webpack_require__(30)
-    , isArrayIter         = __webpack_require__(224)
+    , isArrayIter         = __webpack_require__(223)
     , create              = __webpack_require__(73)
     , getPrototypeOf      = __webpack_require__(44)
     , gOPN                = __webpack_require__(74).f
-    , getIterFn           = __webpack_require__(236)
+    , getIterFn           = __webpack_require__(235)
     , uid                 = __webpack_require__(76)
     , wks                 = __webpack_require__(13)
     , createArrayMethod   = __webpack_require__(43)
-<<<<<<< HEAD
     , createArrayIncludes = __webpack_require__(217)
     , speciesConstructor  = __webpack_require__(361)
     , ArrayIterators      = __webpack_require__(154)
-=======
-    , createArrayIncludes = __webpack_require__(218)
-    , speciesConstructor  = __webpack_require__(363)
-    , ArrayIterators      = __webpack_require__(155)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
     , Iterators           = __webpack_require__(88)
-    , $iterDetect         = __webpack_require__(228)
+    , $iterDetect         = __webpack_require__(227)
     , setSpecies          = __webpack_require__(112)
-<<<<<<< HEAD
     , arrayFill           = __webpack_require__(216)
     , arrayCopyWithin     = __webpack_require__(340)
-=======
-    , arrayFill           = __webpack_require__(217)
-    , arrayCopyWithin     = __webpack_require__(342)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
     , $DP                 = __webpack_require__(16)
     , $GOPD               = __webpack_require__(51)
     , dP                  = $DP.f
@@ -6659,6 +6474,28 @@ var Button = (function () {
         this.el.nativeElement.appendChild(labelElement);
         this.initialized = true;
     };
+    Button.prototype.onMouseenter = function (e) {
+        this.hover = true;
+    };
+    Button.prototype.onMouseleave = function (e) {
+        this.hover = false;
+        this.active = false;
+    };
+    Button.prototype.onMouseDown = function (e) {
+        this.active = true;
+    };
+    Button.prototype.onMouseUp = function (e) {
+        this.active = false;
+    };
+    Button.prototype.onFocus = function (e) {
+        this.focus = true;
+    };
+    Button.prototype.onBlur = function (e) {
+        this.focus = false;
+    };
+    Button.prototype.isDisabled = function () {
+        return this.el.nativeElement.disabled;
+    };
     Button.prototype.getStyleClass = function () {
         var styleClass = 'ui-button ui-widget ui-state-default ' + this.cornerStyleClass;
         if (this.icon) {
@@ -6684,7 +6521,7 @@ var Button = (function () {
         set: function (val) {
             this._label = val;
             if (this.initialized) {
-                this.domHandler.findSingle(this.el.nativeElement, '.ui-button-text').textContent = this._label;
+                this.domHandler.findSingle(this.el.nativeElement, '.ui-c').textContent = this._label;
             }
         },
         enumerable: true,
@@ -6719,6 +6556,42 @@ var Button = (function () {
         __metadata('design:type', String)
     ], Button.prototype, "cornerStyleClass", void 0);
     __decorate([
+        core_1.HostListener('mouseenter', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Event]), 
+        __metadata('design:returntype', void 0)
+    ], Button.prototype, "onMouseenter", null);
+    __decorate([
+        core_1.HostListener('mouseleave', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Event]), 
+        __metadata('design:returntype', void 0)
+    ], Button.prototype, "onMouseleave", null);
+    __decorate([
+        core_1.HostListener('mousedown', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Event]), 
+        __metadata('design:returntype', void 0)
+    ], Button.prototype, "onMouseDown", null);
+    __decorate([
+        core_1.HostListener('mouseup', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Event]), 
+        __metadata('design:returntype', void 0)
+    ], Button.prototype, "onMouseUp", null);
+    __decorate([
+        core_1.HostListener('focus', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Event]), 
+        __metadata('design:returntype', void 0)
+    ], Button.prototype, "onFocus", null);
+    __decorate([
+        core_1.HostListener('blur', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Event]), 
+        __metadata('design:returntype', void 0)
+    ], Button.prototype, "onBlur", null);
+    __decorate([
         core_1.Input(), 
         __metadata('design:type', String)
     ], Button.prototype, "label", null);
@@ -6729,6 +6602,12 @@ var Button = (function () {
     Button = __decorate([
         core_1.Directive({
             selector: '[pButton]',
+            host: {
+                '[class.ui-state-hover]': 'hover&&!isDisabled()',
+                '[class.ui-state-focus]': 'focus',
+                '[class.ui-state-active]': 'active',
+                '[class.ui-state-disabled]': 'isDisabled()'
+            },
             providers: [domhandler_1.DomHandler]
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, domhandler_1.DomHandler])
@@ -6782,13 +6661,8 @@ module.exports = g;
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_errors__ = __webpack_require__(402);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(26);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_errors__ = __webpack_require__(403);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(27);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return InvalidPipeArgumentError; });
 /**
  * @license
@@ -6935,20 +6809,14 @@ var ElementSchemaRegistry = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_lang__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__validators__ = __webpack_require__(40);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__checkbox_value_accessor__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__default_value_accessor__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__normalize_validator__ = __webpack_require__(466);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__checkbox_value_accessor__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__default_value_accessor__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__normalize_validator__ = __webpack_require__(467);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__number_value_accessor__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__radio_control_value_accessor__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__range_value_accessor__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__select_control_value_accessor__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__select_multiple_control_value_accessor__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__select_control_value_accessor__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__select_multiple_control_value_accessor__ = __webpack_require__(139);
 /* harmony export (immutable) */ exports["a"] = controlPath;
 /* harmony export (immutable) */ exports["d"] = setUpControl;
 /* harmony export (immutable) */ exports["h"] = cleanUpControl;
@@ -7211,8 +7079,8 @@ module.exports = function(it){
 /***/ function(module, exports, __webpack_require__) {
 
 var META     = __webpack_require__(76)('meta')
-  , isObject = __webpack_require__(9)
-  , has      = __webpack_require__(24)
+  , isObject = __webpack_require__(10)
+  , has      = __webpack_require__(23)
   , setDesc  = __webpack_require__(16).f
   , id       = 0;
 var isExtensible = Object.isExtensible || function(){
@@ -7293,7 +7161,7 @@ module.exports = function(it){
 /***/ function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
-var isObject = __webpack_require__(9);
+var isObject = __webpack_require__(10);
 // instead of the ES6 spec version, we didn't implement @@toPrimitive case
 // and the second argument - flag - preferred type is a string
 module.exports = function(it, S){
@@ -7333,9 +7201,9 @@ if (freeGlobal && (freeGlobal.global === freeGlobal || freeGlobal.window === fre
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compiler_util_binding_util__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compiler_util_binding_util__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__compiler_util_expression_converter__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__compiler_util_render_util__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__compiler_util_render_util__ = __webpack_require__(257);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__config__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__expression_parser_parser__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__identifiers__ = __webpack_require__(15);
@@ -7343,9 +7211,9 @@ if (freeGlobal && (freeGlobal.global === freeGlobal || freeGlobal.window === fre
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__output_class_builder__ = __webpack_require__(172);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__output_output_ast__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__parse_util__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__private_import_core__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__private_import_core__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__schema_element_schema_registry__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__template_parser_binding_parser__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__template_parser_binding_parser__ = __webpack_require__(275);
 /* unused harmony export DirectiveWrapperCompileResult */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DirectiveWrapperCompiler; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return DirectiveWrapperExpressions; });
@@ -8037,7 +7905,7 @@ var NAMED_ENTITIES = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compiler_util_identifier_util__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__output_output_ast__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__private_import_core__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__private_import_core__ = __webpack_require__(17);
 /* harmony export (immutable) */ exports["a"] = getPropertyInView;
 /* harmony export (immutable) */ exports["b"] = injectFromViewParentInjector;
 /* harmony export (immutable) */ exports["c"] = getViewClassName;
@@ -8795,36 +8663,22 @@ module.exports = function(fn, that, length){
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject    = __webpack_require__(5)
-<<<<<<< HEAD
   , dPs         = __webpack_require__(355)
   , enumBugKeys = __webpack_require__(219)
   , IE_PROTO    = __webpack_require__(231)('IE_PROTO')
-=======
-  , dPs         = __webpack_require__(357)
-  , enumBugKeys = __webpack_require__(220)
-  , IE_PROTO    = __webpack_require__(232)('IE_PROTO')
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , Empty       = function(){ /* empty */ }
   , PROTOTYPE   = 'prototype';
 
 // Create object with fake `null` prototype: use iframe Object with cleared prototype
 var createDict = function(){
   // Thrash, waste and sodomy: IE GC bug
-<<<<<<< HEAD
   var iframe = __webpack_require__(346)('iframe')
-=======
-  var iframe = __webpack_require__(348)('iframe')
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
     , i      = enumBugKeys.length
     , lt     = '<'
     , gt     = '>'
     , iframeDocument;
   iframe.style.display = 'none';
-<<<<<<< HEAD
   __webpack_require__(347).appendChild(iframe);
-=======
-  __webpack_require__(349).appendChild(iframe);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
   // html.removeChild(iframe);
@@ -8855,13 +8709,8 @@ module.exports = Object.create || function create(O, Properties){
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-<<<<<<< HEAD
 var $keys      = __webpack_require__(357)
   , hiddenKeys = __webpack_require__(219).concat('length', 'prototype');
-=======
-var $keys      = __webpack_require__(359)
-  , hiddenKeys = __webpack_require__(220).concat('length', 'prototype');
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O){
   return $keys(O, hiddenKeys);
@@ -8896,11 +8745,11 @@ module.exports = function(key){
 "use strict";
 'use strict';
 // 19.1.3.6 Object.prototype.toString()
-var classof = __webpack_require__(219)
+var classof = __webpack_require__(218)
   , test    = {};
 test[__webpack_require__(13)('toStringTag')] = 'z';
 if(test + '' != '[object z]'){
-  __webpack_require__(25)(Object.prototype, 'toString', function toString(){
+  __webpack_require__(24)(Object.prototype, 'toString', function toString(){
     return '[object ' + classof(this) + ']';
   }, true);
 }
@@ -8926,6 +8775,25 @@ var InputText = (function () {
     function InputText(el) {
         this.el = el;
     }
+    InputText.prototype.onMouseover = function (e) {
+        this.hover = true;
+    };
+    InputText.prototype.onMouseout = function (e) {
+        this.hover = false;
+    };
+    InputText.prototype.onFocus = function (e) {
+        this.focus = true;
+    };
+    InputText.prototype.onBlur = function (e) {
+        this.focus = false;
+    };
+    Object.defineProperty(InputText.prototype, "disabled", {
+        get: function () {
+            return this.el.nativeElement.disabled;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(InputText.prototype, "filled", {
         get: function () {
             return this.el.nativeElement.value && this.el.nativeElement.value.length;
@@ -8933,6 +8801,30 @@ var InputText = (function () {
         enumerable: true,
         configurable: true
     });
+    __decorate([
+        core_1.HostListener('mouseover', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Object]), 
+        __metadata('design:returntype', void 0)
+    ], InputText.prototype, "onMouseover", null);
+    __decorate([
+        core_1.HostListener('mouseout', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Object]), 
+        __metadata('design:returntype', void 0)
+    ], InputText.prototype, "onMouseout", null);
+    __decorate([
+        core_1.HostListener('focus', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Object]), 
+        __metadata('design:returntype', void 0)
+    ], InputText.prototype, "onFocus", null);
+    __decorate([
+        core_1.HostListener('blur', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Object]), 
+        __metadata('design:returntype', void 0)
+    ], InputText.prototype, "onBlur", null);
     InputText = __decorate([
         core_1.Directive({
             selector: '[pInputText]',
@@ -8941,6 +8833,9 @@ var InputText = (function () {
                 '[class.ui-corner-all]': 'true',
                 '[class.ui-state-default]': 'true',
                 '[class.ui-widget]': 'true',
+                '[class.ui-state-hover]': 'hover',
+                '[class.ui-state-focus]': 'focus',
+                '[class.ui-state-disabled]': 'disabled',
                 '[class.ui-state-filled]': 'filled'
             }
         }), 
@@ -8976,19 +8871,12 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Observable_1 = __webpack_require__(17);
+var Observable_1 = __webpack_require__(19);
 var Subscriber_1 = __webpack_require__(36);
-<<<<<<< HEAD
 var Subscription_1 = __webpack_require__(239);
 var ObjectUnsubscribedError_1 = __webpack_require__(386);
 var SubjectSubscription_1 = __webpack_require__(738);
 var rxSubscriber_1 = __webpack_require__(245);
-=======
-var Subscription_1 = __webpack_require__(241);
-var ObjectUnsubscribedError_1 = __webpack_require__(387);
-var SubjectSubscription_1 = __webpack_require__(742);
-var rxSubscriber_1 = __webpack_require__(248);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /**
  * @class SubjectSubscriber<T>
  */
@@ -9378,11 +9266,7 @@ function iterateListLike(obj, fn) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__parse_util__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ast__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__interpolation_config__ = __webpack_require__(38);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__lexer__ = __webpack_require__(423);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__lexer__ = __webpack_require__(424);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tags__ = __webpack_require__(67);
 /* unused harmony export TreeError */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ParseTreeResult; });
@@ -10057,7 +9941,7 @@ function makePropDecorator(name, props, parentClass) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return EventEmitter; });
 /* unused harmony reexport Observable */
@@ -10421,7 +10305,7 @@ var EventManagerPlugin = (function () {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_BehaviorSubject__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_BehaviorSubject__ = __webpack_require__(237);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_BehaviorSubject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__url_tree__ = __webpack_require__(70);
@@ -10885,13 +10769,8 @@ module.exports = {};
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-<<<<<<< HEAD
 var $keys       = __webpack_require__(357)
   , enumBugKeys = __webpack_require__(219);
-=======
-var $keys       = __webpack_require__(359)
-  , enumBugKeys = __webpack_require__(220);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 module.exports = Object.keys || function keys(O){
   return $keys(O, enumBugKeys);
@@ -10903,11 +10782,7 @@ module.exports = Object.keys || function keys(O){
 
 "use strict";
 "use strict";
-<<<<<<< HEAD
 var ArrayObservable_1 = __webpack_require__(377);
-=======
-var ArrayObservable_1 = __webpack_require__(379);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 exports.of = ArrayObservable_1.ArrayObservable.of;
 //# sourceMappingURL=of.js.map
 
@@ -11505,7 +11380,7 @@ function convertStmtIntoExpression(stmt) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ml_parser_interpolation_config__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ast__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__lexer__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__lexer__ = __webpack_require__(118);
 /* unused harmony export SplitInterpolation */
 /* unused harmony export TemplateBindingParseResult */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return Parser; });
@@ -12614,7 +12489,7 @@ function _resolveUrl(base, url) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_errors__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_errors__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(6);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return THROW_IF_NOT_FOUND; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return Injector; });
@@ -12810,7 +12685,7 @@ function iterateListLike(obj, fn) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__di__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_errors__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_errors__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(6);
 /* harmony export (binding) */ __webpack_require__.d(exports, "c", function() { return ComponentStillLoadingError; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "d", function() { return ModuleWithComponentFactories; });
@@ -13011,7 +12886,7 @@ var AbstractFormGroupDirective = (function (_super) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(84);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__control_container__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared__ = __webpack_require__(58);
@@ -13352,10 +13227,10 @@ var RadioControlValueAccessor = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(84);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(311);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(308);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__control_container__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reactive_errors__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reactive_errors__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared__ = __webpack_require__(58);
 /* unused harmony export formDirectiveProvider */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormGroupDirective; });
@@ -13556,7 +13431,7 @@ var FormGroupDirective = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__validators__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__abstract_form_group_directive__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__control_container__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reactive_errors__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reactive_errors__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__form_group_directive__ = __webpack_require__(100);
 /* unused harmony export formGroupNameProvider */
@@ -14006,11 +13881,7 @@ var XSRFStrategy = (function () {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_platform_browser__ = __webpack_require__(484);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_platform_browser__ = __webpack_require__(485);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "BrowserModule", function() { return __WEBPACK_IMPORTED_MODULE_0__src_platform_browser__["b"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "platformBrowser", function() { return __WEBPACK_IMPORTED_MODULE_0__src_platform_browser__["c"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "Title", function() { return __WEBPACK_IMPORTED_MODULE_0__src_platform_browser__["d"]; });
@@ -14047,33 +13918,24 @@ var XSRFStrategy = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__ = __webpack_require__(237);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_from__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_from__ = __webpack_require__(240);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_from___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_observable_from__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of__);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_concatMap__ = __webpack_require__(383);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_concatMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_operator_concatMap__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_every__ = __webpack_require__(384);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_every___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_operator_every__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_first__ = __webpack_require__(385);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_concatMap__ = __webpack_require__(384);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_concatMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_operator_concatMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_every__ = __webpack_require__(385);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_every___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_operator_every__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_first__ = __webpack_require__(386);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_first___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_operator_first__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_map__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_map__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_mergeMap__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_mergeMap__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_mergeMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_rxjs_operator_mergeMap__);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_reduce__ = __webpack_require__(745);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_reduce___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_rxjs_operator_reduce__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__apply_redirects__ = __webpack_require__(488);
@@ -14081,17 +13943,8 @@ var XSRFStrategy = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__create_router_state__ = __webpack_require__(490);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__create_url_tree__ = __webpack_require__(491);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__recognize__ = __webpack_require__(495);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_reduce__ = __webpack_require__(751);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_reduce___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_rxjs_operator_reduce__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__apply_redirects__ = __webpack_require__(489);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__config__ = __webpack_require__(490);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__create_router_state__ = __webpack_require__(491);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__create_url_tree__ = __webpack_require__(492);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__recognize__ = __webpack_require__(496);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__router_config_loader__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__router_outlet_map__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__router_outlet_map__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__router_state__ = __webpack_require__(87);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__shared__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__url_handling_strategy__ = __webpack_require__(214);
@@ -15096,13 +14949,13 @@ function getOutlet(outletMap, route) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_fromPromise__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_fromPromise__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_fromPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_mergeMap__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_mergeMap__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_mergeMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_operator_mergeMap__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_collection__ = __webpack_require__(48);
 /* harmony export (binding) */ __webpack_require__.d(exports, "c", function() { return ROUTES; });
@@ -15202,7 +15055,7 @@ module.exports = false;
 /* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
-var redefine = __webpack_require__(25);
+var redefine = __webpack_require__(24);
 module.exports = function(target, src, safe){
   for(var key in src)redefine(target, key, src[key], safe);
   return target;
@@ -15214,9 +15067,9 @@ module.exports = function(target, src, safe){
 
 "use strict";
 'use strict';
-var global      = __webpack_require__(10)
+var global      = __webpack_require__(11)
   , dP          = __webpack_require__(16)
-  , DESCRIPTORS = __webpack_require__(19)
+  , DESCRIPTORS = __webpack_require__(18)
   , SPECIES     = __webpack_require__(13)('species');
 
 module.exports = function(KEY){
@@ -15232,7 +15085,7 @@ module.exports = function(KEY){
 /***/ function(module, exports, __webpack_require__) {
 
 var def = __webpack_require__(16).f
-  , has = __webpack_require__(24)
+  , has = __webpack_require__(23)
   , TAG = __webpack_require__(13)('toStringTag');
 
 module.exports = function(it, tag, stat){
@@ -15250,101 +15103,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subscriber_1 = __webpack_require__(36);
-/**
- * Applies a given `project` function to each value emitted by the source
- * Observable, and emits the resulting values as an Observable.
- *
- * <span class="informal">Like [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map),
- * it passes each source value through a transformation function to get
- * corresponding output values.</span>
- *
- * <img src="./img/map.png" width="100%">
- *
- * Similar to the well known `Array.prototype.map` function, this operator
- * applies a projection to each value and emits that projection in the output
- * Observable.
- *
- * @example <caption>Map every every click to the clientX position of that click</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var positions = clicks.map(ev => ev.clientX);
- * positions.subscribe(x => console.log(x));
- *
- * @see {@link mapTo}
- * @see {@link pluck}
- *
- * @param {function(value: T, index: number): R} project The function to apply
- * to each `value` emitted by the source Observable. The `index` parameter is
- * the number `i` for the i-th emission that has happened since the
- * subscription, starting from the number `0`.
- * @param {any} [thisArg] An optional argument to define what `this` is in the
- * `project` function.
- * @return {Observable<R>} An Observable that emits the values from the source
- * Observable transformed by the given `project` function.
- * @method map
- * @owner Observable
- */
-function map(project, thisArg) {
-    if (typeof project !== 'function') {
-        throw new TypeError('argument is not a function. Are you looking for `mapTo()`?');
-    }
-    return this.lift(new MapOperator(project, thisArg));
-}
-exports.map = map;
-var MapOperator = (function () {
-    function MapOperator(project, thisArg) {
-        this.project = project;
-        this.thisArg = thisArg;
-    }
-    MapOperator.prototype.call = function (subscriber, source) {
-        return source._subscribe(new MapSubscriber(subscriber, this.project, this.thisArg));
-    };
-    return MapOperator;
-}());
-exports.MapOperator = MapOperator;
-/**
- * We need this JSDoc comment for affecting ESDoc.
- * @ignore
- * @extends {Ignored}
- */
-var MapSubscriber = (function (_super) {
-    __extends(MapSubscriber, _super);
-    function MapSubscriber(destination, project, thisArg) {
-        _super.call(this, destination);
-        this.project = project;
-        this.count = 0;
-        this.thisArg = thisArg || this;
-    }
-    // NOTE: This looks unoptimized, but it's actually purposefully NOT
-    // using try/catch optimizations.
-    MapSubscriber.prototype._next = function (value) {
-        var result;
-        try {
-            result = this.project.call(this.thisArg, value, this.count++);
-        }
-        catch (err) {
-            this.destination.error(err);
-            return;
-        }
-        this.destination.next(result);
-    };
-    return MapSubscriber;
-}(Subscriber_1.Subscriber));
-//# sourceMappingURL=map.js.map
-
-/***/ },
-/* 115 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var subscribeToResult_1 = __webpack_require__(251);
-var OuterSubscriber_1 = __webpack_require__(240);
+var subscribeToResult_1 = __webpack_require__(248);
+var OuterSubscriber_1 = __webpack_require__(238);
 /**
  * Projects each source value to an Observable which is merged in the output
  * Observable.
@@ -15500,7 +15260,7 @@ exports.MergeMapSubscriber = MergeMapSubscriber;
 //# sourceMappingURL=mergeMap.js.map
 
 /***/ },
-/* 116 */
+/* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15999,7 +15759,7 @@ function getPluralCase(locale, nLike) {
 //# sourceMappingURL=localization.js.map
 
 /***/ },
-/* 117 */
+/* 116 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16063,53 +15823,39 @@ var APP_BASE_HREF = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["OpaqueToken
 //# sourceMappingURL=location_strategy.js.map
 
 /***/ },
-/* 118 */
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_template_parser_template_ast__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_template_parser_template_parser__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_template_parser_template_parser__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_config__ = __webpack_require__(80);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_compile_metadata__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_offline_compiler__ = __webpack_require__(425);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_runtime_compiler__ = __webpack_require__(272);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__src_url_resolver__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__src_resource_loader__ = __webpack_require__(174);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__src_compiler__ = __webpack_require__(417);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_compile_metadata__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_offline_compiler__ = __webpack_require__(426);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_runtime_compiler__ = __webpack_require__(275);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__src_url_resolver__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__src_resource_loader__ = __webpack_require__(174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__src_compiler__ = __webpack_require__(418);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__src_directive_resolver__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__src_pipe_resolver__ = __webpack_require__(173);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__src_ng_module_resolver__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__src_ml_parser_interpolation_config__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__src_schema_element_schema_registry__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__src_i18n_index__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__src_i18n_index__ = __webpack_require__(261);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__src_directive_normalizer__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__src_expression_parser_lexer__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__src_expression_parser_lexer__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__src_expression_parser_parser__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__src_metadata_resolver__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__src_ml_parser_html_parser__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__src_ml_parser_html_parser__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__src_ng_module_compiler__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__src_directive_wrapper_compiler__ = __webpack_require__(66);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__src_output_path_util__ = __webpack_require__(429);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__src_output_ts_emitter__ = __webpack_require__(269);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__src_output_path_util__ = __webpack_require__(430);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__src_output_ts_emitter__ = __webpack_require__(272);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__src_parse_util__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__src_schema_dom_element_schema_registry__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__src_selector__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__src_schema_dom_element_schema_registry__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__src_selector__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__src_style_compiler__ = __webpack_require__(175);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__src_view_compiler_view_compiler__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__src_view_compiler_view_compiler__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__src_animation_animation_parser__ = __webpack_require__(160);
 /* unused harmony namespace reexport */
 /* unused harmony reexport TEMPLATE_TRANSFORMS */
@@ -16202,7 +15948,7 @@ var APP_BASE_HREF = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["OpaqueToken
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 119 */
+/* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16569,7 +16315,7 @@ function unescape(code) {
 //# sourceMappingURL=lexer.js.map
 
 /***/ },
-/* 120 */
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16617,7 +16363,7 @@ var HtmlParser = (function (_super) {
 //# sourceMappingURL=html_parser.js.map
 
 /***/ },
-/* 121 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16967,34 +16713,29 @@ var SelectorContext = (function () {
 //# sourceMappingURL=selector.js.map
 
 /***/ },
-/* 122 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__expression_parser_parser__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__i18n_i18n_html_parser__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__i18n_i18n_html_parser__ = __webpack_require__(260);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__identifiers__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ml_parser_ast__ = __webpack_require__(56);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ml_parser_html_parser__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ml_parser_icu_ast_expander__ = __webpack_require__(422);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ml_parser_html_parser__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ml_parser_icu_ast_expander__ = __webpack_require__(423);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ml_parser_interpolation_config__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ml_parser_tags__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__parse_util__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__private_import_core__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__provider_analyzer__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__private_import_core__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__provider_analyzer__ = __webpack_require__(271);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__schema_element_schema_registry__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__selector__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__style_url_resolver__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__binding_parser__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__selector__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__style_url_resolver__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__binding_parser__ = __webpack_require__(275);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__template_ast__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__template_preparser__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__template_preparser__ = __webpack_require__(276);
 /* unused harmony export TEMPLATE_TRANSFORMS */
 /* unused harmony export TemplateParseError */
 /* unused harmony export TemplateParseResult */
@@ -17690,7 +17431,7 @@ function removeSummaryDuplicates(items) {
 //# sourceMappingURL=template_parser.js.map
 
 /***/ },
-/* 123 */
+/* 122 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17782,24 +17523,17 @@ var DetectChangesVars = (function () {
 //# sourceMappingURL=constants.js.map
 
 /***/ },
-/* 124 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__schema_element_schema_registry__ = __webpack_require__(57);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__compile_element__ = __webpack_require__(277);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__compile_view__ = __webpack_require__(279);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__view_binder__ = __webpack_require__(436);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__view_builder__ = __webpack_require__(437);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__compile_element__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__compile_view__ = __webpack_require__(282);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__view_binder__ = __webpack_require__(437);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__view_builder__ = __webpack_require__(438);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__deps__ = __webpack_require__(177);
 /* unused harmony export ViewCompileResult */
 /* harmony export (binding) */ __webpack_require__.d(exports, "d", function() { return ViewCompiler; });
@@ -17858,7 +17592,7 @@ var ViewCompiler = (function () {
 //# sourceMappingURL=view_compiler.js.map
 
 /***/ },
-/* 125 */
+/* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17925,26 +17659,17 @@ var PACKAGE_ROOT_URL = new __WEBPACK_IMPORTED_MODULE_0__di__["a" /* OpaqueToken 
 //# sourceMappingURL=application_tokens.js.map
 
 /***/ },
-/* 126 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__differs_default_iterable_differ__ = __webpack_require__(181);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__differs_default_keyvalue_differ__ = __webpack_require__(286);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__differs_iterable_differs__ = __webpack_require__(287);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__differs_keyvalue_differs__ = __webpack_require__(288);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__change_detection_util__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__change_detector_ref__ = __webpack_require__(445);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants__ = __webpack_require__(127);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__differs_default_keyvalue_differ__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__differs_iterable_differs__ = __webpack_require__(290);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__differs_keyvalue_differs__ = __webpack_require__(291);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__change_detection_util__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__change_detector_ref__ = __webpack_require__(446);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__constants__ = __webpack_require__(128);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* unused harmony export keyValDiff */
 /* unused harmony export iterableDiff */
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return defaultIterableDiffers; });
@@ -17998,7 +17723,7 @@ var defaultKeyValueDiffers = new __WEBPACK_IMPORTED_MODULE_3__differs_keyvalue_d
 //# sourceMappingURL=change_detection.js.map
 
 /***/ },
-/* 127 */
+/* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18095,7 +17820,7 @@ var SimpleChange = (function () {
 //# sourceMappingURL=change_detection_util.js.map
 
 /***/ },
-/* 128 */
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18170,7 +17895,7 @@ function isDefaultChangeDetectionStrategy(changeDetectionStrategy) {
 //# sourceMappingURL=constants.js.map
 
 /***/ },
-/* 129 */
+/* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18234,11 +17959,11 @@ var Host = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_decorators__[
 //# sourceMappingURL=metadata.js.map
 
 /***/ },
-/* 130 */
+/* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_errors__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_errors__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(6);
 /* unused harmony export NoComponentFactoryError */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ComponentFactoryResolver; });
@@ -18306,7 +18031,7 @@ var CodegenComponentFactoryResolver = (function () {
 //# sourceMappingURL=component_factory_resolver.js.map
 
 /***/ },
-/* 131 */
+/* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18342,7 +18067,7 @@ var ElementRef = (function () {
 //# sourceMappingURL=element_ref.js.map
 
 /***/ },
-/* 132 */
+/* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18369,17 +18094,17 @@ var ViewType;
 //# sourceMappingURL=view_type.js.map
 
 /***/ },
-/* 133 */
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__change_detection_change_detection__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__change_detection_change_detection_util__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__change_detection_change_detection__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__change_detection_change_detection_util__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__di__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_lang__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__render_api__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__security__ = __webpack_require__(308);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__errors__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__security__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__errors__ = __webpack_require__(294);
 /* harmony export (binding) */ __webpack_require__.d(exports, "ViewUtils", function() { return ViewUtils; });
 /* harmony export (immutable) */ exports["createRenderComponentType"] = createRenderComponentType;
 /* harmony export (immutable) */ exports["addToArray"] = addToArray;
@@ -19044,15 +18769,11 @@ var EMPTY_INLINE_ARRAY = new InlineArray0();
 //# sourceMappingURL=view_utils.js.map
 
 /***/ },
-/* 134 */
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__wtf_impl__ = __webpack_require__(461);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__wtf_impl__ = __webpack_require__(462);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* unused harmony export wtfEnabled */
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return wtfCreateScope; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return wtfLeave; });
@@ -19138,7 +18859,7 @@ var wtfEndTimeRange = wtfEnabled ? __WEBPACK_IMPORTED_MODULE_0__wtf_impl__["e" /
 //# sourceMappingURL=profile.js.map
 
 /***/ },
-/* 135 */
+/* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19202,7 +18923,7 @@ var CheckboxControlValueAccessor = (function () {
 //# sourceMappingURL=checkbox_value_accessor.js.map
 
 /***/ },
-/* 136 */
+/* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19271,7 +18992,7 @@ var DefaultValueAccessor = (function () {
 //# sourceMappingURL=default_value_accessor.js.map
 
 /***/ },
-/* 137 */
+/* 136 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19280,7 +19001,7 @@ var DefaultValueAccessor = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__abstract_form_group_directive__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__control_container__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng_form__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__template_driven_errors__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__template_driven_errors__ = __webpack_require__(307);
 /* unused harmony export modelGroupProvider */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NgModelGroup; });
 /**
@@ -19361,11 +19082,11 @@ var NgModelGroup = (function (_super) {
 //# sourceMappingURL=ng_model_group.js.map
 
 /***/ },
-/* 138 */
+/* 137 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__error_examples__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__error_examples__ = __webpack_require__(306);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ReactiveErrors; });
 /**
  * @license
@@ -19401,7 +19122,7 @@ var ReactiveErrors = (function () {
 //# sourceMappingURL=reactive_errors.js.map
 
 /***/ },
-/* 139 */
+/* 138 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19596,7 +19317,7 @@ var NgSelectOption = (function () {
 //# sourceMappingURL=select_control_value_accessor.js.map
 
 /***/ },
-/* 140 */
+/* 139 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19805,15 +19526,15 @@ var NgSelectMultipleOption = (function () {
 //# sourceMappingURL=select_multiple_control_value_accessor.js.map
 
 /***/ },
-/* 141 */
+/* 140 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_observable_fromPromise__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_observable_fromPromise__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_observable_fromPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_shared__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_async__ = __webpack_require__(84);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__private_import_core__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__private_import_core__ = __webpack_require__(310);
 /* unused harmony export VALID */
 /* unused harmony export INVALID */
 /* unused harmony export PENDING */
@@ -21135,7 +20856,7 @@ var FormArray = (function (_super) {
 //# sourceMappingURL=model.js.map
 
 /***/ },
-/* 142 */
+/* 141 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21295,7 +21016,7 @@ var BaseResponseOptions = (function (_super) {
 //# sourceMappingURL=base_response_options.js.map
 
 /***/ },
-/* 143 */
+/* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21353,7 +21074,7 @@ function stringToArrayBuffer(input) {
 //# sourceMappingURL=http_utils.js.map
 
 /***/ },
-/* 144 */
+/* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21538,7 +21259,7 @@ var URLSearchParams = (function () {
 //# sourceMappingURL=url_search_params.js.map
 
 /***/ },
-/* 145 */
+/* 144 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21564,7 +21285,7 @@ var DOCUMENT = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["OpaqueToken"]('D
 //# sourceMappingURL=dom_tokens.js.map
 
 /***/ },
-/* 146 */
+/* 145 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21599,23 +21320,23 @@ var RouterOutletMap = (function () {
 //# sourceMappingURL=router_outlet_map.js.map
 
 /***/ },
-/* 147 */
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
-var global            = __webpack_require__(10)
+var global            = __webpack_require__(11)
   , $export           = __webpack_require__(1)
-  , redefine          = __webpack_require__(25)
+  , redefine          = __webpack_require__(24)
   , redefineAll       = __webpack_require__(111)
   , meta              = __webpack_require__(61)
-  , forOf             = __webpack_require__(149)
+  , forOf             = __webpack_require__(148)
   , anInstance        = __webpack_require__(108)
-  , isObject          = __webpack_require__(9)
+  , isObject          = __webpack_require__(10)
   , fails             = __webpack_require__(7)
-  , $iterDetect       = __webpack_require__(228)
+  , $iterDetect       = __webpack_require__(227)
   , setToStringTag    = __webpack_require__(113)
-  , inheritIfRequired = __webpack_require__(223);
+  , inheritIfRequired = __webpack_require__(222);
 
 module.exports = function(NAME, wrapper, methods, common, IS_MAP, IS_WEAK){
   var Base  = global[NAME]
@@ -21690,13 +21411,13 @@ module.exports = function(NAME, wrapper, methods, common, IS_MAP, IS_WEAK){
 };
 
 /***/ },
-/* 148 */
+/* 147 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var hide     = __webpack_require__(29)
-  , redefine = __webpack_require__(25)
+  , redefine = __webpack_require__(24)
   , fails    = __webpack_require__(7)
   , defined  = __webpack_require__(49)
   , wks      = __webpack_require__(13);
@@ -21724,20 +21445,15 @@ module.exports = function(KEY, length, exec){
 };
 
 /***/ },
-/* 149 */
+/* 148 */
 /***/ function(module, exports, __webpack_require__) {
 
 var ctx         = __webpack_require__(72)
-<<<<<<< HEAD
   , call        = __webpack_require__(350)
   , isArrayIter = __webpack_require__(223)
-=======
-  , call        = __webpack_require__(352)
-  , isArrayIter = __webpack_require__(224)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , anObject    = __webpack_require__(5)
-  , toLength    = __webpack_require__(22)
-  , getIterFn   = __webpack_require__(236)
+  , toLength    = __webpack_require__(21)
+  , getIterFn   = __webpack_require__(235)
   , BREAK       = {}
   , RETURN      = {};
 var exports = module.exports = function(iterable, entries, fn, that, ITERATOR){
@@ -21759,22 +21475,22 @@ exports.BREAK  = BREAK;
 exports.RETURN = RETURN;
 
 /***/ },
-/* 150 */
+/* 149 */
 /***/ function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
 
 /***/ },
-/* 151 */
+/* 150 */
 /***/ function(module, exports) {
 
 exports.f = {}.propertyIsEnumerable;
 
 /***/ },
-/* 152 */
+/* 151 */
 /***/ function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(10)
+var global = __webpack_require__(11)
   , SHARED = '__core-js_shared__'
   , store  = global[SHARED] || (global[SHARED] = {});
 module.exports = function(key){
@@ -21782,13 +21498,13 @@ module.exports = function(key){
 };
 
 /***/ },
-/* 153 */
+/* 152 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(1)
   , defined = __webpack_require__(49)
   , fails   = __webpack_require__(7)
-  , spaces  = __webpack_require__(234)
+  , spaces  = __webpack_require__(233)
   , space   = '[' + spaces + ']'
   , non     = '\u200b\u0085'
   , ltrim   = RegExp('^' + space + space + '*')
@@ -21817,10 +21533,10 @@ var trim = exporter.trim = function(string, TYPE){
 module.exports = exporter;
 
 /***/ },
-/* 154 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(10)
+var global = __webpack_require__(11)
   , hide   = __webpack_require__(29)
   , uid    = __webpack_require__(76)
   , TYPED  = uid('typed_array')
@@ -21848,17 +21564,13 @@ module.exports = {
 };
 
 /***/ },
-/* 155 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var addToUnscopables = __webpack_require__(107)
-<<<<<<< HEAD
   , step             = __webpack_require__(352)
-=======
-  , step             = __webpack_require__(354)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , Iterators        = __webpack_require__(88)
   , toIObject        = __webpack_require__(35);
 
@@ -21866,7 +21578,7 @@ var addToUnscopables = __webpack_require__(107)
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(227)(Array, 'Array', function(iterated, kind){
+module.exports = __webpack_require__(226)(Array, 'Array', function(iterated, kind){
   this._t = toIObject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
@@ -21892,19 +21604,15 @@ addToUnscopables('values');
 addToUnscopables('entries');
 
 /***/ },
-/* 156 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
-<<<<<<< HEAD
 var $at  = __webpack_require__(362)(true);
-=======
-var $at  = __webpack_require__(364)(true);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 // 21.1.3.27 String.prototype[@@iterator]()
-__webpack_require__(227)(String, 'String', function(iterated){
+__webpack_require__(226)(String, 'String', function(iterated){
   this._t = String(iterated); // target
   this._i = 0;                // next index
 // 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -21919,7 +21627,7 @@ __webpack_require__(227)(String, 'String', function(iterated){
 });
 
 /***/ },
-/* 157 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22061,7 +21769,7 @@ var Paginator = (function () {
     Paginator = __decorate([
         core_1.Component({
             selector: 'p-paginator',
-            template: "\n        <div [class]=\"styleClass\" [ngStyle]=\"style\" [ngClass]=\"'ui-paginator ui-widget ui-widget-header ui-unselectable-text'\">\n            <a href=\"#\" class=\"ui-paginator-first ui-paginator-element ui-state-default ui-corner-all\"\n                    (click)=\"changePageToFirst($event)\" [ngClass]=\"{'ui-state-disabled':isFirstPage()}\" [tabindex]=\"isFirstPage() ? -1 : null\">\n                <span class=\"fa fa-step-backward\"></span>\n            </a>\n            <a href=\"#\" class=\"ui-paginator-prev ui-paginator-element ui-state-default ui-corner-all\"\n                    (click)=\"changePageToPrev($event)\" [ngClass]=\"{'ui-state-disabled':isFirstPage()}\" [tabindex]=\"isFirstPage() ? -1 : null\">\n                <span class=\"fa fa-backward\"></span>\n            </a>\n            <span class=\"ui-paginator-pages\">\n                <a href=\"#\" *ngFor=\"let pageLink of pageLinks\" class=\"ui-paginator-page ui-paginator-element ui-state-default ui-corner-all\"\n                    (click)=\"changePage(pageLink - 1, $event)\" [ngClass]=\"{'ui-state-active': (pageLink-1 == getPage())}\">{{pageLink}}</a>\n            </span>\n            <a href=\"#\" class=\"ui-paginator-next ui-paginator-element ui-state-default ui-corner-all\"\n                    (click)=\"changePageToNext($event)\" [ngClass]=\"{'ui-state-disabled':isLastPage()}\" [tabindex]=\"isLastPage() ? -1 : null\">\n                <span class=\"fa fa-forward\"></span>\n            </a>\n            <a href=\"#\" class=\"ui-paginator-last ui-paginator-element ui-state-default ui-corner-all\"\n                    (click)=\"changePageToLast($event)\" [ngClass]=\"{'ui-state-disabled':isLastPage()}\" [tabindex]=\"isLastPage() ? -1 : null\">\n                <span class=\"fa fa-step-forward\"></span>\n            </a>\n            <select class=\"ui-paginator-rpp-options ui-widget ui-state-default\" *ngIf=\"rowsPerPageOptions\" (change)=\"onRppChange($event)\">\n                <option *ngFor=\"let opt of rowsPerPageOptions\" [value]=\"opt\" [selected]=\"rows == opt\">{{opt}}</option>\n            </select>\n        </div>\n    "
+            template: "\n        <div [class]=\"styleClass\" [ngStyle]=\"style\" [ngClass]=\"'ui-paginator ui-widget ui-widget-header ui-unselectable-text'\">\n            <a href=\"#\" #firstlink class=\"ui-paginator-first ui-paginator-element ui-state-default ui-corner-all\" (mouseenter)=\"hoveredItem = $event.target\" (mouseleave)=\"hoveredItem = null\"\n                        (click)=\"changePageToFirst($event)\" [ngClass]=\"{'ui-state-disabled':isFirstPage(),'ui-state-hover':(firstlink === hoveredItem && !isFirstPage())}\" [tabindex]=\"isFirstPage() ? -1 : null\">\n                <span class=\"fa fa-step-backward\"></span>\n            </a>\n            <a href=\"#\" #prevlink class=\"ui-paginator-prev ui-paginator-element ui-state-default ui-corner-all\" (mouseenter)=\"hoveredItem = $event.target\" (mouseleave)=\"hoveredItem = null\"\n                    (click)=\"changePageToPrev($event)\" [ngClass]=\"{'ui-state-disabled':isFirstPage(),'ui-state-hover':(prevlink === hoveredItem && !isFirstPage())}\" [tabindex]=\"isFirstPage() ? -1 : null\">\n                <span class=\"fa fa-backward\"></span>\n            </a>\n            <span class=\"ui-paginator-pages\">\n                <a href=\"#\" #plink *ngFor=\"let pageLink of pageLinks\" class=\"ui-paginator-page ui-paginator-element ui-state-default ui-corner-all\"\n                    (mouseenter)=\"hoveredItem = $event.target\" (mouseleave)=\"hoveredItem = null\" (click)=\"changePage(pageLink - 1, $event)\"\n                    [ngClass]=\"{'ui-state-hover':(plink === hoveredItem), 'ui-state-active': (pageLink-1 == getPage())}\">{{pageLink}}</a>\n            </span>\n            <a href=\"#\" #nextlink class=\"ui-paginator-next ui-paginator-element ui-state-default ui-corner-all\" (mouseenter)=\"hoveredItem = $event.target\" (mouseleave)=\"hoveredItem = null\"\n                    (click)=\"changePageToNext($event)\" [ngClass]=\"{'ui-state-disabled':isLastPage(),'ui-state-hover':(nextlink === hoveredItem  && !isLastPage())}\" [tabindex]=\"isLastPage() ? -1 : null\">\n                <span class=\"fa fa-forward\"></span>\n            </a>\n            <a href=\"#\" #lastlink class=\"ui-paginator-last ui-paginator-element ui-state-default ui-corner-all\" (mouseenter)=\"hoveredItem = $event.target\" (mouseleave)=\"hoveredItem = null\"\n                    (click)=\"changePageToLast($event)\" [ngClass]=\"{'ui-state-disabled':isLastPage(),'ui-state-hover':(lastlink === hoveredItem  && !isLastPage())}\" [tabindex]=\"isLastPage() ? -1 : null\">\n                <span class=\"fa fa-step-forward\"></span>\n            </a>\n            <select class=\"ui-paginator-rpp-options ui-widget ui-state-default\" *ngIf=\"rowsPerPageOptions\" (change)=\"onRppChange($event)\">\n                <option *ngFor=\"let opt of rowsPerPageOptions\" [value]=\"opt\" [selected]=\"rows == opt\">{{opt}}</option>\n            </select>\n        </div>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], Paginator);
@@ -22085,12 +21793,105 @@ exports.PaginatorModule = PaginatorModule;
 //# sourceMappingURL=paginator.js.map
 
 /***/ },
+/* 157 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var Subscriber_1 = __webpack_require__(36);
+/**
+ * Applies a given `project` function to each value emitted by the source
+ * Observable, and emits the resulting values as an Observable.
+ *
+ * <span class="informal">Like [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map),
+ * it passes each source value through a transformation function to get
+ * corresponding output values.</span>
+ *
+ * <img src="./img/map.png" width="100%">
+ *
+ * Similar to the well known `Array.prototype.map` function, this operator
+ * applies a projection to each value and emits that projection in the output
+ * Observable.
+ *
+ * @example <caption>Map every every click to the clientX position of that click</caption>
+ * var clicks = Rx.Observable.fromEvent(document, 'click');
+ * var positions = clicks.map(ev => ev.clientX);
+ * positions.subscribe(x => console.log(x));
+ *
+ * @see {@link mapTo}
+ * @see {@link pluck}
+ *
+ * @param {function(value: T, index: number): R} project The function to apply
+ * to each `value` emitted by the source Observable. The `index` parameter is
+ * the number `i` for the i-th emission that has happened since the
+ * subscription, starting from the number `0`.
+ * @param {any} [thisArg] An optional argument to define what `this` is in the
+ * `project` function.
+ * @return {Observable<R>} An Observable that emits the values from the source
+ * Observable transformed by the given `project` function.
+ * @method map
+ * @owner Observable
+ */
+function map(project, thisArg) {
+    if (typeof project !== 'function') {
+        throw new TypeError('argument is not a function. Are you looking for `mapTo()`?');
+    }
+    return this.lift(new MapOperator(project, thisArg));
+}
+exports.map = map;
+var MapOperator = (function () {
+    function MapOperator(project, thisArg) {
+        this.project = project;
+        this.thisArg = thisArg;
+    }
+    MapOperator.prototype.call = function (subscriber, source) {
+        return source._subscribe(new MapSubscriber(subscriber, this.project, this.thisArg));
+    };
+    return MapOperator;
+}());
+exports.MapOperator = MapOperator;
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @ignore
+ * @extends {Ignored}
+ */
+var MapSubscriber = (function (_super) {
+    __extends(MapSubscriber, _super);
+    function MapSubscriber(destination, project, thisArg) {
+        _super.call(this, destination);
+        this.project = project;
+        this.count = 0;
+        this.thisArg = thisArg || this;
+    }
+    // NOTE: This looks unoptimized, but it's actually purposefully NOT
+    // using try/catch optimizations.
+    MapSubscriber.prototype._next = function (value) {
+        var result;
+        try {
+            result = this.project.call(this.thisArg, value, this.count++);
+        }
+        catch (err) {
+            this.destination.error(err);
+            return;
+        }
+        this.destination.next(result);
+    };
+    return MapSubscriber;
+}(Subscriber_1.Subscriber));
+//# sourceMappingURL=map.js.map
+
+/***/ },
 /* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__location_strategy__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__location_strategy__ = __webpack_require__(116);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return Location; });
 /**
  * @license
@@ -22349,19 +22150,14 @@ var PlatformLocation = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compile_metadata__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compile_metadata__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_lang__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_util__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__private_import_core__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__private_import_core__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__schema_element_schema_registry__ = __webpack_require__(57);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__animation_ast__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__styles_collection__ = __webpack_require__(416);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__animation_ast__ = __webpack_require__(256);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__styles_collection__ = __webpack_require__(417);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* unused harmony export AnimationParseError */
 /* unused harmony export AnimationEntryParseResult */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AnimationParser; });
@@ -23044,15 +22840,15 @@ function isAsciiHexDigit(code) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compile_metadata__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compile_metadata__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_lang__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ml_parser_ast__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ml_parser_html_parser__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ml_parser_html_parser__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ml_parser_interpolation_config__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__resource_loader__ = __webpack_require__(174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__style_url_resolver__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__template_parser_template_preparser__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__style_url_resolver__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__template_parser_template_preparser__ = __webpack_require__(276);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__url_resolver__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__util__ = __webpack_require__(46);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DirectiveNormalizer; });
@@ -23271,7 +23067,7 @@ var TemplatePreparseVisitor = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_collection__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__private_import_core__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__private_import_core__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util__ = __webpack_require__(46);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DirectiveResolver; });
 /**
@@ -24177,21 +23973,17 @@ var I18nError = (function (_super) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assertions__ = __webpack_require__(258);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__compile_metadata__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assertions__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__compile_metadata__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directive_normalizer__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directive_resolver__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__facade_collection__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__facade_lang__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__identifiers__ = __webpack_require__(15);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__lifecycle_reflector__ = __webpack_require__(421);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__lifecycle_reflector__ = __webpack_require__(422);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ng_module_resolver__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pipe_resolver__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__private_import_core__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__private_import_core__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__schema_element_schema_registry__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__url_resolver__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__util__ = __webpack_require__(46);
@@ -25190,16 +24982,16 @@ function getHtmlTagDefinition(tagName) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compile_metadata__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compile_metadata__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__compiler_util_identifier_util__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_lang__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__identifiers__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__output_class_builder__ = __webpack_require__(172);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__output_output_ast__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__output_value_util__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__output_value_util__ = __webpack_require__(270);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__parse_util__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__private_import_core__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__provider_analyzer__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__private_import_core__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__provider_analyzer__ = __webpack_require__(271);
 /* unused harmony export ComponentFactoryDependency */
 /* unused harmony export NgModuleCompileResult */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NgModuleCompiler; });
@@ -25435,7 +25227,7 @@ var InjectMethodVars = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__private_import_core__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__private_import_core__ = __webpack_require__(17);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NgModuleResolver; });
 /**
  * @license
@@ -25955,7 +25747,7 @@ function concatClassBuilderParts(builders) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__private_import_core__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__private_import_core__ = __webpack_require__(17);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return PipeResolver; });
 /**
  * @license
@@ -26045,13 +25837,9 @@ var ResourceLoader = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compile_metadata__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compile_metadata__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__output_output_ast__ = __webpack_require__(8);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shadow_css__ = __webpack_require__(431);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shadow_css__ = __webpack_require__(432);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__url_resolver__ = __webpack_require__(93);
 /* unused harmony export StylesCompileDependency */
 /* unused harmony export StylesCompileResult */
@@ -26416,19 +26204,19 @@ var ApplicationInitStatus = (function () {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_error_handler__ = __webpack_require__(294);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_error_handler__ = __webpack_require__(291);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_facade_collection__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_facade_errors__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_facade_errors__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_facade_lang__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_util_lang__ = __webpack_require__(194);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__application_init__ = __webpack_require__(179);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__application_tokens__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__application_tokens__ = __webpack_require__(124);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__console__ = __webpack_require__(182);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__di__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__linker_compiler__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__linker_component_factory__ = __webpack_require__(188);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__linker_component_factory_resolver__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__profile_profile__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__linker_component_factory_resolver__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__profile_profile__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__testability_testability__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__zone_ng_zone__ = __webpack_require__(195);
 /* harmony export (immutable) */ exports["k"] = enableProdMode;
@@ -27743,7 +27531,7 @@ function resolveForwardRef(type) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__metadata__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__metadata__ = __webpack_require__(128);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return OpaqueToken; });
 /**
  * @license
@@ -27896,8 +27684,8 @@ var _globalKeyRegistry = new KeyRegistry();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__reflection_reflection__ = __webpack_require__(189);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__type__ = __webpack_require__(193);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__forward_ref__ = __webpack_require__(183);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__metadata__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reflective_errors__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__metadata__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reflective_errors__ = __webpack_require__(290);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reflective_key__ = __webpack_require__(185);
 /* unused harmony export ReflectiveDependency */
 /* unused harmony export ResolvedReflectiveProvider_ */
@@ -28137,7 +27925,7 @@ function _createDependency(token, optional, lowerBoundVisibility, upperBoundVisi
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return EventEmitter; });
 /* unused harmony reexport Observable */
@@ -28256,9 +28044,9 @@ var EventEmitter = (function (_super) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_errors__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__element_ref__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__view_utils__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_errors__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__element_ref__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__view_utils__ = __webpack_require__(132);
 /* harmony export (binding) */ __webpack_require__.d(exports, "c", function() { return ComponentRef; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return ComponentRef_; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ComponentFactory; });
@@ -28426,8 +28214,8 @@ var ComponentFactory = (function () {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__reflection_capabilities__ = __webpack_require__(306);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reflector__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__reflection_capabilities__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reflector__ = __webpack_require__(304);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return reflector; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__reflector__["a"]; });
 /**
@@ -28476,7 +28264,7 @@ var ReflectorReader = (function () {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_errors__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_errors__ = __webpack_require__(27);
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return RenderComponentType; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "c", function() { return RenderDebugInfo; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "d", function() { return Renderer; });
@@ -29314,16 +29102,16 @@ var NgControlStatusGroup = (function (_super) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_async__ = __webpack_require__(84);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__abstract_form_group_directive__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__control_container__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__control_value_accessor__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ng_control__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ng_form__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ng_model_group__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ng_model_group__ = __webpack_require__(136);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__template_driven_errors__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__template_driven_errors__ = __webpack_require__(307);
 /* unused harmony export formControlBinding */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NgModel; });
 /**
@@ -29716,7 +29504,7 @@ var RangeValueAccessor = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__validators__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__control_value_accessor__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng_control__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reactive_errors__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reactive_errors__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared__ = __webpack_require__(58);
 /* unused harmony export formControlBinding */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormControlDirective; });
@@ -29872,7 +29660,7 @@ var FormControlDirective = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__control_container__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__control_value_accessor__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ng_control__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__reactive_errors__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__reactive_errors__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__form_group_directive__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__form_group_name__ = __webpack_require__(101);
@@ -30308,8 +30096,8 @@ var BrowserXhr = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__enums__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__headers__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__http_utils__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__url_search_params__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__http_utils__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__url_search_params__ = __webpack_require__(143);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return RequestOptions; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return BaseRequestOptions; });
 /**
@@ -30475,11 +30263,7 @@ var BaseRequestOptions = (function (_super) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__body__ = __webpack_require__(315);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__body__ = __webpack_require__(318);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return Response; });
 /**
  * @license
@@ -30538,11 +30322,7 @@ var Response = (function (_super) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__private_import_core__ = __webpack_require__(328);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__private_import_core__ = __webpack_require__(331);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AnimationDriver; });
 /**
  * @license
@@ -30578,13 +30358,8 @@ var AnimationDriver = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_collection__ = __webpack_require__(483);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__private_import_core__ = __webpack_require__(328);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_collection__ = __webpack_require__(484);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__private_import_core__ = __webpack_require__(331);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dom_adapter__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dom_renderer__ = __webpack_require__(209);
 /* unused harmony export inspectNativeElement */
@@ -30665,7 +30440,7 @@ var ELEMENT_PROBE_PROVIDERS_PROD_MODE = [{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animation_driver__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dom_tokens__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dom_tokens__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__events_event_manager__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_styles_host__ = __webpack_require__(211);
 /* harmony export (binding) */ __webpack_require__.d(exports, "c", function() { return NAMESPACE_URIS; });
@@ -31136,7 +30911,7 @@ var HammerGesturesPlugin = (function (_super) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dom_tokens__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dom_tokens__ = __webpack_require__(144);
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return SharedStylesHost; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DomSharedStylesHost; });
 /**
@@ -31657,54 +31432,11 @@ var TreeNode = (function () {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var http_1 = __webpack_require__(314);
-__webpack_require__(743);
-__webpack_require__(744);
-var DataService = (function () {
-    function DataService(http) {
-        this.http = http;
-        this.url = 'http://sbdcis.westeurope.cloudapp.azure.com/api/'; // URL to web API
-    }
-    DataService.prototype.getResult = function (discipline, sport, gender, phase, heat, run) {
-        return this.http.get(this.url + ("getResult/" + sport + "/" + discipline + "/" + gender + "/" + phase + "/" + heat + "/" + run));
-    };
-    DataService.prototype.getStartlist = function (discipline, sport, gender, phase, heat, run) {
-        return this.http.get(this.url + ("getStartlist/" + sport + "/" + discipline + "/" + gender + "/" + phase + "/" + heat + "/" + run));
-    };
-    DataService.prototype.getBracket = function (sport, discipline, gender) {
-        return this.http.get(this.url + ("getBracket/" + sport + "/" + discipline + "/" + gender));
-    };
-    DataService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
-    ], DataService);
-    return DataService;
-    var _a;
-}());
-exports.DataService = DataService;
-
-
-/***/ },
-/* 217 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
 // 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
 'use strict';
 var toObject = __webpack_require__(30)
   , toIndex  = __webpack_require__(75)
-  , toLength = __webpack_require__(22);
+  , toLength = __webpack_require__(21);
 module.exports = function fill(value /*, start = 0, end = @length */){
   var O      = toObject(this)
     , length = toLength(O.length)
@@ -31717,13 +31449,13 @@ module.exports = function fill(value /*, start = 0, end = @length */){
 };
 
 /***/ },
-/* 218 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
 // true  -> Array#includes
 var toIObject = __webpack_require__(35)
-  , toLength  = __webpack_require__(22)
+  , toLength  = __webpack_require__(21)
   , toIndex   = __webpack_require__(75);
 module.exports = function(IS_INCLUDES){
   return function($this, el, fromIndex){
@@ -31743,7 +31475,7 @@ module.exports = function(IS_INCLUDES){
 };
 
 /***/ },
-/* 219 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
@@ -31771,7 +31503,7 @@ module.exports = function(it){
 };
 
 /***/ },
-/* 220 */
+/* 219 */
 /***/ function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -31780,7 +31512,7 @@ module.exports = (
 ).split(',');
 
 /***/ },
-/* 221 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 var MATCH = __webpack_require__(13)('match');
@@ -31797,7 +31529,7 @@ module.exports = function(KEY){
 };
 
 /***/ },
-/* 222 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31816,11 +31548,11 @@ module.exports = function(){
 };
 
 /***/ },
-/* 223 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
-var isObject       = __webpack_require__(9)
-  , setPrototypeOf = __webpack_require__(231).set;
+var isObject       = __webpack_require__(10)
+  , setPrototypeOf = __webpack_require__(230).set;
 module.exports = function(that, target, C){
   var P, S = target.constructor;
   if(S !== C && typeof S == 'function' && (P = S.prototype) !== C.prototype && isObject(P) && setPrototypeOf){
@@ -31829,7 +31561,7 @@ module.exports = function(that, target, C){
 };
 
 /***/ },
-/* 224 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 // check on default Array iterator
@@ -31842,7 +31574,7 @@ module.exports = function(it){
 };
 
 /***/ },
-/* 225 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 7.2.2 IsArray(argument)
@@ -31852,11 +31584,11 @@ module.exports = Array.isArray || function isArray(arg){
 };
 
 /***/ },
-/* 226 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 7.2.8 IsRegExp(argument)
-var isObject = __webpack_require__(9)
+var isObject = __webpack_require__(10)
   , cof      = __webpack_require__(71)
   , MATCH    = __webpack_require__(13)('match');
 module.exports = function(it){
@@ -31865,22 +31597,18 @@ module.exports = function(it){
 };
 
 /***/ },
-/* 227 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var LIBRARY        = __webpack_require__(110)
   , $export        = __webpack_require__(1)
-  , redefine       = __webpack_require__(25)
+  , redefine       = __webpack_require__(24)
   , hide           = __webpack_require__(29)
-  , has            = __webpack_require__(24)
+  , has            = __webpack_require__(23)
   , Iterators      = __webpack_require__(88)
-<<<<<<< HEAD
   , $iterCreate    = __webpack_require__(351)
-=======
-  , $iterCreate    = __webpack_require__(353)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , setToStringTag = __webpack_require__(113)
   , getPrototypeOf = __webpack_require__(44)
   , ITERATOR       = __webpack_require__(13)('iterator')
@@ -31945,7 +31673,7 @@ module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED
 };
 
 /***/ },
-/* 228 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 var ITERATOR     = __webpack_require__(13)('iterator')
@@ -31971,7 +31699,7 @@ module.exports = function(exec, skipClosing){
 };
 
 /***/ },
-/* 229 */
+/* 228 */
 /***/ function(module, exports) {
 
 // 20.2.2.14 Math.expm1(x)
@@ -31986,7 +31714,7 @@ module.exports = (!$expm1
 } : $expm1;
 
 /***/ },
-/* 230 */
+/* 229 */
 /***/ function(module, exports) {
 
 // 20.2.2.28 Math.sign(x)
@@ -31995,12 +31723,12 @@ module.exports = Math.sign || function sign(x){
 };
 
 /***/ },
-/* 231 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 // Works with __proto__ only. Old v8 can't work with null proto objects.
 /* eslint-disable no-proto */
-var isObject = __webpack_require__(9)
+var isObject = __webpack_require__(10)
   , anObject = __webpack_require__(5);
 var check = function(O, proto){
   anObject(O);
@@ -32025,21 +31753,21 @@ module.exports = {
 };
 
 /***/ },
-/* 232 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
-var shared = __webpack_require__(152)('keys')
+var shared = __webpack_require__(151)('keys')
   , uid    = __webpack_require__(76);
 module.exports = function(key){
   return shared[key] || (shared[key] = uid(key));
 };
 
 /***/ },
-/* 233 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 // helper for String#{startsWith, endsWith, includes}
-var isRegExp = __webpack_require__(226)
+var isRegExp = __webpack_require__(225)
   , defined  = __webpack_require__(49);
 
 module.exports = function(that, searchString, NAME){
@@ -32048,31 +31776,31 @@ module.exports = function(that, searchString, NAME){
 };
 
 /***/ },
-/* 234 */
+/* 233 */
 /***/ function(module, exports) {
 
 module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
   '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
 
 /***/ },
-/* 235 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
-var global         = __webpack_require__(10)
-  , DESCRIPTORS    = __webpack_require__(19)
+var global         = __webpack_require__(11)
+  , DESCRIPTORS    = __webpack_require__(18)
   , LIBRARY        = __webpack_require__(110)
-  , $typed         = __webpack_require__(154)
+  , $typed         = __webpack_require__(153)
   , hide           = __webpack_require__(29)
   , redefineAll    = __webpack_require__(111)
   , fails          = __webpack_require__(7)
   , anInstance     = __webpack_require__(108)
   , toInteger      = __webpack_require__(63)
-  , toLength       = __webpack_require__(22)
+  , toLength       = __webpack_require__(21)
   , gOPN           = __webpack_require__(74).f
   , dP             = __webpack_require__(16).f
-  , arrayFill      = __webpack_require__(217)
+  , arrayFill      = __webpack_require__(216)
   , setToStringTag = __webpack_require__(113)
   , ARRAY_BUFFER   = 'ArrayBuffer'
   , DATA_VIEW      = 'DataView'
@@ -32334,10 +32062,10 @@ exports[ARRAY_BUFFER] = $ArrayBuffer;
 exports[DATA_VIEW] = $DataView;
 
 /***/ },
-/* 236 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
-var classof   = __webpack_require__(219)
+var classof   = __webpack_require__(218)
   , ITERATOR  = __webpack_require__(13)('iterator')
   , Iterators = __webpack_require__(88);
 module.exports = __webpack_require__(12).getIteratorMethod = function(it){
@@ -32347,12 +32075,12 @@ module.exports = __webpack_require__(12).getIteratorMethod = function(it){
 };
 
 /***/ },
-/* 237 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
-var $iterators    = __webpack_require__(155)
-  , redefine      = __webpack_require__(25)
-  , global        = __webpack_require__(10)
+var $iterators    = __webpack_require__(154)
+  , redefine      = __webpack_require__(24)
+  , global        = __webpack_require__(11)
   , hide          = __webpack_require__(29)
   , Iterators     = __webpack_require__(88)
   , wks           = __webpack_require__(13)
@@ -32374,63 +32102,7 @@ for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList'
 }
 
 /***/ },
-/* 238 */
-/***/ function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function() {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		var result = [];
-		for(var i = 0; i < this.length; i++) {
-			var item = this[i];
-			if(item[2]) {
-				result.push("@media " + item[2] + "{" + item[1] + "}");
-			} else {
-				result.push(item[1]);
-			}
-		}
-		return result.join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-
-/***/ },
-/* 239 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32441,11 +32113,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subject_1 = __webpack_require__(79);
-<<<<<<< HEAD
 var ObjectUnsubscribedError_1 = __webpack_require__(386);
-=======
-var ObjectUnsubscribedError_1 = __webpack_require__(387);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /**
  * @class BehaviorSubject<T>
  */
@@ -32489,7 +32157,7 @@ exports.BehaviorSubject = BehaviorSubject;
 //# sourceMappingURL=BehaviorSubject.js.map
 
 /***/ },
-/* 240 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32525,26 +32193,17 @@ exports.OuterSubscriber = OuterSubscriber;
 //# sourceMappingURL=OuterSubscriber.js.map
 
 /***/ },
-/* 241 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
-<<<<<<< HEAD
 var isArray_1 = __webpack_require__(247);
 var isObject_1 = __webpack_require__(748);
 var isFunction_1 = __webpack_require__(388);
 var tryCatch_1 = __webpack_require__(751);
 var errorObject_1 = __webpack_require__(387);
 var UnsubscriptionError_1 = __webpack_require__(747);
-=======
-var isArray_1 = __webpack_require__(250);
-var isObject_1 = __webpack_require__(754);
-var isFunction_1 = __webpack_require__(389);
-var tryCatch_1 = __webpack_require__(757);
-var errorObject_1 = __webpack_require__(388);
-var UnsubscriptionError_1 = __webpack_require__(753);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /**
  * Represents a disposable resource, such as the execution of an Observable. A
  * Subscription has one important method, `unsubscribe`, that takes no argument
@@ -32693,117 +32352,38 @@ exports.Subscription = Subscription;
 //# sourceMappingURL=Subscription.js.map
 
 /***/ },
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var FromObservable_1 = __webpack_require__(740);
+exports.from = FromObservable_1.FromObservable.create;
+//# sourceMappingURL=from.js.map
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var PromiseObservable_1 = __webpack_require__(379);
+exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
+//# sourceMappingURL=fromPromise.js.map
+
+/***/ },
 /* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
-<<<<<<< HEAD
-var FromObservable_1 = __webpack_require__(740);
-=======
-var FromObservable_1 = __webpack_require__(746);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
-exports.from = FromObservable_1.FromObservable.create;
-//# sourceMappingURL=from.js.map
-
-/***/ },
-/* 243 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-<<<<<<< HEAD
-var PromiseObservable_1 = __webpack_require__(379);
-=======
-var PromiseObservable_1 = __webpack_require__(381);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
-exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
-//# sourceMappingURL=fromPromise.js.map
-
-/***/ },
-/* 244 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var OuterSubscriber_1 = __webpack_require__(240);
-var subscribeToResult_1 = __webpack_require__(251);
-/**
- * Catches errors on the observable to be handled by returning a new observable or throwing an error.
- * @param {function} selector a function that takes as arguments `err`, which is the error, and `caught`, which
- *  is the source observable, in case you'd like to "retry" that observable by returning it again. Whatever observable
- *  is returned by the `selector` will be used to continue the observable chain.
- * @return {Observable} an observable that originates from either the source or the observable returned by the
- *  catch `selector` function.
- * @method catch
- * @owner Observable
- */
-function _catch(selector) {
-    var operator = new CatchOperator(selector);
-    var caught = this.lift(operator);
-    return (operator.caught = caught);
-}
-exports._catch = _catch;
-var CatchOperator = (function () {
-    function CatchOperator(selector) {
-        this.selector = selector;
-    }
-    CatchOperator.prototype.call = function (subscriber, source) {
-        return source._subscribe(new CatchSubscriber(subscriber, this.selector, this.caught));
-    };
-    return CatchOperator;
-}());
-/**
- * We need this JSDoc comment for affecting ESDoc.
- * @ignore
- * @extends {Ignored}
- */
-var CatchSubscriber = (function (_super) {
-    __extends(CatchSubscriber, _super);
-    function CatchSubscriber(destination, selector, caught) {
-        _super.call(this, destination);
-        this.selector = selector;
-        this.caught = caught;
-    }
-    // NOTE: overriding `error` instead of `_error` because we don't want
-    // to have this flag this subscriber as `isStopped`.
-    CatchSubscriber.prototype.error = function (err) {
-        if (!this.isStopped) {
-            var result = void 0;
-            try {
-                result = this.selector(err, this.caught);
-            }
-            catch (err) {
-                this.destination.error(err);
-                return;
-            }
-            this.unsubscribe();
-            this.destination.remove(this);
-            subscribeToResult_1.subscribeToResult(this, result);
-        }
-    };
-    return CatchSubscriber;
-}(OuterSubscriber_1.OuterSubscriber));
-//# sourceMappingURL=catch.js.map
-
-/***/ },
-/* 245 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var OuterSubscriber_1 = __webpack_require__(240);
-var subscribeToResult_1 = __webpack_require__(251);
+var OuterSubscriber_1 = __webpack_require__(238);
+var subscribeToResult_1 = __webpack_require__(248);
 /**
  * Converts a higher-order Observable into a first-order Observable which
  * concurrently delivers all values that are emitted on the inner Observables.
@@ -32909,7 +32489,7 @@ exports.MergeAllSubscriber = MergeAllSubscriber;
 //# sourceMappingURL=mergeAll.js.map
 
 /***/ },
-/* 246 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32947,7 +32527,7 @@ else {
 //# sourceMappingURL=iterator.js.map
 
 /***/ },
-/* 247 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32975,7 +32555,7 @@ exports.$$observable = getSymbolObservable(root_1.root);
 //# sourceMappingURL=observable.js.map
 
 /***/ },
-/* 248 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32987,7 +32567,7 @@ exports.$$rxSubscriber = (typeof Symbol === 'function' && typeof Symbol.for === 
 //# sourceMappingURL=rxSubscriber.js.map
 
 /***/ },
-/* 249 */
+/* 246 */
 /***/ function(module, exports) {
 
 "use strict";
@@ -33021,7 +32601,7 @@ exports.EmptyError = EmptyError;
 //# sourceMappingURL=EmptyError.js.map
 
 /***/ },
-/* 250 */
+/* 247 */
 /***/ function(module, exports) {
 
 "use strict";
@@ -33030,27 +32610,18 @@ exports.isArray = Array.isArray || (function (x) { return x && typeof x.length =
 //# sourceMappingURL=isArray.js.map
 
 /***/ },
-/* 251 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
 var root_1 = __webpack_require__(65);
-<<<<<<< HEAD
 var isArray_1 = __webpack_require__(247);
 var isPromise_1 = __webpack_require__(389);
 var Observable_1 = __webpack_require__(19);
 var iterator_1 = __webpack_require__(243);
 var InnerSubscriber_1 = __webpack_require__(735);
 var observable_1 = __webpack_require__(244);
-=======
-var isArray_1 = __webpack_require__(250);
-var isPromise_1 = __webpack_require__(390);
-var Observable_1 = __webpack_require__(17);
-var iterator_1 = __webpack_require__(246);
-var InnerSubscriber_1 = __webpack_require__(739);
-var observable_1 = __webpack_require__(247);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 function subscribeToResult(outerSubscriber, result, outerValue, outerIndex) {
     var destination = new InnerSubscriber_1.InnerSubscriber(outerSubscriber, outerValue, outerIndex);
     if (destination.closed) {
@@ -33119,11 +32690,10 @@ exports.subscribeToResult = subscribeToResult;
 //# sourceMappingURL=subscribeToResult.js.map
 
 /***/ },
-/* 252 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ng_class__ = __webpack_require__(395);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ng_for__ = __webpack_require__(396);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_if__ = __webpack_require__(397);
@@ -33131,15 +32701,6 @@ exports.subscribeToResult = subscribeToResult;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng_style__ = __webpack_require__(399);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ng_switch__ = __webpack_require__(250);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ng_template_outlet__ = __webpack_require__(400);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ng_class__ = __webpack_require__(396);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ng_for__ = __webpack_require__(397);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_if__ = __webpack_require__(398);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng_plural__ = __webpack_require__(399);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng_style__ = __webpack_require__(400);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ng_switch__ = __webpack_require__(253);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ng_template_outlet__ = __webpack_require__(401);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return COMMON_DIRECTIVES; });
 /**
  * @license
@@ -33185,7 +32746,7 @@ var COMMON_DIRECTIVES = [
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 253 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33410,7 +32971,7 @@ var NgSwitchDefault = (function () {
 //# sourceMappingURL=ng_switch.js.map
 
 /***/ },
-/* 254 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33609,11 +33170,10 @@ var DateFormatter = (function () {
 //# sourceMappingURL=intl.js.map
 
 /***/ },
-/* 255 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__async_pipe__ = __webpack_require__(406);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__date_pipe__ = __webpack_require__(407);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__i18n_plural_pipe__ = __webpack_require__(408);
@@ -33623,17 +33183,6 @@ var DateFormatter = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__number_pipe__ = __webpack_require__(412);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__slice_pipe__ = __webpack_require__(413);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__uppercase_pipe__ = __webpack_require__(414);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__async_pipe__ = __webpack_require__(407);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__date_pipe__ = __webpack_require__(408);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__i18n_plural_pipe__ = __webpack_require__(409);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__i18n_select_pipe__ = __webpack_require__(410);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__json_pipe__ = __webpack_require__(411);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__lowercase_pipe__ = __webpack_require__(412);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__number_pipe__ = __webpack_require__(413);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__slice_pipe__ = __webpack_require__(414);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__uppercase_pipe__ = __webpack_require__(415);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return COMMON_PIPES; });
 /**
  * @license
@@ -33682,7 +33231,7 @@ var COMMON_PIPES = [
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 256 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33837,15 +33386,15 @@ var AnimationSequenceAst = (function (_super) {
 //# sourceMappingURL=animation_ast.js.map
 
 /***/ },
-/* 257 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_lang__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__identifiers__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__output_output_ast__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__private_import_core__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__animation_ast__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__private_import_core__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__animation_ast__ = __webpack_require__(253);
 /* unused harmony export AnimationEntryCompileResult */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AnimationCompiler; });
 /**
@@ -34158,7 +33707,7 @@ function _getStylesArray(obj) {
 //# sourceMappingURL=animation_compiler.js.map
 
 /***/ },
-/* 258 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34213,7 +33762,7 @@ function assertInterpolationSymbols(identifier, value) {
 //# sourceMappingURL=assertions.js.map
 
 /***/ },
-/* 259 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34267,7 +33816,7 @@ function createBindFieldExpr(bindingId) {
 //# sourceMappingURL=binding_util.js.map
 
 /***/ },
-/* 260 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34275,7 +33824,7 @@ function createBindFieldExpr(bindingId) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__identifiers__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__output_output_ast__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__private_import_core__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__private_import_core__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__template_parser_template_ast__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__identifier_util__ = __webpack_require__(37);
 /* harmony export (immutable) */ exports["b"] = writeToRenderer;
@@ -34379,20 +33928,15 @@ function triggerAnimation(view, componentView, boundProp, eventListener, renderE
 //# sourceMappingURL=render_util.js.map
 
 /***/ },
-/* 261 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ml_parser_ast__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ml_parser_parser__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__digest__ = __webpack_require__(165);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__i18n_ast__ = __webpack_require__(259);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__i18n_parser__ = __webpack_require__(418);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__i18n_ast__ = __webpack_require__(262);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__i18n_parser__ = __webpack_require__(419);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parse_util__ = __webpack_require__(166);
 /* harmony export (immutable) */ exports["a"] = extractMessages;
 /* harmony export (immutable) */ exports["b"] = mergeTranslations;
@@ -34812,7 +34356,7 @@ function _splitMeaningAndDesc(i18n) {
 //# sourceMappingURL=extractor_merger.js.map
 
 /***/ },
-/* 262 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34910,27 +34454,18 @@ var IcuPlaceholder = (function () {
 //# sourceMappingURL=i18n_ast.js.map
 
 /***/ },
-/* 263 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ml_parser_interpolation_config__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ml_parser_parser__ = __webpack_require__(82);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__extractor_merger__ = __webpack_require__(258);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__message_bundle__ = __webpack_require__(262);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serializers_xliff__ = __webpack_require__(264);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__serializers_xmb__ = __webpack_require__(265);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__serializers_xtb__ = __webpack_require__(267);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__translation_bundle__ = __webpack_require__(420);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__extractor_merger__ = __webpack_require__(261);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__message_bundle__ = __webpack_require__(265);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serializers_xliff__ = __webpack_require__(267);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__serializers_xmb__ = __webpack_require__(268);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__serializers_xtb__ = __webpack_require__(270);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__translation_bundle__ = __webpack_require__(421);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return I18NHtmlParser; });
 /**
  * @license
@@ -34992,15 +34527,15 @@ var I18NHtmlParser = (function () {
 //# sourceMappingURL=i18n_html_parser.js.map
 
 /***/ },
-/* 264 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__i18n_html_parser__ = __webpack_require__(263);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__message_bundle__ = __webpack_require__(265);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__serializers_xliff__ = __webpack_require__(267);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__serializers_xmb__ = __webpack_require__(268);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serializers_xtb__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__i18n_html_parser__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__message_bundle__ = __webpack_require__(262);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__serializers_xliff__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__serializers_xmb__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__serializers_xtb__ = __webpack_require__(267);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__i18n_html_parser__["a"]; });
 /* unused harmony reexport MessageBundle */
 /* unused harmony reexport Xliff */
@@ -35021,12 +34556,12 @@ var I18NHtmlParser = (function () {
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 265 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__digest__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__extractor_merger__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__extractor_merger__ = __webpack_require__(258);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return MessageBundle; });
 /**
  * @license
@@ -35066,7 +34601,7 @@ var MessageBundle = (function () {
 //# sourceMappingURL=message_bundle.js.map
 
 /***/ },
-/* 266 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35100,15 +34635,15 @@ function extractPlaceholderToIds(messageBundle) {
 //# sourceMappingURL=serializer.js.map
 
 /***/ },
-/* 267 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ml_parser_ast__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ml_parser_xml_parser__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ml_parser_xml_parser__ = __webpack_require__(268);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__parse_util__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__serializer__ = __webpack_require__(266);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__xml_helper__ = __webpack_require__(269);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__serializer__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__xml_helper__ = __webpack_require__(266);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return Xliff; });
 /**
  * @license
@@ -35353,11 +34888,11 @@ function getCtypeForTag(tag) {
 //# sourceMappingURL=xliff.js.map
 
 /***/ },
-/* 268 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__xml_helper__ = __webpack_require__(269);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__xml_helper__ = __webpack_require__(266);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return Xmb; });
 /**
  * @license
@@ -35450,7 +34985,7 @@ var _Visitor = (function () {
 //# sourceMappingURL=xmb.js.map
 
 /***/ },
-/* 269 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35565,14 +35100,14 @@ function _escapeXml(text) {
 //# sourceMappingURL=xml_helper.js.map
 
 /***/ },
-/* 270 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ml_parser_ast__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ml_parser_xml_parser__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ml_parser_xml_parser__ = __webpack_require__(268);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__parse_util__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__serializer__ = __webpack_require__(266);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__serializer__ = __webpack_require__(263);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return Xtb; });
 /**
  * @license
@@ -35736,16 +35271,12 @@ var _Visitor = (function () {
 //# sourceMappingURL=xtb.js.map
 
 /***/ },
-/* 271 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__parser__ = __webpack_require__(82);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__xml_tags__ = __webpack_require__(424);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__xml_tags__ = __webpack_require__(425);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return XmlParser; });
 /* unused harmony reexport ParseTreeResult */
 /* unused harmony reexport TreeError */
@@ -35778,7 +35309,7 @@ var XmlParser = (function (_super) {
 //# sourceMappingURL=xml_parser.js.map
 
 /***/ },
-/* 272 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36121,11 +35652,11 @@ var _TsEmitterVisitor = (function (_super) {
 //# sourceMappingURL=ts_emitter.js.map
 
 /***/ },
-/* 273 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compile_metadata__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compile_metadata__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__output_ast__ = __webpack_require__(8);
 /* harmony export (immutable) */ exports["a"] = convertValueToOutputAst;
@@ -36173,11 +35704,11 @@ var _ValueOutputAstTransformer = (function () {
 //# sourceMappingURL=value_util.js.map
 
 /***/ },
-/* 274 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compile_metadata__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compile_metadata__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__identifiers__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__parse_util__ = __webpack_require__(31);
@@ -36663,31 +36194,26 @@ function _addQueryToTokenMap(map, query) {
 //# sourceMappingURL=provider_analyzer.js.map
 
 /***/ },
-/* 275 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animation_animation_compiler__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animation_animation_compiler__ = __webpack_require__(254);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animation_animation_parser__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__compile_metadata__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__compile_metadata__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__config__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directive_wrapper_compiler__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__facade_lang__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__metadata_resolver__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ng_module_compiler__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__output_output_ast__ = __webpack_require__(8);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__output_output_interpreter__ = __webpack_require__(427);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__output_output_jit__ = __webpack_require__(428);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__output_output_interpreter__ = __webpack_require__(428);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__output_output_jit__ = __webpack_require__(429);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__style_compiler__ = __webpack_require__(175);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__template_parser_template_parser__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__template_parser_template_parser__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__util__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__view_compiler_view_compiler__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__view_compiler_view_compiler__ = __webpack_require__(123);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return RuntimeCompiler; });
 /**
  * @license
@@ -37082,17 +36608,13 @@ var ModuleBoundCompiler = (function () {
 //# sourceMappingURL=runtime_compiler.js.map
 
 /***/ },
-/* 276 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(46);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dom_security_schema__ = __webpack_require__(430);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dom_security_schema__ = __webpack_require__(431);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__element_schema_registry__ = __webpack_require__(57);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DomElementSchemaRegistry; });
 /**
@@ -37519,7 +37041,7 @@ function _isPixelDimensionStyle(prop) {
 //# sourceMappingURL=dom_element_schema_registry.js.map
 
 /***/ },
-/* 277 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37574,7 +37096,7 @@ var _urlWithSchemaRe = /^([^:/?#]+):/;
 //# sourceMappingURL=style_url_resolver.js.map
 
 /***/ },
-/* 278 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37583,7 +37105,7 @@ var _urlWithSchemaRe = /^([^:/?#]+):/;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ml_parser_tags__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse_util__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__selector__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__selector__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__util__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__template_ast__ = __webpack_require__(39);
 /* unused harmony export BoundPropertyType */
@@ -37977,7 +37499,7 @@ function calcPossibleSecurityContexts(registry, selector, propName, isAttribute)
 //# sourceMappingURL=binding_parser.js.map
 
 /***/ },
-/* 279 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38073,21 +37595,21 @@ function normalizeNgContentSelect(selectAttr) {
 //# sourceMappingURL=template_preparser.js.map
 
 /***/ },
-/* 280 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compile_metadata__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compile_metadata__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compiler_util_identifier_util__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directive_wrapper_compiler__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_lang__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__identifiers__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__output_output_ast__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__output_value_util__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__output_value_util__ = __webpack_require__(270);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__template_parser_template_ast__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__compile_method__ = __webpack_require__(176);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__compile_query__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__constants__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__compile_query__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__constants__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__deps__ = __webpack_require__(177);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__util__ = __webpack_require__(68);
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return CompileNode; });
@@ -38485,7 +38007,7 @@ var _QueryWithRead = (function () {
 //# sourceMappingURL=compile_element.js.map
 
 /***/ },
-/* 281 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38615,23 +38137,18 @@ function addQueryToTokenMap(map, query) {
 //# sourceMappingURL=compile_query.js.map
 
 /***/ },
-/* 282 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compile_metadata__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compile_metadata__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compiler_util_expression_converter__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__output_output_ast__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__private_import_core__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__private_import_core__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__compile_method__ = __webpack_require__(176);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__compile_pipe__ = __webpack_require__(432);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__compile_query__ = __webpack_require__(278);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__compile_pipe__ = __webpack_require__(433);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__compile_query__ = __webpack_require__(281);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__util__ = __webpack_require__(68);
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return CompileViewRootNodeType; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return CompileViewRootNode; });
@@ -38772,7 +38289,7 @@ function getViewType(component, embeddedTemplateIndex) {
 //# sourceMappingURL=compile_view.js.map
 
 /***/ },
-/* 283 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38794,7 +38311,7 @@ var EMPTY_STATE = 'void';
 //# sourceMappingURL=animation_constants.js.map
 
 /***/ },
-/* 284 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38896,7 +38413,7 @@ var AnimationGroupPlayer = (function () {
 //# sourceMappingURL=animation_group_player.js.map
 
 /***/ },
-/* 285 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38933,7 +38450,7 @@ function _triggerAnimations() {
 //# sourceMappingURL=animation_queue.js.map
 
 /***/ },
-/* 286 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39043,7 +38560,7 @@ var AnimationSequencePlayer = (function () {
 //# sourceMappingURL=animation_sequence_player.js.map
 
 /***/ },
-/* 287 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39099,7 +38616,7 @@ var AnimationTransitionEvent = (function () {
 //# sourceMappingURL=animation_transition_event.js.map
 
 /***/ },
-/* 288 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39798,7 +39315,7 @@ function trigger(name, animation) {
 //# sourceMappingURL=metadata.js.map
 
 /***/ },
-/* 289 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40112,7 +39629,7 @@ var KeyValueChangeRecord = (function () {
 //# sourceMappingURL=default_keyvalue_differ.js.map
 
 /***/ },
-/* 290 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40195,7 +39712,7 @@ var IterableDiffers = (function () {
 //# sourceMappingURL=iterable_differs.js.map
 
 /***/ },
-/* 291 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40278,7 +39795,7 @@ var KeyValueDiffers = (function () {
 //# sourceMappingURL=keyvalue_differs.js.map
 
 /***/ },
-/* 292 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40479,11 +39996,11 @@ function removeDebugNodeFromIndex(node) {
 //# sourceMappingURL=debug_node.js.map
 
 /***/ },
-/* 293 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_errors__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_errors__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(6);
 /* harmony export (binding) */ __webpack_require__.d(exports, "f", function() { return AbstractProviderError; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "h", function() { return NoProviderError; });
@@ -40765,7 +40282,7 @@ var MixingMultiProvidersWithRegularProvidersError = (function (_super) {
 //# sourceMappingURL=reflective_errors.js.map
 
 /***/ },
-/* 294 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40872,7 +40389,7 @@ var ErrorHandler = (function () {
 //# sourceMappingURL=error_handler.js.map
 
 /***/ },
-/* 295 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40903,12 +40420,12 @@ var TRANSLATIONS_FORMAT = new __WEBPACK_IMPORTED_MODULE_0__di_opaque_token__["a"
 //# sourceMappingURL=tokens.js.map
 
 /***/ },
-/* 296 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_lang__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__view_type__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__view_type__ = __webpack_require__(131);
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return StaticNodeDebugInfo; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DebugContext; });
 /**
@@ -41030,12 +40547,12 @@ var DebugContext = (function () {
 //# sourceMappingURL=debug_context.js.map
 
 /***/ },
-/* 297 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__change_detection_change_detection_util__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_errors__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__change_detection_change_detection_util__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_errors__ = __webpack_require__(27);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ExpressionChangedAfterItHasBeenCheckedError; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "c", function() { return ViewWrappedError; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return ViewDestroyedError; });
@@ -41130,14 +40647,14 @@ var ViewDestroyedError = (function (_super) {
 //# sourceMappingURL=errors.js.map
 
 /***/ },
-/* 298 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__di_injector__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_errors__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_errors__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__component_factory_resolver__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__component_factory_resolver__ = __webpack_require__(129);
 /* harmony export (binding) */ __webpack_require__.d(exports, "c", function() { return NgModuleRef; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return NgModuleFactory; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NgModuleInjector; });
@@ -41261,7 +40778,7 @@ var NgModuleInjector = (function (_super) {
 //# sourceMappingURL=ng_module_factory.js.map
 
 /***/ },
-/* 299 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41315,11 +40832,11 @@ function getModuleFactory(id) {
 //# sourceMappingURL=ng_module_factory_loader.js.map
 
 /***/ },
-/* 300 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__element_ref__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__element_ref__ = __webpack_require__(130);
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return TemplateRef; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return TemplateRef_; });
 /**
@@ -41393,13 +40910,13 @@ var TemplateRef_ = (function (_super) {
 //# sourceMappingURL=template_ref.js.map
 
 /***/ },
-/* 301 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_errors__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_errors__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile_profile__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile_profile__ = __webpack_require__(133);
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return ViewContainerRef; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ViewContainerRef_; });
 /**
@@ -41569,13 +41086,13 @@ var ViewContainerRef_ = (function () {
 //# sourceMappingURL=view_container_ref.js.map
 
 /***/ },
-/* 302 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__animation_animation_queue__ = __webpack_require__(285);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__change_detection_constants__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_errors__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__animation_animation_queue__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__change_detection_constants__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_errors__ = __webpack_require__(27);
 /* harmony export (binding) */ __webpack_require__.d(exports, "c", function() { return ViewRef; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return EmbeddedViewRef; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ViewRef_; });
@@ -41728,23 +41245,15 @@ var ViewRef_ = (function () {
 //# sourceMappingURL=view_ref.js.map
 
 /***/ },
-/* 303 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__metadata_di__ = __webpack_require__(457);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__metadata_directives__ = __webpack_require__(458);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__metadata_lifecycle_hooks__ = __webpack_require__(301);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__metadata_ng_module__ = __webpack_require__(459);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__metadata_view__ = __webpack_require__(302);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__metadata_di__ = __webpack_require__(458);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__metadata_directives__ = __webpack_require__(459);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__metadata_lifecycle_hooks__ = __webpack_require__(304);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__metadata_ng_module__ = __webpack_require__(460);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__metadata_view__ = __webpack_require__(305);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "l", function() { return __WEBPACK_IMPORTED_MODULE_0__metadata_di__["c"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "o", function() { return __WEBPACK_IMPORTED_MODULE_0__metadata_di__["d"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "p", function() { return __WEBPACK_IMPORTED_MODULE_0__metadata_di__["e"]; });
@@ -41786,7 +41295,7 @@ var ViewRef_ = (function () {
 //# sourceMappingURL=metadata.js.map
 
 /***/ },
-/* 304 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41975,7 +41484,7 @@ var AfterViewChecked = (function () {
 //# sourceMappingURL=lifecycle_hooks.js.map
 
 /***/ },
-/* 305 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42058,7 +41567,7 @@ var ViewMetadata = (function () {
 //# sourceMappingURL=view.js.map
 
 /***/ },
-/* 306 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42227,7 +41736,7 @@ function convertTsickleDecoratorIntoMetadata(decoratorInvocations) {
 //# sourceMappingURL=reflection_capabilities.js.map
 
 /***/ },
-/* 307 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42285,7 +41794,7 @@ var Reflector = (function (_super) {
 //# sourceMappingURL=reflector.js.map
 
 /***/ },
-/* 308 */
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42329,7 +41838,7 @@ var Sanitizer = (function () {
 //# sourceMappingURL=security.js.map
 
 /***/ },
-/* 309 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42351,11 +41860,11 @@ var FormErrorExamples = {
 //# sourceMappingURL=error_examples.js.map
 
 /***/ },
-/* 310 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__error_examples__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__error_examples__ = __webpack_require__(306);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return TemplateDrivenErrors; });
 /**
  * @license
@@ -42385,7 +41894,7 @@ var TemplateDrivenErrors = (function () {
 //# sourceMappingURL=template_driven_errors.js.map
 
 /***/ },
-/* 311 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42511,13 +42020,13 @@ function iterateListLike(obj, fn) {
 //# sourceMappingURL=collection.js.map
 
 /***/ },
-/* 312 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model__ = __webpack_require__(140);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormBuilder; });
 /**
  * @license
@@ -42624,7 +42133,7 @@ var FormBuilder = (function () {
 //# sourceMappingURL=form_builder.js.map
 
 /***/ },
-/* 313 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42642,54 +42151,7 @@ var isPromise = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].
 //# sourceMappingURL=private_import_core.js.map
 
 /***/ },
-/* 314 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index__ = __webpack_require__(471);
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "BrowserXhr", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["a"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "JSONPBackend", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["b"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "JSONPConnection", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["c"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "CookieXSRFStrategy", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["d"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "XHRBackend", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["e"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "XHRConnection", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["f"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "BaseRequestOptions", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["g"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "RequestOptions", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["h"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "BaseResponseOptions", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["i"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "ResponseOptions", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["j"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "ReadyState", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["k"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "RequestMethod", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["l"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "ResponseContentType", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["m"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "ResponseType", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["n"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "Headers", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["o"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "Http", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["p"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "Jsonp", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["q"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "HttpModule", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["r"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "JsonpModule", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["s"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "Connection", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["t"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "ConnectionBackend", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["u"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "XSRFStrategy", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["v"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "Request", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["w"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "Response", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["x"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "QueryEncoder", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["y"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "URLSearchParams", function() { return __WEBPACK_IMPORTED_MODULE_0__src_index__["z"]; });
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-/**
- * @module
- * @description
- * Entry point for all public APIs of the http package.
- */
-
-//# sourceMappingURL=index.js.map
-
-/***/ },
-/* 315 */
+/* 311 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42799,26 +42261,18 @@ var BrowserJsonp = (function () {
 //# sourceMappingURL=browser_jsonp.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 313 */
-=======
-/* 316 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_response_options__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_response_options__ = __webpack_require__(141);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__enums__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__interfaces__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__static_response__ = __webpack_require__(206);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__browser_jsonp__ = __webpack_require__(312);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__browser_jsonp__ = __webpack_require__(315);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "c", function() { return JSONPConnection; });
 /* unused harmony export JSONPConnection_ */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return JSONPBackend; });
@@ -42968,22 +42422,18 @@ var JSONPBackend_ = (function (_super) {
 //# sourceMappingURL=jsonp_backend.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 314 */
-=======
-/* 317 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_response_options__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_response_options__ = __webpack_require__(141);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__enums__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__headers__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__http_utils__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__http_utils__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__interfaces__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__static_response__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__browser_xhr__ = __webpack_require__(204);
@@ -43218,16 +42668,12 @@ var XHRBackend = (function () {
 //# sourceMappingURL=xhr_backend.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 315 */
-=======
-/* 318 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__http_utils__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__url_search_params__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__http_utils__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__url_search_params__ = __webpack_require__(143);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return Body; });
 /**
  * @license
@@ -43301,11 +42747,7 @@ var Body = (function () {
 //# sourceMappingURL=body.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 316 */
-=======
-/* 319 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43313,11 +42755,7 @@ var Body = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__base_request_options__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__enums__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__interfaces__ = __webpack_require__(103);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__static_request__ = __webpack_require__(317);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__static_request__ = __webpack_require__(320);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return Http; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return Jsonp; });
 /**
@@ -43544,23 +42982,15 @@ var Jsonp = (function (_super) {
 //# sourceMappingURL=http.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__body__ = __webpack_require__(315);
-=======
-/* 320 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__body__ = __webpack_require__(318);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__enums__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__headers__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__http_utils__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__url_search_params__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__http_utils__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__url_search_params__ = __webpack_require__(143);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return Request; });
 /**
  * @license
@@ -43724,23 +43154,14 @@ var ArrayBuffer = w['ArrayBuffer'] || noop;
 //# sourceMappingURL=static_request.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 318 */
-=======
-/* 321 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_compiler__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_compiler__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__private_import_platform_browser__ = __webpack_require__(474);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__resource_loader_resource_loader_impl__ = __webpack_require__(319);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__private_import_platform_browser__ = __webpack_require__(475);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__resource_loader_resource_loader_impl__ = __webpack_require__(322);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return INTERNAL_BROWSER_DYNAMIC_PLATFORM_PROVIDERS; });
 /**
  * @license
@@ -43764,15 +43185,11 @@ var INTERNAL_BROWSER_DYNAMIC_PLATFORM_PROVIDERS = [
 //# sourceMappingURL=platform_providers.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 319 */
-=======
-/* 322 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_compiler__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_compiler__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ResourceLoaderImpl; });
 var __extends = (this && this.__extends) || function (d, b) {
@@ -43831,18 +43248,13 @@ var ResourceLoaderImpl = (function (_super) {
 //# sourceMappingURL=resource_loader_impl.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 320 */
-=======
-/* 323 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_dom_animation_driver__ = __webpack_require__(207);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_dom_web_animations_driver__ = __webpack_require__(327);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__browser_browser_adapter__ = __webpack_require__(321);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__browser_location_browser_platform_location__ = __webpack_require__(322);
@@ -43858,23 +43270,6 @@ var ResourceLoaderImpl = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__dom_events_key_events__ = __webpack_require__(326);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__dom_shared_styles_host__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__security_dom_sanitization_service__ = __webpack_require__(329);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_dom_web_animations_driver__ = __webpack_require__(330);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__browser_browser_adapter__ = __webpack_require__(324);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__browser_location_browser_platform_location__ = __webpack_require__(325);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__browser_testability__ = __webpack_require__(326);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__browser_title__ = __webpack_require__(327);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__dom_debug_ng_probe__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__dom_dom_adapter__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__dom_dom_renderer__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__dom_dom_tokens__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__dom_events_dom_events__ = __webpack_require__(328);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__dom_events_event_manager__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__dom_events_hammer_gestures__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__dom_events_key_events__ = __webpack_require__(329);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__dom_shared_styles_host__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__security_dom_sanitization_service__ = __webpack_require__(332);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return INTERNAL_BROWSER_PLATFORM_PROVIDERS; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "c", function() { return BROWSER_SANITIZATION_PROVIDERS; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "e", function() { return platformBrowser; });
@@ -43980,21 +43375,13 @@ var BrowserModule = (function () {
 //# sourceMappingURL=browser.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 321 */
-=======
-/* 324 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dom_dom_adapter__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(41);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__generic_browser_adapter__ = __webpack_require__(476);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__generic_browser_adapter__ = __webpack_require__(477);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return BrowserDomAdapter; });
 /* unused harmony export parseCookieValue */
 /**
@@ -44417,22 +43804,14 @@ function parseCookieValue(cookieStr, name) {
 //# sourceMappingURL=browser_adapter.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 322 */
-=======
-/* 325 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dom_dom_adapter__ = __webpack_require__(20);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__history__ = __webpack_require__(477);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__history__ = __webpack_require__(478);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return BrowserPlatformLocation; });
 /**
  * @license
@@ -44523,11 +43902,7 @@ var BrowserPlatformLocation = (function (_super) {
 //# sourceMappingURL=browser_platform_location.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 323 */
-=======
-/* 326 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44601,11 +43976,7 @@ var BrowserGetTestability = (function () {
 //# sourceMappingURL=testability.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 324 */
-=======
-/* 327 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44647,11 +44018,7 @@ var Title = (function () {
 //# sourceMappingURL=title.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 325 */
-=======
-/* 328 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44694,11 +44061,7 @@ var DomEventsPlugin = (function (_super) {
 //# sourceMappingURL=dom_events.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 326 */
-=======
-/* 329 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44817,20 +44180,12 @@ var KeyEventsPlugin = (function (_super) {
 //# sourceMappingURL=key_events.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 327 */
-=======
-/* 330 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_lang__ = __webpack_require__(41);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__web_animations_player__ = __webpack_require__(481);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__web_animations_player__ = __webpack_require__(482);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return WebAnimationsDriver; });
 /**
  * @license
@@ -44900,11 +44255,7 @@ function filterWebAnimationPlayerFn(player) {
 //# sourceMappingURL=web_animations_driver.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 328 */
-=======
-/* 331 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44948,22 +44299,13 @@ var collectAndResolveStyles = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__cor
 //# sourceMappingURL=private_import_core.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 329 */
-=======
-/* 332 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__html_sanitizer__ = __webpack_require__(486);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__style_sanitizer__ = __webpack_require__(487);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__html_sanitizer__ = __webpack_require__(487);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__style_sanitizer__ = __webpack_require__(488);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__url_sanitizer__ = __webpack_require__(212);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DomSanitizer; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return DomSanitizerImpl; });
@@ -45138,11 +44480,7 @@ var SafeResourceUrlImpl = (function (_super) {
 //# sourceMappingURL=dom_sanitization_service.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 330 */
-=======
-/* 333 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45306,16 +44644,12 @@ var RouterLinkActive = (function () {
 //# sourceMappingURL=router_link_active.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 331 */
-=======
-/* 334 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router_outlet_map__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router_outlet_map__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared__ = __webpack_require__(42);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return RouterOutlet; });
 /**
@@ -45438,18 +44772,13 @@ var RouterOutlet = (function () {
 //# sourceMappingURL=router_outlet.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 332 */
-=======
-/* 335 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_router_link__ = __webpack_require__(213);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_router_link_active__ = __webpack_require__(330);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_router_outlet__ = __webpack_require__(331);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__private_import_platform_browser__ = __webpack_require__(494);
@@ -45457,15 +44786,6 @@ var RouterOutlet = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__router_config_loader__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__router_outlet_map__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__router_preloader__ = __webpack_require__(333);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_router_link_active__ = __webpack_require__(333);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_router_outlet__ = __webpack_require__(334);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__private_import_platform_browser__ = __webpack_require__(495);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__router__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__router_config_loader__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__router_outlet_map__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__router_preloader__ = __webpack_require__(336);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__router_state__ = __webpack_require__(87);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__url_handling_strategy__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__url_tree__ = __webpack_require__(70);
@@ -45733,36 +45053,24 @@ function provideRouterInitializer() {
 //# sourceMappingURL=router_module.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 333 */
-=======
-/* 336 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_from__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_from__ = __webpack_require__(240);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_from___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_from__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of__);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_catch__ = __webpack_require__(381);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_concatMap__ = __webpack_require__(383);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_concatMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_operator_concatMap__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_filter__ = __webpack_require__(742);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_catch__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_concatMap__ = __webpack_require__(384);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_concatMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_operator_concatMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_filter__ = __webpack_require__(748);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_operator_filter__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_mergeAll__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_mergeAll__ = __webpack_require__(242);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_mergeAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_operator_mergeAll__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_mergeMap__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_mergeMap__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_mergeMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_operator_mergeMap__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__router__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__router_config_loader__ = __webpack_require__(106);
@@ -45903,17 +45211,12 @@ var RouterPreloader = (function () {
 //# sourceMappingURL=router_preloader.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 334 */
-=======
-/* 337 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
 var core_1 = __webpack_require__(0);
-<<<<<<< HEAD
 var ChartPointComponent = (function () {
     function ChartPointComponent() {
         this.click = new core_1.EventEmitter();
@@ -45943,193 +45246,6 @@ var ChartPointComponent = (function () {
 }());
 exports.ChartPointComponent = ChartPointComponent;
 //# sourceMappingURL=ChartPointComponent.js.map
-=======
-var router_1 = __webpack_require__(21);
-var data_service_1 = __webpack_require__(216);
-var BracketComponent = (function () {
-    function BracketComponent(route, router, dataService) {
-        var _this = this;
-        this.route = route;
-        this.router = router;
-        this.dataService = dataService;
-        this.fixMargin = 63;
-        this.margin = 63;
-        this.marginSemi = 0;
-        this.data = [[
-                {
-                    Position: "1",
-                    Result: "3",
-                    Color: "RED",
-                    Code: "9480252",
-                    Name: "Phillipp",
-                    Surname: "KIYANITSYN",
-                    Fullname: "KIYANITSYN Phillipp",
-                    NOC: "RUS",
-                    Birthdate: "1994-07-12",
-                    Bib: "16 G"
-                },
-                {
-                    Position: "2",
-                    Result: "1",
-                    Color: "GREEN",
-                    Code: "9150142",
-                    Name: "Daniel",
-                    Surname: "SYKORA",
-                    Fullname: "SYKORA Daniel",
-                    NOC: "CZE",
-                    Birthdate: "1994-07-08",
-                    Bib: "1 R"
-                },
-                {
-                    Position: "3",
-                    Result: "4",
-                    Color: "BLUE",
-                    Code: "9150143",
-                    Name: "Mark",
-                    Surname: "BOHUNEK",
-                    Fullname: "BOHUNEK Petr",
-                    NOC: "CZE",
-                    Birthdate: "1991-05-01",
-                    Bib: "32 Y"
-                },
-                {
-                    Position: "4",
-                    Result: "2",
-                    Color: "YELLOW",
-                    Code: "1774911",
-                    Name: "Timur",
-                    Surname: "GUBAEV",
-                    Fullname: "GUBAEV Timur",
-                    NOC: "KGZ",
-                    Birthdate: "1992-05-10",
-                    Bib: "17 BI"
-                },
-            ]];
-        route.params.subscribe(function (params) {
-            _this.sport = params['sport'];
-            _this.discipline = params['discipline'];
-            _this.gender = params['gender'];
-            // this.title = Names[this.sport] + " : " + Names[this.discipline]
-            _this.getBracket();
-        });
-    }
-    BracketComponent.prototype.getBracket = function () {
-        this.dataService.getBracket(this.sport, this.discipline, this.gender).subscribe(function (data) {
-            // this.data = data.json();
-            console.log(data.json());
-        });
-    };
-    BracketComponent.prototype.ngOnInit = function () {
-        if (this.data[0].length === 6) {
-            this.margin = 123;
-            this.marginSemi = 53;
-            this.fixMargin = 0;
-        }
-    };
-    BracketComponent = __decorate([
-        core_1.Component({
-            selector: 'bracket',
-            styles: [__webpack_require__(729)],
-            template: __webpack_require__(733)
-        }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof router_1.ActivatedRoute !== 'undefined' && router_1.ActivatedRoute) === 'function' && _a) || Object, (typeof (_b = typeof router_1.Router !== 'undefined' && router_1.Router) === 'function' && _b) || Object, (typeof (_c = typeof data_service_1.DataService !== 'undefined' && data_service_1.DataService) === 'function' && _c) || Object])
-    ], BracketComponent);
-    return BracketComponent;
-    var _a, _b, _c;
-}());
-exports.BracketComponent = BracketComponent;
-
-
-/***/ },
-/* 338 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var router_1 = __webpack_require__(21);
-var enum_1 = __webpack_require__(501);
-var GendersComponent = (function () {
-    function GendersComponent(route, router) {
-        var _this = this;
-        this.route = route;
-        this.router = router;
-        this.discipline = "";
-        this.sport = "";
-        this.title = "";
-        this.leftMenu = {
-            title: "Men",
-            data: [
-                {
-                    name: "Qualification",
-                    color: "blue",
-                    genders: "M",
-                    phase: "QUAL",
-                    heat: "----",
-                    run: "----"
-                },
-                {
-                    name: "Finals",
-                    color: "purple",
-                    genders: "M",
-                    phase: "FNL-"
-                },
-            ] };
-        this.rightMenu = {
-            title: "Ladies",
-            data: [
-                {
-                    name: "Qualification",
-                    color: "bluers",
-                    genders: "W",
-                    phase: "QUAL",
-                    heat: "----",
-                    run: "----"
-                },
-                {
-                    name: "Finals",
-                    color: "orange",
-                    genders: "W",
-                    phase: "FNL-"
-                },
-            ] };
-        route.params.subscribe(function (params) {
-            _this.discipline = params['discipline'];
-            _this.sport = params['sport'];
-            _this.title = enum_1.Names[_this.sport] + " : " + enum_1.Names[_this.discipline];
-        });
-    }
-    GendersComponent.prototype.select = function (item) {
-        if (item.run) {
-            this.router.navigate(['/results', this.sport, this.discipline, item.genders, item.phase, item.heat, item.run]);
-        }
-        else {
-            this.router.navigate(['/bracket', this.sport, this.discipline, item.genders, item.phase]);
-        }
-        console.log(item);
-    };
-    GendersComponent = __decorate([
-        core_1.Component({
-            selector: 'genders',
-            styles: [__webpack_require__(758)],
-            template: __webpack_require__(735)
-        }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof router_1.ActivatedRoute !== 'undefined' && router_1.ActivatedRoute) === 'function' && _a) || Object, (typeof (_b = typeof router_1.Router !== 'undefined' && router_1.Router) === 'function' && _b) || Object])
-    ], GendersComponent);
-    return GendersComponent;
-    var _a, _b;
-}());
-exports.GendersComponent = GendersComponent;
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 /***/ },
 /* 335 */
@@ -46173,17 +45289,12 @@ exports.ChartSeriesComponent = ChartSeriesComponent;
 //# sourceMappingURL=ChartSeriesComponent.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 336 */
-=======
-/* 339 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
 var core_1 = __webpack_require__(0);
-<<<<<<< HEAD
 var ChartXAxisComponent = (function () {
     function ChartXAxisComponent() {
         this.afterBreaks = new core_1.EventEmitter();
@@ -46213,72 +45324,6 @@ exports.ChartXAxisComponent = ChartXAxisComponent;
 /***/ },
 /* 337 */
 /***/ function(module, exports, __webpack_require__) {
-=======
-var router_1 = __webpack_require__(21);
-var HomeComponent = (function () {
-    function HomeComponent(router) {
-        this.router = router;
-        this.leftMenu = {
-            title: "SNOWBOARD",
-            data: [
-                {
-                    name: "Parallel	Giant	Slalom",
-                    color: "blue",
-                    sport: "SBD",
-                    discipline: "PGS"
-                },
-                {
-                    name: "Parallel	Slalom",
-                    color: "purple",
-                    sport: "SBD",
-                    discipline: "PSL"
-                },
-                {
-                    name: "Snowboard	Cross",
-                    color: "red",
-                    sport: "SBD",
-                    discipline: "SBX"
-                },
-                {
-                    name: "Slope	Style",
-                    color: "green",
-                    sport: "SBD",
-                    discipline: "SS-"
-                },
-            ] };
-        this.rightMenu = {
-            title: "FREESTYLE	SKI",
-            data: [
-                {
-                    name: "Ski	Cross",
-                    color: "bluers",
-                    sport: "FRS",
-                    discipline: "SX-"
-                },
-                {
-                    name: "Slope	Style",
-                    color: "orange",
-                    sport: "FRS",
-                    discipline: "SS-"
-                }
-            ] };
-    }
-    HomeComponent.prototype.select = function (item) {
-        this.router.navigate(['/genders', item.sport, item.discipline]);
-    };
-    HomeComponent = __decorate([
-        core_1.Component({
-            selector: 'home',
-            styles: [__webpack_require__(759)],
-            template: __webpack_require__(737)
-        }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof router_1.Router !== 'undefined' && router_1.Router) === 'function' && _a) || Object])
-    ], HomeComponent);
-    return HomeComponent;
-    var _a;
-}());
-exports.HomeComponent = HomeComponent;
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 "use strict";
 "use strict";
@@ -46310,11 +45355,7 @@ exports.ChartYAxisComponent = ChartYAxisComponent;
 //# sourceMappingURL=ChartYAxisComponent.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 338 */
-=======
-/* 340 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46329,7 +45370,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-<<<<<<< HEAD
 var http_1 = __webpack_require__(311); //accordion and accordion tab
 var HomeComponent = (function () {
     function HomeComponent(http) {
@@ -46589,72 +45629,6 @@ exports.HomeComponent = HomeComponent;
 
 /***/ },
 /* 339 */
-=======
-var router_1 = __webpack_require__(21);
-var data_service_1 = __webpack_require__(216);
-var ResultsComponent = (function () {
-    function ResultsComponent(route, router, dataService) {
-        var _this = this;
-        this.route = route;
-        this.router = router;
-        this.dataService = dataService;
-        this.startListOptions = {
-            "StartOrder": "Start Order",
-            "BIB": "BIB",
-            "Name": "Name",
-            "NOC": "Country"
-        };
-        this.resultOptions = {
-            "RankOrder": "Rank Order",
-            "BIB": "BIB",
-            "Name": "Name",
-            "NOC": "Country",
-            "Results": "Results",
-            "Result": "Result"
-        };
-        route.params.subscribe(function (params) {
-            _this.discipline = params['discipline'];
-            _this.sport = params['sport'];
-            _this.gender = params['gender'];
-            _this.phase = params['phase'];
-            _this.heat = params['heat'];
-            _this.run = params['run'];
-            // this.title = Names[this.sport] + " : " + Names[this.discipline]
-        });
-        this.getResult();
-        this.getStartlist();
-    }
-    ResultsComponent.prototype.getResult = function () {
-        var _this = this;
-        this.dataService.getResult(this.discipline, this.sport, this.gender, this.phase, this.heat, this.run).subscribe(function (data) {
-            _this.result = data.json();
-            console.log(data.json());
-        });
-    };
-    ResultsComponent.prototype.getStartlist = function () {
-        var _this = this;
-        this.dataService.getStartlist(this.discipline, this.sport, this.gender, this.phase, this.heat, this.run).subscribe(function (data) {
-            _this.startList = data.json();
-            console.log(data.json());
-        });
-    };
-    ResultsComponent = __decorate([
-        core_1.Component({
-            selector: 'results',
-            styles: [__webpack_require__(760)],
-            template: __webpack_require__(738)
-        }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof router_1.ActivatedRoute !== 'undefined' && router_1.ActivatedRoute) === 'function' && _a) || Object, (typeof (_b = typeof router_1.Router !== 'undefined' && router_1.Router) === 'function' && _b) || Object, (typeof (_c = typeof data_service_1.DataService !== 'undefined' && data_service_1.DataService) === 'function' && _c) || Object])
-    ], ResultsComponent);
-    return ResultsComponent;
-    var _a, _b, _c;
-}());
-exports.ResultsComponent = ResultsComponent;
-
-
-/***/ },
-/* 341 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var cof = __webpack_require__(71);
@@ -46664,11 +45638,7 @@ module.exports = function(it, msg){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 340 */
-=======
-/* 342 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46676,7 +45646,7 @@ module.exports = function(it, msg){
 'use strict';
 var toObject = __webpack_require__(30)
   , toIndex  = __webpack_require__(75)
-  , toLength = __webpack_require__(22);
+  , toLength = __webpack_require__(21);
 
 module.exports = [].copyWithin || function copyWithin(target/*= 0*/, start/*= 0, end = @length*/){
   var O     = toObject(this)
@@ -46700,17 +45670,13 @@ module.exports = [].copyWithin || function copyWithin(target/*= 0*/, start/*= 0,
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 341 */
-=======
-/* 343 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var aFunction = __webpack_require__(60)
   , toObject  = __webpack_require__(30)
   , IObject   = __webpack_require__(109)
-  , toLength  = __webpack_require__(22);
+  , toLength  = __webpack_require__(21);
 
 module.exports = function(that, callbackfn, aLen, memo, isRight){
   aFunction(callbackfn);
@@ -46737,23 +45703,14 @@ module.exports = function(that, callbackfn, aLen, memo, isRight){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 342 */
-=======
-/* 344 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var aFunction  = __webpack_require__(60)
-<<<<<<< HEAD
   , isObject   = __webpack_require__(10)
   , invoke     = __webpack_require__(530)
-=======
-  , isObject   = __webpack_require__(9)
-  , invoke     = __webpack_require__(526)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , arraySlice = [].slice
   , factories  = {};
 
@@ -46776,11 +45733,7 @@ module.exports = Function.bind || function bind(that /*, args... */){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 343 */
-=======
-/* 345 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46791,17 +45744,11 @@ var dP          = __webpack_require__(16).f
   , ctx         = __webpack_require__(72)
   , anInstance  = __webpack_require__(108)
   , defined     = __webpack_require__(49)
-<<<<<<< HEAD
   , forOf       = __webpack_require__(148)
   , $iterDefine = __webpack_require__(226)
   , step        = __webpack_require__(352)
-=======
-  , forOf       = __webpack_require__(149)
-  , $iterDefine = __webpack_require__(227)
-  , step        = __webpack_require__(354)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , setSpecies  = __webpack_require__(112)
-  , DESCRIPTORS = __webpack_require__(19)
+  , DESCRIPTORS = __webpack_require__(18)
   , fastKey     = __webpack_require__(61).fastKey
   , SIZE        = DESCRIPTORS ? '_s' : 'size';
 
@@ -46934,11 +45881,7 @@ module.exports = {
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 344 */
-=======
-/* 346 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46946,11 +45889,11 @@ module.exports = {
 var redefineAll       = __webpack_require__(111)
   , getWeak           = __webpack_require__(61).getWeak
   , anObject          = __webpack_require__(5)
-  , isObject          = __webpack_require__(9)
+  , isObject          = __webpack_require__(10)
   , anInstance        = __webpack_require__(108)
-  , forOf             = __webpack_require__(149)
+  , forOf             = __webpack_require__(148)
   , createArrayMethod = __webpack_require__(43)
-  , $has              = __webpack_require__(24)
+  , $has              = __webpack_require__(23)
   , arrayFind         = createArrayMethod(5)
   , arrayFindIndex    = createArrayMethod(6)
   , id                = 0;
@@ -47027,11 +45970,7 @@ module.exports = {
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 345 */
-=======
-/* 347 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47045,15 +45984,11 @@ module.exports = function(object, index, value){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 346 */
-=======
-/* 348 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(9)
-  , document = __webpack_require__(10).document
+var isObject = __webpack_require__(10)
+  , document = __webpack_require__(11).document
   // in old IE typeof document.createElement is 'object'
   , is = isObject(document) && isObject(document.createElement);
 module.exports = function(it){
@@ -47061,17 +45996,12 @@ module.exports = function(it){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 347 */
-=======
-/* 349 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(10).document && document.documentElement;
+module.exports = __webpack_require__(11).document && document.documentElement;
 
 /***/ },
-<<<<<<< HEAD
 /* 348 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -47081,32 +46011,17 @@ module.exports = !__webpack_require__(18) && !__webpack_require__(7)(function(){
 
 /***/ },
 /* 349 */
-=======
-/* 350 */
-/***/ function(module, exports, __webpack_require__) {
-
-module.exports = !__webpack_require__(19) && !__webpack_require__(7)(function(){
-  return Object.defineProperty(__webpack_require__(348)('div'), 'a', {get: function(){ return 7; }}).a != 7;
-});
-
-/***/ },
-/* 351 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.1.2.3 Number.isInteger(number)
-var isObject = __webpack_require__(9)
+var isObject = __webpack_require__(10)
   , floor    = Math.floor;
 module.exports = function isInteger(it){
   return !isObject(it) && isFinite(it) && floor(it) === it;
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 350 */
-=======
-/* 352 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // call something on iterator step with safe closing on error
@@ -47123,11 +46038,7 @@ module.exports = function(iterator, fn, value, entries){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 351 */
-=======
-/* 353 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47146,11 +46057,7 @@ module.exports = function(Constructor, NAME, next){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 352 */
-=======
-/* 354 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports) {
 
 module.exports = function(done, value){
@@ -47158,11 +46065,7 @@ module.exports = function(done, value){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 353 */
-=======
-/* 355 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports) {
 
 // 20.2.2.20 Math.log1p(x)
@@ -47171,19 +46074,15 @@ module.exports = Math.log1p || function log1p(x){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 354 */
-=======
-/* 356 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 // 19.1.2.1 Object.assign(target, source, ...)
 var getKeys  = __webpack_require__(89)
-  , gOPS     = __webpack_require__(150)
-  , pIE      = __webpack_require__(151)
+  , gOPS     = __webpack_require__(149)
+  , pIE      = __webpack_require__(150)
   , toObject = __webpack_require__(30)
   , IObject  = __webpack_require__(109)
   , $assign  = Object.assign;
@@ -47214,18 +46113,14 @@ module.exports = !$assign || __webpack_require__(7)(function(){
 } : $assign;
 
 /***/ },
-<<<<<<< HEAD
 /* 355 */
-=======
-/* 357 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var dP       = __webpack_require__(16)
   , anObject = __webpack_require__(5)
   , getKeys  = __webpack_require__(89);
 
-module.exports = __webpack_require__(19) ? Object.defineProperties : function defineProperties(O, Properties){
+module.exports = __webpack_require__(18) ? Object.defineProperties : function defineProperties(O, Properties){
   anObject(O);
   var keys   = getKeys(Properties)
     , length = keys.length
@@ -47236,11 +46131,7 @@ module.exports = __webpack_require__(19) ? Object.defineProperties : function de
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 356 */
-=======
-/* 358 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
@@ -47265,17 +46156,13 @@ module.exports.f = function getOwnPropertyNames(it){
 
 
 /***/ },
-<<<<<<< HEAD
 /* 357 */
-=======
-/* 359 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
-var has          = __webpack_require__(24)
+var has          = __webpack_require__(23)
   , toIObject    = __webpack_require__(35)
-  , arrayIndexOf = __webpack_require__(218)(false)
-  , IE_PROTO     = __webpack_require__(232)('IE_PROTO');
+  , arrayIndexOf = __webpack_require__(217)(false)
+  , IE_PROTO     = __webpack_require__(231)('IE_PROTO');
 
 module.exports = function(object, names){
   var O      = toIObject(object)
@@ -47291,33 +46178,25 @@ module.exports = function(object, names){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 358 */
-=======
-/* 360 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
-var $parseFloat = __webpack_require__(10).parseFloat
-  , $trim       = __webpack_require__(153).trim;
+var $parseFloat = __webpack_require__(11).parseFloat
+  , $trim       = __webpack_require__(152).trim;
 
-module.exports = 1 / $parseFloat(__webpack_require__(234) + '-0') !== -Infinity ? function parseFloat(str){
+module.exports = 1 / $parseFloat(__webpack_require__(233) + '-0') !== -Infinity ? function parseFloat(str){
   var string = $trim(String(str), 3)
     , result = $parseFloat(string);
   return result === 0 && string.charAt(0) == '-' ? -0 : result;
 } : $parseFloat;
 
 /***/ },
-<<<<<<< HEAD
 /* 359 */
-=======
-/* 361 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
-var $parseInt = __webpack_require__(10).parseInt
-  , $trim     = __webpack_require__(153).trim
-  , ws        = __webpack_require__(234)
+var $parseInt = __webpack_require__(11).parseInt
+  , $trim     = __webpack_require__(152).trim
+  , ws        = __webpack_require__(233)
   , hex       = /^[\-+]?0[xX]/;
 
 module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? function parseInt(str, radix){
@@ -47326,11 +46205,7 @@ module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? f
 } : $parseInt;
 
 /***/ },
-<<<<<<< HEAD
 /* 360 */
-=======
-/* 362 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports) {
 
 // 7.2.9 SameValue(x, y)
@@ -47339,11 +46214,7 @@ module.exports = Object.is || function is(x, y){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 361 */
-=======
-/* 363 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 7.3.20 SpeciesConstructor(O, defaultConstructor)
@@ -47356,11 +46227,7 @@ module.exports = function(O, D){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 362 */
-=======
-/* 364 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(63)
@@ -47382,11 +46249,7 @@ module.exports = function(TO_STRING){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 363 */
-=======
-/* 365 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47404,33 +46267,21 @@ module.exports = function repeat(count){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 364 */
-=======
-/* 366 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 exports.f = __webpack_require__(13);
 
 /***/ },
-<<<<<<< HEAD
 /* 365 */
-=======
-/* 367 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
-<<<<<<< HEAD
 var strong = __webpack_require__(343);
-=======
-var strong = __webpack_require__(345);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 // 23.1 Map Objects
-module.exports = __webpack_require__(147)('Map', function(get){
+module.exports = __webpack_require__(146)('Map', function(get){
   return function Map(){ return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.1.3.6 Map.prototype.get(key)
@@ -47445,29 +46296,21 @@ module.exports = __webpack_require__(147)('Map', function(get){
 }, strong, true);
 
 /***/ },
-<<<<<<< HEAD
 /* 366 */
-=======
-/* 368 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 21.2.5.3 get RegExp.prototype.flags()
-if(__webpack_require__(19) && /./g.flags != 'g')__webpack_require__(16).f(RegExp.prototype, 'flags', {
+if(__webpack_require__(18) && /./g.flags != 'g')__webpack_require__(16).f(RegExp.prototype, 'flags', {
   configurable: true,
-  get: __webpack_require__(222)
+  get: __webpack_require__(221)
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 367 */
-=======
-/* 369 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // @@match logic
-__webpack_require__(148)('match', 1, function(defined, MATCH, $match){
+__webpack_require__(147)('match', 1, function(defined, MATCH, $match){
   // 21.1.3.11 String.prototype.match(regexp)
   return [function match(regexp){
     'use strict';
@@ -47478,15 +46321,11 @@ __webpack_require__(148)('match', 1, function(defined, MATCH, $match){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 368 */
-=======
-/* 370 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // @@replace logic
-__webpack_require__(148)('replace', 2, function(defined, REPLACE, $replace){
+__webpack_require__(147)('replace', 2, function(defined, REPLACE, $replace){
   // 21.1.3.14 String.prototype.replace(searchValue, replaceValue)
   return [function replace(searchValue, replaceValue){
     'use strict';
@@ -47499,15 +46338,11 @@ __webpack_require__(148)('replace', 2, function(defined, REPLACE, $replace){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 369 */
-=======
-/* 371 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // @@search logic
-__webpack_require__(148)('search', 1, function(defined, SEARCH, $search){
+__webpack_require__(147)('search', 1, function(defined, SEARCH, $search){
   // 21.1.3.15 String.prototype.search(regexp)
   return [function search(regexp){
     'use strict';
@@ -47518,17 +46353,13 @@ __webpack_require__(148)('search', 1, function(defined, SEARCH, $search){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 370 */
-=======
-/* 372 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // @@split logic
-__webpack_require__(148)('split', 2, function(defined, SPLIT, $split){
+__webpack_require__(147)('split', 2, function(defined, SPLIT, $split){
   'use strict';
-  var isRegExp   = __webpack_require__(226)
+  var isRegExp   = __webpack_require__(225)
     , _split     = $split
     , $push      = [].push
     , $SPLIT     = 'split'
@@ -47597,23 +46428,15 @@ __webpack_require__(148)('split', 2, function(defined, SPLIT, $split){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 371 */
-=======
-/* 373 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
-<<<<<<< HEAD
 var strong = __webpack_require__(343);
-=======
-var strong = __webpack_require__(345);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 // 23.2 Set Objects
-module.exports = __webpack_require__(147)('Set', function(get){
+module.exports = __webpack_require__(146)('Set', function(get){
   return function Set(){ return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.2.3.1 Set.prototype.add(value)
@@ -47623,50 +46446,34 @@ module.exports = __webpack_require__(147)('Set', function(get){
 }, strong);
 
 /***/ },
-<<<<<<< HEAD
 /* 372 */
-=======
-/* 374 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 // ECMAScript 6 symbols shim
-var global         = __webpack_require__(10)
-  , has            = __webpack_require__(24)
-  , DESCRIPTORS    = __webpack_require__(19)
+var global         = __webpack_require__(11)
+  , has            = __webpack_require__(23)
+  , DESCRIPTORS    = __webpack_require__(18)
   , $export        = __webpack_require__(1)
-  , redefine       = __webpack_require__(25)
+  , redefine       = __webpack_require__(24)
   , META           = __webpack_require__(61).KEY
   , $fails         = __webpack_require__(7)
-  , shared         = __webpack_require__(152)
+  , shared         = __webpack_require__(151)
   , setToStringTag = __webpack_require__(113)
   , uid            = __webpack_require__(76)
   , wks            = __webpack_require__(13)
-<<<<<<< HEAD
   , wksExt         = __webpack_require__(364)
   , wksDefine      = __webpack_require__(533)
   , keyOf          = __webpack_require__(531)
   , enumKeys       = __webpack_require__(529)
   , isArray        = __webpack_require__(224)
-=======
-  , wksExt         = __webpack_require__(366)
-  , wksDefine      = __webpack_require__(529)
-  , keyOf          = __webpack_require__(527)
-  , enumKeys       = __webpack_require__(525)
-  , isArray        = __webpack_require__(225)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , anObject       = __webpack_require__(5)
   , toIObject      = __webpack_require__(35)
   , toPrimitive    = __webpack_require__(64)
   , createDesc     = __webpack_require__(62)
   , _create        = __webpack_require__(73)
-<<<<<<< HEAD
   , gOPNExt        = __webpack_require__(356)
-=======
-  , gOPNExt        = __webpack_require__(358)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , $GOPD          = __webpack_require__(51)
   , $DP            = __webpack_require__(16)
   , $keys          = __webpack_require__(89)
@@ -47793,8 +46600,8 @@ if(!USE_NATIVE){
   $GOPD.f = $getOwnPropertyDescriptor;
   $DP.f   = $defineProperty;
   __webpack_require__(74).f = gOPNExt.f = $getOwnPropertyNames;
-  __webpack_require__(151).f  = $propertyIsEnumerable;
-  __webpack_require__(150).f = $getOwnPropertySymbols;
+  __webpack_require__(150).f  = $propertyIsEnumerable;
+  __webpack_require__(149).f = $getOwnPropertySymbols;
 
   if(DESCRIPTORS && !__webpack_require__(110)){
     redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
@@ -47880,27 +46687,17 @@ setToStringTag(Math, 'Math', true);
 setToStringTag(global.JSON, 'JSON', true);
 
 /***/ },
-<<<<<<< HEAD
 /* 373 */
-=======
-/* 375 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var each         = __webpack_require__(43)(0)
-  , redefine     = __webpack_require__(25)
+  , redefine     = __webpack_require__(24)
   , meta         = __webpack_require__(61)
-<<<<<<< HEAD
   , assign       = __webpack_require__(354)
   , weak         = __webpack_require__(344)
   , isObject     = __webpack_require__(10)
-=======
-  , assign       = __webpack_require__(356)
-  , weak         = __webpack_require__(346)
-  , isObject     = __webpack_require__(9)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , getWeak      = meta.getWeak
   , isExtensible = Object.isExtensible
   , uncaughtFrozenStore = weak.ufstore
@@ -47929,7 +46726,7 @@ var methods = {
 };
 
 // 23.3 WeakMap Objects
-var $WeakMap = module.exports = __webpack_require__(147)('WeakMap', wrapper, methods, weak, true, true);
+var $WeakMap = module.exports = __webpack_require__(146)('WeakMap', wrapper, methods, weak, true, true);
 
 // IE11 WeakMap frozen keys fix
 if(new $WeakMap().set((Object.freeze || Object)(tmp), 7).get(tmp) != 7){
@@ -47952,11 +46749,7 @@ if(new $WeakMap().set((Object.freeze || Object)(tmp), 7).get(tmp) != 7){
 }
 
 /***/ },
-<<<<<<< HEAD
 /* 374 */
-=======
-/* 376 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47972,8 +46765,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var Subject_1 = __webpack_require__(79);
-var domhandler_1 = __webpack_require__(4);
-exports.DomHandler = domhandler_1.DomHandler;
 var ConfirmationService = (function () {
     function ConfirmationService() {
         this.requireConfirmationSource = new Subject_1.Subject();
@@ -47998,11 +46789,7 @@ exports.ConfirmationService = ConfirmationService;
 //# sourceMappingURL=api.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 375 */
-=======
-/* 377 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48098,11 +46885,7 @@ exports.MessagesModule = MessagesModule;
 //# sourceMappingURL=messages.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 376 */
-=======
-/* 378 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48162,11 +46945,7 @@ exports.ProgressBarModule = ProgressBarModule;
 //# sourceMappingURL=progressbar.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 377 */
-=======
-/* 379 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48176,17 +46955,10 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-<<<<<<< HEAD
 var Observable_1 = __webpack_require__(19);
 var ScalarObservable_1 = __webpack_require__(380);
 var EmptyObservable_1 = __webpack_require__(378);
 var isScheduler_1 = __webpack_require__(749);
-=======
-var Observable_1 = __webpack_require__(17);
-var ScalarObservable_1 = __webpack_require__(382);
-var EmptyObservable_1 = __webpack_require__(380);
-var isScheduler_1 = __webpack_require__(755);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -48301,11 +47073,7 @@ exports.ArrayObservable = ArrayObservable;
 //# sourceMappingURL=ArrayObservable.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 378 */
-=======
-/* 380 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48315,7 +47083,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Observable_1 = __webpack_require__(17);
+var Observable_1 = __webpack_require__(19);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -48386,11 +47154,7 @@ exports.EmptyObservable = EmptyObservable;
 //# sourceMappingURL=EmptyObservable.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 379 */
-=======
-/* 381 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48401,7 +47165,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var root_1 = __webpack_require__(65);
-var Observable_1 = __webpack_require__(17);
+var Observable_1 = __webpack_require__(19);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -48517,11 +47281,7 @@ function dispatchError(arg) {
 //# sourceMappingURL=PromiseObservable.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 380 */
-=======
-/* 382 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48531,7 +47291,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Observable_1 = __webpack_require__(17);
+var Observable_1 = __webpack_require__(19);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -48585,7 +47345,6 @@ exports.ScalarObservable = ScalarObservable;
 //# sourceMappingURL=ScalarObservable.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 381 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -48658,14 +47417,11 @@ var CatchSubscriber = (function (_super) {
 
 /***/ },
 /* 382 */
-=======
-/* 383 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
-var mergeAll_1 = __webpack_require__(245);
+var mergeAll_1 = __webpack_require__(242);
 /**
  * Converts a higher-order Observable into a first-order Observable by
  * concatenating the inner Observables in order.
@@ -48715,16 +47471,12 @@ exports.concatAll = concatAll;
 //# sourceMappingURL=concatAll.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 383 */
-=======
-/* 384 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
-var mergeMap_1 = __webpack_require__(115);
+var mergeMap_1 = __webpack_require__(114);
 /**
  * Projects each source value to an Observable which is merged in the output
  * Observable, in a serialized fashion waiting for each one to complete before
@@ -48788,11 +47540,7 @@ exports.concatMap = concatMap;
 //# sourceMappingURL=concatMap.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 384 */
-=======
-/* 385 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48866,11 +47614,7 @@ var EverySubscriber = (function (_super) {
 //# sourceMappingURL=every.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 385 */
-=======
-/* 386 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48881,7 +47625,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(36);
-var EmptyError_1 = __webpack_require__(249);
+var EmptyError_1 = __webpack_require__(246);
 /**
  * Emits only the first value (or the first value that meets some condition)
  * emitted by the source Observable.
@@ -49024,11 +47768,7 @@ var FirstSubscriber = (function (_super) {
 //# sourceMappingURL=first.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 386 */
-=======
-/* 387 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports) {
 
 "use strict";
@@ -49061,11 +47801,7 @@ exports.ObjectUnsubscribedError = ObjectUnsubscribedError;
 //# sourceMappingURL=ObjectUnsubscribedError.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 387 */
-=======
-/* 388 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports) {
 
 "use strict";
@@ -49075,11 +47811,7 @@ exports.errorObject = { e: {} };
 //# sourceMappingURL=errorObject.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 388 */
-=======
-/* 389 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports) {
 
 "use strict";
@@ -49091,11 +47823,7 @@ exports.isFunction = isFunction;
 //# sourceMappingURL=isFunction.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 389 */
-=======
-/* 390 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports) {
 
 "use strict";
@@ -49107,11 +47835,7 @@ exports.isPromise = isPromise;
 //# sourceMappingURL=isPromise.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 390 */
-=======
-/* 391 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -49120,7 +47844,6 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-<<<<<<< HEAD
 webpackEmptyContext.id = 390;
 
 
@@ -49130,17 +47853,6 @@ webpackEmptyContext.id = 390;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_platform_browser_dynamic__ = __webpack_require__(472);
-=======
-webpackEmptyContext.id = 391;
-
-
-/***/ },
-/* 392 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_platform_browser_dynamic__ = __webpack_require__(473);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "RESOURCE_CACHE_PROVIDER", function() { return __WEBPACK_IMPORTED_MODULE_0__src_platform_browser_dynamic__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "platformBrowserDynamic", function() { return __WEBPACK_IMPORTED_MODULE_0__src_platform_browser_dynamic__["b"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "__platform_browser_dynamic_private__", function() { return __WEBPACK_IMPORTED_MODULE_0__src_platform_browser_dynamic__["c"]; });
@@ -49160,11 +47872,7 @@ webpackEmptyContext.id = 391;
 //# sourceMappingURL=index.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 392 */
-=======
-/* 393 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49179,7 +47887,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-<<<<<<< HEAD
 var router_1 = __webpack_require__(28);
 var app_routes_1 = __webpack_require__(506);
 var app_component_1 = __webpack_require__(505);
@@ -49189,23 +47896,6 @@ var http_1 = __webpack_require__(311);
 var home_component_1 = __webpack_require__(338);
 var primeng_1 = __webpack_require__(731); //accordion and accordion tab
 var angular2_highcharts_1 = __webpack_require__(504);
-=======
-var router_1 = __webpack_require__(21);
-var app_routes_1 = __webpack_require__(498);
-var app_component_1 = __webpack_require__(497);
-var forms_1 = __webpack_require__(14);
-var platform_browser_1 = __webpack_require__(104);
-var http_1 = __webpack_require__(314);
-var home_component_1 = __webpack_require__(339);
-var primeng_1 = __webpack_require__(727);
-var genders_component_1 = __webpack_require__(338);
-var results_component_1 = __webpack_require__(340);
-var bracket_component_1 = __webpack_require__(337);
-var data_service_1 = __webpack_require__(216);
-var keys_pipe_1 = __webpack_require__(502);
-var footer_component_1 = __webpack_require__(499);
-var header_component_1 = __webpack_require__(500);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 var AppModule = (function () {
     function AppModule() {
     }
@@ -49213,16 +47903,7 @@ var AppModule = (function () {
         core_1.NgModule({
             declarations: [
                 app_component_1.AppComponent,
-                header_component_1.HeaderComponent,
                 home_component_1.HomeComponent,
-<<<<<<< HEAD
-=======
-                genders_component_1.GendersComponent,
-                results_component_1.ResultsComponent,
-                bracket_component_1.BracketComponent,
-                keys_pipe_1.KeysPipe,
-                footer_component_1.FooterComponent,
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
             ],
             imports: [
                 platform_browser_1.BrowserModule,
@@ -49230,20 +47911,13 @@ var AppModule = (function () {
                 forms_1.ReactiveFormsModule,
                 http_1.HttpModule,
                 router_1.RouterModule.forRoot(app_routes_1.rootRouterConfig, { useHash: true }),
-<<<<<<< HEAD
                 angular2_highcharts_1.ChartModule,
                 primeng_1.DataTableModule,
                 primeng_1.TreeTableModule,
                 primeng_1.SharedModule,
                 primeng_1.ButtonModule
-=======
-                primeng_1.ButtonModule
             ],
-            providers: [
-                data_service_1.DataService
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
-            ],
-            exports: [keys_pipe_1.KeysPipe],
+            providers: [],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
@@ -49254,17 +47928,12 @@ exports.AppModule = AppModule;
 
 
 /***/ },
-<<<<<<< HEAD
 /* 393 */
-=======
-/* 394 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 // Polyfills
 "use strict";
-<<<<<<< HEAD
 __webpack_require__(670); // Internet Explorer 9 support
 // import 'core-js/es6';
 // Added parts of es6 which are necessary for your project or your browser support requirements.
@@ -49294,44 +47963,13 @@ __webpack_require__(753);
 
 /***/ },
 /* 394 */
-=======
-__webpack_require__(666); // Internet Explorer 9 support
-// import 'core-js/es6';
-// Added parts of es6 which are necessary for your project or your browser support requirements.
-__webpack_require__(516);
-__webpack_require__(509);
-__webpack_require__(505);
-__webpack_require__(511);
-__webpack_require__(510);
-__webpack_require__(508);
-__webpack_require__(507);
-__webpack_require__(515);
-__webpack_require__(504);
-__webpack_require__(503);
-__webpack_require__(513);
-__webpack_require__(506);
-__webpack_require__(514);
-__webpack_require__(518);
-__webpack_require__(519);
-__webpack_require__(517);
-__webpack_require__(512);
-// see issue https://github.com/AngularClass/angular2-webpack-starter/issues/709
-// import 'core-js/es6/promise';
-__webpack_require__(520);
-__webpack_require__(762);
-__webpack_require__(761);
-
-
-/***/ },
-/* 395 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_index__ = __webpack_require__(252);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__localization__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_index__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_index__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__localization__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_index__ = __webpack_require__(252);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return CommonModule; });
 /**
  * @license
@@ -49370,22 +48008,13 @@ var CommonModule = (function () {
 //# sourceMappingURL=common_module.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 395 */
-=======
-/* 396 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_collection__ = __webpack_require__(401);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(26);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_collection__ = __webpack_require__(402);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(27);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NgClass; });
 /**
  * @license
@@ -49543,16 +48172,12 @@ var NgClass = (function () {
 //# sourceMappingURL=ng_class.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 396 */
-=======
-/* 397 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(26);
 /* unused harmony export NgForRow */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NgFor; });
 /**
@@ -49756,11 +48381,7 @@ var RecordViewTuple = (function () {
 //# sourceMappingURL=ng_for.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 397 */
-=======
-/* 398 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49834,17 +48455,13 @@ var NgIf = (function () {
 //# sourceMappingURL=ng_if.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 398 */
-=======
-/* 399 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__localization__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_switch__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__localization__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_switch__ = __webpack_require__(250);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NgPlural; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return NgPluralCase; });
 /**
@@ -49969,11 +48586,7 @@ var NgPluralCase = (function () {
 //# sourceMappingURL=ng_plural.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 399 */
-=======
-/* 400 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50061,11 +48674,7 @@ var NgStyle = (function () {
 //# sourceMappingURL=ng_style.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 400 */
-=======
-/* 401 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50139,15 +48748,11 @@ var NgTemplateOutlet = (function () {
 //# sourceMappingURL=ng_template_outlet.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 401 */
-=======
-/* 402 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lang__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lang__ = __webpack_require__(26);
 /* unused harmony export StringMapWrapper */
 /* unused harmony export ListWrapper */
 /* harmony export (immutable) */ exports["a"] = isListLikeIterable;
@@ -50269,11 +48874,7 @@ function iterateListLike(obj, fn) {
 //# sourceMappingURL=collection.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 402 */
-=======
-/* 403 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50348,24 +48949,14 @@ var WrappedError = (function (_super) {
 //# sourceMappingURL=errors.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 403 */
-=======
-/* 404 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__location_platform_location__ = __webpack_require__(159);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__location_location_strategy__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__location_hash_location_strategy__ = __webpack_require__(404);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__location_path_location_strategy__ = __webpack_require__(405);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__location_location_strategy__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__location_hash_location_strategy__ = __webpack_require__(405);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__location_path_location_strategy__ = __webpack_require__(406);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__location_location__ = __webpack_require__(158);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__location_platform_location__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__location_location_strategy__["a"]; });
@@ -50388,18 +48979,14 @@ var WrappedError = (function (_super) {
 //# sourceMappingURL=location.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 404 */
-=======
-/* 405 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__location__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__location_strategy__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__location_strategy__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__platform_location__ = __webpack_require__(159);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return HashLocationStrategy; });
 /**
@@ -50502,18 +49089,14 @@ var HashLocationStrategy = (function (_super) {
 //# sourceMappingURL=hash_location_strategy.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 405 */
-=======
-/* 406 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__location__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__location_strategy__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__location_strategy__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__platform_location__ = __webpack_require__(159);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return PathLocationStrategy; });
 /**
@@ -50607,20 +49190,12 @@ var PathLocationStrategy = (function (_super) {
 //# sourceMappingURL=path_location_strategy.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 406 */
-=======
-/* 407 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__private_import_core__ = __webpack_require__(415);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__private_import_core__ = __webpack_require__(416);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__invalid_pipe_argument_error__ = __webpack_require__(55);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AsyncPipe; });
 /**
@@ -50752,17 +49327,13 @@ var AsyncPipe = (function () {
 //# sourceMappingURL=async_pipe.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 407 */
-=======
-/* 408 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_intl__ = __webpack_require__(254);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_intl__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__invalid_pipe_argument_error__ = __webpack_require__(55);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DatePipe; });
 /**
@@ -50910,17 +49481,13 @@ function isBlank(obj) {
 //# sourceMappingURL=date_pipe.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 408 */
-=======
-/* 409 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__localization__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__localization__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__invalid_pipe_argument_error__ = __webpack_require__(55);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return I18nPluralPipe; });
 /**
@@ -50977,11 +49544,7 @@ var I18nPluralPipe = (function () {
 //# sourceMappingURL=i18n_plural_pipe.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 409 */
-=======
-/* 410 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51041,11 +49604,7 @@ var I18nSelectPipe = (function () {
 //# sourceMappingURL=i18n_select_pipe.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 410 */
-=======
-/* 411 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51086,16 +49645,12 @@ var JsonPipe = (function () {
 //# sourceMappingURL=json_pipe.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 411 */
-=======
-/* 412 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__invalid_pipe_argument_error__ = __webpack_require__(55);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return LowerCasePipe; });
 /**
@@ -51143,17 +49698,13 @@ var LowerCasePipe = (function () {
 //# sourceMappingURL=lowercase_pipe.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 412 */
-=======
-/* 413 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_intl__ = __webpack_require__(254);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_intl__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__invalid_pipe_argument_error__ = __webpack_require__(55);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DecimalPipe; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return PercentPipe; });
@@ -51339,16 +49890,12 @@ var CurrencyPipe = (function () {
 //# sourceMappingURL=number_pipe.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 413 */
-=======
-/* 414 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__invalid_pipe_argument_error__ = __webpack_require__(55);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return SlicePipe; });
 /**
@@ -51427,16 +49974,12 @@ var SlicePipe = (function () {
 //# sourceMappingURL=slice_pipe.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 414 */
-=======
-/* 415 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__invalid_pipe_argument_error__ = __webpack_require__(55);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return UpperCasePipe; });
 /**
@@ -51484,11 +50027,7 @@ var UpperCasePipe = (function () {
 //# sourceMappingURL=uppercase_pipe.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 415 */
-=======
-/* 416 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51506,11 +50045,7 @@ var isPromise = __WEBPACK_IMPORTED_MODULE_0__angular_core__["__core_private__"].
 //# sourceMappingURL=private_import_core.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 416 */
-=======
-/* 417 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51578,11 +50113,7 @@ var StylesCollection = (function () {
 //# sourceMappingURL=styles_collection.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 417 */
-=======
-/* 418 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51592,23 +50123,23 @@ var StylesCollection = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directive_normalizer__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directive_resolver__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directive_wrapper_compiler__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__expression_parser_lexer__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__expression_parser_lexer__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__expression_parser_parser__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__i18n_index__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__i18n_index__ = __webpack_require__(261);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__metadata_resolver__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ml_parser_html_parser__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ml_parser_html_parser__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ng_module_compiler__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ng_module_resolver__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pipe_resolver__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__private_import_core__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__private_import_core__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__resource_loader__ = __webpack_require__(174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__runtime_compiler__ = __webpack_require__(275);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__schema_dom_element_schema_registry__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__runtime_compiler__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__schema_dom_element_schema_registry__ = __webpack_require__(273);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__schema_element_schema_registry__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__style_compiler__ = __webpack_require__(175);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__template_parser_template_parser__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__template_parser_template_parser__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__url_resolver__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__view_compiler_view_compiler__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__view_compiler_view_compiler__ = __webpack_require__(123);
 /* unused harmony export COMPILER_PROVIDERS */
 /* unused harmony export RuntimeCompilerFactory */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return platformCoreDynamic; });
@@ -51769,26 +50300,17 @@ function _mergeArrays(parts) {
 //# sourceMappingURL=compiler.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 418 */
-=======
-/* 419 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__expression_parser_lexer__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__expression_parser_lexer__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__expression_parser_parser__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ml_parser_ast__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ml_parser_html_tags__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__digest__ = __webpack_require__(165);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__i18n_ast__ = __webpack_require__(259);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__serializers_placeholder__ = __webpack_require__(419);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__i18n_ast__ = __webpack_require__(262);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__serializers_placeholder__ = __webpack_require__(420);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (immutable) */ exports["a"] = createI18nMessageFactory;
 /**
  * @license
@@ -51915,11 +50437,7 @@ function _extractPlaceholderName(input) {
 //# sourceMappingURL=i18n_parser.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 419 */
-=======
-/* 420 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52033,11 +50551,7 @@ var PlaceholderRegistry = (function () {
 //# sourceMappingURL=placeholder.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 420 */
-=======
-/* 421 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52067,15 +50581,11 @@ var TranslationBundle = (function () {
 //# sourceMappingURL=translation_bundle.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 421 */
-=======
-/* 422 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__private_import_core__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__private_import_core__ = __webpack_require__(17);
 /* harmony export (immutable) */ exports["a"] = hasLifecycleHook;
 /**
  * @license
@@ -52111,11 +50621,7 @@ function getHookName(hook) {
 //# sourceMappingURL=lifecycle_reflector.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 422 */
-=======
-/* 423 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52236,11 +50742,7 @@ function _expandDefaultForm(ast, errors) {
 //# sourceMappingURL=icu_ast_expander.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 423 */
-=======
-/* 424 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52915,11 +51417,7 @@ function mergeTextTokens(srcTokens) {
 //# sourceMappingURL=lexer.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 424 */
-=======
-/* 425 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52953,20 +51451,16 @@ function getXmlTagDefinition(tagName) {
 //# sourceMappingURL=xml_tags.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 425 */
-=======
-/* 426 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__animation_animation_compiler__ = __webpack_require__(257);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compile_metadata__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__animation_animation_compiler__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compile_metadata__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_collection__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__identifiers__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__output_output_ast__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__view_compiler_view_compiler__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__view_compiler_view_compiler__ = __webpack_require__(123);
 /* unused harmony export SourceModule */
 /* unused harmony export analyzeNgModules */
 /* unused harmony export analyzeAndValidateNgModules */
@@ -53264,11 +51758,7 @@ function _createNgModules(programStaticSymbols, options, metadataResolver) {
 //# sourceMappingURL=offline_compiler.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 426 */
-=======
-/* 427 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53446,17 +51936,13 @@ var AbstractJsEmitterVisitor = (function (_super) {
 //# sourceMappingURL=abstract_js_emitter.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 427 */
-=======
-/* 428 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_lang__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__output_ast__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ts_emitter__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ts_emitter__ = __webpack_require__(269);
 /* harmony export (immutable) */ exports["a"] = interpretStatements;
 /**
  * @license
@@ -53800,22 +52286,14 @@ var CATCH_STACK_VAR = 'stack';
 //# sourceMappingURL=output_interpreter.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 428 */
-=======
-/* 429 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_lang__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__abstract_emitter__ = __webpack_require__(171);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__abstract_js_emitter__ = __webpack_require__(426);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__abstract_js_emitter__ = __webpack_require__(427);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (immutable) */ exports["a"] = jitStatements;
 /**
  * @license
@@ -53880,11 +52358,7 @@ var JitEmitterVisitor = (function (_super) {
 //# sourceMappingURL=output_jit.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 429 */
-=======
-/* 430 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53930,11 +52404,7 @@ var AssetUrl = (function () {
 //# sourceMappingURL=path_util.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 430 */
-=======
-/* 431 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53998,11 +52468,7 @@ registerContext(__WEBPACK_IMPORTED_MODULE_0__angular_core__["SecurityContext"].R
 //# sourceMappingURL=dom_security_schema.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 431 */
-=======
-/* 432 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54595,11 +53061,7 @@ function escapeBlocks(input) {
 //# sourceMappingURL=shadow_css.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 432 */
-=======
-/* 433 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54698,11 +53160,7 @@ function _findPipeMeta(view, name) {
 //# sourceMappingURL=compile_pipe.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 433 */
-=======
-/* 434 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54814,19 +53272,15 @@ function handleEventExpr(compileElement) {
 //# sourceMappingURL=event_binder.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 434 */
-=======
-/* 435 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directive_wrapper_compiler__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__output_output_ast__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__private_import_core__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__private_import_core__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__template_parser_template_ast__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__constants__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__constants__ = __webpack_require__(122);
 /* harmony export (immutable) */ exports["b"] = bindDirectiveAfterContentLifecycleCallbacks;
 /* harmony export (immutable) */ exports["c"] = bindDirectiveAfterViewLifecycleCallbacks;
 /* harmony export (immutable) */ exports["d"] = bindDirectiveWrapperLifecycleCallbacks;
@@ -54892,24 +53346,20 @@ function bindPipeDestroyLifecycleCallbacks(pipeMeta, pipeInstance, view) {
 //# sourceMappingURL=lifecycle_binder.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 435 */
-=======
-/* 436 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compiler_util_binding_util__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compiler_util_binding_util__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compiler_util_expression_converter__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__compiler_util_identifier_util__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__compiler_util_render_util__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__compiler_util_render_util__ = __webpack_require__(257);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directive_wrapper_compiler__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__identifiers__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__output_output_ast__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__private_import_core__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__private_import_core__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__template_parser_template_ast__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__constants__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__constants__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__util__ = __webpack_require__(68);
 /* harmony export (immutable) */ exports["a"] = bindRenderText;
 /* harmony export (immutable) */ exports["b"] = bindRenderInputs;
@@ -55025,24 +53475,14 @@ function bindDirectiveInputs(directiveAst, directiveWrapperInstance, dirIndex, c
 //# sourceMappingURL=property_binder.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 436 */
-=======
-/* 437 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__template_parser_template_ast__ = __webpack_require__(39);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__event_binder__ = __webpack_require__(433);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lifecycle_binder__ = __webpack_require__(434);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__property_binder__ = __webpack_require__(435);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__event_binder__ = __webpack_require__(434);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lifecycle_binder__ = __webpack_require__(435);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__property_binder__ = __webpack_require__(436);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (immutable) */ exports["a"] = bindView;
 /**
  * @license
@@ -55134,27 +53574,23 @@ var ViewBinderVisitor = (function () {
 //# sourceMappingURL=view_binder.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 437 */
-=======
-/* 438 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compile_metadata__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__compile_metadata__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__compiler_util_expression_converter__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__compiler_util_identifier_util__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__facade_lang__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__identifiers__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__output_class_builder__ = __webpack_require__(172);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__output_output_ast__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__private_import_core__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__private_import_core__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__template_parser_template_ast__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__compile_element__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__compile_view__ = __webpack_require__(282);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__constants__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__compile_element__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__compile_view__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__constants__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__deps__ = __webpack_require__(177);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__util__ = __webpack_require__(68);
 /* harmony export (immutable) */ exports["a"] = buildView;
@@ -55727,11 +54163,7 @@ function generateCreateEmbeddedViewsMethod(view) {
 //# sourceMappingURL=view_builder.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 438 */
-=======
-/* 439 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -55753,18 +54185,14 @@ var AnimationKeyframe = (function () {
 //# sourceMappingURL=animation_keyframe.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 439 */
-=======
-/* 440 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_collection__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animation_constants__ = __webpack_require__(283);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__metadata__ = __webpack_require__(288);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animation_constants__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__metadata__ = __webpack_require__(285);
 /* harmony export (immutable) */ exports["a"] = prepareFinalAnimationStyles;
 /* harmony export (immutable) */ exports["b"] = balanceAnimationKeyframes;
 /* harmony export (immutable) */ exports["d"] = clearStyles;
@@ -55876,11 +54304,7 @@ function flattenStyles(styles) {
 //# sourceMappingURL=animation_style_util.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 440 */
-=======
-/* 441 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -55901,15 +54325,11 @@ var AnimationStyles = (function () {
 //# sourceMappingURL=animation_styles.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 441 */
-=======
-/* 442 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__animation_transition_event__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__animation_transition_event__ = __webpack_require__(284);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AnimationTransition; });
 
 var AnimationTransition = (function () {
@@ -55940,11 +54360,7 @@ var AnimationTransition = (function () {
 //# sourceMappingURL=animation_transition.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 442 */
-=======
-/* 443 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56004,22 +54420,18 @@ var ViewAnimationMap = (function () {
 //# sourceMappingURL=view_animation_map.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 443 */
-=======
-/* 444 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__application_init__ = __webpack_require__(179);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__application_ref__ = __webpack_require__(180);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__application_tokens__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__change_detection_change_detection__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__i18n_tokens__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__application_tokens__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__change_detection_change_detection__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__i18n_tokens__ = __webpack_require__(292);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__linker_compiler__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__linker_view_utils__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__metadata__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__linker_view_utils__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__metadata__ = __webpack_require__(300);
 /* unused harmony export _iterableDiffersFactory */
 /* unused harmony export _keyValueDiffersFactory */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ApplicationModule; });
@@ -56075,15 +54487,11 @@ var ApplicationModule = (function () {
 //# sourceMappingURL=application_module.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 444 */
-=======
-/* 445 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__change_detection_change_detection__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__change_detection_change_detection__ = __webpack_require__(125);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__change_detection_change_detection__["g"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__change_detection_change_detection__["h"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "g", function() { return __WEBPACK_IMPORTED_MODULE_0__change_detection_change_detection__["k"]; });
@@ -56109,11 +54517,7 @@ var ApplicationModule = (function () {
 //# sourceMappingURL=change_detection.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 445 */
-=======
-/* 446 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56136,26 +54540,16 @@ var ChangeDetectorRef = (function () {
 //# sourceMappingURL=change_detector_ref.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 446 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__metadata__ = __webpack_require__(300);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(463);
-=======
-/* 447 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__metadata__ = __webpack_require__(303);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(464);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__di__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__application_ref__ = __webpack_require__(180);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__application_tokens__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__application_tokens__ = __webpack_require__(124);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__application_init__ = __webpack_require__(179);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__zone__ = __webpack_require__(464);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__render__ = __webpack_require__(462);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__linker__ = __webpack_require__(450);
@@ -56172,26 +54566,8 @@ var ChangeDetectorRef = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__core_private_export__ = __webpack_require__(447);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__animation_metadata__ = __webpack_require__(285);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__animation_animation_transition_event__ = __webpack_require__(284);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__zone__ = __webpack_require__(465);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__render__ = __webpack_require__(463);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__linker__ = __webpack_require__(451);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__debug_debug_node__ = __webpack_require__(292);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__testability_testability__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__change_detection__ = __webpack_require__(445);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__platform_core_providers__ = __webpack_require__(461);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__i18n_tokens__ = __webpack_require__(295);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__application_module__ = __webpack_require__(444);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__profile_profile__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__type__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__facade_async__ = __webpack_require__(187);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__error_handler__ = __webpack_require__(294);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__core_private_export__ = __webpack_require__(448);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__animation_metadata__ = __webpack_require__(288);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__animation_animation_transition_event__ = __webpack_require__(287);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__animation_animation_player__ = __webpack_require__(178);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__security__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__security__ = __webpack_require__(305);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__metadata__["b"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "f", function() { return __WEBPACK_IMPORTED_MODULE_0__metadata__["c"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "B", function() { return __WEBPACK_IMPORTED_MODULE_0__metadata__["d"]; });
@@ -56362,7 +54738,6 @@ var ChangeDetectorRef = (function () {
 //# sourceMappingURL=core.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 447 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -56394,41 +54769,8 @@ var ChangeDetectorRef = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__linker_view_utils__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__metadata_lifecycle_hooks__ = __webpack_require__(301);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__metadata_view__ = __webpack_require__(302);
-=======
-/* 448 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__animation_animation_constants__ = __webpack_require__(283);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animation_animation_group_player__ = __webpack_require__(284);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animation_animation_keyframe__ = __webpack_require__(439);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animation_animation_player__ = __webpack_require__(178);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__animation_animation_sequence_player__ = __webpack_require__(286);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__animation_animation_style_util__ = __webpack_require__(440);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__animation_animation_styles__ = __webpack_require__(441);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__animation_animation_transition__ = __webpack_require__(442);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__application_tokens__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__change_detection_change_detection_util__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__change_detection_constants__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__console__ = __webpack_require__(182);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__debug_debug_renderer__ = __webpack_require__(449);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__di_reflective_provider__ = __webpack_require__(186);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__linker_compiler__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__linker_component_factory__ = __webpack_require__(188);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__linker_component_factory_resolver__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__linker_debug_context__ = __webpack_require__(296);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__linker_ng_module_factory__ = __webpack_require__(298);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__linker_ng_module_factory_loader__ = __webpack_require__(299);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__linker_template_ref__ = __webpack_require__(300);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__linker_view__ = __webpack_require__(456);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__linker_view_container__ = __webpack_require__(457);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__linker_view_type__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__linker_view_utils__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__metadata_lifecycle_hooks__ = __webpack_require__(304);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__metadata_view__ = __webpack_require__(305);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__reflection_reflection__ = __webpack_require__(189);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__reflection_reflection_capabilities__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__reflection_reflection_capabilities__ = __webpack_require__(303);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__reflection_reflector_reader__ = __webpack_require__(190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__render_api__ = __webpack_require__(191);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__util_decorators__ = __webpack_require__(83);
@@ -56528,16 +54870,12 @@ var __core_private__ = {
 //# sourceMappingURL=core_private_export.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 448 */
-=======
-/* 449 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_lang__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__debug_node__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__debug_node__ = __webpack_require__(289);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DebugDomRootRenderer; });
 /* unused harmony export DebugDomRenderer */
 /**
@@ -56676,18 +55014,14 @@ var DebugDomRenderer = (function () {
 //# sourceMappingURL=debug_renderer.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 449 */
-=======
-/* 450 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_errors__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_errors__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__injector__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__metadata__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__reflective_errors__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__metadata__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__reflective_errors__ = __webpack_require__(290);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reflective_key__ = __webpack_require__(185);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reflective_provider__ = __webpack_require__(186);
 /* unused harmony export ReflectiveProtoInjectorInlineStrategy */
@@ -57508,17 +55842,12 @@ function _mapProviders(injector, fn) {
 //# sourceMappingURL=reflective_injector.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 450 */
-=======
-/* 451 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__linker_compiler__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__linker_component_factory__ = __webpack_require__(188);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__linker_component_factory_resolver__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__linker_element_ref__ = __webpack_require__(130);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__linker_ng_module_factory__ = __webpack_require__(295);
@@ -57528,17 +55857,6 @@ function _mapProviders(injector, fn) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__linker_template_ref__ = __webpack_require__(297);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__linker_view_container_ref__ = __webpack_require__(298);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__linker_view_ref__ = __webpack_require__(299);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__linker_component_factory_resolver__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__linker_element_ref__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__linker_ng_module_factory__ = __webpack_require__(298);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__linker_ng_module_factory_loader__ = __webpack_require__(299);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__linker_query_list__ = __webpack_require__(454);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__linker_system_js_ng_module_factory_loader__ = __webpack_require__(455);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__linker_template_ref__ = __webpack_require__(300);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__linker_view_container_ref__ = __webpack_require__(301);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__linker_view_ref__ = __webpack_require__(302);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "k", function() { return __WEBPACK_IMPORTED_MODULE_0__linker_compiler__["e"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "l", function() { return __WEBPACK_IMPORTED_MODULE_0__linker_compiler__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "i", function() { return __WEBPACK_IMPORTED_MODULE_0__linker_compiler__["d"]; });
@@ -57580,7 +55898,6 @@ function _mapProviders(injector, fn) {
 //# sourceMappingURL=linker.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 451 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -57589,16 +55906,6 @@ function _mapProviders(injector, fn) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animation_animation_queue__ = __webpack_require__(282);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animation_animation_sequence_player__ = __webpack_require__(283);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animation_view_animation_map__ = __webpack_require__(442);
-=======
-/* 452 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__animation_animation_group_player__ = __webpack_require__(284);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animation_animation_queue__ = __webpack_require__(285);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animation_animation_sequence_player__ = __webpack_require__(286);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animation_view_animation_map__ = __webpack_require__(443);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AnimationViewContext; });
 
 
@@ -57650,11 +55957,7 @@ function _recursePlayers(player, collectedPlayers) {
 //# sourceMappingURL=animation_view_context.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 452 */
-=======
-/* 453 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57690,11 +55993,7 @@ var ElementInjector = (function (_super) {
 //# sourceMappingURL=element_injector.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 453 */
-=======
-/* 454 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57818,11 +56117,7 @@ var QueryList = (function () {
 //# sourceMappingURL=query_list.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 454 */
-=======
-/* 455 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57875,11 +56170,7 @@ var SystemJsNgModuleLoader = (function () {
         if (exportName === undefined) {
             exportName = 'default';
         }
-<<<<<<< HEAD
         return __webpack_require__(390)(module)
-=======
-        return __webpack_require__(391)(module)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
             .then(function (module) { return module[exportName]; })
             .then(function (type) { return checkNotEmpty(type, module, exportName); })
             .then(function (type) { return _this._compiler.compileModuleAsync(type); });
@@ -57891,11 +56182,7 @@ var SystemJsNgModuleLoader = (function () {
             exportName = 'default';
             factoryClassSuffix = '';
         }
-<<<<<<< HEAD
         return __webpack_require__(390)(this._config.factoryPathPrefix + module + this._config.factoryPathSuffix)
-=======
-        return __webpack_require__(391)(this._config.factoryPathPrefix + module + this._config.factoryPathSuffix)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
             .then(function (module) { return module[exportName + factoryClassSuffix]; })
             .then(function (factory) { return checkNotEmpty(factory, module, exportName); });
     };
@@ -57918,18 +56205,13 @@ function checkNotEmpty(value, modulePath, exportName) {
 //# sourceMappingURL=system_js_ng_module_factory_loader.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 455 */
-=======
-/* 456 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__change_detection_change_detection__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__change_detection_change_detection__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__di_injector__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_lang__ = __webpack_require__(6);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__profile_profile__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__animation_view_context__ = __webpack_require__(451);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__debug_context__ = __webpack_require__(293);
@@ -57938,16 +56220,6 @@ function checkNotEmpty(value, modulePath, exportName) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__view_ref__ = __webpack_require__(299);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__view_type__ = __webpack_require__(131);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__view_utils__ = __webpack_require__(132);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__profile_profile__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__animation_view_context__ = __webpack_require__(452);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__debug_context__ = __webpack_require__(296);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__element_injector__ = __webpack_require__(453);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__errors__ = __webpack_require__(297);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__view_ref__ = __webpack_require__(302);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__view_type__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__view_utils__ = __webpack_require__(133);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AppView; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return DebugAppView; });
 /**
@@ -58370,17 +56642,13 @@ var DebugAppView = (function (_super) {
 //# sourceMappingURL=view.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 456 */
-=======
-/* 457 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__element_ref__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__view_container_ref__ = __webpack_require__(301);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__view_type__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__element_ref__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__view_container_ref__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__view_type__ = __webpack_require__(131);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ViewContainer; });
 /**
  * @license
@@ -58518,11 +56786,7 @@ var ViewContainer = (function () {
 //# sourceMappingURL=view_container.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 457 */
-=======
-/* 458 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58704,15 +56968,11 @@ var ViewChild = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_decorato
 //# sourceMappingURL=di.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 458 */
-=======
-/* 459 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__change_detection_constants__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__change_detection_constants__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_decorators__ = __webpack_require__(83);
 /* harmony export (binding) */ __webpack_require__.d(exports, "f", function() { return Directive; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "e", function() { return Component; });
@@ -58812,11 +57072,7 @@ var HostListener = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_decor
 //# sourceMappingURL=directives.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 459 */
-=======
-/* 460 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58870,11 +57126,7 @@ var NgModule = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_decorator
 //# sourceMappingURL=ng_module.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 460 */
-=======
-/* 461 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58916,11 +57168,7 @@ var platformCore = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__applicatio
 //# sourceMappingURL=platform_core_providers.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 461 */
-=======
-/* 462 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58968,11 +57216,7 @@ function endTimeRange(range) {
 //# sourceMappingURL=wtf_impl.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 462 */
-=======
-/* 463 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58992,11 +57236,7 @@ function endTimeRange(range) {
 //# sourceMappingURL=render.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 463 */
-=======
-/* 464 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59014,11 +57254,7 @@ function endTimeRange(range) {
 //# sourceMappingURL=util.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 464 */
-=======
-/* 465 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59036,21 +57272,17 @@ function endTimeRange(range) {
 //# sourceMappingURL=zone.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 465 */
-=======
-/* 466 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_checkbox_value_accessor__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_default_value_accessor__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_checkbox_value_accessor__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_default_value_accessor__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_ng_control_status__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_ng_form__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives_ng_model__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__directives_ng_model_group__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__directives_ng_model_group__ = __webpack_require__(136);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_number_value_accessor__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__directives_radio_control_value_accessor__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__directives_range_value_accessor__ = __webpack_require__(200);
@@ -59058,8 +57290,8 @@ function endTimeRange(range) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__directives_reactive_directives_form_control_name__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__directives_reactive_directives_form_group_directive__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__directives_reactive_directives_form_group_name__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__directives_select_control_value_accessor__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__directives_select_multiple_control_value_accessor__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__directives_select_control_value_accessor__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__directives_select_multiple_control_value_accessor__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__directives_validators__ = __webpack_require__(203);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__directives_ng_control__ = __webpack_require__(69);
 /* unused harmony export SHARED_FORM_DIRECTIVES */
@@ -59158,11 +57390,7 @@ var InternalFormsSharedModule = (function () {
 //# sourceMappingURL=directives.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 466 */
-=======
-/* 467 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59194,22 +57422,14 @@ function normalizeAsyncValidator(validator) {
 //# sourceMappingURL=normalize_validator.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 467 */
-=======
-/* 468 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(465);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(466);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_radio_control_value_accessor__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__form_builder__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__form_builder__ = __webpack_require__(309);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormsModule; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return ReactiveFormsModule; });
 /**
@@ -59262,41 +57482,33 @@ var ReactiveFormsModule = (function () {
 //# sourceMappingURL=form_providers.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 468 */
-=======
-/* 469 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_abstract_control_directive__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_abstract_form_group_directive__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_checkbox_value_accessor__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_checkbox_value_accessor__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_control_container__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_control_value_accessor__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives_default_value_accessor__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives_default_value_accessor__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__directives_ng_control__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_ng_control_status__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__directives_ng_form__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__directives_ng_model__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__directives_ng_model_group__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__directives_ng_model_group__ = __webpack_require__(136);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__directives_radio_control_value_accessor__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__directives_reactive_directives_form_control_directive__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__directives_reactive_directives_form_control_name__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__directives_reactive_directives_form_group_directive__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__directives_reactive_directives_form_group_name__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__directives_select_control_value_accessor__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__directives_select_multiple_control_value_accessor__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__directives_select_control_value_accessor__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__directives_select_multiple_control_value_accessor__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__directives_validators__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__form_builder__ = __webpack_require__(312);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__model__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__form_builder__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__model__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__validators__ = __webpack_require__(40);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__form_providers__ = __webpack_require__(467);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__form_providers__ = __webpack_require__(468);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__directives_abstract_control_directive__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__directives_abstract_form_group_directive__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__directives_checkbox_value_accessor__["a"]; });
@@ -59376,16 +57588,11 @@ var ReactiveFormsModule = (function () {
 //# sourceMappingURL=forms.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 469 */
-=======
-/* 470 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__backends_browser_jsonp__ = __webpack_require__(312);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backends_browser_xhr__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__backends_jsonp_backend__ = __webpack_require__(313);
@@ -59393,15 +57600,6 @@ var ReactiveFormsModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__base_request_options__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__base_response_options__ = __webpack_require__(141);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__http__ = __webpack_require__(316);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__backends_browser_jsonp__ = __webpack_require__(315);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backends_browser_xhr__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__backends_jsonp_backend__ = __webpack_require__(316);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__backends_xhr_backend__ = __webpack_require__(317);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__base_request_options__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__base_response_options__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__http__ = __webpack_require__(319);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__interfaces__ = __webpack_require__(103);
 /* unused harmony export _createDefaultCookieXSRFStrategy */
 /* unused harmony export httpFactory */
@@ -59487,39 +57685,23 @@ var JsonpModule = (function () {
 //# sourceMappingURL=http_module.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 470 */
-=======
-/* 471 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__backends_browser_xhr__ = __webpack_require__(204);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__backends_jsonp_backend__ = __webpack_require__(313);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backends_xhr_backend__ = __webpack_require__(314);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__backends_jsonp_backend__ = __webpack_require__(316);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backends_xhr_backend__ = __webpack_require__(317);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_request_options__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__base_response_options__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__base_response_options__ = __webpack_require__(141);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__enums__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__headers__ = __webpack_require__(102);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__http__ = __webpack_require__(316);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__http_module__ = __webpack_require__(469);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__interfaces__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__static_request__ = __webpack_require__(317);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__http__ = __webpack_require__(319);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__http_module__ = __webpack_require__(470);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__interfaces__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__static_request__ = __webpack_require__(320);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__static_response__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__url_search_params__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__url_search_params__ = __webpack_require__(143);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__backends_browser_xhr__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__backends_jsonp_backend__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__backends_jsonp_backend__["c"]; });
@@ -59569,11 +57751,7 @@ var JsonpModule = (function () {
 //# sourceMappingURL=index.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 471 */
-=======
-/* 472 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59734,25 +57912,15 @@ function escapeRegExp(s) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(54)))
 
 /***/ },
-<<<<<<< HEAD
 /* 472 */
-=======
-/* 473 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_compiler__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_compiler__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__platform_providers__ = __webpack_require__(318);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__resource_loader_resource_loader_cache__ = __webpack_require__(475);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__private_export__ = __webpack_require__(473);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__platform_providers__ = __webpack_require__(321);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__resource_loader_resource_loader_cache__ = __webpack_require__(476);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__private_export__ = __webpack_require__(474);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return RESOURCE_CACHE_PROVIDER; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return platformBrowserDynamic; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_4__private_export__["a"]; });
@@ -59779,21 +57947,12 @@ var platformBrowserDynamic = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__
 //# sourceMappingURL=platform-browser-dynamic.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 473 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__platform_providers__ = __webpack_require__(318);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__resource_loader_resource_loader_impl__ = __webpack_require__(319);
-=======
-/* 474 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__platform_providers__ = __webpack_require__(321);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__resource_loader_resource_loader_impl__ = __webpack_require__(322);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return __platform_browser_dynamic_private__; });
 /**
  * @license
@@ -59811,11 +57970,7 @@ var __platform_browser_dynamic_private__ = {
 //# sourceMappingURL=private_export.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 474 */
-=======
-/* 475 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59835,21 +57990,12 @@ var getDOM = __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["__platform
 //# sourceMappingURL=private_import_platform-browser.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 475 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_compiler__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(471);
-=======
-/* 476 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_compiler__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__facade_lang__ = __webpack_require__(472);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return CachedResourceLoader; });
 /**
  * @license
@@ -59894,11 +58040,7 @@ var CachedResourceLoader = (function (_super) {
 //# sourceMappingURL=resource_loader_cache.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 476 */
-=======
-/* 477 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -59981,11 +58123,7 @@ var GenericBrowserDomAdapter = (function (_super) {
 //# sourceMappingURL=generic_browser_adapter.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 477 */
-=======
-/* 478 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60003,21 +58141,13 @@ function supportsState() {
 //# sourceMappingURL=history.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 478 */
-=======
-/* 479 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dom_dom_adapter__ = __webpack_require__(20);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_browser__ = __webpack_require__(482);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_browser__ = __webpack_require__(483);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__facade_lang__ = __webpack_require__(41);
 /* unused harmony export ChangeDetectionPerfRecord */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AngularTools; });
@@ -60107,20 +58237,12 @@ var AngularProfiler = (function () {
 //# sourceMappingURL=common_tools.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 479 */
-=======
-/* 480 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__facade_lang__ = __webpack_require__(41);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_tools__ = __webpack_require__(478);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_tools__ = __webpack_require__(479);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (immutable) */ exports["b"] = enableDebugTools;
 /* harmony export (immutable) */ exports["a"] = disableDebugTools;
 /**
@@ -60163,11 +58285,7 @@ function disableDebugTools() {
 //# sourceMappingURL=tools.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 480 */
-=======
-/* 481 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60228,11 +58346,7 @@ var By = (function () {
 //# sourceMappingURL=by.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 481 */
-=======
-/* 482 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60409,11 +58523,7 @@ function findStartingKeyframe(keyframes) {
 //# sourceMappingURL=web_animations_player.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 482 */
-=======
-/* 483 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60455,11 +58565,7 @@ var EventListener = win['EventListener'];
 //# sourceMappingURL=browser.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 483 */
-=======
-/* 484 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60585,7 +58691,6 @@ function iterateListLike(obj, fn) {
 //# sourceMappingURL=collection.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 484 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -60595,28 +58700,12 @@ function iterateListLike(obj, fn) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__browser_tools_tools__ = __webpack_require__(479);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dom_animation_driver__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dom_debug_by__ = __webpack_require__(480);
-=======
-/* 485 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__browser__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__browser_title__ = __webpack_require__(327);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__browser_tools_tools__ = __webpack_require__(480);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dom_animation_driver__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dom_debug_by__ = __webpack_require__(481);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dom_debug_ng_probe__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__dom_dom_tokens__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__dom_dom_tokens__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__dom_events_event_manager__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__dom_events_hammer_gestures__ = __webpack_require__(210);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__security_dom_sanitization_service__ = __webpack_require__(329);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__private_export__ = __webpack_require__(485);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__security_dom_sanitization_service__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__private_export__ = __webpack_require__(486);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__browser__["d"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__browser__["e"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "d", function() { return __WEBPACK_IMPORTED_MODULE_1__browser_title__["a"]; });
@@ -60653,7 +58742,6 @@ function iterateListLike(obj, fn) {
 //# sourceMappingURL=platform-browser.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 485 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -60670,24 +58758,6 @@ function iterateListLike(obj, fn) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__dom_events_key_events__ = __webpack_require__(326);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__dom_shared_styles_host__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__dom_web_animations_driver__ = __webpack_require__(327);
-=======
-/* 486 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__browser__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__browser_browser_adapter__ = __webpack_require__(324);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__browser_location_browser_platform_location__ = __webpack_require__(325);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__browser_testability__ = __webpack_require__(326);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dom_debug_ng_probe__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dom_dom_adapter__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__dom_dom_renderer__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__dom_events_dom_events__ = __webpack_require__(328);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__dom_events_hammer_gestures__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__dom_events_key_events__ = __webpack_require__(329);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__dom_shared_styles_host__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__dom_web_animations_driver__ = __webpack_require__(330);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return __platform_browser_private__; });
 /**
  * @license
@@ -60737,11 +58807,7 @@ var __platform_browser_private__ = {
 //# sourceMappingURL=private_export.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 486 */
-=======
-/* 487 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61016,11 +59082,7 @@ function sanitizeHtml(unsafeHtmlInput) {
 //# sourceMappingURL=html_sanitizer.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 487 */
-=======
-/* 488 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61121,39 +59183,27 @@ function sanitizeStyle(value) {
 //# sourceMappingURL=style_sanitizer.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 488 */
-=======
-/* 489 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_from__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_from__ = __webpack_require__(240);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_from___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_from__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of__);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_catch__ = __webpack_require__(381);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_concatAll__ = __webpack_require__(382);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_concatAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_operator_concatAll__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_first__ = __webpack_require__(385);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_catch__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_concatAll__ = __webpack_require__(383);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_concatAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_operator_concatAll__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_first__ = __webpack_require__(386);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_first___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_operator_first__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_map__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_map__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_mergeMap__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_mergeMap__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_mergeMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_operator_mergeMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_util_EmptyError__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_util_EmptyError__ = __webpack_require__(246);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_util_EmptyError___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_util_EmptyError__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__router_config_loader__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared__ = __webpack_require__(42);
@@ -61587,11 +59637,7 @@ function getOutlet(route) {
 //# sourceMappingURL=apply_redirects.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 489 */
-=======
-/* 490 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61657,15 +59703,11 @@ function validateNode(route) {
 //# sourceMappingURL=config.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 490 */
-=======
-/* 491 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_BehaviorSubject__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_BehaviorSubject__ = __webpack_require__(237);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_BehaviorSubject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router_state__ = __webpack_require__(87);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_tree__ = __webpack_require__(215);
@@ -61717,11 +59759,7 @@ function equalRouteSnapshots(a, b) {
 //# sourceMappingURL=create_router_state.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 491 */
-=======
-/* 492 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62025,39 +60063,22 @@ function compare(path, params, segment) {
 //# sourceMappingURL=create_url_tree.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 492 */
-=======
-/* 493 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_router_link__ = __webpack_require__(213);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_router_link_active__ = __webpack_require__(330);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_router_outlet__ = __webpack_require__(331);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__router__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__router_module__ = __webpack_require__(332);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__router_outlet_map__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__router_preloader__ = __webpack_require__(333);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_router_link_active__ = __webpack_require__(333);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_router_outlet__ = __webpack_require__(334);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__router__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__router_module__ = __webpack_require__(335);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__router_outlet_map__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__router_preloader__ = __webpack_require__(336);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__router_state__ = __webpack_require__(87);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__url_handling_strategy__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__url_tree__ = __webpack_require__(70);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__private_export__ = __webpack_require__(493);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__private_export__ = __webpack_require__(494);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__directives_router_link__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__directives_router_link__["b"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__directives_router_link_active__["a"]; });
@@ -62111,20 +60132,12 @@ function compare(path, params, segment) {
 //# sourceMappingURL=index.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 493 */
-=======
-/* 494 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__router_config_loader__ = __webpack_require__(106);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router_module__ = __webpack_require__(332);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router_module__ = __webpack_require__(335);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_collection__ = __webpack_require__(48);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return __router_private__; });
 /**
@@ -62145,11 +60158,7 @@ var __router_private__ = {
 //# sourceMappingURL=private_export.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 494 */
-=======
-/* 495 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62160,15 +60169,11 @@ var getDOM = __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["__platform
 //# sourceMappingURL=private_import_platform-browser.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 495 */
-=======
-/* 496 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_of__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_of__);
@@ -62437,11 +60442,7 @@ function getResolve(route) {
 //# sourceMappingURL=recognize.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 496 */
-=======
-/* 497 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62469,7 +60470,6 @@ var ChartComponent = (function () {
         this.element = element;
         this.highchartsService = highchartsService;
     }
-<<<<<<< HEAD
     Object.defineProperty(ChartComponent.prototype, "options", {
         set: function (opts) {
             this.userOpts = opts;
@@ -62540,48 +60540,12 @@ exports.ChartEvent = ChartEvent;
 
 /***/ },
 /* 498 */
-=======
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'app',
-            template: __webpack_require__(732),
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
-}());
-exports.AppComponent = AppComponent;
-
-
-/***/ },
-/* 498 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var home_component_1 = __webpack_require__(339);
-var genders_component_1 = __webpack_require__(338);
-var results_component_1 = __webpack_require__(340);
-var bracket_component_1 = __webpack_require__(337);
-exports.rootRouterConfig = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', component: home_component_1.HomeComponent },
-    { path: 'genders/:sport/:discipline', component: genders_component_1.GendersComponent },
-    { path: 'results/:sport/:discipline/:gender/:phase/:heat/:run', component: results_component_1.ResultsComponent },
-    { path: 'bracket/:sport/:discipline/:gender/:phase', component: bracket_component_1.BracketComponent },
-];
-
-
-/***/ },
-/* 499 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
 var HighchartsWrapper_1 = __webpack_require__(499);
 var core_1 = __webpack_require__(0);
-<<<<<<< HEAD
 var HighchartsService = (function () {
     function HighchartsService() {
         this.Highcharts = HighchartsWrapper_1.Highcharts;
@@ -62598,22 +60562,6 @@ exports.HighchartsService = HighchartsService;
 /***/ },
 /* 499 */
 /***/ function(module, exports, __webpack_require__) {
-=======
-var FooterComponent = (function () {
-    function FooterComponent() {
-    }
-    FooterComponent = __decorate([
-        core_1.Component({
-            selector: 'footer',
-            styles: [__webpack_require__(730)],
-            template: __webpack_require__(734)
-        }), 
-        __metadata('design:paramtypes', [])
-    ], FooterComponent);
-    return FooterComponent;
-}());
-exports.FooterComponent = FooterComponent;
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 "use strict";
 "use strict";
@@ -62627,7 +60575,6 @@ exports.Highcharts = Highcharts;
 
 "use strict";
 "use strict";
-<<<<<<< HEAD
 var ChartEvent_1 = __webpack_require__(497);
 var chartEvents = [
     'addSeries',
@@ -62867,57 +60814,15 @@ __export(__webpack_require__(502));
 /***/ },
 /* 505 */
 /***/ function(module, exports, __webpack_require__) {
-=======
+
+"use strict";
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var HeaderComponent = (function () {
-    function HeaderComponent() {
-    }
-    HeaderComponent = __decorate([
-        core_1.Component({
-            selector: 'header',
-            styles: [__webpack_require__(731)],
-            template: __webpack_require__(736)
-        }), 
-        __metadata('design:paramtypes', [])
-    ], HeaderComponent);
-    return HeaderComponent;
-}());
-exports.HeaderComponent = HeaderComponent;
-
-
-/***/ },
-/* 501 */
-/***/ function(module, exports) {
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
-
-"use strict";
-"use strict";
-exports.Names = {
-    "SNOWBOARD": "SBD",
-    "SBD": "SNOWBOARD",
-    "FREESTYLE	SKI": "FRS",
-    "FRS": "FREESTYLE	SKI",
-    "Parallel	Giant	Slalom": "PGS",
-    "PGS": "Parallel	Giant	Slalom",
-    "Parallel	Slalom": "PSL",
-    "PSL": "Parallel	Slalom",
-    "Snowboard	Cross": "SBX",
-    "SBX": "Snowboard	Cross",
-    "Slope	Style": "SS-",
-    "SS-": "Slope	Style",
-    "Ski	Cross": "SX-",
-    "SX-": "Ski	Cross",
-};
-<<<<<<< HEAD
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
@@ -62939,17 +60844,10 @@ exports.AppComponent = AppComponent;
 
 /***/ },
 /* 506 */
-=======
-
-
-/***/ },
-/* 502 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
-<<<<<<< HEAD
 var home_component_1 = __webpack_require__(338);
 exports.rootRouterConfig = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -63019,103 +60917,6 @@ module.exports = __webpack_require__(12).Map;
 /* 511 */
 /***/ function(module, exports, __webpack_require__) {
 
-=======
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var KeysPipe = (function () {
-    function KeysPipe() {
-    }
-    KeysPipe.prototype.transform = function (value, args) {
-        var keys = [];
-        for (var key in value) {
-            keys.push(key);
-        }
-        return keys;
-    };
-    KeysPipe = __decorate([
-        core_1.Pipe({ name: 'keys' }), 
-        __metadata('design:paramtypes', [])
-    ], KeysPipe);
-    return KeysPipe;
-}());
-exports.KeysPipe = KeysPipe;
-
-
-/***/ },
-/* 503 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(156);
-__webpack_require__(539);
-__webpack_require__(537);
-__webpack_require__(543);
-__webpack_require__(540);
-__webpack_require__(546);
-__webpack_require__(548);
-__webpack_require__(536);
-__webpack_require__(542);
-__webpack_require__(533);
-__webpack_require__(547);
-__webpack_require__(531);
-__webpack_require__(545);
-__webpack_require__(544);
-__webpack_require__(538);
-__webpack_require__(541);
-__webpack_require__(530);
-__webpack_require__(532);
-__webpack_require__(535);
-__webpack_require__(534);
-__webpack_require__(549);
-__webpack_require__(155);
-module.exports = __webpack_require__(12).Array;
-
-/***/ },
-/* 504 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(550);
-__webpack_require__(552);
-__webpack_require__(551);
-__webpack_require__(554);
-__webpack_require__(553);
-module.exports = Date;
-
-/***/ },
-/* 505 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(555);
-__webpack_require__(557);
-__webpack_require__(556);
-module.exports = __webpack_require__(12).Function;
-
-/***/ },
-/* 506 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(77);
-__webpack_require__(156);
-__webpack_require__(237);
-__webpack_require__(367);
-module.exports = __webpack_require__(12).Map;
-
-/***/ },
-/* 507 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(558);
-__webpack_require__(559);
-__webpack_require__(560);
-__webpack_require__(561);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 __webpack_require__(562);
 __webpack_require__(563);
 __webpack_require__(564);
@@ -63129,18 +60930,7 @@ __webpack_require__(571);
 __webpack_require__(572);
 __webpack_require__(573);
 __webpack_require__(574);
-<<<<<<< HEAD
-=======
-module.exports = __webpack_require__(12).Math;
-
-/***/ },
-/* 508 */
-/***/ function(module, exports, __webpack_require__) {
-
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 __webpack_require__(575);
-__webpack_require__(585);
-__webpack_require__(586);
 __webpack_require__(576);
 __webpack_require__(577);
 __webpack_require__(578);
@@ -63158,7 +60948,6 @@ __webpack_require__(581);
 __webpack_require__(582);
 __webpack_require__(583);
 __webpack_require__(584);
-<<<<<<< HEAD
 __webpack_require__(585);
 __webpack_require__(586);
 __webpack_require__(587);
@@ -63186,37 +60975,11 @@ __webpack_require__(599);
 __webpack_require__(591);
 __webpack_require__(602);
 __webpack_require__(606);
-=======
-module.exports = __webpack_require__(12).Number;
-
-/***/ },
-/* 509 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(374);
-__webpack_require__(588);
-__webpack_require__(590);
-__webpack_require__(589);
-__webpack_require__(592);
-__webpack_require__(594);
-__webpack_require__(599);
-__webpack_require__(593);
-__webpack_require__(591);
-__webpack_require__(601);
-__webpack_require__(600);
-__webpack_require__(596);
-__webpack_require__(597);
-__webpack_require__(595);
-__webpack_require__(587);
-__webpack_require__(598);
-__webpack_require__(602);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 __webpack_require__(77);
 
 module.exports = __webpack_require__(12).Object;
 
 /***/ },
-<<<<<<< HEAD
 /* 514 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -63237,38 +61000,11 @@ module.exports = __webpack_require__(12).parseInt;
 __webpack_require__(609);
 __webpack_require__(610);
 __webpack_require__(611);
-=======
-/* 510 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(603);
-module.exports = __webpack_require__(12).parseFloat;
-
-/***/ },
-/* 511 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(604);
-module.exports = __webpack_require__(12).parseInt;
-
-/***/ },
-/* 512 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(605);
-__webpack_require__(606);
-__webpack_require__(607);
-__webpack_require__(608);
-__webpack_require__(609);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 __webpack_require__(612);
-__webpack_require__(610);
-__webpack_require__(611);
 __webpack_require__(613);
 __webpack_require__(616);
 __webpack_require__(614);
 __webpack_require__(615);
-<<<<<<< HEAD
 __webpack_require__(617);
 __webpack_require__(618);
 __webpack_require__(619);
@@ -63315,60 +61051,12 @@ __webpack_require__(639);
 __webpack_require__(641);
 __webpack_require__(625);
 __webpack_require__(626);
-=======
-__webpack_require__(616);
-__webpack_require__(618);
-__webpack_require__(617);
-module.exports = __webpack_require__(12).Reflect;
-
-/***/ },
-/* 513 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(619);
-__webpack_require__(620);
-__webpack_require__(368);
-__webpack_require__(369);
-__webpack_require__(370);
-__webpack_require__(371);
-__webpack_require__(372);
-module.exports = __webpack_require__(12).RegExp;
-
-/***/ },
-/* 514 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(77);
-__webpack_require__(156);
-__webpack_require__(237);
-__webpack_require__(373);
-module.exports = __webpack_require__(12).Set;
-
-/***/ },
-/* 515 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(630);
-__webpack_require__(634);
-__webpack_require__(641);
-__webpack_require__(156);
-__webpack_require__(625);
-__webpack_require__(626);
-__webpack_require__(631);
-__webpack_require__(635);
-__webpack_require__(637);
-__webpack_require__(621);
-__webpack_require__(622);
-__webpack_require__(623);
-__webpack_require__(624);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 __webpack_require__(627);
 __webpack_require__(628);
-__webpack_require__(629);
+__webpack_require__(631);
 __webpack_require__(632);
 __webpack_require__(633);
 __webpack_require__(636);
-<<<<<<< HEAD
 __webpack_require__(637);
 __webpack_require__(640);
 __webpack_require__(642);
@@ -63385,27 +61073,10 @@ module.exports = __webpack_require__(12).String;
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(372);
-=======
-__webpack_require__(638);
-__webpack_require__(639);
-__webpack_require__(640);
-__webpack_require__(369);
-__webpack_require__(370);
-__webpack_require__(371);
-__webpack_require__(372);
-module.exports = __webpack_require__(12).String;
-
-/***/ },
-/* 516 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(374);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 __webpack_require__(77);
 module.exports = __webpack_require__(12).Symbol;
 
 /***/ },
-<<<<<<< HEAD
 /* 521 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -63420,27 +61091,10 @@ __webpack_require__(651);
 __webpack_require__(654);
 __webpack_require__(648);
 __webpack_require__(649);
-=======
-/* 517 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(642);
-__webpack_require__(643);
-__webpack_require__(648);
-__webpack_require__(651);
-__webpack_require__(652);
-__webpack_require__(646);
-__webpack_require__(649);
-__webpack_require__(647);
-__webpack_require__(650);
-__webpack_require__(644);
-__webpack_require__(645);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 __webpack_require__(77);
 module.exports = __webpack_require__(12);
 
 /***/ },
-<<<<<<< HEAD
 /* 522 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -63471,50 +61125,14 @@ __webpack_require__(662);
 __webpack_require__(664);
 __webpack_require__(665);
 __webpack_require__(666);
-=======
-/* 518 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(77);
-__webpack_require__(155);
-__webpack_require__(375);
-module.exports = __webpack_require__(12).WeakMap;
-
-/***/ },
-/* 519 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(77);
-__webpack_require__(237);
-__webpack_require__(653);
-module.exports = __webpack_require__(12).WeakSet;
-
-/***/ },
-/* 520 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(654);
-__webpack_require__(655);
-__webpack_require__(657);
-__webpack_require__(656);
-__webpack_require__(659);
-__webpack_require__(658);
-__webpack_require__(660);
-__webpack_require__(661);
-__webpack_require__(662);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 module.exports = __webpack_require__(12).Reflect;
 
 
 /***/ },
-<<<<<<< HEAD
 /* 525 */
-=======
-/* 521 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
-var forOf = __webpack_require__(149);
+var forOf = __webpack_require__(148);
 
 module.exports = function(iter, ITERATOR){
   var result = [];
@@ -63524,15 +61142,11 @@ module.exports = function(iter, ITERATOR){
 
 
 /***/ },
-<<<<<<< HEAD
 /* 526 */
-=======
-/* 522 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(9)
-  , isArray  = __webpack_require__(225)
+var isObject = __webpack_require__(10)
+  , isArray  = __webpack_require__(224)
   , SPECIES  = __webpack_require__(13)('species');
 
 module.exports = function(original){
@@ -63549,30 +61163,18 @@ module.exports = function(original){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 527 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 9.4.2.3 ArraySpeciesCreate(originalArray, length)
 var speciesConstructor = __webpack_require__(526);
-=======
-/* 523 */
-/***/ function(module, exports, __webpack_require__) {
-
-// 9.4.2.3 ArraySpeciesCreate(originalArray, length)
-var speciesConstructor = __webpack_require__(522);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 module.exports = function(original, length){
   return new (speciesConstructor(original))(length);
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 528 */
-=======
-/* 524 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63587,17 +61189,13 @@ module.exports = function(hint){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 529 */
-=======
-/* 525 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // all enumerable object keys, includes symbols
 var getKeys = __webpack_require__(89)
-  , gOPS    = __webpack_require__(150)
-  , pIE     = __webpack_require__(151);
+  , gOPS    = __webpack_require__(149)
+  , pIE     = __webpack_require__(150);
 module.exports = function(it){
   var result     = getKeys(it)
     , getSymbols = gOPS.f;
@@ -63611,11 +61209,7 @@ module.exports = function(it){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 530 */
-=======
-/* 526 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports) {
 
 // fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -63636,11 +61230,7 @@ module.exports = function(fn, args, that){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 531 */
-=======
-/* 527 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var getKeys   = __webpack_require__(89)
@@ -63655,18 +61245,14 @@ module.exports = function(object, el){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 532 */
-=======
-/* 528 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // all object keys, includes non-enumerable and symbols
 var gOPN     = __webpack_require__(74)
-  , gOPS     = __webpack_require__(150)
+  , gOPS     = __webpack_require__(149)
   , anObject = __webpack_require__(5)
-  , Reflect  = __webpack_require__(10).Reflect;
+  , Reflect  = __webpack_require__(11).Reflect;
 module.exports = Reflect && Reflect.ownKeys || function ownKeys(it){
   var keys       = gOPN.f(anObject(it))
     , getSymbols = gOPS.f;
@@ -63674,21 +61260,13 @@ module.exports = Reflect && Reflect.ownKeys || function ownKeys(it){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 533 */
-=======
-/* 529 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
-var global         = __webpack_require__(10)
+var global         = __webpack_require__(11)
   , core           = __webpack_require__(12)
   , LIBRARY        = __webpack_require__(110)
-<<<<<<< HEAD
   , wksExt         = __webpack_require__(364)
-=======
-  , wksExt         = __webpack_require__(366)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , defineProperty = __webpack_require__(16).f;
 module.exports = function(name){
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
@@ -63696,30 +61274,18 @@ module.exports = function(name){
 };
 
 /***/ },
-<<<<<<< HEAD
 /* 534 */
-=======
-/* 530 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
 var $export = __webpack_require__(1);
 
-<<<<<<< HEAD
 $export($export.P, 'Array', {copyWithin: __webpack_require__(340)});
-=======
-$export($export.P, 'Array', {copyWithin: __webpack_require__(342)});
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 __webpack_require__(107)('copyWithin');
 
 /***/ },
-<<<<<<< HEAD
 /* 535 */
-=======
-/* 531 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63735,26 +61301,18 @@ $export($export.P + $export.F * !__webpack_require__(34)([].every, true), 'Array
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 536 */
-=======
-/* 532 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
 var $export = __webpack_require__(1);
 
-$export($export.P, 'Array', {fill: __webpack_require__(217)});
+$export($export.P, 'Array', {fill: __webpack_require__(216)});
 
 __webpack_require__(107)('fill');
 
 /***/ },
-<<<<<<< HEAD
 /* 537 */
-=======
-/* 533 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63770,11 +61328,7 @@ $export($export.P + $export.F * !__webpack_require__(34)([].filter, true), 'Arra
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 538 */
-=======
-/* 534 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63794,11 +61348,7 @@ $export($export.P + $export.F * forced, 'Array', {
 __webpack_require__(107)(KEY);
 
 /***/ },
-<<<<<<< HEAD
 /* 539 */
-=======
-/* 535 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63818,11 +61368,7 @@ $export($export.P + $export.F * forced, 'Array', {
 __webpack_require__(107)(KEY);
 
 /***/ },
-<<<<<<< HEAD
 /* 540 */
-=======
-/* 536 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63839,11 +61385,7 @@ $export($export.P + $export.F * !STRICT, 'Array', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 541 */
-=======
-/* 537 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63851,21 +61393,13 @@ $export($export.P + $export.F * !STRICT, 'Array', {
 var ctx            = __webpack_require__(72)
   , $export        = __webpack_require__(1)
   , toObject       = __webpack_require__(30)
-<<<<<<< HEAD
   , call           = __webpack_require__(350)
   , isArrayIter    = __webpack_require__(223)
   , toLength       = __webpack_require__(21)
   , createProperty = __webpack_require__(345)
   , getIterFn      = __webpack_require__(235);
-=======
-  , call           = __webpack_require__(352)
-  , isArrayIter    = __webpack_require__(224)
-  , toLength       = __webpack_require__(22)
-  , createProperty = __webpack_require__(347)
-  , getIterFn      = __webpack_require__(236);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
-$export($export.S + $export.F * !__webpack_require__(228)(function(iter){ Array.from(iter); }), 'Array', {
+$export($export.S + $export.F * !__webpack_require__(227)(function(iter){ Array.from(iter); }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
   from: function from(arrayLike/*, mapfn = undefined, thisArg = undefined*/){
     var O       = toObject(arrayLike)
@@ -63895,17 +61429,13 @@ $export($export.S + $export.F * !__webpack_require__(228)(function(iter){ Array.
 
 
 /***/ },
-<<<<<<< HEAD
 /* 542 */
-=======
-/* 538 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var $export       = __webpack_require__(1)
-  , $indexOf      = __webpack_require__(218)(false)
+  , $indexOf      = __webpack_require__(217)(false)
   , $native       = [].indexOf
   , NEGATIVE_ZERO = !!$native && 1 / [1].indexOf(1, -0) < 0;
 
@@ -63920,24 +61450,16 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(34)($nati
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 543 */
-=======
-/* 539 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 22.1.2.2 / 15.4.3.2 Array.isArray(arg)
 var $export = __webpack_require__(1);
 
-$export($export.S, 'Array', {isArray: __webpack_require__(225)});
+$export($export.S, 'Array', {isArray: __webpack_require__(224)});
 
 /***/ },
-<<<<<<< HEAD
 /* 544 */
-=======
-/* 540 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63955,11 +61477,7 @@ $export($export.P + $export.F * (__webpack_require__(109) != Object || !__webpac
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 545 */
-=======
-/* 541 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63967,7 +61485,7 @@ $export($export.P + $export.F * (__webpack_require__(109) != Object || !__webpac
 var $export       = __webpack_require__(1)
   , toIObject     = __webpack_require__(35)
   , toInteger     = __webpack_require__(63)
-  , toLength      = __webpack_require__(22)
+  , toLength      = __webpack_require__(21)
   , $native       = [].lastIndexOf
   , NEGATIVE_ZERO = !!$native && 1 / [1].lastIndexOf(1, -0) < 0;
 
@@ -63987,11 +61505,7 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(34)($nati
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 546 */
-=======
-/* 542 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64007,21 +61521,13 @@ $export($export.P + $export.F * !__webpack_require__(34)([].map, true), 'Array',
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 547 */
-=======
-/* 543 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var $export        = __webpack_require__(1)
-<<<<<<< HEAD
   , createProperty = __webpack_require__(345);
-=======
-  , createProperty = __webpack_require__(347);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 // WebKit Array.of isn't generic
 $export($export.S + $export.F * __webpack_require__(7)(function(){
@@ -64040,21 +61546,13 @@ $export($export.S + $export.F * __webpack_require__(7)(function(){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 548 */
-=======
-/* 544 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var $export = __webpack_require__(1)
-<<<<<<< HEAD
   , $reduce = __webpack_require__(341);
-=======
-  , $reduce = __webpack_require__(343);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 $export($export.P + $export.F * !__webpack_require__(34)([].reduceRight, true), 'Array', {
   // 22.1.3.19 / 15.4.4.22 Array.prototype.reduceRight(callbackfn [, initialValue])
@@ -64064,21 +61562,13 @@ $export($export.P + $export.F * !__webpack_require__(34)([].reduceRight, true), 
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 549 */
-=======
-/* 545 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var $export = __webpack_require__(1)
-<<<<<<< HEAD
   , $reduce = __webpack_require__(341);
-=======
-  , $reduce = __webpack_require__(343);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 $export($export.P + $export.F * !__webpack_require__(34)([].reduce, true), 'Array', {
   // 22.1.3.18 / 15.4.4.21 Array.prototype.reduce(callbackfn [, initialValue])
@@ -64088,24 +61578,16 @@ $export($export.P + $export.F * !__webpack_require__(34)([].reduce, true), 'Arra
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 550 */
-=======
-/* 546 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var $export    = __webpack_require__(1)
-<<<<<<< HEAD
   , html       = __webpack_require__(347)
-=======
-  , html       = __webpack_require__(349)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , cof        = __webpack_require__(71)
   , toIndex    = __webpack_require__(75)
-  , toLength   = __webpack_require__(22)
+  , toLength   = __webpack_require__(21)
   , arraySlice = [].slice;
 
 // fallback for not array-like ES3 strings and DOM objects
@@ -64130,11 +61612,7 @@ $export($export.P + $export.F * __webpack_require__(7)(function(){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 551 */
-=======
-/* 547 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64150,11 +61628,7 @@ $export($export.P + $export.F * !__webpack_require__(34)([].some, true), 'Array'
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 552 */
-=======
-/* 548 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64183,21 +61657,13 @@ $export($export.P + $export.F * (fails(function(){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 553 */
-=======
-/* 549 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(112)('Array');
 
 /***/ },
-<<<<<<< HEAD
 /* 554 */
-=======
-/* 550 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.3.3.1 / 15.9.4.4 Date.now()
@@ -64206,11 +61672,7 @@ var $export = __webpack_require__(1);
 $export($export.S, 'Date', {now: function(){ return new Date().getTime(); }});
 
 /***/ },
-<<<<<<< HEAD
 /* 555 */
-=======
-/* 551 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64244,11 +61706,7 @@ $export($export.P + $export.F * (fails(function(){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 556 */
-=======
-/* 552 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64268,27 +61726,16 @@ $export($export.P + $export.F * __webpack_require__(7)(function(){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 557 */
-=======
-/* 553 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var TO_PRIMITIVE = __webpack_require__(13)('toPrimitive')
   , proto        = Date.prototype;
 
-<<<<<<< HEAD
 if(!(TO_PRIMITIVE in proto))__webpack_require__(29)(proto, TO_PRIMITIVE, __webpack_require__(528));
 
 /***/ },
 /* 558 */
-=======
-if(!(TO_PRIMITIVE in proto))__webpack_require__(29)(proto, TO_PRIMITIVE, __webpack_require__(524));
-
-/***/ },
-/* 554 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var DateProto    = Date.prototype
@@ -64297,39 +61744,28 @@ var DateProto    = Date.prototype
   , $toString    = DateProto[TO_STRING]
   , getTime      = DateProto.getTime;
 if(new Date(NaN) + '' != INVALID_DATE){
-  __webpack_require__(25)(DateProto, TO_STRING, function toString(){
+  __webpack_require__(24)(DateProto, TO_STRING, function toString(){
     var value = getTime.call(this);
     return value === value ? $toString.call(this) : INVALID_DATE;
   });
 }
 
 /***/ },
-<<<<<<< HEAD
 /* 559 */
-=======
-/* 555 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.2.3.2 / 15.3.4.5 Function.prototype.bind(thisArg, args...)
 var $export = __webpack_require__(1);
 
-<<<<<<< HEAD
 $export($export.P, 'Function', {bind: __webpack_require__(342)});
 
 /***/ },
 /* 560 */
-=======
-$export($export.P, 'Function', {bind: __webpack_require__(344)});
-
-/***/ },
-/* 556 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
-var isObject       = __webpack_require__(9)
+var isObject       = __webpack_require__(10)
   , getPrototypeOf = __webpack_require__(44)
   , HAS_INSTANCE   = __webpack_require__(13)('hasInstance')
   , FunctionProto  = Function.prototype;
@@ -64343,16 +61779,12 @@ if(!(HAS_INSTANCE in FunctionProto))__webpack_require__(16).f(FunctionProto, HAS
 }});
 
 /***/ },
-<<<<<<< HEAD
 /* 561 */
-=======
-/* 557 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var dP         = __webpack_require__(16).f
   , createDesc = __webpack_require__(62)
-  , has        = __webpack_require__(24)
+  , has        = __webpack_require__(23)
   , FProto     = Function.prototype
   , nameRE     = /^\s*function ([^ (]*)/
   , NAME       = 'name';
@@ -64362,7 +61794,7 @@ var isExtensible = Object.isExtensible || function(){
 };
 
 // 19.2.4.2 name
-NAME in FProto || __webpack_require__(19) && dP(FProto, NAME, {
+NAME in FProto || __webpack_require__(18) && dP(FProto, NAME, {
   configurable: true,
   get: function(){
     try {
@@ -64377,20 +61809,12 @@ NAME in FProto || __webpack_require__(19) && dP(FProto, NAME, {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 562 */
-=======
-/* 558 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.3 Math.acosh(x)
 var $export = __webpack_require__(1)
-<<<<<<< HEAD
   , log1p   = __webpack_require__(353)
-=======
-  , log1p   = __webpack_require__(355)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , sqrt    = Math.sqrt
   , $acosh  = Math.acosh;
 
@@ -64408,11 +61832,7 @@ $export($export.S + $export.F * !($acosh
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 563 */
-=======
-/* 559 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.5 Math.asinh(x)
@@ -64427,11 +61847,7 @@ function asinh(x){
 $export($export.S + $export.F * !($asinh && 1 / $asinh(0) > 0), 'Math', {asinh: asinh});
 
 /***/ },
-<<<<<<< HEAD
 /* 564 */
-=======
-/* 560 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.7 Math.atanh(x)
@@ -64446,16 +61862,12 @@ $export($export.S + $export.F * !($atanh && 1 / $atanh(-0) < 0), 'Math', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 565 */
-=======
-/* 561 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.9 Math.cbrt(x)
 var $export = __webpack_require__(1)
-  , sign    = __webpack_require__(230);
+  , sign    = __webpack_require__(229);
 
 $export($export.S, 'Math', {
   cbrt: function cbrt(x){
@@ -64464,11 +61876,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 566 */
-=======
-/* 562 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.11 Math.clz32(x)
@@ -64481,11 +61889,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 567 */
-=======
-/* 563 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.12 Math.cosh(x)
@@ -64499,30 +61903,22 @@ $export($export.S, 'Math', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 568 */
-=======
-/* 564 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.14 Math.expm1(x)
 var $export = __webpack_require__(1)
-  , $expm1  = __webpack_require__(229);
+  , $expm1  = __webpack_require__(228);
 
 $export($export.S + $export.F * ($expm1 != Math.expm1), 'Math', {expm1: $expm1});
 
 /***/ },
-<<<<<<< HEAD
 /* 569 */
-=======
-/* 565 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.16 Math.fround(x)
 var $export   = __webpack_require__(1)
-  , sign      = __webpack_require__(230)
+  , sign      = __webpack_require__(229)
   , pow       = Math.pow
   , EPSILON   = pow(2, -52)
   , EPSILON32 = pow(2, -23)
@@ -64548,11 +61944,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 570 */
-=======
-/* 566 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.17 Math.hypot([value1[, value2[, … ]]])
@@ -64582,11 +61974,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 571 */
-=======
-/* 567 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.18 Math.imul(x, y)
@@ -64608,11 +61996,7 @@ $export($export.S + $export.F * __webpack_require__(7)(function(){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 572 */
-=======
-/* 568 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.21 Math.log10(x)
@@ -64625,27 +62009,16 @@ $export($export.S, 'Math', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 573 */
-=======
-/* 569 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.20 Math.log1p(x)
 var $export = __webpack_require__(1);
 
-<<<<<<< HEAD
 $export($export.S, 'Math', {log1p: __webpack_require__(353)});
 
 /***/ },
 /* 574 */
-=======
-$export($export.S, 'Math', {log1p: __webpack_require__(355)});
-
-/***/ },
-/* 570 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.22 Math.log2(x)
@@ -64658,29 +62031,21 @@ $export($export.S, 'Math', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 575 */
-=======
-/* 571 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.28 Math.sign(x)
 var $export = __webpack_require__(1);
 
-$export($export.S, 'Math', {sign: __webpack_require__(230)});
+$export($export.S, 'Math', {sign: __webpack_require__(229)});
 
 /***/ },
-<<<<<<< HEAD
 /* 576 */
-=======
-/* 572 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.30 Math.sinh(x)
 var $export = __webpack_require__(1)
-  , expm1   = __webpack_require__(229)
+  , expm1   = __webpack_require__(228)
   , exp     = Math.exp;
 
 // V8 near Chromium 38 has a problem with very small numbers
@@ -64695,16 +62060,12 @@ $export($export.S + $export.F * __webpack_require__(7)(function(){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 577 */
-=======
-/* 573 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.33 Math.tanh(x)
 var $export = __webpack_require__(1)
-  , expm1   = __webpack_require__(229)
+  , expm1   = __webpack_require__(228)
   , exp     = Math.exp;
 
 $export($export.S, 'Math', {
@@ -64716,11 +62077,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 578 */
-=======
-/* 574 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.34 Math.trunc(x)
@@ -64733,25 +62090,21 @@ $export($export.S, 'Math', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 579 */
-=======
-/* 575 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
-var global            = __webpack_require__(10)
-  , has               = __webpack_require__(24)
+var global            = __webpack_require__(11)
+  , has               = __webpack_require__(23)
   , cof               = __webpack_require__(71)
-  , inheritIfRequired = __webpack_require__(223)
+  , inheritIfRequired = __webpack_require__(222)
   , toPrimitive       = __webpack_require__(64)
   , fails             = __webpack_require__(7)
   , gOPN              = __webpack_require__(74).f
   , gOPD              = __webpack_require__(51).f
   , dP                = __webpack_require__(16).f
-  , $trim             = __webpack_require__(153).trim
+  , $trim             = __webpack_require__(152).trim
   , NUMBER            = 'Number'
   , $Number           = global[NUMBER]
   , Base              = $Number
@@ -64795,7 +62148,7 @@ if(!$Number(' 0o1') || !$Number('0b1') || $Number('+0x1')){
       && (BROKEN_COF ? fails(function(){ proto.valueOf.call(that); }) : cof(that) != NUMBER)
         ? inheritIfRequired(new Base(toNumber(it)), that, $Number) : toNumber(it);
   };
-  for(var keys = __webpack_require__(19) ? gOPN(Base) : (
+  for(var keys = __webpack_require__(18) ? gOPN(Base) : (
     // ES3:
     'MAX_VALUE,MIN_VALUE,NaN,NEGATIVE_INFINITY,POSITIVE_INFINITY,' +
     // ES6 (in case, if modules with ES6 Number statics required before):
@@ -64808,15 +62161,11 @@ if(!$Number(' 0o1') || !$Number('0b1') || $Number('+0x1')){
   }
   $Number.prototype = proto;
   proto.constructor = $Number;
-  __webpack_require__(25)(global, NUMBER, $Number);
+  __webpack_require__(24)(global, NUMBER, $Number);
 }
 
 /***/ },
-<<<<<<< HEAD
 /* 580 */
-=======
-/* 576 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.1.2.1 Number.EPSILON
@@ -64825,16 +62174,12 @@ var $export = __webpack_require__(1);
 $export($export.S, 'Number', {EPSILON: Math.pow(2, -52)});
 
 /***/ },
-<<<<<<< HEAD
 /* 581 */
-=======
-/* 577 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.1.2.2 Number.isFinite(number)
 var $export   = __webpack_require__(1)
-  , _isFinite = __webpack_require__(10).isFinite;
+  , _isFinite = __webpack_require__(11).isFinite;
 
 $export($export.S, 'Number', {
   isFinite: function isFinite(it){
@@ -64843,27 +62188,16 @@ $export($export.S, 'Number', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 582 */
-=======
-/* 578 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.1.2.3 Number.isInteger(number)
 var $export = __webpack_require__(1);
 
-<<<<<<< HEAD
 $export($export.S, 'Number', {isInteger: __webpack_require__(349)});
 
 /***/ },
 /* 583 */
-=======
-$export($export.S, 'Number', {isInteger: __webpack_require__(351)});
-
-/***/ },
-/* 579 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.1.2.4 Number.isNaN(number)
@@ -64876,20 +62210,12 @@ $export($export.S, 'Number', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 584 */
-=======
-/* 580 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.1.2.5 Number.isSafeInteger(number)
 var $export   = __webpack_require__(1)
-<<<<<<< HEAD
   , isInteger = __webpack_require__(349)
-=======
-  , isInteger = __webpack_require__(351)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , abs       = Math.abs;
 
 $export($export.S, 'Number', {
@@ -64899,11 +62225,7 @@ $export($export.S, 'Number', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 585 */
-=======
-/* 581 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.1.2.6 Number.MAX_SAFE_INTEGER
@@ -64912,11 +62234,7 @@ var $export = __webpack_require__(1);
 $export($export.S, 'Number', {MAX_SAFE_INTEGER: 0x1fffffffffffff});
 
 /***/ },
-<<<<<<< HEAD
 /* 586 */
-=======
-/* 582 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.1.2.10 Number.MIN_SAFE_INTEGER
@@ -64925,58 +62243,33 @@ var $export = __webpack_require__(1);
 $export($export.S, 'Number', {MIN_SAFE_INTEGER: -0x1fffffffffffff});
 
 /***/ },
-<<<<<<< HEAD
 /* 587 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $export     = __webpack_require__(1)
   , $parseFloat = __webpack_require__(358);
-=======
-/* 583 */
-/***/ function(module, exports, __webpack_require__) {
-
-var $export     = __webpack_require__(1)
-  , $parseFloat = __webpack_require__(360);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 // 20.1.2.12 Number.parseFloat(string)
 $export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', {parseFloat: $parseFloat});
 
 /***/ },
-<<<<<<< HEAD
 /* 588 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $export   = __webpack_require__(1)
   , $parseInt = __webpack_require__(359);
-=======
-/* 584 */
-/***/ function(module, exports, __webpack_require__) {
-
-var $export   = __webpack_require__(1)
-  , $parseInt = __webpack_require__(361);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 // 20.1.2.13 Number.parseInt(string, radix)
 $export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', {parseInt: $parseInt});
 
 /***/ },
-<<<<<<< HEAD
 /* 589 */
-=======
-/* 585 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var $export      = __webpack_require__(1)
   , toInteger    = __webpack_require__(63)
-<<<<<<< HEAD
   , aNumberValue = __webpack_require__(339)
   , repeat       = __webpack_require__(363)
-=======
-  , aNumberValue = __webpack_require__(341)
-  , repeat       = __webpack_require__(365)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , $toFixed     = 1..toFixed
   , floor        = Math.floor
   , data         = [0, 0, 0, 0, 0, 0]
@@ -65087,22 +62380,14 @@ $export($export.P + $export.F * (!!$toFixed && (
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 590 */
-=======
-/* 586 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var $export      = __webpack_require__(1)
   , $fails       = __webpack_require__(7)
-<<<<<<< HEAD
   , aNumberValue = __webpack_require__(339)
-=======
-  , aNumberValue = __webpack_require__(341)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , $toPrecision = 1..toPrecision;
 
 $export($export.P + $export.F * ($fails(function(){
@@ -65119,27 +62404,16 @@ $export($export.P + $export.F * ($fails(function(){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 591 */
-=======
-/* 587 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
 var $export = __webpack_require__(1);
 
-<<<<<<< HEAD
 $export($export.S + $export.F, 'Object', {assign: __webpack_require__(354)});
 
 /***/ },
 /* 592 */
-=======
-$export($export.S + $export.F, 'Object', {assign: __webpack_require__(356)});
-
-/***/ },
-/* 588 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(1)
@@ -65147,42 +62421,27 @@ var $export = __webpack_require__(1)
 $export($export.S, 'Object', {create: __webpack_require__(73)});
 
 /***/ },
-<<<<<<< HEAD
 /* 593 */
-=======
-/* 589 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(1);
 // 19.1.2.3 / 15.2.3.7 Object.defineProperties(O, Properties)
-<<<<<<< HEAD
 $export($export.S + $export.F * !__webpack_require__(18), 'Object', {defineProperties: __webpack_require__(355)});
 
 /***/ },
 /* 594 */
-=======
-$export($export.S + $export.F * !__webpack_require__(19), 'Object', {defineProperties: __webpack_require__(357)});
-
-/***/ },
-/* 590 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(1);
 // 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
-$export($export.S + $export.F * !__webpack_require__(19), 'Object', {defineProperty: __webpack_require__(16).f});
+$export($export.S + $export.F * !__webpack_require__(18), 'Object', {defineProperty: __webpack_require__(16).f});
 
 /***/ },
-<<<<<<< HEAD
 /* 595 */
-=======
-/* 591 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.5 Object.freeze(O)
-var isObject = __webpack_require__(9)
+var isObject = __webpack_require__(10)
   , meta     = __webpack_require__(61).onFreeze;
 
 __webpack_require__(45)('freeze', function($freeze){
@@ -65192,11 +62451,7 @@ __webpack_require__(45)('freeze', function($freeze){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 596 */
-=======
-/* 592 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
@@ -65210,28 +62465,16 @@ __webpack_require__(45)('getOwnPropertyDescriptor', function(){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 597 */
-=======
-/* 593 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 Object.getOwnPropertyNames(O)
 __webpack_require__(45)('getOwnPropertyNames', function(){
-<<<<<<< HEAD
   return __webpack_require__(356).f;
 });
 
 /***/ },
 /* 598 */
-=======
-  return __webpack_require__(358).f;
-});
-
-/***/ },
-/* 594 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 Object.getPrototypeOf(O)
@@ -65245,15 +62488,11 @@ __webpack_require__(45)('getPrototypeOf', function(){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 599 */
-=======
-/* 595 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.11 Object.isExtensible(O)
-var isObject = __webpack_require__(9);
+var isObject = __webpack_require__(10);
 
 __webpack_require__(45)('isExtensible', function($isExtensible){
   return function isExtensible(it){
@@ -65262,15 +62501,11 @@ __webpack_require__(45)('isExtensible', function($isExtensible){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 600 */
-=======
-/* 596 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.12 Object.isFrozen(O)
-var isObject = __webpack_require__(9);
+var isObject = __webpack_require__(10);
 
 __webpack_require__(45)('isFrozen', function($isFrozen){
   return function isFrozen(it){
@@ -65279,15 +62514,11 @@ __webpack_require__(45)('isFrozen', function($isFrozen){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 601 */
-=======
-/* 597 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.13 Object.isSealed(O)
-var isObject = __webpack_require__(9);
+var isObject = __webpack_require__(10);
 
 __webpack_require__(45)('isSealed', function($isSealed){
   return function isSealed(it){
@@ -65296,26 +62527,15 @@ __webpack_require__(45)('isSealed', function($isSealed){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 602 */
-=======
-/* 598 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.3.10 Object.is(value1, value2)
 var $export = __webpack_require__(1);
-<<<<<<< HEAD
 $export($export.S, 'Object', {is: __webpack_require__(360)});
 
 /***/ },
 /* 603 */
-=======
-$export($export.S, 'Object', {is: __webpack_require__(362)});
-
-/***/ },
-/* 599 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 Object.keys(O)
@@ -65329,15 +62549,11 @@ __webpack_require__(45)('keys', function(){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 604 */
-=======
-/* 600 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.15 Object.preventExtensions(O)
-var isObject = __webpack_require__(9)
+var isObject = __webpack_require__(10)
   , meta     = __webpack_require__(61).onFreeze;
 
 __webpack_require__(45)('preventExtensions', function($preventExtensions){
@@ -65347,15 +62563,11 @@ __webpack_require__(45)('preventExtensions', function($preventExtensions){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 605 */
-=======
-/* 601 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.17 Object.seal(O)
-var isObject = __webpack_require__(9)
+var isObject = __webpack_require__(10)
   , meta     = __webpack_require__(61).onFreeze;
 
 __webpack_require__(45)('seal', function($seal){
@@ -65365,64 +62577,40 @@ __webpack_require__(45)('seal', function($seal){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 606 */
-=======
-/* 602 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.3.19 Object.setPrototypeOf(O, proto)
 var $export = __webpack_require__(1);
-$export($export.S, 'Object', {setPrototypeOf: __webpack_require__(231).set});
+$export($export.S, 'Object', {setPrototypeOf: __webpack_require__(230).set});
 
 /***/ },
-<<<<<<< HEAD
 /* 607 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $export     = __webpack_require__(1)
   , $parseFloat = __webpack_require__(358);
-=======
-/* 603 */
-/***/ function(module, exports, __webpack_require__) {
-
-var $export     = __webpack_require__(1)
-  , $parseFloat = __webpack_require__(360);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 // 18.2.4 parseFloat(string)
 $export($export.G + $export.F * (parseFloat != $parseFloat), {parseFloat: $parseFloat});
 
 /***/ },
-<<<<<<< HEAD
 /* 608 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $export   = __webpack_require__(1)
   , $parseInt = __webpack_require__(359);
-=======
-/* 604 */
-/***/ function(module, exports, __webpack_require__) {
-
-var $export   = __webpack_require__(1)
-  , $parseInt = __webpack_require__(361);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 // 18.2.5 parseInt(string, radix)
 $export($export.G + $export.F * (parseInt != $parseInt), {parseInt: $parseInt});
 
 /***/ },
-<<<<<<< HEAD
 /* 609 */
-=======
-/* 605 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.1 Reflect.apply(target, thisArgument, argumentsList)
 var $export   = __webpack_require__(1)
   , aFunction = __webpack_require__(60)
   , anObject  = __webpack_require__(5)
-  , rApply    = (__webpack_require__(10).Reflect || {}).apply
+  , rApply    = (__webpack_require__(11).Reflect || {}).apply
   , fApply    = Function.apply;
 // MS Edge argumentsList argument is optional
 $export($export.S + $export.F * !__webpack_require__(7)(function(){
@@ -65436,11 +62624,7 @@ $export($export.S + $export.F * !__webpack_require__(7)(function(){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 610 */
-=======
-/* 606 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.2 Reflect.construct(target, argumentsList [, newTarget])
@@ -65448,15 +62632,10 @@ var $export    = __webpack_require__(1)
   , create     = __webpack_require__(73)
   , aFunction  = __webpack_require__(60)
   , anObject   = __webpack_require__(5)
-  , isObject   = __webpack_require__(9)
+  , isObject   = __webpack_require__(10)
   , fails      = __webpack_require__(7)
-<<<<<<< HEAD
   , bind       = __webpack_require__(342)
   , rConstruct = (__webpack_require__(11).Reflect || {}).construct;
-=======
-  , bind       = __webpack_require__(344)
-  , rConstruct = (__webpack_require__(10).Reflect || {}).construct;
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 // MS Edge supports only 2 arguments and argumentsList argument is optional
 // FF Nightly sets third argument as `new.target`, but does not create `this` from it
@@ -65497,11 +62676,7 @@ $export($export.S + $export.F * (NEW_TARGET_BUG || ARGS_BUG), 'Reflect', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 611 */
-=======
-/* 607 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.3 Reflect.defineProperty(target, propertyKey, attributes)
@@ -65528,11 +62703,7 @@ $export($export.S + $export.F * __webpack_require__(7)(function(){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 612 */
-=======
-/* 608 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.4 Reflect.deleteProperty(target, propertyKey)
@@ -65548,11 +62719,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 613 */
-=======
-/* 609 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -65567,11 +62734,7 @@ var Enumerate = function(iterated){
     , key;
   for(key in iterated)keys.push(key);
 };
-<<<<<<< HEAD
 __webpack_require__(351)(Enumerate, 'Object', function(){
-=======
-__webpack_require__(353)(Enumerate, 'Object', function(){
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   var that = this
     , keys = that._k
     , key;
@@ -65588,11 +62751,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 614 */
-=======
-/* 610 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.7 Reflect.getOwnPropertyDescriptor(target, propertyKey)
@@ -65607,11 +62766,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 615 */
-=======
-/* 611 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.8 Reflect.getPrototypeOf(target)
@@ -65626,19 +62781,15 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 616 */
-=======
-/* 612 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.6 Reflect.get(target, propertyKey [, receiver])
 var gOPD           = __webpack_require__(51)
   , getPrototypeOf = __webpack_require__(44)
-  , has            = __webpack_require__(24)
+  , has            = __webpack_require__(23)
   , $export        = __webpack_require__(1)
-  , isObject       = __webpack_require__(9)
+  , isObject       = __webpack_require__(10)
   , anObject       = __webpack_require__(5);
 
 function get(target, propertyKey/*, receiver*/){
@@ -65656,11 +62807,7 @@ function get(target, propertyKey/*, receiver*/){
 $export($export.S, 'Reflect', {get: get});
 
 /***/ },
-<<<<<<< HEAD
 /* 617 */
-=======
-/* 613 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.9 Reflect.has(target, propertyKey)
@@ -65673,11 +62820,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 618 */
-=======
-/* 614 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.10 Reflect.isExtensible(target)
@@ -65693,27 +62836,16 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 619 */
-=======
-/* 615 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.11 Reflect.ownKeys(target)
 var $export = __webpack_require__(1);
 
-<<<<<<< HEAD
 $export($export.S, 'Reflect', {ownKeys: __webpack_require__(532)});
 
 /***/ },
 /* 620 */
-=======
-$export($export.S, 'Reflect', {ownKeys: __webpack_require__(528)});
-
-/***/ },
-/* 616 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.12 Reflect.preventExtensions(target)
@@ -65734,16 +62866,12 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 621 */
-=======
-/* 617 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.14 Reflect.setPrototypeOf(target, proto)
 var $export  = __webpack_require__(1)
-  , setProto = __webpack_require__(231);
+  , setProto = __webpack_require__(230);
 
 if(setProto)$export($export.S, 'Reflect', {
   setPrototypeOf: function setPrototypeOf(target, proto){
@@ -65758,22 +62886,18 @@ if(setProto)$export($export.S, 'Reflect', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 622 */
-=======
-/* 618 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.13 Reflect.set(target, propertyKey, V [, receiver])
 var dP             = __webpack_require__(16)
   , gOPD           = __webpack_require__(51)
   , getPrototypeOf = __webpack_require__(44)
-  , has            = __webpack_require__(24)
+  , has            = __webpack_require__(23)
   , $export        = __webpack_require__(1)
   , createDesc     = __webpack_require__(62)
   , anObject       = __webpack_require__(5)
-  , isObject       = __webpack_require__(9);
+  , isObject       = __webpack_require__(10);
 
 function set(target, propertyKey, V/*, receiver*/){
   var receiver = arguments.length < 4 ? target : arguments[3]
@@ -65798,19 +62922,15 @@ function set(target, propertyKey, V/*, receiver*/){
 $export($export.S, 'Reflect', {set: set});
 
 /***/ },
-<<<<<<< HEAD
 /* 623 */
-=======
-/* 619 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
-var global            = __webpack_require__(10)
-  , inheritIfRequired = __webpack_require__(223)
+var global            = __webpack_require__(11)
+  , inheritIfRequired = __webpack_require__(222)
   , dP                = __webpack_require__(16).f
   , gOPN              = __webpack_require__(74).f
-  , isRegExp          = __webpack_require__(226)
-  , $flags            = __webpack_require__(222)
+  , isRegExp          = __webpack_require__(225)
+  , $flags            = __webpack_require__(221)
   , $RegExp           = global.RegExp
   , Base              = $RegExp
   , proto             = $RegExp.prototype
@@ -65819,7 +62939,7 @@ var global            = __webpack_require__(10)
   // "new" creates a new object, old webkit buggy here
   , CORRECT_NEW       = new $RegExp(re1) !== re1;
 
-if(__webpack_require__(19) && (!CORRECT_NEW || __webpack_require__(7)(function(){
+if(__webpack_require__(18) && (!CORRECT_NEW || __webpack_require__(7)(function(){
   re2[__webpack_require__(13)('match')] = false;
   // RegExp constructor can alter flags and IsRegExp works correct with @@match
   return $RegExp(re1) != re1 || $RegExp(re2) == re2 || $RegExp(re1, 'i') != '/a/i';
@@ -65844,34 +62964,26 @@ if(__webpack_require__(19) && (!CORRECT_NEW || __webpack_require__(7)(function()
   for(var keys = gOPN(Base), i = 0; keys.length > i; )proxy(keys[i++]);
   proto.constructor = $RegExp;
   $RegExp.prototype = proto;
-  __webpack_require__(25)(global, 'RegExp', $RegExp);
+  __webpack_require__(24)(global, 'RegExp', $RegExp);
 }
 
 __webpack_require__(112)('RegExp');
 
 /***/ },
-<<<<<<< HEAD
 /* 624 */
-=======
-/* 620 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
-<<<<<<< HEAD
 __webpack_require__(366);
-=======
-__webpack_require__(368);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 var anObject    = __webpack_require__(5)
-  , $flags      = __webpack_require__(222)
-  , DESCRIPTORS = __webpack_require__(19)
+  , $flags      = __webpack_require__(221)
+  , DESCRIPTORS = __webpack_require__(18)
   , TO_STRING   = 'toString'
   , $toString   = /./[TO_STRING];
 
 var define = function(fn){
-  __webpack_require__(25)(RegExp.prototype, TO_STRING, fn, true);
+  __webpack_require__(24)(RegExp.prototype, TO_STRING, fn, true);
 };
 
 // 21.2.5.14 RegExp.prototype.toString()
@@ -65889,89 +63001,65 @@ if(__webpack_require__(7)(function(){ return $toString.call({source: 'a', flags:
 }
 
 /***/ },
-<<<<<<< HEAD
 /* 625 */
-=======
-/* 621 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 // B.2.3.2 String.prototype.anchor(name)
-__webpack_require__(26)('anchor', function(createHTML){
+__webpack_require__(25)('anchor', function(createHTML){
   return function anchor(name){
     return createHTML(this, 'a', 'name', name);
   }
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 626 */
-=======
-/* 622 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 // B.2.3.3 String.prototype.big()
-__webpack_require__(26)('big', function(createHTML){
+__webpack_require__(25)('big', function(createHTML){
   return function big(){
     return createHTML(this, 'big', '', '');
   }
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 627 */
-=======
-/* 623 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 // B.2.3.4 String.prototype.blink()
-__webpack_require__(26)('blink', function(createHTML){
+__webpack_require__(25)('blink', function(createHTML){
   return function blink(){
     return createHTML(this, 'blink', '', '');
   }
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 628 */
-=======
-/* 624 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 // B.2.3.5 String.prototype.bold()
-__webpack_require__(26)('bold', function(createHTML){
+__webpack_require__(25)('bold', function(createHTML){
   return function bold(){
     return createHTML(this, 'b', '', '');
   }
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 629 */
-=======
-/* 625 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var $export = __webpack_require__(1)
-<<<<<<< HEAD
   , $at     = __webpack_require__(362)(false);
-=======
-  , $at     = __webpack_require__(364)(false);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 $export($export.P, 'String', {
   // 21.1.3.3 String.prototype.codePointAt(pos)
   codePointAt: function codePointAt(pos){
@@ -65980,23 +63068,19 @@ $export($export.P, 'String', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 630 */
-=======
-/* 626 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 // 21.1.3.6 String.prototype.endsWith(searchString [, endPosition])
 'use strict';
 var $export   = __webpack_require__(1)
-  , toLength  = __webpack_require__(22)
-  , context   = __webpack_require__(233)
+  , toLength  = __webpack_require__(21)
+  , context   = __webpack_require__(232)
   , ENDS_WITH = 'endsWith'
   , $endsWith = ''[ENDS_WITH];
 
-$export($export.P + $export.F * __webpack_require__(221)(ENDS_WITH), 'String', {
+$export($export.P + $export.F * __webpack_require__(220)(ENDS_WITH), 'String', {
   endsWith: function endsWith(searchString /*, endPosition = @length */){
     var that = context(this, searchString, ENDS_WITH)
       , endPosition = arguments.length > 1 ? arguments[1] : undefined
@@ -66010,62 +63094,46 @@ $export($export.P + $export.F * __webpack_require__(221)(ENDS_WITH), 'String', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 631 */
-=======
-/* 627 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 // B.2.3.6 String.prototype.fixed()
-__webpack_require__(26)('fixed', function(createHTML){
+__webpack_require__(25)('fixed', function(createHTML){
   return function fixed(){
     return createHTML(this, 'tt', '', '');
   }
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 632 */
-=======
-/* 628 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 // B.2.3.7 String.prototype.fontcolor(color)
-__webpack_require__(26)('fontcolor', function(createHTML){
+__webpack_require__(25)('fontcolor', function(createHTML){
   return function fontcolor(color){
     return createHTML(this, 'font', 'color', color);
   }
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 633 */
-=======
-/* 629 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 // B.2.3.8 String.prototype.fontsize(size)
-__webpack_require__(26)('fontsize', function(createHTML){
+__webpack_require__(25)('fontsize', function(createHTML){
   return function fontsize(size){
     return createHTML(this, 'font', 'size', size);
   }
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 634 */
-=======
-/* 630 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var $export        = __webpack_require__(1)
@@ -66093,21 +63161,17 @@ $export($export.S + $export.F * (!!$fromCodePoint && $fromCodePoint.length != 1)
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 635 */
-=======
-/* 631 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 // 21.1.3.7 String.prototype.includes(searchString, position = 0)
 'use strict';
 var $export  = __webpack_require__(1)
-  , context  = __webpack_require__(233)
+  , context  = __webpack_require__(232)
   , INCLUDES = 'includes';
 
-$export($export.P + $export.F * __webpack_require__(221)(INCLUDES), 'String', {
+$export($export.P + $export.F * __webpack_require__(220)(INCLUDES), 'String', {
   includes: function includes(searchString /*, position = 0 */){
     return !!~context(this, searchString, INCLUDES)
       .indexOf(searchString, arguments.length > 1 ? arguments[1] : undefined);
@@ -66115,50 +63179,38 @@ $export($export.P + $export.F * __webpack_require__(221)(INCLUDES), 'String', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 636 */
-=======
-/* 632 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 // B.2.3.9 String.prototype.italics()
-__webpack_require__(26)('italics', function(createHTML){
+__webpack_require__(25)('italics', function(createHTML){
   return function italics(){
     return createHTML(this, 'i', '', '');
   }
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 637 */
-=======
-/* 633 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 // B.2.3.10 String.prototype.link(url)
-__webpack_require__(26)('link', function(createHTML){
+__webpack_require__(25)('link', function(createHTML){
   return function link(url){
     return createHTML(this, 'a', 'href', url);
   }
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 638 */
-=======
-/* 634 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var $export   = __webpack_require__(1)
   , toIObject = __webpack_require__(35)
-  , toLength  = __webpack_require__(22);
+  , toLength  = __webpack_require__(21);
 
 $export($export.S, 'String', {
   // 21.1.2.4 String.raw(callSite, ...substitutions)
@@ -66176,59 +63228,43 @@ $export($export.S, 'String', {
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 639 */
-=======
-/* 635 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(1);
 
 $export($export.P, 'String', {
   // 21.1.3.13 String.prototype.repeat(count)
-<<<<<<< HEAD
   repeat: __webpack_require__(363)
 });
 
 /***/ },
 /* 640 */
-=======
-  repeat: __webpack_require__(365)
-});
-
-/***/ },
-/* 636 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 // B.2.3.11 String.prototype.small()
-__webpack_require__(26)('small', function(createHTML){
+__webpack_require__(25)('small', function(createHTML){
   return function small(){
     return createHTML(this, 'small', '', '');
   }
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 641 */
-=======
-/* 637 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 // 21.1.3.18 String.prototype.startsWith(searchString [, position ])
 'use strict';
 var $export     = __webpack_require__(1)
-  , toLength    = __webpack_require__(22)
-  , context     = __webpack_require__(233)
+  , toLength    = __webpack_require__(21)
+  , context     = __webpack_require__(232)
   , STARTS_WITH = 'startsWith'
   , $startsWith = ''[STARTS_WITH];
 
-$export($export.P + $export.F * __webpack_require__(221)(STARTS_WITH), 'String', {
+$export($export.P + $export.F * __webpack_require__(220)(STARTS_WITH), 'String', {
   startsWith: function startsWith(searchString /*, position = 0 */){
     var that   = context(this, searchString, STARTS_WITH)
       , index  = toLength(Math.min(arguments.length > 1 ? arguments[1] : undefined, that.length))
@@ -66240,99 +63276,72 @@ $export($export.P + $export.F * __webpack_require__(221)(STARTS_WITH), 'String',
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 642 */
-=======
-/* 638 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 // B.2.3.12 String.prototype.strike()
-__webpack_require__(26)('strike', function(createHTML){
+__webpack_require__(25)('strike', function(createHTML){
   return function strike(){
     return createHTML(this, 'strike', '', '');
   }
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 643 */
-=======
-/* 639 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 // B.2.3.13 String.prototype.sub()
-__webpack_require__(26)('sub', function(createHTML){
+__webpack_require__(25)('sub', function(createHTML){
   return function sub(){
     return createHTML(this, 'sub', '', '');
   }
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 644 */
-=======
-/* 640 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 // B.2.3.14 String.prototype.sup()
-__webpack_require__(26)('sup', function(createHTML){
+__webpack_require__(25)('sup', function(createHTML){
   return function sup(){
     return createHTML(this, 'sup', '', '');
   }
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 645 */
-=======
-/* 641 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 // 21.1.3.25 String.prototype.trim()
-__webpack_require__(153)('trim', function($trim){
+__webpack_require__(152)('trim', function($trim){
   return function trim(){
     return $trim(this, 3);
   };
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 646 */
-=======
-/* 642 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var $export      = __webpack_require__(1)
-  , $typed       = __webpack_require__(154)
-  , buffer       = __webpack_require__(235)
+  , $typed       = __webpack_require__(153)
+  , buffer       = __webpack_require__(234)
   , anObject     = __webpack_require__(5)
   , toIndex      = __webpack_require__(75)
-<<<<<<< HEAD
   , toLength     = __webpack_require__(21)
   , isObject     = __webpack_require__(10)
   , ArrayBuffer  = __webpack_require__(11).ArrayBuffer
   , speciesConstructor = __webpack_require__(361)
-=======
-  , toLength     = __webpack_require__(22)
-  , isObject     = __webpack_require__(9)
-  , ArrayBuffer  = __webpack_require__(10).ArrayBuffer
-  , speciesConstructor = __webpack_require__(363)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , $ArrayBuffer = buffer.ArrayBuffer
   , $DataView    = buffer.DataView
   , $isView      = $typed.ABV && ArrayBuffer.isView
@@ -66371,24 +63380,16 @@ $export($export.P + $export.U + $export.F * __webpack_require__(7)(function(){
 __webpack_require__(112)(ARRAY_BUFFER);
 
 /***/ },
-<<<<<<< HEAD
 /* 647 */
-=======
-/* 643 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(1);
-$export($export.G + $export.W + $export.F * !__webpack_require__(154).ABV, {
-  DataView: __webpack_require__(235).DataView
+$export($export.G + $export.W + $export.F * !__webpack_require__(153).ABV, {
+  DataView: __webpack_require__(234).DataView
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 648 */
-=======
-/* 644 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(52)('Float32', 4, function(init){
@@ -66398,11 +63399,7 @@ __webpack_require__(52)('Float32', 4, function(init){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 649 */
-=======
-/* 645 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(52)('Float64', 8, function(init){
@@ -66412,11 +63409,7 @@ __webpack_require__(52)('Float64', 8, function(init){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 650 */
-=======
-/* 646 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(52)('Int16', 2, function(init){
@@ -66426,11 +63419,7 @@ __webpack_require__(52)('Int16', 2, function(init){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 651 */
-=======
-/* 647 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(52)('Int32', 4, function(init){
@@ -66440,11 +63429,7 @@ __webpack_require__(52)('Int32', 4, function(init){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 652 */
-=======
-/* 648 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(52)('Int8', 1, function(init){
@@ -66454,11 +63439,7 @@ __webpack_require__(52)('Int8', 1, function(init){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 653 */
-=======
-/* 649 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(52)('Uint16', 2, function(init){
@@ -66468,11 +63449,7 @@ __webpack_require__(52)('Uint16', 2, function(init){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 654 */
-=======
-/* 650 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(52)('Uint32', 4, function(init){
@@ -66482,11 +63459,7 @@ __webpack_require__(52)('Uint32', 4, function(init){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 655 */
-=======
-/* 651 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(52)('Uint8', 1, function(init){
@@ -66496,11 +63469,7 @@ __webpack_require__(52)('Uint8', 1, function(init){
 });
 
 /***/ },
-<<<<<<< HEAD
 /* 656 */
-=======
-/* 652 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(52)('Uint8', 1, function(init){
@@ -66510,23 +63479,15 @@ __webpack_require__(52)('Uint8', 1, function(init){
 }, true);
 
 /***/ },
-<<<<<<< HEAD
 /* 657 */
-=======
-/* 653 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
-<<<<<<< HEAD
 var weak = __webpack_require__(344);
-=======
-var weak = __webpack_require__(346);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 // 23.4 WeakSet Objects
-__webpack_require__(147)('WeakSet', function(get){
+__webpack_require__(146)('WeakSet', function(get){
   return function WeakSet(){ return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.4.3.1 WeakSet.prototype.add(value)
@@ -66536,11 +63497,7 @@ __webpack_require__(147)('WeakSet', function(get){
 }, weak, false, true);
 
 /***/ },
-<<<<<<< HEAD
 /* 658 */
-=======
-/* 654 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var metadata                  = __webpack_require__(50)
@@ -66553,11 +63510,7 @@ metadata.exp({defineMetadata: function defineMetadata(metadataKey, metadataValue
 }});
 
 /***/ },
-<<<<<<< HEAD
 /* 659 */
-=======
-/* 655 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(50)
@@ -66577,19 +63530,11 @@ metadata.exp({deleteMetadata: function deleteMetadata(metadataKey, target /*, ta
 }});
 
 /***/ },
-<<<<<<< HEAD
 /* 660 */
 /***/ function(module, exports, __webpack_require__) {
 
 var Set                     = __webpack_require__(371)
   , from                    = __webpack_require__(525)
-=======
-/* 656 */
-/***/ function(module, exports, __webpack_require__) {
-
-var Set                     = __webpack_require__(373)
-  , from                    = __webpack_require__(521)
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
   , metadata                = __webpack_require__(50)
   , anObject                = __webpack_require__(5)
   , getPrototypeOf          = __webpack_require__(44)
@@ -66609,11 +63554,7 @@ metadata.exp({getMetadataKeys: function getMetadataKeys(target /*, targetKey */)
 }});
 
 /***/ },
-<<<<<<< HEAD
 /* 661 */
-=======
-/* 657 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(50)
@@ -66635,11 +63576,7 @@ metadata.exp({getMetadata: function getMetadata(metadataKey, target /*, targetKe
 }});
 
 /***/ },
-<<<<<<< HEAD
 /* 662 */
-=======
-/* 658 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var metadata                = __webpack_require__(50)
@@ -66652,11 +63589,7 @@ metadata.exp({getOwnMetadataKeys: function getOwnMetadataKeys(target /*, targetK
 }});
 
 /***/ },
-<<<<<<< HEAD
 /* 663 */
-=======
-/* 659 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(50)
@@ -66670,11 +63603,7 @@ metadata.exp({getOwnMetadata: function getOwnMetadata(metadataKey, target /*, ta
 }});
 
 /***/ },
-<<<<<<< HEAD
 /* 664 */
-=======
-/* 660 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(50)
@@ -66695,11 +63624,7 @@ metadata.exp({hasMetadata: function hasMetadata(metadataKey, target /*, targetKe
 }});
 
 /***/ },
-<<<<<<< HEAD
 /* 665 */
-=======
-/* 661 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(50)
@@ -66713,11 +63638,7 @@ metadata.exp({hasOwnMetadata: function hasOwnMetadata(metadataKey, target /*, ta
 }});
 
 /***/ },
-<<<<<<< HEAD
 /* 666 */
-=======
-/* 662 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 var metadata                  = __webpack_require__(50)
@@ -66737,32 +63658,20 @@ metadata.exp({metadata: function metadata(metadataKey, metadataValue){
 }});
 
 /***/ },
-<<<<<<< HEAD
 /* 667 */
 /***/ function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(668)();
-=======
-/* 663 */
-/***/ function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(238)();
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 // imports
 
 
 // module
-<<<<<<< HEAD
 exports.push([module.i, ".center{\n  text-align: center;\n}\n\n.wrap{\n  font-family: \"Roboto\", \"Trebuchet MS\", Arial, Helvetica, sans-serif;\n  font-size: 1em;\n}\n\n.wrap div{\n  background: ghostwhite;\n  margin: 5px;\n}\n\n.wrap b{\n  background: ghostwhite;\n  margin: 5px;\n  font-size: 20px;\n}\n", ""]);
-=======
-exports.push([module.i, "/**\r\n   Coded by /u/j0be in scss.\r\n   See scss source here -> http://codepen.io/j0be/pen/MKRVyN\r\n*/\r\n\r\nbody {\r\n  font-family: \"Open Sans\", \"Segoe UI\",\r\n  Frutiger, \"Frutiger Linotype\", \"Dejavu Sans\", \"Helvetica Neue\", Arial, sans-serif;\r\n  font-size: 14px;\r\n  line-height: 1.5em;\r\n  font-weight: 400; }\r\np, span, a, ul, li, button { font-family: inherit; font-size: inherit; font-weight: inherit; line-height: inherit; }\r\nstrong { font-weight: 600; }\r\nh1, h2, h3, h4, h5, h6 { font-family: \"Open Sans\", \"Segoe UI\", Frutiger, \"Frutiger Linotype\", \"Dejavu Sans\", \"Helvetica Neue\", Arial, sans-serif; line-height: 1.5em; font-weight: 600; } strong { font-weight: 400; }\r\n.tile {\r\n  text-align: center; width: 100%; display: inline-block; box-sizing: border-box; background: #fff; padding: 20px; margin-bottom: 30px; }\r\n.tile .title { margin-top: 0px; }\r\n.tile.purple, .tile.blue, .tile.red, .tile.orange, .tile.green , .tile.bluers { color: #fff; }\r\n.tile.purple { background: #5133AB; }\r\n.tile.purple:hover { background: #3e2784; }\r\n.tile.red { background: #AC193D; }\r\n.tile.red:hover { background: #7f132d; }\r\n.tile.green { background: #00A600; }\r\n.tile.green:hover { background: #007300; }\r\n.tile.blue { background: #2672EC; }\r\n.tile.blue:hover { background: #125acd; }\r\n.tile.orange { background: #DC572E; }\r\n.tile.orange:hover { background: #b8431f; }\r\n.tile.bluers { background: #32dcbc; }\r\n.tile.bluers:hover { background: #22b196; }\r\n.tile:hover{cursor: pointer}\r\n.center{\r\n  text-align: center;\r\n}\r\n", ""]);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 // exports
 
 
 /***/ },
-<<<<<<< HEAD
 /* 668 */
 /***/ function(module, exports) {
 
@@ -67173,37 +64082,6 @@ css:M,each:q,map:Ea,merge:E,splat:ua,stableSort:kb,extendClass:sa,pInt:B,svg:fa,
 
 /***/ },
 /* 670 */
-=======
-/* 664 */
-/***/ function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(238)();
-// imports
-
-
-// module
-exports.push([module.i, "/**\r\n   Coded by /u/j0be in scss.\r\n   See scss source here -> http://codepen.io/j0be/pen/MKRVyN\r\n*/\r\n\r\nbody {\r\n  font-family: \"Open Sans\", \"Segoe UI\",\r\n  Frutiger, \"Frutiger Linotype\", \"Dejavu Sans\", \"Helvetica Neue\", Arial, sans-serif;\r\n  font-size: 14px;\r\n  line-height: 1.5em;\r\n  font-weight: 400; }\r\np, span, a, ul, li, button { font-family: inherit; font-size: inherit; font-weight: inherit; line-height: inherit; }\r\nstrong { font-weight: 600; }\r\nh1, h2, h3, h4, h5, h6 { font-family: \"Open Sans\", \"Segoe UI\", Frutiger, \"Frutiger Linotype\", \"Dejavu Sans\", \"Helvetica Neue\", Arial, sans-serif; line-height: 1.5em; font-weight: 600; } strong { font-weight: 400; }\r\n.tile {\r\n  text-align: center; width: 100%; display: inline-block; box-sizing: border-box; background: #fff; padding: 20px; margin-bottom: 30px;\r\n  font-weight: bolder; }\r\n.tile .title { margin-top: 0px; }\r\n.tile.purple, .tile.blue, .tile.red, .tile.orange, .tile.green , .tile.bluers { color: #fff; }\r\n.tile.purple { background: #5133AB; }\r\n.tile.purple:hover { background: #3e2784; }\r\n.tile.red { background: #AC193D; }\r\n.tile.red:hover { background: #7f132d; }\r\n.tile.green { background: #00A600; }\r\n.tile.green:hover { background: #007300; }\r\n.tile.blue { background: #2672EC; }\r\n.tile.blue:hover { background: #125acd; }\r\n.tile.orange { background: #DC572E; }\r\n.tile.orange:hover { background: #b8431f; }\r\n.tile.bluers { background: #32dcbc; }\r\n.tile.bluers:hover { background: #22b196; }\r\n.tile:hover{ cursor: pointer}\r\n.center{\r\n  text-align: center;\r\n}\r\n", ""]);
-
-// exports
-
-
-/***/ },
-/* 665 */
-/***/ function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(238)();
-// imports
-
-
-// module
-exports.push([module.i, "nav>li>a{\r\n  padding: 10px 50px!important;\r\n}\r\n", ""]);
-
-// exports
-
-
-/***/ },
-/* 666 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/******/ (function(modules) { // webpackBootstrap
@@ -67390,11 +64268,7 @@ exports.push([module.i, "nav>li>a{\r\n  padding: 10px 50px!important;\r\n}\r\n",
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(54)))
 
 /***/ },
-<<<<<<< HEAD
 /* 671 */
-=======
-/* 667 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67410,7 +64284,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
-var shared_1 = __webpack_require__(11);
+var shared_1 = __webpack_require__(9);
 var Accordion = (function () {
     function Accordion(el) {
         this.el = el;
@@ -67444,10 +64318,6 @@ var Accordion = (function () {
         core_1.Input(), 
         __metadata('design:type', String)
     ], Accordion.prototype, "styleClass", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], Accordion.prototype, "lazy", void 0);
     Accordion = __decorate([
         core_1.Component({
             selector: 'p-accordion',
@@ -67502,13 +64372,6 @@ var AccordionTab = (function () {
         }
         return index;
     };
-    Object.defineProperty(AccordionTab.prototype, "lazy", {
-        get: function () {
-            return this.accordion.lazy;
-        },
-        enumerable: true,
-        configurable: true
-    });
     Object.defineProperty(AccordionTab.prototype, "hasHeaderFacet", {
         get: function () {
             return this.headerFacet && this.headerFacet.length > 0;
@@ -67539,7 +64402,7 @@ var AccordionTab = (function () {
     AccordionTab = __decorate([
         core_1.Component({
             selector: 'p-accordionTab',
-            template: "\n        <div class=\"ui-accordion-header ui-state-default ui-corner-all\" [ngClass]=\"{'ui-state-active': selected,'ui-state-disabled':disabled}\"\n            (click)=\"toggle($event)\">\n            <span class=\"fa fa-fw\" [ngClass]=\"{'fa-caret-down': selected, 'fa-caret-right': !selected}\"></span>\n            <a href=\"#\" *ngIf=\"!hasHeaderFacet\" role=\"tab\" [attr.aria-expanded]=\"selected\" [attr.aria-selected]=\"selected\">{{header}}</a>\n            <a href=\"#\" *ngIf=\"hasHeaderFacet\" role=\"tab\" [attr.aria-expanded]=\"selected\" [attr.aria-selected]=\"selected\">\n                <ng-content select=\"p-header\"></ng-content>\n            </a>\n        </div>\n        <div class=\"ui-accordion-content-wrapper\" [@tabContent]=\"selected ? 'visible' : 'hidden'\" \n            [ngClass]=\"{'ui-accordion-content-wrapper-overflown': !selected||animating}\" role=\"tabpanel\" [attr.aria-hidden]=\"!selected\">\n            <div class=\"ui-accordion-content ui-widget-content\" *ngIf=\"lazy ? selected : true\">\n                <ng-content></ng-content>\n            </div>\n        </div>\n    ",
+            template: "\n        <div class=\"ui-accordion-header ui-state-default ui-corner-all\" [ngClass]=\"{'ui-state-active': selected,'ui-state-hover':hover&&!disabled,'ui-state-disabled':disabled}\"\n            (mouseenter)=\"hover = true\" (mouseleave)=\"hover=false\" (click)=\"toggle($event)\">\n            <span class=\"fa fa-fw\" [ngClass]=\"{'fa-caret-down': selected, 'fa-caret-right': !selected}\"></span>\n            <a href=\"#\" *ngIf=\"!hasHeaderFacet\" role=\"tab\" [attr.aria-expanded]=\"selected\" [attr.aria-selected]=\"selected\">{{header}}</a>\n            <a href=\"#\" *ngIf=\"hasHeaderFacet\" role=\"tab\" [attr.aria-expanded]=\"selected\" [attr.aria-selected]=\"selected\">\n                <ng-content select=\"header\"></ng-content>\n            </a>\n        </div>\n        <div class=\"ui-accordion-content-wrapper\" [@tabContent]=\"selected ? 'visible' : 'hidden'\" \n            [ngClass]=\"{'ui-accordion-content-wrapper-overflown': !selected||animating}\" role=\"tabpanel\" [attr.aria-hidden]=\"!selected\">\n            <div class=\"ui-accordion-content ui-widget-content\">\n                <ng-content></ng-content>\n            </div>\n        </div>\n    ",
             animations: [
                 core_1.trigger('tabContent', [
                     core_1.state('hidden', core_1.style({
@@ -67575,11 +64438,7 @@ exports.AccordionModule = AccordionModule;
 //# sourceMappingURL=accordion.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 672 */
-=======
-/* 668 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67597,7 +64456,7 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
 var inputtext_1 = __webpack_require__(78);
 var button_1 = __webpack_require__(53);
-var shared_1 = __webpack_require__(11);
+var shared_1 = __webpack_require__(9);
 var domhandler_1 = __webpack_require__(4);
 var forms_1 = __webpack_require__(14);
 exports.AUTOCOMPLETE_VALUE_ACCESSOR = {
@@ -67635,19 +64494,6 @@ var AutoComplete = (function () {
                 this.hide();
             }
         }
-    };
-    AutoComplete.prototype.ngAfterContentInit = function () {
-        var _this = this;
-        this.templates.forEach(function (item) {
-            switch (item.getType()) {
-                case 'item':
-                    _this.itemTemplate = item.template;
-                    break;
-                default:
-                    _this.itemTemplate = item.template;
-                    break;
-            }
-        });
     };
     AutoComplete.prototype.ngAfterViewInit = function () {
         var _this = this;
@@ -67934,7 +64780,7 @@ var AutoComplete = (function () {
     ], AutoComplete.prototype, "placeholder", void 0);
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Boolean)
+        __metadata('design:type', Number)
     ], AutoComplete.prototype, "readonly", void 0);
     __decorate([
         core_1.Input(), 
@@ -67989,17 +64835,13 @@ var AutoComplete = (function () {
         __metadata('design:type', Boolean)
     ], AutoComplete.prototype, "multiple", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], AutoComplete.prototype, "tabindex", void 0);
-    __decorate([
-        core_1.ContentChildren(shared_1.PrimeTemplate), 
-        __metadata('design:type', core_1.QueryList)
-    ], AutoComplete.prototype, "templates", void 0);
+        core_1.ContentChild(core_1.TemplateRef), 
+        __metadata('design:type', core_1.TemplateRef)
+    ], AutoComplete.prototype, "itemTemplate", void 0);
     AutoComplete = __decorate([
         core_1.Component({
             selector: 'p-autoComplete',
-            template: "\n        <span [ngClass]=\"{'ui-autocomplete ui-widget':true,'ui-autocomplete-dd':dropdown,'ui-autocomplete-multiple':multiple}\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <input *ngIf=\"!multiple\" #in pInputText type=\"text\" [ngStyle]=\"inputStyle\" [class]=\"inputStyleClass\" autocomplete=\"off\"\n            [value]=\"value ? (field ? resolveFieldData(value)||value : value) : null\" (input)=\"onInput($event)\" (keydown)=\"onKeydown($event)\" (focus)=\"onFocus()\" (blur)=\"onBlur()\"\n            [attr.placeholder]=\"placeholder\" [attr.size]=\"size\" [attr.maxlength]=\"maxlength\" [attr.tabindex]=\"tabindex\" [readonly]=\"readonly\" [disabled]=\"disabled\"\n            [ngClass]=\"{'ui-autocomplete-input':true,'ui-autocomplete-dd-input':dropdown}\"\n            ><ul *ngIf=\"multiple\" class=\"ui-autocomplete-multiple-container ui-widget ui-inputtext ui-state-default ui-corner-all\" [ngClass]=\"{'ui-state-disabled':disabled,'ui-state-focus':focus}\" (click)=\"multiIn.focus()\">\n                <li #token *ngFor=\"let val of value\" class=\"ui-autocomplete-token ui-state-highlight ui-corner-all\">\n                    <span class=\"ui-autocomplete-token-icon fa fa-fw fa-close\" (click)=\"removeItem(token)\"></span>\n                    <span class=\"ui-autocomplete-token-label\">{{field ? val[field] : val}}</span>\n                </li>\n                <li class=\"ui-autocomplete-input-token\">\n                    <input #multiIn type=\"text\" [disabled]=\"disabled\" pInputText [attr.placeholder]=\"placeholder\" [attr.tabindex]=\"tabindex\" (input)=\"onInput($event)\" (keydown)=\"onKeydown($event)\" (focus)=\"onFocus()\" (blur)=\"onBlur()\" autocomplete=\"off\">\n                </li>\n            </ul\n            ><button type=\"button\" pButton icon=\"fa-fw fa-caret-down\" class=\"ui-autocomplete-dropdown\" [disabled]=\"disabled\"\n                (click)=\"handleDropdownClick($event)\" *ngIf=\"dropdown\" (focus)=\"onDropdownFocus($event)\" (blur)=\"onDropdownBlur($event)\"></button>\n            <div class=\"ui-autocomplete-panel ui-widget-content ui-corner-all ui-shadow\" [style.display]=\"panelVisible ? 'block' : 'none'\" [style.width]=\"appendTo ? 'auto' : '100%'\" [style.max-height]=\"scrollHeight\">\n                <ul class=\"ui-autocomplete-items ui-autocomplete-list ui-widget-content ui-widget ui-corner-all ui-helper-reset\">\n                    <li *ngFor=\"let option of suggestions\" [ngClass]=\"{'ui-autocomplete-list-item ui-corner-all':true,'ui-state-highlight':(highlightOption==option)}\"\n                        (mouseenter)=\"highlightOption=option\" (mouseleave)=\"highlightOption=null\" (click)=\"selectItem(option)\">\n                        <span *ngIf=\"!itemTemplate\">{{field ? option[field] : option}}</span>\n                        <template *ngIf=\"itemTemplate\" [pTemplateWrapper]=\"itemTemplate\" [item]=\"option\"></template>\n                    </li>\n                </ul>\n            </div>\n        </span>\n    ",
+            template: "\n        <span [ngClass]=\"{'ui-autocomplete ui-widget':true,'ui-autocomplete-dd':dropdown,'ui-autocomplete-multiple':multiple}\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <input *ngIf=\"!multiple\" #in pInputText type=\"text\" [ngStyle]=\"inputStyle\" [class]=\"inputStyleClass\" autocomplete=\"off\"\n            [value]=\"value ? (field ? resolveFieldData(value)||value : value) : null\" (input)=\"onInput($event)\" (keydown)=\"onKeydown($event)\" (focus)=\"onFocus()\" (blur)=\"onBlur()\"\n            [attr.placeholder]=\"placeholder\" [attr.size]=\"size\" [attr.maxlength]=\"maxlength\" [attr.readonly]=\"readonly\" [disabled]=\"disabled\"\n            [ngClass]=\"{'ui-autocomplete-input':true,'ui-autocomplete-dd-input':dropdown}\"\n            ><ul *ngIf=\"multiple\" class=\"ui-autocomplete-multiple-container ui-widget ui-inputtext ui-state-default ui-corner-all\" [ngClass]=\"{'ui-state-disabled':disabled}\" (click)=\"multiIn.focus()\">\n                <li #token *ngFor=\"let val of value\" class=\"ui-autocomplete-token ui-state-highlight ui-corner-all\">\n                    <span class=\"ui-autocomplete-token-icon fa fa-fw fa-close\" (click)=\"removeItem(token)\"></span>\n                    <span class=\"ui-autocomplete-token-label\">{{field ? val[field] : val}}</span>\n                </li>\n                <li class=\"ui-autocomplete-input-token\">\n                    <input #multiIn type=\"text\" [disabled]=\"disabled\" pInputText [attr.placeholder]=\"placeholder\" (input)=\"onInput($event)\" (keydown)=\"onKeydown($event)\" (focus)=\"onFocus()\" (blur)=\"onBlur()\" autocomplete=\"off\">\n                </li>\n            </ul\n            ><button type=\"button\" pButton icon=\"fa-fw fa-caret-down\" class=\"ui-autocomplete-dropdown\" [disabled]=\"disabled\"\n                (click)=\"handleDropdownClick($event)\" *ngIf=\"dropdown\" (focus)=\"onDropdownFocus($event)\" (blur)=\"onDropdownBlur($event)\"></button>\n            <div class=\"ui-autocomplete-panel ui-widget-content ui-corner-all ui-shadow\" [style.display]=\"panelVisible ? 'block' : 'none'\" [style.width]=\"appendTo ? 'auto' : '100%'\" [style.max-height]=\"scrollHeight\">\n                <ul class=\"ui-autocomplete-items ui-autocomplete-list ui-widget-content ui-widget ui-corner-all ui-helper-reset\">\n                    <li *ngFor=\"let option of suggestions\" [ngClass]=\"{'ui-autocomplete-list-item ui-corner-all':true,'ui-state-highlight':(highlightOption==option)}\"\n                        (mouseenter)=\"highlightOption=option\" (mouseleave)=\"highlightOption=null\" (click)=\"selectItem(option)\">\n                        <span *ngIf=\"!itemTemplate\">{{field ? option[field] : option}}</span>\n                        <template *ngIf=\"itemTemplate\" [pTemplateWrapper]=\"itemTemplate\" [item]=\"option\"></template>\n                    </li>\n                </ul>\n            </div>\n        </span>\n    ",
             host: {
                 '[class.ui-inputwrapper-filled]': 'filled',
                 '[class.ui-inputwrapper-focus]': 'focus'
@@ -68028,11 +64870,7 @@ exports.AutoCompleteModule = AutoCompleteModule;
 //# sourceMappingURL=autocomplete.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 673 */
-=======
-/* 669 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68079,9 +64917,7 @@ var BlockUI = (function () {
     BlockUI.prototype.block = function () {
         if (this.target) {
             this.target.getBlockableElement().appendChild(this._mask);
-            var style = this.target.style || {};
-            style.position = 'relative';
-            this.target.style = style;
+            this.target.style.position = 'relative';
         }
         else {
             document.body.appendChild(this._mask);
@@ -68129,11 +64965,7 @@ exports.BlockUIModule = BlockUIModule;
 //# sourceMappingURL=blockui.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 674 */
-=======
-/* 670 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68149,7 +64981,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
-var router_1 = __webpack_require__(21);
+var router_1 = __webpack_require__(28);
 var Breadcrumb = (function () {
     function Breadcrumb(router) {
         this.router = router;
@@ -68234,11 +65066,7 @@ exports.BreadcrumbModule = BreadcrumbModule;
 //# sourceMappingURL=breadcrumb.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 675 */
-=======
-/* 671 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68263,11 +65091,6 @@ exports.CALENDAR_VALUE_ACCESSOR = {
     useExisting: core_1.forwardRef(function () { return Calendar; }),
     multi: true
 };
-exports.CALENDAR_VALIDATOR = {
-    provide: forms_1.NG_VALIDATORS,
-    useExisting: core_1.forwardRef(function () { return Calendar; }),
-    multi: true
-};
 var Calendar = (function () {
     function Calendar(el, domHandler, renderer) {
         this.el = el;
@@ -68279,13 +65102,7 @@ var Calendar = (function () {
         this.icon = 'fa-calendar';
         this.shortYearCutoff = '+10';
         this.hourFormat = '24';
-        this.stepHour = 1;
-        this.stepMinute = 1;
-        this.stepSecond = 1;
-        this.showSeconds = false;
-        this.showOnFocus = true;
         this.dataType = 'date';
-        this.onFocus = new core_1.EventEmitter();
         this.onBlur = new core_1.EventEmitter();
         this.onSelect = new core_1.EventEmitter();
         this.locale = {
@@ -68301,7 +65118,6 @@ var Calendar = (function () {
         this.onModelChange = function () { };
         this.onModelTouched = function () { };
         this.inputFieldValue = null;
-        this._isValid = true;
     }
     Object.defineProperty(Calendar.prototype, "minDate", {
         get: function () {
@@ -68326,6 +65142,8 @@ var Calendar = (function () {
         configurable: true
     });
     Calendar.prototype.ngOnInit = function () {
+        var _this = this;
+        var today = new Date();
         var date = this.defaultDate || new Date();
         var dayIndex = this.locale.firstDayOfWeek;
         for (var i = 0; i < 7; i++) {
@@ -68336,7 +65154,6 @@ var Calendar = (function () {
         this.currentYear = date.getFullYear();
         if (this.showTime) {
             this.currentMinute = date.getMinutes();
-            this.currentSecond = date.getSeconds();
             this.pm = date.getHours() > 11;
             if (this.hourFormat == '12')
                 this.currentHour = date.getHours() == 0 ? 12 : date.getHours() % 12;
@@ -68346,9 +65163,15 @@ var Calendar = (function () {
         else if (this.timeOnly) {
             this.currentMinute = 0;
             this.currentHour = 0;
-            this.currentSecond = 0;
         }
         this.createMonth(this.currentMonth, this.currentYear);
+        this.documentClickListener = this.renderer.listenGlobal('body', 'click', function () {
+            if (_this.closeOverlay) {
+                _this.overlayVisible = false;
+            }
+            _this.closeOverlay = true;
+            _this.dateClick = false;
+        });
         this.ticksTo1970 = (((1970 - 1) * 365 + Math.floor(1970 / 4) - Math.floor(1970 / 100) +
             Math.floor(1970 / 400)) * 24 * 60 * 60 * 10000000);
         if (this.yearNavigator && this.yearRange) {
@@ -68378,19 +65201,16 @@ var Calendar = (function () {
         var prevMonthDaysLength = this.getDaysCountInPrevMonth(month, year);
         var sundayIndex = this.getSundayIndex();
         var dayNo = 1;
-        var today = new Date();
         for (var i = 0; i < 6; i++) {
             var week = [];
             if (i == 0) {
                 for (var j = (prevMonthDaysLength - firstDay + 1); j <= prevMonthDaysLength; j++) {
                     var prev = this.getPreviousMonthAndYear(month, year);
-                    week.push({ day: j, month: prev.month, year: prev.year, otherMonth: true,
-                        today: this.isToday(today, j, prev.month, prev.year), selectable: this.isSelectable(j, prev.month, prev.year) });
+                    week.push({ day: j, month: prev.month, year: prev.year, otherMonth: true, selectable: this.isSelectable(j, prev.month, prev.year) });
                 }
                 var remainingDaysLength = 7 - week.length;
                 for (var j = 0; j < remainingDaysLength; j++) {
-                    week.push({ day: dayNo, month: month, year: year, today: this.isToday(today, dayNo, month, year),
-                        selectable: this.isSelectable(dayNo, month, year) });
+                    week.push({ day: dayNo, month: month, year: year, selectable: this.isSelectable(dayNo, month, year) });
                     dayNo++;
                 }
             }
@@ -68399,12 +65219,10 @@ var Calendar = (function () {
                     if (dayNo > daysLength) {
                         var next = this.getNextMonthAndYear(month, year);
                         week.push({ day: dayNo - daysLength, month: next.month, year: next.year, otherMonth: true,
-                            today: this.isToday(today, dayNo - daysLength, next.month, next.year),
                             selectable: this.isSelectable((dayNo - daysLength), next.month, next.year) });
                     }
                     else {
-                        week.push({ day: dayNo, month: month, year: year, today: this.isToday(today, dayNo, month, year),
-                            selectable: this.isSelectable(dayNo, month, year) });
+                        week.push({ day: dayNo, month: month, year: year, selectable: this.isSelectable(dayNo, month, year) });
                     }
                     dayNo++;
                 }
@@ -68485,22 +65303,15 @@ var Calendar = (function () {
             else
                 this.value.setHours(this.currentHour);
             this.value.setMinutes(this.currentMinute);
-            this.value.setSeconds(this.currentSecond);
         }
-        this._isValid = true;
         this.updateModel();
         this.onSelect.emit(this.value);
     };
     Calendar.prototype.updateModel = function () {
-        if (this.dataType == 'date') {
+        if (this.dataType == 'date')
             this.onModelChange(this.value);
-        }
-        else if (this.dataType == 'string') {
-            if (this.timeOnly)
-                this.onModelChange(this.formatTime(this.value));
-            else
-                this.onModelChange(this.formatDate(this.value, this.dateFormat));
-        }
+        else if (this.dataType == 'string')
+            this.onModelChange(this.formatDate(this.value, this.dateFormat));
     };
     Calendar.prototype.getFirstDayOfMonthIndex = function (month, year) {
         var day = new Date();
@@ -68549,8 +65360,9 @@ var Calendar = (function () {
         else
             return false;
     };
-    Calendar.prototype.isToday = function (today, day, month, year) {
-        return today.getDate() === day && today.getMonth() === month && today.getFullYear() === year;
+    Calendar.prototype.isToday = function (dateMeta) {
+        var today = new Date();
+        return today.getDate() === dateMeta.day && today.getMonth() === dateMeta.month && today.getFullYear() === dateMeta.year;
     };
     Calendar.prototype.isSelectable = function (day, month, year) {
         var validMin = true;
@@ -68587,12 +65399,9 @@ var Calendar = (function () {
         }
         return validMin && validMax;
     };
-    Calendar.prototype.onInputFocus = function (inputfield, event) {
+    Calendar.prototype.onInputFocus = function (event) {
         this.focus = true;
-        if (this.showOnFocus) {
-            this.showOverlay(inputfield);
-        }
-        this.onFocus.emit(event);
+        this.showOverlay(event);
     };
     Calendar.prototype.onInputBlur = function (event) {
         this.focus = false;
@@ -68601,10 +65410,8 @@ var Calendar = (function () {
     };
     Calendar.prototype.onButtonClick = function (event, inputfield) {
         this.closeOverlay = false;
-        if (!this.overlay.offsetParent) {
+        if (!this.overlay.offsetParent)
             inputfield.focus();
-            this.showOverlay(inputfield);
-        }
         else
             this.closeOverlay = true;
     };
@@ -68622,44 +65429,50 @@ var Calendar = (function () {
         this.createMonth(this.currentMonth, this.currentYear);
     };
     Calendar.prototype.incrementHour = function (event) {
-        var newHour = this.currentHour + this.stepHour;
-        if (this.hourFormat == '24')
-            this.currentHour = (newHour >= 24) ? (newHour - 24) : newHour;
-        else if (this.hourFormat == '12')
-            this.currentHour = (newHour >= 13) ? (newHour - 12) : newHour;
+        if (this.hourFormat == '24') {
+            if (this.currentHour === 23)
+                this.currentHour = 0;
+            else
+                this.currentHour++;
+        }
+        else if (this.hourFormat == '12') {
+            if (this.currentHour === 12)
+                this.currentHour = 1;
+            else
+                this.currentHour++;
+        }
         this.updateTime();
         event.preventDefault();
     };
     Calendar.prototype.decrementHour = function (event) {
-        var newHour = this.currentHour - this.stepHour;
-        if (this.hourFormat == '24')
-            this.currentHour = (newHour < 0) ? (24 + newHour) : newHour;
-        else if (this.hourFormat == '12')
-            this.currentHour = (newHour <= 0) ? (12 + newHour) : newHour;
+        if (this.hourFormat == '24') {
+            if (this.currentHour === 0)
+                this.currentHour = 23;
+            else
+                this.currentHour--;
+        }
+        else if (this.hourFormat == '12') {
+            if (this.currentHour === 1)
+                this.currentHour = 12;
+            else
+                this.currentHour--;
+        }
         this.updateTime();
         event.preventDefault();
     };
     Calendar.prototype.incrementMinute = function (event) {
-        var newMinute = this.currentMinute + this.stepMinute;
-        this.currentMinute = (newMinute > 59) ? newMinute - 60 : newMinute;
+        if (this.currentMinute === 59)
+            this.currentMinute = 0;
+        else
+            this.currentMinute++;
         this.updateTime();
         event.preventDefault();
     };
     Calendar.prototype.decrementMinute = function (event) {
-        var newMinute = this.currentMinute - this.stepMinute;
-        this.currentMinute = (newMinute < 0) ? 60 + newMinute : newMinute;
-        this.updateTime();
-        event.preventDefault();
-    };
-    Calendar.prototype.incrementSecond = function (event) {
-        var newSecond = this.currentSecond + this.stepSecond;
-        this.currentSecond = (newSecond > 59) ? newSecond - 60 : newSecond;
-        this.updateTime();
-        event.preventDefault();
-    };
-    Calendar.prototype.decrementSecond = function (event) {
-        var newSecond = this.currentSecond - this.stepSecond;
-        this.currentSecond = (newSecond < 0) ? 60 + newSecond : newSecond;
+        if (this.currentMinute === 0)
+            this.currentMinute = 59;
+        else
+            this.currentMinute--;
         this.updateTime();
         event.preventDefault();
     };
@@ -68670,7 +65483,6 @@ var Calendar = (function () {
         else
             this.value.setHours(this.currentHour);
         this.value.setMinutes(this.currentMinute);
-        this.value.setSeconds(this.currentSecond);
         this.updateModel();
         this.onSelect.emit(this.value);
         this.updateInputfield();
@@ -68684,12 +65496,10 @@ var Calendar = (function () {
         try {
             this.value = this.parseValueFromString(event.target.value);
             this.updateUI();
-            this._isValid = true;
         }
         catch (err) {
             //invalid date
             this.value = null;
-            this._isValid = false;
         }
         this.updateModel();
         this.updateFilledState();
@@ -68713,14 +65523,17 @@ var Calendar = (function () {
         return dateValue;
     };
     Calendar.prototype.populateTime = function (value, timeString, ampm) {
-        if (this.hourFormat == '12' && !ampm) {
-            throw 'Invalid Time';
-        }
-        this.pm = (ampm === 'PM' || ampm === 'pm');
         var time = this.parseTime(timeString);
-        value.setHours(time.hour);
+        if (this.hourFormat == '12') {
+            if (!ampm)
+                throw 'Invalid Time';
+            else if (ampm.toLowerCase() === 'PM' && time.hour != 12)
+                value.setHours(time.hour + 12);
+        }
+        else {
+            value.setHours(time.hour);
+        }
         value.setMinutes(time.minute);
-        value.setSeconds(time.second);
     };
     Calendar.prototype.updateUI = function () {
         var val = this.value || this.defaultDate || new Date();
@@ -68729,9 +65542,11 @@ var Calendar = (function () {
             var hours = val.getHours();
             if (this.hourFormat === '12') {
                 if (hours >= 12) {
+                    this.pm = true;
                     this.currentHour = (hours == 12) ? 12 : hours - 12;
                 }
                 else {
+                    this.pm = false;
                     this.currentHour = (hours == 0) ? 12 : hours;
                 }
             }
@@ -68739,20 +65554,18 @@ var Calendar = (function () {
                 this.currentHour = val.getHours();
             }
             this.currentMinute = val.getMinutes();
-            this.currentSecond = val.getSeconds();
         }
     };
     Calendar.prototype.onDatePickerClick = function (event) {
         this.closeOverlay = this.dateClick;
     };
-    Calendar.prototype.showOverlay = function (inputfield) {
+    Calendar.prototype.showOverlay = function (event) {
         if (this.appendTo)
-            this.domHandler.absolutePosition(this.overlay, inputfield);
+            this.domHandler.absolutePosition(this.overlay, event.target);
         else
-            this.domHandler.relativePosition(this.overlay, inputfield);
+            this.domHandler.relativePosition(this.overlay, event.target);
         this.overlayVisible = true;
         this.overlay.style.zIndex = String(++domhandler_1.DomHandler.zindex);
-        this.bindDocumentClickListener();
     };
     Calendar.prototype.writeValue = function (value) {
         this.value = value;
@@ -68849,17 +65662,12 @@ var Calendar = (function () {
         var output = '';
         var hours = date.getHours();
         var minutes = date.getMinutes();
-        var seconds = date.getSeconds();
         if (this.hourFormat == '12' && this.pm && hours != 12) {
             hours -= 12;
         }
         output += (hours < 10) ? '0' + hours : hours;
         output += ':';
         output += (minutes < 10) ? '0' + minutes : minutes;
-        if (this.showSeconds) {
-            output += ':';
-            output += (seconds < 10) ? '0' + seconds : seconds;
-        }
         if (this.hourFormat == '12') {
             output += this.pm ? ' PM' : ' AM';
         }
@@ -68867,21 +65675,19 @@ var Calendar = (function () {
     };
     Calendar.prototype.parseTime = function (value) {
         var tokens = value.split(':');
-        var validTokenLength = this.showSeconds ? 3 : 2;
-        if (tokens.length !== validTokenLength) {
+        if (tokens.length !== 2) {
             throw "Invalid time";
         }
         var h = parseInt(tokens[0]);
         var m = parseInt(tokens[1]);
-        var s = this.showSeconds ? parseInt(tokens[2]) : null;
-        if (isNaN(h) || isNaN(m) || h > 23 || m > 59 || (this.hourFormat == '12' && h > 12) || (this.showSeconds && (isNaN(s) || s > 59))) {
+        if (isNaN(h) || isNaN(m) || h > 23 || m > 59 || (this.hourFormat == '12' && h > 12)) {
             throw "Invalid time";
         }
         else {
-            if (this.hourFormat == '12' && h !== 12 && this.pm) {
+            if (this.hourFormat == '12' && h !== 12) {
                 h += 12;
             }
-            return { hour: h, minute: m, second: s };
+            return { hour: parseInt(tokens[0]), minute: parseInt(tokens[1]) };
         }
     };
     // Ported from jquery-ui datepicker parseDate 
@@ -69032,34 +65838,10 @@ var Calendar = (function () {
     Calendar.prototype.updateFilledState = function () {
         this.filled = this.inputFieldValue && this.inputFieldValue != '';
     };
-    Calendar.prototype.bindDocumentClickListener = function () {
-        var _this = this;
-        if (!this.documentClickListener) {
-            this.documentClickListener = this.renderer.listenGlobal('body', 'click', function () {
-                if (_this.closeOverlay) {
-                    _this.overlayVisible = false;
-                }
-                _this.closeOverlay = true;
-                _this.dateClick = false;
-            });
-        }
-    };
-    Calendar.prototype.unbindDocumentClickListener = function () {
-        if (this.documentClickListener) {
-            this.documentClickListener();
-        }
-    };
     Calendar.prototype.ngOnDestroy = function () {
-        this.unbindDocumentClickListener();
         if (!this.inline && this.appendTo) {
             this.el.nativeElement.appendChild(this.overlay);
         }
-    };
-    Calendar.prototype.validate = function (c) {
-        if (!this._isValid) {
-            return { invalidDate: true };
-        }
-        return null;
     };
     __decorate([
         core_1.Input(), 
@@ -69151,36 +65933,12 @@ var Calendar = (function () {
     ], Calendar.prototype, "timeOnly", void 0);
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Number)
-    ], Calendar.prototype, "stepHour", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], Calendar.prototype, "stepMinute", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], Calendar.prototype, "stepSecond", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], Calendar.prototype, "showSeconds", void 0);
-    __decorate([
-        core_1.Input(), 
         __metadata('design:type', Boolean)
     ], Calendar.prototype, "required", void 0);
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], Calendar.prototype, "showOnFocus", void 0);
-    __decorate([
-        core_1.Input(), 
         __metadata('design:type', String)
     ], Calendar.prototype, "dataType", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], Calendar.prototype, "onFocus", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
@@ -69212,7 +65970,7 @@ var Calendar = (function () {
     Calendar = __decorate([
         core_1.Component({
             selector: 'p-calendar',
-            template: "\n        <span [ngClass]=\"{'ui-calendar':true,'ui-calendar-w-btn':showIcon}\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <template [ngIf]=\"!inline\">\n                <input #inputfield type=\"text\" [attr.required]=\"required\" pInputText [value]=\"inputFieldValue\" (focus)=\"onInputFocus(inputfield, $event)\" (keydown)=\"onInputKeydown($event)\" (click)=\"closeOverlay=false\" (blur)=\"onInputBlur($event)\"\n                    [readonly]=\"readonlyInput\" (input)=\"onInput($event)\" [ngStyle]=\"inputStyle\" [class]=\"inputStyleClass\" [placeholder]=\"placeholder||''\" [disabled]=\"disabled\" [attr.tabindex]=\"tabindex\"\n                    ><button type=\"button\" [icon]=\"icon\" pButton *ngIf=\"showIcon\" (click)=\"onButtonClick($event,inputfield)\"\n                    [ngClass]=\"{'ui-datepicker-trigger':true,'ui-state-disabled':disabled}\" [disabled]=\"disabled\"></button>\n            </template>\n            <div #datepicker class=\"ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all\" [ngClass]=\"{'ui-datepicker-inline':inline,'ui-shadow':!inline,'ui-state-disabled':disabled,'ui-datepicker-timeonly':timeOnly}\" \n                [ngStyle]=\"{'display': inline ? 'inline-block' : (overlayVisible ? 'block' : 'none')}\" (click)=\"onDatePickerClick($event)\" [@overlayState]=\"inline ? 'visible' : (overlayVisible ? 'visible' : 'hidden')\">\n\n                <div class=\"ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all\" *ngIf=\"!timeOnly && (overlayVisible || inline)\">\n                    <ng-content select=\"p-header\"></ng-content>\n                    <a class=\"ui-datepicker-prev ui-corner-all\" href=\"#\" (click)=\"prevMonth($event)\">\n                        <span class=\"fa fa-angle-left\"></span>\n                    </a>\n                    <a class=\"ui-datepicker-next ui-corner-all\" href=\"#\" (click)=\"nextMonth($event)\">\n                        <span class=\"fa fa-angle-right\"></span>\n                    </a>\n                    <div class=\"ui-datepicker-title\">\n                        <span class=\"ui-datepicker-month\" *ngIf=\"!monthNavigator\">{{currentMonthText}}</span>\n                        <select class=\"ui-datepicker-month\" *ngIf=\"monthNavigator\" (change)=\"onMonthDropdownChange($event.target.value)\">\n                            <option [value]=\"i\" *ngFor=\"let month of locale.monthNames;let i = index\" [selected]=\"i == currentMonth\">{{month}}</option>\n                        </select>\n                        <select class=\"ui-datepicker-year\" *ngIf=\"yearNavigator\" (change)=\"onYearDropdownChange($event.target.value)\">\n                            <option [value]=\"year\" *ngFor=\"let year of yearOptions\" [selected]=\"year == currentYear\">{{year}}</option>\n                        </select>\n                        <span class=\"ui-datepicker-year\" *ngIf=\"!yearNavigator\">{{currentYear}}</span>\n                    </div>\n                </div>\n                <table class=\"ui-datepicker-calendar\" *ngIf=\"!timeOnly && (overlayVisible || inline)\">\n                    <thead>\n                        <tr>\n                            <th scope=\"col\" *ngFor=\"let weekDay of weekDays;let begin = first; let end = last\">\n                                <span>{{weekDay}}</span>\n                            </th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor=\"let week of dates\">\n                            <td *ngFor=\"let date of week\" [ngClass]=\"{'ui-datepicker-other-month ui-state-disabled':date.otherMonth,\n                                'ui-datepicker-current-day':isSelected(date),'ui-datepicker-today':date.today}\">\n                                <a class=\"ui-state-default\" href=\"#\" *ngIf=\"date.otherMonth ? showOtherMonths : true\" \n                                    [ngClass]=\"{'ui-state-active':isSelected(date), 'ui-state-highlight':date.today,'ui-state-disabled':!date.selectable}\"\n                                    (click)=\"onDateSelect($event,date)\">{{date.day}}</a>\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n                <div class=\"ui-timepicker ui-widget-header ui-corner-all\" *ngIf=\"showTime||timeOnly\">\n                    <div class=\"ui-hour-picker\">\n                        <a href=\"#\" (click)=\"incrementHour($event)\">\n                            <span class=\"fa fa-angle-up\"></span>\n                        </a>\n                        <span [ngStyle]=\"{'display': currentHour < 10 ? 'inline': 'none'}\">0</span><span>{{currentHour}}</span>\n                        <a href=\"#\" (click)=\"decrementHour($event)\">\n                            <span class=\"fa fa-angle-down\"></span>\n                        </a>\n                    </div>\n                    <div class=\"ui-separator\">\n                        <a href=\"#\">\n                            <span class=\"fa fa-angle-up\"></span>\n                        </a>\n                        <span>:</span>\n                        <a href=\"#\">\n                            <span class=\"fa fa-angle-down\"></span>\n                        </a>\n                    </div>\n                    <div class=\"ui-minute-picker\">\n                        <a href=\"#\" (click)=\"incrementMinute($event)\">\n                            <span class=\"fa fa-angle-up\"></span>\n                        </a>\n                        <span [ngStyle]=\"{'display': currentMinute < 10 ? 'inline': 'none'}\">0</span><span>{{currentMinute}}</span>\n                        <a href=\"#\" (click)=\"decrementMinute($event)\">\n                            <span class=\"fa fa-angle-down\"></span>\n                        </a>\n                    </div>\n                    <div class=\"ui-separator\" *ngIf=\"showSeconds\">\n                        <a href=\"#\">\n                            <span class=\"fa fa-angle-up\"></span>\n                        </a>\n                        <span>:</span>\n                        <a href=\"#\">\n                            <span class=\"fa fa-angle-down\"></span>\n                        </a>\n                    </div>\n                    <div class=\"ui-second-picker\" *ngIf=\"showSeconds\">\n                        <a href=\"#\" (click)=\"incrementSecond($event)\">\n                            <span class=\"fa fa-angle-up\"></span>\n                        </a>\n                        <span [ngStyle]=\"{'display': currentSecond < 10 ? 'inline': 'none'}\">0</span><span>{{currentSecond}}</span>\n                        <a href=\"#\" (click)=\"incrementSecond($event)\">\n                            <span class=\"fa fa-angle-down\"></span>\n                        </a>\n                    </div>\n                    <div class=\"ui-ampm-picker\" *ngIf=\"hourFormat=='12'\">\n                        <a href=\"#\" (click)=\"toggleAMPM($event)\">\n                            <span class=\"fa fa-angle-up\"></span>\n                        </a>\n                        <span>{{pm ? 'PM' : 'AM'}}</span>\n                        <a href=\"#\" (click)=\"toggleAMPM($event)\">\n                            <span class=\"fa fa-angle-down\"></span>\n                        </a>\n                    </div>\n                </div>\n                <ng-content select=\"p-footer\"></ng-content>\n            </div>\n        </span>\n    ",
+            template: "\n        <span [ngClass]=\"{'ui-calendar':true,'ui-calendar-w-btn':showIcon}\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <template [ngIf]=\"!inline\">\n                <input #inputfield type=\"text\" [attr.required]=\"required\" pInputText [value]=\"inputFieldValue\" (focus)=\"onInputFocus($event)\" (keydown)=\"onInputKeydown($event)\" (click)=\"closeOverlay=false\" (blur)=\"onInputBlur($event)\"\n                    [readonly]=\"readonlyInput\" (input)=\"onInput($event)\" [ngStyle]=\"inputStyle\" [class]=\"inputStyleClass\" [placeholder]=\"placeholder||''\" [disabled]=\"disabled\" [attr.tabindex]=\"tabindex\"\n                    ><button type=\"button\" [icon]=\"icon\" pButton *ngIf=\"showIcon\" (click)=\"onButtonClick($event,inputfield)\"\n                    [ngClass]=\"{'ui-datepicker-trigger':true,'ui-state-disabled':disabled}\" [disabled]=\"disabled\"></button>\n            </template>\n            <div #datepicker class=\"ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all\" [ngClass]=\"{'ui-datepicker-inline':inline,'ui-shadow':!inline,'ui-state-disabled':disabled,'ui-datepicker-timeonly':timeOnly}\" \n                [ngStyle]=\"{'display': inline ? 'inline-block' : (overlayVisible ? 'block' : 'none')}\" (click)=\"onDatePickerClick($event)\" [@overlayState]=\"inline ? 'visible' : (overlayVisible ? 'visible' : 'hidden')\">\n                <div class=\"ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all\" *ngIf=\"!timeOnly\">\n                    <a class=\"ui-datepicker-prev ui-corner-all\" href=\"#\" (click)=\"prevMonth($event)\" (mouseenter)=\"hoverPrev=true\" (mouseleave)=\"hoverPrev=false\"\n                            [ngClass]=\"{'ui-state-hover ui-datepicker-prev-hover':hoverPrev&&!disabled}\">\n                        <span class=\"fa fa-angle-left\"></span>\n                    </a>\n                    <a class=\"ui-datepicker-next ui-corner-all\" href=\"#\" (click)=\"nextMonth($event)\" (mouseenter)=\"hoverNext=true\" (mouseleave)=\"hoverNext=false\"\n                            [ngClass]=\"{'ui-state-hover ui-datepicker-next-hover':hoverNext&&!disabled}\">\n                        <span class=\"fa fa-angle-right\"></span>\n                    </a>\n                    <div class=\"ui-datepicker-title\">\n                        <span class=\"ui-datepicker-month\" *ngIf=\"!monthNavigator\">{{currentMonthText}}</span>\n                        <select class=\"ui-datepicker-month\" *ngIf=\"monthNavigator\" (change)=\"onMonthDropdownChange($event.target.value)\">\n                            <option [value]=\"i\" *ngFor=\"let month of locale.monthNames;let i = index\" [selected]=\"i == currentMonth\">{{month}}</option>\n                        </select>\n                        <select class=\"ui-datepicker-year\" *ngIf=\"yearNavigator\" (change)=\"onYearDropdownChange($event.target.value)\">\n                            <option [value]=\"year\" *ngFor=\"let year of yearOptions\" [selected]=\"year == currentYear\">{{year}}</option>\n                        </select>\n                        <span class=\"ui-datepicker-year\" *ngIf=\"!yearNavigator\">{{currentYear}}</span>\n                    </div>\n                </div>\n                <table class=\"ui-datepicker-calendar\" *ngIf=\"!timeOnly\">\n                    <thead>\n                        <tr>\n                            <th scope=\"col\" *ngFor=\"let weekDay of weekDays;let begin = first; let end = last\">\n                                <span>{{weekDay}}</span>\n                            </th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr *ngFor=\"let week of dates\">\n                            <td *ngFor=\"let date of week\" [ngClass]=\"{'ui-datepicker-other-month ui-state-disabled':date.otherMonth,\n                                'ui-datepicker-current-day':isSelected(date),'ui-datepicker-today':isToday(date)}\">\n                                <a #cell class=\"ui-state-default\" href=\"#\" *ngIf=\"date.otherMonth ? showOtherMonths : true\" \n                                        [ngClass]=\"{'ui-state-active':isSelected(date),'ui-state-hover':(hoverCell == cell && !disabled && date.selectable),\n                                            'ui-state-highlight':isToday(date),'ui-state-disabled':!date.selectable}\"\n                                        (click)=\"onDateSelect($event,date)\" (mouseenter)=\"hoverCell=cell\" (mouseleave)=\"hoverCell=null\">{{date.day}}</a>\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n                <div class=\"ui-timepicker ui-widget-header ui-corner-all\" *ngIf=\"showTime||timeOnly\">\n                    <div class=\"ui-hour-picker\">\n                        <a href=\"#\" (click)=\"incrementHour($event)\">\n                            <span class=\"fa fa-angle-up\"></span>\n                        </a>\n                        <span [ngStyle]=\"{'display': currentHour < 10 ? 'inline': 'none'}\">0</span><span>{{currentHour}}</span>\n                        <a href=\"#\" (click)=\"decrementHour($event)\">\n                            <span class=\"fa fa-angle-down\"></span>\n                        </a>\n                    </div>\n                    <div class=\"ui-separator\">\n                        <a href=\"#\">\n                            <span class=\"fa fa-angle-up\"></span>\n                        </a>\n                        <span>:</span>\n                        <a href=\"#\">\n                            <span class=\"fa fa-angle-down\"></span>\n                        </a>\n                    </div>\n                    <div class=\"ui-minute-picker\">\n                        <a href=\"#\" (click)=\"incrementMinute($event)\">\n                            <span class=\"fa fa-angle-up\"></span>\n                        </a>\n                        <span [ngStyle]=\"{'display': currentMinute < 10 ? 'inline': 'none'}\">0</span><span>{{currentMinute}}</span>\n                        <a href=\"#\" (click)=\"decrementMinute($event)\">\n                            <span class=\"fa fa-angle-down\"></span>\n                        </a>\n                    </div>\n                    <div class=\"ui-ampm-picker\" *ngIf=\"hourFormat=='12'\">\n                        <a href=\"#\" (click)=\"toggleAMPM($event)\">\n                            <span class=\"fa fa-angle-up\"></span>\n                        </a>\n                        <span>{{pm ? 'PM' : 'AM'}}</span>\n                        <a href=\"#\" (click)=\"toggleAMPM($event)\">\n                            <span class=\"fa fa-angle-down\"></span>\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </span>\n    ",
             animations: [
                 core_1.trigger('overlayState', [
                     core_1.state('hidden', core_1.style({
@@ -69229,7 +65987,7 @@ var Calendar = (function () {
                 '[class.ui-inputwrapper-filled]': 'filled',
                 '[class.ui-inputwrapper-focus]': 'focus'
             },
-            providers: [domhandler_1.DomHandler, exports.CALENDAR_VALUE_ACCESSOR, exports.CALENDAR_VALIDATOR]
+            providers: [domhandler_1.DomHandler, exports.CALENDAR_VALUE_ACCESSOR]
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, domhandler_1.DomHandler, core_1.Renderer])
     ], Calendar);
@@ -69253,11 +66011,7 @@ exports.CalendarModule = CalendarModule;
 //# sourceMappingURL=calendar.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 676 */
-=======
-/* 672 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69273,7 +66027,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var domhandler_1 = __webpack_require__(4);
-var shared_1 = __webpack_require__(11);
+var shared_1 = __webpack_require__(9);
 var common_1 = __webpack_require__(2);
 var Carousel = (function () {
     function Carousel(el, domHandler, differs, renderer) {
@@ -69292,19 +66046,6 @@ var Carousel = (function () {
         this.left = 0;
         this.differ = differs.find([]).create(null);
     }
-    Carousel.prototype.ngAfterContentInit = function () {
-        var _this = this;
-        this.templates.forEach(function (item) {
-            switch (item.getType()) {
-                case 'item':
-                    _this.itemTemplate = item.template;
-                    break;
-                default:
-                    _this.itemTemplate = item.template;
-                    break;
-            }
-        });
-    };
     Carousel.prototype.ngDoCheck = function () {
         var changes = this.differ.diff(this.value);
         if (changes) {
@@ -69536,9 +66277,9 @@ var Carousel = (function () {
         __metadata('design:type', String)
     ], Carousel.prototype, "styleClass", void 0);
     __decorate([
-        core_1.ContentChildren(shared_1.PrimeTemplate), 
-        __metadata('design:type', core_1.QueryList)
-    ], Carousel.prototype, "templates", void 0);
+        core_1.ContentChild(core_1.TemplateRef), 
+        __metadata('design:type', core_1.TemplateRef)
+    ], Carousel.prototype, "itemTemplate", void 0);
     Carousel = __decorate([
         core_1.Component({
             selector: 'p-carousel',
@@ -69567,11 +66308,7 @@ exports.CarouselModule = CarouselModule;
 //# sourceMappingURL=carousel.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 677 */
-=======
-/* 673 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69683,11 +66420,7 @@ exports.ChartModule = ChartModule;
 //# sourceMappingURL=chart.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 678 */
-=======
-/* 674 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69710,8 +66443,7 @@ exports.CHECKBOX_VALUE_ACCESSOR = {
     multi: true
 };
 var Checkbox = (function () {
-    function Checkbox(cd) {
-        this.cd = cd;
+    function Checkbox() {
         this.onChange = new core_1.EventEmitter();
         this.onModelChange = function () { };
         this.onModelTouched = function () { };
@@ -69783,7 +66515,6 @@ var Checkbox = (function () {
     Checkbox.prototype.writeValue = function (model) {
         this.model = model;
         this.checked = this.isChecked();
-        this.cd.markForCheck();
     };
     Checkbox.prototype.registerOnChange = function (fn) {
         this.onModelChange = fn;
@@ -69815,20 +66546,16 @@ var Checkbox = (function () {
         __metadata('design:type', String)
     ], Checkbox.prototype, "label", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], Checkbox.prototype, "tabindex", void 0);
-    __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
     ], Checkbox.prototype, "onChange", void 0);
     Checkbox = __decorate([
         core_1.Component({
             selector: 'p-checkbox',
-            template: "\n        <div class=\"ui-chkbox ui-widget\">\n            <div class=\"ui-helper-hidden-accessible\">\n                <input #cb type=\"checkbox\" [name]=\"name\" [value]=\"value\" [checked]=\"checked\" (focus)=\"onFocus($event)\" (blur)=\"onBlur($event)\"\n                [ngClass]=\"{'ui-state-focus':focused}\" (change)=\"handleChange($event)\" [disabled]=\"disabled\" [attr.tabindex]=\"tabindex\">\n            </div>\n            <div class=\"ui-chkbox-box ui-widget ui-corner-all ui-state-default\" (click)=\"onClick($event,cb,true)\"\n                        [ngClass]=\"{'ui-state-active':checked,'ui-state-disabled':disabled,'ui-state-focus':focused}\">\n                <span class=\"ui-chkbox-icon ui-c\" [ngClass]=\"{'fa fa-check':checked}\"></span>\n            </div>\n        </div>\n        <label class=\"ui-chkbox-label\" (click)=\"onClick($event,cb,true)\" *ngIf=\"label\">{{label}}</label>\n    ",
+            template: "\n        <div class=\"ui-chkbox ui-widget\">\n            <div class=\"ui-helper-hidden-accessible\">\n                <input #cb type=\"checkbox\" [name]=\"name\" [value]=\"value\" [checked]=\"checked\" (focus)=\"onFocus($event)\" (blur)=\"onBlur($event)\"\n                [ngClass]=\"{'ui-state-focus':focused}\" (change)=\"handleChange($event)\" [disabled]=\"disabled\">\n            </div>\n            <div class=\"ui-chkbox-box ui-widget ui-corner-all ui-state-default\" (click)=\"onClick($event,cb,true)\"\n                        (mouseover)=\"hover=true\" (mouseout)=\"hover=false\" \n                        [ngClass]=\"{'ui-state-hover':hover&&!disabled,'ui-state-active':checked,'ui-state-disabled':disabled,'ui-state-focus':focused}\">\n                <span class=\"ui-chkbox-icon ui-c\" [ngClass]=\"{'fa fa-check':checked}\"></span>\n            </div>\n        </div>\n        <label class=\"ui-chkbox-label\" (click)=\"onClick($event,cb,true)\" *ngIf=\"label\">{{label}}</label>\n    ",
             providers: [exports.CHECKBOX_VALUE_ACCESSOR]
         }), 
-        __metadata('design:paramtypes', [core_1.ChangeDetectorRef])
+        __metadata('design:paramtypes', [])
     ], Checkbox);
     return Checkbox;
 }());
@@ -69850,11 +66577,7 @@ exports.CheckboxModule = CheckboxModule;
 //# sourceMappingURL=checkbox.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 679 */
-=======
-/* 675 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69870,7 +66593,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
-var shared_1 = __webpack_require__(11);
+var shared_1 = __webpack_require__(9);
 var inputtext_1 = __webpack_require__(78);
 var domhandler_1 = __webpack_require__(4);
 var forms_1 = __webpack_require__(14);
@@ -69888,19 +66611,6 @@ var Chips = (function () {
         this.onModelChange = function () { };
         this.onModelTouched = function () { };
     }
-    Chips.prototype.ngAfterContentInit = function () {
-        var _this = this;
-        this.templates.forEach(function (item) {
-            switch (item.getType()) {
-                case 'item':
-                    _this.itemTemplate = item.template;
-                    break;
-                default:
-                    _this.itemTemplate = item.template;
-                    break;
-            }
-        });
-    };
     Chips.prototype.writeValue = function (value) {
         this.value = value;
     };
@@ -70023,17 +66733,13 @@ var Chips = (function () {
         __metadata('design:type', Number)
     ], Chips.prototype, "max", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], Chips.prototype, "tabindex", void 0);
-    __decorate([
-        core_1.ContentChildren(shared_1.PrimeTemplate), 
-        __metadata('design:type', core_1.QueryList)
-    ], Chips.prototype, "templates", void 0);
+        core_1.ContentChild(core_1.TemplateRef), 
+        __metadata('design:type', core_1.TemplateRef)
+    ], Chips.prototype, "itemTemplate", void 0);
     Chips = __decorate([
         core_1.Component({
             selector: 'p-chips',
-            template: "\n        <div [ngClass]=\"'ui-chips ui-widget'\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <ul [ngClass]=\"{'ui-inputtext ui-state-default ui-corner-all':true,'ui-state-focus':focus,'ui-state-disabled':disabled}\" (click)=\"inputtext.focus()\">\n                <li #token *ngFor=\"let item of value; let i = index;\" class=\"ui-chips-token ui-state-highlight ui-corner-all\">\n                    <span *ngIf=\"!itemTemplate&&!disabled\" class=\"ui-chips-token-icon fa fa-fw fa-close\" (click)=\"removeItem($event,i)\"></span>\n                    <span *ngIf=\"!itemTemplate\" class=\"ui-chips-token-label\">{{field ? resolveFieldData(item,field) : item}}</span>\n                    <template *ngIf=\"itemTemplate\" [pTemplateWrapper]=\"itemTemplate\" [item]=\"item\"></template>\n                </li>\n                <li class=\"ui-chips-input-token\">\n                    <input #inputtext type=\"text\" pInputText [attr.placeholder]=\"placeholder\" [attr.tabindex]=\"tabindex\" (keydown)=\"onKeydown($event,inputtext)\" \n                        (focus)=\"onFocus()\" (blur)=\"onBlur()\" [disabled]=\"maxedOut||disabled\" [disabled]=\"disabled\">\n                </li>\n            </ul>\n        </div>\n    ",
+            template: "\n        <div [ngClass]=\"'ui-chips ui-widget'\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <ul [ngClass]=\"{'ui-inputtext ui-state-default ui-corner-all':true,'ui-state-focus':focus,'ui-state-disabled':disabled}\" (click)=\"inputtext.focus()\">\n                <li #token *ngFor=\"let item of value; let i = index;\" class=\"ui-chips-token ui-state-highlight ui-corner-all\">\n                    <span *ngIf=\"!itemTemplate&&!disabled\" class=\"ui-chips-token-icon fa fa-fw fa-close\" (click)=\"removeItem($event,i)\"></span>\n                    <span *ngIf=\"!itemTemplate\" class=\"ui-chips-token-label\">{{field ? resolveFieldData(item,field) : item}}</span>\n                    <template *ngIf=\"itemTemplate\" [pTemplateWrapper]=\"itemTemplate\" [item]=\"item\"></template>\n                </li>\n                <li class=\"ui-chips-input-token\">\n                    <input #inputtext type=\"text\" pInputText [attr.placeholder]=\"placeholder\" (keydown)=\"onKeydown($event,inputtext)\" (focus)=\"onFocus()\" (blur)=\"onBlur()\"\n                        [disabled]=\"maxedOut||disabled\" [disabled]=\"disabled\">\n                </li>\n            </ul>\n        </div>\n    ",
             providers: [domhandler_1.DomHandler, exports.CHIPS_VALUE_ACCESSOR]
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, domhandler_1.DomHandler])
@@ -70058,11 +66764,7 @@ exports.ChipsModule = ChipsModule;
 //# sourceMappingURL=chips.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 680 */
-=======
-/* 676 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70111,11 +66813,7 @@ exports.CodeHighlighterModule = CodeHighlighterModule;
 //# sourceMappingURL=codehighlighter.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 681 */
-=======
-/* 677 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70132,13 +66830,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
 var domhandler_1 = __webpack_require__(4);
-var shared_1 = __webpack_require__(11);
+var shared_1 = __webpack_require__(9);
 var button_1 = __webpack_require__(53);
-<<<<<<< HEAD
 var api_1 = __webpack_require__(374);
-=======
-var api_1 = __webpack_require__(376);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 var ConfirmDialog = (function () {
     function ConfirmDialog(el, domHandler, renderer, confirmationService) {
         var _this = this;
@@ -70361,7 +67055,7 @@ var ConfirmDialog = (function () {
     ConfirmDialog = __decorate([
         core_1.Component({
             selector: 'p-confirmDialog',
-            template: "\n        <div [ngClass]=\"{'ui-dialog ui-confirmdialog ui-widget ui-widget-content ui-corner-all ui-shadow':true,'ui-dialog-rtl':rtl}\" \n            [style.display]=\"visible ? 'block' : 'none'\" [style.width.px]=\"width\" [style.height.px]=\"height\" (mousedown)=\"moveOnTop()\" [@dialogState]=\"visible ? 'visible' : 'hidden'\">\n            <div class=\"ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top\">\n                <span class=\"ui-dialog-title\" *ngIf=\"header\">{{header}}</span>\n                <a *ngIf=\"closable\"  [ngClass]=\"{'ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all':true}\" href=\"#\" role=\"button\" (click)=\"hide($event)\">\n                    <span class=\"fa fa-fw fa-close\"></span>\n                </a>\n            </div>\n            <div class=\"ui-dialog-content ui-widget-content\">\n                <i [class]=\"icon\"></i>\n                <span class=\"ui-confirmdialog-message\">{{message}}</span>\n            </div>\n            <div class=\"ui-dialog-buttonpane ui-widget-content ui-helper-clearfix\" *ngIf=\"footer\">\n                <ng-content select=\"p-footer\"></ng-content>\n            </div>\n            <div class=\"ui-dialog-buttonpane ui-widget-content ui-helper-clearfix\" *ngIf=\"!footer\">\n                <button type=\"button\" pButton [icon]=\"rejectIcon\" [label]=\"rejectLabel\" (click)=\"reject()\" *ngIf=\"rejectVisible\"></button>\n                <button type=\"button\" pButton [icon]=\"acceptIcon\" [label]=\"acceptLabel\" (click)=\"accept()\" *ngIf=\"acceptVisible\"></button>\n            </div>\n        </div>\n    ",
+            template: "\n        <div [ngClass]=\"{'ui-dialog ui-confirmdialog ui-widget ui-widget-content ui-corner-all ui-shadow':true,'ui-dialog-rtl':rtl}\" \n            [style.display]=\"visible ? 'block' : 'none'\" [style.width.px]=\"width\" [style.height.px]=\"height\" (mousedown)=\"moveOnTop()\" [@dialogState]=\"visible ? 'visible' : 'hidden'\">\n            <div class=\"ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top\">\n                <span class=\"ui-dialog-title\" *ngIf=\"header\">{{header}}</span>\n                <a [ngClass]=\"{'ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all':true,'ui-state-hover':hoverCloseIcon}\" href=\"#\" role=\"button\" *ngIf=\"closable\" \n                    (click)=\"hide($event)\" (mouseenter)=\"hoverCloseIcon=true\" (mouseleave)=\"hoverCloseIcon=false\">\n                    <span class=\"fa fa-fw fa-close\"></span>\n                </a>\n            </div>\n            <div class=\"ui-dialog-content ui-widget-content\">\n                <i [class]=\"icon\"></i>\n                <span class=\"ui-confirmdialog-message\">{{message}}</span>\n            </div>\n            <div class=\"ui-dialog-buttonpane ui-widget-content ui-helper-clearfix\" *ngIf=\"footer\">\n                <ng-content select=\"footer\"></ng-content>\n            </div>\n            <div class=\"ui-dialog-buttonpane ui-widget-content ui-helper-clearfix\" *ngIf=\"!footer\">\n                <button type=\"button\" pButton [icon]=\"rejectIcon\" [label]=\"rejectLabel\" (click)=\"reject()\" *ngIf=\"rejectVisible\"></button>\n                <button type=\"button\" pButton [icon]=\"acceptIcon\" [label]=\"acceptLabel\" (click)=\"accept()\" *ngIf=\"acceptVisible\"></button>\n            </div>\n        </div>\n    ",
             animations: [
                 core_1.trigger('dialogState', [
                     core_1.state('hidden', core_1.style({
@@ -70387,7 +67081,7 @@ var ConfirmDialogModule = (function () {
     ConfirmDialogModule = __decorate([
         core_1.NgModule({
             imports: [common_1.CommonModule, button_1.ButtonModule],
-            exports: [ConfirmDialog, button_1.ButtonModule, shared_1.SharedModule],
+            exports: [ConfirmDialog, button_1.ButtonModule],
             declarations: [ConfirmDialog]
         }), 
         __metadata('design:paramtypes', [])
@@ -70398,11 +67092,7 @@ exports.ConfirmDialogModule = ConfirmDialogModule;
 //# sourceMappingURL=confirmdialog.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 682 */
-=======
-/* 678 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70422,7 +67112,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
 var domhandler_1 = __webpack_require__(4);
-var router_1 = __webpack_require__(21);
+var router_1 = __webpack_require__(28);
 var ContextMenuSub = (function () {
     function ContextMenuSub(domHandler, router, contextMenu) {
         this.domHandler = domHandler;
@@ -70434,6 +67124,7 @@ var ContextMenuSub = (function () {
             return;
         }
         this.activeItem = item;
+        this.activeLink = item.children[0];
         var nextElement = item.children[0].nextElementSibling;
         if (nextElement) {
             var sublist = nextElement.children[0];
@@ -70443,6 +67134,7 @@ var ContextMenuSub = (function () {
     };
     ContextMenuSub.prototype.onItemMouseLeave = function (event, link) {
         this.activeItem = null;
+        this.activeLink = null;
     };
     ContextMenuSub.prototype.itemClick = function (event, item) {
         if (item.disabled) {
@@ -70468,27 +67160,11 @@ var ContextMenuSub = (function () {
     };
     ContextMenuSub.prototype.listClick = function (event) {
         this.activeItem = null;
+        this.activeLink = null;
     };
     ContextMenuSub.prototype.position = function (sublist, item) {
-        this.containerLeft = this.domHandler.getOffset(item.parentElement);
-        var viewport = this.domHandler.getViewport();
-        var sublistWidth = sublist.offsetParent ? sublist.offsetWidth : this.domHandler.getHiddenElementOuterWidth(sublist);
-        var itemOuterWidth = this.domHandler.getOuterWidth(item.children[0]);
         sublist.style.top = '0px';
-        if ((parseInt(this.containerLeft.left) + itemOuterWidth + sublistWidth) > (viewport.width - this.calculateScrollbarWidth())) {
-            sublist.style.left = -sublistWidth + 'px';
-        }
-        else {
-            sublist.style.left = itemOuterWidth + 'px';
-        }
-    };
-    ContextMenuSub.prototype.calculateScrollbarWidth = function () {
-        var scrollDiv = document.createElement("div");
-        scrollDiv.className = "ui-scrollbar-measure";
-        document.body.appendChild(scrollDiv);
-        var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
-        document.body.removeChild(scrollDiv);
-        return scrollbarWidth;
+        sublist.style.left = this.domHandler.getOuterWidth(item.children[0]) + 'px';
     };
     __decorate([
         core_1.Input(), 
@@ -70501,7 +67177,7 @@ var ContextMenuSub = (function () {
     ContextMenuSub = __decorate([
         core_1.Component({
             selector: 'p-contextMenuSub',
-            template: "\n        <ul [ngClass]=\"{'ui-helper-reset':root, 'ui-widget-content ui-corner-all ui-helper-clearfix ui-menu-child ui-shadow':!root}\" class=\"ui-menu-list\"\n            (click)=\"listClick($event)\">\n            <template ngFor let-child [ngForOf]=\"(root ? item : item.items)\">\n                <li #item [ngClass]=\"{'ui-menuitem ui-widget ui-corner-all':true,'ui-menu-parent':child.items,'ui-menuitem-active':item==activeItem}\"\n                    (mouseenter)=\"onItemMouseEnter($event,item,child)\" (mouseleave)=\"onItemMouseLeave($event,item)\">\n                    <a [href]=\"child.url||'#'\" class=\"ui-menuitem-link ui-corner-all\" \n                        [ngClass]=\"{'ui-state-disabled':child.disabled}\" (click)=\"itemClick($event, child)\">\n                        <span class=\"ui-submenu-icon fa fa-fw fa-caret-right\" *ngIf=\"child.items\"></span>\n                        <span class=\"ui-menuitem-icon fa fa-fw\" *ngIf=\"child.icon\" [ngClass]=\"child.icon\"></span>\n                        <span class=\"ui-menuitem-text\">{{child.label}}</span>\n                    </a>\n                    <p-contextMenuSub class=\"ui-submenu\" [item]=\"child\" *ngIf=\"child.items\"></p-contextMenuSub>\n                </li>\n            </template>\n        </ul>\n    ",
+            template: "\n        <ul [ngClass]=\"{'ui-helper-reset':root, 'ui-widget-content ui-corner-all ui-helper-clearfix ui-menu-child ui-shadow':!root}\" class=\"ui-menu-list\"\n            (click)=\"listClick($event)\">\n            <template ngFor let-child [ngForOf]=\"(root ? item : item.items)\">\n                <li #item [ngClass]=\"{'ui-menuitem ui-widget ui-corner-all':true,'ui-menu-parent':child.items,'ui-menuitem-active':item==activeItem}\"\n                    (mouseenter)=\"onItemMouseEnter($event,item,child)\" (mouseleave)=\"onItemMouseLeave($event,item)\">\n                    <a #link [href]=\"child.url||'#'\" class=\"ui-menuitem-link ui-corner-all\" \n                        [ngClass]=\"{'ui-state-hover':link==activeLink&&!child.disabled,'ui-state-disabled':child.disabled}\" (click)=\"itemClick($event, child)\">\n                        <span class=\"ui-submenu-icon fa fa-fw fa-caret-right\" *ngIf=\"child.items\"></span>\n                        <span class=\"ui-menuitem-icon fa fa-fw\" *ngIf=\"child.icon\" [ngClass]=\"child.icon\"></span>\n                        <span class=\"ui-menuitem-text\">{{child.label}}</span>\n                    </a>\n                    <p-contextMenuSub class=\"ui-submenu\" [item]=\"child\" *ngIf=\"child.items\"></p-contextMenuSub>\n                </li>\n            </template>\n        </ul>\n    ",
             providers: [domhandler_1.DomHandler]
         }),
         __param(2, core_1.Inject(core_1.forwardRef(function () { return ContextMenu; }))), 
@@ -70657,11 +67333,7 @@ exports.ContextMenuModule = ContextMenuModule;
 //# sourceMappingURL=contextmenu.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 683 */
-=======
-/* 679 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70677,8 +67349,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
-var shared_1 = __webpack_require__(11);
-var paginator_1 = __webpack_require__(157);
+var shared_1 = __webpack_require__(9);
+var shared_2 = __webpack_require__(9);
+var paginator_1 = __webpack_require__(156);
 var DataGrid = (function () {
     function DataGrid(el, differs) {
         this.el = el;
@@ -70696,19 +67369,6 @@ var DataGrid = (function () {
                 rows: this.rows
             });
         }
-    };
-    DataGrid.prototype.ngAfterContentInit = function () {
-        var _this = this;
-        this.templates.forEach(function (item) {
-            switch (item.getType()) {
-                case 'item':
-                    _this.itemTemplate = item.template;
-                    break;
-                default:
-                    _this.itemTemplate = item.template;
-                    break;
-            }
-        });
     };
     DataGrid.prototype.ngDoCheck = function () {
         var changes = this.differ.diff(this.value);
@@ -70814,17 +67474,17 @@ var DataGrid = (function () {
         __metadata('design:type', Object)
     ], DataGrid.prototype, "header", void 0);
     __decorate([
-        core_1.ContentChild(shared_1.Footer), 
+        core_1.ContentChild(shared_2.Footer), 
         __metadata('design:type', Object)
     ], DataGrid.prototype, "footer", void 0);
     __decorate([
-        core_1.ContentChildren(shared_1.PrimeTemplate), 
-        __metadata('design:type', core_1.QueryList)
-    ], DataGrid.prototype, "templates", void 0);
+        core_1.ContentChild(core_1.TemplateRef), 
+        __metadata('design:type', core_1.TemplateRef)
+    ], DataGrid.prototype, "itemTemplate", void 0);
     DataGrid = __decorate([
         core_1.Component({
             selector: 'p-dataGrid',
-            template: "\n        <div [ngClass]=\"'ui-datagrid ui-widget'\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-datagrid-header ui-widget-header ui-corner-top\" *ngIf=\"header\">\n                <ng-content select=\"p-header\"></ng-content>\n            </div>\n            <p-paginator [rows]=\"rows\" [first]=\"first\" [totalRecords]=\"totalRecords\" [pageLinkSize]=\"pageLinks\" \n                (onPageChange)=\"paginate($event)\" styleClass=\"ui-paginator-bottom\" [rowsPerPageOptions]=\"rowsPerPageOptions\" *ngIf=\"paginator && paginatorPosition!='bottom' || paginatorPosition =='both'\"></p-paginator>\n            <div class=\"ui-datagrid-content ui-widget-content\">\n                <div class=\"ui-g\">\n                    <template ngFor [ngForOf]=\"dataToRender\" [ngForTemplate]=\"itemTemplate\"></template>\n                </div>\n            </div>\n            <p-paginator [rows]=\"rows\" [first]=\"first\" [totalRecords]=\"totalRecords\" [pageLinkSize]=\"pageLinks\" \n                (onPageChange)=\"paginate($event)\" styleClass=\"ui-paginator-bottom\" [rowsPerPageOptions]=\"rowsPerPageOptions\" *ngIf=\"paginator && paginatorPosition!='top' || paginatorPosition =='both'\"></p-paginator>\n            <div class=\"ui-datagrid-footer ui-widget-header ui-corner-top\" *ngIf=\"footer\">\n                <ng-content select=\"p-footer\"></ng-content>\n            </div>\n        </div>\n    "
+            template: "\n        <div [ngClass]=\"'ui-datagrid ui-widget'\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-datagrid-header ui-widget-header ui-corner-top\" *ngIf=\"header\">\n                <ng-content select=\"header\"></ng-content>\n            </div>\n            <p-paginator [rows]=\"rows\" [first]=\"first\" [totalRecords]=\"totalRecords\" [pageLinkSize]=\"pageLinks\" \n                (onPageChange)=\"paginate($event)\" styleClass=\"ui-paginator-bottom\" [rowsPerPageOptions]=\"rowsPerPageOptions\" *ngIf=\"paginator && paginatorPosition!='bottom' || paginatorPosition =='both'\"></p-paginator>\n            <div class=\"ui-datagrid-content ui-widget-content\">\n                <div class=\"ui-g\">\n                    <template ngFor [ngForOf]=\"dataToRender\" [ngForTemplate]=\"itemTemplate\"></template>\n                </div>\n            </div>\n            <p-paginator [rows]=\"rows\" [first]=\"first\" [totalRecords]=\"totalRecords\" [pageLinkSize]=\"pageLinks\" \n                (onPageChange)=\"paginate($event)\" styleClass=\"ui-paginator-bottom\" [rowsPerPageOptions]=\"rowsPerPageOptions\" *ngIf=\"paginator && paginatorPosition!='top' || paginatorPosition =='both'\"></p-paginator>\n            <div class=\"ui-datagrid-footer ui-widget-header ui-corner-top\" *ngIf=\"footer\">\n                <ng-content select=\"footer\"></ng-content>\n            </div>\n        </div>\n    "
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, core_1.IterableDiffers])
     ], DataGrid);
@@ -70836,8 +67496,8 @@ var DataGridModule = (function () {
     }
     DataGridModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule, shared_1.SharedModule, paginator_1.PaginatorModule],
-            exports: [DataGrid, shared_1.SharedModule],
+            imports: [common_1.CommonModule, paginator_1.PaginatorModule],
+            exports: [DataGrid],
             declarations: [DataGrid]
         }), 
         __metadata('design:paramtypes', [])
@@ -70848,11 +67508,7 @@ exports.DataGridModule = DataGridModule;
 //# sourceMappingURL=datagrid.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 684 */
-=======
-/* 680 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70868,8 +67524,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
-var shared_1 = __webpack_require__(11);
-var paginator_1 = __webpack_require__(157);
+var shared_1 = __webpack_require__(9);
+var shared_2 = __webpack_require__(9);
+var shared_3 = __webpack_require__(9);
+var paginator_1 = __webpack_require__(156);
 var DataList = (function () {
     function DataList(el, differs) {
         this.el = el;
@@ -70880,19 +67538,6 @@ var DataList = (function () {
         this.page = 0;
         this.differ = differs.find([]).create(null);
     }
-    DataList.prototype.ngAfterContentInit = function () {
-        var _this = this;
-        this.templates.forEach(function (item) {
-            switch (item.getType()) {
-                case 'item':
-                    _this.itemTemplate = item.template;
-                    break;
-                default:
-                    _this.itemTemplate = item.template;
-                    break;
-            }
-        });
-    };
     DataList.prototype.ngAfterViewInit = function () {
         if (this.lazy) {
             this.onLazyLoad.emit({
@@ -71005,17 +67650,17 @@ var DataList = (function () {
         __metadata('design:type', Object)
     ], DataList.prototype, "header", void 0);
     __decorate([
-        core_1.ContentChild(shared_1.Footer), 
+        core_1.ContentChild(shared_2.Footer), 
         __metadata('design:type', Object)
     ], DataList.prototype, "footer", void 0);
     __decorate([
-        core_1.ContentChildren(shared_1.PrimeTemplate), 
-        __metadata('design:type', core_1.QueryList)
-    ], DataList.prototype, "templates", void 0);
+        core_1.ContentChild(core_1.TemplateRef), 
+        __metadata('design:type', core_1.TemplateRef)
+    ], DataList.prototype, "itemTemplate", void 0);
     DataList = __decorate([
         core_1.Component({
             selector: 'p-dataList',
-            template: "\n        <div [ngClass]=\"'ui-datalist ui-widget'\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-datalist-header ui-widget-header ui-corner-top\" *ngIf=\"header\">\n                <ng-content select=\"p-header\"></ng-content>\n            </div>\n            <p-paginator [rows]=\"rows\" [first]=\"first\" [totalRecords]=\"totalRecords\" [pageLinkSize]=\"pageLinks\" \n            (onPageChange)=\"paginate($event)\" styleClass=\"ui-paginator-bottom\" [rowsPerPageOptions]=\"rowsPerPageOptions\" *ngIf=\"paginator  && paginatorPosition!='bottom' || paginatorPosition =='both'\"></p-paginator>\n            <div class=\"ui-datalist-content ui-widget-content\">\n                <ul class=\"ui-datalist-data\">\n                    <li *ngFor=\"let item of dataToRender;let i = index\">\n                        <template [pTemplateWrapper]=\"itemTemplate\" [item]=\"item\" [index]=\"i\"></template>\n                    </li>\n                </ul>\n            </div>\n            <p-paginator [rows]=\"rows\" [first]=\"first\" [totalRecords]=\"totalRecords\" [pageLinkSize]=\"pageLinks\" \n            (onPageChange)=\"paginate($event)\" styleClass=\"ui-paginator-bottom\" [rowsPerPageOptions]=\"rowsPerPageOptions\" *ngIf=\"paginator  && paginatorPosition!='top' || paginatorPosition =='both'\"></p-paginator>\n            <div class=\"ui-datalist-footer ui-widget-header ui-corner-bottom\" *ngIf=\"footer\">\n                <ng-content select=\"p-footer\"></ng-content>\n            </div>\n        </div>\n    "
+            template: "\n        <div [ngClass]=\"'ui-datalist ui-widget'\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-datalist-header ui-widget-header ui-corner-top\" *ngIf=\"header\">\n                <ng-content select=\"header\"></ng-content>\n            </div>\n            <p-paginator [rows]=\"rows\" [first]=\"first\" [totalRecords]=\"totalRecords\" [pageLinkSize]=\"pageLinks\" \n            (onPageChange)=\"paginate($event)\" styleClass=\"ui-paginator-bottom\" [rowsPerPageOptions]=\"rowsPerPageOptions\" *ngIf=\"paginator  && paginatorPosition!='bottom' || paginatorPosition =='both'\"></p-paginator>\n            <div class=\"ui-datalist-content ui-widget-content\">\n                <ul class=\"ui-datalist-data\">\n                    <li *ngFor=\"let item of dataToRender;let i = index\">\n                        <template [pTemplateWrapper]=\"itemTemplate\" [item]=\"item\" [index]=\"i\"></template>\n                    </li>\n                </ul>\n            </div>\n            <p-paginator [rows]=\"rows\" [first]=\"first\" [totalRecords]=\"totalRecords\" [pageLinkSize]=\"pageLinks\" \n            (onPageChange)=\"paginate($event)\" styleClass=\"ui-paginator-bottom\" [rowsPerPageOptions]=\"rowsPerPageOptions\" *ngIf=\"paginator  && paginatorPosition!='top' || paginatorPosition =='both'\"></p-paginator>\n            <div class=\"ui-datalist-footer ui-widget-header ui-corner-bottom\" *ngIf=\"footer\">\n                <ng-content select=\"footer\"></ng-content>\n            </div>\n        </div>\n    "
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, core_1.IterableDiffers])
     ], DataList);
@@ -71027,8 +67672,8 @@ var DataListModule = (function () {
     }
     DataListModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule, shared_1.SharedModule, paginator_1.PaginatorModule],
-            exports: [DataList, shared_1.SharedModule],
+            imports: [common_1.CommonModule, shared_3.SharedModule, paginator_1.PaginatorModule],
+            exports: [DataList, shared_3.SharedModule],
             declarations: [DataList]
         }), 
         __metadata('design:paramtypes', [])
@@ -71039,11 +67684,7 @@ exports.DataListModule = DataListModule;
 //# sourceMappingURL=datalist.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 685 */
-=======
-/* 681 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -71059,7 +67700,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
-var shared_1 = __webpack_require__(11);
+var shared_1 = __webpack_require__(9);
+var shared_2 = __webpack_require__(9);
+var shared_3 = __webpack_require__(9);
 var domhandler_1 = __webpack_require__(4);
 var DataScroller = (function () {
     function DataScroller(el, differs, renderer, domHandler) {
@@ -71085,19 +67728,6 @@ var DataScroller = (function () {
         else {
             this.bindScrollListener();
         }
-    };
-    DataScroller.prototype.ngAfterContentInit = function () {
-        var _this = this;
-        this.templates.forEach(function (item) {
-            switch (item.getType()) {
-                case 'item':
-                    _this.itemTemplate = item.template;
-                    break;
-                default:
-                    _this.itemTemplate = item.template;
-                    break;
-            }
-        });
     };
     DataScroller.prototype.ngDoCheck = function () {
         var changes = this.differ.diff(this.value);
@@ -71209,25 +67839,25 @@ var DataScroller = (function () {
         __metadata('design:type', Object)
     ], DataScroller.prototype, "scrollHeight", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], DataScroller.prototype, "loader", void 0);
-    __decorate([
         core_1.ContentChild(shared_1.Header), 
         __metadata('design:type', Object)
     ], DataScroller.prototype, "header", void 0);
     __decorate([
-        core_1.ContentChild(shared_1.Footer), 
+        core_1.ContentChild(shared_2.Footer), 
         __metadata('design:type', Object)
     ], DataScroller.prototype, "footer", void 0);
     __decorate([
-        core_1.ContentChildren(shared_1.PrimeTemplate), 
-        __metadata('design:type', core_1.QueryList)
-    ], DataScroller.prototype, "templates", void 0);
+        core_1.ContentChild(core_1.TemplateRef), 
+        __metadata('design:type', core_1.TemplateRef)
+    ], DataScroller.prototype, "itemTemplate", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], DataScroller.prototype, "loader", void 0);
     DataScroller = __decorate([
         core_1.Component({
             selector: 'p-dataScroller',
-            template: "\n    <div [ngClass]=\"{'ui-datascroller ui-widget': true, 'ui-datascroller-inline': inline}\" [ngStyle]=\"style\" [class]=\"styleClass\">\n        <div class=\"ui-datascroller-header ui-widget-header ui-corner-top\" *ngIf=\"header\">\n            <ng-content select=\"p-header\"></ng-content>\n        </div>\n        <div class=\"ui-datascroller-content ui-widget-content\" [ngStyle]=\"{'max-height': scrollHeight}\">\n            <ul class=\"ui-datascroller-list\">\n                <li *ngFor=\"let item of dataToRender\">\n                    <template [pTemplateWrapper]=\"itemTemplate\" [item]=\"item\"></template>\n                </li>\n            </ul>\n        </div>\n        <div class=\"ui-datascroller-footer ui-widget-header ui-corner-bottom\" *ngIf=\"footer\">\n            <ng-content select=\"p-footer\"></ng-content>\n        </div>\n    </div>\n    ",
+            template: "\n    <div [ngClass]=\"{'ui-datascroller ui-widget': true, 'ui-datascroller-inline': inline}\" [ngStyle]=\"style\" [class]=\"styleClass\">\n        <div class=\"ui-datascroller-header ui-widget-header ui-corner-top\" *ngIf=\"header\">\n            <ng-content select=\"header\"></ng-content>\n        </div>\n        <div class=\"ui-datascroller-content ui-widget-content\" [ngStyle]=\"{'max-height': scrollHeight}\">\n            <ul class=\"ui-datascroller-list\">\n                <li *ngFor=\"let item of dataToRender\">\n                    <template [pTemplateWrapper]=\"itemTemplate\" [item]=\"item\"></template>\n                </li>\n            </ul>\n        </div>\n        <div class=\"ui-datascroller-footer ui-widget-header ui-corner-bottom\" *ngIf=\"footer\">\n            <ng-content select=\"footer\"></ng-content>\n        </div>\n    </div>\n    ",
             providers: [domhandler_1.DomHandler]
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, core_1.IterableDiffers, core_1.Renderer, domhandler_1.DomHandler])
@@ -71240,8 +67870,8 @@ var DataScrollerModule = (function () {
     }
     DataScrollerModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule, shared_1.SharedModule],
-            exports: [DataScroller, shared_1.SharedModule],
+            imports: [common_1.CommonModule, shared_3.SharedModule],
+            exports: [DataScroller, shared_3.SharedModule],
             declarations: [DataScroller]
         }), 
         __metadata('design:paramtypes', [])
@@ -71252,11 +67882,7 @@ exports.DataScrollerModule = DataScrollerModule;
 //# sourceMappingURL=datascroller.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 686 */
-=======
-/* 682 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -71270,16 +67896,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
 var forms_1 = __webpack_require__(14);
-var shared_1 = __webpack_require__(11);
-var paginator_1 = __webpack_require__(157);
+var shared_1 = __webpack_require__(9);
+var paginator_1 = __webpack_require__(156);
 var inputtext_1 = __webpack_require__(78);
-var shared_2 = __webpack_require__(11);
+var shared_2 = __webpack_require__(9);
 var domhandler_1 = __webpack_require__(4);
 var DTRadioButton = (function () {
     function DTRadioButton() {
@@ -71364,145 +67987,6 @@ var RowExpansionLoader = (function () {
     return RowExpansionLoader;
 }());
 exports.RowExpansionLoader = RowExpansionLoader;
-var ColumnHeaders = (function () {
-    function ColumnHeaders(dt) {
-        this.dt = dt;
-    }
-    __decorate([
-        core_1.Input("pColumnHeaders"), 
-        __metadata('design:type', Array)
-    ], ColumnHeaders.prototype, "columns", void 0);
-    ColumnHeaders = __decorate([
-        core_1.Component({
-            selector: '[pColumnHeaders]',
-            template: "\n        <template ngFor let-col [ngForOf]=\"columns\" let-lastCol=\"last\">\n            <th #headerCell [ngStyle]=\"col.style\" [class]=\"col.styleClass\" [style.display]=\"col.hidden ? 'none' : 'table-cell'\" (click)=\"dt.sort($event,col)\" [attr.colspan]=\"col.colspan\" [attr.rowspan]=\"col.rowspan\"\n                [ngClass]=\"{'ui-state-default ui-unselectable-text':true, 'ui-sortable-column': col.sortable, 'ui-state-active': dt.isSorted(col), 'ui-resizable-column': dt.resizableColumns, 'ui-selection-column':col.selectionMode}\" \n                (dragstart)=\"dt.onColumnDragStart($event)\" (dragover)=\"dt.onColumnDragover($event)\" (dragleave)=\"dt.onColumnDragleave($event)\" (drop)=\"dt.onColumnDrop($event)\" (mousedown)=\"dt.onHeaderMousedown($event,headerCell)\"\n                [attr.tabindex]=\"col.sortable ? tabindex : null\" (keydown)=\"dt.onHeaderKeydown($event,col)\">\n                <span class=\"ui-column-resizer\" *ngIf=\"dt.resizableColumns && ((dt.columnResizeMode == 'fit' && !lastCol) || dt.columnResizeMode == 'expand')\" (mousedown)=\"dt.initColumnResize($event)\"></span>\n                <span class=\"ui-column-title\" *ngIf=\"!col.selectionMode&&!col.headerTemplate\">{{col.header}}</span>\n                <span class=\"ui-column-title\" *ngIf=\"col.headerTemplate\">\n                    <p-columnHeaderTemplateLoader [column]=\"col\"></p-columnHeaderTemplateLoader>\n                </span>\n                <span class=\"ui-sortable-column-icon fa fa-fw fa-sort\" *ngIf=\"col.sortable\"\n                     [ngClass]=\"{'fa-sort-desc': (dt.getSortOrder(col) == -1),'fa-sort-asc': (dt.getSortOrder(col) == 1)}\"></span>\n                <input type=\"text\" pInputText class=\"ui-column-filter\" [attr.placeholder]=\"col.filterPlaceholder\" *ngIf=\"col.filter&&!col.filterTemplate\" [value]=\"dt.filters[col.field] ? dt.filters[col.field].value : ''\" \n                    (click)=\"dt.onFilterInputClick($event)\" (keyup)=\"dt.onFilterKeyup($event.target.value, col.field, col.filterMatchMode)\"/>\n                <p-columnFilterTemplateLoader [column]=\"col\" *ngIf=\"col.filterTemplate\"></p-columnFilterTemplateLoader>\n                <p-dtCheckbox *ngIf=\"col.selectionMode=='multiple'\" (onChange)=\"dt.toggleRowsWithCheckbox($event)\" [checked]=\"dt.allSelected\" [disabled]=\"dt.isEmpty()\"></p-dtCheckbox>\n            </th>\n        </template>\n    "
-        }),
-        __param(0, core_1.Inject(core_1.forwardRef(function () { return DataTable; }))), 
-        __metadata('design:paramtypes', [DataTable])
-    ], ColumnHeaders);
-    return ColumnHeaders;
-}());
-exports.ColumnHeaders = ColumnHeaders;
-var ColumnFooters = (function () {
-    function ColumnFooters(dt) {
-        this.dt = dt;
-    }
-    __decorate([
-        core_1.Input("pColumnFooters"), 
-        __metadata('design:type', Array)
-    ], ColumnFooters.prototype, "columns", void 0);
-    ColumnFooters = __decorate([
-        core_1.Component({
-            selector: '[pColumnFooters]',
-            template: "\n        <th *ngFor=\"let col of columns\" [ngStyle]=\"col.style\" [class]=\"col.styleClass\"\n            [attr.colspan]=\"col.colspan\" [attr.rowspan]=\"col.rowspan\"\n            [ngClass]=\"{'ui-state-default':true}\" [style.display]=\"col.hidden ? 'none' : 'table-cell'\">\n            <span class=\"ui-column-footer\" *ngIf=\"!col.footerTemplate\">{{col.footer}}</span>\n            <span class=\"ui-column-footer\" *ngIf=\"col.footerTemplate\">\n                <p-columnFooterTemplateLoader [column]=\"col\"></p-columnFooterTemplateLoader>\n            </span>\n        </th>\n    "
-        }),
-        __param(0, core_1.Inject(core_1.forwardRef(function () { return DataTable; }))), 
-        __metadata('design:paramtypes', [DataTable])
-    ], ColumnFooters);
-    return ColumnFooters;
-}());
-exports.ColumnFooters = ColumnFooters;
-var TableBody = (function () {
-    function TableBody(dt) {
-        this.dt = dt;
-    }
-    TableBody.prototype.visibleColumns = function () {
-        return this.columns ? this.columns.filter(function (c) { return !c.hidden; }) : [];
-    };
-    __decorate([
-        core_1.Input("pTableBody"), 
-        __metadata('design:type', Array)
-    ], TableBody.prototype, "columns", void 0);
-    TableBody = __decorate([
-        core_1.Component({
-            selector: '[pTableBody]',
-            template: "\n        <template ngFor let-rowData [ngForOf]=\"dt.dataToRender\" let-even=\"even\" let-odd=\"odd\" let-rowIndex=\"index\">\n            <tr #rowGroupElement class=\"ui-widget-header ui-rowgroup-header\" \n                *ngIf=\"dt.rowGroupMode=='subheader' && (rowIndex === 0||(dt.resolveFieldData(rowData,dt.groupField) !== dt.resolveFieldData(dt.dataToRender[rowIndex - 1], dt.groupField)))\"\n                (click)=\"dt.onRowGroupClick($event)\" [ngStyle]=\"{'cursor': dt.sortableRowGroup ? 'pointer' : 'auto'}\">\n                <td [attr.colspan]=\"columns.length\">\n                    <a href=\"#\" *ngIf=\"dt.expandableRowGroups\" (click)=\"dt.toggleRowGroup($event,rowData)\">\n                        <span class=\"fa fa-fw\" [ngClass]=\"{'fa-chevron-circle-down':dt.isRowGroupExpanded(rowData), 'fa-chevron-circle-right': !dt.isRowGroupExpanded(rowData)}\"></span>\n                    </a>\n                    <p-templateLoader [template]=\"dt.rowGroupHeaderTemplate\" [data]=\"rowData\"></p-templateLoader>\n                </td>\n            </tr>\n            <tr #rowElement *ngIf=\"!dt.expandableRowGroups||dt.isRowGroupExpanded(rowData)\" [class]=\"dt.getRowStyleClass(rowData,rowIndex)\"\n                    (click)=\"dt.handleRowClick($event, rowData)\" (dblclick)=\"dt.rowDblclick($event,rowData)\" (contextmenu)=\"dt.onRowRightClick($event,rowData)\" (touchstart)=\"dt.handleRowTap($event, rowData)\"\n                    [ngClass]=\"{'ui-datatable-even':even&&dt.rowGroupMode!='rowspan','ui-datatable-odd':odd&&dt.rowGroupMode!='rowspan','ui-state-highlight': dt.isSelected(rowData)}\">\n                <template ngFor let-col [ngForOf]=\"columns\" let-colIndex=\"index\">\n                    <td #cell *ngIf=\"!dt.rowGroupMode || (dt.rowGroupMode == 'subheader') ||\n                        (dt.rowGroupMode=='rowspan' && ((dt.sortField==col.field && dt.rowGroupMetadata[dt.resolveFieldData(rowData,dt.sortField)].index == rowIndex) || (dt.sortField!=col.field)))\"\n                        [ngStyle]=\"col.style\" [class]=\"col.styleClass\" [style.display]=\"col.hidden ? 'none' : 'table-cell'\"\n                        [ngClass]=\"{'ui-editable-column':col.editable,'ui-selection-column':col.selectionMode}\" (click)=\"dt.switchCellToEditMode(cell,col,rowData)\"\n                        [attr.rowspan]=\"(dt.rowGroupMode=='rowspan' && dt.sortField == col.field && dt.rowGroupMetadata[dt.resolveFieldData(rowData,dt.sortField)].index == rowIndex) ? dt.rowGroupMetadata[dt.resolveFieldData(rowData,dt.sortField)].size : null\">\n                        <span class=\"ui-column-title\" *ngIf=\"dt.responsive\">{{col.header}}</span>\n                        <span class=\"ui-cell-data\" *ngIf=\"!col.bodyTemplate && !col.expander && !col.selectionMode\">{{dt.resolveFieldData(rowData,col.field)}}</span>\n                        <span class=\"ui-cell-data\" *ngIf=\"col.bodyTemplate\">\n                            <p-columnBodyTemplateLoader [column]=\"col\" [rowData]=\"rowData\" [rowIndex]=\"rowIndex + dt.first\"></p-columnBodyTemplateLoader>\n                        </span>\n                        <div class=\"ui-cell-editor\" *ngIf=\"col.editable\">\n                            <input *ngIf=\"!col.editorTemplate\" type=\"text\" pInputText [(ngModel)]=\"rowData[col.field]\" required=\"true\"\n                                (keydown)=\"dt.onCellEditorKeydown($event, col, rowData, colIndex)\"/>\n                            <p-columnEditorTemplateLoader *ngIf=\"col.editorTemplate\" [column]=\"col\" [rowData]=\"rowData\"></p-columnEditorTemplateLoader>\n                        </div>\n                        <a href=\"#\" *ngIf=\"col.expander\" (click)=\"dt.toggleRow(rowData,$event)\">\n                            <span class=\"ui-row-toggler fa fa-fw ui-c\" [ngClass]=\"{'fa-chevron-circle-down':dt.isRowExpanded(rowData), 'fa-chevron-circle-right': !dt.isRowExpanded(rowData)}\"></span>\n                        </a>\n                        <p-dtRadioButton *ngIf=\"col.selectionMode=='single'\" (onClick)=\"dt.selectRowWithRadio($event, rowData)\" [checked]=\"dt.isSelected(rowData)\"></p-dtRadioButton>\n                        <p-dtCheckbox *ngIf=\"col.selectionMode=='multiple'\" (onChange)=\"dt.toggleRowWithCheckbox($event,rowData)\" [checked]=\"dt.isSelected(rowData)\"></p-dtCheckbox>\n                    </td>\n                </template>\n            </tr>\n            <tr class=\"ui-widget-header\" *ngIf=\"dt.rowGroupFooterTemplate && dt.rowGroupMode=='subheader' && ((rowIndex === dt.dataToRender.length - 1)||(dt.resolveFieldData(rowData,dt.groupField) !== dt.resolveFieldData(dt.dataToRender[rowIndex + 1],dt.groupField))) && (!dt.expandableRowGroups || dt.isRowGroupExpanded(rowData))\">\n                <p-templateLoader class=\"ui-helper-hidden\" [data]=\"rowData\" [template]=\"dt.rowGroupFooterTemplate\"></p-templateLoader>\n            </tr>\n            <tr *ngIf=\"dt.expandableRows && dt.isRowExpanded(rowData)\">\n                <td [attr.colspan]=\"dt.visibleColumns().length\">\n                    <p-rowExpansionLoader [rowData]=\"rowData\" [template]=\"dt.rowExpansionTemplate\"></p-rowExpansionLoader>\n                </td>\n            </tr>\n        </template>\n\n        <tr *ngIf=\"dt.isEmpty()\" class=\"ui-widget-content\">\n            <td [attr.colspan]=\"dt.visibleColumns().length\" class=\"ui-datatable-emptymessage\">{{dt.emptyMessage}}</td>\n        </tr>\n    "
-        }),
-        __param(0, core_1.Inject(core_1.forwardRef(function () { return DataTable; }))), 
-        __metadata('design:paramtypes', [DataTable])
-    ], TableBody);
-    return TableBody;
-}());
-exports.TableBody = TableBody;
-var ScrollableView = (function () {
-    function ScrollableView(dt, domHandler, el, renderer) {
-        this.dt = dt;
-        this.domHandler = domHandler;
-        this.el = el;
-        this.renderer = renderer;
-    }
-    ScrollableView.prototype.ngAfterViewInit = function () {
-        this.initScrolling();
-    };
-    ScrollableView.prototype.initScrolling = function () {
-        var _this = this;
-        this.scrollHeader = this.scrollHeaderViewChild.nativeElement;
-        this.scrollHeaderBox = this.scrollHeaderBoxViewChild.nativeElement;
-        this.scrollBody = this.scrollBodyViewChild.nativeElement;
-        if (!this.frozen) {
-            var frozenView = this.el.nativeElement.previousElementSibling;
-            if (frozenView) {
-                var frozenScrollBody = this.domHandler.findSingle(frozenView, '.ui-datatable-scrollable-body');
-            }
-            this.bodyScrollListener = this.renderer.listen(this.scrollBody, 'scroll', function () {
-                _this.scrollHeaderBox.style.marginLeft = -1 * _this.scrollBody.scrollLeft + 'px';
-                if (frozenScrollBody) {
-                    frozenScrollBody.scrollTop = _this.scrollBody.scrollTop;
-                }
-            });
-            this.headerScrollListener = this.renderer.listen(this.scrollHeader, 'scroll', function () {
-                _this.scrollHeader.scrollLeft = 0;
-            });
-        }
-        var scrollBarWidth = this.domHandler.calculateScrollbarWidth();
-        if (!this.frozen)
-            this.scrollHeaderBox.style.marginRight = scrollBarWidth + 'px';
-        else
-            this.scrollBody.style.paddingBottom = scrollBarWidth + 'px';
-    };
-    ScrollableView.prototype.ngOnDestroy = function () {
-        if (this.bodyScrollListener) {
-            this.bodyScrollListener();
-        }
-        if (this.headerScrollListener) {
-            this.headerScrollListener();
-        }
-    };
-    __decorate([
-        core_1.Input("pScrollableView"), 
-        __metadata('design:type', Array)
-    ], ScrollableView.prototype, "columns", void 0);
-    __decorate([
-        core_1.ViewChild('scrollHeader'), 
-        __metadata('design:type', core_1.ElementRef)
-    ], ScrollableView.prototype, "scrollHeaderViewChild", void 0);
-    __decorate([
-        core_1.ViewChild('scrollHeaderBox'), 
-        __metadata('design:type', core_1.ElementRef)
-    ], ScrollableView.prototype, "scrollHeaderBoxViewChild", void 0);
-    __decorate([
-        core_1.ViewChild('scrollBody'), 
-        __metadata('design:type', core_1.ElementRef)
-    ], ScrollableView.prototype, "scrollBodyViewChild", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], ScrollableView.prototype, "frozen", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], ScrollableView.prototype, "width", void 0);
-    ScrollableView = __decorate([
-        core_1.Component({
-            selector: '[pScrollableView]',
-            template: "\n        <div #scrollHeader class=\"ui-widget-header ui-datatable-scrollable-header\" [ngStyle]=\"{'width': width}\">\n            <div #scrollHeaderBox  class=\"ui-datatable-scrollable-header-box\">\n                <table [class]=\"dt.tableStyleClass\" [ngStyle]=\"dt.tableStyle\">\n                    <thead class=\"ui-datatable-thead\">\n                        <tr *ngIf=\"!dt.headerColumnGroup\" class=\"ui-state-default\" [pColumnHeaders]=\"columns\"></tr>\n                        <template [ngIf]=\"dt.headerColumnGroup\">\n                            <tr *ngFor=\"let headerRow of dt.headerColumnGroup.rows\" class=\"ui-state-default\" [pColumnHeaders]=\"headerRow.columns\"></tr>\n                        </template>\n                    </thead>\n                </table>\n            </div>\n        </div>\n        <div #scrollBody class=\"ui-datatable-scrollable-body\" [ngStyle]=\"{'width': width,'max-height':dt.scrollHeight}\">\n            <table [class]=\"dt.tableStyleClass\" [ngStyle]=\"dt.tableStyle\">\n                <colgroup class=\"ui-datatable-scrollable-colgroup\">\n                    <col *ngFor=\"let col of dt.visibleColumns()\" />\n                </colgroup>\n                <tbody [ngClass]=\"{'ui-datatable-data ui-widget-content': true, 'ui-datatable-hoverable-rows': (dt.rowHover||dt.selectionMode)}\" [pTableBody]=\"columns\"></tbody>\n            </table>\n        </div>\n    "
-        }),
-        __param(0, core_1.Inject(core_1.forwardRef(function () { return DataTable; }))), 
-        __metadata('design:paramtypes', [DataTable, domhandler_1.DomHandler, core_1.ElementRef, core_1.Renderer])
-    ], ScrollableView);
-    return ScrollableView;
-}());
-exports.ScrollableView = ScrollableView;
 var DataTable = (function () {
     function DataTable(el, domHandler, differs, renderer, changeDetector) {
         this.el = el;
@@ -71635,9 +68119,15 @@ var DataTable = (function () {
             if (this.reorderableColumns) {
                 this.initColumnReordering();
             }
+            if (this.scrollable) {
+                this.refreshScrolling();
+            }
             this.columnsChanged = false;
         }
         if (this.dataChanged) {
+            if (this.scrollable) {
+                this.refreshScrolling();
+            }
             this.dataChanged = false;
         }
     };
@@ -71650,6 +68140,9 @@ var DataTable = (function () {
                     _this.filterTimeout = null;
                 }, _this.filterDelay);
             });
+        }
+        if (this.scrollable) {
+            this.initScrolling();
         }
     };
     DataTable.prototype.ngDoCheck = function () {
@@ -71676,7 +68169,7 @@ var DataTable = (function () {
                 this.stopSortPropagation = false;
             }
             else if (!this.lazy && (this.sortField || this.multiSortMeta)) {
-                if (!this.sortColumn && this.columns) {
+                if (!this.sortColumn) {
                     this.sortColumn = this.columns.find(function (col) { return col.field === _this.sortField && col.sortable === 'custom'; });
                 }
                 if (this.sortMode == 'single')
@@ -71688,20 +68181,7 @@ var DataTable = (function () {
         }
     };
     DataTable.prototype.initColumns = function () {
-        var _this = this;
         this.columns = this.cols.toArray();
-        if (this.scrollable) {
-            this.scrollableColumns = [];
-            this.cols.forEach(function (col) {
-                if (col.frozen) {
-                    _this.frozenColumns = _this.frozenColumns || [];
-                    _this.frozenColumns.push(col);
-                }
-                else {
-                    _this.scrollableColumns.push(col);
-                }
-            });
-        }
         this.columnsChanged = true;
     };
     DataTable.prototype.resolveFieldData = function (data, field) {
@@ -71811,9 +68291,8 @@ var DataTable = (function () {
         }
         var targetNode = event.target.nodeName;
         if (targetNode == 'TH' || (targetNode == 'SPAN' && !this.domHandler.hasClass(event.target, 'ui-c'))) {
-            var columnSortField = column.sortField || column.field;
-            this.sortOrder = (this.sortField === columnSortField) ? this.sortOrder * -1 : 1;
-            this.sortField = columnSortField;
+            this.sortOrder = (this.sortField === column.field) ? this.sortOrder * -1 : 1;
+            this.sortField = column.field;
             this.sortColumn = column;
             var metaKey = event.metaKey || event.ctrlKey;
             if (this.lazy) {
@@ -71921,15 +68400,14 @@ var DataTable = (function () {
         if (!column.sortable) {
             return false;
         }
-        var columnSortField = column.sortField || column.field;
         if (this.sortMode === 'single') {
-            return (this.sortField && columnSortField === this.sortField);
+            return (this.sortField && column.field === this.sortField);
         }
         else if (this.sortMode === 'multiple') {
             var sorted = false;
             if (this.multiSortMeta) {
                 for (var i = 0; i < this.multiSortMeta.length; i++) {
-                    if (this.multiSortMeta[i].field == columnSortField) {
+                    if (this.multiSortMeta[i].field == column.field) {
                         sorted = true;
                         break;
                     }
@@ -71940,16 +68418,15 @@ var DataTable = (function () {
     };
     DataTable.prototype.getSortOrder = function (column) {
         var order = 0;
-        var columnSortField = column.sortField || column.field;
         if (this.sortMode === 'single') {
-            if (this.sortField && columnSortField === this.sortField) {
+            if (this.sortField && column.field === this.sortField) {
                 order = this.sortOrder;
             }
         }
         else if (this.sortMode === 'multiple') {
             if (this.multiSortMeta) {
                 for (var i = 0; i < this.multiSortMeta.length; i++) {
-                    if (this.multiSortMeta[i].field == columnSortField) {
+                    if (this.multiSortMeta[i].field == column.field) {
                         order = this.multiSortMeta[i].order;
                         break;
                     }
@@ -72157,6 +68634,9 @@ var DataTable = (function () {
             this.filters[field] = { value: value, matchMode: matchMode };
         else if (this.filters[field])
             delete this.filters[field];
+        if (this.lazy) {
+            this.stopFilterPropagation = true;
+        }
         this._filter();
     };
     DataTable.prototype.isFilterBlank = function (filter) {
@@ -72171,7 +68651,6 @@ var DataTable = (function () {
     DataTable.prototype._filter = function () {
         this.first = 0;
         if (this.lazy) {
-            this.stopFilterPropagation = true;
             this.onLazyLoad.emit(this.createLazyLoadMetadata());
         }
         else {
@@ -72230,41 +68709,49 @@ var DataTable = (function () {
     DataTable.prototype.onFilterInputClick = function (event) {
         event.stopPropagation();
     };
-    DataTable.prototype.switchCellToEditMode = function (cell, column, rowData) {
-        var _this = this;
+    DataTable.prototype.switchCellToEditMode = function (element, column, rowData) {
         if (!this.selectionMode && this.editable && column.editable) {
+            var cell = this.findCell(element);
             if (cell != this.editingCell) {
-                if (this.editingCell && this.domHandler.find(this.editingCell, '.ng-invalid.ng-dirty').length == 0) {
-                    this.domHandler.removeClass(this.editingCell, 'ui-cell-editing');
-                }
                 this.editingCell = cell;
                 this.onEditInit.emit({ column: column, data: rowData });
-                this.domHandler.addClass(cell, 'ui-cell-editing');
-                var focusable_1 = this.domHandler.findSingle(cell, '.ui-cell-editor input');
-                if (focusable_1) {
-                    setTimeout(function () { return _this.renderer.invokeElementMethod(focusable_1, 'focus'); }, 100);
+                if (!this.domHandler.hasClass(cell, 'ui-cell-editing')) {
+                    this.domHandler.addClass(cell, 'ui-cell-editing');
+                    this.domHandler.addClass(cell, 'ui-state-highlight');
+                    var editor = cell.querySelector('.ui-cell-editor').focus();
                 }
             }
         }
     };
-    DataTable.prototype.switchCellToViewMode = function (element) {
-        var cell = this.findCell(element);
-        this.domHandler.removeClass(cell, 'ui-cell-editing');
+    DataTable.prototype.switchCellToViewMode = function (element, column, rowData, complete) {
+        if (this.editable) {
+            if (this.preventBlurOnEdit) {
+                this.preventBlurOnEdit = false;
+            }
+            else {
+                if (complete)
+                    this.onEditComplete.emit({ column: column, data: rowData });
+                else
+                    this.onEditCancel.emit({ column: column, data: rowData });
+                var cell = this.findCell(element);
+                this.domHandler.removeClass(cell, 'ui-cell-editing');
+                this.domHandler.removeClass(cell, 'ui-state-highlight');
+                this.editingCell = null;
+            }
+        }
     };
     DataTable.prototype.onCellEditorKeydown = function (event, column, rowData, colIndex) {
         if (this.editable) {
             this.onEdit.emit({ originalEvent: event, column: column, data: rowData });
             //enter
             if (event.keyCode == 13) {
-                this.onEditComplete.emit({ column: column, data: rowData });
-                this.renderer.invokeElementMethod(event.target, 'blur');
-                this.switchCellToViewMode(event.target);
+                this.switchCellToViewMode(event.target, column, rowData, true);
+                this.preventBlurOnEdit = true;
                 event.preventDefault();
             }
             else if (event.keyCode == 27) {
-                this.onEditCancel.emit({ column: column, data: rowData });
-                this.renderer.invokeElementMethod(event.target, 'blur');
-                this.switchCellToViewMode(event.target);
+                this.switchCellToViewMode(event.target, column, rowData, false);
+                this.preventBlurOnEdit = true;
                 event.preventDefault();
             }
             else if (event.keyCode == 9) {
@@ -72325,25 +68812,22 @@ var DataTable = (function () {
         });
     };
     DataTable.prototype.initColumnResize = function (event) {
-        var container = this.el.nativeElement.children[0];
-        var containerLeft = this.domHandler.getOffset(container).left;
         this.resizeColumn = event.target.parentElement;
         this.columnResizing = true;
-        this.lastResizerHelperX = (event.pageX - containerLeft);
+        this.lastPageX = event.pageX;
     };
     DataTable.prototype.onColumnResize = function (event) {
         var container = this.el.nativeElement.children[0];
-        var containerLeft = this.domHandler.getOffset(container).left;
         this.domHandler.addClass(container, 'ui-unselectable-text');
-        this.resizerHelper.style.height = container.offsetHeight + 'px';
-        this.resizerHelper.style.top = 0 + 'px';
-        if (event.pageX > containerLeft && event.pageX < (containerLeft + container.offsetWidth)) {
-            this.resizerHelper.style.left = (event.pageX - containerLeft) + 'px';
+        this.resizerHelper.style.height = container.offsetHeight - 4 + 'px';
+        this.resizerHelper.style.top = container.offsetTop + 'px';
+        if (event.pageX > container.offsetLeft && event.pageX < (container.offsetLeft + container.offsetWidth)) {
+            this.resizerHelper.style.left = event.pageX + 'px';
         }
         this.resizerHelper.style.display = 'block';
     };
     DataTable.prototype.onColumnResizeEnd = function (event) {
-        var delta = this.resizerHelper.offsetLeft - this.lastResizerHelperX;
+        var delta = this.resizerHelper.offsetLeft - this.lastPageX;
         var columnWidth = this.resizeColumn.offsetWidth;
         var newColumnWidth = columnWidth + delta;
         var minWidth = this.resizeColumn.style.minWidth || 15;
@@ -72356,29 +68840,18 @@ var DataTable = (function () {
                     if (nextColumn) {
                         nextColumn.style.width = nextColumnWidth + 'px';
                     }
-                    if (this.scrollable) {
-                        var colGroup = this.domHandler.findSingle(this.el.nativeElement, 'colgroup.ui-datatable-scrollable-colgroup');
-                        var resizeColumnIndex = this.domHandler.index(this.resizeColumn);
-                        colGroup.children[resizeColumnIndex].style.width = newColumnWidth + 'px';
-                        if (nextColumn) {
-                            colGroup.children[resizeColumnIndex + 1].style.width = nextColumnWidth + 'px';
-                        }
-                    }
                 }
             }
             else if (this.columnResizeMode === 'expand') {
                 this.tbody.parentElement.style.width = this.tbody.parentElement.offsetWidth + delta + 'px';
                 this.resizeColumn.style.width = newColumnWidth + 'px';
-                var containerWidth = this.tbody.parentElement.style.width;
-                if (this.scrollable) {
-                    this.scrollBarWidth = this.scrollBarWidth || this.domHandler.calculateScrollbarWidth();
-                    this.el.nativeElement.children[0].style.width = parseFloat(containerWidth) + this.scrollBarWidth + 'px';
-                    var colGroup = this.domHandler.findSingle(this.el.nativeElement, 'colgroup.ui-datatable-scrollable-colgroup');
-                    var resizeColumnIndex = this.domHandler.index(this.resizeColumn);
-                    colGroup.children[resizeColumnIndex].style.width = newColumnWidth + 'px';
+                if (this.header) {
+                    var headerEL = this.domHandler.findSingle(this.el.nativeElement, 'div.ui-datatable-header');
+                    headerEL.style.width = this.tbody.parentElement.style.width;
                 }
-                else {
-                    this.el.nativeElement.children[0].style.width = containerWidth;
+                if (this.footer) {
+                    var footerEL = this.domHandler.findSingle(this.el.nativeElement, 'div.ui-datatable-footer');
+                    footerEL.style.width = this.tbody.parentElement.style.width;
                 }
             }
             this.onColResize.emit({
@@ -72408,26 +68881,22 @@ var DataTable = (function () {
     DataTable.prototype.onColumnDragover = function (event) {
         if (this.reorderableColumns && this.draggedColumn) {
             event.preventDefault();
-            var iconWidth = this.domHandler.getHiddenElementOuterWidth(this.reorderIndicatorUp);
-            var iconHeight = this.domHandler.getHiddenElementOuterHeight(this.reorderIndicatorUp);
             var dropHeader = this.findParentHeader(event.target);
-            var container = this.el.nativeElement.children[0];
-            var containerOffset = this.domHandler.getOffset(container);
-            var dropHeaderOffset = this.domHandler.getOffset(dropHeader);
             if (this.draggedColumn != dropHeader) {
-                var targetLeft = dropHeaderOffset.left - containerOffset.left;
-                var targetTop = containerOffset.top - dropHeaderOffset.top;
-                var columnCenter = dropHeaderOffset.left + dropHeader.offsetWidth / 2;
-                this.reorderIndicatorUp.style.top = dropHeaderOffset.top - containerOffset.top - (iconHeight - 1) + 'px';
-                this.reorderIndicatorDown.style.top = dropHeaderOffset.top - containerOffset.top + dropHeader.offsetHeight + 'px';
+                var targetPosition = dropHeader.getBoundingClientRect();
+                var targetLeft = targetPosition.left + this.domHandler.getWindowScrollLeft();
+                var targetTop = targetPosition.top + this.domHandler.getWindowScrollTop();
+                var columnCenter = targetLeft + dropHeader.offsetWidth / 2;
+                this.reorderIndicatorUp.style.top = (targetTop - 16) + 'px';
+                this.reorderIndicatorDown.style.top = targetTop + dropHeader.offsetHeight + 'px';
                 if (event.pageX > columnCenter) {
-                    this.reorderIndicatorUp.style.left = (targetLeft + dropHeader.offsetWidth - Math.ceil(iconWidth / 2)) + 'px';
-                    this.reorderIndicatorDown.style.left = (targetLeft + dropHeader.offsetWidth - Math.ceil(iconWidth / 2)) + 'px';
+                    this.reorderIndicatorUp.style.left = (targetLeft + dropHeader.offsetWidth - 8) + 'px';
+                    this.reorderIndicatorDown.style.left = (targetLeft + dropHeader.offsetWidth - 8) + 'px';
                     this.dropPosition = 1;
                 }
                 else {
-                    this.reorderIndicatorUp.style.left = (targetLeft - Math.ceil(iconWidth / 2)) + 'px';
-                    this.reorderIndicatorDown.style.left = (targetLeft - Math.ceil(iconWidth / 2)) + 'px';
+                    this.reorderIndicatorUp.style.left = (targetLeft - 8) + 'px';
+                    this.reorderIndicatorDown.style.left = (targetLeft - 8) + 'px';
                     this.dropPosition = -1;
                 }
                 this.reorderIndicatorUp.style.display = 'block';
@@ -72484,6 +68953,53 @@ var DataTable = (function () {
             }
             return parent_1;
         }
+    };
+    DataTable.prototype.initScrolling = function () {
+        var _this = this;
+        this.scrollHeader = this.domHandler.findSingle(this.el.nativeElement, '.ui-datatable-scrollable-header');
+        this.scrollHeaderBox = this.domHandler.findSingle(this.el.nativeElement, '.ui-datatable-scrollable-header-box');
+        this.scrollBody = this.domHandler.findSingle(this.el.nativeElement, '.ui-datatable-scrollable-body');
+        this.percentageScrollHeight = this.scrollHeight && (this.scrollHeight.indexOf('%') !== -1);
+        this.bodyScrollListener = this.renderer.listen(this.scrollBody, 'scroll', function () {
+            _this.scrollHeaderBox.style.marginLeft = -1 * _this.scrollBody.scrollLeft + 'px';
+        });
+        this.headerScrollListener = this.renderer.listen(this.scrollHeader, 'scroll', function () {
+            _this.scrollHeader.scrollLeft = 0;
+        });
+        if (this.percentageScrollHeight) {
+            this.resizeScrollListener = this.renderer.listenGlobal('window', 'resize', function () {
+                _this.scrollBody.style.maxHeight = _this.domHandler.getOuterHeight(_this.el.nativeElement.parentElement) * (parseInt(_this.scrollHeight) / 100) + 'px';
+            });
+        }
+    };
+    DataTable.prototype.refreshScrolling = function () {
+        var tableHeader = this.domHandler.findSingle(this.el.nativeElement, '.ui-datatable-header');
+        if (this.scrollHeight) {
+            if (this.percentageScrollHeight) {
+                var relativeHeight = this.domHandler.getOuterHeight(this.el.nativeElement.parentElement) * (parseInt(this.scrollHeight) / 100);
+                var headerHeight = this.domHandler.getOuterHeight(this.scrollHeader);
+                if (tableHeader) {
+                    headerHeight += this.domHandler.getOuterHeight(tableHeader);
+                }
+                this.scrollBody.style.maxHeight = (relativeHeight - headerHeight) + 'px';
+            }
+            else {
+                this.scrollBody.style.maxHeight = this.scrollHeight;
+            }
+            var marginRight = this.hasVerticalOverflow() ? this.calculateScrollbarWidth() : 0;
+            this.scrollHeaderBox.style.marginRight = marginRight + 'px';
+        }
+    };
+    DataTable.prototype.calculateScrollbarWidth = function () {
+        var scrollDiv = document.createElement("div");
+        scrollDiv.className = "ui-scrollbar-measure";
+        document.body.appendChild(scrollDiv);
+        var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+        document.body.removeChild(scrollDiv);
+        return scrollbarWidth;
+    };
+    DataTable.prototype.hasVerticalOverflow = function () {
+        return this.scrollHeight && this.domHandler.getOuterHeight(this.scrollBody.children[0]) > this.domHandler.getOuterHeight(this.scrollBody);
     };
     DataTable.prototype.hasFooter = function () {
         if (this.footerColumnGroup) {
@@ -72604,6 +69120,9 @@ var DataTable = (function () {
             this.updateDataToRender(this.value);
         }
     };
+    DataTable.prototype.visibleColumns = function () {
+        return this.columns ? this.columns.filter(function (c) { return !c.hidden; }) : [];
+    };
     DataTable.prototype.exportCSV = function () {
         var _this = this;
         var data = this.value;
@@ -72611,7 +69130,7 @@ var DataTable = (function () {
         //headers
         for (var i = 0; i < this.columns.length; i++) {
             if (this.columns[i].field) {
-                csv += this.columns[i].header || this.columns[i].field;
+                csv += this.columns[i].field;
                 if (i < (this.columns.length - 1)) {
                     csv += this.csvSeparator;
                 }
@@ -72665,30 +69184,17 @@ var DataTable = (function () {
         }
         return styleClass;
     };
-    DataTable.prototype.visibleColumns = function () {
-        return this.columns ? this.columns.filter(function (c) { return !c.hidden; }) : [];
-    };
-    Object.defineProperty(DataTable.prototype, "containerWidth", {
-        get: function () {
-            if (this.scrollable) {
-                if (this.scrollWidth) {
-                    return this.scrollWidth;
-                }
-                else if (this.frozenWidth && this.unfrozenWidth) {
-                    return parseFloat(this.frozenWidth) + parseFloat(this.unfrozenWidth) + 'px';
-                }
-            }
-            else {
-                return this.style ? this.style.width : null;
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
     DataTable.prototype.ngOnDestroy = function () {
         //remove event listener
         if (this.globalFilterFunction) {
             this.globalFilterFunction();
+        }
+        if (this.scrollable) {
+            this.bodyScrollListener();
+            this.headerScrollListener();
+            if (this.percentageScrollHeight) {
+                this.resizeScrollListener();
+            }
         }
         if (this.resizableColumns && this.documentColumnResizeListener && this.documentColumnResizeEndListener) {
             this.documentColumnResizeListener();
@@ -72814,14 +69320,6 @@ var DataTable = (function () {
         core_1.Input(), 
         __metadata('design:type', Object)
     ], DataTable.prototype, "scrollWidth", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], DataTable.prototype, "frozenWidth", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], DataTable.prototype, "unfrozenWidth", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
@@ -73001,7 +69499,7 @@ var DataTable = (function () {
     DataTable = __decorate([
         core_1.Component({
             selector: 'p-dataTable',
-            template: "\n        <div [ngStyle]=\"style\" [class]=\"styleClass\" [style.width]=\"containerWidth\"\n            [ngClass]=\"{'ui-datatable ui-widget':true,'ui-datatable-reflow':responsive,'ui-datatable-stacked':stacked,'ui-datatable-resizable':resizableColumns,'ui-datatable-scrollable':scrollable}\">\n            <div class=\"ui-datatable-header ui-widget-header\" *ngIf=\"header\">\n                <ng-content select=\"p-header\"></ng-content>\n            </div>\n            <p-paginator [rows]=\"rows\" [first]=\"first\" [totalRecords]=\"totalRecords\" [pageLinkSize]=\"pageLinks\" styleClass=\"ui-paginator-bottom\"\n                (onPageChange)=\"paginate($event)\" [rowsPerPageOptions]=\"rowsPerPageOptions\" *ngIf=\"paginator && paginatorPosition!='bottom' || paginatorPosition =='both'\"></p-paginator>\n            <div class=\"ui-datatable-tablewrapper\" *ngIf=\"!scrollable\">\n                <table [class]=\"tableStyleClass\" [ngStyle]=\"tableStyle\">\n                    <thead class=\"ui-datatable-thead\">\n                        <tr *ngIf=\"!headerColumnGroup\" class=\"ui-state-default\" [pColumnHeaders]=\"columns\"></tr>\n                        <template [ngIf]=\"headerColumnGroup\">\n                            <tr *ngFor=\"let headerRow of headerColumnGroup.rows\" class=\"ui-state-default\" [pColumnHeaders]=\"headerRow.columns\"></tr>\n                        </template>\n                    </thead>\n                    <tfoot *ngIf=\"hasFooter()\" class=\"ui-datatable-tfoot\">\n                        <tr *ngIf=\"!footerColumnGroup\" [pColumnFooters]=\"columns\"></tr>\n                        <template [ngIf]=\"footerColumnGroup\">\n                            <tr *ngFor=\"let footerRow of footerColumnGroup.rows\" [pColumnFooters]=\"footerRow.columns\"></tr>\n                        </template>\n                    </tfoot>\n                    <tbody [ngClass]=\"{'ui-datatable-data ui-widget-content': true, 'ui-datatable-hoverable-rows': (rowHover||selectionMode)}\" [pTableBody]=\"columns\"></tbody>\n                </table>\n            </div>\n            \n            <template [ngIf]=\"scrollable\">\n                <div class=\"ui-datatable-scrollable-wrapper ui-helper-clearfix\" [ngClass]=\"{'max-height':scrollHeight}\">\n                    <div *ngIf=\"frozenColumns\" [pScrollableView]=\"frozenColumns\" frozen=\"true\" \n                        [ngStyle]=\"{'width':this.frozenWidth}\" class=\"ui-datatable-scrollable-view ui-datatable-frozen-view\"></div>\n                    <div [pScrollableView]=\"scrollableColumns\" [ngStyle]=\"{'width':this.unfrozenWidth, 'left': this.frozenWidth}\"\n                        class=\"ui-datatable-scrollable-view\"\n                        [ngClass]=\"{'ui-datatable-unfrozen-view': frozenColumns}\"></div>\n                </div>\n            </template>\n            \n            <p-paginator [rows]=\"rows\" [first]=\"first\" [totalRecords]=\"totalRecords\" [pageLinkSize]=\"pageLinks\" styleClass=\"ui-paginator-bottom\"\n                (onPageChange)=\"paginate($event)\" [rowsPerPageOptions]=\"rowsPerPageOptions\" *ngIf=\"paginator && paginatorPosition!='top' || paginatorPosition =='both'\"></p-paginator>\n            <div class=\"ui-datatable-footer ui-widget-header\" *ngIf=\"footer\">\n                <ng-content select=\"p-footer\"></ng-content>\n            </div>\n            \n            <div class=\"ui-column-resizer-helper ui-state-highlight\" style=\"display:none\"></div>\n            <span class=\"fa fa-arrow-down ui-datatable-reorder-indicator-up\" style=\"position: absolute; display: none;\"></span>\n            <span class=\"fa fa-arrow-up ui-datatable-reorder-indicator-down\" style=\"position: absolute; display: none;\"></span>\n        </div>\n    ",
+            template: "\n        <div [ngStyle]=\"style\" [class]=\"styleClass\" \n            [ngClass]=\"{'ui-datatable ui-widget':true,'ui-datatable-reflow':responsive,'ui-datatable-stacked':stacked,'ui-datatable-resizable':resizableColumns,'ui-datatable-scrollable':scrollable}\">\n            <div class=\"ui-datatable-header ui-widget-header\" *ngIf=\"header\" [ngStyle]=\"{'width': scrollWidth}\">\n                <ng-content select=\"header\"></ng-content>\n            </div>\n            <p-paginator [rows]=\"rows\" [first]=\"first\" [totalRecords]=\"totalRecords\" [pageLinkSize]=\"pageLinks\" styleClass=\"ui-paginator-bottom\"\n                (onPageChange)=\"paginate($event)\" [rowsPerPageOptions]=\"rowsPerPageOptions\" *ngIf=\"paginator && paginatorPosition!='bottom' || paginatorPosition =='both'\"></p-paginator>\n            <div class=\"ui-datatable-tablewrapper\" *ngIf=\"!scrollable\">\n                <table [class]=\"tableStyleClass\" [ngStyle]=\"tableStyle\">\n                    <thead>\n                        <tr *ngIf=\"!headerColumnGroup\" class=\"ui-state-default\">\n                            <template ngFor let-col [ngForOf]=\"columns\" let-lastCol=\"last\">\n                                <th #headerCell [ngStyle]=\"col.style\" [class]=\"col.styleClass\" [style.display]=\"col.hidden ? 'none' : 'table-cell'\"\n                                    (click)=\"sort($event,col)\" (mouseenter)=\"hoveredHeader = $event.target\" (mouseleave)=\"hoveredHeader = null\"\n                                    [ngClass]=\"{'ui-state-default ui-unselectable-text':true, 'ui-state-hover': headerCell === hoveredHeader && col.sortable,'ui-state-focus': headerCell === focusedHeader && col.sortable,\n                                    'ui-sortable-column': col.sortable,'ui-state-active': isSorted(col), 'ui-resizable-column': resizableColumns,'ui-selection-column':col.selectionMode}\" \n                                    (dragstart)=\"onColumnDragStart($event)\" (dragover)=\"onColumnDragover($event)\" (dragleave)=\"onColumnDragleave($event)\" (drop)=\"onColumnDrop($event)\" (mousedown)=\"onHeaderMousedown($event,headerCell)\"\n                                    [attr.tabindex]=\"col.sortable ? tabindex : null\" (focus)=\"focusedHeader=$event.target\" (blur)=\"focusedHeader=null\" (keydown)=\"onHeaderKeydown($event,col)\">\n                                    <span class=\"ui-column-resizer\" *ngIf=\"resizableColumns && ((columnResizeMode == 'fit' && !lastCol) || columnResizeMode == 'expand')\" (mousedown)=\"initColumnResize($event)\"></span>\n                                    <span class=\"ui-column-title\" *ngIf=\"!col.selectionMode&&!col.headerTemplate\">{{col.header}}</span>\n                                    <span class=\"ui-column-title\" *ngIf=\"col.headerTemplate\">\n                                        <p-columnHeaderTemplateLoader [column]=\"col\"></p-columnHeaderTemplateLoader>\n                                    </span>\n                                    <span class=\"ui-sortable-column-icon fa fa-fw fa-sort\" *ngIf=\"col.sortable\"\n                                         [ngClass]=\"{'fa-sort-desc': (getSortOrder(col) == -1),'fa-sort-asc': (getSortOrder(col) == 1)}\"></span>\n                                    <input type=\"text\" pInputText class=\"ui-column-filter\" [attr.placeholder]=\"col.filterPlaceholder\" *ngIf=\"col.filter&&!col.filterTemplate\" [value]=\"filters[col.field] ? filters[col.field].value : ''\" (click)=\"onFilterInputClick($event)\" (keyup)=\"onFilterKeyup($event.target.value, col.field, col.filterMatchMode)\"/>\n                                    <p-columnFilterTemplateLoader [column]=\"col\" *ngIf=\"col.filterTemplate\"></p-columnFilterTemplateLoader>\n                                    <p-dtCheckbox *ngIf=\"col.selectionMode=='multiple'\" (onChange)=\"toggleRowsWithCheckbox($event)\" [checked]=\"allSelected\" [disabled]=\"isEmpty()\"></p-dtCheckbox>\n                                </th>\n                            </template>\n                        </tr>\n                        <template [ngIf]=\"headerColumnGroup\">\n                            <tr *ngFor=\"let headerRow of headerColumnGroup.rows\" class=\"ui-state-default\">\n                                <th #headerCell *ngFor=\"let col of headerRow.columns\" [ngStyle]=\"col.style\" [class]=\"col.styleClass\" [attr.colspan]=\"col.colspan\" [attr.rowspan]=\"col.rowspan\"\n                                    (click)=\"sort($event,col)\" (mouseenter)=\"hoveredHeader = $event.target\" (mouseleave)=\"hoveredHeader = null\" [style.display]=\"col.hidden ? 'none' : 'table-cell'\"\n                                    [ngClass]=\"{'ui-state-default ui-unselectable-text':true, 'ui-state-hover': headerCell === hoveredHeader && col.sortable,\n                                    'ui-sortable-column': col.sortable,'ui-state-active': isSorted(col), 'ui-resizable-column': resizableColumns}\"\n                                    [tabindex]=\"col.sortable ? tabindex : -1\" (focus)=\"focusedHeader=$event.target\" (blur)=\"focusedHeader=null\" (keydown)=\"onHeaderKeydown($event,col)\">\n                                    <span class=\"ui-column-resizer\" *ngIf=\"resizableColumns && ((columnResizeMode == 'fit' && !lastCol) || columnResizeMode == 'expand')\" (mousedown)=\"initColumnResize($event)\"></span>\n                                    <span class=\"ui-column-title\" *ngIf=\"!col.selectionMode&&!col.headerTemplate\">{{col.header}}</span>\n                                    <span class=\"ui-column-title\" *ngIf=\"col.headerTemplate\">\n                                        <p-columnHeaderTemplateLoader [column]=\"col\"></p-columnHeaderTemplateLoader>\n                                    </span>\n                                    <span class=\"ui-sortable-column-icon fa fa-fw fa-sort\" *ngIf=\"col.sortable\"\n                                         [ngClass]=\"{'fa-sort-desc': (getSortOrder(col) == -1),'fa-sort-asc': (getSortOrder(col) == 1)}\"></span>\n                                    <input type=\"text\" pInputText class=\"ui-column-filter\" [attr.placeholder]=\"col.filterPlaceholder\" *ngIf=\"col.filter\" [value]=\"filters[col.field] ? filters[col.field].value : ''\" (click)=\"onFilterInputClick($event)\" (keyup)=\"onFilterKeyup($event.target.value, col.field, col.filterMatchMode)\"/>\n                                </th>\n                            </tr>\n                        </template>\n                    </thead>\n                    <tfoot *ngIf=\"hasFooter()\">\n                        <tr *ngIf=\"!footerColumnGroup\">\n                            <th *ngFor=\"let col of columns\" [ngStyle]=\"col.style\" [class]=\"col.styleClass\" [ngClass]=\"{'ui-state-default':true}\" [style.display]=\"col.hidden ? 'none' : 'table-cell'\">\n                                <span class=\"ui-column-footer\" *ngIf=\"!col.footerTemplate\">{{col.footer}}</span>\n                                <span class=\"ui-column-footer\" *ngIf=\"col.footerTemplate\">\n                                    <p-columnFooterTemplateLoader [column]=\"col\"></p-columnFooterTemplateLoader>\n                                </span>\n                            </th>\n                        </tr>\n                        <template [ngIf]=\"footerColumnGroup\">\n                            <tr *ngFor=\"let footerRow of footerColumnGroup.rows\">\n                                <th *ngFor=\"let col of footerRow.columns\" [ngStyle]=\"col.style\" [class]=\"col.styleClass\"\n                                    [attr.colspan]=\"col.colspan\" [attr.rowspan]=\"col.rowspan\" [style.display]=\"col.hidden ? 'none' : 'table-cell'\"\n                                    [ngClass]=\"{'ui-state-default':true}\">\n                                    <span class=\"ui-column-footer\" *ngIf=\"!col.footerTemplate\">{{col.footer}}</span>\n                                    <span class=\"ui-column-footer\" *ngIf=\"col.footerTemplate\">\n                                        <p-columnFooterTemplateLoader [column]=\"col\"></p-columnFooterTemplateLoader>\n                                    </span>\n                                </th>\n                            </tr>\n                        </template>\n                    </tfoot>\n                    <tbody class=\"ui-datatable-data ui-widget-content\">\n                        <template ngFor let-rowData [ngForOf]=\"dataToRender\" let-even=\"even\" let-odd=\"odd\" let-rowIndex=\"index\">\n                            <tr #rowGroupElement class=\"ui-widget-header ui-rowgroup-header\" *ngIf=\"rowGroupMode=='subheader' && (rowIndex === 0||(resolveFieldData(rowData,groupField) !== resolveFieldData(dataToRender[rowIndex - 1],groupField)))\"\n                                (click)=\"onRowGroupClick($event)\" [ngStyle]=\"{'cursor': sortableRowGroup ? 'pointer' : 'auto'}\">\n                                <td [attr.colspan]=\"columns.length\">\n                                    <a href=\"#\" *ngIf=\"expandableRowGroups\" (click)=\"toggleRowGroup($event,rowData)\">\n                                        <span class=\"fa fa-fw\" [ngClass]=\"{'fa-chevron-circle-down':isRowGroupExpanded(rowData), 'fa-chevron-circle-right': !isRowGroupExpanded(rowData)}\"></span>\n                                    </a>\n                                    <p-templateLoader [template]=\"rowGroupHeaderTemplate\" [data]=\"rowData\"></p-templateLoader>\n                                </td>\n                            </tr>\n                            <tr #rowElement *ngIf=\"!expandableRowGroups||isRowGroupExpanded(rowData)\" [class]=\"getRowStyleClass(rowData,rowIndex)\" (mouseenter)=\"hoveredRow = $event.target\" (mouseleave)=\"hoveredRow = null\"\n                                    (click)=\"handleRowClick($event, rowData)\" (dblclick)=\"rowDblclick($event,rowData)\" (contextmenu)=\"onRowRightClick($event,rowData)\" (touchstart)=\"handleRowTap($event, rowData)\"\n                                    [ngClass]=\"{'ui-datatable-even':even&&rowGroupMode!='rowspan','ui-datatable-odd':odd&&rowGroupMode!='rowspan','ui-state-hover': ((rowHover || selectionMode) && rowElement == hoveredRow), 'ui-state-highlight': isSelected(rowData)}\">\n                                <template ngFor let-col [ngForOf]=\"columns\" let-colIndex=\"index\">\n                                    <td *ngIf=\"!rowGroupMode || (rowGroupMode == 'subheader') ||\n                                        (rowGroupMode=='rowspan' && ((sortField==col.field && rowGroupMetadata[resolveFieldData(rowData,sortField)].index == rowIndex) || (sortField!=col.field)))\"\n                                        [ngStyle]=\"col.style\" [class]=\"col.styleClass\" [style.display]=\"col.hidden ? 'none' : 'table-cell'\"\n                                        [ngClass]=\"{'ui-editable-column':col.editable,'ui-selection-column':col.selectionMode}\" (click)=\"switchCellToEditMode($event.target,col,rowData)\"\n                                        [attr.rowspan]=\"(rowGroupMode=='rowspan' && sortField == col.field && rowGroupMetadata[resolveFieldData(rowData,sortField)].index == rowIndex) ? rowGroupMetadata[resolveFieldData(rowData,sortField)].size : null\">\n                                        <span class=\"ui-column-title\" *ngIf=\"responsive\">{{col.header}}</span>\n                                        <span class=\"ui-cell-data\" *ngIf=\"!col.bodyTemplate && !col.expander && !col.selectionMode\">{{resolveFieldData(rowData,col.field)}}</span>\n                                        <span class=\"ui-cell-data\" *ngIf=\"col.bodyTemplate\">\n                                            <p-columnBodyTemplateLoader [column]=\"col\" [rowData]=\"rowData\" [rowIndex]=\"rowIndex + first\"></p-columnBodyTemplateLoader>\n                                        </span>\n                                        <input type=\"text\" class=\"ui-cell-editor ui-state-highlight\" *ngIf=\"col.editable\" [(ngModel)]=\"rowData[col.field]\"\n                                                (blur)=\"switchCellToViewMode($event.target,col,rowData,true)\" (keydown)=\"onCellEditorKeydown($event, col, rowData, colIndex)\"/>\n                                        <a href=\"#\" *ngIf=\"col.expander\" (click)=\"toggleRow(rowData,$event)\">\n                                            <span class=\"ui-row-toggler fa fa-fw ui-c\" [ngClass]=\"{'fa-chevron-circle-down':isRowExpanded(rowData), 'fa-chevron-circle-right': !isRowExpanded(rowData)}\"></span>\n                                        </a>\n                                        <p-dtRadioButton *ngIf=\"col.selectionMode=='single'\" (onClick)=\"selectRowWithRadio($event, rowData)\" [checked]=\"isSelected(rowData)\"></p-dtRadioButton>\n                                        <p-dtCheckbox *ngIf=\"col.selectionMode=='multiple'\" (onChange)=\"toggleRowWithCheckbox($event,rowData)\" [checked]=\"isSelected(rowData)\"></p-dtCheckbox>\n                                    </td>\n                                </template>\n                            </tr>\n                            <tr class=\"ui-widget-header\" *ngIf=\"rowGroupFooterTemplate && rowGroupMode=='subheader' && ((rowIndex === dataToRender.length - 1)||(resolveFieldData(rowData,groupField) !== resolveFieldData(dataToRender[rowIndex + 1],groupField))) && (!expandableRowGroups || isRowGroupExpanded(rowData))\">\n                                <p-templateLoader class=\"ui-helper-hidden\" [data]=\"rowData\" [template]=\"rowGroupFooterTemplate\"></p-templateLoader>\n                            </tr>\n                            <tr *ngIf=\"expandableRows && isRowExpanded(rowData)\">\n                                <td [attr.colspan]=\"visibleColumns().length\">\n                                    <p-rowExpansionLoader [rowData]=\"rowData\" [template]=\"rowExpansionTemplate\"></p-rowExpansionLoader>\n                                </td>\n                            </tr>\n                        </template>\n                        \n                        <tr *ngIf=\"isEmpty()\" class=\"ui-widget-content\">\n                            <td [attr.colspan]=\"visibleColumns().length\" class=\"ui-datatable-emptymessage\">{{emptyMessage}}</td>\n                        </tr>\n                    </tbody>\n                </table>\n                <div class=\"ui-column-resizer-helper ui-state-highlight\" style=\"display:none\"></div>\n                <span class=\"fa fa-arrow-down ui-datatable-reorder-indicator-up\" style=\"position: absolute; display: none;\"></span>\n                <span class=\"fa fa-arrow-up ui-datatable-reorder-indicator-down\" style=\"position: absolute; display: none;\"></span>\n            </div>\n            <div class=\"ui-widget-header ui-datatable-scrollable-header\" *ngIf=\"scrollable\" [ngStyle]=\"{'width': scrollWidth}\">\n                <div class=\"ui-datatable-scrollable-header-box\">\n                    <table [class]=\"tableStyleClass\" [ngStyle]=\"tableStyle\">\n                        <thead>\n                            <tr>\n                                <template ngFor let-col [ngForOf]=\"columns\" let-lastCol=\"last\">\n                                    <th #headerCell [ngStyle]=\"col.style\" [class]=\"col.styleClass\" [style.display]=\"col.hidden ? 'none' : 'table-cell'\"\n                                        (click)=\"sort($event,col)\" (mouseenter)=\"hoveredHeader = $event.target\" (mouseleave)=\"hoveredHeader = null\"\n                                        [ngClass]=\"{'ui-state-default ui-unselectable-text':true, 'ui-state-hover': headerCell === hoveredHeader && col.sortable,\n                                        'ui-sortable-column': col.sortable,'ui-state-active': isSorted(col), 'ui-resizable-column': resizableColumns,'ui-selection-column':col.selectionMode}\"\n                                        [tabindex]=\"col.sortable ? tabindex : -1\" (focus)=\"focusedHeader=$event.target\" (blur)=\"focusedHeader=null\" (keydown)=\"onHeaderKeydown($event,col)\">\n                                        <span class=\"ui-column-resizer\" *ngIf=\"resizableColumns && ((columnResizeMode == 'fit' && !lastCol) || columnResizeMode == 'expand')\"></span>\n                                        <span class=\"ui-column-title\" *ngIf=\"!col.selectionMode&&!col.headerTemplate\">{{col.header}}</span>\n                                        <span class=\"ui-column-title\" *ngIf=\"col.headerTemplate\">\n                                            <p-columnHeaderTemplateLoader [column]=\"col\"></p-columnHeaderTemplateLoader>\n                                        </span>\n                                        <span class=\"ui-sortable-column-icon fa fa-fw fa-sort\" *ngIf=\"col.sortable\"\n                                             [ngClass]=\"{'fa-sort-desc': (col.field === sortField) && (sortOrder == -1),'fa-sort-asc': (col.field === sortField) && (sortOrder == 1)}\"></span>\n                                        <input type=\"text\" pInputText class=\"ui-column-filter\" [attr.placeholder]=\"col.filterPlaceholder\" *ngIf=\"col.filter\" [value]=\"filters[col.field] ? filters[col.field].value : ''\" (click)=\"onFilterInputClick($event)\" (keyup)=\"onFilterKeyup($event.target.value, col.field, col.filterMatchMode)\"/>\n                                        <p-dtCheckbox *ngIf=\"col.selectionMode=='multiple'\" (onChange)=\"toggleRowsWithCheckbox($event)\" [checked]=\"allSelected\" [disabled]=\"isEmpty()\"></p-dtCheckbox>\n                                    </th>\n                                </template>\n                            </tr>\n                        </thead>\n                    </table>\n                </div>\n            </div>\n            <div class=\"ui-datatable-scrollable-body\" *ngIf=\"scrollable\" [ngStyle]=\"{'width': scrollWidth}\">\n                <table [class]=\"tableStyleClass\" [ngStyle]=\"tableStyle\">\n                    <tbody class=\"ui-datatable-data ui-widget-content\">\n                        <template ngFor let-rowData [ngForOf]=\"dataToRender\" let-even=\"even\" let-odd=\"odd\" let-rowIndex=\"index\">\n                            <tr #rowGroupElement class=\"ui-widget-header ui-rowgroup-header\" *ngIf=\"rowGroupMode=='subheader' && (rowIndex === 0||(resolveFieldData(rowData,groupField) !== resolveFieldData(dataToRender[rowIndex -1],groupField)))\"\n                                (click)=\"onRowGroupClick($event)\" [ngStyle]=\"{'cursor': sortableRowGroup ? 'pointer' : 'auto'}\">\n                                <td [attr.colspan]=\"columns.length\"><p-templateLoader [template]=\"rowGroupHeaderTemplate\" [data]=\"rowData\"></p-templateLoader></td>\n                            </tr>\n                            <tr #rowElement class=\"ui-widget-content\" [class]=\"getRowStyleClass(rowData,rowIndex)\" (mouseenter)=\"hoveredRow = $event.target\" (mouseleave)=\"hoveredRow = null\"\n                                    (click)=\"handleRowClick($event, rowData)\" (dblclick)=\"rowDblclick($event,rowData)\" (contextmenu)=\"onRowRightClick($event,rowData)\"\n                                    [ngClass]=\"{'ui-datatable-even':even,'ui-datatable-odd':odd,'ui-state-hover': ((rowHover || selectionMode) && rowElement == hoveredRow), 'ui-state-highlight': isSelected(rowData)}\">\n                                <template ngFor let-col [ngForOf]=\"columns\" let-colIndex=\"index\">\n                                <td *ngIf=\"!rowGroupMode || (rowGroupMode == 'subheader') ||\n                                    (rowGroupMode=='rowspan' && ((sortField==col.field && rowGroupMetadata[resolveFieldData(rowData,sortField)].index == rowIndex) || (sortField!=col.field)))\"\n                                    [ngStyle]=\"col.style\" [class]=\"col.styleClass\" [style.display]=\"col.hidden ? 'none' : 'table-cell'\"\n                                    [ngClass]=\"{'ui-editable-column':col.editable,'ui-selection-column':col.selectionMode}\" (click)=\"switchCellToEditMode($event.target,col,rowData)\"\n                                    [attr.rowspan]=\"(rowGroupMode=='rowspan' && sortField == col.field && rowGroupMetadata[resolveFieldData(rowData,sortField)].index == rowIndex) ? rowGroupMetadata[resolveFieldData(rowData,sortField)].size : null\">\n                                    <span class=\"ui-column-title\" *ngIf=\"responsive\">{{col.header}}</span>\n                                    <span class=\"ui-cell-data\" *ngIf=\"!col.bodyTemplate && !col.expander && !col.selectionMode\">{{resolveFieldData(rowData,col.field)}}</span>\n                                    <span class=\"ui-cell-data\" *ngIf=\"col.bodyTemplate\">\n                                        <p-columnBodyTemplateLoader [column]=\"col\" [rowData]=\"rowData\" [rowIndex]=\"rowIndex + first\"></p-columnBodyTemplateLoader>\n                                    </span>\n                                    <input type=\"text\" class=\"ui-cell-editor ui-state-highlight\" *ngIf=\"col.editable\" [(ngModel)]=\"rowData[col.field]\"\n                                            (blur)=\"switchCellToViewMode($event.target,col,rowData,true)\" (keydown)=\"onCellEditorKeydown($event, col, rowData, colIndex)\"/>\n                                    <a href=\"#\" *ngIf=\"col.expander\" (click)=\"toggleRow(rowData,$event)\">\n                                        <span class=\"ui-row-toggler fa fa-fw ui-c\" [ngClass]=\"{'fa-chevron-circle-down':isRowExpanded(rowData), 'fa-chevron-circle-right': !isRowExpanded(rowData)}\"></span>\n                                    </a>\n                                    <p-dtRadioButton *ngIf=\"col.selectionMode=='single'\" (onClick)=\"selectRowWithRadio($event, rowData)\" [checked]=\"isSelected(rowData)\"></p-dtRadioButton>\n                                    <p-dtCheckbox *ngIf=\"col.selectionMode=='multiple'\" (onChange)=\"toggleRowWithCheckbox($event,rowData)\" [checked]=\"isSelected(rowData)\"></p-dtCheckbox>\n                                </td>\n                                </template>\n                            </tr>\n                            <tr *ngIf=\"expandableRows && isRowExpanded(rowData)\">\n                                <td [attr.colspan]=\"visibleColumns().length\">\n                                    <p-rowExpansionLoader [rowData]=\"rowData\" [template]=\"rowExpansionTemplate\"></p-rowExpansionLoader>\n                                </td>\n                            </tr>\n                        </template>\n                        \n                        <tr *ngIf=\"isEmpty()\" class=\"ui-widget-content\">\n                            <td [attr.colspan]=\"visibleColumns().length\" class=\"ui-datatable-emptymessage\">{{emptyMessage}}</td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div>\n            <p-paginator [rows]=\"rows\" [first]=\"first\" [totalRecords]=\"totalRecords\" [pageLinkSize]=\"pageLinks\" styleClass=\"ui-paginator-bottom\"\n                (onPageChange)=\"paginate($event)\" [rowsPerPageOptions]=\"rowsPerPageOptions\" *ngIf=\"paginator && paginatorPosition!='top' || paginatorPosition =='both'\"></p-paginator>\n            <div class=\"ui-datatable-footer ui-widget-header\" *ngIf=\"footer\">\n                <ng-content select=\"footer\"></ng-content>\n            </div>\n        </div>\n    ",
             providers: [domhandler_1.DomHandler]
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, domhandler_1.DomHandler, core_1.IterableDiffers, core_1.Renderer, core_1.ChangeDetectorRef])
@@ -73016,7 +69514,7 @@ var DataTableModule = (function () {
         core_1.NgModule({
             imports: [common_1.CommonModule, shared_1.SharedModule, paginator_1.PaginatorModule, forms_1.FormsModule, inputtext_1.InputTextModule],
             exports: [DataTable, shared_1.SharedModule],
-            declarations: [DataTable, DTRadioButton, DTCheckbox, ColumnHeaders, ColumnFooters, TableBody, ScrollableView, RowExpansionLoader]
+            declarations: [DataTable, DTRadioButton, DTCheckbox, RowExpansionLoader]
         }), 
         __metadata('design:paramtypes', [])
     ], DataTableModule);
@@ -73026,11 +69524,7 @@ exports.DataTableModule = DataTableModule;
 //# sourceMappingURL=datatable.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 687 */
-=======
-/* 683 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -73047,7 +69541,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
 var domhandler_1 = __webpack_require__(4);
-var shared_1 = __webpack_require__(11);
+var shared_1 = __webpack_require__(9);
 var Dialog = (function () {
     function Dialog(el, domHandler, renderer) {
         this.el = el;
@@ -73059,7 +69553,6 @@ var Dialog = (function () {
         this.minHeight = 150;
         this.closeOnEscape = true;
         this.closable = true;
-        this.showHeader = true;
         this.onBeforeShow = new core_1.EventEmitter();
         this.onAfterShow = new core_1.EventEmitter();
         this.onBeforeHide = new core_1.EventEmitter();
@@ -73158,16 +69651,10 @@ var Dialog = (function () {
         this.container.style.top = y + 'px';
     };
     Dialog.prototype.enableModality = function () {
-        var _this = this;
         if (!this.mask) {
             this.mask = document.createElement('div');
             this.mask.style.zIndex = String(parseInt(this.container.style.zIndex) - 1);
             this.domHandler.addMultipleClasses(this.mask, 'ui-widget-overlay ui-dialog-mask');
-            if (this.closable && this.dismissableMask) {
-                this.maskClickListener = this.renderer.listen(this.mask, 'click', function (event) {
-                    _this.hide(event);
-                });
-            }
             document.body.appendChild(this.mask);
         }
     };
@@ -73181,14 +69668,7 @@ var Dialog = (function () {
         this.onBeforeHide.emit(event);
         this.visibleChange.emit(false);
         this.onAfterHide.emit(event);
-        this.unbindMaskClickListener();
         event.preventDefault();
-    };
-    Dialog.prototype.unbindMaskClickListener = function () {
-        if (this.maskClickListener) {
-            this.maskClickListener();
-            this.maskClickListener = null;
-        }
     };
     Dialog.prototype.moveOnTop = function () {
         this.container.style.zIndex = String(++domhandler_1.DomHandler.zindex);
@@ -73258,7 +69738,6 @@ var Dialog = (function () {
         if (this.appendTo) {
             this.el.nativeElement.appendChild(this.container);
         }
-        this.unbindMaskClickListener();
     };
     __decorate([
         core_1.Input(), 
@@ -73291,7 +69770,7 @@ var Dialog = (function () {
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], Dialog.prototype, "contentStyle", void 0);
+    ], Dialog.prototype, "contentHeight", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Boolean)
@@ -73300,10 +69779,6 @@ var Dialog = (function () {
         core_1.Input(), 
         __metadata('design:type', Boolean)
     ], Dialog.prototype, "closeOnEscape", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], Dialog.prototype, "dismissableMask", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Boolean)
@@ -73328,10 +69803,6 @@ var Dialog = (function () {
         core_1.Input(), 
         __metadata('design:type', String)
     ], Dialog.prototype, "styleClass", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], Dialog.prototype, "showHeader", void 0);
     __decorate([
         core_1.ContentChild(shared_1.Header), 
         __metadata('design:type', Object)
@@ -73371,7 +69842,7 @@ var Dialog = (function () {
     Dialog = __decorate([
         core_1.Component({
             selector: 'p-dialog',
-            template: "\n        <div #container [ngClass]=\"{'ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow':true,'ui-dialog-rtl':rtl,'ui-dialog-draggable':draggable}\" [ngStyle]=\"style\" [class]=\"styleClass\"\n            [style.display]=\"visible ? 'block' : 'none'\" [style.width.px]=\"width\" [style.height.px]=\"height\" (mousedown)=\"moveOnTop()\" [@dialogState]=\"visible ? 'visible' : 'hidden'\">\n            <div class=\"ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top\"\n                (mousedown)=\"initDrag($event)\" (mouseup)=\"endDrag($event)\" *ngIf=\"showHeader\">\n                <span class=\"ui-dialog-title\" *ngIf=\"header\">{{header}}</span>\n                <span class=\"ui-dialog-title\" *ngIf=\"headerFacet\">\n                    <ng-content select=\"p-header\"></ng-content>\n                </span>\n                <a *ngIf=\"closable\" [ngClass]=\"{'ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all':true}\" href=\"#\" role=\"button\" (click)=\"hide($event)\">\n                    <span class=\"fa fa-fw fa-close\"></span>\n                </a>\n            </div>\n            <div #content class=\"ui-dialog-content ui-widget-content\" [ngStyle]=\"contentStyle\">\n                <ng-content></ng-content>\n            </div>\n            <ng-content select=\"p-footer\"></ng-content>\n            <div *ngIf=\"resizable\" class=\"ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se\" style=\"z-index: 90;\"\n                (mousedown)=\"initResize($event)\"></div>\n        </div>\n    ",
+            template: "\n        <div #container [ngClass]=\"{'ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow':true,'ui-dialog-rtl':rtl,'ui-dialog-draggable':draggable}\" [ngStyle]=\"style\" [class]=\"styleClass\"\n            [style.display]=\"visible ? 'block' : 'none'\" [style.width.px]=\"width\" [style.height.px]=\"height\" (mousedown)=\"moveOnTop()\" [@dialogState]=\"visible ? 'visible' : 'hidden'\">\n            <div class=\"ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top\"\n                (mousedown)=\"initDrag($event)\" (mouseup)=\"endDrag($event)\">\n                <span class=\"ui-dialog-title\" *ngIf=\"header\">{{header}}</span>\n                <span class=\"ui-dialog-title\" *ngIf=\"headerFacet\">\n                    <ng-content select=\"header\"></ng-content>\n                </span>\n                <a [ngClass]=\"{'ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all':true,'ui-state-hover':hoverCloseIcon}\" href=\"#\" role=\"button\" *ngIf=\"closable\" \n                    (click)=\"hide($event)\" (mouseenter)=\"hoverCloseIcon=true\" (mouseleave)=\"hoverCloseIcon=false\">\n                    <span class=\"fa fa-fw fa-close\"></span>\n                </a>\n            </div>\n            <div #content class=\"ui-dialog-content ui-widget-content\" [style.height.px]=\"contentHeight\">\n                <ng-content></ng-content>\n            </div>\n            <ng-content select=\"footer\"></ng-content>\n            <div *ngIf=\"resizable\" class=\"ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se\" style=\"z-index: 90;\"\n                (mousedown)=\"initResize($event)\"></div>\n        </div>\n    ",
             animations: [
                 core_1.trigger('dialogState', [
                     core_1.state('hidden', core_1.style({
@@ -73408,11 +69879,7 @@ exports.DialogModule = DialogModule;
 //# sourceMappingURL=dialog.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 688 */
-=======
-/* 684 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -73653,11 +70120,7 @@ exports.DragDropModule = DragDropModule;
 //# sourceMappingURL=dragdrop.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 689 */
-=======
-/* 685 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -73673,7 +70136,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
-var shared_1 = __webpack_require__(11);
+var shared_1 = __webpack_require__(9);
 var domhandler_1 = __webpack_require__(4);
 var forms_1 = __webpack_require__(14);
 exports.DROPDOWN_VALUE_ACCESSOR = {
@@ -73682,11 +70145,10 @@ exports.DROPDOWN_VALUE_ACCESSOR = {
     multi: true
 };
 var Dropdown = (function () {
-    function Dropdown(el, domHandler, renderer, differs, cd) {
+    function Dropdown(el, domHandler, renderer, differs) {
         this.el = el;
         this.domHandler = domHandler;
         this.renderer = renderer;
-        this.cd = cd;
         this.scrollHeight = '200px';
         this.autoWidth = true;
         this.onChange = new core_1.EventEmitter();
@@ -73697,22 +70159,17 @@ var Dropdown = (function () {
         this.panelVisible = false;
         this.differ = differs.find([]).create(null);
     }
-    Dropdown.prototype.ngAfterContentInit = function () {
-        var _this = this;
-        this.templates.forEach(function (item) {
-            switch (item.getType()) {
-                case 'item':
-                    _this.itemTemplate = item.template;
-                    break;
-                default:
-                    _this.itemTemplate = item.template;
-                    break;
-            }
-        });
-    };
     Dropdown.prototype.ngOnInit = function () {
+        var _this = this;
         this.optionsToDisplay = this.options;
         this.updateSelectedOption(null);
+        this.documentClickListener = this.renderer.listenGlobal('body', 'click', function () {
+            if (!_this.selfClick && !_this.itemClick) {
+                _this.panelVisible = false;
+            }
+            _this.selfClick = false;
+            _this.itemClick = false;
+        });
     };
     Dropdown.prototype.ngDoCheck = function () {
         var changes = this.differ.diff(this.options);
@@ -73772,7 +70229,6 @@ var Dropdown = (function () {
     Dropdown.prototype.writeValue = function (value) {
         this.value = value;
         this.updateSelectedOption(value);
-        this.cd.markForCheck();
     };
     Dropdown.prototype.updateSelectedOption = function (val) {
         this.selectedOption = this.findOption(val, this.optionsToDisplay);
@@ -73798,9 +70254,14 @@ var Dropdown = (function () {
             }
         }
     };
+    Dropdown.prototype.onMouseenter = function (event) {
+        this.hover = true;
+    };
+    Dropdown.prototype.onMouseleave = function (event) {
+        this.hover = false;
+    };
     Dropdown.prototype.onMouseclick = function (event, input) {
-        var _this = this;
-        if (this.disabled || this.readonly) {
+        if (this.disabled) {
             return;
         }
         this.selfClick = true;
@@ -73810,17 +70271,11 @@ var Dropdown = (function () {
                 this.hide();
             else {
                 this.show(this.panel, this.container);
-                if (this.filterViewChild != undefined) {
-                    setTimeout(function () {
-                        _this.filterViewChild.nativeElement.focus();
-                    }, 200);
-                }
             }
         }
     };
     Dropdown.prototype.onEditableInputClick = function (event) {
         this.itemClick = true;
-        this.bindDocumentClickListener();
     };
     Dropdown.prototype.onEditableInputFocus = function (event) {
         this.focus = true;
@@ -73843,7 +70298,7 @@ var Dropdown = (function () {
                 this.domHandler.absolutePosition(panel, container);
             else
                 this.domHandler.relativePosition(panel, container);
-            this.bindDocumentClickListener();
+            this.domHandler.fadeIn(panel, 250);
         }
     };
     Dropdown.prototype.hide = function () {
@@ -73859,9 +70314,6 @@ var Dropdown = (function () {
         this.onBlur.emit(event);
     };
     Dropdown.prototype.onKeydown = function (event) {
-        if (this.readonly) {
-            return;
-        }
         var selectedItemIndex = this.selectedOption ? this.findOptionIndex(this.selectedOption.value, this.optionsToDisplay) : -1;
         switch (event.which) {
             //down
@@ -73892,11 +70344,6 @@ var Dropdown = (function () {
                     this.selectedOptionUpdated = true;
                     this.selectItem(event, this.selectedOption);
                 }
-                event.preventDefault();
-                break;
-            //space
-            case 32:
-                this.panelVisible = !this.panelVisible;
                 event.preventDefault();
                 break;
             //enter
@@ -73958,28 +70405,11 @@ var Dropdown = (function () {
         else
             this.domHandler.findSingle(this.el.nativeElement, 'input[readonly]').focus();
     };
-    Dropdown.prototype.bindDocumentClickListener = function () {
-        var _this = this;
-        if (!this.documentClickListener) {
-            this.documentClickListener = this.renderer.listenGlobal('body', 'click', function () {
-                if (!_this.selfClick && !_this.itemClick) {
-                    _this.panelVisible = false;
-                    _this.unbindDocumentClickListener();
-                }
-                _this.selfClick = false;
-                _this.itemClick = false;
-            });
-        }
-    };
-    Dropdown.prototype.unbindDocumentClickListener = function () {
-        if (this.documentClickListener) {
-            this.documentClickListener();
-            this.documentClickListener = null;
-        }
-    };
     Dropdown.prototype.ngOnDestroy = function () {
         this.initialized = false;
-        this.unbindDocumentClickListener();
+        if (this.documentClickListener) {
+            this.documentClickListener();
+        }
         if (this.appendTo) {
             this.el.nativeElement.appendChild(this.panel);
         }
@@ -74002,24 +70432,12 @@ var Dropdown = (function () {
     ], Dropdown.prototype, "style", void 0);
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Object)
-    ], Dropdown.prototype, "panelStyle", void 0);
-    __decorate([
-        core_1.Input(), 
         __metadata('design:type', String)
     ], Dropdown.prototype, "styleClass", void 0);
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', String)
-    ], Dropdown.prototype, "panelStyleClass", void 0);
-    __decorate([
-        core_1.Input(), 
         __metadata('design:type', Boolean)
     ], Dropdown.prototype, "disabled", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], Dropdown.prototype, "readonly", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Boolean)
@@ -74037,10 +70455,6 @@ var Dropdown = (function () {
         __metadata('design:type', Object)
     ], Dropdown.prototype, "appendTo", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], Dropdown.prototype, "tabindex", void 0);
-    __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
     ], Dropdown.prototype, "onChange", void 0);
@@ -74053,6 +70467,10 @@ var Dropdown = (function () {
         __metadata('design:type', core_1.EventEmitter)
     ], Dropdown.prototype, "onBlur", void 0);
     __decorate([
+        core_1.ContentChild(core_1.TemplateRef), 
+        __metadata('design:type', core_1.TemplateRef)
+    ], Dropdown.prototype, "itemTemplate", void 0);
+    __decorate([
         core_1.ViewChild('container'), 
         __metadata('design:type', core_1.ElementRef)
     ], Dropdown.prototype, "containerViewChild", void 0);
@@ -74064,33 +70482,13 @@ var Dropdown = (function () {
         core_1.ViewChild('itemswrapper'), 
         __metadata('design:type', core_1.ElementRef)
     ], Dropdown.prototype, "itemsWrapperViewChild", void 0);
-    __decorate([
-        core_1.ViewChild('filter'), 
-        __metadata('design:type', core_1.ElementRef)
-    ], Dropdown.prototype, "filterViewChild", void 0);
-    __decorate([
-        core_1.ContentChildren(shared_1.PrimeTemplate), 
-        __metadata('design:type', core_1.QueryList)
-    ], Dropdown.prototype, "templates", void 0);
     Dropdown = __decorate([
         core_1.Component({
             selector: 'p-dropdown',
-            template: "\n         <div #container [ngClass]=\"{'ui-dropdown ui-widget ui-state-default ui-corner-all ui-helper-clearfix':true,\n            'ui-state-disabled':disabled,'ui-dropdown-open':panelVisible,'ui-state-focus':focus}\"\n            (click)=\"onMouseclick($event,in)\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-helper-hidden-accessible\" *ngIf=\"autoWidth\">\n                <select [required]=\"required\" tabindex=\"-1\">\n                    <option *ngFor=\"let option of options\" [value]=\"option.value\" [selected]=\"selectedOption == option\">{{option.label}}</option>\n                </select>\n            </div>\n            <div class=\"ui-helper-hidden-accessible\">\n                <input #in type=\"text\" readonly (focus)=\"onInputFocus($event)\" (blur)=\"onInputBlur($event)\" (keydown)=\"onKeydown($event)\" [disabled]=\"disabled\" [attr.tabindex]=\"tabindex\">\n            </div>\n            <label [ngClass]=\"{'ui-dropdown-label ui-inputtext ui-corner-all':true,'ui-dropdown-label-empty':!label}\" *ngIf=\"!editable\">{{label||'empty'}}</label>\n            <input type=\"text\" class=\"ui-dropdown-label ui-inputtext ui-corner-all\" *ngIf=\"editable\" [value]=\"label\" [disabled]=\"disabled\"\n                        (click)=\"onEditableInputClick($event)\" (input)=\"onEditableInputChange($event)\" (focus)=\"onEditableInputFocus($event)\" (blur)=\"onInputBlur($event)\">\n            <div class=\"ui-dropdown-trigger ui-state-default ui-corner-right\">\n                <span class=\"fa fa-fw fa-caret-down ui-c\"></span>\n            </div>\n            <div #panel [ngClass]=\"'ui-dropdown-panel ui-widget-content ui-corner-all ui-helper-hidden ui-shadow'\" [@panelState]=\"panelVisible ? 'visible' : 'hidden'\"\n                [style.display]=\"panelVisible ? 'block' : 'none'\" [ngStyle]=\"panelStyle\" [class]=\"panelStyleClass\">\n                <div *ngIf=\"filter\" class=\"ui-dropdown-filter-container\" (input)=\"onFilter($event)\" (click)=\"$event.stopPropagation()\">\n                    <input #filter type=\"text\" autocomplete=\"off\" class=\"ui-dropdown-filter ui-inputtext ui-widget ui-state-default ui-corner-all\">\n                    <span class=\"fa fa-search\"></span>\n                </div>\n                <div #itemswrapper class=\"ui-dropdown-items-wrapper\" [style.max-height]=\"scrollHeight||'auto'\">\n                    <ul class=\"ui-dropdown-items ui-dropdown-list ui-widget-content ui-widget ui-corner-all ui-helper-reset\" *ngIf=\"panelVisible\">\n                        <li *ngFor=\"let option of optionsToDisplay;let i=index\" \n                            [ngClass]=\"{'ui-dropdown-item ui-corner-all':true, 'ui-state-highlight':(selectedOption == option), \n                            'ui-dropdown-item-empty':!option.label||option.label.length === 0}\"\n                            (click)=\"onItemClick($event, option)\">\n                            <span *ngIf=\"!itemTemplate\">{{option.label||'empty'}}</span>\n                            <template [pTemplateWrapper]=\"itemTemplate\" [item]=\"option\" *ngIf=\"itemTemplate\"></template>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    ",
-            animations: [
-                core_1.trigger('panelState', [
-                    core_1.state('hidden', core_1.style({
-                        opacity: 0
-                    })),
-                    core_1.state('visible', core_1.style({
-                        opacity: 1
-                    })),
-                    core_1.transition('visible => hidden', core_1.animate('400ms ease-in')),
-                    core_1.transition('hidden => visible', core_1.animate('400ms ease-out'))
-                ])
-            ],
+            template: "\n         <div #container [ngClass]=\"{'ui-dropdown ui-widget ui-state-default ui-corner-all ui-helper-clearfix':true,\n            'ui-state-hover':hover&&!disabled,'ui-state-focus':focus,'ui-state-disabled':disabled,'ui-dropdown-open':panelVisible}\" \n            (mouseenter)=\"onMouseenter($event)\" (mouseleave)=\"onMouseleave($event)\" (click)=\"onMouseclick($event,in)\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-helper-hidden-accessible\">\n                <select [required]=\"required\" tabindex=\"-1\">\n                    <option *ngFor=\"let option of options\" [value]=\"option.value\" [selected]=\"selectedOption == option\">{{option.label}}</option>\n                </select>\n            </div>\n            <div class=\"ui-helper-hidden-accessible\">\n                <input #in type=\"text\" readonly (focus)=\"onInputFocus($event)\" (blur)=\"onInputBlur($event)\" (keydown)=\"onKeydown($event)\" [disabled]=\"disabled\">\n            </div>\n            <label [ngClass]=\"{'ui-dropdown-label ui-inputtext ui-corner-all':true,'ui-dropdown-label-empty':!label}\" *ngIf=\"!editable\">{{label||'empty'}}</label>\n            <input type=\"text\" class=\"ui-dropdown-label ui-inputtext ui-corner-all\" *ngIf=\"editable\" [value]=\"label\" [disabled]=\"disabled\"\n                        (click)=\"onEditableInputClick($event)\" (input)=\"onEditableInputChange($event)\" (focus)=\"onEditableInputFocus($event)\" (blur)=\"onInputBlur($event)\">\n            <div class=\"ui-dropdown-trigger ui-state-default ui-corner-right\" [ngClass]=\"{'ui-state-hover':hover&&!disabled,'ui-state-focus':focus}\">\n                <span class=\"fa fa-fw fa-caret-down ui-c\"></span>\n            </div>\n            <div #panel class=\"ui-dropdown-panel ui-widget-content ui-corner-all ui-helper-hidden ui-shadow\" \n                [style.display]=\"panelVisible ? 'block' : 'none'\">\n                <div *ngIf=\"filter\" class=\"ui-dropdown-filter-container\" (input)=\"onFilter($event)\" (click)=\"$event.stopPropagation()\">\n                    <input type=\"text\" autocomplete=\"off\" class=\"ui-dropdown-filter ui-inputtext ui-widget ui-state-default ui-corner-all\">\n                    <span class=\"fa fa-search\"></span>\n                </div>\n                <div #itemswrapper class=\"ui-dropdown-items-wrapper\" [style.max-height]=\"scrollHeight||'auto'\">\n                    <ul class=\"ui-dropdown-items ui-dropdown-list ui-widget-content ui-widget ui-corner-all ui-helper-reset\">\n                        <li #item *ngFor=\"let option of optionsToDisplay;let i=index\" \n                            [ngClass]=\"{'ui-dropdown-item ui-corner-all':true, 'ui-state-hover':hoveredItem == item,'ui-state-highlight':(selectedOption == option), \n                            'ui-dropdown-item-empty':!option.label||option.label.length === 0}\"\n                            (click)=\"onItemClick($event, option)\" (mouseenter)=\"hoveredItem=item\" (mouseleave)=\"hoveredItem=null\">\n                            <span *ngIf=\"!itemTemplate\">{{option.label||'empty'}}</span>\n                            <template [pTemplateWrapper]=\"itemTemplate\" [item]=\"option\" *ngIf=\"itemTemplate\"></template>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    ",
             providers: [domhandler_1.DomHandler, exports.DROPDOWN_VALUE_ACCESSOR]
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef, domhandler_1.DomHandler, core_1.Renderer, core_1.IterableDiffers, core_1.ChangeDetectorRef])
+        __metadata('design:paramtypes', [core_1.ElementRef, domhandler_1.DomHandler, core_1.Renderer, core_1.IterableDiffers])
     ], Dropdown);
     return Dropdown;
 }());
@@ -74112,11 +70510,7 @@ exports.DropdownModule = DropdownModule;
 //# sourceMappingURL=dropdown.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 690 */
-=======
-/* 686 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74132,7 +70526,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
-var shared_1 = __webpack_require__(11);
+var shared_1 = __webpack_require__(9);
 var domhandler_1 = __webpack_require__(4);
 var forms_1 = __webpack_require__(14);
 exports.EDITOR_VALUE_ACCESSOR = {
@@ -74237,7 +70631,7 @@ var Editor = (function () {
     Editor = __decorate([
         core_1.Component({
             selector: 'p-editor',
-            template: "\n        <div [ngClass]=\"'ui-widget ui-editor-container ui-corner-all'\" [class]=\"styleClass\">\n            <div class=\"ui-editor-toolbar ui-widget-header ui-corner-top\" *ngIf=\"toolbar\">\n                <ng-content select=\"p-header\"></ng-content>\n            </div>\n            <div class=\"ui-editor-toolbar ui-widget-header ui-corner-top\" *ngIf=\"!toolbar\">\n                <span class=\"ql-formats\">\n                    <select class=\"ql-header\">\n                      <option value=\"1\">Heading</option>\n                      <option value=\"2\">Subheading</option>\n                      <option selected>Normal</option>\n                    </select>\n                    <select class=\"ql-font\">\n                      <option selected>Sans Serif</option>\n                      <option value=\"serif\">Serif</option>\n                      <option value=\"monospace\">Monospace</option>\n                    </select>\n                </span>\n                <span class=\"ql-formats\">\n                    <button class=\"ql-bold\" aria-label=\"Bold\"></button>\n                    <button class=\"ql-italic\" aria-label=\"Italic\"></button>\n                    <button class=\"ql-underline\" aria-label=\"Underline\"></button>\n                </span>\n                <span class=\"ql-formats\">\n                    <select class=\"ql-color\"></select>\n                    <select class=\"ql-background\"></select>\n                </span>\n                <span class=\"ql-formats\">\n                    <button class=\"ql-list\" value=\"ordered\" aria-label=\"Ordered List\"></button>\n                    <button class=\"ql-list\" value=\"bullet\" aria-label=\"Unordered List\"></button>\n                    <select class=\"ql-align\">\n                        <option selected></option>\n                        <option value=\"center\"></option>\n                        <option value=\"right\"></option>\n                        <option value=\"justify\"></option>\n                    </select>\n                </span>\n                <span class=\"ql-formats\">\n                    <button class=\"ql-link\" aria-label=\"Insert Link\"></button>\n                    <button class=\"ql-image\" aria-label=\"Insert Image\"></button>\n                    <button class=\"ql-code-block\" aria-label=\"Insert Code Block\"></button>\n                </span>\n                <span class=\"ql-formats\">\n                    <button class=\"ql-clean\" aria-label=\"Remove Styles\"></button>\n                </span>\n            </div>\n            <div class=\"ui-editor-content\" [ngStyle]=\"style\"></div>\n        </div>\n    ",
+            template: "\n        <div [ngClass]=\"'ui-widget ui-editor-container ui-corner-all'\" [class]=\"styleClass\">\n            <div class=\"ui-editor-toolbar ui-widget-header ui-corner-top\" *ngIf=\"toolbar\">\n                <ng-content select=\"header\"></ng-content>\n            </div>\n            <div class=\"ui-editor-toolbar ui-widget-header ui-corner-top\" *ngIf=\"!toolbar\">\n                <span class=\"ql-formats\">\n                    <select class=\"ql-header\">\n                      <option value=\"1\">Heading</option>\n                      <option value=\"2\">Subheading</option>\n                      <option selected>Normal</option>\n                    </select>\n                    <select class=\"ql-font\">\n                      <option selected>Sans Serif</option>\n                      <option value=\"serif\">Serif</option>\n                      <option value=\"monospace\">Monospace</option>\n                    </select>\n                </span>\n                <span class=\"ql-formats\">\n                    <button class=\"ql-bold\"></button>\n                    <button class=\"ql-italic\"></button>\n                    <button class=\"ql-underline\"></button>\n                </span>\n                <span class=\"ql-formats\">\n                    <select class=\"ql-color\"></select>\n                    <select class=\"ql-background\"></select>\n                </span>\n                <span class=\"ql-formats\">\n                    <button class=\"ql-list\" value=\"ordered\"></button>\n                    <button class=\"ql-list\" value=\"bullet\"></button>\n                    <select class=\"ql-align\">\n                        <option selected></option>\n                        <option value=\"center\"></option>\n                        <option value=\"right\"></option>\n                        <option value=\"justify\"></option>\n                    </select>\n                </span>\n                <span class=\"ql-formats\">\n                    <button class=\"ql-link\"></button>\n                    <button class=\"ql-image\"></button>\n                    <button class=\"ql-code-block\"></button>\n                </span>\n                <span class=\"ql-formats\">\n                    <button class=\"ql-clean\"></button>\n                </span>\n            </div>\n            <div class=\"ui-editor-content\" [ngStyle]=\"style\"></div>\n        </div>\n    ",
             providers: [domhandler_1.DomHandler, exports.EDITOR_VALUE_ACCESSOR]
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, domhandler_1.DomHandler])
@@ -74251,7 +70645,7 @@ var EditorModule = (function () {
     EditorModule = __decorate([
         core_1.NgModule({
             imports: [common_1.CommonModule],
-            exports: [Editor, shared_1.SharedModule],
+            exports: [Editor],
             declarations: [Editor]
         }), 
         __metadata('design:paramtypes', [])
@@ -74262,11 +70656,7 @@ exports.EditorModule = EditorModule;
 //# sourceMappingURL=editor.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 691 */
-=======
-/* 687 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74289,6 +70679,16 @@ var Fieldset = (function () {
         this.onBeforeToggle = new core_1.EventEmitter();
         this.onAfterToggle = new core_1.EventEmitter();
     }
+    Fieldset.prototype.onLegendMouseenter = function (event) {
+        if (this.toggleable) {
+            this.hover = true;
+        }
+    };
+    Fieldset.prototype.onLegendMouseleave = function (event) {
+        if (this.toggleable) {
+            this.hover = false;
+        }
+    };
     Fieldset.prototype.toggle = function (event) {
         var _this = this;
         if (this.toggleable) {
@@ -74345,7 +70745,7 @@ var Fieldset = (function () {
     Fieldset = __decorate([
         core_1.Component({
             selector: 'p-fieldset',
-            template: "\n        <fieldset [ngClass]=\"{'ui-fieldset ui-widget ui-widget-content ui-corner-all': true, 'ui-fieldset-toggleable': toggleable}\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <legend class=\"ui-fieldset-legend ui-corner-all ui-state-default ui-unselectable-text\" (click)=\"toggle($event)\">\n                <span *ngIf=\"toggleable\" class=\"ui-fieldset-toggler fa fa-w\" [ngClass]=\"{'fa-minus': !collapsed,'fa-plus':collapsed}\"></span>\n                {{legend}}\n            </legend>\n            <div class=\"ui-fieldset-content-wrapper\" [@fieldsetContent]=\"collapsed ? 'hidden' : 'visible'\" \n                        [ngClass]=\"{'ui-fieldset-content-wrapper-overflown': collapsed||animating}\">\n                <div class=\"ui-fieldset-content\">\n                    <ng-content></ng-content>\n                </div>\n            </div>\n        </fieldset>\n    ",
+            template: "\n        <fieldset [ngClass]=\"{'ui-fieldset ui-widget ui-widget-content ui-corner-all': true, 'ui-fieldset-toggleable': toggleable}\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <legend class=\"ui-fieldset-legend ui-corner-all ui-state-default ui-unselectable-text\" \n                (mouseenter)=\"onLegendMouseenter($event)\" (mouseleave)=\"onLegendMouseleave($event)\" (click)=\"toggle($event)\" [ngClass]=\"{'ui-state-hover':hover}\">\n                <span *ngIf=\"toggleable\" class=\"ui-fieldset-toggler fa fa-w\" [ngClass]=\"{'fa-minus': !collapsed,'fa-plus':collapsed}\"></span>\n                {{legend}}\n            </legend>\n            <div class=\"ui-fieldset-content-wrapper\" [@fieldsetContent]=\"collapsed ? 'hidden' : 'visible'\" \n                        [ngClass]=\"{'ui-fieldset-content-wrapper-overflown': collapsed||animating}\">\n                <div class=\"ui-fieldset-content\">\n                    <ng-content></ng-content>\n                </div>\n            </div>\n        </fieldset>\n    ",
             animations: [
                 core_1.trigger('fieldsetContent', [
                     core_1.state('hidden', core_1.style({
@@ -74381,11 +70781,7 @@ exports.FieldsetModule = FieldsetModule;
 //# sourceMappingURL=fieldset.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 692 */
-=======
-/* 688 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74403,15 +70799,9 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
 var platform_browser_1 = __webpack_require__(104);
 var button_1 = __webpack_require__(53);
-<<<<<<< HEAD
 var messages_1 = __webpack_require__(375);
 var progressbar_1 = __webpack_require__(376);
 var shared_1 = __webpack_require__(9);
-=======
-var messages_1 = __webpack_require__(377);
-var progressbar_1 = __webpack_require__(378);
-var shared_1 = __webpack_require__(11);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 var FileUpload = (function () {
     function FileUpload(sanitizer) {
         this.sanitizer = sanitizer;
@@ -74442,9 +70832,6 @@ var FileUpload = (function () {
                 case 'content':
                     _this.contentTemplate = item.template;
                     break;
-                case 'toolbar':
-                    _this.toolbarTemplate = item.template;
-                    break;
                 default:
                     _this.fileTemplate = item.template;
                     break;
@@ -74457,9 +70844,6 @@ var FileUpload = (function () {
     };
     FileUpload.prototype.onFileSelect = function (event) {
         this.msgs = [];
-        if (!this.multiple) {
-            this.files = [];
-        }
         var files = event.dataTransfer ? event.dataTransfer.files : event.target.files;
         for (var i = 0; i < files.length; i++) {
             var file = files[i];
@@ -74659,7 +71043,7 @@ var FileUpload = (function () {
     FileUpload = __decorate([
         core_1.Component({
             selector: 'p-fileUpload',
-            template: "\n        <div [ngClass]=\"'ui-fileupload ui-widget'\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-fileupload-buttonbar ui-widget-header ui-corner-top\">\n                <button type=\"button\" [label]=\"chooseLabel\" icon=\"fa-plus\" pButton class=\"ui-fileupload-choose\" (click)=\"onChooseClick($event, fileinput)\" [disabled]=\"disabled\"> \n                    <input #fileinput type=\"file\" (change)=\"onFileSelect($event)\" [multiple]=\"multiple\" [accept]=\"accept\" [disabled]=\"disabled\">\n                </button>\n\n                <button *ngIf=\"!auto\" type=\"button\" [label]=\"uploadLabel\" icon=\"fa-upload\" pButton (click)=\"upload()\" [disabled]=\"!hasFiles()\"></button>\n                <button *ngIf=\"!auto\" type=\"button\" [label]=\"cancelLabel\" icon=\"fa-close\" pButton (click)=\"clear()\" [disabled]=\"!hasFiles()\"></button>\n            \n                <p-templateLoader [template]=\"toolbarTemplate\"></p-templateLoader>\n            </div>\n            <div [ngClass]=\"{'ui-fileupload-content ui-widget-content ui-corner-bottom':true,'ui-fileupload-highlight':dragHighlight}\" \n                (dragenter)=\"onDragEnter($event)\" (dragover)=\"onDragOver($event)\" (dragleave)=\"onDragLeave($event)\" (drop)=\"onDrop($event)\">\n                <p-progressBar [value]=\"progress\" [showValue]=\"false\" *ngIf=\"hasFiles()\"></p-progressBar>\n                \n                <p-messages [value]=\"msgs\"></p-messages>\n                \n                <div class=\"ui-fileupload-files\" *ngIf=\"hasFiles()\">\n                    <div *ngIf=\"!fileTemplate\">\n                        <div class=\"ui-fileupload-row\" *ngFor=\"let file of files\">\n                            <div><img [src]=\"file.objectURL\" *ngIf=\"isImage(file)\" [width]=\"previewWidth\" /></div>\n                            <div>{{file.name}}</div>\n                            <div>{{formatSize(file.size)}}</div>\n                            <div><button type=\"button\" icon=\"fa-close\" pButton (click)=\"remove(i)\"></button></div>\n                        </div>\n                    </div>\n                    <div *ngIf=\"fileTemplate\">\n                        <template ngFor [ngForOf]=\"files\" [ngForTemplate]=\"fileTemplate\"></template>\n                    </div>\n                </div>\n                \n                <p-templateLoader [template]=\"contentTemplate\"></p-templateLoader>\n            </div>\n        </div>\n    "
+            template: "\n        <div [ngClass]=\"'ui-fileupload ui-widget'\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-fileupload-buttonbar ui-widget-header ui-corner-top\">\n                <button type=\"button\" [label]=\"chooseLabel\" icon=\"fa-plus\" pButton class=\"ui-fileupload-choose\" (click)=\"onChooseClick($event, fileinput)\" [disabled]=\"disabled\"> \n                    <input #fileinput type=\"file\" (change)=\"onFileSelect($event)\" [multiple]=\"multiple\" [accept]=\"accept\" [disabled]=\"disabled\">\n                </button>\n\n                <button *ngIf=\"!auto\" type=\"button\" [label]=\"uploadLabel\" icon=\"fa-upload\" pButton (click)=\"upload()\" [disabled]=\"!hasFiles()\"></button>\n                <button *ngIf=\"!auto\" type=\"button\" [label]=\"cancelLabel\" icon=\"fa-close\" pButton (click)=\"clear()\" [disabled]=\"!hasFiles()\"></button>\n            </div>\n            <div [ngClass]=\"{'ui-fileupload-content ui-widget-content ui-corner-bottom':true,'ui-fileupload-highlight':dragHighlight}\" \n                (dragenter)=\"onDragEnter($event)\" (dragover)=\"onDragOver($event)\" (dragleave)=\"onDragLeave($event)\" (drop)=\"onDrop($event)\">\n                <p-progressBar [value]=\"progress\" [showValue]=\"false\" *ngIf=\"hasFiles()\"></p-progressBar>\n                \n                <p-messages [value]=\"msgs\"></p-messages>\n                \n                <div class=\"ui-fileupload-files\" *ngIf=\"hasFiles()\">\n                    <div *ngIf=\"!fileTemplate\">\n                        <div class=\"ui-fileupload-row\" *ngFor=\"let file of files\">\n                            <div><img [src]=\"file.objectURL\" *ngIf=\"isImage(file)\" [width]=\"previewWidth\" /></div>\n                            <div>{{file.name}}</div>\n                            <div>{{formatSize(file.size)}}</div>\n                            <div><button type=\"button\" icon=\"fa-close\" pButton (click)=\"remove(i)\"></button></div>\n                        </div>\n                    </div>\n                    <div *ngIf=\"fileTemplate\">\n                        <template ngFor [ngForOf]=\"files\" [ngForTemplate]=\"fileTemplate\"></template>\n                    </div>\n                </div>\n                \n                <p-templateLoader [template]=\"contentTemplate\"></p-templateLoader>\n            </div>\n        </div>\n    "
         }), 
         __metadata('design:paramtypes', [platform_browser_1.DomSanitizer])
     ], FileUpload);
@@ -74683,11 +71067,7 @@ exports.FileUploadModule = FileUploadModule;
 //# sourceMappingURL=fileupload.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 693 */
-=======
-/* 689 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74912,11 +71292,7 @@ exports.GalleriaModule = GalleriaModule;
 //# sourceMappingURL=galleria.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 694 */
-=======
-/* 690 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75093,11 +71469,7 @@ exports.GMapModule = GMapModule;
 //# sourceMappingURL=gmap.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 695 */
-=======
-/* 691 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75195,21 +71567,13 @@ var Growl = (function () {
         __metadata('design:type', Array)
     ], Growl.prototype, "value", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], Growl.prototype, "style", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], Growl.prototype, "styleClass", void 0);
-    __decorate([
         core_1.ViewChild('container'), 
         __metadata('design:type', core_1.ElementRef)
     ], Growl.prototype, "containerViewChild", void 0);
     Growl = __decorate([
         core_1.Component({
             selector: 'p-growl',
-            template: "\n        <div #container [ngClass]=\"'ui-growl ui-widget'\" [style.zIndex]=\"zIndex\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div #msgel *ngFor=\"let msg of value\" class=\"ui-growl-item-container ui-state-highlight ui-corner-all ui-shadow\" aria-live=\"polite\"\n                [ngClass]=\"{'ui-growl-message-info':msg.severity == 'info','ui-growl-message-warn':msg.severity == 'warn',\n                    'ui-growl-message-error':msg.severity == 'error','ui-growl-message-success':msg.severity == 'success'}\">\n                <div class=\"ui-growl-item\">\n                     <div class=\"ui-growl-icon-close fa fa-close\" (click)=\"remove(msg,msgel)\"></div>\n                     <span class=\"ui-growl-image fa fa-2x\"\n                        [ngClass]=\"{'fa-info-circle':msg.severity == 'info','fa-exclamation-circle':msg.severity == 'warn',\n                                'fa-close':msg.severity == 'error','fa-check':msg.severity == 'success'}\"></span>\n                     <div class=\"ui-growl-message\">\n                        <span class=\"ui-growl-title\">{{msg.summary}}</span>\n                        <p [innerHTML]=\"msg.detail\"></p>\n                     </div>\n                     <div style=\"clear: both;\"></div>\n                </div>\n            </div>\n        </div>\n    ",
+            template: "\n        <div #container class=\"ui-growl ui-widget\" [style.zIndex]=\"zIndex\">\n            <div #msgel *ngFor=\"let msg of value\" class=\"ui-growl-item-container ui-state-highlight ui-corner-all ui-shadow\" aria-live=\"polite\"\n                [ngClass]=\"{'ui-growl-message-info':msg.severity == 'info','ui-growl-message-warn':msg.severity == 'warn',\n                    'ui-growl-message-error':msg.severity == 'error','ui-growl-message-success':msg.severity == 'success'}\">\n                <div class=\"ui-growl-item\">\n                     <div class=\"ui-growl-icon-close fa fa-close\" (click)=\"remove(msg,msgel)\"></div>\n                     <span class=\"ui-growl-image fa fa-2x\"\n                        [ngClass]=\"{'fa-info-circle':msg.severity == 'info','fa-warning':msg.severity == 'warn',\n                                'fa-close':msg.severity == 'error','fa-check':msg.severity == 'success'}\"></span>\n                     <div class=\"ui-growl-message\">\n                        <span class=\"ui-growl-title\">{{msg.summary}}</span>\n                        <p [innerHTML]=\"msg.detail\"></p>\n                     </div>\n                     <div style=\"clear: both;\"></div>\n                </div>\n            </div>\n        </div>\n    ",
             providers: [domhandler_1.DomHandler]
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, domhandler_1.DomHandler, core_1.IterableDiffers])
@@ -75234,11 +71598,7 @@ exports.GrowlModule = GrowlModule;
 //# sourceMappingURL=growl.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 696 */
-=======
-/* 692 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75330,7 +71690,7 @@ var Inplace = (function () {
     Inplace = __decorate([
         core_1.Component({
             selector: 'p-inplace',
-            template: "\n        <div [ngClass]=\"'ui-inplace ui-widget'\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-inplace-display\" (click)=\"activate($event)\"\n                [ngClass]=\"{'ui-state-disabled':disabled}\" *ngIf=\"!active\">\n                <ng-content select=\"[pInplaceDisplay]\"></ng-content>\n            </div>\n            <div class=\"ui-inplace-content\" *ngIf=\"active\">\n                <ng-content select=\"[pInplaceContent]\"></ng-content>\n                <button type=\"button\" icon=\"fa-close\" pButton (click)=\"deactivate($event)\" *ngIf=\"closable\"></button>\n            </div>\n        </div>\n    "
+            template: "\n        <div [ngClass]=\"'ui-inplace ui-widget'\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-inplace-display\" (mouseenter)=\"hover=true\" (mouseleave)=\"hover=false\" (click)=\"activate($event)\"\n                [ngClass]=\"{'ui-state-hover':hover&&!disabled,'ui-state-disabled':disabled}\" *ngIf=\"!active\">\n                <ng-content select=\"[pInplaceDisplay]\"></ng-content>\n            </div>\n            <div class=\"ui-inplace-content\" *ngIf=\"active\">\n                <ng-content select=\"[pInplaceContent]\"></ng-content>\n                <button type=\"button\" icon=\"fa-close\" pButton (click)=\"deactivate($event)\" *ngIf=\"closable\"></button>\n            </div>\n        </div>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], Inplace);
@@ -75354,11 +71714,7 @@ exports.InplaceModule = InplaceModule;
 //# sourceMappingURL=inplace.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 697 */
-=======
-/* 693 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75471,19 +71827,19 @@ var InputMask = (function () {
         var _this = this;
         this.value = value;
         if (this.input) {
-            if (this.value == undefined || this.value == null) {
+            if (this.value == undefined || this.value == null || this.len == this.value.length) {
                 this.input.value = '';
             }
             else {
                 this.input.value = this.value;
                 this.checkVal();
             }
-            this.updateFilledState();
             setTimeout(function () {
                 _this.writeBuffer();
                 _this.checkVal();
             }, 10);
         }
+        this.updateFilledState();
     };
     InputMask.prototype.registerOnChange = function (fn) {
         this.onModelChange = fn;
@@ -75656,7 +72012,6 @@ var InputMask = (function () {
         }
     };
     InputMask.prototype.onKeyPress = function (e) {
-        var _this = this;
         if (this.readonly) {
             return;
         }
@@ -75680,7 +72035,7 @@ var InputMask = (function () {
                     if (/android/i.test(this.domHandler.getUserAgent())) {
                         //Path for CSP Violation on FireFox OS 1.1
                         var proxy = function () {
-                            _this.caret(next);
+                            this.caret.bind(this, next)();
                         };
                         setTimeout(proxy, 0);
                     }
@@ -75695,7 +72050,6 @@ var InputMask = (function () {
             e.preventDefault();
         }
         this.updateModel(e);
-        this.updateFilledState();
         if (completed) {
             this.onComplete.emit();
         }
@@ -75783,6 +72137,7 @@ var InputMask = (function () {
             else {
                 _this.caret(pos);
             }
+            _this.updateFilledState();
         }, 10);
     };
     InputMask.prototype.onInput = function (event) {
@@ -75915,11 +72270,7 @@ exports.InputMaskModule = InputMaskModule;
 //# sourceMappingURL=inputmask.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 698 */
-=======
-/* 694 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76069,17 +72420,13 @@ var InputSwitch = (function () {
         __metadata('design:type', String)
     ], InputSwitch.prototype, "styleClass", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], InputSwitch.prototype, "tabindex", void 0);
-    __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
     ], InputSwitch.prototype, "onChange", void 0);
     InputSwitch = __decorate([
         core_1.Component({
             selector: 'p-inputSwitch',
-            template: "\n        <div [ngClass]=\"{'ui-inputswitch ui-widget ui-widget-content ui-corner-all': true,\n            'ui-state-disabled': disabled,'ui-inputswitch-checked':checked}\" (click)=\"toggle($event, in)\"\n            [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-inputswitch-off\">\n                <span class=\"ui-inputswitch-offlabel\">{{offLabel}}</span>\n            </div>\n            <div class=\"ui-inputswitch-on\">\n                <span class=\"ui-inputswitch-onlabel\">{{onLabel}}</span>\n            </div>\n            <div [ngClass]=\"{'ui-inputswitch-handle ui-state-default':true, 'ui-state-focus':focused}\"></div>\n            <div class=\"ui-helper-hidden-accessible\">\n                <input #in type=\"checkbox\" (focus)=\"onFocus($event)\" (blur)=\"onBlur($event)\" readonly=\"readonly\" [attr.tabindex]=\"tabindex\"/>\n            </div>\n        </div>\n    ",
+            template: "\n        <div [ngClass]=\"{'ui-inputswitch ui-widget ui-widget-content ui-corner-all': true,\n            'ui-state-disabled': disabled,'ui-inputswitch-checked':checked}\" (click)=\"toggle($event, in)\"\n            [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-inputswitch-off\">\n                <span class=\"ui-inputswitch-offlabel\">{{offLabel}}</span>\n            </div>\n            <div class=\"ui-inputswitch-on\">\n                <span class=\"ui-inputswitch-onlabel\">{{onLabel}}</span>\n            </div>\n            <div [ngClass]=\"{'ui-inputswitch-handle ui-state-default':true, 'ui-state-focus':focused}\"></div>\n            <div class=\"ui-helper-hidden-accessible\">\n                <input #in type=\"checkbox\" (focus)=\"onFocus($event)\" (blur)=\"onBlur($event)\" readonly=\"readonly\"/>\n            </div>\n        </div>\n    ",
             providers: [exports.INPUTSWITCH_VALUE_ACCESSOR, domhandler_1.DomHandler]
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, domhandler_1.DomHandler])
@@ -76104,11 +72451,7 @@ exports.InputSwitchModule = InputSwitchModule;
 //# sourceMappingURL=inputswitch.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 699 */
-=======
-/* 695 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76132,12 +72475,20 @@ var InputTextarea = (function () {
         this.rowsDefault = this.rows;
         this.colsDefault = this.cols;
     };
+    InputTextarea.prototype.onMouseover = function (e) {
+        this.hover = true;
+    };
+    InputTextarea.prototype.onMouseout = function (e) {
+        this.hover = false;
+    };
     InputTextarea.prototype.onFocus = function (e) {
+        this.focus = true;
         if (this.autoResize) {
             this.resize();
         }
     };
     InputTextarea.prototype.onBlur = function (e) {
+        this.focus = false;
         if (this.autoResize) {
             this.resize();
         }
@@ -76154,6 +72505,13 @@ var InputTextarea = (function () {
         }
         this.rows = (linesCount >= this.rowsDefault) ? (linesCount + 1) : this.rowsDefault;
     };
+    Object.defineProperty(InputTextarea.prototype, "disabled", {
+        get: function () {
+            return this.el.nativeElement.disabled;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(InputTextarea.prototype, "filled", {
         get: function () {
             return this.el.nativeElement.value != '';
@@ -76173,6 +72531,18 @@ var InputTextarea = (function () {
         core_1.Input(), 
         __metadata('design:type', Number)
     ], InputTextarea.prototype, "cols", void 0);
+    __decorate([
+        core_1.HostListener('mouseover', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Object]), 
+        __metadata('design:returntype', void 0)
+    ], InputTextarea.prototype, "onMouseover", null);
+    __decorate([
+        core_1.HostListener('mouseout', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Object]), 
+        __metadata('design:returntype', void 0)
+    ], InputTextarea.prototype, "onMouseout", null);
     __decorate([
         core_1.HostListener('focus', ['$event']), 
         __metadata('design:type', Function), 
@@ -76199,6 +72569,9 @@ var InputTextarea = (function () {
                 '[class.ui-corner-all]': 'true',
                 '[class.ui-state-default]': 'true',
                 '[class.ui-widget]': 'true',
+                '[class.ui-state-hover]': 'hover',
+                '[class.ui-state-focus]': 'focus',
+                '[class.ui-state-disabled]': 'disabled',
                 '[class.ui-state-filled]': 'filled',
                 '[attr.rows]': 'rows',
                 '[attr.cols]': 'cols'
@@ -76226,11 +72599,7 @@ exports.InputTextareaModule = InputTextareaModule;
 //# sourceMappingURL=inputtextarea.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 700 */
-=======
-/* 696 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76268,12 +72637,6 @@ var Lightbox = (function () {
     Lightbox.prototype.ngAfterViewInit = function () {
         var _this = this;
         this.panel = this.domHandler.findSingle(this.el.nativeElement, '.ui-lightbox ');
-        if (this.appendTo) {
-            if (this.appendTo === 'body')
-                document.body.appendChild(this.panel);
-            else
-                this.domHandler.appendChild(this.panel, this.appendTo);
-        }
         this.documentClickListener = this.renderer.listenGlobal('body', 'click', function (event) {
             if (!_this.preventDocumentClickListener && _this.visible) {
                 _this.hide(event);
@@ -76383,12 +72746,7 @@ var Lightbox = (function () {
         configurable: true
     });
     Lightbox.prototype.ngOnDestroy = function () {
-        if (this.documentClickListener) {
-            this.documentClickListener();
-        }
-        if (this.appendTo) {
-            this.el.nativeElement.appendChild(this.panel);
-        }
+        this.documentClickListener();
     };
     __decorate([
         core_1.Input(), 
@@ -76406,10 +72764,6 @@ var Lightbox = (function () {
         core_1.Input(), 
         __metadata('design:type', String)
     ], Lightbox.prototype, "styleClass", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], Lightbox.prototype, "appendTo", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', String)
@@ -76446,11 +72800,7 @@ exports.LightboxModule = LightboxModule;
 //# sourceMappingURL=lightbox.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 701 */
-=======
-/* 697 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76466,7 +72816,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
-var shared_1 = __webpack_require__(11);
+var shared_1 = __webpack_require__(9);
 var domhandler_1 = __webpack_require__(4);
 var forms_1 = __webpack_require__(14);
 exports.LISTBOX_VALUE_ACCESSOR = {
@@ -76485,19 +72835,6 @@ var Listbox = (function () {
         this.onModelChange = function () { };
         this.onModelTouched = function () { };
     }
-    Listbox.prototype.ngAfterContentInit = function () {
-        var _this = this;
-        this.templates.forEach(function (item) {
-            switch (item.getType()) {
-                case 'item':
-                    _this.itemTemplate = item.template;
-                    break;
-                default:
-                    _this.itemTemplate = item.template;
-                    break;
-            }
-        });
-    };
     Listbox.prototype.writeValue = function (value) {
         this.value = value;
     };
@@ -76640,7 +72977,7 @@ var Listbox = (function () {
             var items = [];
             for (var i = 0; i < this.options.length; i++) {
                 var option = this.options[i];
-                if (option.label.toLowerCase().includes(this.filterValue.toLowerCase())) {
+                if (option.label.toLowerCase().startsWith(this.filterValue.toLowerCase())) {
                     items.push(option);
                 }
             }
@@ -76668,7 +73005,7 @@ var Listbox = (function () {
             value: this.value
         });
     };
-    Listbox.prototype.onCheckboxClick = function (event, option) {
+    Listbox.prototype.onCheckboxClick = function (option) {
         this.checkboxClick = true;
         var selected = this.isSelected(option);
         if (selected) {
@@ -76721,13 +73058,13 @@ var Listbox = (function () {
         __metadata('design:type', core_1.EventEmitter)
     ], Listbox.prototype, "onDblClick", void 0);
     __decorate([
-        core_1.ContentChildren(shared_1.PrimeTemplate), 
-        __metadata('design:type', core_1.QueryList)
-    ], Listbox.prototype, "templates", void 0);
+        core_1.ContentChild(core_1.TemplateRef), 
+        __metadata('design:type', core_1.TemplateRef)
+    ], Listbox.prototype, "itemTemplate", void 0);
     Listbox = __decorate([
         core_1.Component({
             selector: 'p-listbox',
-            template: "\n        <div [ngClass]=\"{'ui-listbox ui-inputtext ui-widget ui-widget-content ui-corner-all':true,'ui-state-disabled':disabled}\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-widget-header ui-corner-all ui-listbox-header ui-helper-clearfix\" *ngIf=\"(checkbox && multiple) || filter\">\n                <div class=\"ui-chkbox ui-widget\" *ngIf=\"checkbox && multiple\">\n                    <div class=\"ui-helper-hidden-accessible\">\n                        <input #cb type=\"checkbox\" readonly=\"readonly\" [checked]=\"isAllChecked()\">\n                    </div>\n                    <div class=\"ui-chkbox-box ui-widget ui-corner-all ui-state-default\" [ngClass]=\"{'ui-state-active':isAllChecked()}\" (click)=\"toggleAll($event,cb)\">\n                        <span class=\"ui-chkbox-icon ui-c\" [ngClass]=\"{'fa fa-check':isAllChecked()}\"></span>\n                    </div>\n                </div>\n                <div class=\"ui-listbox-filter-container\" *ngIf=\"filter\">\n                    <input type=\"text\" role=\"textbox\" (input)=\"onFilter($event)\" class=\"ui-inputtext ui-widget ui-state-default ui-corner-all\">\n                    <span class=\"fa fa-search\"></span>\n                </div>\n            </div>\n            <ul class=\"ui-listbox-list\">\n                <li *ngFor=\"let option of options\" [style.display]=\"isItemVisible(option) ? 'block' : 'none'\"\n                    [ngClass]=\"{'ui-listbox-item ui-corner-all':true,'ui-state-highlight':isSelected(option)}\"\n                    (click)=\"onOptionClick($event,option)\" (dblclick)=\"onDoubleClick($event,option)\">\n                    <div class=\"ui-chkbox ui-widget\" *ngIf=\"checkbox && multiple\" (click)=\"onCheckboxClick($event,option)\">\n                        <div class=\"ui-helper-hidden-accessible\">\n                            <input type=\"checkbox\" [checked]=\"isSelected(option)\">\n                        </div>\n                        <div class=\"ui-chkbox-box ui-widget ui-corner-all ui-state-default\" [ngClass]=\"{'ui-state-active':isSelected(option)}\">\n                            <span class=\"ui-chkbox-icon ui-c\" [ngClass]=\"{'fa fa-check':isSelected(option)}\"></span>\n                        </div>\n                    </div>\n                    <span *ngIf=\"!itemTemplate\">{{option.label}}</span>\n                    <template *ngIf=\"itemTemplate\" [pTemplateWrapper]=\"itemTemplate\" [item]=\"option\"></template>\n                </li>\n            </ul>\n        </div>\n    ",
+            template: "\n        <div [ngClass]=\"{'ui-listbox ui-inputtext ui-widget ui-widget-content ui-corner-all':true,'ui-state-disabled':disabled}\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-widget-header ui-corner-all ui-listbox-header ui-helper-clearfix\" *ngIf=\"(checkbox && multiple) || filter\">\n                <div class=\"ui-chkbox ui-widget\" *ngIf=\"checkbox && multiple\">\n                    <div class=\"ui-helper-hidden-accessible\">\n                        <input #cb type=\"checkbox\" readonly=\"readonly\" [checked]=\"isAllChecked()\">\n                    </div>\n                    <div class=\"ui-chkbox-box ui-widget ui-corner-all ui-state-default\" [ngClass]=\"{'ui-state-hover':hoverToggleAll, 'ui-state-active':isAllChecked()}\"\n                        (mouseenter)=\"hoverToggleAll=true\" (mouseleave)=\"hoverToggleAll=false\" (click)=\"toggleAll($event,cb)\">\n                        <span class=\"ui-chkbox-icon ui-c\" [ngClass]=\"{'fa fa-check':isAllChecked()}\"></span>\n                    </div>\n                </div>\n                <div class=\"ui-listbox-filter-container\" *ngIf=\"filter\">\n                    <input type=\"text\" role=\"textbox\" (input)=\"onFilter($event)\" class=\"ui-inputtext ui-widget ui-state-default ui-corner-all\">\n                    <span class=\"fa fa-search\"></span>\n                </div>\n            </div>\n            <ul class=\"ui-listbox-list\">\n                <li #item *ngFor=\"let option of options\" [style.display]=\"isItemVisible(option) ? 'block' : 'none'\"\n                    [ngClass]=\"{'ui-listbox-item ui-corner-all':true,'ui-state-hover':(hoveredItem==item),'ui-state-highlight':isSelected(option)}\"\n                    (mouseenter)=\"hoveredItem=item\" (mouseleave)=\"hoveredItem=null\" (click)=\"onOptionClick($event,option)\" (dblclick)=\"onDoubleClick($event,option)\">\n                    <div class=\"ui-chkbox ui-widget\" *ngIf=\"checkbox && multiple\" (click)=\"onCheckboxClick(option)\">\n                        <div class=\"ui-helper-hidden-accessible\">\n                            <input type=\"checkbox\" [checked]=\"isSelected(option)\">\n                        </div>\n                        <div class=\"ui-chkbox-box ui-widget ui-corner-all ui-state-default\" [ngClass]=\"{'ui-state-active':isSelected(option)}\">\n                            <span class=\"ui-chkbox-icon ui-c\" [ngClass]=\"{'fa fa-check':isSelected(option)}\"></span>\n                        </div>\n                    </div>\n                    <span *ngIf=\"!itemTemplate\">{{option.label}}</span>\n                    <template *ngIf=\"itemTemplate\" [pTemplateWrapper]=\"itemTemplate\" [item]=\"option\"></template>\n                </li>\n            </ul>\n        </div>\n    ",
             providers: [domhandler_1.DomHandler, exports.LISTBOX_VALUE_ACCESSOR]
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, domhandler_1.DomHandler])
@@ -76752,11 +73089,7 @@ exports.ListboxModule = ListboxModule;
 //# sourceMappingURL=listbox.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 702 */
-=======
-/* 698 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76773,7 +73106,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
 var domhandler_1 = __webpack_require__(4);
-var router_1 = __webpack_require__(21);
+var router_1 = __webpack_require__(28);
 var MegaMenu = (function () {
     function MegaMenu(el, domHandler, renderer, router) {
         this.el = el;
@@ -76787,6 +73120,7 @@ var MegaMenu = (function () {
             return;
         }
         this.activeItem = item;
+        this.activeLink = item.children[0];
         var submenu = item.children[0].nextElementSibling;
         if (submenu) {
             submenu.style.zIndex = ++domhandler_1.DomHandler.zindex;
@@ -76802,6 +73136,7 @@ var MegaMenu = (function () {
     };
     MegaMenu.prototype.onItemMouseLeave = function (event, link) {
         this.activeItem = null;
+        this.activeLink = null;
     };
     MegaMenu.prototype.itemClick = function (event, item) {
         if (item.disabled) {
@@ -76825,6 +73160,7 @@ var MegaMenu = (function () {
             this.router.navigate(item.routerLink);
         }
         this.activeItem = null;
+        this.activeLink = null;
     };
     MegaMenu.prototype.unsubscribe = function (item) {
         if (item.eventEmitter) {
@@ -76886,7 +73222,7 @@ var MegaMenu = (function () {
     MegaMenu = __decorate([
         core_1.Component({
             selector: 'p-megaMenu',
-            template: "\n        <div [class]=\"styleClass\" [ngStyle]=\"style\"\n            [ngClass]=\"{'ui-menu ui-menubar ui-megamenu ui-widget ui-widget-content ui-corner-all ui-helper-clearfix':true,'ui-megamenu-vertical': orientation == 'vertical'}\">\n            <ul class=\"ui-menu-list ui-helper-reset ui-menubar-root-list\">\n                <template ngFor let-category [ngForOf]=\"model\">\n                    <li #item [ngClass]=\"{'ui-menuitem ui-widget ui-corner-all':true,'ui-menu-parent':category.items,'ui-menuitem-active':item==activeItem}\"\n                        (mouseenter)=\"onItemMouseEnter($event, item, category)\" (mouseleave)=\"onItemMouseLeave($event, item)\">\n                        <a class=\"ui-menuitem-link ui-corner-all ui-submenu-link\" [ngClass]=\"{'ui-state-disabled':category.disabled}\">\n                            <span class=\"ui-submenu-icon fa fa-fw\" [ngClass]=\"{'fa-caret-down':orientation=='horizontal','fa-caret-right':orientation=='vertical'}\"></span>\n                            <span class=\"ui-menuitem-icon fa fa-fw\" [ngClass]=\"category.icon\"></span>\n                            {{category.label}}\n                        </a>\n                        <div class=\"ui-megamenu-panel ui-widget-content ui-menu-list ui-corner-all ui-helper-clearfix ui-menu-child ui-shadow\">\n                            <div class=\"ui-g\">\n                                <template ngFor let-column [ngForOf]=\"category.items\">\n                                    <div [class]=\"getColumnClass(category)\">\n                                        <template ngFor let-submenu [ngForOf]=\"column\">\n                                            <ul class=\"ui-menu-list ui-helper-reset\">\n                                                <li class=\"ui-widget-header ui-corner-all\"><h3>{{submenu.label}}</h3></li>\n                                                <li *ngFor=\"let item of submenu.items\" class=\"ui-menuitem ui-widget ui-corner-all\">\n                                                    <a [href]=\"item.url||'#'\" class=\"ui-menuitem-link ui-corner-all\" \n                                                        [ngClass]=\"{'ui-state-disabled':item.disabled}\" (click)=\"itemClick($event, item)\">\n                                                        <span class=\"ui-menuitem-icon fa fa-fw\" *ngIf=\"item.icon\" [ngClass]=\"item.icon\"></span>\n                                                        <span class=\"ui-menuitem-text\">{{item.label}}</span>\n                                                    </a>\n                                                </li>\n                                            </ul>\n                                        </template>\n                                    </div>\n                                </template>\n                            </div>\n                        </div>\n                    </li>\n                </template>\n            </ul>\n        </div>\n    ",
+            template: "\n        <div [class]=\"styleClass\" [ngStyle]=\"style\"\n            [ngClass]=\"{'ui-menu ui-menubar ui-megamenu ui-widget ui-widget-content ui-corner-all ui-helper-clearfix':true,'ui-megamenu-vertical': orientation == 'vertical'}\">\n            <ul class=\"ui-menu-list ui-helper-reset ui-menubar-root-list\">\n                <template ngFor let-category [ngForOf]=\"model\">\n                    <li #item [ngClass]=\"{'ui-menuitem ui-widget ui-corner-all':true,'ui-menu-parent':category.items,'ui-menuitem-active':item==activeItem}\"\n                        (mouseenter)=\"onItemMouseEnter($event, item, category)\" (mouseleave)=\"onItemMouseLeave($event, item)\">\n                        <a #link class=\"ui-menuitem-link ui-corner-all ui-submenu-link\" [ngClass]=\"{'ui-state-hover':link==activeLink&&!category.disabled,'ui-state-disabled':category.disabled}\">\n                            <span class=\"ui-submenu-icon fa fa-fw\" [ngClass]=\"{'fa-caret-down':orientation=='horizontal','fa-caret-right':orientation=='vertical'}\"></span>\n                            <span class=\"ui-menuitem-icon fa fa-fw\" [ngClass]=\"category.icon\"></span>\n                            {{category.label}}\n                        </a>\n                        <div class=\"ui-megamenu-panel ui-widget-content ui-menu-list ui-corner-all ui-helper-clearfix ui-menu-child ui-shadow\">\n                            <div class=\"ui-g\">\n                                <template ngFor let-column [ngForOf]=\"category.items\">\n                                    <div [class]=\"getColumnClass(category)\">\n                                        <template ngFor let-submenu [ngForOf]=\"column\">\n                                            <ul class=\"ui-menu-list ui-helper-reset\">\n                                                <li class=\"ui-widget-header ui-corner-all\"><h3>{{submenu.label}}</h3></li>\n                                                <li *ngFor=\"let item of submenu.items\" class=\"ui-menuitem ui-widget ui-corner-all\">\n                                                    <a #link [href]=\"item.url||'#'\" class=\"ui-menuitem-link ui-corner-all\" \n                                                        [ngClass]=\"{'ui-state-hover':link==hoveredItem&&!item.disabled,'ui-state-disabled':item.disabled}\"\n                                                        (mouseenter)=\"hoveredItem=$event.target\" (mouseleave)=\"hoveredItem=null\" (click)=\"itemClick($event, item)\">\n                                                        <span class=\"ui-menuitem-icon fa fa-fw\" *ngIf=\"item.icon\" [ngClass]=\"item.icon\"></span>\n                                                        <span class=\"ui-menuitem-text\">{{item.label}}</span>\n                                                    </a>\n                                                </li>\n                                            </ul>\n                                        </template>\n                                    </div>\n                                </template>\n                            </div>\n                        </div>\n                    </li>\n                </template>\n            </ul>\n        </div>\n    ",
             providers: [domhandler_1.DomHandler]
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, domhandler_1.DomHandler, core_1.Renderer, router_1.Router])
@@ -76911,11 +73247,7 @@ exports.MegaMenuModule = MegaMenuModule;
 //# sourceMappingURL=megamenu.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 703 */
-=======
-/* 699 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76932,7 +73264,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
 var domhandler_1 = __webpack_require__(4);
-var router_1 = __webpack_require__(21);
+var router_1 = __webpack_require__(28);
 var Menu = (function () {
     function Menu(el, domHandler, renderer, router) {
         this.el = el;
@@ -76965,14 +73297,11 @@ var Menu = (function () {
             this.show(event);
         this.preventDocumentDefault = true;
     };
-    Menu.prototype.onResize = function (event) {
-        if (this.onResizeTarget && this.container.offsetParent) {
-            this.domHandler.absolutePosition(this.container, this.onResizeTarget);
-        }
-    };
     Menu.prototype.show = function (event) {
-        var target = event.currentTarget;
-        this.onResizeTarget = event.currentTarget;
+        var target = event.target;
+        if (target.parentElement.nodeName == 'BUTTON') {
+            target = target.parentElement;
+        }
         this.container.style.display = 'block';
         this.domHandler.absolutePosition(this.container, target);
         this.domHandler.fadeIn(this.container, 250);
@@ -77007,9 +73336,7 @@ var Menu = (function () {
     };
     Menu.prototype.ngOnDestroy = function () {
         if (this.popup) {
-            if (this.documentClickListener) {
-                this.documentClickListener();
-            }
+            this.documentClickListener();
             if (this.appendTo) {
                 this.el.nativeElement.appendChild(this.container);
             }
@@ -77070,9 +73397,8 @@ var Menu = (function () {
     Menu = __decorate([
         core_1.Component({
             selector: 'p-menu',
-            template: "\n        <div #container [ngClass]=\"{'ui-menu ui-widget ui-widget-content ui-corner-all ui-helper-clearfix':true,'ui-menu-dynamic ui-shadow':popup}\" \n            [class]=\"styleClass\" [ngStyle]=\"style\" (click)=\"preventDocumentDefault=true\">\n            <ul class=\"ui-menu-list ui-helper-reset\">\n                <template ngFor let-submenu [ngForOf]=\"model\" *ngIf=\"hasSubMenu()\">\n                    <li class=\"ui-widget-header ui-corner-all\"><h3>{{submenu.label}}</h3></li>\n                    <li *ngFor=\"let item of submenu.items\" class=\"ui-menuitem ui-widget ui-corner-all\">\n                        <a [href]=\"item.url||'#'\" class=\"ui-menuitem-link ui-corner-all\"\n                            [ngClass]=\"{'ui-state-disabled':item.disabled}\" (click)=\"itemClick($event, item)\">\n                            <span class=\"ui-menuitem-icon fa fa-fw\" *ngIf=\"item.icon\" [ngClass]=\"item.icon\"></span>\n                            <span class=\"ui-menuitem-text\">{{item.label}}</span>\n                        </a>\n                    </li>\n                </template>\n                <template ngFor let-item [ngForOf]=\"model\" *ngIf=\"!hasSubMenu()\">\n                    <li class=\"ui-menuitem ui-widget ui-corner-all\">\n                        <a [href]=\"item.url||'#'\" class=\"ui-menuitem-link ui-corner-all\" \n                            [ngClass]=\"{'ui-state-disabled':item.disabled}\" (click)=\"itemClick($event, item)\">\n                            <span class=\"ui-menuitem-icon fa fa-fw\" *ngIf=\"item.icon\" [ngClass]=\"item.icon\"></span>\n                            <span class=\"ui-menuitem-text\">{{item.label}}</span>\n                        </a>\n                    </li>\n                </template>\n            </ul>\n        </div>\n    ",
-            providers: [domhandler_1.DomHandler],
-            host: { '(window:resize)': 'onResize($event)' }
+            template: "\n        <div #container [ngClass]=\"{'ui-menu ui-widget ui-widget-content ui-corner-all ui-helper-clearfix':true,'ui-menu-dynamic ui-shadow':popup}\" \n            [class]=\"styleClass\" [ngStyle]=\"style\" (click)=\"preventDocumentDefault=true\">\n            <ul class=\"ui-menu-list ui-helper-reset\">\n                <template ngFor let-submenu [ngForOf]=\"model\" *ngIf=\"hasSubMenu()\">\n                    <li class=\"ui-widget-header ui-corner-all\"><h3>{{submenu.label}}</h3></li>\n                    <li *ngFor=\"let item of submenu.items\" class=\"ui-menuitem ui-widget ui-corner-all\">\n                        <a #link [href]=\"item.url||'#'\" class=\"ui-menuitem-link ui-corner-all\" \n                            [ngClass]=\"{'ui-state-hover':link==hoveredItem&&!item.disabled,'ui-state-disabled':item.disabled}\"\n                            (mouseenter)=\"hoveredItem=$event.target\" (mouseleave)=\"hoveredItem=null\" (click)=\"itemClick($event, item)\">\n                            <span class=\"ui-menuitem-icon fa fa-fw\" *ngIf=\"item.icon\" [ngClass]=\"item.icon\"></span>\n                            <span class=\"ui-menuitem-text\">{{item.label}}</span>\n                        </a>\n                    </li>\n                </template>\n                <template ngFor let-item [ngForOf]=\"model\" *ngIf=\"!hasSubMenu()\">\n                    <li class=\"ui-menuitem ui-widget ui-corner-all\">\n                        <a #link [href]=\"item.url||'#'\" class=\"ui-menuitem-link ui-corner-all\" \n                            [ngClass]=\"{'ui-state-hover':link==hoveredItem&&!item.disabled,'ui-state-disabled':item.disabled}\"\n                            (mouseenter)=\"hoveredItem=$event.target\" (mouseleave)=\"hoveredItem=null\" (click)=\"itemClick($event, item)\">\n                            <span class=\"ui-menuitem-icon fa fa-fw\" *ngIf=\"item.icon\" [ngClass]=\"item.icon\"></span>\n                            <span class=\"ui-menuitem-text\">{{item.label}}</span>\n                        </a>\n                    </li>\n                </template>\n            </ul>\n        </div>\n    ",
+            providers: [domhandler_1.DomHandler]
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, domhandler_1.DomHandler, core_1.Renderer, router_1.Router])
     ], Menu);
@@ -77096,11 +73422,7 @@ exports.MenuModule = MenuModule;
 //# sourceMappingURL=menu.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 704 */
-=======
-/* 700 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77117,7 +73439,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
 var domhandler_1 = __webpack_require__(4);
-var router_1 = __webpack_require__(21);
+var router_1 = __webpack_require__(28);
 var MenubarSub = (function () {
     function MenubarSub(domHandler, router) {
         this.domHandler = domHandler;
@@ -77128,6 +73450,7 @@ var MenubarSub = (function () {
             return;
         }
         this.activeItem = item;
+        this.activeLink = item.children[0];
         var nextElement = item.children[0].nextElementSibling;
         if (nextElement) {
             var sublist = nextElement.children[0];
@@ -77144,6 +73467,7 @@ var MenubarSub = (function () {
     };
     MenubarSub.prototype.onItemMouseLeave = function (event, link) {
         this.activeItem = null;
+        this.activeLink = null;
     };
     MenubarSub.prototype.itemClick = function (event, item) {
         if (item.disabled) {
@@ -77167,9 +73491,11 @@ var MenubarSub = (function () {
             this.router.navigate(item.routerLink);
         }
         this.activeItem = null;
+        this.activeLink = null;
     };
     MenubarSub.prototype.listClick = function (event) {
         this.activeItem = null;
+        this.activeLink = null;
     };
     __decorate([
         core_1.Input(), 
@@ -77182,7 +73508,7 @@ var MenubarSub = (function () {
     MenubarSub = __decorate([
         core_1.Component({
             selector: 'p-menubarSub',
-            template: "\n        <ul [ngClass]=\"{'ui-menubar-root-list ui-helper-clearfix':root, 'ui-widget-content ui-corner-all ui-helper-clearfix ui-menu-child ui-shadow':!root}\" class=\"ui-menu-list\"\n            (click)=\"listClick($event)\">\n            <template ngFor let-child [ngForOf]=\"(root ? item : item.items)\">\n                <li #item [ngClass]=\"{'ui-menuitem ui-widget ui-corner-all':true,'ui-menu-parent':child.items,'ui-menuitem-active':item==activeItem}\"\n                    (mouseenter)=\"onItemMouseEnter($event,item,child)\" (mouseleave)=\"onItemMouseLeave($event,item)\">\n                    <a #link [href]=\"child.url||'#'\" class=\"ui-menuitem-link ui-corner-all\" \n                        [ngClass]=\"{'ui-state-disabled':child.disabled}\" (click)=\"itemClick($event, child)\">\n                        <span class=\"ui-submenu-icon fa fa-fw\" *ngIf=\"child.items\" [ngClass]=\"{'fa-caret-down':root,'fa-caret-right':!root}\"></span>\n                        <span class=\"ui-menuitem-icon fa fa-fw\" *ngIf=\"child.icon\" [ngClass]=\"child.icon\"></span>\n                        <span class=\"ui-menuitem-text\">{{child.label}}</span>\n                    </a>\n                    <p-menubarSub class=\"ui-submenu\" [item]=\"child\" *ngIf=\"child.items\"></p-menubarSub>\n                </li>\n            </template>\n        </ul>\n    ",
+            template: "\n        <ul [ngClass]=\"{'ui-menubar-root-list ui-helper-clearfix':root, 'ui-widget-content ui-corner-all ui-helper-clearfix ui-menu-child ui-shadow':!root}\" class=\"ui-menu-list\"\n            (click)=\"listClick($event)\">\n            <template ngFor let-child [ngForOf]=\"(root ? item : item.items)\">\n                <li #item [ngClass]=\"{'ui-menuitem ui-widget ui-corner-all':true,'ui-menu-parent':child.items,'ui-menuitem-active':item==activeItem}\"\n                    (mouseenter)=\"onItemMouseEnter($event,item,child)\" (mouseleave)=\"onItemMouseLeave($event,item)\">\n                    <a #link [href]=\"child.url||'#'\" class=\"ui-menuitem-link ui-corner-all\" \n                        [ngClass]=\"{'ui-state-hover':link==activeLink&&!child.disabled,'ui-state-disabled':child.disabled}\" (click)=\"itemClick($event, child)\">\n                        <span class=\"ui-submenu-icon fa fa-fw\" *ngIf=\"child.items\" [ngClass]=\"{'fa-caret-down':root,'fa-caret-right':!root}\"></span>\n                        <span class=\"ui-menuitem-icon fa fa-fw\" *ngIf=\"child.icon\" [ngClass]=\"child.icon\"></span>\n                        <span class=\"ui-menuitem-text\">{{child.label}}</span>\n                    </a>\n                    <p-menubarSub class=\"ui-submenu\" [item]=\"child\" *ngIf=\"child.items\"></p-menubarSub>\n                </li>\n            </template>\n        </ul>\n    ",
             providers: [domhandler_1.DomHandler]
         }), 
         __metadata('design:paramtypes', [domhandler_1.DomHandler, router_1.Router])
@@ -77255,11 +73581,7 @@ exports.MenubarModule = MenubarModule;
 //# sourceMappingURL=menubar.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 705 */
-=======
-/* 701 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77306,14 +73628,8 @@ var MultiSelect = (function () {
         });
     };
     MultiSelect.prototype.ngAfterViewInit = function () {
-        this.container = this.containerViewChild.nativeElement;
-        this.panel = this.panelViewChild.nativeElement;
-        if (this.appendTo) {
-            if (this.appendTo === 'body')
-                document.body.appendChild(this.panel);
-            else
-                this.domHandler.appendChild(this.panel, this.appendTo);
-        }
+        this.container = this.el.nativeElement.children[0];
+        this.panel = this.domHandler.findSingle(this.el.nativeElement, 'div.ui-multiselect-panel');
         if (this.overlayVisible) {
             this.show();
         }
@@ -77332,7 +73648,6 @@ var MultiSelect = (function () {
     };
     MultiSelect.prototype.writeValue = function (value) {
         this.value = value;
-        this.updateLabel();
     };
     MultiSelect.prototype.registerOnChange = function (fn) {
         this.onModelChange = fn;
@@ -77395,11 +73710,8 @@ var MultiSelect = (function () {
     };
     MultiSelect.prototype.show = function () {
         this.overlayVisible = true;
-        this.panel.style.zIndex = String(++domhandler_1.DomHandler.zindex);
-        if (this.appendTo)
-            this.domHandler.absolutePosition(this.panel, this.container);
-        else
-            this.domHandler.relativePosition(this.panel, this.container);
+        this.panel.style.zIndex = ++domhandler_1.DomHandler.zindex;
+        this.domHandler.relativePosition(this.panel, this.container);
         this.domHandler.fadeIn(this.panel, 250);
     };
     MultiSelect.prototype.hide = function () {
@@ -77408,6 +73720,14 @@ var MultiSelect = (function () {
     MultiSelect.prototype.close = function (event) {
         this.hide();
         event.preventDefault();
+    };
+    MultiSelect.prototype.onMouseenter = function (event) {
+        if (!this.disabled) {
+            this.hover = true;
+        }
+    };
+    MultiSelect.prototype.onMouseleave = function (event) {
+        this.hover = false;
     };
     MultiSelect.prototype.onMouseclick = function (event, input) {
         if (this.disabled) {
@@ -77485,7 +73805,7 @@ var MultiSelect = (function () {
             var items = [];
             for (var i = 0; i < this.options.length; i++) {
                 var option = this.options[i];
-                if (option.label.toLowerCase().includes(this.filterValue.toLowerCase())) {
+                if (option.label.toLowerCase().startsWith(this.filterValue.toLowerCase())) {
                     items.push(option);
                 }
             }
@@ -77496,12 +73816,7 @@ var MultiSelect = (function () {
         }
     };
     MultiSelect.prototype.ngOnDestroy = function () {
-        if (this.documentClickListener) {
-            this.documentClickListener();
-        }
-        if (this.appendTo) {
-            this.container.appendChild(this.panel);
-        }
+        this.documentClickListener();
     };
     __decorate([
         core_1.Input(), 
@@ -77535,26 +73850,10 @@ var MultiSelect = (function () {
         core_1.Input(), 
         __metadata('design:type', Boolean)
     ], MultiSelect.prototype, "overlayVisible", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], MultiSelect.prototype, "tabindex", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], MultiSelect.prototype, "appendTo", void 0);
-    __decorate([
-        core_1.ViewChild('container'), 
-        __metadata('design:type', core_1.ElementRef)
-    ], MultiSelect.prototype, "containerViewChild", void 0);
-    __decorate([
-        core_1.ViewChild('panel'), 
-        __metadata('design:type', core_1.ElementRef)
-    ], MultiSelect.prototype, "panelViewChild", void 0);
     MultiSelect = __decorate([
         core_1.Component({
             selector: 'p-multiSelect',
-            template: "\n        <div #container [ngClass]=\"{'ui-multiselect ui-widget ui-state-default ui-corner-all':true,'ui-state-focus':focus,'ui-state-disabled': disabled}\" [ngStyle]=\"style\" [class]=\"styleClass\"\n            (click)=\"onMouseclick($event,in)\">\n            <div class=\"ui-helper-hidden-accessible\">\n                <input #in type=\"text\" readonly=\"readonly\" (focus)=\"onFocus($event)\" (blur)=\"onBlur($event)\" [disabled]=\"disabled\" [attr.tabindex]=\"tabindex\">\n            </div>\n            <div class=\"ui-multiselect-label-container\" [title]=\"valuesAsString\">\n                <label class=\"ui-multiselect-label ui-corner-all\">{{valuesAsString}}</label>\n            </div>\n            <div [ngClass]=\"{'ui-multiselect-trigger ui-state-default ui-corner-right':true}\">\n                <span class=\"fa fa-fw fa-caret-down ui-c\"></span>\n            </div>\n            <div #panel class=\"ui-multiselect-panel ui-widget ui-widget-content ui-corner-all ui-shadow\" [style.display]=\"overlayVisible ? 'block' : 'none'\" (click)=\"panelClick=true\">\n                <div class=\"ui-widget-header ui-corner-all ui-multiselect-header ui-helper-clearfix\">\n                    <div class=\"ui-chkbox ui-widget\">\n                        <div class=\"ui-helper-hidden-accessible\">\n                            <input #cb type=\"checkbox\" readonly=\"readonly\" [checked]=\"isAllChecked()\">\n                        </div>\n                        <div class=\"ui-chkbox-box ui-widget ui-corner-all ui-state-default\" (click)=\"toggleAll($event,cb)\">\n                            <span class=\"ui-chkbox-icon ui-c\" [ngClass]=\"{'fa fa-check':isAllChecked()}\"></span>\n                        </div>\n                    </div>\n                    <div class=\"ui-multiselect-filter-container\">\n                        <input type=\"text\" role=\"textbox\" (input)=\"onFilter($event)\"\n                                    class=\"ui-inputtext ui-widget ui-state-default ui-corner-all\">\n                        <span class=\"fa fa-fw fa-search\"></span>\n                    </div>\n                    <a class=\"ui-multiselect-close ui-corner-all\" href=\"#\" (click)=\"close($event)\">\n                        <span class=\"fa fa-close\"></span>\n                    </a>\n                </div>\n                <div class=\"ui-multiselect-items-wrapper\">\n                    <ul class=\"ui-multiselect-items ui-multiselect-list ui-widget-content ui-widget ui-corner-all ui-helper-reset\" [style.max-height]=\"scrollHeight||'auto'\">\n                        <li *ngFor=\"let option of options\" class=\"ui-multiselect-item ui-corner-all\" (click)=\"onItemClick($event,option.value)\" \n                            [style.display]=\"isItemVisible(option) ? 'block' : 'none'\" [ngClass]=\"{'ui-state-highlight':isSelected(option.value)}\">\n                            <div class=\"ui-chkbox ui-widget\">\n                                <div class=\"ui-helper-hidden-accessible\">\n                                    <input type=\"checkbox\" readonly=\"readonly\" [checked]=\"isSelected(option.value)\">\n                                </div>\n                                <div class=\"ui-chkbox-box ui-widget ui-corner-all ui-state-default\" [ngClass]=\"{'ui-state-active':isSelected(option.value)}\">\n                                    <span class=\"ui-chkbox-icon ui-c\" [ngClass]=\"{'fa fa-check':isSelected(option.value)}\"></span>\n                                </div>\n                            </div>\n                            <label>{{option.label}}</label>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    ",
+            template: "\n        <div [ngClass]=\"{'ui-multiselect ui-widget ui-state-default ui-corner-all':true,'ui-state-focus': focus,'ui-state-disabled': disabled}\" [ngStyle]=\"style\" [class]=\"styleClass\"\n            (mouseenter)=\"onMouseenter($event)\" (mouseleave)=\"onMouseleave($event)\" (click)=\"onMouseclick($event,in)\">\n            <div class=\"ui-helper-hidden-accessible\">\n                <input #in type=\"text\" readonly=\"readonly\" (focus)=\"onFocus($event)\" (blur)=\"onBlur($event)\" [disabled]=\"disabled\">\n            </div>\n            <div class=\"ui-multiselect-label-container\" [title]=\"valuesAsString\">\n                <label [ngClass]=\"{'ui-multiselect-label ui-corner-all':true,'ui-state-hover':hover,'ui-state-focus':focus}\">{{valuesAsString}}</label>\n            </div>\n            <div [ngClass]=\"{'ui-multiselect-trigger ui-state-default ui-corner-right':true,'ui-state-hover':hover,'ui-state-focus':focus}\">\n                <span class=\"fa fa-fw fa-caret-down ui-c\"></span>\n            </div>\n            <div class=\"ui-multiselect-panel ui-widget ui-widget-content ui-corner-all ui-shadow\" [style.display]=\"overlayVisible ? 'block' : 'none'\" (click)=\"panelClick=true\">\n                <div class=\"ui-widget-header ui-corner-all ui-multiselect-header ui-helper-clearfix\">\n                    <div class=\"ui-chkbox ui-widget\">\n                        <div class=\"ui-helper-hidden-accessible\">\n                            <input #cb type=\"checkbox\" readonly=\"readonly\" [checked]=\"isAllChecked()\">\n                        </div>\n                        <div class=\"ui-chkbox-box ui-widget ui-corner-all ui-state-default\" [ngClass]=\"{'ui-state-hover':hoverToggleAll}\"\n                            (mouseenter)=\"hoverToggleAll=true\" (mouseleave)=\"hoverToggleAll=false\" (click)=\"toggleAll($event,cb)\">\n                            <span class=\"ui-chkbox-icon ui-c\" [ngClass]=\"{'fa fa-check':isAllChecked()}\"></span>\n                        </div>\n                    </div>\n                    <div class=\"ui-multiselect-filter-container\">\n                        <input type=\"text\" role=\"textbox\" (input)=\"onFilter($event)\"\n                                    class=\"ui-inputtext ui-widget ui-state-default ui-corner-all\">\n                        <span class=\"fa fa-fw fa-search\"></span>\n                    </div>\n                    <a class=\"ui-multiselect-close ui-corner-all\" href=\"#\" (click)=\"close($event)\">\n                        <span class=\"fa fa-close\"></span>\n                    </a>\n                </div>\n                <div class=\"ui-multiselect-items-wrapper\">\n                    <ul class=\"ui-multiselect-items ui-multiselect-list ui-widget-content ui-widget ui-corner-all ui-helper-reset\" [style.max-height]=\"scrollHeight||'auto'\">\n                        <li #item *ngFor=\"let option of options\" class=\"ui-multiselect-item ui-corner-all\" (click)=\"onItemClick($event,option.value)\" \n                            [style.display]=\"isItemVisible(option) ? 'block' : 'none'\"\n                            [ngClass]=\"{'ui-state-highlight':isSelected(option.value),'ui-state-hover':hoveredItem==item}\" (mouseenter)=\"hoveredItem=item\" (mouseleave)=\"hoveredItem=null\">\n                            <div class=\"ui-chkbox ui-widget\">\n                                <div class=\"ui-helper-hidden-accessible\">\n                                    <input type=\"checkbox\" readonly=\"readonly\" [checked]=\"isSelected(option.value)\">\n                                </div>\n                                <div class=\"ui-chkbox-box ui-widget ui-corner-all ui-state-default\" [ngClass]=\"{'ui-state-active':isSelected(option.value)}\">\n                                    <span class=\"ui-chkbox-icon ui-c\" [ngClass]=\"{'fa fa-check':isSelected(option.value)}\"></span>\n                                </div>\n                            </div>\n                            <label>{{option.label}}</label>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    ",
             providers: [domhandler_1.DomHandler, exports.MULTISELECT_VALUE_ACCESSOR]
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, domhandler_1.DomHandler, core_1.Renderer, core_1.IterableDiffers])
@@ -77579,11 +73878,7 @@ exports.MultiSelectModule = MultiSelectModule;
 //# sourceMappingURL=multiselect.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 706 */
-=======
-/* 702 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77600,7 +73895,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
 var button_1 = __webpack_require__(53);
-var shared_1 = __webpack_require__(11);
+var shared_1 = __webpack_require__(9);
 var domhandler_1 = __webpack_require__(4);
 var OrderList = (function () {
     function OrderList(el, domHandler) {
@@ -77610,19 +73905,6 @@ var OrderList = (function () {
     }
     OrderList.prototype.ngAfterViewInit = function () {
         this.listContainer = this.domHandler.findSingle(this.el.nativeElement, 'ul.ui-orderlist-list');
-    };
-    OrderList.prototype.ngAfterContentInit = function () {
-        var _this = this;
-        this.templates.forEach(function (item) {
-            switch (item.getType()) {
-                case 'item':
-                    _this.itemTemplate = item.template;
-                    break;
-                default:
-                    _this.itemTemplate = item.template;
-                    break;
-            }
-        });
     };
     OrderList.prototype.ngAfterViewChecked = function () {
         if (this.movedUp || this.movedDown) {
@@ -77766,13 +74048,13 @@ var OrderList = (function () {
         __metadata('design:type', core_1.EventEmitter)
     ], OrderList.prototype, "onReorder", void 0);
     __decorate([
-        core_1.ContentChildren(shared_1.PrimeTemplate), 
-        __metadata('design:type', core_1.QueryList)
-    ], OrderList.prototype, "templates", void 0);
+        core_1.ContentChild(core_1.TemplateRef), 
+        __metadata('design:type', core_1.TemplateRef)
+    ], OrderList.prototype, "itemTemplate", void 0);
     OrderList = __decorate([
         core_1.Component({
             selector: 'p-orderList',
-            template: "\n        <div [ngClass]=\"{'ui-orderlist ui-grid ui-widget':true,'ui-grid-responsive':responsive}\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-grid-row\">\n                <div class=\"ui-orderlist-controls ui-grid-col-2\">\n                    <button type=\"button\" pButton icon=\"fa-angle-up\" (click)=\"moveUp($event,listelement)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-double-up\" (click)=\"moveTop($event,listelement)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-down\" (click)=\"moveDown($event,listelement)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-double-down\" (click)=\"moveBottom($event,listelement)\"></button>\n                </div>\n                <div class=\"ui-grid-col-10\">\n                    <div class=\"ui-orderlist-caption ui-widget-header ui-corner-top\" *ngIf=\"header\">{{header}}</div>\n                    <ul #listelement class=\"ui-widget-content ui-orderlist-list ui-corner-bottom\" [ngStyle]=\"listStyle\">\n                        <li *ngFor=\"let item of value\" class=\"ui-orderlist-item\"\n                            [ngClass]=\"{'ui-state-highlight':isSelected(item)}\" (click)=\"onItemClick($event,item)\">\n                            <template [pTemplateWrapper]=\"itemTemplate\" [item]=\"item\"></template>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    ",
+            template: "\n        <div [ngClass]=\"{'ui-orderlist ui-grid ui-widget':true,'ui-grid-responsive':responsive}\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-grid-row\">\n                <div class=\"ui-orderlist-controls ui-grid-col-2\">\n                    <button type=\"button\" pButton icon=\"fa-angle-up\" (click)=\"moveUp($event,listelement)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-double-up\" (click)=\"moveTop($event,listelement)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-down\" (click)=\"moveDown($event,listelement)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-double-down\" (click)=\"moveBottom($event,listelement)\"></button>\n                </div>\n                <div class=\"ui-grid-col-10\">\n                    <div class=\"ui-orderlist-caption ui-widget-header ui-corner-top\" *ngIf=\"header\">{{header}}</div>\n                    <ul #listelement class=\"ui-widget-content ui-orderlist-list ui-corner-bottom\" [ngStyle]=\"listStyle\">\n                        <li *ngFor=\"let item of value\" \n                            [ngClass]=\"{'ui-orderlist-item':true,'ui-state-hover':(hoveredItem==item),'ui-state-highlight':isSelected(item)}\"\n                            (mouseenter)=\"hoveredItem=item\" (mouseleave)=\"hoveredItem=null\" (click)=\"onItemClick($event,item)\">\n                            <template [pTemplateWrapper]=\"itemTemplate\" [item]=\"item\"></template>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    ",
             providers: [domhandler_1.DomHandler]
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, domhandler_1.DomHandler])
@@ -77797,11 +74079,7 @@ exports.OrderListModule = OrderListModule;
 //# sourceMappingURL=orderlist.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 707 */
-=======
-/* 703 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77951,7 +74229,7 @@ var OverlayPanel = (function () {
     OverlayPanel = __decorate([
         core_1.Component({
             selector: 'p-overlayPanel',
-            template: "\n        <div [ngClass]=\"'ui-overlaypanel ui-widget ui-widget-content ui-corner-all ui-shadow'\" [ngStyle]=\"style\" [class]=\"styleClass\"\n            [style.display]=\"visible ? 'block' : 'none'\" (click)=\"onPanelClick()\">\n            <div class=\"ui-overlaypanel-content\">\n                <ng-content></ng-content>\n            </div>\n            <a href=\"#\" *ngIf=\"showCloseIcon\" class=\"ui-overlaypanel-close ui-state-default\" (click)=\"onCloseClick($event)\">\n                <span class=\"fa fa-fw fa-close\"></span>\n            </a>\n        </div>\n    ",
+            template: "\n        <div [ngClass]=\"'ui-overlaypanel ui-widget ui-widget-content ui-corner-all ui-shadow'\" [ngStyle]=\"style\" [class]=\"styleClass\"\n            [style.display]=\"visible ? 'block' : 'none'\" (click)=\"onPanelClick()\">\n            <div class=\"ui-overlaypanel-content\">\n                <ng-content></ng-content>\n            </div>\n            <a href=\"#\" *ngIf=\"showCloseIcon\" class=\"ui-overlaypanel-close ui-state-default\" [ngClass]=\"{'ui-state-hover':hoverCloseIcon}\"\n                (mouseenter)=\"hoverCloseIcon=true\" (mouseleave)=\"hoverCloseIcon=false\" (click)=\"onCloseClick($event)\"><span class=\"fa fa-fw fa-close\"></span></a>\n        </div>\n    ",
             providers: [domhandler_1.DomHandler]
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, domhandler_1.DomHandler, core_1.Renderer])
@@ -77976,11 +74254,7 @@ exports.OverlayPanelModule = OverlayPanelModule;
 //# sourceMappingURL=overlaypanel.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 708 */
-=======
-/* 704 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77996,7 +74270,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
-var shared_1 = __webpack_require__(11);
 var Panel = (function () {
     function Panel(el) {
         this.el = el;
@@ -78068,7 +74341,7 @@ var Panel = (function () {
     Panel = __decorate([
         core_1.Component({
             selector: 'p-panel',
-            template: "\n        <div [ngClass]=\"'ui-panel ui-widget ui-widget-content ui-corner-all'\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all\">\n                <span class=\"ui-panel-title\" *ngIf=\"header\">{{header}}</span>\n                <ng-content select=\"p-header\"></ng-content>\n                <a *ngIf=\"toggleable\" class=\"ui-panel-titlebar-icon ui-panel-titlebar-toggler ui-corner-all ui-state-default\" href=\"#\"\n                    (click)=\"toggle($event)\">\n                    <span class=\"fa fa-fw\" [ngClass]=\"{'fa-minus': !collapsed,'fa-plus':collapsed}\"></span>\n                </a>\n            </div>\n            <div class=\"ui-panel-content-wrapper\" [@panelContent]=\"collapsed ? 'hidden' : 'visible'\" \n                [ngClass]=\"{'ui-panel-content-wrapper-overflown': collapsed||animating}\">\n                <div class=\"ui-panel-content ui-widget-content\">\n                    <ng-content></ng-content>\n                </div>\n            </div>\n        </div>\n    ",
+            template: "\n        <div [ngClass]=\"'ui-panel ui-widget ui-widget-content ui-corner-all'\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all\">\n                <span class=\"ui-panel-title\" *ngIf=\"header\">{{header}}</span>\n                <ng-content select=\"header\"></ng-content>\n                <a *ngIf=\"toggleable\" class=\"ui-panel-titlebar-icon ui-panel-titlebar-toggler ui-corner-all ui-state-default\" href=\"#\"\n                    [ngClass]=\"{'ui-state-hover':hoverToggler}\" (mouseenter)=\"hoverToggler=true\" (mouseleave)=\"hoverToggler=false\" (click)=\"toggle($event)\">\n                    <span class=\"fa fa-fw\" [ngClass]=\"{'fa-minus': !collapsed,'fa-plus':collapsed}\"></span>\n                </a>\n            </div>\n            <div class=\"ui-panel-content-wrapper\" [@panelContent]=\"collapsed ? 'hidden' : 'visible'\" \n                [ngClass]=\"{'ui-panel-content-wrapper-overflown': collapsed||animating}\">\n                <div class=\"ui-panel-content ui-widget-content\">\n                    <ng-content></ng-content>\n                </div>\n            </div>\n        </div>\n    ",
             animations: [
                 core_1.trigger('panelContent', [
                     core_1.state('hidden', core_1.style({
@@ -78093,7 +74366,7 @@ var PanelModule = (function () {
     PanelModule = __decorate([
         core_1.NgModule({
             imports: [common_1.CommonModule],
-            exports: [Panel, shared_1.SharedModule],
+            exports: [Panel],
             declarations: [Panel]
         }), 
         __metadata('design:paramtypes', [])
@@ -78104,11 +74377,7 @@ exports.PanelModule = PanelModule;
 //# sourceMappingURL=panel.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 709 */
-=======
-/* 705 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78129,7 +74398,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
-var router_1 = __webpack_require__(21);
+var router_1 = __webpack_require__(28);
 var BasePanelMenuItem = (function () {
     function BasePanelMenuItem(router) {
         this.router = router;
@@ -78176,7 +74445,7 @@ var PanelMenuSub = (function (_super) {
     PanelMenuSub = __decorate([
         core_1.Component({
             selector: 'p-panelMenuSub',
-            template: "\n        <ul class=\"ui-menu-list ui-helper-reset\" [style.display]=\"expanded ? 'block' : 'none'\">\n            <li *ngFor=\"let child of item.items\" class=\"ui-menuitem ui-corner-all\" [ngClass]=\"{'ui-menu-parent':child.items}\">\n                <a [href]=\"child.url||'#'\" class=\"ui-menuitem-link ui-corner-all\" \n                    [ngClass]=\"{'ui-menuitem-link-hasicon':child.icon&&child.items,'ui-state-disabled':child.disabled}\" \n                    (click)=\"handleClick($event,child)\">\n                    <span class=\"ui-panelmenu-icon fa fa-fw\" [ngClass]=\"{'fa-caret-right':!child.expanded,'fa-caret-down':child.expanded}\" *ngIf=\"child.items\"></span\n                    ><span class=\"ui-menuitem-icon fa fa-fw\" [ngClass]=\"child.icon\" *ngIf=\"child.icon\"></span\n                    ><span class=\"ui-menuitem-text\">{{child.label}}</span>\n                </a>\n                <p-panelMenuSub [item]=\"child\" [expanded]=\"child.expanded\" *ngIf=\"child.items\"></p-panelMenuSub>\n            </li>\n        </ul>\n    "
+            template: "\n        <ul class=\"ui-menu-list ui-helper-reset\" [style.display]=\"expanded ? 'block' : 'none'\">\n            <li *ngFor=\"let child of item.items\" class=\"ui-menuitem ui-corner-all\" [ngClass]=\"{'ui-menu-parent':child.items}\">\n                <a #link [href]=\"child.url||'#'\" class=\"ui-menuitem-link ui-corner-all\" \n                    [ngClass]=\"{'ui-menuitem-link-hasicon':child.icon&&child.items,'ui-state-hover':(hoveredLink==link&&!child.disabled),'ui-state-disabled':child.disabled}\" \n                    (click)=\"handleClick($event,child)\"\n                    (mouseenter)=\"hoveredLink=link\" (mouseleave)=\"hoveredLink=null\">\n                    <span class=\"ui-panelmenu-icon fa fa-fw\" [ngClass]=\"{'fa-caret-right':!child.expanded,'fa-caret-down':child.expanded}\" *ngIf=\"child.items\"></span\n                    ><span class=\"ui-menuitem-icon fa fa-fw\" [ngClass]=\"child.icon\" *ngIf=\"child.icon\"></span\n                    ><span class=\"ui-menuitem-text\">{{child.label}}</span>\n                </a>\n                <p-panelMenuSub [item]=\"child\" [expanded]=\"child.expanded\" *ngIf=\"child.items\"></p-panelMenuSub>\n            </li>\n        </ul>\n    "
         }), 
         __metadata('design:paramtypes', [router_1.Router])
     ], PanelMenuSub);
@@ -78231,7 +74500,7 @@ var PanelMenu = (function (_super) {
     PanelMenu = __decorate([
         core_1.Component({
             selector: 'p-panelMenu',
-            template: "\n        <div [class]=\"styleClass\" [ngStyle]=\"style\" [ngClass]=\"'ui-panelmenu ui-widget'\">\n            <div *ngFor=\"let item of model;let f=first;let l=last;\" class=\"ui-panelmenu-panel\">\n                <div tabindex=\"0\" [ngClass]=\"{'ui-widget ui-panelmenu-header ui-state-default':true,'ui-corner-top':f,'ui-corner-bottom':l&&!item.expanded,\n                    'ui-state-active':item.expanded,'ui-state-disabled':item.disabled}\">\n                    <a [href]=\"item.url||'#'\" [ngClass]=\"{'ui-panelmenu-headerlink-hasicon':item.icon}\" (click)=\"handleClick($event,item)\">\n                        <span *ngIf=\"item.items\" class=\"ui-panelmenu-icon fa\" [ngClass]=\"{'fa-caret-right':!item.expanded,'fa-caret-down':item.expanded}\"></span\n                        ><span class=\"ui-menuitem-icon fa\" [ngClass]=\"item.icon\" *ngIf=\"item.icon\"></span\n                        ><span class=\"ui-menuitem-text\">{{item.label}}</span>\n                    </a>\n                </div>\n                <div *ngIf=\"item.items\" class=\"ui-panelmenu-content-wrapper\" [@rootItem]=\"item.expanded ? 'visible' : 'hidden'\" \n                    [ngClass]=\"{'ui-panelmenu-content-wrapper-overflown': !item.expanded||animating}\">\n                    <div class=\"ui-panelmenu-content ui-widget-content\">\n                        <p-panelMenuSub [item]=\"item\" [expanded]=\"true\"></p-panelMenuSub>\n                    </div>\n                </div>\n            </div>\n        </div>\n    ",
+            template: "\n        <div [class]=\"styleClass\" [ngStyle]=\"style\" [ngClass]=\"'ui-panelmenu ui-widget'\">\n            <div *ngFor=\"let item of model;let f=first;let l=last;\" class=\"ui-panelmenu-panel\">\n                <div tabindex=\"0\" [ngClass]=\"{'ui-widget ui-panelmenu-header ui-state-default':true,'ui-corner-top':f,'ui-corner-bottom':l&&!item.expanded,\n                    'ui-state-active':item.expanded,'ui-state-hover':(item == hoveredItem && !item.disabled),'ui-state-disabled':item.disabled}\">\n                    <a [href]=\"item.url||'#'\" [ngClass]=\"{'ui-panelmenu-headerlink-hasicon':item.icon}\"\n                        (mouseenter)=\"hoveredItem=item\" (mouseleave)=\"hoveredItem=null\" (click)=\"handleClick($event,item)\">\n                        <span *ngIf=\"item.items\" class=\"ui-panelmenu-icon fa\" [ngClass]=\"{'fa-caret-right':!item.expanded,'fa-caret-down':item.expanded}\"></span\n                        ><span class=\"ui-menuitem-icon fa\" [ngClass]=\"item.icon\" *ngIf=\"item.icon\"></span\n                        ><span class=\"ui-menuitem-text\">{{item.label}}</span>\n                    </a>\n                </div>\n                <div *ngIf=\"item.items\" class=\"ui-panelmenu-content-wrapper\" [@rootItem]=\"item.expanded ? 'visible' : 'hidden'\" \n                    [ngClass]=\"{'ui-panelmenu-content-wrapper-overflown': !item.expanded||animating}\">\n                    <div class=\"ui-panelmenu-content ui-widget-content\">\n                        <p-panelMenuSub [item]=\"item\" [expanded]=\"true\"></p-panelMenuSub>\n                    </div>\n                </div>\n            </div>\n        </div>\n    ",
             animations: [
                 core_1.trigger('rootItem', [
                     core_1.state('hidden', core_1.style({
@@ -78267,11 +74536,7 @@ exports.PanelMenuModule = PanelMenuModule;
 //# sourceMappingURL=panelmenu.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 710 */
-=======
-/* 706 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78309,12 +74574,20 @@ var Password = (function () {
         this.panel.appendChild(this.info);
         document.body.appendChild(this.panel);
     };
+    Password.prototype.onMouseover = function (e) {
+        this.hover = true;
+    };
+    Password.prototype.onMouseout = function (e) {
+        this.hover = false;
+    };
     Password.prototype.onFocus = function (e) {
+        this.focus = true;
         this.domHandler.removeClass(this.panel, 'ui-helper-hidden');
         this.domHandler.absolutePosition(this.panel, this.el.nativeElement);
         this.domHandler.fadeIn(this.panel, 250);
     };
     Password.prototype.onBlur = function (e) {
+        this.focus = false;
         this.domHandler.addClass(this.panel, 'ui-helper-hidden');
     };
     Password.prototype.onKeyup = function (e) {
@@ -78401,6 +74674,18 @@ var Password = (function () {
         __metadata('design:type', String)
     ], Password.prototype, "strongLabel", void 0);
     __decorate([
+        core_1.HostListener('mouseover', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Object]), 
+        __metadata('design:returntype', void 0)
+    ], Password.prototype, "onMouseover", null);
+    __decorate([
+        core_1.HostListener('mouseout', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Object]), 
+        __metadata('design:returntype', void 0)
+    ], Password.prototype, "onMouseout", null);
+    __decorate([
         core_1.HostListener('focus', ['$event']), 
         __metadata('design:type', Function), 
         __metadata('design:paramtypes', [Object]), 
@@ -78426,6 +74711,9 @@ var Password = (function () {
                 '[class.ui-corner-all]': 'true',
                 '[class.ui-state-default]': 'true',
                 '[class.ui-widget]': 'true',
+                '[class.ui-state-hover]': 'hover',
+                '[class.ui-state-focus]': 'focus',
+                '[class.ui-state-disabled]': 'disabled',
                 '[class.ui-state-filled]': 'filled'
             },
             providers: [domhandler_1.DomHandler]
@@ -78452,11 +74740,7 @@ exports.PasswordModule = PasswordModule;
 //# sourceMappingURL=password.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 711 */
-=======
-/* 707 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78473,7 +74757,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
 var button_1 = __webpack_require__(53);
-var shared_1 = __webpack_require__(11);
+var shared_1 = __webpack_require__(9);
 var domhandler_1 = __webpack_require__(4);
 var PickList = (function () {
     function PickList(el, domHandler) {
@@ -78486,19 +74770,6 @@ var PickList = (function () {
         this.selectedItemsSource = [];
         this.selectedItemsTarget = [];
     }
-    PickList.prototype.ngAfterContentInit = function () {
-        var _this = this;
-        this.templates.forEach(function (item) {
-            switch (item.getType()) {
-                case 'item':
-                    _this.itemTemplate = item.template;
-                    break;
-                default:
-                    _this.itemTemplate = item.template;
-                    break;
-            }
-        });
-    };
     PickList.prototype.ngAfterViewChecked = function () {
         if (this.movedUp || this.movedDown) {
             var listItems = this.domHandler.find(this.reorderedListElement, 'li.ui-state-highlight');
@@ -78722,13 +74993,13 @@ var PickList = (function () {
         __metadata('design:type', core_1.EventEmitter)
     ], PickList.prototype, "onMoveToTarget", void 0);
     __decorate([
-        core_1.ContentChildren(shared_1.PrimeTemplate), 
-        __metadata('design:type', core_1.QueryList)
-    ], PickList.prototype, "templates", void 0);
+        core_1.ContentChild(core_1.TemplateRef), 
+        __metadata('design:type', core_1.TemplateRef)
+    ], PickList.prototype, "itemTemplate", void 0);
     PickList = __decorate([
         core_1.Component({
             selector: 'p-pickList',
-            template: "\n        <div [class]=\"styleClass\" [ngStyle]=\"style\" [ngClass]=\"{'ui-picklist ui-widget ui-helper-clearfix': true,'ui-picklist-responsive': responsive}\">\n            <div class=\"ui-picklist-source-controls ui-picklist-buttons\" *ngIf=\"showSourceControls\">\n                <div class=\"ui-picklist-buttons-cell\">\n                    <button type=\"button\" pButton icon=\"fa-angle-up\" (click)=\"moveUp(sourcelist,source,selectedItemsSource)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-double-up\" (click)=\"moveTop(sourcelist,source,selectedItemsSource)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-down\" (click)=\"moveDown(sourcelist,source,selectedItemsSource)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-double-down\" (click)=\"moveBottom(sourcelist,source,selectedItemsSource)\"></button>\n                </div>\n            </div>\n            <div class=\"ui-picklist-listwrapper ui-picklist-source-wrapper\" [ngClass]=\"{'ui-picklist-listwrapper-nocontrols':!showSourceControls}\">\n                <div class=\"ui-picklist-caption ui-widget-header ui-corner-tl ui-corner-tr\" *ngIf=\"sourceHeader\">{{sourceHeader}}</div>\n                <ul #sourcelist class=\"ui-widget-content ui-picklist-list ui-picklist-source ui-corner-bottom\" [ngStyle]=\"sourceStyle\">\n                    <li *ngFor=\"let item of source\" [ngClass]=\"{'ui-picklist-item':true,'ui-state-highlight':isSelected(item,selectedItemsSource)}\"\n                        (click)=\"onItemClick($event,item,selectedItemsSource)\">\n                        <template [pTemplateWrapper]=\"itemTemplate\" [item]=\"item\"></template>\n                    </li>\n                </ul>\n            </div>\n            <div class=\"ui-picklist-buttons\">\n                <div class=\"ui-picklist-buttons-cell\">\n                    <button type=\"button\" pButton icon=\"fa-angle-right\" (click)=\"moveRight(targetlist)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-double-right\" (click)=\"moveAllRight()\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-left\" (click)=\"moveLeft(sourcelist)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-double-left\" (click)=\"moveAllLeft()\"></button>\n                </div>\n            </div>\n            <div class=\"ui-picklist-listwrapper ui-picklist-target-wrapper\" [ngClass]=\"{'ui-picklist-listwrapper-nocontrols':!showSourceControls}\">\n                <div class=\"ui-picklist-caption ui-widget-header ui-corner-tl ui-corner-tr\" *ngIf=\"targetHeader\">{{targetHeader}}</div>\n                <ul #targetlist class=\"ui-widget-content ui-picklist-list ui-picklist-target ui-corner-bottom\" [ngStyle]=\"targetStyle\">\n                    <li *ngFor=\"let item of target\" [ngClass]=\"{'ui-picklist-item':true,'ui-state-highlight':isSelected(item,selectedItemsTarget)}\"\n                        (click)=\"onItemClick($event,item,selectedItemsTarget)\">\n                        <template [pTemplateWrapper]=\"itemTemplate\" [item]=\"item\"></template>\n                    </li>\n                </ul>\n            </div>\n            <div class=\"ui-picklist-target-controls ui-picklist-buttons\" *ngIf=\"showTargetControls\">\n                <div class=\"ui-picklist-buttons-cell\">\n                    <button type=\"button\" pButton icon=\"fa-angle-up\" (click)=\"moveUp(targetlist,target,selectedItemsTarget)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-double-up\" (click)=\"moveTop(targetlist,target,selectedItemsTarget)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-down\" (click)=\"moveDown(targetlist,target,selectedItemsTarget)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-double-down\" (click)=\"moveBottom(targetlist,target,selectedItemsTarget)\"></button>\n                </div>\n            </div>\n        </div>\n    ",
+            template: "\n        <div [class]=\"styleClass\" [ngStyle]=\"style\" [ngClass]=\"{'ui-picklist ui-widget ui-helper-clearfix': true,'ui-picklist-responsive': responsive}\">\n            <div class=\"ui-picklist-source-controls ui-picklist-buttons\" *ngIf=\"showSourceControls\">\n                <div class=\"ui-picklist-buttons-cell\">\n                    <button type=\"button\" pButton icon=\"fa-angle-up\" (click)=\"moveUp(sourcelist,source,selectedItemsSource)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-double-up\" (click)=\"moveTop(sourcelist,source,selectedItemsSource)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-down\" (click)=\"moveDown(sourcelist,source,selectedItemsSource)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-double-down\" (click)=\"moveBottom(sourcelist,source,selectedItemsSource)\"></button>\n                </div>\n            </div>\n            <div class=\"ui-picklist-listwrapper ui-picklist-source-wrapper\" [ngClass]=\"{'ui-picklist-listwrapper-nocontrols':!showSourceControls}\">\n                <div class=\"ui-picklist-caption ui-widget-header ui-corner-tl ui-corner-tr\" *ngIf=\"sourceHeader\">{{sourceHeader}}</div>\n                <ul #sourcelist class=\"ui-widget-content ui-picklist-list ui-picklist-source ui-corner-bottom\" [ngStyle]=\"sourceStyle\">\n                    <li *ngFor=\"let item of source\" [ngClass]=\"{'ui-picklist-item':true,'ui-state-hover':(hoveredItem==item),'ui-state-highlight':isSelected(item,selectedItemsSource)}\"\n                        (mouseenter)=\"hoveredItem=item\" (mouseleave)=\"hoveredItem=null\" (click)=\"onItemClick($event,item,selectedItemsSource)\">\n                        <template [pTemplateWrapper]=\"itemTemplate\" [item]=\"item\"></template>\n                    </li>\n                </ul>\n            </div>\n            <div class=\"ui-picklist-buttons\">\n                <div class=\"ui-picklist-buttons-cell\">\n                    <button type=\"button\" pButton icon=\"fa-angle-right\" (click)=\"moveRight(targetlist)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-double-right\" (click)=\"moveAllRight()\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-left\" (click)=\"moveLeft(sourcelist)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-double-left\" (click)=\"moveAllLeft()\"></button>\n                </div>\n            </div>\n            <div class=\"ui-picklist-listwrapper ui-picklist-target-wrapper\" [ngClass]=\"{'ui-picklist-listwrapper-nocontrols':!showSourceControls}\">\n                <div class=\"ui-picklist-caption ui-widget-header ui-corner-tl ui-corner-tr\" *ngIf=\"targetHeader\">{{targetHeader}}</div>\n                <ul #targetlist class=\"ui-widget-content ui-picklist-list ui-picklist-target ui-corner-bottom\" [ngStyle]=\"targetStyle\">\n                    <li *ngFor=\"let item of target\" [ngClass]=\"{'ui-picklist-item':true,'ui-state-hover':(hoveredItem==item),'ui-state-highlight':isSelected(item,selectedItemsTarget)}\"\n                        (mouseenter)=\"hoveredItem=item\" (mouseleave)=\"hoveredItem=null\" (click)=\"onItemClick($event,item,selectedItemsTarget)\">\n                        <template [pTemplateWrapper]=\"itemTemplate\" [item]=\"item\"></template>\n                    </li>\n                </ul>\n            </div>\n            <div class=\"ui-picklist-target-controls ui-picklist-buttons\" *ngIf=\"showTargetControls\">\n                <div class=\"ui-picklist-buttons-cell\">\n                    <button type=\"button\" pButton icon=\"fa-angle-up\" (click)=\"moveUp(targetlist,target,selectedItemsTarget)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-double-up\" (click)=\"moveTop(targetlist,target,selectedItemsTarget)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-down\" (click)=\"moveDown(targetlist,target,selectedItemsTarget)\"></button>\n                    <button type=\"button\" pButton icon=\"fa-angle-double-down\" (click)=\"moveBottom(targetlist,target,selectedItemsTarget)\"></button>\n                </div>\n            </div>\n        </div>\n    ",
             providers: [domhandler_1.DomHandler]
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, domhandler_1.DomHandler])
@@ -78753,11 +75024,7 @@ exports.PickListModule = PickListModule;
 //# sourceMappingURL=picklist.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 712 */
-=======
-/* 708 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78780,8 +75047,7 @@ exports.RADIO_VALUE_ACCESSOR = {
     multi: true
 };
 var RadioButton = (function () {
-    function RadioButton(cd) {
-        this.cd = cd;
+    function RadioButton() {
         this.onClick = new core_1.EventEmitter();
         this.onModelChange = function () { };
         this.onModelTouched = function () { };
@@ -78807,7 +75073,6 @@ var RadioButton = (function () {
         if (this.input) {
             this.input.checked = this.checked;
         }
-        this.cd.markForCheck();
     };
     RadioButton.prototype.registerOnChange = function (fn) {
         this.onModelChange = fn;
@@ -78845,10 +75110,6 @@ var RadioButton = (function () {
         __metadata('design:type', String)
     ], RadioButton.prototype, "label", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], RadioButton.prototype, "tabindex", void 0);
-    __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
     ], RadioButton.prototype, "onClick", void 0);
@@ -78859,10 +75120,10 @@ var RadioButton = (function () {
     RadioButton = __decorate([
         core_1.Component({
             selector: 'p-radioButton',
-            template: "\n        <div class=\"ui-radiobutton ui-widget\">\n            <div class=\"ui-helper-hidden-accessible\">\n                <input #rb type=\"radio\" [attr.name]=\"name\" [attr.value]=\"value\" [attr.tabindex]=\"tabindex\" \n                    [checked]=\"checked\" (change)=\"onChange($event)\" (focus)=\"onFocus($event)\" (blur)=\"onBlur($event)\">\n            </div>\n            <div (click)=\"handleClick()\"\n                [ngClass]=\"{'ui-radiobutton-box ui-widget ui-state-default':true,\n                'ui-state-active':rb.checked,'ui-state-disabled':disabled,'ui-state-focus':focused}\">\n                <span class=\"ui-radiobutton-icon\" [ngClass]=\"{'fa fa-circle':rb.checked}\"></span>\n            </div>\n        </div>\n        <label class=\"ui-radiobutton-label\" (click)=\"select()\" *ngIf=\"label\">{{label}}</label>\n    ",
+            template: "\n        <div class=\"ui-radiobutton ui-widget\">\n            <div class=\"ui-helper-hidden-accessible\">\n                <input #rb type=\"radio\" [attr.name]=\"name\" [attr.value]=\"value\" [checked]=\"checked\" (change)=\"onChange($event)\"\n                    (focus)=\"onFocus($event)\" (blur)=\"onBlur($event)\">\n            </div>\n            <div (click)=\"handleClick()\" (mouseenter)=\"hover=true\" (mouseleave)=\"hover=false\"\n                [ngClass]=\"{'ui-radiobutton-box ui-widget ui-state-default':true,\n                'ui-state-hover':hover&&!disabled,'ui-state-active':rb.checked,'ui-state-disabled':disabled,'ui-state-focus':focused}\">\n                <span class=\"ui-radiobutton-icon\" [ngClass]=\"{'fa fa-circle':rb.checked}\"></span>\n            </div>\n        </div>\n        <label class=\"ui-radiobutton-label\" (click)=\"select()\" *ngIf=\"label\">{{label}}</label>\n    ",
             providers: [exports.RADIO_VALUE_ACCESSOR]
         }), 
-        __metadata('design:paramtypes', [core_1.ChangeDetectorRef])
+        __metadata('design:paramtypes', [])
     ], RadioButton);
     return RadioButton;
 }());
@@ -78884,11 +75145,7 @@ exports.RadioButtonModule = RadioButtonModule;
 //# sourceMappingURL=radiobutton.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 713 */
-=======
-/* 709 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78935,7 +75192,6 @@ var Rating = (function () {
                 value: (i + 1)
             });
         }
-        event.preventDefault();
     };
     Rating.prototype.clear = function (event) {
         if (!this.readonly && !this.disabled) {
@@ -78944,7 +75200,6 @@ var Rating = (function () {
             this.onModelTouched();
             this.onCancel.emit(event);
         }
-        event.preventDefault();
     };
     Rating.prototype.writeValue = function (value) {
         this.value = value;
@@ -78985,7 +75240,7 @@ var Rating = (function () {
     Rating = __decorate([
         core_1.Component({
             selector: 'p-rating',
-            template: "\n        <div class=\"ui-rating\" [ngClass]=\"{'ui-state-disabled': disabled}\">\n            <a href=\"#\" *ngIf=\"cancel\" (click)=\"clear($event)\">\n                <span class=\"fa fa-ban\"></span>\n            </a>\n            <a href=\"#\" *ngFor=\"let star of starsArray;let i=index\" (click)=\"rate($event,i)\">\n                <span class=\"fa\" [ngClass]=\"{'fa-star-o': (!value || i >= value), 'fa-star':(i < value)}\"></span>\n            </a>\n        </div>\n    ",
+            template: "\n        <div class=\"ui-rating\" [ngClass]=\"{'ui-state-disabled': disabled}\">\n            <div class=\"ui-rating-cancel\" *ngIf=\"cancel\" (click)=\"clear($event)\" [ngClass]=\"{'ui-rating-cancel-hover':hoverCancel}\"\n             (mouseenter)=\"hoverCancel=true\" (mouseleave)=\"hoverCancel=false\"><a></a></div>\n            <div class=\"ui-rating-star\" *ngFor=\"let star of starsArray;let i=index\" (click)=\"rate($event,i)\"\n             [ngClass]=\"{'ui-rating-star-on':(i < value)}\"><a></a></div>\n        </div>\n    ",
             providers: [exports.RATING_VALUE_ACCESSOR]
         }), 
         __metadata('design:paramtypes', [])
@@ -79010,11 +75265,7 @@ exports.RatingModule = RatingModule;
 //# sourceMappingURL=rating.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 714 */
-=======
-/* 710 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79045,7 +75296,6 @@ var Schedule = (function () {
         this.dragRevertDuration = 500;
         this.dragOpacity = .75;
         this.dragScroll = true;
-        this.timezone = false;
         this.onDayClick = new core_1.EventEmitter();
         this.onDrop = new core_1.EventEmitter();
         this.onEventClick = new core_1.EventEmitter();
@@ -79057,13 +75307,13 @@ var Schedule = (function () {
         this.onEventResizeStart = new core_1.EventEmitter();
         this.onEventResizeStop = new core_1.EventEmitter();
         this.onEventResize = new core_1.EventEmitter();
-        this.onViewRender = new core_1.EventEmitter();
+        this.viewRender = new core_1.EventEmitter();
         this.differ = differs.find([]).create(null);
         this.initialized = false;
     }
     Schedule.prototype.ngOnInit = function () {
         var _this = this;
-        this.config = {
+        this.options = {
             theme: true,
             header: this.header,
             isRTL: this.rtl,
@@ -79077,7 +75327,6 @@ var Schedule = (function () {
             aspectRatio: this.aspectRatio,
             eventLimit: this.eventLimit,
             defaultDate: this.defaultDate,
-            timezone: this.timezone,
             editable: this.editable,
             droppable: this.droppable,
             eventStartEditable: this.eventStartEditable,
@@ -79100,6 +75349,9 @@ var Schedule = (function () {
             eventConstraint: this.eventConstraint,
             eventRender: this.eventRender,
             dayRender: this.dayRender,
+            events: function (start, end, timezone, callback) {
+                callback(_this.events);
+            },
             dayClick: function (date, jsEvent, view) {
                 _this.onDayClick.emit({
                     'date': date,
@@ -79182,7 +75434,7 @@ var Schedule = (function () {
                 });
             },
             viewRender: function (view, element) {
-                _this.onViewRender.emit({
+                _this.viewRender.emit({
                     'view': view,
                     'element': element
                 });
@@ -79190,12 +75442,7 @@ var Schedule = (function () {
         };
         if (this.locale) {
             for (var prop in this.locale) {
-                this.config[prop] = this.locale[prop];
-            }
-        }
-        if (this.options) {
-            for (var prop in this.options) {
-                this.config[prop] = this.options[prop];
+                this.options[prop] = this.locale[prop];
             }
         }
     };
@@ -79206,15 +75453,13 @@ var Schedule = (function () {
     };
     Schedule.prototype.initialize = function () {
         this.schedule = jQuery(this.el.nativeElement.children[0]);
-        this.schedule.fullCalendar(this.config);
-        this.schedule.fullCalendar('addEventSource', this.events);
+        this.schedule.fullCalendar(this.options);
         this.initialized = true;
     };
     Schedule.prototype.ngDoCheck = function () {
         var changes = this.differ.diff(this.events);
         if (this.schedule && changes) {
-            this.schedule.fullCalendar('removeEventSources');
-            this.schedule.fullCalendar('addEventSource', this.events);
+            this.schedule.fullCalendar('refetchEvents');
         }
     };
     Schedule.prototype.ngOnDestroy = function () {
@@ -79395,20 +75640,12 @@ var Schedule = (function () {
     ], Schedule.prototype, "locale", void 0);
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Object)
-    ], Schedule.prototype, "timezone", void 0);
-    __decorate([
-        core_1.Input(), 
         __metadata('design:type', Function)
     ], Schedule.prototype, "eventRender", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Function)
     ], Schedule.prototype, "dayRender", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], Schedule.prototype, "options", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
@@ -79456,7 +75693,7 @@ var Schedule = (function () {
     __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
-    ], Schedule.prototype, "onViewRender", void 0);
+    ], Schedule.prototype, "viewRender", void 0);
     Schedule = __decorate([
         core_1.Component({
             selector: 'p-schedule',
@@ -79484,11 +75721,7 @@ exports.ScheduleModule = ScheduleModule;
 //# sourceMappingURL=schedule.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 715 */
-=======
-/* 711 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79597,7 +75830,7 @@ var SelectButton = (function () {
     SelectButton = __decorate([
         core_1.Component({
             selector: 'p-selectButton',
-            template: "\n        <div [ngClass]=\"'ui-selectbutton ui-buttonset ui-widget ui-corner-all ui-buttonset-' + options.length\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div *ngFor=\"let option of options;\" class=\"ui-button ui-widget ui-state-default ui-button-text-only\"\n                [ngClass]=\"{'ui-state-active':isSelected(option), 'ui-state-disabled':disabled}\" (click)=\"onItemClick($event,option)\">\n                <span class=\"ui-button-text ui-c\">{{option.label}}</span>\n            </div>\n        </div>\n    ",
+            template: "\n        <div [ngClass]=\"'ui-selectbutton ui-buttonset ui-widget ui-corner-all ui-buttonset-' + options.length\" (mouseleave)=\"hoveredItem=null\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div *ngFor=\"let option of options;\" class=\"ui-button ui-widget ui-state-default ui-button-text-only\"\n                [ngClass]=\"{'ui-state-hover': (hoveredItem==option)&&!disabled,'ui-state-active':isSelected(option), 'ui-state-disabled':disabled}\"\n                (mouseenter)=\"hoveredItem=option\" (click)=\"onItemClick($event,option)\">\n                <span class=\"ui-button-text ui-c\">{{option.label}}</span>\n            </div>\n        </div>\n    ",
             providers: [exports.SELECTBUTTON_VALUE_ACCESSOR]
         }), 
         __metadata('design:paramtypes', [])
@@ -79622,11 +75855,7 @@ exports.SelectButtonModule = SelectButtonModule;
 //# sourceMappingURL=selectbutton.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 716 */
-=======
-/* 712 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79646,7 +75875,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
 var domhandler_1 = __webpack_require__(4);
-var router_1 = __webpack_require__(21);
+var router_1 = __webpack_require__(28);
 var SlideMenuSub = (function () {
     function SlideMenuSub(slideMenu, router) {
         this.slideMenu = slideMenu;
@@ -79685,6 +75914,7 @@ var SlideMenuSub = (function () {
     };
     SlideMenuSub.prototype.ngOnDestroy = function () {
         this.activeItem = null;
+        this.hoveredLink = null;
     };
     __decorate([
         core_1.Input(), 
@@ -79713,7 +75943,7 @@ var SlideMenuSub = (function () {
     SlideMenuSub = __decorate([
         core_1.Component({
             selector: 'p-slideMenuSub',
-            template: "\n        <ul [ngClass]=\"{'ui-helper-reset ui-menu-rootlist':root, 'ui-widget-content ui-corner-all ui-helper-clearfix ui-menu-child':!root}\" class=\"ui-menu-list\"\n            [style.width.px]=\"menuWidth\" [style.left.px]=\"root ? slideMenu.left : slideMenu.menuWidth\" \n            [style.transitionProperty]=\"root ? 'left' : 'none'\" [style.transitionDuration]=\"effectDuration + 'ms'\" [style.transitionTimingFunction]=\"easing\">\n            <template ngFor let-child [ngForOf]=\"(root ? item : item.items)\">\n                <li #listitem [ngClass]=\"{'ui-menuitem ui-widget ui-corner-all':true,'ui-menu-parent':child.items,'ui-slidemenuitem-active':listitem==activeItem}\">\n                    <a [href]=\"child.url||'#'\" class=\"ui-menuitem-link ui-corner-all\" \n                        [ngClass]=\"{'ui-menuitem-link-parent':child.items,'ui-state-disabled':child.disabled}\" \n                        (click)=\"itemClick($event, child, listitem)\">\n                        <span class=\"ui-submenu-icon fa fa-fw fa-caret-right\" *ngIf=\"child.items\"></span>\n                        <span class=\"ui-menuitem-icon fa fa-fw\" *ngIf=\"child.icon\" [ngClass]=\"child.icon\"></span>\n                        <span class=\"ui-menuitem-text\">{{child.label}}</span>\n                    </a>\n                    <p-slideMenuSub class=\"ui-submenu\" [item]=\"child\" [menuWidth]=\"menuWidth\" *ngIf=\"child.items\"></p-slideMenuSub>\n                </li>\n            </template>\n        </ul>\n    "
+            template: "\n        <ul [ngClass]=\"{'ui-helper-reset ui-menu-rootlist':root, 'ui-widget-content ui-corner-all ui-helper-clearfix ui-menu-child':!root}\" class=\"ui-menu-list\"\n            [style.width.px]=\"menuWidth\" [style.left.px]=\"root ? slideMenu.left : slideMenu.menuWidth\" \n            [style.transitionProperty]=\"root ? 'left' : 'none'\" [style.transitionDuration]=\"effectDuration + 'ms'\" [style.transitionTimingFunction]=\"easing\">\n            <template ngFor let-child [ngForOf]=\"(root ? item : item.items)\">\n                <li #listitem [ngClass]=\"{'ui-menuitem ui-widget ui-corner-all':true,'ui-menu-parent':child.items,'ui-menuitem-active':listitem==activeItem}\">\n                    <a #link [href]=\"child.url||'#'\" class=\"ui-menuitem-link ui-corner-all\" \n                        [ngClass]=\"{'ui-state-hover':link==hoveredLink&&!child.disabled,'ui-menuitem-link-parent':child.items,'ui-state-disabled':child.disabled}\" \n                        (click)=\"itemClick($event, child, listitem)\" (mouseenter)=\"hoveredLink=link\" (mouseleave)=\"hoveredLink=null\">\n                        <span class=\"ui-submenu-icon fa fa-fw fa-caret-right\" *ngIf=\"child.items\"></span>\n                        <span class=\"ui-menuitem-icon fa fa-fw\" *ngIf=\"child.icon\" [ngClass]=\"child.icon\"></span>\n                        <span class=\"ui-menuitem-text\">{{child.label}}</span>\n                    </a>\n                    <p-slideMenuSub class=\"ui-submenu\" [item]=\"child\" [menuWidth]=\"menuWidth\" *ngIf=\"child.items\"></p-slideMenuSub>\n                </li>\n            </template>\n        </ul>\n    "
         }),
         __param(0, core_1.Inject(core_1.forwardRef(function () { return SlideMenu; }))), 
         __metadata('design:paramtypes', [SlideMenu, router_1.Router])
@@ -79863,11 +76093,7 @@ exports.SlideMenuModule = SlideMenuModule;
 //# sourceMappingURL=slidemenu.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 717 */
-=======
-/* 713 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80142,11 +76368,7 @@ exports.SliderModule = SliderModule;
 //# sourceMappingURL=slider.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 718 */
-=======
-/* 714 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80216,7 +76438,6 @@ var Spinner = (function () {
         }
         this.formatValue();
         this.onModelChange(this.value);
-        this.onChange.emit();
     };
     Spinner.prototype.toFixed = function (value, precision) {
         var power = Math.pow(10, precision || 0);
@@ -80225,34 +76446,54 @@ var Spinner = (function () {
     Spinner.prototype.onUpButtonMousedown = function (event, input) {
         if (!this.disabled) {
             input.focus();
+            this.activeUp = true;
             this.repeat(null, 1);
             this.updateFilledState();
+            event.preventDefault();
         }
     };
     Spinner.prototype.onUpButtonMouseup = function (event) {
         if (!this.disabled) {
+            this.activeUp = false;
             this.clearTimer();
+        }
+    };
+    Spinner.prototype.onUpButtonMouseenter = function (event) {
+        if (!this.disabled) {
+            this.hoverUp = true;
         }
     };
     Spinner.prototype.onUpButtonMouseleave = function (event) {
         if (!this.disabled) {
+            this.hoverUp = false;
+            this.activeUp = false;
             this.clearTimer();
         }
     };
     Spinner.prototype.onDownButtonMousedown = function (event, input) {
         if (!this.disabled) {
             input.focus();
+            this.activeDown = true;
             this.repeat(null, -1);
             this.updateFilledState();
+            event.preventDefault();
         }
     };
     Spinner.prototype.onDownButtonMouseup = function (event) {
         if (!this.disabled) {
+            this.activeDown = false;
             this.clearTimer();
+        }
+    };
+    Spinner.prototype.onDownButtonMouseenter = function (event) {
+        if (!this.disabled) {
+            this.hoverDown = true;
         }
     };
     Spinner.prototype.onDownButtonMouseleave = function (event) {
         if (!this.disabled) {
+            this.hoverDown = false;
+            this.activeDown = false;
             this.clearTimer();
         }
     };
@@ -80373,10 +76614,6 @@ var Spinner = (function () {
     ], Spinner.prototype, "size", void 0);
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', String)
-    ], Spinner.prototype, "placeholder", void 0);
-    __decorate([
-        core_1.Input(), 
         __metadata('design:type', Boolean)
     ], Spinner.prototype, "disabled", void 0);
     __decorate([
@@ -80391,14 +76628,10 @@ var Spinner = (function () {
         core_1.Input(), 
         __metadata('design:type', String)
     ], Spinner.prototype, "thousandSeparator", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], Spinner.prototype, "tabindex", void 0);
     Spinner = __decorate([
         core_1.Component({
             selector: 'p-spinner',
-            template: "\n        <span class=\"ui-spinner ui-widget ui-corner-all\">\n            <input #in pInputText type=\"text\" class=\"ui-spinner-input\" [value]=\"valueAsString\"\n            [attr.size]=\"size\" [attr.maxlength]=\"maxlength\" [attr.tabindex]=\"tabindex\" [attr.placeholder]=\"placeholder\" [disabled]=\"disabled\" [readonly]=\"readonly\"\n            (keydown)=\"onInputKeydown($event)\" (keyup)=\"onInput($event,in.value)\" (keypress)=\"onInputKeyPress($event)\" (blur)=\"onBlur()\" (change)=\"handleChange($event)\" (focus)=\"onFocus()\">\n            <button [ngClass]=\"{'ui-spinner-button ui-spinner-up ui-corner-tr ui-button ui-widget ui-state-default':true,'ui-state-disabled':disabled}\" [disabled]=\"disabled\"\n                (mouseleave)=\"onUpButtonMouseleave($event)\" (mousedown)=\"onUpButtonMousedown($event,in)\" (mouseup)=\"onUpButtonMouseup($event)\">\n                <span class=\"fa fa-caret-up\"></span>\n            </button>\n            <button [ngClass]=\"{'ui-spinner-button ui-spinner-down ui-corner-br ui-button ui-widget ui-state-default':true,'ui-state-disabled':disabled}\" [disabled]=\"disabled\"\n                (mouseleave)=\"onDownButtonMouseleave($event)\" (mousedown)=\"onDownButtonMousedown($event,in)\" (mouseup)=\"onDownButtonMouseup($event)\">\n                <span class=\"fa fa-caret-down\"></span>\n            </button>\n        </span>\n    ",
+            template: "\n        <span class=\"ui-spinner ui-widget ui-corner-all\">\n            <input #in pInputText type=\"text\" class=\"ui-spinner-input\" [value]=\"valueAsString\"\n            [attr.size]=\"size\" [attr.maxlength]=\"maxlength\" [disabled]=\"disabled\" [readonly]=\"readonly\"\n            (keydown)=\"onInputKeydown($event)\" (keyup)=\"onInput($event,in.value)\" (keypress)=\"onInputKeyPress($event)\" (blur)=\"onBlur()\" (change)=\"handleChange($event)\" (focus)=\"onFocus()\">\n            <a class=\"ui-spinner-button ui-spinner-up ui-corner-tr ui-button ui-widget ui-state-default ui-button-text-only\"\n                [ngClass]=\"{'ui-state-hover':hoverUp,'ui-state-active':activeUp,'ui-state-disabled':disabled}\"\n                (mouseenter)=\"onUpButtonMouseenter($event)\" (mouseleave)=\"onUpButtonMouseleave($event)\" (mousedown)=\"onUpButtonMousedown($event,in)\" (mouseup)=\"onUpButtonMouseup($event)\">\n                <span class=\"fa fa-caret-up\"></span>\n            </a>\n            <a class=\"ui-spinner-button ui-spinner-down ui-corner-br ui-button ui-widget ui-state-default ui-button-text-only\"\n                [ngClass]=\"{'ui-state-hover':hoverDown,'ui-state-active':activeDown,'ui-state-disabled':disabled}\"\n                (mouseenter)=\"onDownButtonMouseenter($event)\" (mouseleave)=\"onDownButtonMouseleave($event)\" (mousedown)=\"onDownButtonMousedown($event,in)\" (mouseup)=\"onDownButtonMouseup($event)\">\n                <span class=\"fa fa-caret-down\"></span>\n            </a>\n        </span>\n    ",
             host: {
                 '[class.ui-inputwrapper-filled]': 'filled',
                 '[class.ui-inputwrapper-focus]': 'focus'
@@ -80427,11 +76660,7 @@ exports.SpinnerModule = SpinnerModule;
 //# sourceMappingURL=spinner.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 719 */
-=======
-/* 715 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80449,7 +76678,7 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
 var domhandler_1 = __webpack_require__(4);
 var button_1 = __webpack_require__(53);
-var router_1 = __webpack_require__(21);
+var router_1 = __webpack_require__(28);
 var SplitButton = (function () {
     function SplitButton(el, domHandler, renderer, router) {
         this.el = el;
@@ -80496,9 +76725,7 @@ var SplitButton = (function () {
         event.stopPropagation();
     };
     SplitButton.prototype.ngOnDestroy = function () {
-        if (this.documentClickListener) {
-            this.documentClickListener();
-        }
+        this.documentClickListener();
     };
     __decorate([
         core_1.Input(), 
@@ -80540,14 +76767,10 @@ var SplitButton = (function () {
         core_1.Input(), 
         __metadata('design:type', Boolean)
     ], SplitButton.prototype, "disabled", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], SplitButton.prototype, "tabindex", void 0);
     SplitButton = __decorate([
         core_1.Component({
             selector: 'p-splitButton',
-            template: "\n        <div #container [ngClass]=\"{'ui-splitbutton ui-buttonset ui-widget':true,'ui-state-disabled':disabled}\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <button #defaultbtn type=\"button\" pButton [icon]=\"icon\" [label]=\"label\" cornerStyleClass=\"ui-corner-left\" (click)=\"onDefaultButtonClick($event)\" [disabled]=\"disabled\" [attr.tabindex]=\"tabindex\">\n            </button><button type=\"button\" pButton class=\"ui-splitbutton-menubutton\" icon=\"fa-caret-down\" cornerStyleClass=\"ui-corner-right\" (click)=\"onDropdownClick($event,menu,container)\" [disabled]=\"disabled\"></button>\n            <div #menu [ngClass]=\"'ui-menu ui-menu-dynamic ui-widget ui-widget-content ui-corner-all ui-helper-clearfix ui-shadow'\" [style.display]=\"menuVisible ? 'block' : 'none'\"\n                    [ngStyle]=\"menuStyle\" [class]=\"menuStyleClass\">\n                <ul class=\"ui-menu-list ui-helper-reset\">\n                    <li class=\"ui-menuitem ui-widget ui-corner-all\" role=\"menuitem\" *ngFor=\"let item of model\">\n                        <a [href]=\"item.url||'#'\" \n                        [ngClass]=\"{'ui-menuitem-link ui-corner-all':true,'ui-state-disabled':item.disabled}\" \n                        (click)=\"itemClick($event,item)\">\n                            <span [ngClass]=\"'ui-menuitem-icon fa fa-fw'\" [class]=\"item.icon\" *ngIf=\"item.icon\"></span>\n                            <span class=\"ui-menuitem-text\">{{item.label}}</span>\n                        </a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    ",
+            template: "\n        <div #container [ngClass]=\"{'ui-splitbutton ui-buttonset ui-widget':true,'ui-state-disabled':disabled}\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <button #defaultbtn type=\"button\" pButton [icon]=\"icon\" [label]=\"label\" cornerStyleClass=\"ui-corner-left\" (click)=\"onDefaultButtonClick($event)\" [disabled]=\"disabled\">\n            </button><button type=\"button\" pButton class=\"ui-splitbutton-menubutton\" icon=\"fa-caret-down\" cornerStyleClass=\"ui-corner-right\" (click)=\"onDropdownClick($event,menu,container)\" [disabled]=\"disabled\"></button>\n            <div #menu [ngClass]=\"'ui-menu ui-menu-dynamic ui-widget ui-widget-content ui-corner-all ui-helper-clearfix ui-shadow'\" [style.display]=\"menuVisible ? 'block' : 'none'\"\n                    [ngStyle]=\"menuStyle\" [class]=\"menuStyleClass\">\n                <ul class=\"ui-menu-list ui-helper-reset\">\n                    <li class=\"ui-menuitem ui-widget ui-corner-all\" role=\"menuitem\" *ngFor=\"let item of model\"\n                        (mouseenter)=\"hoveredItem=item\" (mouseleave)=\"hoveredItem=null\">\n                        <a [href]=\"item.url||'#'\" \n                        [ngClass]=\"{'ui-menuitem-link ui-corner-all':true,'ui-state-hover':(hoveredItem==item&&!item.disabled),'ui-state-disabled':item.disabled}\" \n                        (click)=\"itemClick($event,item)\">\n                            <span [ngClass]=\"'ui-menuitem-icon fa fa-fw'\" [class]=\"item.icon\" *ngIf=\"item.icon\"></span>\n                            <span class=\"ui-menuitem-text\">{{item.label}}</span>\n                        </a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    ",
             providers: [domhandler_1.DomHandler]
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, domhandler_1.DomHandler, core_1.Renderer, router_1.Router])
@@ -80572,11 +76795,7 @@ exports.SplitButtonModule = SplitButtonModule;
 //# sourceMappingURL=splitbutton.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 720 */
-=======
-/* 716 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80592,7 +76811,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
-var router_1 = __webpack_require__(21);
+var router_1 = __webpack_require__(28);
 var Steps = (function () {
     function Steps(router) {
         this.router = router;
@@ -80654,7 +76873,7 @@ var Steps = (function () {
     Steps = __decorate([
         core_1.Component({
             selector: 'p-steps',
-            template: "\n        <div [ngClass]=\"{'ui-steps ui-widget ui-helper-clearfix':true,'ui-steps-readonly':readonly}\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <ul role=\"tablist\">\n                <li *ngFor=\"let item of model; let i = index\" class=\"ui-steps-item\" #menuitem\n                    [ngClass]=\"{'ui-state-highlight':(i === activeIndex),'ui-state-default':(i !== activeIndex),\n                        'ui-state-disabled':(i !== activeIndex && readonly)}\">\n                    <a class=\"ui-menuitem-link\" (click)=\"itemClick($event, item, i)\">\n                        <span class=\"ui-steps-number\">{{i + 1}}</span>\n                        <span class=\"ui-steps-title\">{{item.label}}</span>\n                    </a>\n                </li>\n            </ul>\n        </div>\n    "
+            template: "\n        <div [ngClass]=\"{'ui-steps ui-widget ui-helper-clearfix':true,'ui-steps-readonly':readonly}\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <ul role=\"tablist\">\n                <li *ngFor=\"let item of model; let i = index\" class=\"ui-steps-item\" #menuitem\n                    [ngClass]=\"{'ui-state-highlight':(i === activeIndex),'ui-state-default':(i !== activeIndex),\n                        'ui-state-disabled':(i !== activeIndex && readonly),'ui-state-hover':(menuitem == hoveredItem&&!readonly)}\">\n                    <a class=\"ui-menuitem-link\" (click)=\"itemClick($event, item, i)\" (mouseenter)=\"hoveredItem=menuitem\" (mouseleave)=\"hoveredItem=null\">\n                        <span class=\"ui-steps-number\">{{i + 1}}</span>\n                        <span class=\"ui-steps-title\">{{item.label}}</span>\n                    </a>\n                </li>\n            </ul>\n        </div>\n    "
         }), 
         __metadata('design:paramtypes', [router_1.Router])
     ], Steps);
@@ -80678,11 +76897,7 @@ exports.StepsModule = StepsModule;
 //# sourceMappingURL=steps.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 721 */
-=======
-/* 717 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80699,7 +76914,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
 var domhandler_1 = __webpack_require__(4);
-var router_1 = __webpack_require__(21);
+var router_1 = __webpack_require__(28);
 var TabMenu = (function () {
     function TabMenu(router) {
         this.router = router;
@@ -80774,7 +76989,7 @@ var TabMenu = (function () {
     TabMenu = __decorate([
         core_1.Component({
             selector: 'p-tabMenu',
-            template: "\n        <div [ngClass]=\"'ui-tabmenu ui-widget ui-widget-content ui-corner-all'\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <ul class=\"ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all\" role=\"tablist\">\n                <li *ngFor=\"let item of model\" \n                    [ngClass]=\"{'ui-tabmenuitem ui-state-default ui-corner-top':true,'ui-state-disabled':item.disabled,\n                        'ui-tabmenuitem-hasicon':item.icon,'ui-state-active':activeItem==item}\">\n                    <a [href]=\"item.url||'#'\" class=\"ui-menuitem-link ui-corner-all\" (click)=\"itemClick($event,item)\">\n                        <span class=\"ui-menuitem-icon fa\" [ngClass]=\"item.icon\"></span>\n                        <span class=\"ui-menuitem-text\">{{item.label}}</span>\n                    </a>\n                </li>\n            </ul>\n        </div>\n    ",
+            template: "\n        <div [ngClass]=\"'ui-tabmenu ui-widget ui-widget-content ui-corner-all'\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <ul class=\"ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all\" role=\"tablist\">\n                <li *ngFor=\"let item of model\" \n                    [ngClass]=\"{'ui-tabmenuitem ui-state-default ui-corner-top':true,'ui-state-disabled':item.disabled,\n                        'ui-tabmenuitem-hasicon':item.icon,'ui-state-hover':hoveredItem==item,'ui-state-active':activeItem==item}\"\n                    (mouseenter)=\"hoveredItem=item&&!item.disabled\" (mouseleave)=\"hoveredItem=null\">\n                    <a [href]=\"item.url||'#'\" class=\"ui-menuitem-link ui-corner-all\" (click)=\"itemClick($event,item)\">\n                        <span class=\"ui-menuitem-icon fa\" [ngClass]=\"item.icon\"></span>\n                        <span class=\"ui-menuitem-text\">{{item.label}}</span>\n                    </a>\n                </li>\n            </ul>\n        </div>\n    ",
             providers: [domhandler_1.DomHandler]
         }), 
         __metadata('design:paramtypes', [router_1.Router])
@@ -80799,11 +77014,7 @@ exports.TabMenuModule = TabMenuModule;
 //# sourceMappingURL=tabmenu.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 722 */
-=======
-/* 718 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80819,64 +77030,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
-var TabViewNav = (function () {
-    function TabViewNav() {
-        this.orientation = 'top';
-        this.onTabClick = new core_1.EventEmitter();
-        this.onTabCloseClick = new core_1.EventEmitter();
-    }
-    TabViewNav.prototype.getDefaultHeaderClass = function (tab) {
-        var styleClass = 'ui-state-default ui-corner-' + this.orientation;
-        if (tab.headerStyleClass) {
-            styleClass = styleClass + " " + tab.headerStyleClass;
-        }
-        return styleClass;
-    };
-    TabViewNav.prototype.clickTab = function (event, tab) {
-        this.onTabClick.emit({
-            originalEvent: event,
-            tab: tab
-        });
-    };
-    TabViewNav.prototype.clickClose = function (event, tab) {
-        this.onTabCloseClick.emit({
-            originalEvent: event,
-            tab: tab
-        });
-    };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Array)
-    ], TabViewNav.prototype, "tabs", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], TabViewNav.prototype, "orientation", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], TabViewNav.prototype, "onTabClick", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], TabViewNav.prototype, "onTabCloseClick", void 0);
-    TabViewNav = __decorate([
-        core_1.Component({
-            selector: '[p-tabViewNav]',
-            host: {
-                '[class.ui-tabview-nav]': 'true',
-                '[class.ui-helper-reset]': 'true',
-                '[class.ui-helper-clearfix]': 'true',
-                '[class.ui-widget-header]': 'true',
-                '[class.ui-corner-all]': 'true'
-            },
-            template: "\n        <template ngFor let-tab [ngForOf]=\"tabs\">\n            <li [class]=\"getDefaultHeaderClass(tab)\" [ngStyle]=\"tab.headerStyle\" role=\"tab\"\n                [ngClass]=\"{'ui-tabview-selected ui-state-active': tab.selected, 'ui-state-disabled': tab.disabled}\"\n                (click)=\"clickTab($event,tab)\" *ngIf=\"!tab.closed\"\n                [attr.aria-expanded]=\"tab.selected\" [attr.aria-selected]=\"tab.selected\">\n                <a href=\"#\">\n                    <span class=\"ui-tabview-left-icon fa\" [ngClass]=\"tab.leftIcon\" *ngIf=\"tab.leftIcon\"></span>\n                    <span class=\"ui-tabview-title\">{{tab.header}}</span>\n                    <span class=\"ui-tabview-right-icon fa\" [ngClass]=\"tab.rightIcon\" *ngIf=\"tab.rightIcon\"></span>\n                </a>\n                <span *ngIf=\"tab.closable\" class=\"ui-tabview-close fa fa-close\" (click)=\"clickClose($event,tab)\"></span>\n            </li>\n        </template>\n    ",
-        }), 
-        __metadata('design:paramtypes', [])
-    ], TabViewNav);
-    return TabViewNav;
-}());
-exports.TabViewNav = TabViewNav;
 var TabPanel = (function () {
     function TabPanel() {
     }
@@ -80915,7 +77068,7 @@ var TabPanel = (function () {
     TabPanel = __decorate([
         core_1.Component({
             selector: 'p-tabPanel',
-            template: "\n        <div class=\"ui-tabview-panel ui-widget-content\" [style.display]=\"selected ? 'block' : 'none'\" \n            role=\"tabpanel\" [attr.aria-hidden]=\"!selected\" *ngIf=\"closed ? false :\u00A0(lazy ? selected : true)\">\n            <ng-content></ng-content>\n        </div>\n    "
+            template: "\n        <div class=\"ui-tabview-panel ui-widget-content\" [style.display]=\"selected ? 'block' : 'none'\" \n            *ngIf=\"!closed\" role=\"tabpanel\" [attr.aria-hidden]=\"!selected\">\n            <ng-content></ng-content>\n        </div>\n    ",
         }), 
         __metadata('design:paramtypes', [])
     ], TabPanel);
@@ -80938,10 +77091,6 @@ var TabView = (function () {
     };
     TabView.prototype.initTabs = function () {
         this.tabs = this.tabPanels.toArray();
-        for (var _i = 0, _a = this.tabs; _i < _a.length; _i++) {
-            var tab = _a[_i];
-            tab.lazy = this.lazy;
-        }
         var selectedTab = this.findSelectedTab();
         if (!selectedTab && this.tabs.length) {
             this.tabs[0].selected = true;
@@ -81012,6 +77161,13 @@ var TabView = (function () {
         }
         return index;
     };
+    TabView.prototype.getDefaultHeaderClass = function (tab) {
+        var styleClass = 'ui-state-default ui-corner-' + this.orientation;
+        if (tab.headerStyleClass) {
+            styleClass = styleClass + " " + tab.headerStyleClass;
+        }
+        return styleClass;
+    };
     TabView.prototype.getBlockableElement = function () {
         return this.el.nativeElement.children[0];
     };
@@ -81032,10 +77188,6 @@ var TabView = (function () {
         __metadata('design:type', Boolean)
     ], TabView.prototype, "controlClose", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], TabView.prototype, "lazy", void 0);
-    __decorate([
         core_1.ContentChildren(TabPanel), 
         __metadata('design:type', core_1.QueryList)
     ], TabView.prototype, "tabPanels", void 0);
@@ -81050,7 +77202,7 @@ var TabView = (function () {
     TabView = __decorate([
         core_1.Component({
             selector: 'p-tabView',
-            template: "\n        <div [ngClass]=\"'ui-tabview ui-widget ui-widget-content ui-corner-all ui-tabview-' + orientation\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <ul p-tabViewNav role=\"tablist\" *ngIf=\"orientation!='bottom'\" [tabs]=\"tabs\" [orientation]=\"orientation\" \n                (onTabClick)=\"open($event.originalEvent, $event.tab)\" (onTabCloseClick)=\"close($event.originalEvent, $event.tab)\"></ul>\n            <div class=\"ui-tabview-panels\">\n                <ng-content></ng-content>\n            </div>\n            <ul p-tabViewNav role=\"tablist\" *ngIf=\"orientation=='bottom'\" [tabs]=\"tabs\" [orientation]=\"orientation\"\n                (onTabClick)=\"open($event.originalEvent, $event.tab)\" (onTabCloseClick)=\"close($event.originalEvent, $event.tab)\"></ul>\n        </div>\n    ",
+            template: "\n        <div [ngClass]=\"'ui-tabview ui-widget ui-widget-content ui-corner-all ui-tabview-' + orientation\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <ul *ngIf=\"orientation!='bottom'\" class=\"ui-tabview-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all\" role=\"tablist\">\n                <template ngFor let-tab [ngForOf]=\"tabs\">\n                    <li [class]=\"getDefaultHeaderClass(tab)\" [ngStyle]=\"tab.headerStyle\" role=\"tab\"\n                        [ngClass]=\"{'ui-tabview-selected ui-state-active': tab.selected, 'ui-state-hover': tab.hoverHeader&&!tab.disabled, 'ui-state-disabled': tab.disabled}\"\n                        (mouseenter)=\"tab.hoverHeader=true\" (mouseleave)=\"tab.hoverHeader=false\" (click)=\"open($event,tab)\" *ngIf=\"!tab.closed\"\n                        [attr.aria-expanded]=\"tab.selected\" [attr.aria-selected]=\"tab.selected\">\n                        <a href=\"#\">\n                            <span class=\"ui-tabview-left-icon fa\" [ngClass]=\"tab.leftIcon\" *ngIf=\"tab.leftIcon\"></span>\n                            <span class=\"ui-tabview-title\">{{tab.header}}</span>\n                            <span class=\"ui-tabview-right-icon fa\" [ngClass]=\"tab.rightIcon\" *ngIf=\"tab.rightIcon\"></span>\n                        </a>\n                        <span *ngIf=\"tab.closable\" class=\"ui-tabview-close fa fa-close\" (click)=\"close($event,tab)\"></span>\n                    </li>\n                </template>\n            </ul>\n            <div class=\"ui-tabview-panels\">\n                <ng-content></ng-content>\n            </div>\n            <ul *ngIf=\"orientation=='bottom'\" class=\"ui-tabview-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all\" role=\"tablist\">\n                <template ngFor let-tab [ngForOf]=\"tabs\">\n                    <li [class]=\"getDefaultHeaderClass(tab)\" [ngStyle]=\"tab.headerStyle\" role=\"tab\"\n                        [ngClass]=\"{'ui-tabview-selected ui-state-active': tab.selected, 'ui-state-hover': tab.hoverHeader&&!tab.disabled, 'ui-state-disabled': tab.disabled}\"\n                        (mouseenter)=\"tab.hoverHeader=true\" (mouseleave)=\"tab.hoverHeader=false\" (click)=\"open($event,tab)\" *ngIf=\"!tab.closed\"\n                        [attr.aria-expanded]=\"tab.selected\" [attr.aria-selected]=\"tab.selected\">\n                        <a href=\"#\">\n                            <span class=\"ui-tabview-left-icon fa\" [ngClass]=\"tab.leftIcon\" *ngIf=\"tab.leftIcon\"></span>\n                            {{tab.header}}\n                            <span class=\"ui-tabview-right-icon fa\" [ngClass]=\"tab.rightIcon\" *ngIf=\"tab.rightIcon\"></span>\n                        </a>\n                        <span *ngIf=\"tab.closable\" class=\"ui-tabview-close fa fa-close\" (click)=\"close($event,tab)\"></span>\n                    </li>\n                </template>\n            </ul>\n        </div>\n    ",
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef])
     ], TabView);
@@ -81063,8 +77215,8 @@ var TabViewModule = (function () {
     TabViewModule = __decorate([
         core_1.NgModule({
             imports: [common_1.CommonModule],
-            exports: [TabView, TabPanel, TabViewNav],
-            declarations: [TabView, TabPanel, TabViewNav]
+            exports: [TabView, TabPanel],
+            declarations: [TabView, TabPanel]
         }), 
         __metadata('design:paramtypes', [])
     ], TabViewModule);
@@ -81074,11 +77226,7 @@ exports.TabViewModule = TabViewModule;
 //# sourceMappingURL=tabview.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 723 */
-=======
-/* 719 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81190,11 +77338,7 @@ exports.TerminalModule = TerminalModule;
 //# sourceMappingURL=terminal.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 724 */
-=======
-/* 720 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81212,7 +77356,7 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
 var domhandler_1 = __webpack_require__(4);
 var common_2 = __webpack_require__(2);
-var router_1 = __webpack_require__(21);
+var router_1 = __webpack_require__(28);
 var TieredMenuSub = (function () {
     function TieredMenuSub(domHandler, router, location) {
         this.domHandler = domHandler;
@@ -81224,6 +77368,7 @@ var TieredMenuSub = (function () {
             return;
         }
         this.activeItem = item;
+        this.activeLink = item.children[0];
         var nextElement = item.children[0].nextElementSibling;
         if (nextElement) {
             var sublist = nextElement.children[0];
@@ -81234,6 +77379,7 @@ var TieredMenuSub = (function () {
     };
     TieredMenuSub.prototype.onItemMouseLeave = function (event) {
         this.activeItem = null;
+        this.activeLink = null;
     };
     TieredMenuSub.prototype.itemClick = function (event, item) {
         if (item.disabled) {
@@ -81259,6 +77405,7 @@ var TieredMenuSub = (function () {
     };
     TieredMenuSub.prototype.listClick = function (event) {
         this.activeItem = null;
+        this.activeLink = null;
     };
     __decorate([
         core_1.Input(), 
@@ -81271,7 +77418,7 @@ var TieredMenuSub = (function () {
     TieredMenuSub = __decorate([
         core_1.Component({
             selector: 'p-tieredMenuSub',
-            template: "\n        <ul [ngClass]=\"{'ui-helper-reset':root, 'ui-widget-content ui-corner-all ui-helper-clearfix ui-menu-child ui-shadow':!root}\" class=\"ui-menu-list\"\n            (click)=\"listClick($event)\">\n            <template ngFor let-child [ngForOf]=\"(root ? item : item.items)\">\n                <li #item [ngClass]=\"{'ui-menuitem ui-widget ui-corner-all':true,'ui-menu-parent':child.items,'ui-menuitem-active':item==activeItem}\"\n                    (mouseenter)=\"onItemMouseEnter($event, item, child)\" (mouseleave)=\"onItemMouseLeave($event)\">\n                    <a [href]=\"child.url||'#'\" class=\"ui-menuitem-link ui-corner-all\" \n                        [ngClass]=\"{'ui-state-disabled':child.disabled}\" (click)=\"itemClick($event, child)\">\n                        <span class=\"ui-submenu-icon fa fa-fw fa-caret-right\" *ngIf=\"child.items\"></span>\n                        <span class=\"ui-menuitem-icon fa fa-fw\" *ngIf=\"child.icon\" [ngClass]=\"child.icon\"></span>\n                        <span class=\"ui-menuitem-text\">{{child.label}}</span>\n                    </a>\n                    <p-tieredMenuSub class=\"ui-submenu\" [item]=\"child\" *ngIf=\"child.items\"></p-tieredMenuSub>\n                </li>\n            </template>\n        </ul>\n    ",
+            template: "\n        <ul [ngClass]=\"{'ui-helper-reset':root, 'ui-widget-content ui-corner-all ui-helper-clearfix ui-menu-child ui-shadow':!root}\" class=\"ui-menu-list\"\n            (click)=\"listClick($event)\">\n            <template ngFor let-child [ngForOf]=\"(root ? item : item.items)\">\n                <li #item [ngClass]=\"{'ui-menuitem ui-widget ui-corner-all':true,'ui-menu-parent':child.items,'ui-menuitem-active':item==activeItem}\"\n                    (mouseenter)=\"onItemMouseEnter($event, item, child)\" (mouseleave)=\"onItemMouseLeave($event)\">\n                    <a #link [href]=\"child.url||'#'\" class=\"ui-menuitem-link ui-corner-all\" \n                        [ngClass]=\"{'ui-state-hover':link==activeLink&&!child.disabled,'ui-state-disabled':child.disabled}\" (click)=\"itemClick($event, child)\">\n                        <span class=\"ui-submenu-icon fa fa-fw fa-caret-right\" *ngIf=\"child.items\"></span>\n                        <span class=\"ui-menuitem-icon fa fa-fw\" *ngIf=\"child.icon\" [ngClass]=\"child.icon\"></span>\n                        <span class=\"ui-menuitem-text\">{{child.label}}</span>\n                    </a>\n                    <p-tieredMenuSub class=\"ui-submenu\" [item]=\"child\" *ngIf=\"child.items\"></p-tieredMenuSub>\n                </li>\n            </template>\n        </ul>\n    ",
             providers: [domhandler_1.DomHandler]
         }), 
         __metadata('design:paramtypes', [domhandler_1.DomHandler, router_1.Router, common_2.Location])
@@ -81324,7 +77471,7 @@ var TieredMenu = (function () {
         }
     };
     TieredMenu.prototype.ngOnDestroy = function () {
-        if (this.popup && this.documentClickListener) {
+        if (this.popup) {
             this.documentClickListener();
         }
         if (this.model) {
@@ -81378,11 +77525,7 @@ exports.TieredMenuModule = TieredMenuModule;
 //# sourceMappingURL=tieredmenu.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 725 */
-=======
-/* 721 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81481,10 +77624,6 @@ var ToggleButton = (function () {
         __metadata('design:type', String)
     ], ToggleButton.prototype, "styleClass", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], ToggleButton.prototype, "tabindex", void 0);
-    __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
     ], ToggleButton.prototype, "onChange", void 0);
@@ -81495,7 +77634,7 @@ var ToggleButton = (function () {
     ToggleButton = __decorate([
         core_1.Component({
             selector: 'p-toggleButton',
-            template: "\n        <div [ngClass]=\"{'ui-button ui-togglebutton ui-widget ui-state-default ui-corner-all': true, 'ui-button-text-only': (!onIcon&&!offIcon), 'ui-button-text-icon-left': (onIcon&&offIcon),\n                'ui-state-active': checked,'ui-state-focus':focus,'ui-state-disabled':disabled}\" [ngStyle]=\"style\" [class]=\"styleClass\" \n                (click)=\"toggle($event)\">\n            <div class=\"ui-helper-hidden-accessible\">\n                <input #checkbox type=\"checkbox\" [checked]=\"checked\" (focus)=\"onFocus()\" (blur)=\"onBlur()\" [attr.tabindex]=\"tabindex\">\n            </div>\n            <span *ngIf=\"onIcon||offIcon\" [class]=\"getIconClass()\"></span>\n            <span class=\"ui-button-text ui-unselectable-text\">{{checked ? onLabel : offLabel}}</span>\n        </div>\n    ",
+            template: "\n        <div [ngClass]=\"{'ui-button ui-togglebutton ui-widget ui-state-default ui-corner-all': true, 'ui-button-text-only': (!onIcon&&!offIcon), 'ui-button-text-icon-left': (onIcon&&offIcon),\n                'ui-state-active': checked,'ui-state-focus': focus, 'ui-state-hover': hover&&!disabled, 'ui-state-disabled': disabled}\" [ngStyle]=\"style\" [class]=\"styleClass\" \n                (click)=\"toggle($event)\" (mouseenter)=\"hover=true\" (mouseleave)=\"hover=false\">\n            <div class=\"ui-helper-hidden-accessible\">\n                <input #checkbox type=\"checkbox\" [checked]=\"checked\" (focus)=\"onFocus()\" (blur)=\"onBlur()\">\n            </div>\n            <span *ngIf=\"onIcon||offIcon\" [class]=\"getIconClass()\"></span>\n            <span class=\"ui-button-text ui-unselectable-text\">{{checked ? onLabel : offLabel}}</span>\n        </div>\n    ",
             providers: [exports.TOGGLEBUTTON_VALUE_ACCESSOR]
         }), 
         __metadata('design:paramtypes', [])
@@ -81520,11 +77659,7 @@ exports.ToggleButtonModule = ToggleButtonModule;
 //# sourceMappingURL=togglebutton.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 726 */
-=======
-/* 722 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81578,11 +77713,7 @@ exports.ToolbarModule = ToolbarModule;
 //# sourceMappingURL=toolbar.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 727 */
-=======
-/* 723 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81628,11 +77759,11 @@ var Tooltip = (function () {
         }
     };
     Tooltip.prototype.show = function () {
-        if (!this.text || this.disabled) {
+        if (!this.text) {
             return;
         }
         this.create();
-        var offset = (this.appendTo !== 'body') ? { left: 0, top: 0 } : this.domHandler.getOffset(this.el.nativeElement);
+        var offset = this.domHandler.getOffset(this.el.nativeElement);
         var targetTop = offset.top;
         var targetLeft = offset.left;
         var left;
@@ -81662,29 +77793,24 @@ var Tooltip = (function () {
         this.container.style.zIndex = ++domhandler_1.DomHandler.zindex;
     };
     Tooltip.prototype.hide = function () {
+        this.container.style.display = 'none';
         this.ngOnDestroy();
     };
     Tooltip.prototype.create = function () {
-        var styleClass = 'ui-widget ui-tooltip ui-tooltip-' + this.tooltipPosition;
         this.container = document.createElement('div');
-        if (this.tooltipStyleClass) {
-            styleClass += ' ' + this.tooltipStyleClass;
-        }
-        this.container.className = styleClass;
+        this.container.className = 'ui-widget ui-tooltip ui-tooltip-' + this.tooltipPosition;
         var tooltipArrow = document.createElement('div');
         tooltipArrow.className = 'ui-tooltip-arrow';
         this.container.appendChild(tooltipArrow);
         var tooltipText = document.createElement('div');
         tooltipText.className = 'ui-tooltip-text ui-shadow ui-corner-all';
-        tooltipText.appendChild(document.createTextNode(this.text));
+        tooltipText.innerHTML = this.text;
         if (this.positionStyle) {
             this.container.style.position = this.positionStyle;
         }
         this.container.appendChild(tooltipText);
         if (this.appendTo === 'body')
             document.body.appendChild(this.container);
-        else if (this.appendTo === 'target')
-            this.domHandler.appendChild(this.container, this.el.nativeElement);
         else
             this.domHandler.appendChild(this.container, this.appendTo);
     };
@@ -81692,8 +77818,6 @@ var Tooltip = (function () {
         if (this.container && this.container.parentElement) {
             if (this.appendTo === 'body')
                 document.body.removeChild(this.container);
-            else if (this.appendTo === 'target')
-                this.el.nativeElement.removeChild(this.container);
             else
                 this.domHandler.removeChild(this.container, this.appendTo);
         }
@@ -81719,14 +77843,6 @@ var Tooltip = (function () {
         core_1.Input(), 
         __metadata('design:type', String)
     ], Tooltip.prototype, "positionStyle", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], Tooltip.prototype, "tooltipStyleClass", void 0);
-    __decorate([
-        core_1.Input("tooltipDisabled"), 
-        __metadata('design:type', Boolean)
-    ], Tooltip.prototype, "disabled", void 0);
     __decorate([
         core_1.HostListener('mouseenter', ['$event']), 
         __metadata('design:type', Function), 
@@ -81779,11 +77895,7 @@ exports.TooltipModule = TooltipModule;
 //# sourceMappingURL=tooltip.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 728 */
-=======
-/* 724 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81802,8 +77914,8 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
-var shared_1 = __webpack_require__(11);
-var shared_2 = __webpack_require__(11);
+var shared_1 = __webpack_require__(9);
+var shared_2 = __webpack_require__(9);
 var TreeNodeTemplateLoader = (function () {
     function TreeNodeTemplateLoader(viewContainer) {
         this.viewContainer = viewContainer;
@@ -81834,6 +77946,7 @@ exports.TreeNodeTemplateLoader = TreeNodeTemplateLoader;
 var UITreeNode = (function () {
     function UITreeNode(tree) {
         this.tree = tree;
+        this.hover = false;
     }
     UITreeNode.prototype.ngOnInit = function () {
         this.node.parent = this.parentNode;
@@ -81889,7 +78002,7 @@ var UITreeNode = (function () {
     UITreeNode = __decorate([
         core_1.Component({
             selector: 'p-treeNode',
-            template: "\n        <template [ngIf]=\"node\">\n            <li class=\"ui-treenode\" *ngIf=\"!tree.horizontal\">\n                <div class=\"ui-treenode-content\" (click)=\"onNodeClick($event)\" (contextmenu)=\"onNodeRightClick($event)\"\n                    [ngClass]=\"{'ui-treenode-selectable':tree.selectionMode}\">\n                    <span class=\"ui-tree-toggler fa fa-fw\" [ngClass]=\"{'fa-caret-right':!node.expanded,'fa-caret-down':node.expanded}\" *ngIf=\"!isLeaf()\"\n                            (click)=\"toggle($event)\"></span\n                    ><span class=\"ui-treenode-leaf-icon\" *ngIf=\"isLeaf()\"></span\n                    ><div class=\"ui-chkbox\" *ngIf=\"tree.selectionMode == 'checkbox'\"><div class=\"ui-chkbox-box ui-widget ui-corner-all ui-state-default\">\n                        <span class=\"ui-chkbox-icon ui-c fa\" \n                            [ngClass]=\"{'fa-check':isSelected(),'fa-minus':node.partialSelected}\"></span></div></div\n                    ><span [class]=\"getIcon()\" *ngIf=\"node.icon||node.expandedIcon||node.collapsedIcon\"></span\n                    ><span class=\"ui-treenode-label ui-corner-all\" \n                        [ngClass]=\"{'ui-state-highlight':isSelected()}\">\n                            <span *ngIf=\"!tree.getTemplateForNode(node)\">{{node.label}}</span>\n                            <span *ngIf=\"tree.getTemplateForNode(node)\">\n                                <p-treeNodeTemplateLoader [node]=\"node\" [template]=\"tree.getTemplateForNode(node)\"></p-treeNodeTemplateLoader>\n                            </span>\n                    </span>\n                </div>\n                <ul class=\"ui-treenode-children\" style=\"display: none;\" *ngIf=\"node.children && node.expanded\" [style.display]=\"node.expanded ? 'block' : 'none'\">\n                    <p-treeNode *ngFor=\"let childNode of node.children\" [node]=\"childNode\" [parentNode]=\"node\"></p-treeNode>\n                </ul>\n            </li>\n            <table *ngIf=\"tree.horizontal\">\n                <tbody>\n                    <tr>\n                        <td class=\"ui-treenode-connector\" *ngIf=\"!root\">\n                            <table class=\"ui-treenode-connector-table\">\n                                <tbody>\n                                    <tr>\n                                        <td [ngClass]=\"{'ui-treenode-connector-line':!firstChild}\"></td>\n                                    </tr>\n                                    <tr>\n                                        <td [ngClass]=\"{'ui-treenode-connector-line':!lastChild}\"></td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </td>\n                        <td class=\"ui-treenode\" [ngClass]=\"{'ui-treenode-collapsed':!node.expanded}\">\n                            <div class=\"ui-treenode-content ui-state-default ui-corner-all\" \n                                [ngClass]=\"{'ui-treenode-selectable':tree.selectionMode,'ui-state-highlight':isSelected()}\" (click)=\"onNodeClick($event)\" (contextmenu)=\"onNodeRightClick($event)\">\n                                <span class=\"ui-tree-toggler fa fa-fw\" [ngClass]=\"{'fa-plus':!node.expanded,'fa-minus':node.expanded}\" *ngIf=\"!isLeaf()\"\n                                        (click)=\"toggle($event)\"></span\n                                ><span [class]=\"getIcon()\" *ngIf=\"node.icon||node.expandedIcon||node.collapsedIcon\"></span\n                                ><span class=\"ui-treenode-label ui-corner-all\">\n                                        <span *ngIf=\"!tree.getTemplateForNode(node)\">{{node.label}}</span>\n                                        <span *ngIf=\"tree.getTemplateForNode(node)\">\n                                            <p-treeNodeTemplateLoader [node]=\"node\" [template]=\"tree.getTemplateForNode(node)\"></p-treeNodeTemplateLoader>\n                                        </span>\n                                </span>\n                            </div>\n                        </td>\n                        <td class=\"ui-treenode-children-container\" *ngIf=\"node.children && node.expanded\" [style.display]=\"node.expanded ? 'table-cell' : 'none'\">\n                            <div class=\"ui-treenode-children\">\n                                <p-treeNode *ngFor=\"let childNode of node.children;let firstChild=first;let lastChild=last;\" [node]=\"childNode\" \n                                        [firstChild]=\"firstChild\" [lastChild]=\"lastChild\"></p-treeNode>\n                            </div>\n                        </td>\n                    </tr>\n                </tbody>\n            </table>\n        </template>\n    "
+            template: "\n        <template [ngIf]=\"node\">\n            <li class=\"ui-treenode\" *ngIf=\"!tree.horizontal\">\n                <div class=\"ui-treenode-content\"\n                    (mouseenter)=\"hover=true\" (mouseleave)=\"hover=false\" (click)=\"onNodeClick($event)\" (contextmenu)=\"onNodeRightClick($event)\">\n                    <span class=\"ui-tree-toggler fa fa-fw\" [ngClass]=\"{'fa-caret-right':!node.expanded,'fa-caret-down':node.expanded}\" *ngIf=\"!isLeaf()\"\n                            (click)=\"toggle($event)\"></span\n                    ><span class=\"ui-treenode-leaf-icon\" *ngIf=\"isLeaf()\"></span\n                    ><div class=\"ui-chkbox\" *ngIf=\"tree.selectionMode == 'checkbox'\"><div class=\"ui-chkbox-box ui-widget ui-corner-all ui-state-default\">\n                        <span class=\"ui-chkbox-icon ui-c fa\" \n                            [ngClass]=\"{'fa-check':isSelected(),'fa-minus':node.partialSelected}\"></span></div></div\n                    ><span [class]=\"getIcon()\" *ngIf=\"node.icon||node.expandedIcon||node.collapsedIcon\"></span\n                    ><span class=\"ui-treenode-label ui-corner-all\" \n                        [ngClass]=\"{'ui-state-hover':hover && tree.selectionMode,'ui-state-highlight':isSelected()}\">\n                            <span *ngIf=\"!tree.getTemplateForNode(node)\">{{node.label}}</span>\n                            <span *ngIf=\"tree.getTemplateForNode(node)\">\n                                <p-treeNodeTemplateLoader [node]=\"node\" [template]=\"tree.getTemplateForNode(node)\"></p-treeNodeTemplateLoader>\n                            </span>\n                    </span>\n                </div>\n                <ul class=\"ui-treenode-children\" style=\"display: none;\" *ngIf=\"node.children && node.expanded\" [style.display]=\"node.expanded ? 'block' : 'none'\">\n                    <p-treeNode *ngFor=\"let childNode of node.children\" [node]=\"childNode\" [parentNode]=\"node\"></p-treeNode>\n                </ul>\n            </li>\n            <table *ngIf=\"tree.horizontal\">\n                <tbody>\n                    <tr>\n                        <td class=\"ui-treenode-connector\" *ngIf=\"!root\">\n                            <table class=\"ui-treenode-connector-table\">\n                                <tbody>\n                                    <tr>\n                                        <td [ngClass]=\"{'ui-treenode-connector-line':!firstChild}\"></td>\n                                    </tr>\n                                    <tr>\n                                        <td [ngClass]=\"{'ui-treenode-connector-line':!lastChild}\"></td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </td>\n                        <td class=\"ui-treenode\" [ngClass]=\"{'ui-treenode-collapsed':!node.expanded}\">\n                            <div class=\"ui-treenode-content ui-state-default ui-corner-all\" \n                                [ngClass]=\"{'ui-state-hover':hover && tree.selectionMode,'ui-state-highlight':isSelected()}\"\n                                (mouseenter)=\"hover=true\" (mouseleave)=\"hover=false\" (click)=\"onNodeClick($event)\" (contextmenu)=\"onNodeRightClick($event)\">\n                                <span class=\"ui-tree-toggler fa fa-fw\" [ngClass]=\"{'fa-plus':!node.expanded,'fa-minus':node.expanded}\" *ngIf=\"!isLeaf()\"\n                                        (click)=\"toggle($event)\"></span\n                                ><span [class]=\"getIcon()\" *ngIf=\"node.icon||node.expandedIcon||node.collapsedIcon\"></span\n                                ><span class=\"ui-treenode-label ui-corner-all\">\n                                        <span *ngIf=\"!tree.getTemplateForNode(node)\">{{node.label}}</span>\n                                        <span *ngIf=\"tree.getTemplateForNode(node)\">\n                                            <p-treeNodeTemplateLoader [node]=\"node\" [template]=\"tree.getTemplateForNode(node)\"></p-treeNodeTemplateLoader>\n                                        </span>\n                                </span>\n                            </div>\n                        </td>\n                        <td class=\"ui-treenode-children-container\" *ngIf=\"node.children && node.expanded\" [style.display]=\"node.expanded ? 'table-cell' : 'none'\">\n                            <div class=\"ui-treenode-children\">\n                                <p-treeNode *ngFor=\"let childNode of node.children;let firstChild=first;let lastChild=last;\" [node]=\"childNode\" \n                                        [firstChild]=\"firstChild\" [lastChild]=\"lastChild\"></p-treeNode>\n                            </div>\n                        </td>\n                    </tr>\n                </tbody>\n            </table>\n        </template>\n    "
         }),
         __param(0, core_1.Inject(core_1.forwardRef(function () { return Tree; }))), 
         __metadata('design:paramtypes', [Tree])
@@ -82166,11 +78279,7 @@ exports.TreeModule = TreeModule;
 //# sourceMappingURL=tree.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 729 */
-=======
-/* 725 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82189,14 +78298,12 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(2);
-var shared_1 = __webpack_require__(11);
-var shared_2 = __webpack_require__(11);
+var shared_1 = __webpack_require__(9);
+var shared_2 = __webpack_require__(9);
 var UITreeRow = (function () {
     function UITreeRow(treeTable) {
         this.treeTable = treeTable;
         this.level = 0;
-        this.labelExpand = "Expand";
-        this.labelCollapse = "Collapse";
     }
     UITreeRow.prototype.toggle = function (event) {
         if (this.node.expanded)
@@ -82204,7 +78311,6 @@ var UITreeRow = (function () {
         else
             this.treeTable.onNodeExpand.emit({ originalEvent: event, node: this.node });
         this.node.expanded = !this.node.expanded;
-        event.preventDefault();
     };
     UITreeRow.prototype.isLeaf = function () {
         return this.node.leaf == false ? false : !(this.node.children && this.node.children.length);
@@ -82241,18 +78347,10 @@ var UITreeRow = (function () {
         core_1.Input(), 
         __metadata('design:type', Number)
     ], UITreeRow.prototype, "level", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], UITreeRow.prototype, "labelExpand", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], UITreeRow.prototype, "labelCollapse", void 0);
     UITreeRow = __decorate([
         core_1.Component({
             selector: '[pTreeRow]',
-            template: "\n        <div class=\"ui-treetable-row\" [ngClass]=\"{'ui-state-highlight':isSelected(),'ui-treetable-row-selectable':treeTable.selectionMode}\">\n            <td *ngFor=\"let col of treeTable.columns; let i=index\" [ngStyle]=\"col.style\" [class]=\"col.styleClass\" (click)=\"onRowClick($event)\">\n                <a href=\"#\" *ngIf=\"i==0\" class=\"ui-treetable-toggler fa fa-fw ui-c\" [ngClass]=\"{'fa-caret-down':node.expanded,'fa-caret-right':!node.expanded}\"\n                    [ngStyle]=\"{'margin-left':level*16 + 'px','visibility': isLeaf() ? 'hidden' : 'visible'}\"\n                    (click)=\"toggle($event)\"\n                    [title]=\"node.expanded ? labelCollapse : labelExpand\">\n                </a>\n                <span *ngIf=\"!col.template\">{{resolveFieldData(node.data,col.field)}}</span>\n                <p-columnBodyTemplateLoader [column]=\"col\" [rowData]=\"node\" *ngIf=\"col.template\"></p-columnBodyTemplateLoader>\n            </td>\n        </div>\n        <div *ngIf=\"node.children && node.expanded\" class=\"ui-treetable-row\" style=\"display:table-row\">\n            <td [attr.colspan]=\"treeTable.columns.length\" class=\"ui-treetable-child-table-container\">\n                <table>\n                    <tbody pTreeRow *ngFor=\"let childNode of node.children\" [node]=\"childNode\" [level]=\"level+1\" [labelExpand]=\"labelExpand\" [labelCollapse]=\"labelCollapse\"></tbody>\n                </table>\n            </td>\n        </div>\n    "
+            template: "\n        <div class=\"ui-treetable-row\" [ngClass]=\"{'ui-state-hover':hover&&treeTable.selectionMode,'ui-state-highlight':isSelected()}\">\n            <td *ngFor=\"let col of treeTable.columns; let i=index\" [ngStyle]=\"col.style\" [class]=\"col.styleClass\"\n                (mouseenter)=\"hover=true\" (mouseleave)=\"hover=false\" (click)=\"onRowClick($event)\">\n                <span *ngIf=\"i==0\" class=\"ui-treetable-toggler fa fa-fw ui-c\" [ngClass]=\"{'fa-caret-down':node.expanded,'fa-caret-right':!node.expanded}\"\n                    [ngStyle]=\"{'margin-left':level*16 + 'px','visibility': isLeaf() ? 'hidden' : 'visible'}\"\n                    (click)=\"toggle($event)\"></span>\n                <span *ngIf=\"!col.template\">{{resolveFieldData(node.data,col.field)}}</span>\n                <p-columnBodyTemplateLoader [column]=\"col\" [rowData]=\"node\" *ngIf=\"col.template\"></p-columnBodyTemplateLoader>\n            </td>\n        </div>\n        <div *ngIf=\"node.children && node.expanded\" class=\"ui-treetable-row\" style=\"display:table-row\">\n            <td [attr.colspan]=\"treeTable.columns.length\" class=\"ui-treetable-child-table-container\">\n                <table>\n                    <tbody pTreeRow *ngFor=\"let childNode of node.children\" [node]=\"childNode\" [level]=\"level+1\"></tbody>\n                </table>\n            </td>\n        </div>\n    "
         }),
         __param(0, core_1.Inject(core_1.forwardRef(function () { return TreeTable; }))), 
         __metadata('design:paramtypes', [TreeTable])
@@ -82267,8 +78365,6 @@ var TreeTable = (function () {
         this.onNodeUnselect = new core_1.EventEmitter();
         this.onNodeExpand = new core_1.EventEmitter();
         this.onNodeCollapse = new core_1.EventEmitter();
-        this.labelExpand = "Expand";
-        this.labelCollapse = "Collapse";
     }
     TreeTable.prototype.onRowClick = function (event, node) {
         var eventTarget = event.target;
@@ -82380,14 +78476,6 @@ var TreeTable = (function () {
         __metadata('design:type', String)
     ], TreeTable.prototype, "styleClass", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], TreeTable.prototype, "labelExpand", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], TreeTable.prototype, "labelCollapse", void 0);
-    __decorate([
         core_1.ContentChild(shared_1.Header), 
         __metadata('design:type', shared_1.Header)
     ], TreeTable.prototype, "header", void 0);
@@ -82402,7 +78490,7 @@ var TreeTable = (function () {
     TreeTable = __decorate([
         core_1.Component({
             selector: 'p-treeTable',
-            template: "\n        <div [ngClass]=\"'ui-treetable ui-widget'\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-treetable-header ui-widget-header\" *ngIf=\"header\">\n                <ng-content select=\"p-header\"></ng-content>\n            </div>\n            <div class=\"ui-treetable-tablewrapper\">\n                <table class=\"ui-widget-content\">\n                    <thead>\n                        <tr class=\"ui-state-default\">\n                            <th #headerCell *ngFor=\"let col of columns\" [ngStyle]=\"col.style\" [class]=\"col.styleClass\" \n                                [ngClass]=\"'ui-state-default ui-unselectable-text'\">\n                                <span class=\"ui-column-title\" *ngIf=\"!col.headerTemplate\">{{col.header}}</span>\n                                <span class=\"ui-column-title\" *ngIf=\"col.headerTemplate\">\n                                    <p-columnHeaderTemplateLoader [column]=\"col\"></p-columnHeaderTemplateLoader>\n                                </span>\n                            </th>\n                        </tr>\n                    </thead>\n                    <tfoot *ngIf=\"hasFooter()\">\n                        <tr>\n                            <td *ngFor=\"let col of columns\" [ngStyle]=\"col.style\" [class]=\"col.styleClass\" [ngClass]=\"{'ui-state-default':true}\">\n                                <span class=\"ui-column-footer\" *ngIf=\"!col.footerTemplate\">{{col.footer}}</span>\n                                <span class=\"ui-column-footer\" *ngIf=\"col.footerTemplate\">\n                                    <p-columnFooterTemplateLoader [column]=\"col\"></p-columnFooterTemplateLoader>\n                                </span>\n                            </td>\n                        </tr>\n                    </tfoot>\n                    <tbody pTreeRow *ngFor=\"let node of value\" [node]=\"node\" [level]=\"0\" [labelExpand]=\"labelExpand\" [labelCollapse]=\"labelCollapse\"></tbody>\n                </table>\n            </div>\n            <div class=\"ui-treetable-footer ui-widget-header\" *ngIf=\"footer\">\n                <ng-content select=\"p-footer\"></ng-content>\n            </div>\n        </div>\n    "
+            template: "\n        <div [ngClass]=\"'ui-treetable ui-widget'\" [ngStyle]=\"style\" [class]=\"styleClass\">\n            <div class=\"ui-treetable-header ui-widget-header\" *ngIf=\"header\">\n                <ng-content select=\"header\"></ng-content>\n            </div>\n            <div class=\"ui-treetable-tablewrapper\">\n                <table class=\"ui-widget-content\">\n                    <thead>\n                        <tr class=\"ui-state-default\">\n                            <th #headerCell *ngFor=\"let col of columns\" [ngStyle]=\"col.style\" [class]=\"col.styleClass\" \n                                [ngClass]=\"'ui-state-default ui-unselectable-text'\">\n                                <span class=\"ui-column-title\" *ngIf=\"!col.headerTemplate\">{{col.header}}</span>\n                                <span class=\"ui-column-title\" *ngIf=\"col.headerTemplate\">\n                                    <p-columnHeaderTemplateLoader [column]=\"col\"></p-columnHeaderTemplateLoader>\n                                </span>\n                            </th>\n                        </tr>\n                    </thead>\n                    <tfoot *ngIf=\"hasFooter()\">\n                        <tr>\n                            <td *ngFor=\"let col of columns\" [ngStyle]=\"col.style\" [class]=\"col.styleClass\" [ngClass]=\"{'ui-state-default':true}\">\n                                <span class=\"ui-column-footer\" *ngIf=\"!col.footerTemplate\">{{col.footer}}</span>\n                                <span class=\"ui-column-footer\" *ngIf=\"col.footerTemplate\">\n                                    <p-columnFooterTemplateLoader [column]=\"col\"></p-columnFooterTemplateLoader>\n                                </span>\n                            </td>\n                        </tr>\n                    </tfoot>\n                    <tbody pTreeRow *ngFor=\"let node of value\" [node]=\"node\" [level]=\"0\"></tbody>\n                </table>\n            </div>\n            <div class=\"ui-treetable-footer ui-widget-header\" *ngIf=\"footer\">\n                <ng-content select=\"footer\"></ng-content>\n            </div>\n        </div>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], TreeTable);
@@ -82426,11 +78514,7 @@ exports.TreeTableModule = TreeTableModule;
 //# sourceMappingURL=treetable.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 730 */
-=======
-/* 726 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82453,8 +78537,7 @@ exports.TRISTATECHECKBOX_VALUE_ACCESSOR = {
     multi: true
 };
 var TriStateCheckbox = (function () {
-    function TriStateCheckbox(cd) {
-        this.cd = cd;
+    function TriStateCheckbox() {
         this.onChange = new core_1.EventEmitter();
         this.onModelChange = function () { };
         this.onModelTouched = function () { };
@@ -82505,7 +78588,6 @@ var TriStateCheckbox = (function () {
     };
     TriStateCheckbox.prototype.writeValue = function (value) {
         this.value = value;
-        this.cd.markForCheck();
     };
     TriStateCheckbox.prototype.setDisabledState = function (disabled) {
         this.disabled = disabled;
@@ -82519,20 +78601,16 @@ var TriStateCheckbox = (function () {
         __metadata('design:type', String)
     ], TriStateCheckbox.prototype, "name", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], TriStateCheckbox.prototype, "tabindex", void 0);
-    __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
     ], TriStateCheckbox.prototype, "onChange", void 0);
     TriStateCheckbox = __decorate([
         core_1.Component({
             selector: 'p-triStateCheckbox',
-            template: "\n        <div class=\"ui-chkbox ui-tristatechkbox ui-widget\">\n            <div class=\"ui-helper-hidden-accessible\">\n                <input #input type=\"text\" [name]=\"name\" [attr.tabindex]=\"tabindex\" readonly [disabled]=\"disabled\" (keyup)=\"onKeyup($event)\" (keydown)=\"onKeydown($event)\" (focus)=\"onFocus()\" (blur)=\"onBlur()\">\n            </div>\n            <div class=\"ui-chkbox-box ui-widget ui-corner-all ui-state-default\" (click)=\"onClick($event,input)\"\n                [ngClass]=\"{'ui-state-active':value!=null,'ui-state-disabled':disabled,'ui-state-focus':focus}\">\n                <span class=\"ui-chkbox-icon fa ui-c\" [ngClass]=\"{'fa-check':value==true,'fa-close':value==false}\"></span>\n            </div>\n        </div>\n    ",
+            template: "\n        <div class=\"ui-chkbox ui-tristatechkbox ui-widget\">\n            <div class=\"ui-helper-hidden-accessible\">\n                <input #input type=\"text\" [name]=\"name\" readonly [disabled]=\"disabled\" (keyup)=\"onKeyup($event)\" (keydown)=\"onKeydown($event)\" (focus)=\"onFocus()\" (blur)=\"onBlur()\">\n            </div>\n            <div class=\"ui-chkbox-box ui-widget ui-corner-all ui-state-default\" (click)=\"onClick($event,input)\"\n                [ngClass]=\"{'ui-state-hover':hover&&!disabled,'ui-state-active':value!=null,'ui-state-disabled':disabled,'ui-state-focus':focus}\" \n                    (mouseenter)=\"hover=true\" (mouseleave)=\"hover=false\">\n                <span class=\"ui-chkbox-icon fa ui-c\" [ngClass]=\"{'fa-check':value==true,'fa-close':value==false}\"></span>\n            </div>\n        </div>\n    ",
             providers: [exports.TRISTATECHECKBOX_VALUE_ACCESSOR]
         }), 
-        __metadata('design:paramtypes', [core_1.ChangeDetectorRef])
+        __metadata('design:paramtypes', [])
     ], TriStateCheckbox);
     return TriStateCheckbox;
 }());
@@ -82554,11 +78632,7 @@ exports.TriStateCheckboxModule = TriStateCheckboxModule;
 //# sourceMappingURL=tristatecheckbox.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 731 */
-=======
-/* 727 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82566,18 +78640,8 @@ exports.TriStateCheckboxModule = TriStateCheckboxModule;
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-<<<<<<< HEAD
 __export(__webpack_require__(374));
 __export(__webpack_require__(9));
-=======
-__export(__webpack_require__(376));
-__export(__webpack_require__(11));
-__export(__webpack_require__(667));
-__export(__webpack_require__(668));
-__export(__webpack_require__(669));
-__export(__webpack_require__(670));
-__export(__webpack_require__(53));
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 __export(__webpack_require__(671));
 __export(__webpack_require__(672));
 __export(__webpack_require__(673));
@@ -82585,11 +78649,11 @@ __export(__webpack_require__(674));
 __export(__webpack_require__(53));
 __export(__webpack_require__(675));
 __export(__webpack_require__(676));
+__export(__webpack_require__(677));
 __export(__webpack_require__(678));
 __export(__webpack_require__(679));
 __export(__webpack_require__(680));
 __export(__webpack_require__(682));
-__export(__webpack_require__(677));
 __export(__webpack_require__(683));
 __export(__webpack_require__(684));
 __export(__webpack_require__(685));
@@ -82603,7 +78667,6 @@ __export(__webpack_require__(691));
 __export(__webpack_require__(692));
 __export(__webpack_require__(693));
 __export(__webpack_require__(694));
-__export(__webpack_require__(78));
 __export(__webpack_require__(695));
 __export(__webpack_require__(696));
 __export(__webpack_require__(697));
@@ -82611,24 +78674,15 @@ __export(__webpack_require__(698));
 __export(__webpack_require__(78));
 __export(__webpack_require__(699));
 __export(__webpack_require__(700));
-__export(__webpack_require__(377));
 __export(__webpack_require__(701));
 __export(__webpack_require__(702));
 __export(__webpack_require__(703));
-<<<<<<< HEAD
-=======
-__export(__webpack_require__(157));
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 __export(__webpack_require__(704));
 __export(__webpack_require__(375));
 __export(__webpack_require__(705));
 __export(__webpack_require__(706));
 __export(__webpack_require__(707));
-<<<<<<< HEAD
 __export(__webpack_require__(156));
-=======
-__export(__webpack_require__(378));
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 __export(__webpack_require__(708));
 __export(__webpack_require__(709));
 __export(__webpack_require__(710));
@@ -82639,20 +78693,16 @@ __export(__webpack_require__(713));
 __export(__webpack_require__(714));
 __export(__webpack_require__(715));
 __export(__webpack_require__(716));
-__export(__webpack_require__(718));
 __export(__webpack_require__(717));
+__export(__webpack_require__(718));
 __export(__webpack_require__(719));
 __export(__webpack_require__(720));
 __export(__webpack_require__(722));
-<<<<<<< HEAD
 __export(__webpack_require__(721));
-=======
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 __export(__webpack_require__(723));
 __export(__webpack_require__(724));
 __export(__webpack_require__(725));
 __export(__webpack_require__(726));
-<<<<<<< HEAD
 __export(__webpack_require__(727));
 __export(__webpack_require__(728));
 __export(__webpack_require__(729));
@@ -82661,12 +78711,6 @@ __export(__webpack_require__(730));
 
 /***/ },
 /* 732 */
-=======
-//# sourceMappingURL=primeng.js.map
-
-/***/ },
-/* 728 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports) {
 
 // shim for using process in browser
@@ -82852,81 +78896,19 @@ process.umask = function() { return 0; };
 
 
 /***/ },
-<<<<<<< HEAD
 /* 733 */
 /***/ function(module, exports) {
 
 module.exports = "\n<main>\n\t<router-outlet></router-outlet>\n</main>\n\n\n<footer>\n  © 2016\n</footer>\n"
-=======
-/* 729 */
-/***/ function(module, exports) {
-
-module.exports = ".topTable {\n  border: 1px solid black;\n  text-align: center;\n  font-weight: bold; }\n\n.bodyTable .groupe {\n  border: 1px solid black; }\n  .bodyTable .groupe div {\n    padding: 3px; }\n  .bodyTable .groupe span {\n    display: block; }\n  .bodyTable .groupe .rank span {\n    text-align: right; }\n\n.wrapperGroup {\n  padding: 0; }\n\n.quarterfinals {\n  padding: 0 5px 0 5px; }\n  .quarterfinals .headerGroupe div {\n    padding: 0; }\n    .quarterfinals .headerGroupe div:first-child {\n      text-align: left; }\n    .quarterfinals .headerGroupe div:nth-child(2) {\n      text-align: center; }\n    .quarterfinals .headerGroupe div:nth-child(3) {\n      text-align: right; }\n\n.stage {\n  font-weight: bold; }\n\n.semifinals {\n  padding: 0 5px; }\n\n.finals {\n  padding: 0 5px; }\n  .finals .col-md-6 {\n    padding: 0; }\n"
-
-/***/ },
-/* 730 */
-/***/ function(module, exports) {
-
-module.exports = ".footer {\n  background-color: lavender;\n  padding: 5px 0;\n  margin-top: 222px; }\n"
-
-/***/ },
-/* 731 */
-/***/ function(module, exports) {
-
-module.exports = ".header {\n  background-color: lavender;\n  text-align: center; }\n\nbutton {\n  padding: 8px 22px;\n  font-size: 15px;\n  text-align: center;\n  cursor: pointer;\n  outline: none;\n  color: #fff;\n  background-color: #4CAF50;\n  border: none;\n  border-radius: 15px;\n  box-shadow: 0 6px #999; }\n\nbutton:hover {\n  background-color: #3e8e41; }\n\nbutton:active {\n  background-color: #3e8e41;\n  box-shadow: 0 5px #666;\n  transform: translateY(4px); }\n"
-
-/***/ },
-/* 732 */
-/***/ function(module, exports) {
-
-module.exports = "<header></header>\r\n<main>\r\n\t<router-outlet></router-outlet>\r\n</main>\r\n\r\n\r\n<footer>\r\n\r\n</footer>\r\n\r\n"
-
-/***/ },
-/* 733 */
-/***/ function(module, exports) {
-
-module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-12 topTable\">\n      <div class=\"col-md-3\">\n        <span>1/8 Finals</span>\n      </div>\n      <div class=\"col-md-3\">\n        <span>Quarterfinals</span>\n      </div>\n      <div class=\"col-md-3\">\n        <span>Semifinals</span>\n      </div>\n      <div class=\"col-md-3\">\n        <span>Finals</span>\n      </div>\n    </div>\n    <div class=\"col-md-12 bodyTable\">\n      <div class=\"col-md-3\">\n        <div class=\"row\">\n          <div class=\"col-md-12 headerGroupe\">\n            <div class=\"row\">\n              <div class=\"col-md-3\">\n                <span>Bib</span>\n              </div>\n              <div class=\"col-md-6\">\n                <span class=\"stage\">EF 1 (1/16)</span>\n              </div>\n              <div class=\"col-md-3\">\n                <span>Rk</span>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-md-12 groupe\">\n            <div *ngFor=\"let item of data[0]\" class=\"row\">\n              <div class=\"col-md-2\">\n                <span>{{item.Bib }}</span>\n              </div>\n              <div class=\"col-md-7\">\n                <span>{{ item.Name }} {{item.Surname}}</span>\n              </div>\n              <div class=\"col-md-2\">\n                <span>{{ item.NOC }}</span>\n              </div>\n              <div class=\"col-md-1 rank\">\n                <span>{{ item.Position }}</span>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"col-md-12 headerGroupe\">\n            <div class=\"row\">\n              <div class=\"col-md-3\">\n                <span>Bib</span>\n              </div>\n              <div class=\"col-md-6\">\n                <span class=\"stage\">EF 2 (2/16)</span>\n              </div>\n              <div class=\"col-md-3\">\n                <span>Rk</span>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-md-12 groupe\">\n            <div *ngFor=\"let item of data[0]\" class=\"row\">\n              <div class=\"col-md-2\">\n                <span>{{item.Bib }}</span>\n              </div>\n              <div class=\"col-md-7\">\n                <span>{{ item.Name }} {{item.Surname}}</span>\n              </div>\n              <div class=\"col-md-2\">\n                <span>{{ item.NOC }}</span>\n              </div>\n              <div class=\"col-md-1 rank\">\n                <span>{{ item.Position }}</span>\n              </div>\n            </div>\n          </div>\n\n\n          <div class=\"col-md-12 headerGroupe\">\n            <div class=\"row\">\n              <div class=\"col-md-3\">\n                <span>Bib</span>\n              </div>\n              <div class=\"col-md-6\">\n                <span class=\"stage\">EF 3 (3/16)</span>\n              </div>\n              <div class=\"col-md-3\">\n                <span>Rk</span>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-md-12 groupe\">\n            <div *ngFor=\"let item of data[0]\" class=\"row\">\n              <div class=\"col-md-2\">\n                <span>{{item.Bib }}</span>\n              </div>\n              <div class=\"col-md-7\">\n                <span>{{ item.Name }} {{item.Surname}}</span>\n              </div>\n              <div class=\"col-md-2\">\n                <span>{{ item.NOC }}</span>\n              </div>\n              <div class=\"col-md-1 rank\">\n                <span>{{ item.Position }}</span>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"col-md-12 headerGroupe\">\n            <div class=\"row\">\n              <div class=\"col-md-3\">\n                <span>Bib</span>\n              </div>\n              <div class=\"col-md-6\">\n                <span class=\"stage\">EF 4 (4/16)</span>\n              </div>\n              <div class=\"col-md-3\">\n                <span>Rk</span>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-md-12 groupe\">\n            <div *ngFor=\"let item of data[0]\" class=\"row\">\n              <div class=\"col-md-2\">\n                <span>{{item.Bib }}</span>\n              </div>\n              <div class=\"col-md-7\">\n                <span>{{ item.Name }} {{item.Surname}}</span>\n              </div>\n              <div class=\"col-md-2\">\n                <span>{{ item.NOC }}</span>\n              </div>\n              <div class=\"col-md-1 rank\">\n                <span>{{ item.Position }}</span>\n              </div>\n            </div>\n          </div>\n\n\n          <div class=\"col-md-12 headerGroupe\">\n            <div class=\"row\">\n              <div class=\"col-md-3\">\n                <span>Bib</span>\n              </div>\n              <div class=\"col-md-6\">\n                <span class=\"stage\">EF 5 (5/16)</span>\n              </div>\n              <div class=\"col-md-3\">\n                <span>Rk</span>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-md-12 groupe\">\n            <div *ngFor=\"let item of data[0]\" class=\"row\">\n              <div class=\"col-md-2\">\n                <span>{{item.Bib }}</span>\n              </div>\n              <div class=\"col-md-7\">\n                <span>{{ item.Name }} {{item.Surname}}</span>\n              </div>\n              <div class=\"col-md-2\">\n                <span>{{ item.NOC }}</span>\n              </div>\n              <div class=\"col-md-1 rank\">\n                <span>{{ item.Position }}</span>\n              </div>\n            </div>\n          </div>\n\n\n          <div class=\"col-md-12 headerGroupe\">\n            <div class=\"row\">\n              <div class=\"col-md-3\">\n                <span>Bib</span>\n              </div>\n              <div class=\"col-md-6\">\n                <span class=\"stage\">EF 6 (6/16)</span>\n              </div>\n              <div class=\"col-md-3\">\n                <span>Rk</span>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-md-12 groupe\">\n            <div *ngFor=\"let item of data[0]\" class=\"row\">\n              <div class=\"col-md-2\">\n                <span>{{item.Bib }}</span>\n              </div>\n              <div class=\"col-md-7\">\n                <span>{{ item.Name }} {{item.Surname}}</span>\n              </div>\n              <div class=\"col-md-2\">\n                <span>{{ item.NOC }}</span>\n              </div>\n              <div class=\"col-md-1 rank\">\n                <span>{{ item.Position }}</span>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"col-md-12 headerGroupe\">\n            <div class=\"row\">\n              <div class=\"col-md-3\">\n                <span>Bib</span>\n              </div>\n              <div class=\"col-md-6\">\n                <span class=\"stage\">EF 7 (7/16)</span>\n              </div>\n              <div class=\"col-md-3\">\n                <span>Rk</span>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-md-12 groupe\">\n            <div *ngFor=\"let item of data[0]\" class=\"row\">\n              <div class=\"col-md-2\">\n                <span>{{item.Bib }}</span>\n              </div>\n              <div class=\"col-md-7\">\n                <span>{{ item.Name }} {{item.Surname}}</span>\n              </div>\n              <div class=\"col-md-2\">\n                <span>{{ item.NOC }}</span>\n              </div>\n              <div class=\"col-md-1 rank\">\n                <span>{{ item.Position }}</span>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"col-md-12 headerGroupe\">\n            <div class=\"row\">\n              <div class=\"col-md-3\">\n                <span>Bib</span>\n              </div>\n              <div class=\"col-md-6\">\n                <span class=\"stage\">EF 8 (8/16)</span>\n              </div>\n              <div class=\"col-md-3\">\n                <span>Rk</span>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-md-12 groupe\">\n            <div *ngFor=\"let item of data[0]\" class=\"row\">\n              <div class=\"col-md-2\">\n                <span>{{item.Bib }}</span>\n              </div>\n              <div class=\"col-md-7\">\n                <span>{{ item.Name }} {{item.Surname}}</span>\n              </div>\n              <div class=\"col-md-2\">\n                <span>{{ item.NOC }}</span>\n              </div>\n              <div class=\"col-md-1 rank\">\n                <span>{{ item.Position }}</span>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <!--QUARTERFINALS START-->\n      <div class=\"col-md-3 quarterfinals\">\n        <div [ngStyle]=\"{'margin-top': margin + 'px'}\" class=\"col-md-12 wrapperGroup\">\n          <div class=\"col-md-12 headerGroupe\">\n            <div class=\"row\">\n              <div class=\"col-md-3\">\n                <span>Bib</span>\n              </div>\n              <div class=\"col-md-6\">\n                <span class=\"stage\">QF 1 (9/16)</span>\n              </div>\n              <div class=\"col-md-3\">\n                <span>Rk</span>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-md-12 groupe\">\n            <div *ngFor=\"let item of data[0]\" class=\"row\">\n              <div class=\"col-md-2\">\n                <span>{{item.Bib }}</span>\n              </div>\n              <div class=\"col-md-7\">\n                <span>{{ item.Name }} {{item.Surname}}</span>\n              </div>\n              <div class=\"col-md-2\">\n                <span>{{ item.NOC }}</span>\n              </div>\n              <div class=\"col-md-1 rank\">\n                <span>{{ item.Position }}</span>\n              </div>\n            </div>\n          </div>\n        </div>\n\n\n        <div [ngStyle]=\"{'margin-top': margin + 92 + 'px'}\" class=\"col-md-12 wrapperGroup\">\n          <div class=\"col-md-12 headerGroupe\">\n            <div class=\"row\">\n              <div class=\"col-md-3\">\n                <span>Bib</span>\n              </div>\n              <div class=\"col-md-6\">\n                <span class=\"stage\">QF 10 (10/16)</span>\n              </div>\n              <div class=\"col-md-3\">\n                <span>Rk</span>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-md-12 groupe\">\n            <div *ngFor=\"let item of data[0]\" class=\"row\">\n              <div class=\"col-md-2\">\n                <span>{{item.Bib }}</span>\n              </div>\n              <div class=\"col-md-7\">\n                <span>{{ item.Name }} {{item.Surname}}</span>\n              </div>\n              <div class=\"col-md-2\">\n                <span>{{ item.NOC }}</span>\n              </div>\n              <div class=\"col-md-1 rank\">\n                <span>{{ item.Position }}</span>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <div [ngStyle]=\"{'margin-top': margin + 92 + 'px'}\" class=\"col-md-12 wrapperGroup\">\n          <div class=\"col-md-12 headerGroupe\">\n            <div class=\"row\">\n              <div class=\"col-md-3\">\n                <span>Bib</span>\n              </div>\n              <div class=\"col-md-6\">\n                <span class=\"stage\">QF 11 (11/16)</span>\n              </div>\n              <div class=\"col-md-3\">\n                <span>Rk</span>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-md-12 groupe\">\n            <div *ngFor=\"let item of data[0]\" class=\"row\">\n              <div class=\"col-md-2\">\n                <span>{{item.Bib }}</span>\n              </div>\n              <div class=\"col-md-7\">\n                <span>{{ item.Name }} {{item.Surname}}</span>\n              </div>\n              <div class=\"col-md-2\">\n                <span>{{ item.NOC }}</span>\n              </div>\n              <div class=\"col-md-1 rank\">\n                <span>{{ item.Position }}</span>\n              </div>\n            </div>\n          </div>\n        </div>\n\n\n        <div [ngStyle]=\"{'margin-top': margin + 92 + 'px'}\" class=\"col-md-12 wrapperGroup\">\n          <div class=\"col-md-12 headerGroupe\">\n            <div class=\"row\">\n              <div class=\"col-md-3\">\n                <span>Bib</span>\n              </div>\n              <div class=\"col-md-6\">\n                <span class=\"stage\">QF 12 (12/16)</span>\n              </div>\n              <div class=\"col-md-3\">\n                <span>Rk</span>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-md-12 groupe\">\n            <div *ngFor=\"let item of data[0]\" class=\"row\">\n              <div class=\"col-md-2\">\n                <span>{{item.Bib }}</span>\n              </div>\n              <div class=\"col-md-7\">\n                <span>{{ item.Name }} {{item.Surname}}</span>\n              </div>\n              <div class=\"col-md-2\">\n                <span>{{ item.NOC }}</span>\n              </div>\n              <div class=\"col-md-1 rank\">\n                <span>{{ item.Position }}</span>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <!--QUARTERFINALS END-->\n\n      <!--SEMIFINALS START-->\n      <div class=\"col-md-3 semifinals\">\n        <div [ngStyle]=\"{'margin-top': margin + 152 + marginSemi  + 'px'}\" class=\"col-md-12 wrapperGroup\">\n          <div class=\"col-md-12 headerGroupe\">\n            <div class=\"row\">\n              <div class=\"col-md-3\">\n                <span>Bib</span>\n              </div>\n              <div class=\"col-md-6\">\n                <span class=\"stage\">QF 12 (12/16)</span>\n              </div>\n              <div class=\"col-md-3\">\n                <span>Rk</span>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-md-12 groupe\">\n            <div *ngFor=\"let item of data[0]\" class=\"row\">\n              <div class=\"col-md-2\">\n                <span>{{item.Bib }}</span>\n              </div>\n              <div class=\"col-md-7\">\n                <span>{{ item.Name }} {{item.Surname}}</span>\n              </div>\n              <div class=\"col-md-2\">\n                <span>{{ item.NOC }}</span>\n              </div>\n              <div class=\"col-md-1 rank\">\n                <span>{{ item.Position }}</span>\n              </div>\n            </div>\n          </div>\n        </div>\n\n\n        <div [ngStyle]=\"{'margin-top': margin + 464 + marginSemi - fixMargin + 'px'}\" class=\"col-md-12 wrapperGroup\">\n          <div class=\"col-md-12 headerGroupe\">\n            <div class=\"row\">\n              <div class=\"col-md-3\">\n                <span>Bib</span>\n              </div>\n              <div class=\"col-md-6\">\n                <span class=\"stage\">SF 13 (13/16)</span>\n              </div>\n              <div class=\"col-md-3\">\n                <span>Rk</span>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-md-12 groupe\">\n            <div *ngFor=\"let item of data[0]\" class=\"row\">\n              <div class=\"col-md-2\">\n                <span>{{item.Bib }}</span>\n              </div>\n              <div class=\"col-md-7\">\n                <span>{{ item.Name }} {{item.Surname}}</span>\n              </div>\n              <div class=\"col-md-2\">\n                <span>{{ item.NOC }}</span>\n              </div>\n              <div class=\"col-md-1 rank\">\n                <span>{{ item.Position }}</span>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <!--SEMIFINALS END-->\n\n\n      <!--FINALS START-->\n      <div class=\"col-md-3 finals\">\n        <div [ngStyle]=\"{'margin-top': margin + 425 + marginSemi - fixMargin + 'px'}\" class=\"col-md-12 wrapperGroup\">\n          <div class=\"col-md-12 headerGroupe\">\n            <div class=\"row\">\n              <div class=\"col-md-3\">\n                <span>Bib</span>\n              </div>\n              <div class=\"col-md-6\">\n                <span class=\"stage\">Small Final(15/16)</span>\n              </div>\n              <div class=\"col-md-3\">\n                <span>Rk</span>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-md-12 groupe\">\n            <div *ngFor=\"let item of data[0]\" class=\"row\">\n              <div class=\"col-md-2\">\n                <span>{{item.Bib }}</span>\n              </div>\n              <div class=\"col-md-7\">\n                <span>{{ item.Name }} {{item.Surname}}</span>\n              </div>\n              <div class=\"col-md-2\">\n                <span>{{ item.NOC }}</span>\n              </div>\n              <div class=\"col-md-1 rank\">\n                <span>{{ item.Position }}</span>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <div [ngStyle]=\"{'margin-top': margin - 36 + 'px'}\" class=\"col-md-12 wrapperGroup\">\n          <div class=\"col-md-12 headerGroupe\">\n            <div class=\"row\">\n              <div class=\"col-md-3\">\n                <span>Bib</span>\n              </div>\n              <div class=\"col-md-6\">\n                <span class=\"stage\">Big Final (16/16)</span>\n              </div>\n              <div class=\"col-md-3\">\n                <span>Rk</span>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-md-12 groupe\">\n            <div *ngFor=\"let item of data[0]\" class=\"row\">\n              <div class=\"col-md-2\">\n                <span>{{item.Bib }}</span>\n              </div>\n              <div class=\"col-md-7\">\n                <span>{{ item.Name }} {{item.Surname}}</span>\n              </div>\n              <div class=\"col-md-2\">\n                <span>{{ item.NOC }}</span>\n              </div>\n              <div class=\"col-md-1 rank\">\n                <span>{{ item.Position }}</span>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 /***/ },
 /* 734 */
 /***/ function(module, exports) {
 
-<<<<<<< HEAD
 module.exports = "<div class=\"ui-g wrap\" *ngIf=\"data\">\n  <b class=\"ui-g-12 center\">Certificate Report</b>\n  <div class=\"ui-g-12 center\">{{data.Domain}}</div>\n  <div class=\"ui-g-12\">\n    <div class=\"ui-g-5 center\">Domain Scanned: {{data.NumberOfDomainsWithCertificate}}</div>\n    <div class=\"ui-g-5 center\">Websites Analyzed: {{data.NumberOfDomainsWithCertificate}}</div>\n  </div>\n  <div class=\"ui-g-12\">\n    <div class=\"ui-g-5 center\">Unique Certificates: {{data.NumberOfCertificates}}</div>\n    <div class=\"ui-g-5 center\">Secure Websites: {{data.NumberOfDomainsWithCertificate}}</div>\n  </div>\n  <div class=\"ui-g-12\">\n    <div class=\"ui-g-5 center\">Overlaps: {{data.Overlaps}}</div>\n    <div class=\"ui-g-5 center\">Total Savings: ${{data.SavingsPotential | number}}</div>\n  </div>\n  <div class=\"ui-g-12\">\n    <div class=\"ui-g-5 center\">Gaps: {{data.Gaps}}</div>\n    <div class=\"ui-g-5 center\"></div>\n  </div>\n  <div class=\"ui-g-12\">\n    <div class=\"ui-g-5 center\">Vulnerabilities: {{data.Vulnerabilies}}</div>\n    <div class=\"ui-g-5 center\"></div>\n  </div>\n</div>\n<div class=\"ui-g\">\n  <chart class=\"ui-g-6\" *ngIf=\"certificateExpiring\" [options]=\"certificateExpiring\"></chart>\n  <chart class=\"ui-g-6\" *ngIf=\"certificateIssuers\" [options]=\"certificateIssuers\"></chart>\n</div>\n\n<button (click)=\"switch()\" pButton type=\"button\" label=\"Switch JSON\"></button>\n\n<p-dataTable *ngIf=\"dataTable\" [value]=\"dataTable\"  [rows]=\"10\" [paginator]=\"true\" [pageLinks]=\"3\" [rowsPerPageOptions]=\"[5,10,20]\" [globalFilter]=\"gb\" #dt [style]=\"{'margin-bottom':'30px'}\" expandableRows=\"true\">\n  <header>\n    <button (click)=\"refresh()\" pButton type=\"button\" icon=\"fa-refresh\" ></button>\n    <input #gb type=\"text\" placeholder=\"Global search\">\n  </header>\n  <p-column expander=\"true\" styleClass=\"col-icon\" [style]=\"{'width': '30px'}\"></p-column>\n  <p-column field=\"subject\" header=\"Subject\" [sortable]=\"true\"></p-column>\n  <p-column field=\"issuer\" header=\"Issuer\" [sortable]=\"true\"></p-column>\n  <p-column field=\"overlapping\" header=\"Overlapping\" [sortable]=\"true\" [style]=\"{'width': '130px'}\"></p-column>\n  <p-column field=\"overlappingby\" header=\"Overlapping By\" [sortable]=\"true\" [style]=\"{'width': '110px'}\"></p-column>\n  <p-column field=\"grade\" header=\"Grade\" [sortable]=\"true\" [style]=\"{'width': '90px'}\"></p-column>\n  <!--<p-column field=\"expires\" header=\"Expires\" [sortable]=\"true\" [style]=\"{'width': '110px'}\"></p-column>-->\n  <p-column  field=\"expires\" header=\"Expires\" [sortable]=\"true\" [style]=\"{'width': '110px'}\">\n    <template let-col let-car=\"rowData\" pTemplate=\"body\">\n      <span>{{car[col.field] | date: 'MM/dd/yy'}}</span>\n    </template>\n  </p-column>\n  <p-column field=\"alt\" header=\"Alt Names\" [sortable]=\"true\" [style]=\"{'width': '120px'}\"></p-column>\n  <template let-car pTemplate=\"rowexpansion\">\n    <div class=\"center ui-g-6\">\n      <b>Overlapping Subjects:</b>\n      <div *ngFor=\"let item of car.OverlappingCertificateIds\">\n        {{getCertificateId(item)}}</div>\n    </div>\n    <div class=\"center ui-g-6\">\n      <b>Alt Names:</b>\n      <div *ngFor=\"let item of car.AltNames\">{{item}}</div>\n    </div>\n  </template>\n</p-dataTable>\n\n"
 
 /***/ },
 /* 735 */
-=======
-module.exports = "<div class=\"col-md-12 footer\">\r\n  <div class=\"col-md-4\">\r\n    <img src=\"../../assets/logo.png\" alt=\"LOGO\">\r\n  </div>\r\n</div>\r\n"
-
-/***/ },
-/* 735 */
-/***/ function(module, exports) {
-
-module.exports = "<div class=\"container\">\r\n  <div class=\"col-md-12\">\r\n    <div class=\"center\">\r\n      <h1>{{title}}</h1>\r\n    </div>\r\n  </div>\r\n  <div class=\"col-md-6\">\r\n    <div class=\"center col-md-12\">\r\n      <h2>{{leftMenu.title}}</h2>\r\n    </div>\r\n\r\n    <div class=\"tile col-md-12\" *ngFor=\"let item of leftMenu.data\" (click)=\"select(item)\" [ngClass]=\"item.color\">\r\n      <h3 class=\"title\">{{item.name}}</h3>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"col-md-6\">\r\n    <div class=\"center col-md-12\">\r\n      <h2>{{rightMenu.title}}</h2>\r\n    </div>\r\n\r\n    <div class=\"tile col-md-12\" *ngFor=\"let item of rightMenu.data\" (click)=\"select(item)\" [ngClass]=\"item.color\">\r\n      <h3 class=\"title\">{{item.name}}</h3>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
-
-/***/ },
-/* 736 */
-/***/ function(module, exports) {
-
-module.exports = "<div class=\"col-md-12 header\">\n\n  <div class=\"col-md-4\">\n    <img src=\"../../assets/logo.png\" alt=\"LOGO\">\n    <button [routerLink]=\"['/']\">HOME</button>\n  </div>\n</div>\n"
-
-/***/ },
-/* 737 */
-/***/ function(module, exports) {
-
-module.exports = "<div class=\"container\">\r\n  <div class=\"col-md-12\">\r\n    <div class=\"center\">\r\n      <h1>Select Discipline</h1>\r\n    </div>\r\n  </div>\r\n  <div class=\"col-md-6\">\r\n    <div class=\"center col-md-12\">\r\n      <h2>{{leftMenu.title}}</h2>\r\n    </div>\r\n\r\n    <div class=\"tile col-md-12\" *ngFor=\"let item of leftMenu.data\" (click)=\"select(item)\" [ngClass]=\"item.color\">\r\n      <h3 class=\"title\">{{item.name}}</h3>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"col-md-6\">\r\n    <div class=\"center col-md-12\">\r\n      <h2>{{rightMenu.title}}</h2>\r\n    </div>\r\n\r\n    <div class=\"tile col-md-12\" *ngFor=\"let item of rightMenu.data\" (click)=\"select(item)\" [ngClass]=\"item.color\">\r\n      <h3 class=\"title\">{{item.name}}</h3>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
-
-/***/ },
-/* 738 */
-/***/ function(module, exports) {
-
-module.exports = "<ul class=\"nav nav-tabs\">\n  <li class=\"active\"><a data-toggle=\"tab\" href=\"#list\">Start List</a></li>\n  <li><a data-toggle=\"tab\" href=\"#results\">Results</a></li>\n</ul>\n\n<div class=\"tab-content\">\n  <div id=\"list\" class=\"tab-pane fade in active\">\n    <table *ngIf=\"startList\" class=\"table table-condensed\">\n      <thead>\n      <tr>\n        <th *ngFor=\"let key of startListOptions | keys\">{{startListOptions[key]}}</th>\n      </tr>\n      </thead>\n      <tbody>\n      <tr *ngFor=\"let item of startList\">\n        <td *ngFor=\"let key of startListOptions | keys\">\n          <span *ngIf=\"key !== 'NOC' && key !== 'Name'\">{{item[key]}}</span>\n          <span *ngIf=\"key === 'Name'\">\n            {{item['Surname']}} {{item[key]}}\n          </span>\n          <span *ngIf=\"key === 'NOC'\">\n            <img src=\"../../assets/{{item[key]}}.png\" style=\"height: 25px;\">\n          </span>\n        </td>\n      </tr>\n      </tbody>\n    </table>\n  </div>\n  <div id=\"results\" class=\"tab-pane fade\">\n    <table *ngIf=\"result\" class=\"table table-condensed\">\n      <thead>\n      <tr>\n        <th *ngFor=\"let key of resultOptions | keys\">{{resultOptions[key]}}</th>\n      </tr>\n      </thead>\n      <tbody>\n      <tr *ngFor=\"let item of result\">\n        <td *ngFor=\"let key of resultOptions | keys\">\n          <span *ngIf=\"key !== 'NOC' && key !== 'Name' && key !== 'Results'\">{{item[key]}}</span>\n          <span *ngIf=\"key === 'Results'\">\n            {{item[key][0].Result}} - {{item[key][1].Result}}\n\n          </span>\n          <span *ngIf=\"key === 'Name'\">\n            {{item['Surname']}} {{item[key]}}\n          </span>\n          <span *ngIf=\"key === 'NOC'\">\n            <img src=\"../../assets/{{item[key]}}.png\" style=\"height: 25px;\">\n          </span>\n        </td>\n      </tr>\n      </tbody>\n    </table>\n  </div>\n</div>\n"
-
-/***/ },
-/* 739 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82968,16 +78950,12 @@ exports.InnerSubscriber = InnerSubscriber;
 //# sourceMappingURL=InnerSubscriber.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 736 */
-=======
-/* 740 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
-var Observable_1 = __webpack_require__(17);
+var Observable_1 = __webpack_require__(19);
 /**
  * Represents a push-based event or value that an {@link Observable} can emit.
  * This class is particularly useful for operators that manage notifications,
@@ -83105,11 +79083,7 @@ exports.Notification = Notification;
 //# sourceMappingURL=Notification.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 737 */
-=======
-/* 741 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports) {
 
 "use strict";
@@ -83123,11 +79097,7 @@ exports.empty = {
 //# sourceMappingURL=Observer.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 738 */
-=======
-/* 742 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83137,7 +79107,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subscription_1 = __webpack_require__(241);
+var Subscription_1 = __webpack_require__(239);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @ignore
@@ -83173,34 +79143,7 @@ exports.SubjectSubscription = SubjectSubscription;
 //# sourceMappingURL=SubjectSubscription.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 739 */
-=======
-/* 743 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var Observable_1 = __webpack_require__(17);
-var catch_1 = __webpack_require__(244);
-Observable_1.Observable.prototype.catch = catch_1._catch;
-Observable_1.Observable.prototype._catch = catch_1._catch;
-//# sourceMappingURL=catch.js.map
-
-/***/ },
-/* 744 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var Observable_1 = __webpack_require__(17);
-var map_1 = __webpack_require__(114);
-Observable_1.Observable.prototype.map = map_1.map;
-//# sourceMappingURL=map.js.map
-
-/***/ },
-/* 745 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83210,15 +79153,9 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-<<<<<<< HEAD
 var Observable_1 = __webpack_require__(19);
 var ScalarObservable_1 = __webpack_require__(380);
 var EmptyObservable_1 = __webpack_require__(378);
-=======
-var Observable_1 = __webpack_require__(17);
-var ScalarObservable_1 = __webpack_require__(382);
-var EmptyObservable_1 = __webpack_require__(380);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -83282,11 +79219,7 @@ exports.ArrayLikeObservable = ArrayLikeObservable;
 //# sourceMappingURL=ArrayLikeObservable.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 740 */
-=======
-/* 746 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83296,7 +79229,6 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-<<<<<<< HEAD
 var isArray_1 = __webpack_require__(247);
 var isPromise_1 = __webpack_require__(389);
 var PromiseObservable_1 = __webpack_require__(379);
@@ -83307,18 +79239,6 @@ var iterator_1 = __webpack_require__(243);
 var Observable_1 = __webpack_require__(19);
 var observeOn_1 = __webpack_require__(744);
 var observable_1 = __webpack_require__(244);
-=======
-var isArray_1 = __webpack_require__(250);
-var isPromise_1 = __webpack_require__(390);
-var PromiseObservable_1 = __webpack_require__(381);
-var IteratorObservable_1 = __webpack_require__(747);
-var ArrayObservable_1 = __webpack_require__(379);
-var ArrayLikeObservable_1 = __webpack_require__(745);
-var iterator_1 = __webpack_require__(246);
-var Observable_1 = __webpack_require__(17);
-var observeOn_1 = __webpack_require__(750);
-var observable_1 = __webpack_require__(247);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 var isArrayLike = (function (x) { return x && typeof x.length === 'number'; });
 /**
  * We need this JSDoc comment for affecting ESDoc.
@@ -83421,11 +79341,7 @@ exports.FromObservable = FromObservable;
 //# sourceMappingURL=FromObservable.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 741 */
-=======
-/* 747 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83436,8 +79352,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var root_1 = __webpack_require__(65);
-var Observable_1 = __webpack_require__(17);
-var iterator_1 = __webpack_require__(246);
+var Observable_1 = __webpack_require__(19);
+var iterator_1 = __webpack_require__(243);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -83588,11 +79504,7 @@ function sign(value) {
 //# sourceMappingURL=IteratorObservable.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 742 */
-=======
-/* 748 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83691,11 +79603,7 @@ var FilterSubscriber = (function (_super) {
 //# sourceMappingURL=filter.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 743 */
-=======
-/* 749 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83706,7 +79614,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(36);
-var EmptyError_1 = __webpack_require__(249);
+var EmptyError_1 = __webpack_require__(246);
 /**
  * Returns an Observable that emits only the last item emitted by the source Observable.
  * It optionally takes a predicate function as a parameter, in which case, rather than emitting
@@ -83819,11 +79727,7 @@ var LastSubscriber = (function (_super) {
 //# sourceMappingURL=last.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 744 */
-=======
-/* 750 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83834,11 +79738,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(36);
-<<<<<<< HEAD
 var Notification_1 = __webpack_require__(736);
-=======
-var Notification_1 = __webpack_require__(740);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /**
  * @see {@link Notification}
  *
@@ -83908,11 +79808,7 @@ exports.ObserveOnMessage = ObserveOnMessage;
 //# sourceMappingURL=observeOn.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 745 */
-=======
-/* 751 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84030,11 +79926,7 @@ exports.ReduceSubscriber = ReduceSubscriber;
 //# sourceMappingURL=reduce.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 746 */
-=======
-/* 752 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84068,11 +79960,7 @@ exports.toPromise = toPromise;
 //# sourceMappingURL=toPromise.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 747 */
-=======
-/* 753 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports) {
 
 "use strict";
@@ -84103,11 +79991,7 @@ exports.UnsubscriptionError = UnsubscriptionError;
 //# sourceMappingURL=UnsubscriptionError.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 748 */
-=======
-/* 754 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports) {
 
 "use strict";
@@ -84119,11 +80003,7 @@ exports.isObject = isObject;
 //# sourceMappingURL=isObject.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 749 */
-=======
-/* 755 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports) {
 
 "use strict";
@@ -84135,17 +80015,13 @@ exports.isScheduler = isScheduler;
 //# sourceMappingURL=isScheduler.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 750 */
-=======
-/* 756 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
 var Subscriber_1 = __webpack_require__(36);
-var rxSubscriber_1 = __webpack_require__(248);
+var rxSubscriber_1 = __webpack_require__(245);
 function toSubscriber(nextOrObserver, error, complete) {
     if (nextOrObserver) {
         if (nextOrObserver instanceof Subscriber_1.Subscriber) {
@@ -84164,20 +80040,12 @@ exports.toSubscriber = toSubscriber;
 //# sourceMappingURL=toSubscriber.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 751 */
-=======
-/* 757 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
-<<<<<<< HEAD
 var errorObject_1 = __webpack_require__(387);
-=======
-var errorObject_1 = __webpack_require__(388);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 var tryCatchTarget;
 function tryCatcher() {
     try {
@@ -84197,19 +80065,11 @@ exports.tryCatch = tryCatch;
 //# sourceMappingURL=tryCatch.js.map
 
 /***/ },
-<<<<<<< HEAD
 /* 752 */
 /***/ function(module, exports, __webpack_require__) {
 
 
         var result = __webpack_require__(667);
-=======
-/* 758 */
-/***/ function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(663);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
         if (typeof result === "string") {
             module.exports = result;
@@ -84219,39 +80079,7 @@ exports.tryCatch = tryCatch;
     
 
 /***/ },
-<<<<<<< HEAD
 /* 753 */
-=======
-/* 759 */
-/***/ function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(664);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ },
-/* 760 */
-/***/ function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(665);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ },
-/* 761 */
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 /***/ function(module, exports, __webpack_require__) {
 
 /**
@@ -85844,11 +81672,7 @@ if (_global['navigator'] && _global['navigator'].geolocation) {
 
 })));
 
-<<<<<<< HEAD
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(54), __webpack_require__(732)))
-=======
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(54), __webpack_require__(728)))
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 
 /***/ },
 /* 755 */
@@ -85856,15 +81680,9 @@ if (_global['navigator'] && _global['navigator'].geolocation) {
 
 "use strict";
 "use strict";
-<<<<<<< HEAD
 __webpack_require__(393);
 var platform_browser_dynamic_1 = __webpack_require__(391);
 var app_module_1 = __webpack_require__(392);
-=======
-__webpack_require__(394);
-var platform_browser_dynamic_1 = __webpack_require__(392);
-var app_module_1 = __webpack_require__(393);
->>>>>>> f514b045ecd6683e2d4bb4c70fd4c4011b57ddb5
 exports.platformRef = platform_browser_dynamic_1.platformBrowserDynamic();
 function main() {
     return exports.platformRef.bootstrapModule(app_module_1.AppModule)

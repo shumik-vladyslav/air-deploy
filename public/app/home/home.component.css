@@ -1,0 +1,19 @@
+.center{
+  text-align: center;
+}
+
+.wrap{
+  font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size: 1em;
+}
+
+.wrap div{
+  background: ghostwhite;
+  margin: 5px;
+}
+
+.wrap b{
+  background: ghostwhite;
+  margin: 5px;
+  font-size: 20px;
+}

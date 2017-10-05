@@ -1,6 +1,6 @@
-webpackJsonp([2],{
+webpackJsonp([1],{
 
-/***/ "./src async recursive":
+/***/ "../../../../../src async recursive":
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -9,19 +9,26 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = "./src async recursive";
+webpackEmptyContext.id = "../../../../../src async recursive";
 
 /***/ }),
 
-/***/ "./src/app/app.component.css":
+/***/ "../../../../../src/app/app.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<app-dashboard></app-dashboard>\n\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.component.sass":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "h1 {\n  color: red; }\n", ""]);
 
 // exports
 
@@ -31,18 +38,11 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "./src/app/app.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<router-outlet></router-outlet>\r\n<!--<app-orders-board></app-orders-board>-->"
-
-/***/ }),
-
-/***/ "./src/app/app.component.ts":
+/***/ "../../../../../src/app/app.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -53,17 +53,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var AppComponent = (function () {
     function AppComponent() {
+        this.title = 'app';
     }
-    AppComponent.prototype.onClick = function () {
-        this.message = 'Hello ' + this.name;
-    };
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Component */])({
         selector: 'app-root',
-        template: __webpack_require__("./src/app/app.component.html"),
-        styles: [__webpack_require__("./src/app/app.component.css")]
+        template: __webpack_require__("../../../../../src/app/app.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/app.component.sass")]
     })
 ], AppComponent);
 
@@ -71,31 +69,20 @@ AppComponent = __decorate([
 
 /***/ }),
 
-/***/ "./src/app/app.module.ts":
+/***/ "../../../../../src/app/app.module.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser/animations.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_primeng_primeng__ = __webpack_require__("./node_modules/primeng/primeng.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_primeng_primeng___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_primeng_primeng__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular2_odata__ = __webpack_require__("./node_modules/angular2-odata/build/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular2_odata___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_angular2_odata__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__orders_board_orders_board_component__ = __webpack_require__("./src/app/orders-board/orders-board.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__login_login_component__ = __webpack_require__("./src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_routes__ = __webpack_require__("./src/app/app.routes.ts");
-/* unused harmony export MyODataConfig */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dashboard_header_header_component__ = __webpack_require__("../../../../../src/app/dashboard/header/header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__dashboard_left_nav_left_nav_component__ = __webpack_require__("../../../../../src/app/dashboard/left-nav/left-nav.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__dashboard_job_record_view_job_record_view_component__ = __webpack_require__("../../../../../src/app/dashboard/job-record-view/job-record-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_service_left_nav_service__ = __webpack_require__("../../../../../src/app/shared/service/left-nav.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -108,27 +95,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-// import { ClipboardModule } from 'angular2-clipboard';
 
 
-
-
-
-
-
-var MyODataConfig = (function (_super) {
-    __extends(MyODataConfig, _super);
-    function MyODataConfig() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        // baseUrl= 'http://dev.avtokompaniya.ru/api/';
-        _this.baseUrl = 'http://dev.avtokompaniya.ru/api/';
-        return _this;
-    }
-    return MyODataConfig;
-}(__WEBPACK_IMPORTED_MODULE_7_angular2_odata__["ODataConfiguration"]));
-MyODataConfig = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Injectable"])()
-], MyODataConfig);
 
 var AppModule = (function () {
     function AppModule() {
@@ -136,38 +104,23 @@ var AppModule = (function () {
     return AppModule;
 }());
 AppModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["NgModule"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__orders_board_orders_board_component__["a" /* OrdersBoardComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__login_login_component__["a" /* LoginComponent */]
+            __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__dashboard_dashboard_component__["a" /* DashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__dashboard_header_header_component__["a" /* HeaderComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__dashboard_left_nav_left_nav_component__["a" /* LeftNavComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__dashboard_job_record_view_job_record_view_component__["a" /* JobRecordViewComponent */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["BrowserModule"],
-            __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["FormsModule"],
-            __WEBPACK_IMPORTED_MODULE_5__angular_http__["HttpModule"],
-            __WEBPACK_IMPORTED_MODULE_6_primeng_primeng__["InputTextModule"],
-            __WEBPACK_IMPORTED_MODULE_6_primeng_primeng__["ButtonModule"],
-            __WEBPACK_IMPORTED_MODULE_6_primeng_primeng__["CheckboxModule"],
-            __WEBPACK_IMPORTED_MODULE_6_primeng_primeng__["DataTableModule"],
-            __WEBPACK_IMPORTED_MODULE_6_primeng_primeng__["SharedModule"],
-            __WEBPACK_IMPORTED_MODULE_6_primeng_primeng__["DropdownModule"],
-            __WEBPACK_IMPORTED_MODULE_6_primeng_primeng__["ListboxModule"],
-            __WEBPACK_IMPORTED_MODULE_6_primeng_primeng__["OverlayPanelModule"],
-            __WEBPACK_IMPORTED_MODULE_6_primeng_primeng__["ChipsModule"],
-            __WEBPACK_IMPORTED_MODULE_6_primeng_primeng__["ToolbarModule"],
-            __WEBPACK_IMPORTED_MODULE_0__angular_router__["RouterModule"].forRoot(__WEBPACK_IMPORTED_MODULE_11__app_routes__["a" /* ROUTES */]),
-            __WEBPACK_IMPORTED_MODULE_6_primeng_primeng__["PaginatorModule"],
-            __WEBPACK_IMPORTED_MODULE_6_primeng_primeng__["ToggleButtonModule"]
+            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot()
         ],
-        // providers: [ { provide: ODataConfiguration, useFactory: () => { 
-        //       const odta = new ODataConfiguration();
-        //       odta.baseUrl = 'http://dev.avtokompaniya.ru/api/';
-        //       return odta; }
-        //   }, ODataServiceFactory ],
-        providers: [],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */],
+            __WEBPACK_IMPORTED_MODULE_8__shared_service_left_nav_service__["a" /* LeftNavService */],
+        ],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -175,126 +128,17 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ "./src/app/app.routes.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__login_login_component__ = __webpack_require__("./src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__orders_board_orders_board_component__ = __webpack_require__("./src/app/orders-board/orders-board.component.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ROUTES; });
-
-
-var ROUTES = [
-    // Main redirect
-    { path: '', redirectTo: 'login', pathMatch: 'full' },
-    // App views
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_0__login_login_component__["a" /* LoginComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_0__login_login_component__["a" /* LoginComponent */] },
-    { path: 'orders', component: __WEBPACK_IMPORTED_MODULE_1__orders_board_orders_board_component__["a" /* OrdersBoardComponent */] },
-    { path: '**', redirectTo: 'login' }
-];
-//# sourceMappingURL=app.routes.js.map
-
-/***/ }),
-
-/***/ "./src/app/login/login.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "body{\r\n    background-color:#f5f5f5;\r\n}\r\n.form-signin\r\n{\r\n    max-width: 330px;\r\n    padding: 15px;\r\n    margin: 0 auto;\r\n}\r\n.form-signin .form-control\r\n{\r\n    position: relative;\r\n    font-size: 16px;\r\n    height: auto;\r\n    padding: 10px;\r\n    box-sizing: border-box;\r\n}\r\n.form-signin .form-control:focus\r\n{\r\n    z-index: 2;\r\n}\r\n.form-signin input[type=\"text\"]\r\n{\r\n    margin-bottom: -1px;\r\n    border-bottom-left-radius: 0;\r\n    border-bottom-right-radius: 0;\r\n}\r\n.form-signin input[type=\"password\"]\r\n{\r\n    margin-bottom: 10px;\r\n    border-top-left-radius: 0;\r\n    border-top-right-radius: 0;\r\n}\r\n.account-wall\r\n{\r\n    margin-top: 80px;\r\n    padding: 40px 0px 20px 0px;\r\n    background-color: #ffffff;\r\n    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);\r\n}\r\n.login-title\r\n{\r\n    color: #555;\r\n    font-size: 22px;\r\n    font-weight: 400;\r\n    display: block;\r\n}\r\n.profile-img\r\n{\r\n    width: 96px;\r\n    height: 96px;\r\n    margin: 0 auto 10px;\r\n    display: block;\r\n    border-radius: 50%;\r\n}\r\n.select-img\r\n{\r\n\tborder-radius: 50%;\r\n    display: block;\r\n    height: 75px;\r\n    margin: 0 30px 10px;\r\n    width: 75px;\r\n    border-radius: 50%;\r\n}\r\n.select-name\r\n{\r\n    display: block;\r\n    margin: 30px 10px 10px;\r\n}\r\n\r\n.logo-img\r\n{\r\n    width: 96px;\r\n    height: 96px;\r\n    margin: 0 auto 10px;\r\n    display: block;\r\n    border-radius: 50%;\r\n}\r\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "./src/app/login/login.component.html":
+/***/ "../../../../../src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-sm-6 col-md-4 col-md-offset-4\">\r\n      <div class=\"account-wall\">\r\n        <div id=\"my-tab-content\" class=\"tab-content\">\r\n          <div class=\"tab-pane active\" id=\"login\">\r\n            <img class=\"profile-img\" src=\"https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120\"\r\n              alt=\"\">\r\n            <form class=\"form-signin\" action=\"\" method=\"\">\r\n              <div class=\"form-group\">\r\n                <div *ngIf=\"loginError\" class=\"alert alert-danger\">\r\n                  {{errorMessage}}\r\n                </div>\r\n              </div>\r\n              <input [(ngModel)]=\"username\" name=\"username\" type=\"text\" class=\"form-control\" placeholder=\"Username\" required autofocus>\r\n              <input [(ngModel)]=\"password\" name=\"password\" type=\"password\" class=\"form-control\" placeholder=\"Password\" required>\r\n              <input type=\"button\" (click)=\"login()\" class=\"btn btn-lg btn-default btn-block\" value=\"Sign In\" />\r\n            </form>\r\n            <div id=\"tabs\" data-tabs=\"tabs\">\r\n              <br>\r\n              <br>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "\n<app-header></app-header>\n<app-job-record-view></app-job-record-view>\n"
 
 /***/ }),
 
-/***/ "./src/app/login/login.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var LoginComponent = (function () {
-    function LoginComponent(http, router) {
-        this.http = http;
-        this.router = router;
-        this.loginError = false;
-        this.errorMessage = '';
-    }
-    LoginComponent.prototype.ngOnInit = function () {
-    };
-    LoginComponent.prototype.login = function () {
-        var _this = this;
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Content-Type': 'application/x-www-form-urlencoded' });
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["RequestOptions"]({ headers: headers });
-        var body = "grant_type=password&username=" + this.username + "&password=" + this.password;
-        var url = 'https://cat.avtokompaniya.ru/api/Token';
-        //  const url = 'http://dev.avtokompaniya.ru/api/Token';
-        this.http.post(url, body, options)
-            .map(function (res) { return res.json(); })
-            .subscribe(function (authInfo) {
-            _this.authInfo = authInfo;
-            console.log(authInfo);
-            localStorage.setItem('currentUser', JSON.stringify(authInfo));
-            _this.router.navigate(['orders']);
-        }, function (error) {
-            _this.loginError = true;
-            _this.errorMessage = 'Login error. User not found';
-            console.log("Sign in error: " + error.message);
-        });
-    };
-    LoginComponent.prototype.logout = function () {
-        localStorage.removeItem('currentUser');
-        this.router.navigate(['login']);
-    };
-    return LoginComponent;
-}());
-LoginComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-login',
-        template: __webpack_require__("./src/app/login/login.component.html"),
-        styles: [__webpack_require__("./src/app/login/login.component.css")]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["Router"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["Router"]) === "function" && _b || Object])
-], LoginComponent);
-
-var _a, _b;
-//# sourceMappingURL=login.component.js.map
-
-/***/ }),
-
-/***/ "./src/app/orders-board/orders-board.component.css":
+/***/ "../../../../../src/app/dashboard/dashboard.component.sass":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
 
@@ -309,25 +153,74 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "./src/app/orders-board/orders-board.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"ui-g\">\r\n  <div class=\"ui-g-3\" [hidden]=\"isResponsiveFlag && !checked\">\r\n    <!--<div class=\"ontop container\">\r\n      <div class=\"row\">\r\n\r\n      </div>\r\n    </div>-->\r\n    <!--<p-paginator rows=\"10\" totalRecords=\"totalOrders\"  alwaysShow [rowsPerPageOptions]=\"[10,20,30]\"></p-paginator>-->\r\n    <!--Suppliers filter-->\r\n    <div >\r\n      <p-toolbar [style]=\"{'height':'100%'}\">\r\n        <!--<div class=\"pre-scrollable\" style=\"height:100%;min-height:100%;\">-->\r\n          <label> Suppliers </label>\r\n          <p-listbox [options]=\"suppliersFilter\" [(ngModel)]=\"suppliersFilterSelected\" multiple=\"multiple\" checkbox=\"checkbox\" filter=\"filter\"\r\n            (onChange)=\"onChangeSuppliersFilter()\" [style]=\"{'width':'100%'}\">\r\n          </p-listbox>\r\n\r\n\r\n          <!--Statuses filter-->\r\n          <label> Statuses </label>\r\n          <p-listbox [options]=\"statusesFilter\" [(ngModel)]=\"statusesFilterSelected\" multiple=\"multiple\" checkbox=\"checkbox\" filter=\"filter\"\r\n            (onChange)=\"onChangeStatusesFilter()\" [style]=\"{'width':'100%'}\">\r\n          </p-listbox>\r\n\r\n\r\n          <!--Customers filter-->\r\n          <label> Customers</label>\r\n          <p-listbox [options]=\"customersFilter\" [(ngModel)]=\"customersFilterSelected\" multiple=\"multiple\" checkbox=\"checkbox\" filter=\"filter\"\r\n            (onChange)=\"onChangeCustomersFilter()\" [style]=\"{'width':'100%'}\">\r\n          </p-listbox>\r\n\r\n        <!--</div>-->\r\n      </p-toolbar>\r\n    </div>\r\n  </div>\r\n\r\n  <div [ngClass]=\"{'ui-g-9': (!isResponsiveFlag || checked)}\">\r\n    <p-toolbar>\r\n      <div class=\"ui-toolbar-group-left\">\r\n        <span [hidden]=\"!(isResponsiveFlag)\">\r\n          <p-toggleButton [(ngModel)]=\"checked\" (onChange)=\"onApplyFilters($event)\" \r\n          onLabel=\"&nbsp;\" offLabel=\"&nbsp;\" onIcon=\"fa-bars\"  offIcon=\"fa-bars\" [style]=\"{'float':'left'}\"></p-toggleButton>\r\n          <!--<button  type=\"text\" pButton  iconPos=\"left\" (click)=\"onApplyFilters()\" ></button>-->\r\n        </span>\r\n        <span [hidden]=\"isResponsiveFlag\">\r\n          <button  type=\"text\" pButton label=\"Apply filters\" icon=\"fa-filter\" iconPos=\"left\" (click)=\"onApplyFilters()\" style=\"float: left;\"></button>\r\n        </span>\r\n      </div>\r\n      <div class=\"ui-toolbar-group-right\">\r\n        <div class=\"ui-helper-clearfix\">\r\n          <button type=\"button\" pButton icon=\"fa-file-o\" iconPos=\"left\" label=\"CSV\" (click)=\"dt.exportCSV()\" style=\"float: right;\"></button>\r\n          <button type=\"button\" pButton data-clipboard-target=\"#ordersTable\" icon=\"fa-clipboard\" iconPos=\"left\" label=\"Clipboard\" style=\"float:right;\"\r\n            (click)=\"onCopyToClipboard()\"></button>\r\n          <button type=\"button\" pButton icon=\"fa-file-excel-o\" iconPos=\"left\" label=\"Excell\" (click)=\"onExcellExport()\" style=\"float:right;\"></button>\r\n          <!--<button data-clipboard-target=\"#ordersTable\" label=\"Copy2Clipboard\"></button>-->\r\n          <!--<button class=\"btn\" [cbContent]=\"'target string'\">Copy to clipboard</button>-->\r\n        </div>\r\n      </div>\r\n    </p-toolbar>\r\n    <!--scrollable=\"true\" scrollHeight=\"550px\"-->\r\n    <p-dataTable id=\"ordersTable\" [value]=\"orders\" [rows]=\"10\" [paginator]=\"true\" [(selection)]=\"selectedOrders\" (onRowSelect)=\"onSelectionChange()\"\r\n      (onRowUnselect)=\"onSelectionChange()\" dataKey=\"Id\" [editable]=\"true\" #dt exportFilename=\"orders\" [lazy]=\"true\" [totalRecords]=\"totalOrders\"\r\n      (onLazyLoad)=\"loadOrdersLazy($event)\" [responsive]=\"true\" [stacked]=\"isResponsiveFlag\" [style]=\"{'width':'100%'}\">\r\n\r\n      <p-column selectionMode=\"multiple\"></p-column>\r\n      <p-column field=\"Id\" header=\"Id\"></p-column>\r\n      <p-column field=\"Code\" header=\"Код\"></p-column>\r\n      <p-column field=\"Brand\" header=\"Бренд\"></p-column>\r\n      <p-column field=\"Name\" header=\"Название\"></p-column>\r\n      <p-column field=\"Count\" header=\"Кол-во\"></p-column>\r\n      <p-column field=\"Price\" header=\"Цена\" [editable]=\"true\">\r\n        <ng-template let-col let-order=\"rowData\" pTemplate=\"editor\">\r\n          <input type=\"text\" pInputText (keyup.enter)=\"onPriceChange(order)\" [(ngModel)]=\"order[col.field]\"/>\r\n        </ng-template>\r\n      </p-column>\r\n      <p-column field=\"PriceVendor\" header=\"Цена поставщика\" [editable]=\"true\" >\r\n        <ng-template let-col let-order=\"rowData\" pTemplate=\"editor\">\r\n          <input type=\"text\" pInputText (keyup.enter)=\"onPriceVendorChange(order)\" [(ngModel)]=\"order[col.field]\"/>\r\n        </ng-template>\r\n      </p-column>\r\n      <p-column field=\"CountVendor\" header=\"Количество у поставщика\"></p-column>\r\n      <p-column field=\"DeliveryTime\" header=\"Время доставки\"></p-column>\r\n      <p-column field=\"Status\" header=\"Статус\" [editable]=\"true\" [style]=\"{'overflow':'visible'}\">\r\n        <ng-template let-col let-order=\"rowData\" pTemplate=\"editor\">\r\n          <p-dropdown [(ngModel)]=\"order[col.field]\" [options]=\"orderStatusesDropBox\" [autoWidth]=\"false\" [style]=\"{'width':'100%'}\"\r\n            required=\"true\" (onChange)=\"onStatusChange(order)\">\r\n          </p-dropdown>\r\n        </ng-template>\r\n      </p-column>\r\n      <p-column field=\"OrderId\" header=\"Id заказа\"></p-column>\r\n      <p-column field=\"OrderDate\" header=\"Дата заказа\"></p-column>\r\n      <p-column field=\"Comment\" header=\"Комментарий\"></p-column>\r\n      <p-column field=\"CustomerId\" header=\"Id клиента\"></p-column>\r\n      <p-column field=\"SuppliersId\" header=\"Id поставщика\"></p-column>\r\n\r\n    </p-dataTable>\r\n  </div>\r\n</div>"
-
-/***/ }),
-
-/***/ "./src/app/orders-board/orders-board.component.ts":
+/***/ "../../../../../src/app/dashboard/dashboard.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_primeng_primeng__ = __webpack_require__("./node_modules/primeng/primeng.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_primeng_primeng___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_primeng_primeng__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ts_clipboard__ = __webpack_require__("./node_modules/ts-clipboard/ts-clipboard.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ts_clipboard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ts_clipboard__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrdersBoardComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var DashboardComponent = (function () {
+    function DashboardComponent() {
+    }
+    DashboardComponent.prototype.ngOnInit = function () {
+    };
+    return DashboardComponent;
+}());
+DashboardComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Component */])({
+        selector: 'app-dashboard',
+        template: __webpack_require__("../../../../../src/app/dashboard/dashboard.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/dashboard/dashboard.component.sass")]
+    }),
+    __metadata("design:paramtypes", [])
+], DashboardComponent);
+
+//# sourceMappingURL=dashboard.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/dashboard/header/header.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!--//DESKTOP HEADER-->\n<div class=\"container-fluid header hidden-sm-down\">\n  <div class=\"row\">\n    <div class=\"navbar-header \" style=\"padding: 26px 0;display: flex;width: 320px;border-bottom: 1px solid rgba(0,0,0,.125)\">\n        <div class=\"col-md-3 menu \">\n          <i (click)=\"openMenu()\" class=\"fa fa-bars hamburger\" aria-hidden=\"true\"></i>\n        </div>\n        <div class=\"col-md-9 logo \">\n          <img  src=\"./assets/fieldmagic.png\" alt=\"LOGO\">\n        </div>\n    </div>\n    <div class=\"col header-nav\">\n      <div class=\"search-form-wrapper\">\n        <form  class=\"ng-pristine ng-valid\">\n          <div class=\"input-group\">\n            <span class=\"icon-search\">\n              <i class=\"fa fa-search\" aria-hidden=\"true\"></i>\n            </span>\n            <input type=\"text\" class=\"form-control\" id=\"inputSearch\" placeholder=\"Search\" required=\"\" autofocus=\"autofocus\">\n          </div>\n        </form>\n      </div>\n      <div class=\"col-md-6 avatar\">\n        <span><i class=\"fa fa-plus\" aria-hidden=\"true\"></i></span>\n        <span><i class=\"fa fa-question\" aria-hidden=\"true\"></i></span>\n        <span><i class=\"fa fa-gear\" aria-hidden=\"true\"></i></span>\n        <span class=\"avatar-block\" style=\"position: relative;\">\n          <span class=\"online-status\"></span>\n          <img src=\"./assets/avatar.png\" alt=\"Avatar\">\n        </span>\n      </div>\n    </div>\n  </div>\n</div>\n\n<!--MOBILE HEADER-->\n<div class=\"container-fluid mobile-header hidden-md-up\">\n  <div class=\"row\">\n    <div class=\"col-3\">\n      <i (click)=\"openMenu()\" class=\"fa fa-bars hamburger\" aria-hidden=\"true\"></i>\n    </div>\n    <div class=\"col-6 \">\n      <img  src=\"./assets/fieldmagic.png\" alt=\"LOGO\">\n    </div>\n    <div class=\"col-3\">\n      <span class=\"avatar-block\" style=\"position: relative;\">\n        <span class=\"online-status\"></span>\n        <img src=\"./assets/avatar.png\" alt=\"Avatar\">\n      </span>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/dashboard/header/header.component.sass":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".header .menu {\n  text-align: center; }\n  .header .menu i {\n    color: #afb5b9;\n    font-size: 25px;\n    vertical-align: -webkit-baseline-middle; }\n\n.header .header-nav {\n  padding: 20px 0;\n  background-color: #0e76bc; }\n  .header .header-nav .avatar {\n    float: right;\n    position: relative;\n    text-align: right; }\n    .header .header-nav .avatar .online-status {\n      display: block;\n      position: absolute;\n      top: -7px;\n      right: -2px;\n      z-index: 1;\n      background-color: #547df9;\n      border-radius: 50%;\n      border: 1.5px solid #fff;\n      width: 9px;\n      height: 9px; }\n    .header .header-nav .avatar i {\n      padding-top: 9px;\n      font-size: 20px;\n      color: white;\n      margin-right: 20px;\n      vertical-align: sub; }\n  .header .header-nav .search-form-wrapper {\n    float: left;\n    margin-left: 14%;\n    margin-top: 5px;\n    width: 30%; }\n    .header .header-nav .search-form-wrapper .input-group {\n      position: relative; }\n    .header .header-nav .search-form-wrapper .icon-search {\n      padding: 11px;\n      font-size: 14px;\n      font-weight: 400;\n      line-height: 1;\n      color: #fff;\n      background-color: #096cad;\n      border: 0 solid #ccc;\n      border-radius: 2px; }\n  .header .header-nav .form-control {\n    background-color: #096cad;\n    border-width: 0;\n    border-radius: 2px;\n    color: #fff;\n    padding-left: 0;\n    width: 100%;\n    height: 40px; }\n    .header .header-nav .form-control::-webkit-input-placeholder {\n      color: white; }\n\n.hamburger {\n  cursor: pointer; }\n\n.mobile-header {\n  text-align: center;\n  padding: 10px 0;\n  border-bottom: 1px solid #eeeeee; }\n  .mobile-header i {\n    padding-top: 14px; }\n\n@media (min-width: 1550px) {\n  .hamburger {\n    display: none; } }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/dashboard/header/header.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_service_left_nav_service__ = __webpack_require__("../../../../../src/app/shared/service/left-nav.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -339,317 +232,194 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-
-
-var OrdersBoardComponent = (function () {
-    function OrdersBoardComponent(http, router) {
-        this.http = http;
-        this.router = router;
-        this.suppliersFilter = [];
-        this.suppliersFilterSelected = [];
-        this.statusesFilter = [];
-        this.statusesFilterSelected = [];
-        this.customersFilter = [];
-        this.customersFilterSelected = [];
-        this.orders = [];
-        this.selectedOrders = [];
-        this.totalOrders = 10;
-        this.orderStatusesDropBox = [];
-        this.apiPrefix = 'https://cat.avtokompaniya.ru/api';
-        this.isResponsiveFlag = false;
+var HeaderComponent = (function () {
+    function HeaderComponent(leftNavService) {
+        this.leftNavService = leftNavService;
     }
-    OrdersBoardComponent.prototype.isResponsive = function () {
-        var screanWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-        // console.log(screanWidth);
-        if (screanWidth <= 768) {
-            this.isResponsiveFlag = true;
-            return true;
-        }
-        this.isResponsiveFlag = false;
-        return false;
+    HeaderComponent.prototype.openMenu = function () {
+        this.leftNavService.showMenu.emit(true);
     };
-    OrdersBoardComponent.prototype.authHeader = function () {
-        // create authorization header with jwt token
-        var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        if (currentUser && currentUser.access_token) {
-            var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["Headers"]({ 'Authorization': 'Bearer ' + currentUser.access_token });
-            console.log('Bearer ' + currentUser.access_token);
-            // return new RequestOptions();
-            return new __WEBPACK_IMPORTED_MODULE_2__angular_http__["RequestOptions"]({ headers: headers, method: __WEBPACK_IMPORTED_MODULE_2__angular_http__["RequestMethod"].Get });
-        }
-        else {
-            this.router.navigate(['login']);
-        }
+    HeaderComponent.prototype.ngOnInit = function () {
     };
-    OrdersBoardComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        var self = this;
-        window.onresize = function (event) {
-            self.isResponsive();
-        };
-        // get totalOrders
-        setInterval(function () {
-            console.log(_this.authHeader());
-        }, 500);
-        this.http.get(this.apiPrefix + "/OrderItems/$count")
-            .map(function (res) { return res.json(); })
-            .subscribe(
-        // convert to dropdown required format
-        function (numberStr) { return _this.totalOrders = +numberStr; }, function (error) { return console.log("Fetch totalOrders error: " + error); });
-        // prepare status filter
-        this.http.get(this.apiPrefix + "/Statuses", this.authHeader())
-            .map(function (res) { return res.json(); })
-            .subscribe(
-        // convert to dropdown required format
-        function (statuses) { return _this.orderStatusesDropBox = _this.statusesFilter = statuses.value.map(function (status) { return { label: status.Name, value: status.Id }; }); }, function (error) { return console.log("Fetch statuses error: " + error); });
-        // prepare status filter
-        this.http.get(this.apiPrefix + "/Suppliers", this.authHeader())
-            .map(function (res) { return res.json(); })
-            .subscribe(
-        // convert to dropdown required format
-        function (statuses) { return _this.suppliersFilter = statuses.value.map(function (status) { return { label: status.Name, value: status.Id }; }); }, function (error) { return console.log("Fetch suppliers error: " + error); });
-        // prepare customers filter
-        this.http.get(this.apiPrefix + "/Customers", this.authHeader())
-            .map(function (res) { return res.json(); })
-            .subscribe(
-        // convert to dropdown required format
-        function (statuses) { return _this.customersFilter = statuses.value.map(function (status) { return { label: status.Name, value: status.Id }; }); }, function (error) { return console.log("Fetch customers error: " + error); });
-    };
-    OrdersBoardComponent.prototype.onChangeSuppliersFilter = function (checked) {
-        console.log(JSON.stringify(this.suppliersFilterSelected));
-    };
-    OrdersBoardComponent.prototype.onChangeStatusesFilter = function () {
-        console.log(JSON.stringify(this.statusesFilterSelected));
-    };
-    OrdersBoardComponent.prototype.onChangeCustomersFilter = function () {
-        console.log(JSON.stringify(this.customersFilterSelected));
-        console.log(this.prepareOdataFilterString());
-    };
-    OrdersBoardComponent.prototype.onSelectionChange = function () {
-        // setTimeout(() => console.log(JSON.stringify(this.selectedOrders)), 1000);
-    };
-    OrdersBoardComponent.prototype.onStatusChange = function (order) {
-        var _this = this;
-        console.log('onStatusChange');
-        this.http.patch(this.apiPrefix + "/OrderItems/" + order.Id, { Status: order.Status }, this.authHeader())
-            .map(function (res) { return res.json(); })
-            .subscribe(function (resp) { return console.log("update seccess : " + resp); }, function (error) { return console.log("update error: " + error); });
-        if (this.selectedOrders.includes(order)) {
-            this.selectedOrders.forEach(function (element) {
-                element.Status = order.Status;
-                // send changes to server;
-                _this.http.patch(_this.apiPrefix + "/OrderItems/" + element.Id, { Status: element.Status }, _this.authHeader())
-                    .map(function (res) { return res.json(); })
-                    .subscribe(function (resp) { return console.log("update seccess : " + resp); }, function (error) { return console.log("update error: " + error); });
-            });
-        }
-    };
-    OrdersBoardComponent.prototype.onPriceChange = function (order) {
-        console.log('onPriceChange');
-        console.log(JSON.stringify(order));
-        this.http.patch(this.apiPrefix + "/OrderItems/" + order.Id, { Price: order.Price }, this.authHeader())
-            .map(function (res) { return res.json(); })
-            .subscribe(function (resp) { return console.log("update seccess : " + resp); }, function (error) { return console.log("update error: " + error); });
-    };
-    OrdersBoardComponent.prototype.onPriceVendorChange = function (order, price) {
-        console.log(price);
-        console.log('onPriceVendorChange');
-        console.log(JSON.stringify(order));
-        this.http.patch(this.apiPrefix + "/OrderItems/" + order.Id, { PriceVendor: order.PriceVendor }, this.authHeader())
-            .map(function (res) { return res.json(); })
-            .subscribe(function (resp) { return console.log("update seccess : " + resp); }, function (error) { return console.log("update error: " + error); });
-    };
-    OrdersBoardComponent.prototype.prepareOdataFilterString = function () {
-        var filters = [];
-        if (this.customersFilterSelected.length > 0) {
-            var customerFilter = this.customersFilterSelected.reduce(function (prevVal, currItem) { return prevVal + " CustomerId eq " + currItem + " or"; }, '(');
-            customerFilter = customerFilter.slice(0, -2) + " )";
-            filters.push(customerFilter);
-        }
-        if (this.statusesFilterSelected.length > 0) {
-            var statusFilter = this.statusesFilterSelected.reduce(function (prevVal, currItem) { return prevVal + " Status eq " + currItem + " or"; }, '(');
-            statusFilter = statusFilter.slice(0, -2) + " )";
-            filters.push(statusFilter);
-        }
-        if (this.suppliersFilterSelected.length > 0) {
-            var suplierFilter = this.suppliersFilterSelected.reduce(function (prevVal, currItem) { return prevVal + " SuppliersId eq " + currItem + " or"; }, '(');
-            suplierFilter = suplierFilter.slice(0, -2) + " )";
-            filters.push(suplierFilter);
-        }
-        if (filters.length === 0) {
-            return '';
-        }
-        var result = '';
-        if (filters.length === 1) {
-            result = filters[0];
-        }
-        else {
-            result = filters.join(' and ');
-        }
-        console.log("result " + result);
-        return result;
-    };
-    OrdersBoardComponent.prototype.onApplyFilters = function () {
-        var _this = this;
-        console.log('onApplyFilters');
-        var filtersStr = this.prepareOdataFilterString();
-        if (filtersStr !== '') {
-            filtersStr = "$filter=" + filtersStr;
-        }
-        this.http.get(this.apiPrefix + "/OrderItems?" + filtersStr, this.authHeader())
-            .map(function (res) { return res.json(); })
-            .subscribe(
-        // convert to dropdown required format
-        function (orderitems) { return _this.orders = orderitems.value; }, function (error) { return console.log("Fetch orderitems error: " + error.message); });
-    };
-    OrdersBoardComponent.prototype.loadOrdersLazy = function (event) {
-        var _this = this;
-        console.log('load orders lazy');
-        console.log('onApplyFilters');
-        var filtersStr = this.prepareOdataFilterString();
-        if (filtersStr !== '') {
-            filtersStr = "$filter=" + filtersStr;
-        }
-        // todo auth token
-        this.http.get(this.apiPrefix + "/OrderItems?" + filtersStr + "&$top=" + event.rows + "&$skip=" + event.first, this.authHeader())
-            .map(function (res) { return res.json(); })
-            .subscribe(
-        // convert to dropdown required format
-        function (orderitems) { return _this.orders = orderitems.value; }, function (error) { return console.log("Fetch orderitems error: " + error.message); });
-    };
-    OrdersBoardComponent.prototype.datenum = function (v, date1904) {
-        if (date1904 === void 0) { date1904 = null; }
-        if (date1904) {
-            v += 1462;
-        }
-        var epoch = Date.parse(v);
-        return (epoch - (new Date(Date.UTC(1899, 11, 30))).getTime()) / (24 * 60 * 60 * 1000);
-    };
-    OrdersBoardComponent.prototype.sheetFromArrayOfArrays = function (data, opts) {
-        if (opts === void 0) { opts = null; }
-        var keysArray = [];
-        if (data && data.length > 0) {
-            keysArray = Object.keys(data[0]);
-        }
-        var ws = {};
-        var range = { s: { c: 10000000, r: 10000000 }, e: { c: 0, r: 0 } };
-        for (var R = 0; R != data.length; ++R) {
-            for (var C = 0; C != keysArray.length; ++C) {
-                if (range.s.r > R) {
-                    range.s.r = R;
-                }
-                if (range.s.c > C) {
-                    range.s.c = C;
-                }
-                if (range.e.r < R) {
-                    range.e.r = R;
-                }
-                if (range.e.c < C) {
-                    range.e.c = C;
-                }
-                var cell = { v: data[R][keysArray[C]], t: '', z: '' };
-                if (cell.v == null) {
-                    continue;
-                }
-                var cell_ref = XLSX.utils.encode_cell({ c: C, r: R });
-                if (typeof cell.v === 'number') {
-                    cell.t = 'n';
-                }
-                else if (typeof cell.v === 'boolean') {
-                    cell.t = 'b';
-                }
-                else if (cell.v instanceof Date) {
-                    cell.t = 'n';
-                    cell.z = XLSX.SSF._table[14];
-                    cell.v = this.datenum(cell.v);
-                }
-                else {
-                    cell.t = 's';
-                }
-                ws[cell_ref] = cell;
-            }
-        }
-        if (range.s.c < 10000000) {
-            ws['!ref'] = XLSX.utils.encode_range(range);
-        }
-        return ws;
-    };
-    // using https://www.npmjs.com/package/xlsx
-    OrdersBoardComponent.prototype.onExcellExport = function () {
-        var wb = {
-            SheetNames: [],
-            Sheets: {}
-        };
-        var ws = this.sheetFromArrayOfArrays(this.orders);
-        var ws_name = 'vlad';
-        /* add worksheet to workbook */
-        wb.SheetNames.push(ws_name);
-        wb.Sheets[ws_name] = ws;
-        var wbout = XLSX.write(wb, { bookType: 'xlsx', bookSST: true, type: 'binary' });
-        function s2ab(s) {
-            var buf = new ArrayBuffer(s.length);
-            var view = new Uint8Array(buf);
-            for (var i = 0; i != s.length; ++i) {
-                view[i] = s.charCodeAt(i) & 0xFF;
-            }
-            ;
-            return buf;
-        }
-        saveAs(new Blob([s2ab(wbout)], { type: 'application/octet-stream' }), 'test.xlsx');
-    };
-    OrdersBoardComponent.prototype.onCopyToClipboard = function () {
-        __WEBPACK_IMPORTED_MODULE_4_ts_clipboard__["Clipboard"].copy(this.tableToCSV());
-    };
-    OrdersBoardComponent.prototype.tableToCSV = function () {
-        var _this = this;
-        var data = this.dataTable.filteredValue || this.dataTable.value;
-        // let csv = '\ufeff';
-        var csv = '';
-        // headers
-        for (var i = 0; i < this.dataTable.columns.length; i++) {
-            if (this.dataTable.columns[i].field) {
-                csv += '"' + (this.dataTable.columns[i].header || this.dataTable.columns[i].field) + '"';
-                if (i < (this.dataTable.columns.length - 1)) {
-                    csv += this.dataTable.csvSeparator;
-                }
-            }
-        }
-        // body
-        data.forEach(function (record, i) {
-            csv += '\n';
-            for (var i_1 = 0; i_1 < _this.dataTable.columns.length; i_1++) {
-                if (_this.dataTable.columns[i_1].field) {
-                    csv += '"' + _this.dataTable.resolveFieldData(record, _this.dataTable.columns[i_1].field) + '"';
-                    if (i_1 < (_this.dataTable.columns.length - 1)) {
-                        csv += _this.dataTable.csvSeparator;
-                    }
-                }
-            }
-        });
-        return csv;
-    };
-    return OrdersBoardComponent;
+    return HeaderComponent;
 }());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_primeng_primeng__["DataTable"]),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_primeng_primeng__["DataTable"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_primeng_primeng__["DataTable"]) === "function" && _a || Object)
-], OrdersBoardComponent.prototype, "dataTable", void 0);
-OrdersBoardComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-orders-board',
-        template: __webpack_require__("./src/app/orders-board/orders-board.component.html"),
-        styles: [__webpack_require__("./src/app/orders-board/orders-board.component.css")]
+HeaderComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Component */])({
+        selector: 'app-header',
+        template: __webpack_require__("../../../../../src/app/dashboard/header/header.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/dashboard/header/header.component.sass")]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["Router"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["Router"]) === "function" && _c || Object])
-], OrdersBoardComponent);
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_service_left_nav_service__["a" /* LeftNavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_service_left_nav_service__["a" /* LeftNavService */]) === "function" && _a || Object])
+], HeaderComponent);
 
-var _a, _b, _c;
-//# sourceMappingURL=orders-board.component.js.map
+var _a;
+//# sourceMappingURL=header.component.js.map
 
 /***/ }),
 
-/***/ "./src/environments/environment.ts":
+/***/ "../../../../../src/app/dashboard/job-record-view/job-record-view.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<app-left-nav></app-left-nav>\n<div class=\"col-content\">\n  <div class=\"container-fluid\">\n    <div class=\"row row-heading\">\n      <div class=\"col-md-5 col-left\">\n        <h1 class=\"heading\">Job#100202</h1>\n      </div>\n      <div class=\"col-md-7 col-sm-12 col-right\">\n        <div class=\"button-wrapper inline-buttons\">\n          <a class=\"btn btn-default\" style=\"margin-bottom: 10px\" href=\"#\"><span class=\"icon-wrapper\"><i class=\"fa fa-list\" aria-hidden=\"true\"></i></span>Manage Work Order</a>\n          <div class=\"dropdown-button-wrapper \">\n            <!-- Single button -->\n            <div class=\"btn-group dropdown\" ngbDropdown >\n              <button  id=\"dropdownBasic1\" style=\"margin-bottom: 10px;\"  class=\"btn btn-default btn-justify dropdown-toggle\" ngbDropdownToggle >\n                <span class=\"icon-wrapper\"><i class=\"fa fa-edit\" aria-hidden=\"true\"></i></span>Edit <span class=\"caret\"></span>\n              </button>\n              <ul class=\"dropdown-menu\"   ngbDropdownMenu aria-labelledby=\"dropdownBasic1\" >\n                <li  class=\"dropdown-item\"><a href=\"#\">Print</a></li>\n                <li  class=\"dropdown-item\"><a href=\"#\">Delete</a></li>\n                <li  class=\"dropdown-item\"><a href=\"#\">Download</a></li>\n              </ul>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"row col-wrapper customer-wrapper\">\n      <div class=\"col-md-7 col-sm-12 col-left\">\n        <div class=\"row\">\n          <div class=\"col-md-6 col-12 customer\">\n            <span>Customer</span>\n            <span>Financial Status: Active</span>\n          </div>\n          <div class=\"col-md-6 col-12 site hidden-sm-down\">\n            <span>Site</span>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6 col-12 customer-under\">\n            <ul>\n              <li><span class=\"icon-wrapper\"><i class=\"fa fa-briefcase\" aria-hidden=\"true\"></i></span><a href=\"#\">First Express</a></li>\n              <li><span class=\"icon-wrapper\"><i class=\"fa fa-phone-square\" aria-hidden=\"true\"></i></span>03-9517-9800</li>\n              <li><span class=\"icon-wrapper\"><i class=\"fa fa-envelope\" aria-hidden=\"true\"></i></span><a href=\"mailto:eveline@yahoo.com\">eveline@yahoo.com</a></li>\n              <li><span class=\"icon-wrapper\"><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i></span>288 N 168th Ave #266, Camberwell West, VI, 3124, Australia</li>\n            </ul>\n          </div>\n          <div class=\"col-md-6 col-12 site-under hidden-sm-down\">\n            <ul>\n              <li><span class=\"icon-wrapper\"><i class=\"fa fa-briefcase\" aria-hidden=\"true\"></i></span><a href=\"#\">15126 Goldenwest St</a></li>\n              <li><span class=\"icon-wrapper\"><i class=\"fa fa-phone-square\" aria-hidden=\"true\"></i></span>03-9517-9800</li>\n              <li><span class=\"icon-wrapper\"><i class=\"fa fa-envelope\" aria-hidden=\"true\"></i></span>-</li>\n              <li><span class=\"icon-wrapper\"><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i></span>-</li>\n            </ul>\n          </div>\n          <div class=\"col-md-6 col-12 site hidden-md-up \" style=\"border-left: 1px solid #eeeeee\">\n            <span>Site</span>\n          </div>\n          <div class=\"col-md-6 site-under col-12 hidden-md-up\" style=\"border-left: 1px solid #eeeeee\">\n            <ul>\n              <li><span class=\"icon-wrapper\"><i class=\"fa fa-briefcase\" aria-hidden=\"true\"></i></span><a href=\"#\">15126 Goldenwest St</a></li>\n              <li><span class=\"icon-wrapper\"><i class=\"fa fa-phone-square\" aria-hidden=\"true\"></i></span>03-9517-9800</li>\n              <li><span class=\"icon-wrapper\"><i class=\"fa fa-envelope\" aria-hidden=\"true\"></i></span>-</li>\n              <li><span class=\"icon-wrapper\"><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i></span>-</li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"row create-block\">\n          <div class=\"col-md-12 col-sm-12\" style=\"padding: 0;\">\n            <ul class=\"first-block\">\n              <li class=\"col-md col-4\">1 Linked Contacts <a href=\"#\" class=\"\"><span class=\"icon-wrapper\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i></span>Create Contact</a></li>\n              <li class=\"col-md col-4\">1 Total Open Quotes <a href=\"#\" class=\"\"><span class=\"icon-wrapper\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i></span>Create Quote</a></li>\n              <li class=\"col-md col-4 \">2 Total Open Jobs <a href=\"#\" class=\"\"><span class=\"icon-wrapper\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i></span>Create Job</a></li>\n              <li class=\"col-md hidden-sm-down \">1 Total Maintenace Schedules <a href=\"#\" class=\"\"><span class=\"icon-wrapper\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i></span>Manage Maintenance</a></li>\n              <li class=\"col-md hidden-sm-down \">30 Total Active Assets <a href=\"#\" class=\"\"><span class=\"icon-wrapper\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i></span>Manage Assets</a></li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"row create-block hidden-md-up\">\n          <div class=\"col-md-12 col-sm-12\" style=\"padding: 0;\">\n            <ul class=\"first-block\">\n              <li class=\"col-md col-6  \">1 Total Maintenace Schedules <a href=\"#\" class=\"\"><span class=\"icon-wrapper\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i></span>Manage Maintenance</a></li>\n              <li class=\"col-md col-6 hidden-md-up\">30 Total Active Assets <a href=\"#\" class=\"\"><span class=\"icon-wrapper\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i></span>Manage Assets</a></li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"row create-block\">\n          <div class=\"col-md-12 col-sm-12\"  style=\"padding: 0;\">\n            <ul class=\"second-block\">\n              <li class=\"col-md-6 col-12\">Show Financial Summary</li>\n              <li class=\"col-md-6 hidden-sm-down\">Show Resource Summary <a href=\"#\" class=\"\"><span class=\"icon-wrapper\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i></span>Schedule This Job</a></li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"row create-block hidden-md-up\">\n          <div class=\"col-md-12 col-sm-12\"  style=\"padding: 0;\">\n            <ul class=\"second-block\">\n              <li class=\"col-md-6 col-12\">Show Resource Summary <a href=\"#\" class=\"\"><span class=\"icon-wrapper\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i></span>Schedule This Job</a></li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"row create-block\">\n          <div class=\"col-md-12 col-sm-12\" style=\"padding: 0;\">\n            <ul class=\"third-block\">\n              <li class=\"col-md col-6\">1 Total Hours <a href=\"#\" class=\"\"><span class=\"icon-wrapper\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i></span>Log Time Entry</a></li>\n              <li class=\"col-md col-6\">1 Total Materials <a href=\"#\" class=\"\"><span class=\"icon-wrapper\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i></span>Log Materials</a></li>\n              <li class=\"col-md col-6 hidden-md-up\">2 Total Invoices <a href=\"#\" class=\"\"><span class=\"icon-wrapper\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i></span>Create Invoice</a></li>\n              <li class=\"col-md col-6 hidden-md-up\">1 Total Purchase Orders <a href=\"#\" class=\"\"><span class=\"icon-wrapper\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i></span>Generate Purchase Order</a></li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"row create-block hidden-md-up\">\n          <div class=\"col-md-12 col-sm-12\" style=\"padding: 0;\">\n            <ul class=\"third-block\">\n              <li class=\"col-md col-6 hidden-md-up\">2 Total Invoices <a href=\"#\" class=\"\"><span class=\"icon-wrapper\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i></span>Create Invoice</a></li>\n              <li class=\"col-md col-6 hidden-md-up\">1 Total Purchase Orders <a href=\"#\" class=\"\"><span class=\"icon-wrapper\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i></span>Generate Purchase Order</a></li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"row detailAcc\">\n            <div class=\"col-md-12 col-sm-12\" style=\"padding: 0;\">\n              <span style=\"margin-bottom: 20px;\">Details</span>\n              <div id=\"accordion\" role=\"tablist\">\n                <div class=\"card\">\n                  <div class=\"card-header\" role=\"tab\" id=\"headingOne\">\n                    <h5 class=\"mb-0\">\n                      <a data-toggle=\"collapse\" href=\"#collapseOne\" aria-expanded=\"true\" aria-controls=\"collapseOne\">\n                        <i class=\"fa fa-angle-down\" aria-hidden=\"true\"></i>\n                        Account Information\n                      </a>\n                    </h5>\n                  </div>\n\n                  <div id=\"collapseOne\" class=\"collapse show\" role=\"tabpanel\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\">\n                    <div class=\"card-body\">\n                      <div class=\"row inputs-block\">\n                        <div class=\"col-md\">\n                          <label for=\"accountOwner\">Account Owner</label>\n                          <input id=\"accountOwner\" type=\"text\">\n                          <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>\n                        </div>\n                        <div class=\"col-md\">\n                          <label for=\"accountName\">Account Name</label>\n                          <input id=\"accountName\" type=\"text\">\n                          <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>\n                        </div>\n                        <div class=\"col-md\">\n\n                        </div>\n                      </div>\n                      <div class=\"row inputs-block\" style=\"margin-top: 20px;\">\n                        <div class=\"col-md\">\n                          <label for=\"email\">Email</label>\n                          <input type=\"text\" id=\"email\">\n                          <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>\n                        </div>\n                        <div class=\"col-md\">\n                          <label for=\"phoneNumber\">Phone Number</label>\n                          <input type=\"text\" id=\"phoneNumber\">\n                          <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>\n                        </div>\n                        <div class=\"col-md\">\n                          <label for=\"Fax\">Fax</label>\n                          <input type=\"text\" id=\"Fax\">\n                          <i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>\n                        </div>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"card\">\n                  <div class=\"card-header\" role=\"tab\" id=\"headingTwo\">\n                    <h5 class=\"mb-0\">\n                      <a class=\"collapsed\" data-toggle=\"collapse\" href=\"#collapseTwo\" aria-expanded=\"false\" aria-controls=\"collapseTwo\">\n                        <i class=\"fa fa-angle-down\" aria-hidden=\"true\"></i>\n                        Additional Information\n                      </a>\n                    </h5>\n                  </div>\n                  <div id=\"collapseTwo\" class=\"collapse\" role=\"tabpanel\" aria-labelledby=\"headingTwo\" data-parent=\"#accordion\">\n                    <div class=\"card-body\">\n                      CONTENT GO HERE\n                    </div>\n                  </div>\n                </div>\n                <div class=\"card\">\n                  <div class=\"card-header\" role=\"tab\" id=\"headingThree\">\n                    <h5 class=\"mb-0\">\n                      <a class=\"collapsed\" data-toggle=\"collapse\" href=\"#collapseThree\" aria-expanded=\"false\" aria-controls=\"collapseThree\">\n                        <i class=\"fa fa-angle-down\" aria-hidden=\"true\"></i>\n                        Address Information\n                      </a>\n                    </h5>\n                  </div>\n                  <div id=\"collapseThree\" class=\"collapse\" role=\"tabpanel\" aria-labelledby=\"headingThree\" data-parent=\"#accordion\">\n                    <div class=\"card-body\">\n                      CONTENT GO HERE\n                    </div>\n                  </div>\n                </div>\n                <div class=\"card\">\n                  <div class=\"card-header\" role=\"tab\" id=\"headingFour\">\n                    <h5 class=\"mb-0\">\n                      <a class=\"collapsed\" data-toggle=\"collapse\" href=\"#collapseFour\" aria-expanded=\"false\" aria-controls=\"collapseThree\">\n                        <i class=\"fa fa-angle-down\" aria-hidden=\"true\"></i>\n                        Renewal/Co-Term Information\n                      </a>\n                    </h5>\n                  </div>\n                  <div id=\"collapseFour\" class=\"collapse\" role=\"tabpanel\" aria-labelledby=\"headingFour\" data-parent=\"#accordion\">\n                    <div class=\"card-body\">\n                      CONTENT GO HERE\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n        </div>\n      </div>\n      <div class=\"col-md-5 col-sm-12 mytabs\">\n        <!-- Nav tabs -->\n        <div class=\"tabs-wrapper\">\n          <ul class=\"nav classic-tabs tabs-cyan\" role=\"tablist\">\n            <li class=\"nav-item col-md-4\">\n              <a class=\"nav-link waves-light active\" data-toggle=\"tab\" href=\"#panel51\" role=\"tab\">ACTIVITY</a>\n            </li>\n            <li class=\"nav-item col-md-3\">\n              <a class=\"nav-link waves-light\" data-toggle=\"tab\" href=\"#panel52\" role=\"tab\">FILES</a>\n            </li>\n            <li class=\"nav-item col-md\">\n              <a class=\"nav-link waves-light\" data-toggle=\"tab\" href=\"#panel53\" role=\"tab\">MANAGE CHECKLIST</a>\n            </li>\n          </ul>\n        </div>\n\n        <!-- Tab panels -->\n        <div class=\"tab-content card\">\n\n          <!--Panel 1-->\n          <div class=\"tab-pane fade in show active\" id=\"panel51\" role=\"tabpanel\">\n            <p>ACCTIVITY TAB</p>\n          </div>\n          <!--/.Panel 1-->\n\n          <!--Panel 2-->\n          <div class=\"tab-pane fade\" id=\"panel52\" role=\"tabpanel\">\n            <p>FILES TAB</p>\n          </div>\n          <!--/.Panel 2-->\n\n          <!--Panel 3-->\n          <div class=\"tab-pane fade\" id=\"panel53\" role=\"tabpanel\">\n            <div class=\"table-responsive ng-scope\">\n              <table class=\"table table-no-border table-manage-checklist\">\n                <thead>\n                <tr>\n                  <th>Checklist Name</th>\n                  <th>Type</th>\n                  <th>Schedules</th>\n                  <th class=\"color-light-blue\">Attach Checklist<span class=\"icon-wrapper\"><i class=\"fa fa-paperclip\" aria-hidden=\"true\"></i></span></th>\n                </tr>\n                </thead>\n                <tbody>\n                <tr>\n                  <th scope=\"row\">Pump Diesel</th>\n                  <td>Asset</td>\n                  <td>Monthly</td>\n                  <td>\n                    <div class=\"buttons-wrapper inline-buttons\">\n                      <button type=\"button\" class=\"btn btn-icon btn-color-light-blue\"><span class=\"icon-wrapper\"><i class=\"fa fa-edit\" aria-hidden=\"true\"></i></span></button>\n                      <button type=\"button\" class=\"btn btn-icon btn-color-light-yellow\"><span class=\"icon-wrapper\"><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></span></button>\n                    </div>\n                  </td>\n                </tr>\n                <tr>\n                  <th scope=\"row\">Fire Inspection Panels</th>\n                  <td>Asset</td>\n                  <td>6 Monthly</td>\n                  <td>\n                    <div class=\"buttons-wrapper inline-buttons\">\n                      <button type=\"button\" class=\"btn btn-icon btn-color-light-blue\"><span class=\"icon-wrapper\"><i class=\"fa fa-edit\" aria-hidden=\"true\"></i></span></button>\n                      <button type=\"button\" class=\"btn btn-icon btn-color-light-yellow\"><span class=\"icon-wrapper\"><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></span></button>\n                    </div>\n                  </td>\n                </tr>\n                <tr>\n                  <th scope=\"row\">Hydrant Pump</th>\n                  <td>Asset</td>\n                  <td>6 Monthly</td>\n                  <td>\n                    <div class=\"buttons-wrapper inline-buttons\">\n                      <button type=\"button\" class=\"btn btn-icon btn-color-light-blue\"><span class=\"icon-wrapper\"><i class=\"fa fa-edit\" aria-hidden=\"true\"></i></span></button>\n                      <button type=\"button\" class=\"btn btn-icon btn-color-light-yellow\"><span class=\"icon-wrapper\"><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></span></button>\n                    </div>\n                  </td>\n                </tr>\n                </tbody>\n              </table>\n            </div>\n          </div>\n          <!--/.Panel 3-->\n\n\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/dashboard/job-record-view/job-record-view.component.sass":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".row-heading {\n  border-bottom: 1px solid #eee;\n  margin-bottom: 50px;\n  padding-bottom: 20px; }\n\n.col-content {\n  padding: 30px;\n  margin-left: 320px; }\n  .col-content .heading {\n    font-size: 24px;\n    color: #0e76bc;\n    font-family: 'Roboto', sans-serif;\n    font-weight: 400; }\n  .col-content .button-wrapper {\n    text-align: right; }\n    .col-content .button-wrapper .btn {\n      display: inline-block;\n      margin-left: 10px;\n      padding: 6px 12px;\n      margin-bottom: 0;\n      font-size: 14px;\n      font-weight: 400;\n      height: 40px;\n      line-height: 2;\n      border: 0 solid transparent; }\n    .col-content .button-wrapper .btn-default {\n      color: #fff;\n      background-color: #0e76bc; }\n      .col-content .button-wrapper .btn-default .icon-wrapper {\n        margin-right: 5px; }\n    .col-content .button-wrapper .dropdown-button-wrapper {\n      display: inline-block;\n      margin-left: 10px;\n      min-width: 130px; }\n      .col-content .button-wrapper .dropdown-button-wrapper .btn-group {\n        width: 100%; }\n        .col-content .button-wrapper .dropdown-button-wrapper .btn-group .btn {\n          width: 100%; }\n        .col-content .button-wrapper .dropdown-button-wrapper .btn-group .dropdown-menu {\n          left: -29px !important;\n          border: 1px solid rgba(0, 0, 0, 0.15);\n          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175); }\n          .col-content .button-wrapper .dropdown-button-wrapper .btn-group .dropdown-menu .dropdown-item a {\n            color: black; }\n            .col-content .button-wrapper .dropdown-button-wrapper .btn-group .dropdown-menu .dropdown-item a:hover {\n              text-decoration: none; }\n      .col-content .button-wrapper .dropdown-button-wrapper #dropdownBasic1 {\n        cursor: pointer; }\n        .col-content .button-wrapper .dropdown-button-wrapper #dropdownBasic1:focus {\n          color: #333;\n          background-color: #d4d4d4;\n          border-color: #8c8c8c;\n          box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }\n\n.customer-wrapper .customer {\n  border: 1px solid #eee;\n  padding: 10px 20px; }\n  .customer-wrapper .customer span:first-child {\n    color: #777777;\n    font-size: 18px;\n    font-family: 'Roboto', sans-serif;\n    font-weight: 400;\n    vertical-align: -webkit-baseline-middle; }\n  .customer-wrapper .customer span:nth-child(2) {\n    float: right;\n    font-family: 'Roboto', sans-serif;\n    font-weight: 500;\n    background-color: #2bb673;\n    padding: 5px 10px;\n    color: white;\n    font-size: 14px;\n    border-radius: 4px; }\n\n.customer-wrapper .customer-under {\n  border-left: 1px solid #eee;\n  border-right: 1px solid #eee;\n  border-bottom: 1px solid #eee;\n  padding-top: 15px;\n  padding-bottom: 15px;\n  margin-bottom: 10px; }\n  .customer-wrapper .customer-under ul {\n    list-style: none;\n    padding-left: 0;\n    margin-bottom: 0; }\n    .customer-wrapper .customer-under ul li {\n      margin: 5px 0;\n      color: #777777;\n      font-size: 14px; }\n      .customer-wrapper .customer-under ul li a {\n        text-decoration: none;\n        color: #55acee; }\n    .customer-wrapper .customer-under ul i {\n      display: inline-block;\n      margin-right: 10px;\n      min-width: 16px;\n      text-align: center;\n      color: #777777; }\n\n.customer-wrapper .site {\n  border-top: 1px solid #eee;\n  border-bottom: 1px solid #eee;\n  border-right: 1px solid #eee;\n  padding: 10px 20px; }\n  .customer-wrapper .site span {\n    color: #777777;\n    font-size: 18px;\n    font-family: 'Roboto', sans-serif;\n    font-weight: 400;\n    vertical-align: -webkit-baseline-middle; }\n\n.customer-wrapper .site-under {\n  border-right: 1px solid #eee;\n  border-bottom: 1px solid #eee;\n  padding-top: 15px;\n  padding-bottom: 15px;\n  margin-bottom: 10px; }\n  .customer-wrapper .site-under ul {\n    list-style: none;\n    padding-left: 0;\n    margin-bottom: 0; }\n    .customer-wrapper .site-under ul li {\n      margin: 5px 0;\n      color: #777777;\n      font-size: 14px; }\n      .customer-wrapper .site-under ul li a {\n        text-decoration: none;\n        color: #55acee; }\n    .customer-wrapper .site-under ul i {\n      display: inline-block;\n      margin-right: 10px;\n      min-width: 16px;\n      text-align: center;\n      color: #777777; }\n\n.create-block .first-block {\n  border: 1px solid #eee;\n  overflow: hidden;\n  padding: 0;\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 14px; }\n  .create-block .first-block li {\n    display: inline-block;\n    vertical-align: top;\n    text-align: center;\n    color: #55acee;\n    padding: 10px 0; }\n    .create-block .first-block li:not(:last-child) {\n      border-right: 1px solid #eee; }\n  .create-block .first-block a {\n    display: block;\n    color: #55acee; }\n  .create-block .first-block span {\n    color: #2bb673;\n    margin-right: 4px;\n    min-width: 16px;\n    text-align: center;\n    display: inline-block; }\n\n.second-block {\n  border: 1px solid #eee;\n  overflow: hidden;\n  padding: 0;\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 14px; }\n  .second-block li {\n    display: inline-block;\n    vertical-align: top;\n    text-align: center;\n    color: #55acee;\n    padding: 10px 0; }\n    .second-block li:not(:last-child) {\n      border-right: 1px solid #eee; }\n  .second-block a {\n    display: block;\n    color: #55acee; }\n  .second-block span {\n    color: #2bb673;\n    margin-right: 4px;\n    min-width: 16px;\n    text-align: center;\n    display: inline-block; }\n\n.third-block {\n  border: 1px solid #eee;\n  overflow: hidden;\n  padding: 0;\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 14px; }\n  .third-block li {\n    display: inline-block;\n    vertical-align: top;\n    text-align: center;\n    color: #55acee;\n    padding: 10px 0; }\n    .third-block li:not(:last-child) {\n      border-right: 1px solid #eee; }\n  .third-block a {\n    display: block;\n    color: #55acee; }\n  .third-block span {\n    color: #2bb673;\n    margin-right: 4px;\n    min-width: 16px;\n    text-align: center;\n    display: inline-block; }\n\n.detailAcc .card {\n  border-radius: 0;\n  border-left: 1px solid #eee;\n  border-right: 1px solid #eee;\n  border-bottom: 1px solid #eee;\n  border-top: none; }\n  .detailAcc .card:first-child {\n    border-top: 1px solid #eee; }\n\n.detailAcc .card-header {\n  background-color: transparent;\n  border-radius: 0;\n  border-bottom: none; }\n  .detailAcc .card-header a {\n    text-decoration: none;\n    color: #55acee;\n    font-size: 14px;\n    font-family: 'Roboto', sans-serif;\n    font-weight: 500; }\n\n.detailAcc .card-body {\n  padding: 20px;\n  background-color: #f7f8fc;\n  border-top: 1px solid #eee; }\n\n.inputs-block i {\n  position: absolute;\n  top: 38px;\n  right: 27px;\n  color: #ccc; }\n\n.inputs-block input {\n  width: 100%;\n  border-radius: 4px;\n  border: 1px solid #eee;\n  padding-left: 10px;\n  color: #777777; }\n\n.inputs-block label {\n  display: inline-block;\n  color: #777777; }\n\n.mytabs .tabs-wrapper {\n  border-top: 1px solid #eee;\n  border-left: 1px solid #eee;\n  border-right: 1px solid #eee;\n  text-align: center; }\n  .mytabs .tabs-wrapper li {\n    padding: 0; }\n  .mytabs .tabs-wrapper a {\n    color: #777777;\n    font-family: 'Roboto', sans-serif;\n    font-weight: 400; }\n    .mytabs .tabs-wrapper a:hover {\n      color: #55acee;\n      border-bottom: 6px solid #55acee; }\n    .mytabs .tabs-wrapper a:focus {\n      color: #55acee;\n      border-bottom: 6px solid #55acee; }\n\n.mytabs .card {\n  border-top: 1px solid #eee;\n  border-radius: 0 !important;\n  padding: 12px 25px; }\n\n.table {\n  width: 100%;\n  max-width: 100%;\n  margin-bottom: 1rem;\n  font-size: 14px;\n  font-family: 'Roboto', sans-serif; }\n  .table i {\n    cursor: pointer; }\n  .table th {\n    color: #777777;\n    font-weight: 300;\n    border: none;\n    padding: 5px;\n    vertical-align: inherit; }\n    .table th:last-child {\n      color: #55acee; }\n      .table th:last-child i {\n        margin-left: 5px; }\n  .table td {\n    color: #777777;\n    font-weight: 300;\n    border: none;\n    vertical-align: inherit;\n    padding: 5px; }\n    .table td .btn {\n      display: inline-block;\n      font-weight: 400;\n      line-height: 1.25;\n      text-align: center;\n      white-space: nowrap;\n      vertical-align: middle;\n      -webkit-user-select: none;\n      -moz-user-select: none;\n      -ms-user-select: none;\n      user-select: none;\n      border: 1px solid transparent;\n      padding: .5rem 1rem;\n      font-size: 1rem;\n      border-radius: .25rem;\n      transition: all .2s ease-in-out;\n      background-color: transparent; }\n    .table td span {\n      margin-left: 4px; }\n\n.btn-color-light-yellow {\n  color: #fdcd8c !important; }\n\n.btn-color-light-blue {\n  color: #55acee; }\n\n@media (max-width: 1250px) {\n  .col-left {\n    -webkit-box-flex: 0;\n    -ms-flex: 0 0 100%;\n    flex: 0 0 100%;\n    max-width: 100%; }\n  .mytabs {\n    -webkit-box-flex: 0;\n    -ms-flex: 0 0 100%;\n    flex: 0 0 100%;\n    max-width: 100%;\n    margin-top: 20px;\n    padding: 0; } }\n\n@media (max-width: 1550px) {\n  .col-content {\n    margin-left: 0; } }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/dashboard/job-record-view/job-record-view.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return JobRecordViewComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var JobRecordViewComponent = (function () {
+    function JobRecordViewComponent() {
+    }
+    JobRecordViewComponent.prototype.ngOnInit = function () {
+    };
+    return JobRecordViewComponent;
+}());
+JobRecordViewComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Component */])({
+        selector: 'app-job-record-view',
+        template: __webpack_require__("../../../../../src/app/dashboard/job-record-view/job-record-view.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/dashboard/job-record-view/job-record-view.component.sass")]
+    }),
+    __metadata("design:paramtypes", [])
+], JobRecordViewComponent);
+
+//# sourceMappingURL=job-record-view.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/dashboard/left-nav/left-nav.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div  *ngIf=\"showMenu\" class=\"menu\" aria-expanded=\"true\" aria-hidden=\"false\" style=\"\">\n    <ul class=\"\">\n      <li><a href=\"#\"><span class=\"icon-wrapper\"><i class=\"fa fa-id-card\" aria-hidden=\"true\"></i></span>Leads</a></li>\n      <li><a href=\"#\"><span class=\"icon-wrapper\"><i class=\"fa fa-users\" aria-hidden=\"true\"></i></span>Customers</a></li>\n      <li><a href=\"#\"><span class=\"icon-wrapper\"><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i></span>Sites</a></li>\n      <li><a href=\"#\"><span class=\"icon-wrapper\"><i class=\"fa fa-address-book\" aria-hidden=\"true\"></i></span>Contacts</a></li>\n      <li><a href=\"#\"><span class=\"icon-wrapper\"><i class=\"fa fa-paste\" aria-hidden=\"true\"></i></span>Quotes</a></li>\n      <li><a href=\"#\"><span class=\"icon-wrapper\"><i class=\"fa fa-wrench\" aria-hidden=\"true\"></i></span>Jobs</a></li>\n      <li><a href=\"#\"><span class=\"icon-wrapper\"><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i></span>Scheduling</a></li>\n      <li><a href=\"#\"><span class=\"icon-wrapper\"><i class=\"fa fa-dollar\" aria-hidden=\"true\"></i></span>Sales</a></li>\n      <li><a href=\"#\"><span class=\"icon-wrapper\"><i class=\"fa fa-shopping-bag\" aria-hidden=\"true\"></i></span>Purchase Orders</a></li>\n      <li><a href=\"#\"><span class=\"icon-wrapper\"><i class=\"fa fa-desktop\" aria-hidden=\"true\"></i></span>Dashboard &amp; Reports</a></li>\n    </ul>\n  </div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/dashboard/left-nav/left-nav.component.sass":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".menu {\n  float: left;\n  width: 320px;\n  z-index: 100;\n  box-shadow: 4px 3px 8px 0px rgba(119, 119, 119, 0.16);\n  background-color: white; }\n  .menu ul {\n    padding-left: 20px; }\n  .menu li {\n    list-style: none;\n    padding: 10px 20px; }\n    .menu li a {\n      text-decoration: none;\n      color: #777777; }\n    .menu li:hover {\n      background-color: #0e76bc;\n      border-radius: 4px 0 0 4px;\n      cursor: pointer; }\n      .menu li:hover a {\n        color: white; }\n    .menu li i {\n      display: inline-block;\n      background-color: #0e76bc;\n      border-radius: 50%;\n      border: 2px solid #7bb4da;\n      color: #fff;\n      width: 34px;\n      height: 34px;\n      margin-right: 10px;\n      text-align: center;\n      line-height: 2;\n      font-size: 15px; }\n\n@media (max-width: 1550px) {\n  .menu {\n    position: absolute; } }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/dashboard/left-nav/left-nav.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_service_left_nav_service__ = __webpack_require__("../../../../../src/app/shared/service/left-nav.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LeftNavComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var LeftNavComponent = (function () {
+    function LeftNavComponent(leftNavService) {
+        var _this = this;
+        this.leftNavService = leftNavService;
+        this.showMenu = true;
+        this.leftNavService.showMenu.subscribe(function (data) {
+            _this.showMenu = !_this.showMenu;
+        });
+    }
+    LeftNavComponent.prototype.ngOnInit = function () {
+    };
+    return LeftNavComponent;
+}());
+LeftNavComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Component */])({
+        selector: 'app-left-nav',
+        template: __webpack_require__("../../../../../src/app/dashboard/left-nav/left-nav.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/dashboard/left-nav/left-nav.component.sass")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_service_left_nav_service__["a" /* LeftNavService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_service_left_nav_service__["a" /* LeftNavService */]) === "function" && _a || Object])
+], LeftNavComponent);
+
+var _a;
+//# sourceMappingURL=left-nav.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/service/left-nav.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LeftNavService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var LeftNavService = (function () {
+    function LeftNavService() {
+        this.showMenu = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */]();
+    }
+    return LeftNavService;
+}());
+LeftNavService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])(),
+    __metadata("design:paramtypes", [])
+], LeftNavService);
+
+//# sourceMappingURL=left-nav.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/environments/environment.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -666,34 +436,34 @@ var environment = {
 
 /***/ }),
 
-/***/ "./src/main.ts":
+/***/ "../../../../../src/main.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("./node_modules/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("./src/app/app.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 
 
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* enableProdMode */])();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
 //# sourceMappingURL=main.js.map
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./src/main.ts");
+module.exports = __webpack_require__("../../../../../src/main.ts");
 
 
 /***/ })
 
-},[1]);
+},[0]);
 //# sourceMappingURL=main.bundle.js.map

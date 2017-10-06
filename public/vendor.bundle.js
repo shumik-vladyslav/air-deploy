@@ -1,4 +1,4 @@
-webpackJsonp([4],{
+webpackJsonp([3],{
 
 /***/ "../../../../@ng-bootstrap/ng-bootstrap/accordion/accordion-config.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {

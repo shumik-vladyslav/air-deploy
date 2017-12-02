@@ -1,0 +1,390 @@
+
+.logo-img{
+    width: 139px;
+    position: absolute;
+    top: 3px;
+    left: 19px;
+}
+.navbar-nav > li > a{
+    font-family: Roboto;
+    font-size: 15px;
+    line-height: 1.73;
+    text-align: left;
+    color: #ffffff;
+    margin-left: 11px;
+    margin-right: 31px;
+}
+.navbar-collapse > ul > li > a{
+    color: white;
+    margin-left: 10px;
+    margin-right: 31px
+}
+.search-button > button{
+    position: absolute;
+    left: -78px;
+    top: 6px;
+    background: no-repeat;
+    border: none;
+    color: white;
+    outline: none;
+}
+.Rectangle-3{
+    height: 239px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    padding: 40px;
+}
+.input-wrap{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 32px;
+}
+.Claim-details {
+    width: 644px;
+    height: 35px;
+    font-family: Roboto;
+    font-size: 30px;
+    letter-spacing: -0.1px;
+    text-align: left;
+    color: #424242;
+  }
+  .TCN {
+    width: 248px;
+    height: 20px;
+    font-family: Roboto;
+    font-size: 13px;
+    line-height: 1.54;
+    text-align: left;
+    color: #757575;
+  }
+  .Status-effective-dat {
+    width: 247px;
+    height: 20px;
+    font-family: Roboto;
+    font-size: 13px;
+    line-height: 1.54;
+    text-align: left;
+    color: #757575;
+  }
+  .Payment-ID {
+    width: 247px;
+    height: 20px;
+    font-family: Roboto;
+    font-size: 13px;
+    line-height: 1.54;
+    text-align: left;
+    color: #757575;
+  }
+  .status {
+    width: 37px;
+    height: 20px;
+    font-family: Roboto;
+    font-size: 13px;
+    line-height: 1.54;
+    text-align: left;
+    color: #757575;
+  }
+  .TCN-item{
+    width: 248px;
+    height: 22px;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 1.38;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  .Status-effective-dat-item {
+    width: 247px;
+    height: 22px;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 1.38;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  .Payment-ID-item {
+    width: 247px;
+    height: 22px;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 1.38;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  .status-item {
+    width: 37px;
+    height: 22px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.38;
+    text-align: left;
+    color: #4caf50;
+  }
+.name-items{
+    padding-left: 0;
+    padding-right: 114px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    margin-bottom: 28px;
+}
+.name-head{
+    padding-left: 0;
+    padding-right: 114px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28px;
+}
+.head-top-content{
+    display: flex;
+    justify-content: space-between;
+}
+.button-wrap-top{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0;
+    padding-left: 0;
+}
+.show-more{
+    border: none;
+    background: none;
+    color: aliceblue;
+    width: 130px;
+    height: 18px;
+    font-family: MarkPro;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    color: #1976d2;  
+}
+.arrow-show-more{
+    position: absolute;
+    top: 1px;
+}
+.print-btn{
+    width: 98px;
+    height: 32px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+    border: none;
+    font-family: Roboto;
+    font-size: 16px;
+    text-align: right;
+    padding-right: 19px;
+    color: #000000;
+    position: relative;
+    outline: none;
+}
+.print-btn:hover{
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.26), 0 2px 3px 0 rgba(0, 0, 0, 0.16);
+}
+.print-icon{
+    position: absolute;
+    left: 10px;
+    color: #616161;
+}
+.clip{
+    width: 160px;
+    height: 35px;
+    border-radius: 3px;
+    background-color: #1976d2;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+    border: none;
+    font-family: Roboto;
+    font-size: 16px;
+    text-align: center;
+    color: #ffffff;
+}
+.menu-wrapper{
+    width: 317px;
+    height: 100%;
+    padding-top: 36px;
+    border-right: 1px solid rgb(201, 201, 201);
+}
+.menu-wrapper > button{
+    width: 100%;
+    height: 47px;
+    padding-top: 14px;
+    padding-bottom: 15px;
+    padding-left: 56px;
+    outline: none;
+    background: none;
+    border: none;
+    text-align: left;
+}
+.menu-wrapper > button:focus{
+    background-color: rgba(255, 152, 0, 0.1);
+    border-left: 5px solid #ffa000;
+    padding-left: 51px;
+}
+.menu-wrapper > button > span{
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+    color: #757575;
+}
+.bottom-content{
+    display: flex;
+    margin-top: 32px;
+    width: 100%;
+    height: 448px;
+    border-top: 1px solid rgb(201, 201, 201);
+    border-bottom: 1px solid rgb(201, 201, 201);
+    margin-bottom: 50px;
+}
+.right-content-wrapp{
+    width: 626px;
+    height: 100%;
+    padding: 41px 0 32px 37px;
+}
+
+.claim-codes{
+    width: 134px;
+    height: 28px;
+    font-family: Roboto;
+    font-size: 24px;
+    letter-spacing: -0px;
+    text-align: left;
+    color: #1976d2;
+    margin-left: 3px;
+    margin-top: 0;
+    
+}
+.adjustment-reason-codes{
+    width: 205px;
+    height: 26px;
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 1.44;
+    text-align: left;
+    color: #2d353c;
+}
+.insider-wrap-content{
+    display: flex;
+    justify-content: space-around;
+}
+.insider-wrap-content > div{
+    display: flex;
+    flex-flow: column;
+}
+.light-style{
+    font-family: Roboto;
+    font-size: 15px;
+    letter-spacing: -0px;
+    text-align: left;
+    color: #757575;
+    margin-bottom: 4px;
+}
+.bold-style{
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.43;
+    text-align: left;
+    color: #424242;
+}
+.second-row{
+margin-top: 22px;
+}
+.remark-codes{
+    width: 205px;
+    height: 26px;
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 1.44;
+    text-align: left;
+    color: #2d353c;
+}
+.back-to-claims{
+    width: 125px;
+    height: 14px;
+    font-family: Roboto;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: left;
+    color: #bdbdbd;
+    border: none;
+    background: no-repeat;
+    margin-bottom: 14px;
+}
+.left-content{
+    width: 284px;
+}
+.right-content{
+    width: 223px;   
+}
+
+.main-wrap{
+    margin-top: 70px;
+    margin-right: 13%;
+    width: 973px;
+}
+.bot-content-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 83px 22px 23px;
+}
+@media screen and (max-width: 1300px){
+    .navbar-collapse > ul > li > a{
+        color: white;
+        margin-left: 16px;
+        margin-right: 26px;
+    }
+    .navbar-nav{
+        position: absolute;
+        right: 385px;
+        line-height: 1.44;
+        top: 21px;
+    }
+}
+@media screen and (max-width: 1246px){
+    .navbar-collapse > ul > li > a{
+        color: white;
+        margin-left: 11px;
+        margin-right: 26px;
+    }
+}
+@media screen and (max-width: 1200px){
+    .navbar-collapse > ul > li > a{
+        color: white;
+        margin-left: 6px;
+        margin-right: 26px;
+    }
+}
+@media screen and (max-width: 1161px){
+    .navbar-collapse > ul > li > a{
+        color: white;
+        margin-left: 4px;
+        margin-right: 16px;
+    }
+    .envelope{
+        position: relative;
+        top: 6px;
+        right: 8px;
+    }
+    .search-button > button{
+        position: absolute;
+        left: -55px;
+    }
+}
+@media screen and (max-width: 1107px){
+    .navbar-collapse > ul > li > a{
+        color: white;
+        margin-left: 4px;
+        margin-right: 8px;
+        right: 428px;
+    }
+}
+@media screen and (max-width: 1050px){
+    .navbar-collapse > ul > li > a{
+        color: white;
+        margin-left: 4px;
+        margin-right: 8px;
+        
+    }  
+}

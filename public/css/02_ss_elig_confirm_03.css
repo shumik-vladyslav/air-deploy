@@ -1,24 +1,4 @@
 
-.logo-img{
-    width: 139px;
-    position: absolute;
-    top: 3px;
-    left: 19px;
-}
-.navbar-nav > li > a{
-    font-family: Roboto;
-    font-size: 15px;
-    line-height: 1.73;
-    text-align: left;
-    color: #ffffff;
-    margin-left: 11px;
-    margin-right: 31px;
-}
-.navbar-collapse > ul > li > a{
-    color: white;
-    margin-left: 10px;
-    margin-right: 31px
-}
 .search-button > button{
     position: absolute;
     left: -78px;
@@ -375,62 +355,3 @@ margin-top: 22px;
     width: 223px;   
 }
 
-@media screen and (max-width: 1300px){
-    .navbar-collapse > ul > li > a{
-        color: white;
-        margin-left: 16px;
-        margin-right: 26px;
-    }
-    .navbar-nav{
-        position: absolute;
-        right: 385px;
-        line-height: 1.44;
-        top: 21px;
-    }
-}
-@media screen and (max-width: 1246px){
-    .navbar-collapse > ul > li > a{
-        color: white;
-        margin-left: 11px;
-        margin-right: 26px;
-    }
-}
-@media screen and (max-width: 1200px){
-    .navbar-collapse > ul > li > a{
-        color: white;
-        margin-left: 6px;
-        margin-right: 26px;
-    }
-}
-@media screen and (max-width: 1161px){
-    .navbar-collapse > ul > li > a{
-        color: white;
-        margin-left: 4px;
-        margin-right: 16px;
-    }
-    .envelope{
-        position: relative;
-        top: 6px;
-        right: 8px;
-    }
-    .search-button > button{
-        position: absolute;
-        left: -55px;
-    }
-}
-@media screen and (max-width: 1107px){
-    .navbar-collapse > ul > li > a{
-        color: white;
-        margin-left: 4px;
-        margin-right: 8px;
-        right: 428px;
-    }
-}
-@media screen and (max-width: 1050px){
-    .navbar-collapse > ul > li > a{
-        color: white;
-        margin-left: 4px;
-        margin-right: 8px;
-        
-    }  
-}

@@ -399,7 +399,12 @@ margin-top: 22px;
     display: flex;
     flex-flow: column;
 }
+.show {display:block;}
 
+
+.togglebot{
+    display: none;
+}
 @media screen and (max-width: 1300px){
     .navbar-collapse > ul > li > a{
         color: white;

@@ -130,17 +130,17 @@
             </div>
             <div class="dropdawn-wrapper">
                 <div class="dropdawn-container">
-                    <button class="dropdawn-head" id="dropdawn-head-top">
+                    <button class="dropdawn-head dropdawn-head-top">
                         <span class="line-number-item">001</span>
                         <span class="status-name-item">Paid</span>
                         <span class="modifiers-item"></span>
                         <span class="total-charge-item">$250.00</span>
                         <span class="icon-dropdawn-head"> 
-                            <i class="material-icons">keyboard_arrow_down</i>
-                            <i class="material-icons" style="display: none;">keyboard_arrow_up</i>
+                            <i class="material-icons" id="icon-top-top">keyboard_arrow_down</i>
+                            <i class="material-icons" id="icon-bot-bot" style="display: none;">keyboard_arrow_up</i>
                         </span>
                     </button>
-                    <div id="dropdawn-content-top"  style="display: none;">
+                    <div class="dropdawn-content-top toggletop"  style="display: none;">
                             <div class="dropdawn-content">
                                 <div class="left-content">
                                     <span class="light-style">Status effective date</span>
@@ -170,17 +170,17 @@
                     </div>
                 </div>
                 <div class="dropdawn-container dropdawn-container-bot">
-                        <button class="dropdawn-head"  id="dropdawn-head-bot">
+                    <button class="dropdawn-head"  id="dropdawn-head-bot"> 
                             <span class="line-number-item">001</span>
                             <span class="status-name-item">Paid</span>
                             <span class="modifiers-item"></span>
                             <span class="total-charge-item">$250.00</span>
                             <span class="icon-dropdawn-head"> 
-                                <i class="material-icons" style="display: none;">keyboard_arrow_down</i>
-                                <i class="material-icons">keyboard_arrow_up</i>
+                                <i class="material-icons" id="icon-top">keyboard_arrow_down</i>
+                                <i class="material-icons" id="icon-bot" style="display: none;">keyboard_arrow_up</i>
                             </span>
                         </button>
-                        <div id="dropdawn-content-bot"  style="display: none;">
+                        <div class="dropdawn-content-bot togglebot"  style="display: none;">
                             <div class="dropdawn-content">
                                 <div class="left-content">
                                     <span class="light-style">Status effective date</span>
@@ -239,19 +239,37 @@
 
     
     <script>
+            var acc = document.getElementsByClassName("dropdawn-head");
+            var i;
             
-            document.getElementById("dropdawn-head-top").onclick = function() {myFunction()};
-            
-          
-            function myFunction() {
-                document.getElementById("dropdawn-content-top").classList.toggle("show");
+            for (i = 0; i < acc.length; i++) {
+                acc[i].onclick = function(){
+                    this.classList.toggle("active");
+                    document.getElementById("icon-bot").classList.toggle("show");
+                    document.getElementById("icon-top").classList.toggle("hide");
+                    var togglebot = this.nextElementSibling;
+                    if (togglebot.style.display === "block") {
+                        togglebot.style.display = "none";
+                    } else {
+                        togglebot.style.display = "block";
+                    }
+                }
             }
+            var acc = document.getElementsByClassName("dropdawn-head-top");
+            var i;
             
-            document.getElementById("dropdawn-head-bot").onclick = function() {myFunction()};
-            
-        
-            function myFunction() {
-                document.getElementById("dropdawn-content-bot").classList.toggle("show");
+            for (i = 0; i < acc.length; i++) {
+                acc[i].onclick = function(){
+                    this.classList.toggle("active");
+                    document.getElementById("icon-bot-bot").classList.toggle("show");
+                    document.getElementById("icon-top-top").classList.toggle("hide");
+                    var togglebot = this.nextElementSibling;
+                    if (togglebot.style.display === "block") {
+                        togglebot.style.display = "none";
+                    } else {
+                        togglebot.style.display = "block";
+                    }
+                }
             }
     </script>
 

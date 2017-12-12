@@ -234,7 +234,6 @@
     display: flex;
     margin-top: 32px;
     width: 100%;
-    margin-bottom: 50px;
     flex-flow: column;
 }
 .claim-codes{
@@ -349,6 +348,9 @@
 }
 .payment-only{
     position: relative;
+}
+.footer-content{
+    margin-bottom: 30px !important;
 }
 @media screen and (max-width: 1300px){
     .navbar-collapse > ul > li > a{

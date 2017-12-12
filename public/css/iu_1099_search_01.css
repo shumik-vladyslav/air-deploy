@@ -82,7 +82,7 @@ input.question + label{
     position: relative;
 }
 .from-date-wrap{
-    margin-right: 20px
+    margin-right: 32px;
 }
 .check-eligibility {
     width: 169px;
@@ -269,7 +269,10 @@ input.question + label{
     top: 1px;
     right: 0;
 }
-
+.footer-content{
+    margin-bottom: 30px !important;
+    margin-top: 52px !important;
+}
 
 
 @media screen and (max-width: 1300px){

@@ -72,7 +72,7 @@ input.question + label{
     position: relative;
 }
 .from-date-wrap{
-    margin-right: 20px
+    margin-right: 32px;
 }
 .check-eligibility {
     width: 169px;
@@ -164,11 +164,6 @@ input.question + label{
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
     padding-top: 40px;
     padding-bottom: 47px;
-}
-.main-wrap{
-    margin-top: 70px;
-    margin-right: 13%;
-    width: 973px;
 }
 .column-1{
     width: 91px;
@@ -284,6 +279,10 @@ input.question + label{
     position: absolute;
     top: 1px;
     right: 0;
+}
+.footer-content{
+    margin-bottom: 30px !important;
+    margin-top: 20px !important;
 }
 @media screen and (max-width: 1300px){
     .navbar-collapse > ul > li > a{

@@ -105,6 +105,8 @@ ul {
 }
 .hr{
     border-top: 2px dotted #e6e6e6;
+    margin-top: 32px;
+    margin-bottom: 24px;
 }
 .logo-img{
     width: 96px;
@@ -170,6 +172,8 @@ ul {
     position: relative;
     right: 50% !important;
     margin-right: -480px !important;
+    padding: 0;
+    /* margin-bottom: 40px;     */
 }
 .bot-content-header{
     display: flex;
@@ -303,13 +307,5 @@ input:focus {
         margin-left: 8px;
         margin-right: 8px;
         
-    }
-    .main-wrap{
-        margin-top: 70px !important;
-        width: 973px;
-        position: relative;
-        right: 20px !important;
-        margin-right: 20px !important;
-        margin-left: 20px !important;
     }
 }

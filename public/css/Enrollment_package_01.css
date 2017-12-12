@@ -1,3 +1,10 @@
+input.question:focus + label > span,
+input.question:valid + label > span {
+  top: -47px !important;
+}
+input.question{
+    padding-bottom: 0px !important;
+  }
 input.question + label{
     display: block;
     position: relative;

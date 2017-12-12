@@ -86,7 +86,7 @@ body{
     margin-bottom: 28px;
 }
 .main-wrap{
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     padding-left: 0;
     padding-right: 0;
 }
@@ -108,4 +108,35 @@ body{
 }
 .form-2016{
     margin-right: 0 !important;
+}
+.footer-main-wrapper{
+    position: fixed;
+    bottom: 5px;
+    left: 50%;
+    margin-left: -585px;
+}
+.footerPosition2014{
+    position: relative !important;
+    bottom: 5px;
+    left: 0 !important;
+    margin-left: 47px !important;
+}
+.footerPosition2015{
+    position: relative !important;
+    bottom: 5px;
+    left: 0 !important;
+    margin-left: 47px !important;
+}.footerPosition2016{
+    position: relative !important;
+    bottom: 5px;
+    left: 0 !important;
+    margin-left: 47px !important;
+}
+@media screen and (max-width: 1200px) {
+    .footer-main-wrapper{
+        position: fixed;
+        bottom: 5px;
+        left: 60%;
+        margin-left: -585px;
+    }
 }

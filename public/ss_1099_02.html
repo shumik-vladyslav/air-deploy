@@ -162,8 +162,8 @@
                 </div>
         </div>
     </div>
-  <div class="row-fluid">
-        <div class="navbar-inner footer-wrap">
+    <div class="row-fluid">
+        <div id="footer" class="navbar-inner footer-wrap footer-main-wrapper footerPosition2015">
             <div class="container footer-content">
                 <a class="massage-fotter" href="">
                      Messages and announcements
@@ -197,6 +197,8 @@
                     document.getElementById("view2014").classList.toggle("hide");
                     document.getElementById("toggle2014").classList.toggle("show");
                     $(this).toggleClass('abtive-butt');
+                    $(footer).toggleClass('footerPosition2014');
+
                     var toggle2014 = this.nextElementSibling;
                     if (toggle2014.style.display === "block") {
                         toggle2014.style.display = "none";
@@ -215,6 +217,8 @@
                     document.getElementById("view2015").classList.toggle("show");
                     document.getElementById("toggle2015").classList.toggle("hide");
                     $(this).toggleClass('abtive-butt');
+                    $(footer).toggleClass('footerPosition2015');
+
                     var toggle2015 = this.nextElementSibling;
                     if (toggle2015.style.display === "block") {
                         toggle2015.style.display = "none";
@@ -233,6 +237,8 @@
                     document.getElementById("view2016").classList.toggle("hide");
                     document.getElementById("toggle2016").classList.toggle("show");
                     $(this).toggleClass('abtive-butt');
+                    $(footer).toggleClass('footerPosition2016');
+
                     var toggle2016 = this.nextElementSibling;
                     if (toggle2016.style.display === "block") {
                         toggle2016.style.display = "none";

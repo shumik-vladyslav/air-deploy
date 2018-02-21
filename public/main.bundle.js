@@ -1170,9 +1170,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_service_login_service__ = __webpack_require__("../../../../../src/app/shared/service/login.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_service_guard_service__ = __webpack_require__("../../../../../src/app/shared/service/guard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_websocket_angular2_websocket__ = __webpack_require__("../../../../angular2-websocket/angular2-websocket.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_websocket_angular2_websocket___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_websocket_angular2_websocket__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1186,11 +1184,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-//
-
 
 // connect
-var ws = new __WEBPACK_IMPORTED_MODULE_4_angular2_websocket_angular2_websocket__["$WebSocket"](__WEBPACK_IMPORTED_MODULE_3__shared_service_guard_service__["c" /* url */] + 'ws-api/debug-listen-sms');
+// var ws = new $WebSocket(url + 'ws-api/debug-listen-sms');
 // "/json-api/debug-listen-sms
 // var sock = new SockJS(url + 'ws-api/debug-listen-sms');
 // sock.onopen = function() {
@@ -1233,17 +1229,24 @@ var LoginPageComponent = /** @class */ (function () {
         }));
     };
     LoginPageComponent.prototype.ngOnInit = function () {
-        ws.onMessage(function (msg) {
-            console.log("onMessage ", msg.data);
-        }, { autoApply: false });
-        ws.getDataStream().subscribe(function (msg) {
-            console.log("next", msg.data);
-            ws.close(false);
-        }, function (msg) {
-            console.log("error", msg);
-        }, function () {
-            console.log("complete");
-        });
+        // ws.onMessage(
+        //   (msg: MessageEvent)=> {
+        //     console.log("onMessage ", msg.data);
+        //   },
+        //   {autoApply: false}
+        // );
+        // ws.getDataStream().subscribe(
+        //   (msg)=> {
+        //     console.log("next", msg.data);
+        //     ws.close(false);
+        //   },
+        //   (msg)=> {
+        //     console.log("error", msg);
+        //   },
+        //   ()=> {
+        //     console.log("complete");
+        //   }
+        // );
     };
     LoginPageComponent.prototype.GetCode = function () {
         var _this = this;
@@ -1252,17 +1255,24 @@ var LoginPageComponent = /** @class */ (function () {
         this.loginService.sendPhone(this.phone).subscribe(function (data) {
             console.log(data);
             _this.challenge_id = data.challenge_id;
-            ws.onMessage(function (msg) {
-                console.log("onMessage ", msg.data);
-            }, { autoApply: false });
-            ws.getDataStream().subscribe(function (msg) {
-                console.log("next", msg.data);
-                ws.close(false);
-            }, function (msg) {
-                console.log("error", msg);
-            }, function () {
-                console.log("complete");
-            });
+            // ws.onMessage(
+            //   (msg: MessageEvent)=> {
+            //     console.log("onMessage ", msg.data);
+            //   },
+            //   {autoApply: false}
+            // );
+            // ws.getDataStream().subscribe(
+            //   (msg)=> {
+            //     console.log("next", msg.data);
+            //     ws.close(false);
+            //   },
+            //   (msg)=> {
+            //     console.log("error", msg);
+            //   },
+            //   ()=> {
+            //     console.log("complete");
+            //   }
+            // );
         });
     };
     LoginPageComponent.prototype.CheckCode = function () {
@@ -1305,7 +1315,7 @@ var LoginPageComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/login-page/login-page.component.html"),
             styles: [__webpack_require__("../../../../../src/app/login-page/login-page.component.sass")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormBuilder"], __WEBPACK_IMPORTED_MODULE_2__shared_service_login_service__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_3__shared_service_guard_service__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormBuilder"], __WEBPACK_IMPORTED_MODULE_2__shared_service_login_service__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_3__shared_service_guard_service__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]])
     ], LoginPageComponent);
     return LoginPageComponent;
 }());
@@ -1402,7 +1412,7 @@ var ChatService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return apiUrl; });
 /* unused harmony export wsUrl */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return url; });
+/* unused harmony export url */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuard; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");

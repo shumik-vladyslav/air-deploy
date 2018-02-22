@@ -151,7 +151,7 @@ var ChatWrapperComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/app-wrapper/chats/left-bar-chat/left-bar-chat.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-3 wrapper\">\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 header\">\r\n      <select>\r\n        <option>Пункт 1</option>\r\n        <option>Пункт 2</option>\r\n      </select>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 body\">\r\n      <div class=\"row wrapper-msg\" *ngFor=\"let obj of users;let i = index\" (click)=\"newSelectedItem(obj)\"  [class.active]=\"obj.last_read_id === selectedItem.last_read_id\" >\r\n        <div class=\"col-md-2 photo\">\r\n          <span class=\"avatar\">\r\n            <img *ngIf=\"obj.another_user.avatar_url\" [src]=\"obj.another_user.avatar_url\" alt=\"Avatar\">\r\n              <img  *ngIf=\"!obj.another_user.avatar_url\" src=\"../../../../assets/avatar.png\" alt=\"Avatar\">\r\n          </span>\r\n        </div>\r\n        <div class=\"col-md-10\">\r\n          <p>{{ obj.another_user.name }}\r\n            <span class=\"pull-right\">{{ obj.last_message.chat_message.time | date }}</span>\r\n          </p>\r\n          <p>{{ obj.another_user.country }}, {{ calculateAge(obj.another_user.birth_date) }} age </p>\r\n\r\n          <p style=\"white-space: nowrap;overflow: hidden;text-overflow: ellipsis\">\r\n            <span class=\"msg-status\">\r\n              <!--<i class=\"fa fa-check\" aria-hidden=\"true\"></i>-->\r\n              <!--<i class=\"fa fa-check-circle\" aria-hidden=\"true\"></i>-->\r\n              <!--<i class=\"fa fa-times-circle\" aria-hidden=\"true\"></i>-->\r\n            </span>\r\n            {{ obj.last_message.chat_message.text }}\r\n          </p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"col-md-3 wrapper\">\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 header\">\r\n      <select>\r\n        <option>Пункт 1</option>\r\n        <option>Пункт 2</option>\r\n      </select>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 body\">\r\n      <div class=\"row wrapper-msg\" *ngFor=\"let obj of users;let i = index\" (click)=\"newSelectedItem(obj)\"  [class.active]=\"obj.last_read_id === selectedItem.last_read_id\" >\r\n        <div class=\"col-md-2 photo\">\r\n          <span class=\"avatar\">\r\n            <img *ngIf=\"obj.another_user.avatar_url\" [src]=\"obj.another_user.avatar_url\" alt=\"Avatar\">\r\n              <img  *ngIf=\"!obj.another_user.avatar_url\" src=\"../../../../assets/avatar.png\" alt=\"Avatar\">\r\n          </span>\r\n        </div>\r\n        <div class=\"col-md-10\">\r\n          <p>{{ obj.another_user.name }}\r\n            <span class=\"pull-right\">{{ obj.last_message.chat_message.time | date }}</span>\r\n          </p>\r\n          <p>{{ obj.another_user.country }}, {{ calculateAge(obj.another_user.birth_date) }} age </p>\r\n\r\n          <p style=\"white-space: nowrap;overflow: hidden;text-overflow: ellipsis\">\r\n            <span class=\"msg-status\">\r\n              <i *ngIf=\"obj.last_message.message_id !== obj.last_read_id\" class=\"fa fa-envelope\" aria-hidden=\"true\"></i>\r\n              <i *ngIf=\"obj.last_message.message_id === obj.last_read_id\" class=\"fa fa-envelope-open\" aria-hidden=\"true\"></i>\r\n              <!--<i class=\"fa fa-times-circle\" aria-hidden=\"true\"></i>-->\r\n            </span>\r\n            {{ obj.last_message.chat_message.text }}\r\n          </p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -231,7 +231,7 @@ var LeftBarChatComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/app-wrapper/chats/middle-chat/middle-chat.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-6 wrapper\"  *ngIf=\"selectedItem\">\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 header\">\r\n      <span>Чат с {{selectedItem.another_user.name }}</span>\r\n      <select class=\"pull-right\">\r\n        <option>Переводить на польский</option>\r\n        <option>Переводить на русский</option>\r\n        <option>Переводить на английский</option>\r\n      </select>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 body-chat\">\r\n      <div class=\"row\">\r\n        <div *ngFor=\"let item of chatMessages\" class=\"col-md-12 \" [ngClass]=\"{'my-msg': item.author_id === profile.user_id, 'msg-to-you': item.author_id !== profile.user_id}\">\r\n          <div *ngIf=\"item.author_id === profile.user_id\" class=\"col-md-1\">\r\n            <span class=\"avatar\">\r\n\r\n              <img *ngIf=\"profile.avatar_url\" [src]=\"profile.avatar_url\" alt=\"Avatar\">\r\n              <img *ngIf=\"!profile.avatar_url\" src=\"../../../../assets/images.jpeg\" alt=\"Avatar\">\r\n            </span>\r\n          </div>\r\n          <div class=\"col-md-11\">\r\n            <p>{{item.chat_message.text}}</p>\r\n          </div>\r\n          <div *ngIf=\"item.author_id !== profile.user_id\" class=\"col-md-1\">\r\n            <span class=\"avatar\">\r\n              <img *ngIf=\"selectedItem && selectedItem.another_user.avatar_url\" src=\"selectedItem.another_user.avatar_url\" alt=\"Avatar\">\r\n              <img *ngIf=\"selectedItem && !selectedItem.another_user.avatar_url\" src=\"../../../../assets/avatar.png\" alt=\"Avatar\">\r\n            </span>\r\n          </div>\r\n        </div>\r\n        <!--<div class=\"col-md-12 msg-to-you\">-->\r\n          <!--<div class=\"col-md-1\">-->\r\n            <!--<span class=\"avatar\">-->\r\n              <!--<img src=\"../../../../assets/images.jpeg\" alt=\"Avatar\">-->\r\n            <!--</span>-->\r\n          <!--</div>-->\r\n          <!--<div class=\"col-md-11\">-->\r\n            <!--<p>Привет!! Как дела?Пойдешь работать?</p>-->\r\n          <!--</div>-->\r\n        <!--</div>-->\r\n        <!--<div class=\"col-md-12 my-msg\">-->\r\n          <!--<div class=\"col-md-10\">-->\r\n            <!--<p>Привет! Все окей ! Вылетаю!</p>-->\r\n          <!--</div>-->\r\n          <!--<div class=\"col-md-2\">-->\r\n            <!--<span class=\"avatar\">-->\r\n              <!--<img src=\"../../../../assets/avatar.png\" alt=\"Avatar\">-->\r\n            <!--</span>-->\r\n          <!--</div>-->\r\n        <!--</div>-->\r\n        <div class=\"col-md-12 my-msg\" *ngIf=\"chatMessages.length === 10\">\r\n          <div class=\"col-md-12 read-more\">\r\n            <button class=\"btn btn-default\">\r\n              Read more\r\n              <i class=\"fa fa-caret-down\" aria-hidden=\"true\"></i>\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 chat-controls\">\r\n      <input placeholder=\"Введите текст...\" type=\"text\" [ngModel]=\"selectedText\">\r\n      <button (click)=\"send()\">Отправить</button>\r\n      <p *ngFor=\"let msg of messages;let i = index\" (click)=\"selectText(i)\">{{msg}}</p>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"col-md-6 wrapper\"  *ngIf=\"selectedItem\">\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 header\">\r\n      <span>Чат с {{selectedItem.another_user.name }}</span>\r\n      <select class=\"pull-right\">\r\n        <option>Переводить на польский</option>\r\n        <option>Переводить на русский</option>\r\n        <option>Переводить на английский</option>\r\n      </select>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 body-chat\">\r\n      <div class=\"row\">\r\n        <div *ngFor=\"let item of chatMessages\" class=\"col-md-12 \" [ngClass]=\"{'my-msg': item.author_id === profile.user_id, 'msg-to-you': item.author_id !== profile.user_id}\">\r\n          <div *ngIf=\"item.author_id === profile.user_id\" class=\"col-md-1\">\r\n            <span class=\"avatar\">\r\n\r\n              <img *ngIf=\"profile.avatar_url\" [src]=\"profile.avatar_url\" alt=\"Avatar\">\r\n              <img *ngIf=\"!profile.avatar_url\" src=\"../../../../assets/images.jpeg\" alt=\"Avatar\">\r\n            </span>\r\n          </div>\r\n          <div class=\"col-md-11\">\r\n            <p>{{item.chat_message.text}}</p>\r\n          </div>\r\n          <div *ngIf=\"item.author_id !== profile.user_id\" class=\"col-md-1\">\r\n            <span class=\"avatar\">\r\n              <img *ngIf=\"selectedItem && selectedItem.another_user.avatar_url\" src=\"selectedItem.another_user.avatar_url\" alt=\"Avatar\">\r\n              <img *ngIf=\"selectedItem && !selectedItem.another_user.avatar_url\" src=\"../../../../assets/avatar.png\" alt=\"Avatar\">\r\n            </span>\r\n          </div>\r\n        </div>\r\n        <!--<div class=\"col-md-12 msg-to-you\">-->\r\n          <!--<div class=\"col-md-1\">-->\r\n            <!--<span class=\"avatar\">-->\r\n              <!--<img src=\"../../../../assets/images.jpeg\" alt=\"Avatar\">-->\r\n            <!--</span>-->\r\n          <!--</div>-->\r\n          <!--<div class=\"col-md-11\">-->\r\n            <!--<p>Привет!! Как дела?Пойдешь работать?</p>-->\r\n          <!--</div>-->\r\n        <!--</div>-->\r\n        <!--<div class=\"col-md-12 my-msg\">-->\r\n          <!--<div class=\"col-md-10\">-->\r\n            <!--<p>Привет! Все окей ! Вылетаю!</p>-->\r\n          <!--</div>-->\r\n          <!--<div class=\"col-md-2\">-->\r\n            <!--<span class=\"avatar\">-->\r\n              <!--<img src=\"../../../../assets/avatar.png\" alt=\"Avatar\">-->\r\n            <!--</span>-->\r\n          <!--</div>-->\r\n        <!--</div>-->\r\n        <div class=\"col-md-12 my-msg\" *ngIf=\"chatMessages.length < total_number_of_messages\">\r\n          <div class=\"col-md-12 read-more\">\r\n            <button (click)=\"readMore()\" class=\"btn btn-default\">\r\n              Read more\r\n              <i class=\"fa fa-caret-down\" aria-hidden=\"true\"></i>\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 chat-controls\">\r\n      <input placeholder=\"Введите текст...\" type=\"text\" [(ngModel)]=\"selectedText\">\r\n      <button (click)=\"send()\">Отправить</button>\r\n      <p *ngFor=\"let msg of messages;let i = index\" (click)=\"selectText(i)\">{{msg}}</p>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -300,24 +300,34 @@ var MiddleChatComponent = /** @class */ (function () {
         this.selectedText = this.messages[index];
     };
     MiddleChatComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        setInterval(function () {
-            _this.getChatData();
-        }, 10000);
+        // setInterval(() => {
+        //   this.getChatData();
+        // }, 10000);
     };
     MiddleChatComponent.prototype.getChatData = function () {
         var _this = this;
         if (this.selectedItem)
             this.chatService.chatInfo(this.selectedItem.another_user.user_id).subscribe(function (res) {
                 _this.chatMessages = res.chat_messages;
+                console.log(res);
+                _this.older_messages_token = res.older_messages_token;
+                _this.total_number_of_messages = res.total_number_of_messages;
             });
+    };
+    MiddleChatComponent.prototype.readMore = function () {
+        var _this = this;
+        this.chatService.chatInfo(this.selectedItem.another_user.user_id, this.older_messages_token).subscribe(function (res) {
+            _this.chatMessages = _this.chatMessages.concat(res.chat_messages);
+            _this.older_messages_token = res.older_messages_token;
+            _this.total_number_of_messages = res.total_number_of_messages;
+        });
     };
     MiddleChatComponent.prototype.send = function () {
         var _this = this;
-        console.log(this.selectedItem);
         if (this.selectedItem)
             this.chatService.chatSend(this.selectedItem.another_user.user_id, this.selectedItem.answers[0].answer_id, this.selectedText).subscribe(function (data) {
                 _this.getChatData();
+                _this.selectedText = "";
             });
     };
     MiddleChatComponent = __decorate([
@@ -685,24 +695,26 @@ var VacansLeftComponent = /** @class */ (function () {
             var tegs = this.teg.split("#");
             this.advert.vacancy.hashtags = tegs;
         }
-        this.vacansService.createVac(this.advert).subscribe(function (data) {
-            console.log(data);
-            _this.vacansService.refreshEvent.emit("");
-            _this.advert = {
-                adverter_id: "",
-                location: "",
-                description: "",
-                geo_position: {
-                    latitude: 1,
-                    longitude: 2
-                },
-                vacancy: {
-                    background_resource_id: "pink",
-                    work_type: 0,
-                    hashtags: []
-                }
-            };
-        });
+        this.advert.vacancy.work_type = +this.advert.vacancy.work_type;
+        if (this.advert.description)
+            this.vacansService.createVac(this.advert).subscribe(function (data) {
+                console.log(data);
+                _this.vacansService.refreshEvent.emit("");
+                _this.advert = {
+                    adverter_id: "",
+                    location: "",
+                    description: "",
+                    geo_position: {
+                        latitude: 1,
+                        longitude: 2
+                    },
+                    vacancy: {
+                        background_resource_id: "pink",
+                        work_type: 0,
+                        hashtags: []
+                    }
+                };
+            });
     };
     VacansLeftComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -1383,9 +1395,15 @@ var ChatService = /** @class */ (function () {
     ChatService.prototype.myChats = function () {
         return this.http.post(__WEBPACK_IMPORTED_MODULE_2__guard_service__["b" /* apiUrl */] + 'my-chats', this.authGuard.getCredentials());
     };
-    ChatService.prototype.chatInfo = function (another_user_id) {
+    ChatService.prototype.chatInfo = function (another_user_id, older_messages_token) {
         var obj = this.authGuard.getCredentials();
         obj.another_user_id = another_user_id;
+        if (older_messages_token) {
+            obj.older_messages_token = older_messages_token;
+        }
+        else {
+            delete obj.older_messages_token;
+        }
         return this.http.post(__WEBPACK_IMPORTED_MODULE_2__guard_service__["b" /* apiUrl */] + 'chat-info', obj);
     };
     ChatService.prototype.chatSend = function (another_user_id, answer_id, text) {
@@ -1595,7 +1613,9 @@ var VacansService = /** @class */ (function () {
         return this.http.post(__WEBPACK_IMPORTED_MODULE_1__guard_service__["b" /* apiUrl */] + 'advert', obj);
     };
     VacansService.prototype.getVac = function () {
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_1__guard_service__["b" /* apiUrl */] + 'user-adverts', this.authGuard.getCredentials());
+        var obj = this.authGuard.getCredentials();
+        obj.target_id = obj.user_id;
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_1__guard_service__["b" /* apiUrl */] + 'user-adverts', obj);
     };
     VacansService.prototype.closeVac = function (advert) {
         console.log(advert);

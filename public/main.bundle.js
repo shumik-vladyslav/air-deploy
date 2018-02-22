@@ -1410,9 +1410,9 @@ var ChatService = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* unused harmony export url */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return apiUrl; });
 /* unused harmony export wsUrl */
-/* unused harmony export url */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuard; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
@@ -1427,9 +1427,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var apiUrl = 'http://51.15.65.96:8080/json-api/';
-var wsUrl = 'ws://51.15.65.96:8080/ws-api/';
+// export const url = 'ws://51.15.65.96:8080/';
+// export const apiUrl = 'http://51.15.65.96:8080/json-api/';
+// export const wsUrl = 'ws://51.15.65.96:8080/ws-api/';
 var url = 'ws://51.15.65.96:8080/';
+var apiUrl = 'https://chatchatchat.ml/json-api/';
+var wsUrl = 'ws://51.15.65.96:8080/ws-api/';
 var AuthGuard = /** @class */ (function () {
     function AuthGuard(router) {
         this.router = router;

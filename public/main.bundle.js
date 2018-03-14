@@ -1,6 +1,6 @@
 webpackJsonp(["main"],{
 
-/***/ "../../../../../src/$$_lazy_route_resource lazy recursive":
+/***/ "./src/$$_lazy_route_resource lazy recursive":
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -13,1181 +13,30 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy recursive";
+webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
-/***/ "../../../../../src/app/app-wrapper/app-wrapper.component.html":
+/***/ "./src/app/app.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid \" style=\"padding: 0;\">\r\n  <div class=\"col-md-12\">\r\n    <div class=\"row\">\r\n      <router-outlet name=\"main\"></router-outlet>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = ""
 
 /***/ }),
 
-/***/ "../../../../../src/app/app-wrapper/app-wrapper.component.sass":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/app-wrapper.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppWrapperComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var AppWrapperComponent = /** @class */ (function () {
-    function AppWrapperComponent() {
-    }
-    AppWrapperComponent.prototype.ngOnInit = function () {
-    };
-    AppWrapperComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-app-wrapper',
-            template: __webpack_require__("../../../../../src/app/app-wrapper/app-wrapper.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app-wrapper/app-wrapper.component.sass")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], AppWrapperComponent);
-    return AppWrapperComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/chats/chat-wrapper/chat-wrapper.component.html":
+/***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-nav></app-nav>\r\n<app-left-bar-chat *ngIf=\"chatsUser\" [users]=\"chatsUser\"></app-left-bar-chat>\r\n<app-middle-chat *ngIf=\"chatsUser && chatsUser.length > 0\"></app-middle-chat>\r\n<app-right-bar-chat *ngIf=\"chatsUser && chatsUser.length > 0\" [users]=\"chatsUser\" ></app-right-bar-chat>\r\n<app-empty-chat *ngIf=\"chatsUser && chatsUser.length === 0\"></app-empty-chat>\r\n"
+module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n    <app-left-side-bar></app-left-side-bar>\r\n    <app-content></app-content>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/app-wrapper/chats/chat-wrapper/chat-wrapper.component.sass":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/chats/chat-wrapper/chat-wrapper.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatWrapperComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_service_chat_service__ = __webpack_require__("../../../../../src/app/shared/service/chat.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var ChatWrapperComponent = /** @class */ (function () {
-    function ChatWrapperComponent(chatService) {
-        var _this = this;
-        this.chatService = chatService;
-        this.chatService.myChats().subscribe(function (data) {
-            console.log(data);
-            _this.chatsUser = data.chats.sort(function (a, b) {
-                if (!b.last_message && !a.last_message)
-                    return 0;
-                if (!a.last_message)
-                    return 1;
-                else if (!b.last_message)
-                    return 0;
-                return +new Date(b['last_message']['chat_message']['time']) - +new Date(a['last_message']['chat_message']['time']);
-            });
-        });
-    }
-    ChatWrapperComponent.prototype.ngOnInit = function () {
-    };
-    ChatWrapperComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-chat-wrapper',
-            template: __webpack_require__("../../../../../src/app/app-wrapper/chats/chat-wrapper/chat-wrapper.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app-wrapper/chats/chat-wrapper/chat-wrapper.component.sass")]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_service_chat_service__["a" /* ChatService */]])
-    ], ChatWrapperComponent);
-    return ChatWrapperComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/chats/empty-chat/empty-chat.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"col-md-9 wrapper\">\r\n  <img src=\"../../../../assets/arrow.png\" alt=\"arrow\">\r\n  <p>\r\n    Здесь будут отображаться ваши чаты с кандидатами, которые откликнуться на вакансии\r\n  </p>\r\n  <button>Разместить вакансию</button>\r\n  <span>\r\n    <i class=\"fa fa-comments\" aria-hidden=\"true\"></i>\r\n  </span>\r\n  <p>Вы сможете отвечать и переписываться с ними в режиме реального времени</p>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/chats/empty-chat/empty-chat.component.sass":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".wrapper {\n  text-align: center;\n  background-color: #f6f7fa;\n  height: calc(100vh - 78px);\n  padding: 0 281px; }\n  .wrapper img {\n    top: 200px;\n    position: absolute;\n    left: 70px;\n    width: 250px; }\n  .wrapper p:nth-child(2) {\n    font-size: 25px;\n    font-weight: bold;\n    margin-top: 120px; }\n  .wrapper p:nth-child(5) {\n    font-weight: bold;\n    font-size: 16px;\n    margin-top: 20px;\n    padding: 0 20px; }\n  .wrapper button {\n    background-color: #5584ff;\n    color: white;\n    padding: 21px 35px;\n    border-radius: 30px;\n    margin-top: 20px;\n    -webkit-box-shadow: 0px 4px 11px 0px #080808;\n            box-shadow: 0px 4px 11px 0px #080808;\n    border: none;\n    outline: none;\n    font-size: 13px;\n    font-weight: bold; }\n  .wrapper button:hover {\n      background-color: #1277f9; }\n  .wrapper span {\n    display: block; }\n  .wrapper span i {\n      font-size: 30px;\n      margin-top: 55px; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/chats/empty-chat/empty-chat.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmptyChatComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var EmptyChatComponent = /** @class */ (function () {
-    function EmptyChatComponent() {
-    }
-    EmptyChatComponent.prototype.ngOnInit = function () {
-    };
-    EmptyChatComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-empty-chat',
-            template: __webpack_require__("../../../../../src/app/app-wrapper/chats/empty-chat/empty-chat.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app-wrapper/chats/empty-chat/empty-chat.component.sass")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], EmptyChatComponent);
-    return EmptyChatComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/chats/left-bar-chat/left-bar-chat.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"col-md-3 wrapper\">\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 header\">\r\n      <div class=\"dropdawn-wrap\">\r\n         <button (click)=\"showDropdawnLeft = !showDropdawnLeft\" class=\"btn-left-sidebar\" [ngClass] = \"{'active-btn': showDropdawnLeft}\">\r\n            <span>\r\n              Вакансии ХХХХ\r\n            </span>\r\n            <i class=\"fa fa-angle-down\"></i>\r\n          </button>\r\n          <div *ngIf = \"showDropdawnLeft\" class=\"dropdawn-btn\">\r\n              <ul>\r\n                <li><a href=\"\">some content</a></li>\r\n                <li><a href=\"\">some content</a></li>\r\n                <li><a href=\"\">some content</a></li>\r\n                <li><a href=\"\">some content</a></li>\r\n              </ul>\r\n          </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 body\">\r\n      <div *ngIf=\"users\">\r\n      <div class=\"row wrapper-msg\" *ngFor=\"let obj of users;let i = index\" (click)=\"newSelectedItem(obj)\"  [class.active]=\"selectedItem.answers && obj.answers && obj.answers[0].answer_id === selectedItem.answers[0].answer_id\" >\r\n        <div class=\"col-md-2 photo\">\r\n          <span class=\"avatar\">\r\n            <img *ngIf=\"obj.another_user && obj.another_user.avatar_url\" [src]=\"obj.another_user.avatar_url\" alt=\"Avatar\">\r\n            <img *ngIf=\"obj.another_user && !obj.another_user.avatar_url\" src=\"../../../../assets/avatar.png\" alt=\"Avatar\">\r\n          </span>\r\n        </div>\r\n        <div *ngIf=\"obj.another_user\" class=\"col-md-10\" style=\"margin-top: 10px;\">\r\n\r\n          <p class=\"name-head\">{{ obj.another_user.name }}\r\n            <span *ngIf = \"obj.last_message\" class=\"pull-right date-clock\">{{ obj.last_message.chat_message.time  |date:'MM/dd/yy h:mm' }}</span>\r\n          </p>\r\n          <div class=\"star-wrap\">\r\n              <p class=\"from-age\">{{ obj.another_user.country }}, {{ calculateAge(obj.another_user.birth_date) }} age </p>\r\n             <div class=\"star-wrap-inside\">\r\n                <div>\r\n                    <!-- <i class=\"material-icons\">star_border</i> -->\r\n                    <i class=\"material-icons\">star</i>\r\n                 </div>\r\n                 <div>\r\n                    <i class=\"material-icons\">star_border</i>\r\n                    <!-- <i class=\"material-icons\">star</i> -->\r\n                 </div>\r\n                 <div>\r\n                    <i class=\"material-icons\">star_border</i>\r\n                    <!-- <i class=\"material-icons\">star</i> -->\r\n                 </div>\r\n                 <div>\r\n                    <i class=\"material-icons\">star_border</i>\r\n                    <!-- <i class=\"material-icons\">star</i> -->\r\n                 </div>\r\n                 <div>\r\n                    <i class=\"material-icons\">star_border</i>\r\n                    <!-- <i class=\"material-icons\">star</i> -->\r\n                 </div>\r\n             </div>\r\n          </div>\r\n\r\n          <p *ngIf='obj.last_message' style=\"white-space: nowrap;overflow: hidden;text-overflow: ellipsis; width: 90px;\">\r\n            <!-- <span class=\"msg-status\">\r\n              <i *ngIf=\"obj.last_message.message_id !== obj.last_read_id\" class=\"fa fa-envelope\" aria-hidden=\"true\"></i>\r\n              <i *ngIf=\"obj.last_message.message_id === obj.last_read_id\" class=\"fa fa-envelope-open\" aria-hidden=\"true\"></i> -->\r\n\r\n              <!--<i class=\"fa fa-times-circle\" aria-hidden=\"true\"></i>-->\r\n\r\n            <!-- </span> -->\r\n            {{ obj.last_message.chat_message.text }}\r\n          </p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n      <div *ngIf=\"users.length === 0\">\r\n      <div  *ngFor=\"let obj of epty\" class=\"row empty-msg\">\r\n        <div class=\"col-md-2\">\r\n          <span class=\"avatar\">\r\n\r\n          </span>\r\n        </div>\r\n        <div class=\"col-md-10 body\">\r\n          <span></span> <span></span>\r\n          <p></p>\r\n          <p></p>\r\n        </div>\r\n      </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/chats/left-bar-chat/left-bar-chat.component.sass":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".wrapper {\n  border-right: 1px solid #E3E3E5;\n  height: calc(100vh - 78px);\n  max-height: calc(100vh - 78px);\n  overflow-y: auto; }\n  .wrapper .header {\n    border-bottom: 1px solid #b8becb;\n    padding: 10px;\n    background-color: #ffffff; }\n  .wrapper select {\n    width: 100%;\n    height: 35px;\n    outline: none;\n    background-color: white; }\n  .wrapper .body .avatar {\n    margin-top: 15px;\n    display: block; }\n  .wrapper .body .avatar img {\n      height: 45px;\n      width: 45px;\n      border-radius: 50%;\n      position: relative;\n      top: 3px; }\n  .wrapper .wrapper-msg {\n    padding: 4px 0;\n    background-color: #ffffff;\n    cursor: pointer;\n    border-bottom: 1px solid #d4d9e3;\n    min-height: 92px; }\n  .wrapper .wrapper-msg .rating {\n      color: black;\n      margin-left: 25px;\n      font-size: 16px; }\n  .wrapper .wrapper-msg p:first-child {\n      font-weight: bold;\n      font-size: 16px; }\n  .wrapper .wrapper-msg p:first-child span {\n        font-weight: normal;\n        font-size: 14px; }\n  .active {\n  background-color: #f4f5f8 !important; }\n  .msg-status .fa-check, .msg-status .fa-check-circle {\n  color: green; }\n  .msg-status .fa-times-circle {\n  color: red; }\n  .empty-msg {\n  padding: 20px 0; }\n  .empty-msg .avatar {\n    width: 50px;\n    height: 50px;\n    background-color: #eeeeee;\n    border-radius: 50%;\n    margin-top: 5px !important; }\n  .empty-msg .body p:nth-child(3) {\n    background-color: #eeeeee;\n    height: 15px;\n    display: inline-block;\n    width: 200px;\n    margin-bottom: 0; }\n  .empty-msg .body p:nth-child(4) {\n    background-color: #eeeeee;\n    height: 15px;\n    display: inline-block;\n    width: 100px;\n    margin-bottom: 0; }\n  .empty-msg .body span:first-child {\n    background-color: #eeeeee;\n    height: 15px;\n    display: inline-block;\n    width: 130px; }\n  .empty-msg .body span:nth-child(2) {\n    float: right;\n    background-color: #eeeeee;\n    height: 15px;\n    display: inline-block;\n    width: 30px; }\n  .date-clock {\n  font-weight: bold !important;\n  font-size: 12px !important; }\n  .dropdawn-wrap {\n  position: relative; }\n  .btn-left-sidebar {\n  border: 1px solid #e8ebf1;\n  background: none;\n  outline: none;\n  border-radius: 20px;\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 8px;\n  padding-left: 20px;\n  padding-right: 20px;\n  color: #6f7375;\n  font-size: 13PX;\n  font-weight: bold; }\n  .btn-left-sidebar i {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n    font-size: 16px;\n    position: relative;\n    top: -2px; }\n  .active-btn {\n  border-radius: 20px 20px 0 0; }\n  .active-btn i {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n  .dropdawn-btn {\n  background: white;\n  width: 100%;\n  position: absolute;\n  top: 36px;\n  z-index: 1000;\n  border-radius: 0 0 20px 20px;\n  overflow: hidden;\n  -webkit-box-shadow: 2px 6px 17px -5px rgba(0, 0, 0, 0.75);\n  box-shadow: 2px 6px 17px -5px rgba(0, 0, 0, 0.75);\n  border: 1px solid #e8ebf1;\n  border-top: 0; }\n  .dropdawn-btn ul {\n    list-style: none;\n    padding: 0;\n    margin: 0; }\n  .dropdawn-btn ul li {\n      padding: 0;\n      margin: 0; }\n  .dropdawn-btn ul li a {\n        width: 100%;\n        display: block;\n        color: #6f7375;\n        text-decoration: none;\n        padding: 7px;\n        padding-left: 20px; }\n  .dropdawn-btn ul li a:hover {\n        background: #f1f1f1; }\n  .rating {\n  font-size: 12px !important;\n  position: absolute;\n  left: 100px;\n  top: -6px; }\n  .star-wrap {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative; }\n  .star-wrap .star-wrap-inside {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    position: absolute;\n    right: 30px;\n    top: -4px; }\n  .star-wrap .star-wrap-inside div i {\n      color: #284d10;\n      font-size: 21px; }\n  .from-age {\n  color: #a2a2a2;\n  font-size: 12px !important;\n  margin-bottom: 2px;\n  font-weight: normal !important; }\n  .name-head {\n  font-size: 13px !important;\n  margin-bottom: 4px; }\n  .wrapper::-webkit-scrollbar-thumb {\n  height: 5px; }\n  .wrapper::-webkit-scrollbar-track {\n  background-color: rgba(255, 255, 255, 0); }\n  .wrapper::-webkit-scrollbar {\n  width: 5px;\n  background-color: rgba(255, 255, 255, 0); }\n  .wrapper::-webkit-scrollbar-thumb {\n  background-color: #d0d0d0;\n  border-radius: 50px;\n  height: 2px;\n  margin: 3px; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/chats/left-bar-chat/left-bar-chat.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LeftBarChatComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__selected_item_service__ = __webpack_require__("../../../../../src/app/selected-item.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var LeftBarChatComponent = /** @class */ (function () {
-    function LeftBarChatComponent(item) {
-        this.item = item;
-        this.selectedItem = {};
-        this.epty = [{}, {}, {}, {}, {}];
-    }
-    LeftBarChatComponent.prototype.ngOnInit = function () {
-        // this.item.currentSelectedItem.subscribe(selectedItem => this.selectedItem = selectedItem);
-        // answers[0].answer.  description answerer_id
-        for (var _i = 0, _a = this.users; _i < _a.length; _i++) {
-            var item = _a[_i];
-            console.log(item.answers[0].advert.description);
-            console.log(item.answers[0].advert.adverter_id);
-        }
-    };
-    LeftBarChatComponent.prototype.newSelectedItem = function (obj) {
-        this.item.changeEvent.emit(obj);
-        this.selectedItem = obj;
-    };
-    LeftBarChatComponent.prototype.calculateAge = function (birthday) {
-        var ageDifMs = Date.now() - new Date(birthday).getTime();
-        var ageDate = new Date(ageDifMs); // miliseconds from epoch
-        return Math.abs(ageDate.getUTCFullYear() - 1970);
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-        __metadata("design:type", Object)
-    ], LeftBarChatComponent.prototype, "users", void 0);
-    LeftBarChatComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-left-bar-chat',
-            template: __webpack_require__("../../../../../src/app/app-wrapper/chats/left-bar-chat/left-bar-chat.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app-wrapper/chats/left-bar-chat/left-bar-chat.component.sass")]
-        }),
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__selected_item_service__["a" /* SelectedItemService */]])
-    ], LeftBarChatComponent);
-    return LeftBarChatComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/chats/middle-chat/middle-chat.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"col-md-6 wrapper\"  *ngIf=\"selectedItem\">\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 header\">\r\n      <span class=\"contact\">Чат с {{selectedItem.another_user.name }}</span>\r\n      <span class=\"online-status green-on\" *ngIf=\"res && res.answers && res.answers[0].answerer.online\">\r\n        <i class=\"fa fa-circle\" aria-hidden=\"true\"></i>\r\n        В сети\r\n      </span>\r\n      <span class=\"online-status red-off\" *ngIf=\"res && res.answers && !res.answers[0].answerer.online\">\r\n        <i class=\"fa fa-circle\" aria-hidden=\"true\"></i>\r\n        Не в сети\r\n      </span>\r\n      <div class=\"dropdawn-wrap pull-right\">\r\n          <button (click)=\"showDropdawn = !showDropdawn\" class=\"btn-left-sidebar\" [ngClass] = \"{'active-btn': showDropdawn}\">\r\n            <span style=\"margin: 0; margin-top: 4px;\">\r\n              Вакансии ХХХХ\r\n            </span>\r\n            <i class=\"fa fa-angle-down\"></i>\r\n          </button>\r\n          <div *ngIf = \"showDropdawn\" class=\"dropdawn-btn\">\r\n              <ul>\r\n                <li><a href=\"\">Переводить на польский</a></li>\r\n                <li><a href=\"\">Переводить на русский</a></li>\r\n                <li><a href=\"\">Переводить на английский</a></li>\r\n              </ul>\r\n          </div>\r\n      </div>\r\n      <!-- <select class=\"pull-right\">\r\n        <option>Переводить на польский</option>\r\n        <option>Переводить на русский</option>\r\n        <option>Переводить на английский</option>\r\n      </select> -->\r\n    </div>\r\n  </div>\r\n  <div class=\"row wrapper-chat\">\r\n    <div class=\"col-md-12 body-chat\" id=\"body-chat\">\r\n      <!-- <div class=\"\">\r\n        <div class=\"col-md-12 my-msg\">\r\n          <div class=\"col-md-1\"> -->\r\n      <div class=\"row\">\r\n        <div *ngFor=\"let item of chatMessages\" class=\"col-md-12 \" [ngClass]=\"{'my-msg': item.author_id === profile.user_id, 'msg-to-you': item.author_id !== profile.user_id}\">\r\n          <div *ngIf=\"item.author_id === profile.user_id\" class=\"col-md-1\">\r\n            <span class=\"avatar\">\r\n\r\n              <img *ngIf=\"profile.avatar_url\" [src]=\"profile.avatar_url\" alt=\"Avatar\">\r\n              <img *ngIf=\"!profile.avatar_url\" src=\"../../../../assets/images.jpeg\" alt=\"Avatar\">\r\n            </span>\r\n          </div>\r\n          <div class=\"col-md-11\" [ngClass]=\"{'col-md-6': item.author_id !== profile.user_id, 'col-md-offset-5': item.author_id !== profile.user_id}\">\r\n            <p>{{item.chat_message.text}}</p>\r\n            <span *ngIf=\"item.author_id === profile.user_id\">Прочитано</span>\r\n          </div>\r\n          <div *ngIf=\"item.author_id !== profile.user_id\" class=\"col-md-1\">\r\n            <span class=\"avatar\">\r\n              <img *ngIf=\"selectedItem && selectedItem.another_user.avatar_url\" src=\"selectedItem.another_user.avatar_url\" alt=\"Avatar\">\r\n              <img *ngIf=\"selectedItem && !selectedItem.another_user.avatar_url\" src=\"../../../../assets/avatar.png\" alt=\"Avatar\">\r\n            </span>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-md-12 msg-to-you \">\r\n          <!--<div class=\"col-md-6 col-md-offset-5\">-->\r\n            <!--<p>Привет! Все окей ! Вылетаю!</p>-->\r\n            <!--<span class=\"pull-right\">Прочитано</span>-->\r\n          <!--</div>-->\r\n          <!--<div class=\"col-md-1\">-->\r\n            <!--<span class=\"avatar\">-->\r\n              <!--<img src=\"../../../../assets/avatar.png\" alt=\"Avatar\">-->\r\n            <!--</span>-->\r\n          <!--</div>-->\r\n        <!--<div class=\"col-md-12 my-msg\" *ngIf=\"chatMessages.length < total_number_of_messages\">-->\r\n          <!--<div class=\"col-md-12 read-more\">-->\r\n            <!--<button (click)=\"readMore()\" class=\"btn btn-default btn-more\">-->\r\n              <!--Read more-->\r\n              <!--<i class=\"fa fa-caret-down\" aria-hidden=\"true\"></i>-->\r\n            <!--</button>-->\r\n          <!--</div>-->\r\n        <!--</div>-->\r\n      </div>\r\n    </div>\r\n  </div>\r\n    <div class=\"col-md-12 chat-controls\">\r\n      <!-- <i class=\"fa fa-question-circle\" aria-hidden=\"true\"></i> -->\r\n      <i (click)=\"send()\" class=\"fa fa-comments\" aria-hidden=\"true\"></i>\r\n      <span>Сергей печатает...</span>\r\n      <input placeholder=\"Введите текст...\" type=\"text\" [(ngModel)]=\"selectedText\">\r\n    </div>\r\n  </div>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/chats/middle-chat/middle-chat.component.sass":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".wrapper {\n  height: calc(100vh - 78px);\n  max-height: calc(100vh - 78px); }\n  .wrapper .wrapper-chat {\n    -webkit-box-shadow: inset 0px 5px 40px -14px rgba(0, 0, 0, 0.75);\n    box-shadow: inset 0px 5px 40px -14px rgba(0, 0, 0, 0.75); }\n  .wrapper .body-chat {\n    height: 65vh;\n    max-height: 65vh;\n    padding: 20px 0;\n    background-color: #f6f7fa;\n    z-index: 0;\n    -webkit-box-shadow: inset 8px 8px 15px -10px rgba(0, 0, 0, 0.75), inset -8px 3px 9px -10px rgba(0, 0, 0, 0.75);\n            box-shadow: inset 8px 8px 15px -10px rgba(0, 0, 0, 0.75), inset -8px 3px 9px -10px rgba(0, 0, 0, 0.75);\n    padding-right: 5px;\n    overflow-x: hidden;\n    overflow-y: hidden; }\n  .wrapper .body-chat .avatar {\n      padding-top: 4px;\n      display: block; }\n  .wrapper .body-chat .avatar img {\n        height: 30px;\n        width: 30px;\n        border-radius: 50%; }\n  .wrapper .body-chat .msg-to-you {\n      margin-bottom: 25px; }\n  .wrapper .body-chat .msg-to-you p {\n        background-color: #5584ff;\n        padding: 10px 20px;\n        border-radius: 15px;\n        color: white;\n        width: 100%;\n        margin-bottom: 0;\n        min-height: 40px;\n        font-weight: bold;\n        word-wrap: break-word; }\n  .wrapper .body-chat .msg-to-you .pull-right {\n        margin-right: 18px;\n        color: #a9a9a9;\n        display: inline-block;\n        margin-top: 5px;\n        font-weight: bold;\n        font-size: 12px; }\n  .wrapper .body-chat .my-msg {\n      margin-bottom: 25px; }\n  .wrapper .body-chat .my-msg p {\n        padding: 10px 20px;\n        border-radius: 15px;\n        background-color: #5584ff;\n        color: white;\n        width: 50%;\n        margin-bottom: 0;\n        font-weight: bold;\n        min-height: 40px;\n        word-wrap: break-word; }\n  .wrapper .body-chat:hover {\n    overflow-y: scroll;\n    padding-right: 0px; }\n  .wrapper .header {\n    padding: 10px;\n    z-index: 1;\n    background-color: #ffffff; }\n  .wrapper .header span:first-child {\n      margin-top: 6px;\n      display: inline-block;\n      margin-left: 20px;\n      color: #676b6e;\n      font-weight: bold; }\n  .wrapper .header span:nth-child(2) {\n      font-weight: bold;\n      margin-left: 20px; }\n  .wrapper .header span:nth-child(2) i {\n        font-size: 8px;\n        margin-right: 5px;\n        vertical-align: middle;\n        margin-bottom: 2px; }\n  .wrapper select {\n    width: 60%;\n    height: 35px;\n    outline: none;\n    background-color: white; }\n  .wrapper .chat-controls {\n    background-color: #f6f7fa;\n    padding: 30px 10px;\n    -webkit-box-shadow: inset 8px -7px 15px -10px rgba(0, 0, 0, 0.75), inset -8px 3px 9px -10px rgba(0, 0, 0, 0.75);\n            box-shadow: inset 8px -7px 15px -10px rgba(0, 0, 0, 0.75), inset -8px 3px 9px -10px rgba(0, 0, 0, 0.75);\n    padding-top: 0; }\n  .wrapper .chat-controls i {\n      font-size: 25px; }\n  .wrapper .chat-controls i:first-child {\n        position: absolute;\n        right: 40px;\n        top: 46px;\n        color: #494a4c; }\n  .wrapper .chat-controls i:nth-child(2) {\n        position: absolute;\n        top: 48px;\n        right: 40px;\n        color: #494a4c; }\n  .wrapper .chat-controls span {\n      display: inline-block;\n      margin: 0 0 8px 24px;\n      color: #a9a9a9;\n      color: #babcbc;\n      font-weight: bold;\n      font-size: 13px; }\n  .wrapper .chat-controls p {\n      border-bottom: 2px solid #E3E3E5;\n      padding: 7px;\n      margin-bottom: 0; }\n  .wrapper .chat-controls p:hover {\n        cursor: pointer;\n        background-color: #F0F1F1; }\n  .wrapper .chat-controls input {\n      width: 100%;\n      height: 60px;\n      border-radius: 30px;\n      padding: 0 25px;\n      background: transparent;\n      border: 1px solid #d4d9e3;\n      outline: none;\n      z-index: 100 !important; }\n  .wrapper .chat-controls button {\n      height: 50px;\n      background-color: #F0F1F1;\n      outline: none; }\n  .read-more {\n  text-align: center; }\n  .read-more button {\n    margin-top: 10px;\n    outline: none; }\n  .dropdawn-wrap {\n  position: relative;\n  width: 55%;\n  margin-right: 15px; }\n  .btn-left-sidebar {\n  border: 1px solid #e8ebf1;\n  background: none;\n  outline: none;\n  border-radius: 20px;\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding-left: 20px;\n  padding-right: 20px;\n  color: #6f7375;\n  font-size: 13PX;\n  height: 36px;\n  padding-bottom: 5px; }\n  .btn-left-sidebar i {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n    font-size: 16px;\n    position: relative; }\n  .active-btn {\n  border-radius: 20px 20px 0 0; }\n  .active-btn i {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n  .dropdawn-btn {\n  background: white;\n  width: 100%;\n  position: absolute;\n  top: 36px;\n  z-index: 1000;\n  border-radius: 0 0 20px 20px;\n  overflow: hidden;\n  -webkit-box-shadow: 2px 6px 17px -5px rgba(0, 0, 0, 0.75);\n  box-shadow: 2px 6px 17px -5px rgba(0, 0, 0, 0.75);\n  border: 1px solid #e8ebf1;\n  border-top: 0; }\n  .dropdawn-btn ul {\n    list-style: none;\n    padding: 0;\n    margin: 0; }\n  .dropdawn-btn ul li {\n      padding: 0;\n      margin: 0; }\n  .dropdawn-btn ul li a {\n        width: 100%;\n        display: block;\n        color: #6f7375;\n        text-decoration: none;\n        padding: 7px;\n        padding-left: 20px; }\n  .dropdawn-btn ul li a:hover {\n        background: #f1f1f1; }\n  .contact {\n  position: relative;\n  top: 7px;\n  font-size: 13px;\n  font-weight: bold;\n  color: #8b8e90 !important; }\n  .online-status {\n  position: relative;\n  top: 7px;\n  font-size: 13px;\n  font-weight: bold; }\n  .green-on {\n  color: #03a136; }\n  .red-off {\n  color: red; }\n  .btn-more {\n  background: #5584ff;\n  color: white;\n  font-weight: bold;\n  outline: none; }\n  .btn-more:active {\n  background: #3766e0;\n  color: white; }\n  .body-chat::-webkit-scrollbar-thumb {\n  height: 5px; }\n  .body-chat::-webkit-scrollbar-track {\n  background-color: rgba(255, 255, 255, 0); }\n  .body-chat::-webkit-scrollbar {\n  width: 5px;\n  background-color: rgba(255, 255, 255, 0); }\n  .body-chat::-webkit-scrollbar-thumb {\n  background-color: #d0d0d0;\n  border-radius: 50px;\n  height: 2px;\n  margin: 3px; }\n  input::-webkit-input-placeholder {\n  color: #5f6062;\n  font-weight: bold; }\n  input::-moz-placeholder {\n  font-weight: bold;\n  color: #5f6062; }\n  input:-ms-input-placeholder {\n  font-weight: bold;\n  color: #5f6062; }\n  input:-moz-placeholder {\n  font-weight: bold;\n  color: #5f6062; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/chats/middle-chat/middle-chat.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MiddleChatComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__selected_item_service__ = __webpack_require__("../../../../../src/app/selected-item.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_service_chat_service__ = __webpack_require__("../../../../../src/app/shared/service/chat.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_service_profile_service__ = __webpack_require__("../../../../../src/app/shared/service/profile.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var ws = new WebSocket("wss://chatchatchat.ml/ws-api/", "protocolOne");
-var ws1 = new WebSocket("wss://chatchatchat.ml/ws-api/local-chat-listen");
-var ws2 = new WebSocket("wss://chatchatchat.ml/ws-api/global-chat-listen");
-var callbacks = {};
-ws2.onmessage = function (e) {
-    console.log(e.data);
-    var m = JSON.parse(e.data);
-    callbacks[m.id](JSON.parse(m.payload));
-    delete callbacks[m.id];
-};
-ws1.onmessage = function (e) {
-    console.log(e.data);
-    var m = JSON.parse(e.data);
-    callbacks[m.id](JSON.parse(m.payload));
-    delete callbacks[m.id];
-};
-ws.onmessage = function (e) {
-    console.log(e.data);
-    var m = JSON.parse(e.data);
-    callbacks[m.id](JSON.parse(m.payload));
-    delete callbacks[m.id];
-};
-var call = function (path, msg, callback) {
-    var id = 'r' + Math.random();
-    callbacks[id] = callback;
-    ws.send(JSON.stringify({
-        id: id,
-        path: path,
-        payload: JSON.stringify(msg),
-    }));
-};
-var MiddleChatComponent = /** @class */ (function () {
-    function MiddleChatComponent(item, chatService, profileService) {
-        var _this = this;
-        this.item = item;
-        this.chatService = chatService;
-        this.profileService = profileService;
-        this.messages = [
-            'Приежайте на роботу!',
-            'Сдесь можно посмотреть информацию о факультете!',
-            'Могу отправить информацию позже'
-        ];
-        this.chatMessages = [];
-        this.chatMessagesNoRevert = [];
-        this.canRead = true;
-        this.item.changeEvent.subscribe(function (selectedItem) {
-            _this.selectedItem = selectedItem;
-            _this.getChatData();
-            // setTimeout(() => {
-            //   console.log(this.selectedItem)
-            //   call("local-chat-listen", {}, function(res) {
-            //     alert(res.text);
-            //   });
-            //   call("local-chat-listen", {
-            //       session_id: this.profile.session_id,
-            //       user_id: this.profile.user_id,
-            //       another_user_id: this.selectedItem.another_user.user_id,
-            //       // rev: this.profile
-            //     }
-            //     , function(res) {
-            //       alert(res.text);
-            //     });
-            // }, 5222);
-        });
-        this.profileService.getProfile().subscribe(function (data) {
-            _this.profile = data.profile;
-            console.log(_this.profile);
-        });
-    }
-    MiddleChatComponent.prototype.selectText = function (index) {
-        this.selectedText = this.messages[index];
-    };
-    MiddleChatComponent.prototype.ngOnInit = function () {
-        // setInterval(() => {
-        //   this.getChatData();
-        // }, 10000);
-    };
-    MiddleChatComponent.prototype.getChatData = function () {
-        var _this = this;
-        if (this.selectedItem)
-            this.chatService.chatInfo(this.selectedItem.another_user.user_id).subscribe(function (res) {
-                _this.chatMessagesNoRevert = res.chat_messages.slice();
-                _this.chatMessages = res.chat_messages.reverse().slice();
-                console.log(res);
-                _this.res = res;
-                _this.older_messages_token = res.older_messages_token;
-                _this.total_number_of_messages = res.total_number_of_messages;
-                setTimeout(function () {
-                    document.getElementById('body-chat').scrollBy(0, 500);
-                    $('#body-chat').scroll(function () {
-                        var height = $('#body-chat').scrollTop();
-                        if (height === 0 && _this.chatMessages.length < _this.total_number_of_messages && _this.canRead) {
-                            _this.canRead = false;
-                            _this.readMore();
-                        }
-                    });
-                }, 100);
-            });
-    };
-    MiddleChatComponent.prototype.readMore = function () {
-        var _this = this;
-        this.chatService.chatInfo(this.selectedItem.another_user.user_id, this.older_messages_token).subscribe(function (res) {
-            _this.chatMessages = _this.chatMessagesNoRevert.concat(res.chat_messages).reverse().slice();
-            _this.chatMessagesNoRevert = _this.chatMessagesNoRevert.concat(res.chat_messages).slice();
-            _this.older_messages_token = res.older_messages_token;
-            _this.total_number_of_messages = res.total_number_of_messages;
-            _this.canRead = true;
-        });
-    };
-    MiddleChatComponent.prototype.send = function () {
-        var _this = this;
-        if (this.selectedItem && this.selectedText)
-            this.chatService.chatSend(this.selectedItem.another_user.user_id, this.selectedItem.answers[0].answer_id, this.selectedText).subscribe(function (data) {
-                _this.getChatData();
-                _this.selectedText = "";
-            });
-    };
-    MiddleChatComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-middle-chat',
-            template: __webpack_require__("../../../../../src/app/app-wrapper/chats/middle-chat/middle-chat.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app-wrapper/chats/middle-chat/middle-chat.component.sass")]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__selected_item_service__["a" /* SelectedItemService */], __WEBPACK_IMPORTED_MODULE_2__shared_service_chat_service__["a" /* ChatService */], __WEBPACK_IMPORTED_MODULE_3__shared_service_profile_service__["a" /* ProfileService */]])
-    ], MiddleChatComponent);
-    return MiddleChatComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/chats/right-bar-chat/right-bar-chat.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"col-md-3 wrapper\" *ngIf=\"selectedItem\">\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 header-photo\">\r\n      <img  *ngIf=\"!selectedItem.another_user.avatar_url\" src=\"../../../../assets/avatar.png\" alt=\"Avatar\">\r\n      <img  *ngIf=\"selectedItem.another_user.avatar_url\" [src]=\"selectedItem.another_user.avatar_url\" alt=\"Avatar\">\r\n    </div>\r\n    <div class=\"col-md-12 info\">\r\n      <p>{{ selectedItem.another_user.name }} </p>\r\n      <div class=\"call-wrap\">\r\n        <button>\r\n            <i class=\"fa fa-phone\"></i>\r\n        </button>\r\n        <span>\r\n          23:23\r\n        </span>\r\n      </div>\r\n      <div class=\"age-country-line\">\r\n          <p *ngIf=\"selectedItem.another_user.birth_date\" style=\"margin-right: 40px;\" class=\"age\"><span>Возраст</span> {{ calculateAge(selectedItem.another_user.birth_date) }}</p>\r\n          <p *ngIf=\"selectedItem.another_user.country\"><span>Страна</span> {{ selectedItem.another_user.country }}</p>\r\n      </div>\r\n      <p *ngIf=\"selectedItem.another_user.education\"><span>Образование</span> {{ selectedItem.another_user.education }}</p>\r\n      <p><span>О себе:</span> \r\n        <!-- {{ users[selectedItem].aboutme }} -->\r\n        {{selectedItem.answers[0].advert.description}}\r\n      </p>\r\n    </div>\r\n    <div class=\"col-md-12 vacans\">\r\n      <h5>Вакансия:</h5>\r\n      <img src=\"../../../../assets/images.jpeg\" alt=\"\">\r\n      <!-- <p>{{selectedItem.answers[0].advert.description}}</p> -->\r\n    </div>\r\n  </div>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/chats/right-bar-chat/right-bar-chat.component.sass":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".wrapper {\n  background-color: #ffffff;\n  height: calc(100vh - 49px);\n  max-height: calc(100vh - 4px);\n  overflow-y: hidden;\n  border-left: 1px solid #E3E3E5;\n  padding-right: 20px; }\n  .wrapper .header-photo {\n    text-align: center; }\n  .wrapper .header-photo img {\n      width: 185px;\n      height: 200px;\n      margin-top: 10px;\n      padding: 10px 0;\n      border-radius: 50%; }\n  .wrapper .info {\n    margin-top: 20px; }\n  .wrapper .info img {\n      padding: 10px 0;\n      border-bottom: 2px solid #E3E3E5; }\n  .wrapper .info p:first-child {\n      color: black;\n      font-size: 16px;\n      font-weight: bold; }\n  .wrapper .info p {\n      font-size: 16px;\n      color: #6c6b6c; }\n  .wrapper .info p i {\n        font-size: 35px;\n        color: red;\n        margin-right: 20px; }\n  .wrapper .info p span {\n        display: block;\n        font-weight: bold;\n        font-size: 16px;\n        color: black; }\n  .wrapper .vacans {\n    text-align: center;\n    padding: 15px; }\n  .wrapper .vacans h5 {\n      font-weight: bold;\n      font-size: 16px;\n      margin-bottom: 5px;\n      color: black;\n      text-align: left; }\n  .wrapper .vacans img {\n      width: 100%;\n      text-align: center;\n      height: 200px; }\n  .wrapper:hover {\n  overflow-y: auto;\n  padding-right: 15px; }\n  .age-country-line {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start; }\n  .call-wrap {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  margin-bottom: 15px; }\n  .call-wrap button {\n    background: none;\n    border: none;\n    outline: none; }\n  .call-wrap button i {\n      color: #a00200;\n      font-size: 35px;\n      font-weight: bold; }\n  .call-wrap span {\n    font-size: 15px;\n    padding-top: 8px;\n    margin-left: 17px;\n    color: #a00200;\n    font-weight: bold; }\n  .age {\n  font-size: 16px !important;\n  font-weight: normal !important;\n  color: #6c6b6c !important; }\n  .wrapper::-webkit-scrollbar-thumb {\n  height: 5px; }\n  .wrapper::-webkit-scrollbar-track {\n  background-color: rgba(255, 255, 255, 0); }\n  .wrapper::-webkit-scrollbar {\n  width: 5px;\n  background-color: rgba(255, 255, 255, 0); }\n  .wrapper::-webkit-scrollbar-thumb {\n  background-color: #d0d0d0;\n  border-radius: 50px;\n  height: 2px;\n  margin: 3px; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/chats/right-bar-chat/right-bar-chat.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RightBarChatComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__selected_item_service__ = __webpack_require__("../../../../../src/app/selected-item.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var RightBarChatComponent = /** @class */ (function () {
-    function RightBarChatComponent(item) {
-        this.item = item;
-    }
-    RightBarChatComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.item.changeEvent.subscribe(function (selectedItem) { _this.selectedItem = selectedItem; console.log(selectedItem); });
-    };
-    RightBarChatComponent.prototype.calculateAge = function (birthday) {
-        var ageDifMs = Date.now() - new Date(birthday).getTime();
-        var ageDate = new Date(ageDifMs); // miliseconds from epoch
-        return Math.abs(ageDate.getUTCFullYear() - 1970);
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-        __metadata("design:type", Object)
-    ], RightBarChatComponent.prototype, "users", void 0);
-    RightBarChatComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-right-bar-chat',
-            template: __webpack_require__("../../../../../src/app/app-wrapper/chats/right-bar-chat/right-bar-chat.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app-wrapper/chats/right-bar-chat/right-bar-chat.component.sass")]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__selected_item_service__["a" /* SelectedItemService */]])
-    ], RightBarChatComponent);
-    return RightBarChatComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/nav/nav.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container-fluid wrapper\">\r\n  <div class=\"col-md-12\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-1\" style=\"padding-right:0;\">\r\n        <img src=\"../../../assets/logo.png\" alt=\"logo\" style=\" width: 68px;margin-top: 10px;\">\r\n      </div>\r\n      <div class=\"col-md-9\" style=\"padding-left:0;\">\r\n        <ul>\r\n          <li style=\"margin-left:0;\" routerLink=\"/chat\" routerLinkActive=\"active-link\" [routerLinkActiveOptions]=\"{exact:true}\">Чаты</li>\r\n          <li routerLink=\"/vacans\" routerLinkActive=\"active-link\" [routerLinkActiveOptions]=\"{exact:true}\">Вакансии</li>\r\n          <li routerLink=\"/profile\" routerLinkActive=\"active-link\" [routerLinkActiveOptions]=\"{exact:true}\">О компании</li>\r\n        </ul>\r\n      </div>\r\n      <div class=\"col-md-2\">\r\n        <span class=\"avatar\">\r\n          <img *ngIf=\"profile && !profile.avatar_url\" class=\"avatar\" src=\"../../../assets/avatar.png\" alt=\"\">\r\n          <img *ngIf=\"profile && profile.avatar_url\" class=\"avatar\" [src]=\"profile.avatar_url\" alt=\"\">\r\n        </span>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/nav/nav.component.sass":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".wrapper {\n  background-color: #0e1a35;\n  border-bottom: 1px solid gainsboro; }\n  .wrapper ul {\n    margin: 0;\n    padding: 0; }\n  .wrapper ul li {\n      display: inline-block;\n      margin: 23px 0px 0 20px;\n      font-size: 16px;\n      cursor: pointer;\n      padding: 5px 20px 23px 20px;\n      color: white;\n      text-align: center;\n      outline: none; }\n  .wrapper .avatar {\n    display: block;\n    height: 50px;\n    width: 50px;\n    border-radius: 50%;\n    background-size: cover;\n    float: right;\n    margin-right: 30px;\n    margin-top: 6px; }\n  .active-link {\n  border-bottom: 4px solid #5584ff; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/nav/nav.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_service_profile_service__ = __webpack_require__("../../../../../src/app/shared/service/profile.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var NavComponent = /** @class */ (function () {
-    function NavComponent(profileService) {
-        var _this = this;
-        this.profileService = profileService;
-        this.profileService.getProfile().subscribe(function (data) {
-            console.log(data.profile);
-            _this.profile = data.profile;
-        });
-    }
-    NavComponent.prototype.ngOnInit = function () {
-    };
-    NavComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-nav',
-            template: __webpack_require__("../../../../../src/app/app-wrapper/nav/nav.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app-wrapper/nav/nav.component.sass")]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_service_profile_service__["a" /* ProfileService */]])
-    ], NavComponent);
-    return NavComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/profile/profile.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<app-nav></app-nav>\r\n<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 wrapper\">\r\n      <div class=\"col-md-2\">\r\n        <img *ngIf=\"name.value && !profile.avatar_url\" src=\"../../../assets/avatar.png\" alt=\"\" style=\"max-width: 200px;\">\r\n        <img *ngIf=\"profile.avatar_url\" [src]=\"profile.avatar_url\" alt=\"\" style=\"max-width: 200px;border-radius: 50%\">\r\n      </div>\r\n      <div class=\"col-md-10 info\">\r\n        <p *ngIf=\"name.value || editable\">\r\n          <span>Имя компании:</span>\r\n          <span *ngIf=\"!editable\">{{ name.value }}</span>\r\n          <span *ngIf=\"editable\">\r\n            <input class=\"form-control\" type=\"text\" [formControl]=\"name\">\r\n          </span>\r\n        </p>\r\n        <p *ngIf=\"bday.value || editable\">\r\n          <span>Дата рождения:</span>\r\n          <span *ngIf=\"!editable\">{{ bday.value | date}}</span>\r\n          <span *ngIf=\"editable\">\r\n            <input class=\"form-control\" type=\"date\" [formControl]=\"bday\">\r\n          </span>\r\n        </p>\r\n        <p *ngIf=\"avatar_url.value || editable\">\r\n          <span>Url icon:</span>\r\n          <span *ngIf=\"!editable\">{{ avatar_url.value }}</span>\r\n          <span *ngIf=\"editable\">\r\n            <input class=\"form-control\" type=\"text\" [formControl]=\"avatar_url\">\r\n          </span>\r\n        </p>\r\n        <p *ngIf=\"country.value || editable\">\r\n          <span>Страна:</span>\r\n          <span *ngIf=\"!editable\">{{ country.value }}</span>\r\n          <span *ngIf=\"editable\">\r\n            <input class=\"form-control\" type=\"text\" [formControl]=\"country\">\r\n          </span>\r\n        </p>\r\n        <p *ngIf=\"education.value || editable\">\r\n          <span>Образование:</span>\r\n          <span *ngIf=\"!editable\">{{ education.value }}</span>\r\n          <span *ngIf=\"editable\">\r\n            <input class=\"form-control\" type=\"text\" [formControl]=\"education\">\r\n          </span>\r\n        </p>\r\n        <div *ngIf=\"skillsList.length || editable\" class=\"skills\">\r\n          <span style=\"padding-top: 22px\">Навыки:</span>\r\n          <input *ngIf=\"editable\" type=\"text\" class=\"form-control\" (keyup.enter)=\"addSkill()\"  placeholder=\"Add your skill...\" [formControl]=\"skills\" >\r\n          <ol>\r\n            <li *ngFor=\"let skill of skillsList;let i = index\">\r\n              {{ skill }}\r\n              <i *ngIf=\"editable\" class=\"fa fa-times-circle\" (click)=\"deleteSkill(i)\" aria-hidden=\"true\"></i>\r\n            </li>\r\n          </ol>\r\n          <button *ngIf=\"editable\" (click)=\"addSkill()\">Add skill</button>\r\n        </div>\r\n\r\n\r\n      </div>\r\n      <div class=\"col-md-12 controls\">\r\n        <button *ngIf=\"!editable\" (click)=\"edit()\">Edit Profile</button>\r\n        <button *ngIf=\"editable\" (click)=\"save()\">Save</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/profile/profile.component.sass":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".wrapper {\n  padding: 30px;\n  height: calc(100vh - 78px);\n  background-color: #f6f7fa; }\n  .wrapper .info {\n    padding-left: 50px; }\n  .wrapper .info input {\n      background: transparent;\n      border-radius: 25px; }\n  .wrapper .info p span:first-child, .wrapper .info .skills span:first-child {\n      font-weight: bold;\n      display: block;\n      float: left;\n      width: 12%;\n      text-align: right;\n      padding-right: 10px; }\n  .wrapper .controls {\n    margin-top: 50px; }\n  .wrapper .controls button {\n      background-color: #0c86f9;\n      outline: none;\n      color: white;\n      padding: 15px 35px;\n      border-radius: 30px;\n      margin-top: 20px;\n      -webkit-box-shadow: 0px 4px 11px 0px #080808;\n              box-shadow: 0px 4px 11px 0px #080808; }\n  .wrapper .controls button:hover {\n        background-color: #1277f9; }\n  .form-control {\n  width: 20%;\n  margin-left: 5px;\n  display: inline-block; }\n  .skills button {\n  background-color: #0c86f9;\n  outline: none;\n  color: white;\n  padding: 5px 15px;\n  border-radius: 30px;\n  -webkit-box-shadow: 0px 4px 11px 0px #080808;\n          box-shadow: 0px 4px 11px 0px #080808; }\n  .skills button:hover {\n    background-color: #1277f9; }\n  .skills i {\n  cursor: pointer;\n  color: red; }\n  .skills ol {\n  padding-left: 152px; }\n  .skills input {\n  background: transparent;\n  margin: 15px 0; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/profile/profile.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_service_profile_service__ = __webpack_require__("../../../../../src/app/shared/service/profile.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var ProfileComponent = /** @class */ (function () {
-    function ProfileComponent(profileService) {
-        var _this = this;
-        this.profileService = profileService;
-        this.editable = false;
-        this.name = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"]('');
-        this.bday = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"]('');
-        this.country = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"]('');
-        this.education = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"]('');
-        this.avatar_url = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"]('');
-        this.skills = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"]();
-        this.skillsList = [];
-        this.profile = {
-            name: "",
-            birth_date: new Date(),
-            avatar_url: "",
-            country: "",
-            education: "",
-            skills: [],
-        };
-        this.profileService.getProfile().subscribe(function (data) {
-            console.log(data);
-            _this.name = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](data.profile.name);
-            if (data.profile.birth_date)
-                _this.bday = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](data.profile.birth_date);
-            if (data.profile.country)
-                _this.country = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](data.profile.country);
-            if (data.profile.education)
-                _this.education = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](data.profile.education);
-            if (data.profile.avatar_url) {
-                _this.avatar_url = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](data.profile.avatar_url);
-                _this.profile.avatar_url = data.profile.avatar_url;
-            }
-            if (data.profile.skills && data.profile.skills.length)
-                _this.skillsList = data.profile.skills;
-        });
-    }
-    ProfileComponent.prototype.edit = function () {
-        this.editable = true;
-    };
-    ProfileComponent.prototype.save = function () {
-        if (this.name.value)
-            this.profile.name = this.name.value;
-        if (this.avatar_url.value)
-            this.profile.avatar_url = this.avatar_url.value;
-        if (this.bday.value)
-            this.profile.birth_date = new Date(this.bday.value);
-        if (this.country.value)
-            this.profile.country = this.country.value;
-        if (this.education.value)
-            this.profile.education = this.education.value;
-        if (this.skillsList && this.skillsList.length)
-            this.profile.skills = this.skillsList;
-        this.profileService.setProfile(this.profile).subscribe(function (data) {
-            console.log(data);
-        });
-        this.editable = false;
-    };
-    ProfileComponent.prototype.addSkill = function () {
-        if (this.skills.value != null) {
-            this.skillsList.push(this.skills.value);
-        }
-        this.skills.reset(null);
-    };
-    ProfileComponent.prototype.deleteSkill = function (index) {
-        this.skillsList.splice(index, 1);
-    };
-    ProfileComponent.prototype.ngOnInit = function () {
-    };
-    ProfileComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-profile',
-            template: __webpack_require__("../../../../../src/app/app-wrapper/profile/profile.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app-wrapper/profile/profile.component.sass")]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__shared_service_profile_service__["a" /* ProfileService */]])
-    ], ProfileComponent);
-    return ProfileComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/vacans/empty-vacans/empty-vacans.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"col-md-9 wrapper\">\r\n  <img src=\"../../../../assets/long-arr.png\" alt=\"arrow\">\r\n  <p>Скорее добавляйте вашу первую вакансию прямо сейчас</p>\r\n  <ul>\r\n    <li>\r\n      <i class=\"fa fa-check\" aria-hidden=\"true\"></i>\r\n      <span>Вакансия мгновенно попадает ко всем претендентам</span>\r\n    </li>\r\n    <li>\r\n      <i class=\"fa fa-check\" aria-hidden=\"true\"></i>\r\n      <span>Вы всегда сможете закрыть вакансию</span>\r\n    </li>\r\n    <li>\r\n      <i class=\"fa fa-check\" aria-hidden=\"true\"></i>\r\n      <span>Публикация вакансий будет сделана бесплатно</span>\r\n    </li>\r\n  </ul>\r\n\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/vacans/empty-vacans/empty-vacans.component.sass":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".wrapper {\n  text-align: center;\n  background-color: #f6f7fa;\n  height: calc(100vh - 78px);\n  padding: 0 330px; }\n  .wrapper img {\n    position: absolute;\n    left: 120px;\n    width: 360px;\n    top: 121px; }\n  .wrapper p:nth-child(2) {\n    font-size: 25px;\n    font-weight: bold;\n    margin-top: 200px;\n    margin-bottom: 35px; }\n  .wrapper ul {\n    list-style: none;\n    text-align: left;\n    padding: 0 60px; }\n  .wrapper ul li {\n      font-weight: bold;\n      margin-bottom: 20px;\n      height: 50px; }\n  .wrapper ul li i {\n        display: block;\n        float: left;\n        width: 12%;\n        font-size: 25px;\n        font-weight: normal; }\n  .wrapper ul li span {\n        display: block;\n        float: left;\n        width: 88%; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/vacans/empty-vacans/empty-vacans.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmptyVacansComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var EmptyVacansComponent = /** @class */ (function () {
-    function EmptyVacansComponent() {
-    }
-    EmptyVacansComponent.prototype.ngOnInit = function () {
-    };
-    EmptyVacansComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-empty-vacans',
-            template: __webpack_require__("../../../../../src/app/app-wrapper/vacans/empty-vacans/empty-vacans.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app-wrapper/vacans/empty-vacans/empty-vacans.component.sass")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], EmptyVacansComponent);
-    return EmptyVacansComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/vacans/vacans-left/vacans-left.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"col-md-3 wrapper\" style=\"position:relative\">\r\n  <div *ngIf = \"sabmitPage\" class=\"sabmit-page\">\r\n      <div class=\"text-sabmit\">\r\n        Подтверждаете публикацию вакансии?\r\n      </div>\r\n      <button (click)=\"create()\">\r\n        Да\r\n      </button>\r\n      <button (click)=\"sabmitPage = !sabmitPage\">\r\n        Отменить\r\n      </button>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 header\">\r\n      <p>Кого вы ищите ?</p>\r\n      <button (click)=\"sabmitPage = !sabmitPage\" class=\"submit\">\r\n        Разместить\r\n      </button>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 info\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-3\">\r\n          <img *ngIf=\"profile && !profile.avatar_url\" src=\"../../../../assets/avatar.png\" alt=\"\">\r\n          <img *ngIf=\"profile && profile.avatar_url\" class=\"avatar\" [src]=\"profile.avatar_url\" alt=\"\">\r\n        </div>\r\n        <div class=\"col-md-9\">\r\n          <p style=\"font-weight: bold;\" *ngIf=\"profile && profile.name\">{{profile.name}}</p>\r\n          <div class=\"dropdawn-wrap\">\r\n            <button (click)=\"showDropdawnLeft = !showDropdawnLeft\" class=\"btn-left-sidebar\" [ngClass] = \"{'active-btn': showDropdawnLeft}\" [(ngModel)]='advert.vacancy.hiring_type'>\r\n               <span>\r\n                 Вакансии ХХХХ\r\n               </span>\r\n               <i class=\"fa fa-angle-down\"></i>\r\n             </button>\r\n             <div *ngIf = \"showDropdawnLeft\" class=\"dropdawn-btn\">\r\n                 <ul>\r\n                   <li><a href=\"#\" value=\"0\">FULL TIME</a></li>\r\n                   <li><a href=\"#\" value=\"1\">PART_TIME</a></li>\r\n                   <li><a href=\"#\" value=\"2\">CONTRACT</a></li>\r\n                   <li><a href=\"#\" value=\"3\">ONE_TIME</a></li>\r\n                 </ul>\r\n             </div>\r\n         </div>\r\n          <!-- <select [(ngModel)]='advert.vacancy.hiring_type'>\r\n            <option value=\"0\">FULL TIME</option>\r\n            <option value=\"1\">PART_TIME </option>\r\n            <option value=\"2\">CONTRACT  </option>\r\n            <option value=\"3\">ONE_TIME  </option>\r\n          </select> -->\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 info-vacans\">\r\n      <div class=\"photo col-md-12\">\r\n        <p>Перетяните сюда фото</p>\r\n      </div>\r\n      <textarea [(ngModel)]='advert.description'\r\n                placeholder=\"Опишите какой специалист вам нужен и для чего, сколько готовы платить, включено ли проживание, готовы липомочь с документами?\"\r\n                rows=\"5\" cols=\"30\">\r\n      </textarea>\r\n    </div>\r\n    <!--<div class=\"col-md-12 colors\">-->\r\n      <!--<div class=\"middle\">-->\r\n        <!--<label (click)=\"advert.vacancy.background_resource_id = 'pink'\">-->\r\n          <!--<input type=\"radio\" name=\"radio\" [checked]=\"advert.vacancy.background_resource_id === 'pink'\"/>-->\r\n          <!--<div class=\"my1 box\">-->\r\n\r\n          <!--</div>-->\r\n        <!--</label>-->\r\n\r\n        <!--<label (click)=\"advert.vacancy.background_resource_id = 'purple'\">-->\r\n          <!--<input type=\"radio\" name=\"radio\" [checked]=\"advert.vacancy.background_resource_id === 'purple'\"/>-->\r\n          <!--<div class=\"my2 box\">-->\r\n\r\n          <!--</div>-->\r\n        <!--</label>-->\r\n        <!--<label (click)=\"advert.vacancy.background_resource_id = 'blue'\">-->\r\n          <!--<input type=\"radio\" name=\"radio\" [checked]=\"advert.vacancy.background_resource_id === 'blue'\"/>-->\r\n          <!--<div class=\"my3 box\">-->\r\n\r\n          <!--</div>-->\r\n        <!--</label>-->\r\n        <!--<label (click)=\"advert.vacancy.background_resource_id = 'green'\">-->\r\n          <!--<input type=\"radio\" name=\"radio\" [checked]=\"advert.vacancy.background_resource_id === 'green'\"/>-->\r\n          <!--<div class=\"my4 box\">-->\r\n\r\n          <!--</div>-->\r\n        <!--</label>-->\r\n        <!--<label (click)=\"advert.vacancy.background_resource_id = 'yelow'\">-->\r\n          <!--<input type=\"radio\" name=\"radio\" [checked]=\"advert.vacancy.background_resource_id === 'yelow'\"/>-->\r\n          <!--<div class=\"my5 box\">-->\r\n\r\n          <!--</div>-->\r\n        <!--</label>-->\r\n        <!--<label (click)=\"advert.vacancy.background_resource_id = 'darkslateblue'\">-->\r\n          <!--<input type=\"radio\" name=\"radio\" [checked]=\"advert.vacancy.background_resource_id === 'darkslateblue'\"/>-->\r\n          <!--<div class=\"my6 box\">-->\r\n\r\n          <!--</div>-->\r\n        <!--</label>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 footer\">\r\n      <p>\r\n        <i class=\"fa fa-hashtag\" aria-hidden=\"true\"></i>\r\n        <input type=\"text\" placeholder=\"Введите хеш-теги...\" [(ngModel)]='teg'>\r\n      </p>\r\n      <p>\r\n        <i class=\"fa fa-map-marker\" style=\"margin-right: 18px;\" aria-hidden=\"true\"></i>\r\n        <input type=\"text\" placeholder=\"Введите локацию...\" [(ngModel)]='advert.location'>\r\n      </p>\r\n      <button (click)=\"sabmitPage = !sabmitPage\">Добавить вакансию</button>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/vacans/vacans-left/vacans-left.component.sass":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".wrapper {\n  border-right: 2px solid #E3E3E5;\n  height: calc(100vh - 78px);\n  max-height: calc(100vh - 78px);\n  background-color: #ffffff;\n  overflow-y: auto;\n  overflow-x: hidden; }\n  .wrapper .header {\n    background-color: #ffffff;\n    color: black;\n    font-weight: bold;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between; }\n  .wrapper .header button {\n      border: none;\n      outline: none;\n      background: none; }\n  .wrapper .header p {\n      margin: 0;\n      padding: 20px; }\n  .wrapper .info {\n    margin-top: 10px; }\n  .wrapper .info img {\n      width: 100%;\n      border-radius: 50%; }\n  .wrapper .info select {\n      width: 100%;\n      height: 30px; }\n  .wrapper .info-vacans {\n    margin-top: 10px; }\n  .wrapper .info-vacans .photo {\n      margin-top: 15px;\n      height: 180px;\n      border: 3px dotted #9d9ea4;\n      border-radius: 25px;\n      text-align: center;\n      color: #9d9ea4;\n      font-weight: bold;\n      padding-top: 63px; }\n  .wrapper .info-vacans .photo p {\n        padding: 0 70px;\n        font-size: 16px; }\n  .wrapper .info-vacans textarea {\n      resize: none;\n      width: 100%;\n      border-radius: 10px;\n      margin-top: 10px;\n      border-color: #9d9ea4;\n      padding: 20px; }\n  .middle {\n  width: 100%;\n  text-align: center;\n  margin-top: 20px;\n  border-bottom: 2px solid #E3E3E5; }\n  .middle h1 {\n    font-family: 'Dax', sans-serif;\n    color: #fff; }\n  .middle input[type=\"radio\"] {\n    display: none; }\n  .middle input[type=\"radio\"]:checked + .box {\n      border-bottom: 2px solid red;\n      padding-bottom: 5px;\n      display: block; }\n  .middle input[type=\"radio\"]:checked + .box span {\n        color: white;\n        -webkit-transform: translateY(70px);\n                transform: translateY(70px); }\n  .middle input[type=\"radio\"]:checked + .box span:before {\n          -webkit-transform: translateY(0px);\n                  transform: translateY(0px);\n          opacity: 1; }\n  .middle .my1 {\n    background-color: pink; }\n  .middle .my2 {\n    background-color: purple; }\n  .middle .my3 {\n    background-color: blue; }\n  .middle .my4 {\n    background-color: greenyellow; }\n  .middle .my5 {\n    background-color: yellow; }\n  .middle .my6 {\n    background-color: darkslateblue; }\n  .middle .box {\n    width: 50px;\n    height: 50px;\n    -webkit-transition: all 250ms ease;\n    transition: all 250ms ease;\n    will-change: transition;\n    display: inline-block;\n    text-align: center;\n    cursor: pointer;\n    position: relative;\n    font-family: 'Dax', sans-serif;\n    font-weight: 900; }\n  .middle .box:active {\n      -webkit-transform: translateY(10px);\n              transform: translateY(10px); }\n  .footer {\n  border-top: 1px solid #98a0af;\n  padding: 0; }\n  .footer p {\n    padding: 10px 10px 0 10px;\n    margin-bottom: 0; }\n  .footer p i {\n      margin-right: 10px;\n      font-size: 20px; }\n  .footer input {\n    background-color: transparent;\n    outline: none;\n    padding: 10px;\n    width: 85%;\n    border-radius: 20px;\n    border: 1px solid  #98a0af; }\n  .footer button {\n    padding: 30px 20px;\n    text-align: center;\n    background-color: #5585fe;\n    width: 101%;\n    margin-top: 21px;\n    font-size: 20px;\n    color: white;\n    outline: none;\n    border: none; }\n  .footer button:active {\n      background-color: #1277f9; }\n  .dropdawn-wrap {\n  position: relative; }\n  .btn-left-sidebar {\n  border: 1px solid #e8ebf1;\n  background: none;\n  outline: none;\n  border-radius: 20px;\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 8px;\n  padding-left: 20px;\n  padding-right: 20px;\n  color: #6f7375;\n  font-size: 13PX;\n  font-weight: bold; }\n  .btn-left-sidebar i {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n    font-size: 16px;\n    position: relative;\n    top: -2px; }\n  .active-btn {\n  border-radius: 20px 20px 0 0; }\n  .active-btn i {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n  .dropdawn-btn {\n  background: white;\n  width: 100%;\n  position: absolute;\n  top: 36px;\n  z-index: 1000;\n  border-radius: 0 0 20px 20px;\n  overflow: hidden;\n  -webkit-box-shadow: 2px 6px 17px -5px rgba(0, 0, 0, 0.75);\n  box-shadow: 2px 6px 17px -5px rgba(0, 0, 0, 0.75);\n  border: 1px solid #e8ebf1;\n  border-top: 0; }\n  .dropdawn-btn ul {\n    list-style: none;\n    padding: 0;\n    margin: 0; }\n  .dropdawn-btn ul li {\n      padding: 0;\n      margin: 0; }\n  .dropdawn-btn ul li a {\n        width: 100%;\n        display: block;\n        color: #6f7375;\n        text-decoration: none;\n        padding: 7px;\n        padding-left: 20px; }\n  .dropdawn-btn ul li a:hover {\n        background: #f1f1f1; }\n  input::-webkit-input-placeholder {\n  color: #9da99a;\n  font-weight: bold; }\n  input::-moz-placeholder {\n  font-weight: bold;\n  color: #9da99a; }\n  input:-ms-input-placeholder {\n  font-weight: bold;\n  color: #9da99a; }\n  input:-moz-placeholder {\n  font-weight: bold;\n  color: #9da99a; }\n  .sabmit-page {\n  position: absolute;\n  width: calc(100% + 2px);\n  background: rgba(12, 7, 49, 0.57);\n  z-index: 10000;\n  margin-left: -15px;\n  height: calc(110vh);\n  margin-top: -1px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: column;\n          flex-flow: column;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n  .sabmit-page .text-sabmit {\n    color: white;\n    font-weight: bold;\n    font-size: 15px;\n    margin-bottom: 25px;\n    width: 80%;\n    text-align: center; }\n  .sabmit-page button {\n    margin-bottom: 13px;\n    background: #5584ff;\n    border: none;\n    outline: none;\n    width: 120px;\n    border-radius: 20px;\n    color: white;\n    font-size: 16px;\n    font-weight: bold;\n    height: 40px;\n    -webkit-box-shadow: 0px 2px 11px 0px #080808;\n            box-shadow: 0px 2px 11px 0px #080808; }\n  .sabmit-page button:nth-child(3) {\n    background: #f83c7b; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/vacans/vacans-left/vacans-left.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VacansLeftComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_service_vacans_service__ = __webpack_require__("../../../../../src/app/shared/service/vacans.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_service_profile_service__ = __webpack_require__("../../../../../src/app/shared/service/profile.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var VacansLeftComponent = /** @class */ (function () {
-    function VacansLeftComponent(vacansService, profileService) {
-        var _this = this;
-        this.vacansService = vacansService;
-        this.profileService = profileService;
-        this.teg = "";
-        this.advert = {
-            adverter_id: "",
-            location: "",
-            description: "",
-            geo_position: {
-                latitude: 1,
-                longitude: 2
-            },
-            vacancy: {
-                background_resource_id: "pink",
-                hiring_type: 0,
-                hashtags: []
-            }
-        };
-        this.profileService.getProfile().subscribe(function (data) {
-            _this.profile = data.profile;
-        });
-    }
-    VacansLeftComponent.prototype.ngOnInit = function () {
-    };
-    VacansLeftComponent.prototype.create = function () {
-        var _this = this;
-        if (this.teg) {
-            var tegs = this.teg.split("#");
-            this.advert.vacancy.hashtags = tegs;
-        }
-        this.advert.vacancy.hiring_type = +this.advert.vacancy.hiring_type;
-        if (this.advert.description)
-            this.vacansService.createVac(this.advert).subscribe(function (data) {
-                console.log(data);
-                _this.vacansService.refreshEvent.emit("");
-                _this.advert = {
-                    adverter_id: "",
-                    location: "",
-                    description: "",
-                    geo_position: {
-                        latitude: 1,
-                        longitude: 2
-                    },
-                    vacancy: {
-                        background_resource_id: "pink",
-                        hiring_type: 0,
-                        hashtags: []
-                    }
-                };
-            });
-    };
-    VacansLeftComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-vacans-left',
-            template: __webpack_require__("../../../../../src/app/app-wrapper/vacans/vacans-left/vacans-left.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app-wrapper/vacans/vacans-left/vacans-left.component.sass")]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_service_vacans_service__["a" /* VacansService */], __WEBPACK_IMPORTED_MODULE_2__shared_service_profile_service__["a" /* ProfileService */]])
-    ], VacansLeftComponent);
-    return VacansLeftComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/vacans/vacans-right/item-vacans/item-vacans.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"col-md-4 header\">\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-3 photo\">\r\n          <img *ngIf=\"profile && !profile.avatar_url\" src=\"../../../../assets/avatar.png\" alt=\"\">\r\n          <img *ngIf=\"profile && profile.avatar_url\" class=\"avatar\" [src]=\"profile.avatar_url\" alt=\"\">\r\n        </div>\r\n        <div class=\"col-md-9\" style=\"padding: 10px;\">\r\n          <p>\r\n            <span style=\"font-weight: bold\" *ngIf=\"profile\">{{profile.name}}</span>\r\n            разместил вакансию от компании\r\n          </p>\r\n        </div>\r\n        <div class=\"col-md-12 status\">\r\n          <p *ngIf=\"advert.active\">\r\n            <!--<i class=\"fa fa-minus-circle\" style=\"color: red\" aria-hidden=\"true\"></i>-->\r\n            <!--Вакансия снята-->\r\n            <i class=\"fa fa-check-circle\" aria-hidden=\"true\"></i>\r\n            Активная вакансия\r\n          </p>\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12 vacans\">\r\n          <img src=\"../../../../../assets/vacans.jpeg\" alt=\"vacans\">\r\n          <p style=\"padding: 10px;\">{{advert.advert.description}}</p>\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12 location\">\r\n          <p>\r\n            <i class=\"fa fa-hashtag\" aria-hidden=\"true\"></i>\r\n            <input type=\"text\" placeholder=\"Введите хеш-теги...\" [(ngModel)]='teg'>\r\n          </p>\r\n          <p>\r\n            <i class=\"fa fa-map-marker\" style=\"margin-right: 18px;\" aria-hidden=\"true\"></i>\r\n            <input type=\"text\" placeholder=\"Введите локацию...\" [(ngModel)]='advert.advert.location'>\r\n          </p>\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12 statistic\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-6\">\r\n              <span style=\"padding-top: 10px;\" class=\"col-md-6\">{{advert.views_number}}</span>\r\n              <span class=\"col-md-6\">Просмотра вакансии</span>\r\n            </div>\r\n            <div class=\"col-md-6\" style=\"padding-top: 10px;\">\r\n              <span class=\"col-md-6\">{{advert.answers_number}}</span>\r\n              <span class=\"col-md-6\">Чата</span>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12 controls\">\r\n          <!--<button (click)=\"remove()\">Убрать</button>-->\r\n          <!--<button>Поднять в топ</button>-->\r\n          <button>Закрыть вакансию</button>\r\n          <!--<button style=\"background-color: #f83c7b\">Удалить</button>-->\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/vacans/vacans-right/item-vacans/item-vacans.component.sass":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".header {\n  padding-top: 10px;\n  background-color: #fff;\n  margin-left: 20px;\n  -webkit-box-shadow: 0 0 24px 2px #888;\n  box-shadow: 0 0 24px 2px #888;\n  margin-bottom: 40px; }\n  .header .status {\n    text-align: center;\n    border-top: 1px solid #98a0af;\n    font-weight: bold;\n    padding: 10px 10px 0 10px; }\n  .header .status i {\n      color: #6ac259;\n      font-size: 30px;\n      position: absolute;\n      left: 43px;\n      top: 5px; }\n  .header .photo img {\n    width: 50px;\n    height: 50px;\n    border-radius: 50%; }\n  .header .vacans {\n    padding: 0; }\n  .header .vacans img {\n      margin-bottom: 10px;\n      height: 150px;\n      width: 100%;\n      border-radius: 0 !important; }\n  .location p {\n  padding: 10px 10px 0 10px;\n  margin-bottom: 0; }\n  .location p i {\n    margin-right: 10px;\n    font-size: 20px; }\n  .location p input {\n    background-color: transparent;\n    outline: none;\n    padding: 10px;\n    width: 85%;\n    border-radius: 20px;\n    border: 1px solid  #98a0af; }\n  .statistic {\n  border-top: 1px solid #98a0af;\n  margin-top: 10px;\n  padding: 10px; }\n  .statistic span:first-child {\n    font-weight: bold;\n    font-size: 20px;\n    text-align: right; }\n  .statistic span:nth-child(2) {\n    padding-top: 5px;\n    text-align: left; }\n  .controls {\n  padding: 0; }\n  .controls button {\n    padding: 30px 20px;\n    text-align: center;\n    background-color: #0c86f9;\n    width: 100%;\n    font-size: 18px;\n    color: white;\n    outline: none;\n    border: none; }\n  .controls button:hover {\n      background-color: #1277f9; }\n  input::-webkit-input-placeholder {\n  color: #9da99a;\n  font-weight: bold; }\n  input::-moz-placeholder {\n  font-weight: bold;\n  color: #9da99a; }\n  input:-ms-input-placeholder {\n  font-weight: bold;\n  color: #9da99a; }\n  input:-moz-placeholder {\n  font-weight: bold;\n  color: #9da99a; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/vacans/vacans-right/item-vacans/item-vacans.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ItemVacansComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_service_vacans_service__ = __webpack_require__("../../../../../src/app/shared/service/vacans.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var ItemVacansComponent = /** @class */ (function () {
-    function ItemVacansComponent(vacansService) {
-        this.vacansService = vacansService;
-    }
-    ItemVacansComponent.prototype.ngOnInit = function () {
-    };
-    ItemVacansComponent.prototype.remove = function () {
-        var _this = this;
-        this.vacansService.closeVac(this.advert).subscribe(function (data) {
-            console.log(data);
-            _this.vacansService.refreshEvent.emit("");
-        });
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-        __metadata("design:type", Object)
-    ], ItemVacansComponent.prototype, "advert", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-        __metadata("design:type", Object)
-    ], ItemVacansComponent.prototype, "profile", void 0);
-    ItemVacansComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-item-vacans',
-            template: __webpack_require__("../../../../../src/app/app-wrapper/vacans/vacans-right/item-vacans/item-vacans.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app-wrapper/vacans/vacans-right/item-vacans/item-vacans.component.sass")]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_service_vacans_service__["a" /* VacansService */]])
-    ], ItemVacansComponent);
-    return ItemVacansComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/vacans/vacans-right/vacans-right.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"col-md-9 wrapper\">\r\n  <div class=\"col-md-12 header\">\r\n    <div class=\"dropdawn-wrap\">\r\n      <button (click)=\"showDropdawn = !showDropdawn\" class=\"btn-left-sidebar\" [ngClass] = \"{'active-btn': showDropdawn}\">\r\n         <span>\r\n            <span>\r\n                Все вакансии\r\n              </span>\r\n              <span>\r\n                (2)\r\n              </span>\r\n         </span>\r\n         <i class=\"fa fa-angle-down\"></i>\r\n       </button>\r\n       <div *ngIf = \"showDropdawn\" class=\"dropdawn-btn\">\r\n          <ul>\r\n            <li>Все вакансии на сегодня \r\n              <span>\r\n                (2)\r\n              </span>\r\n            </li>\r\n            <li>Все вакансии на неделю \r\n              <span>\r\n                (2)\r\n              </span>\r\n            </li>\r\n            <li>Все выполненые заказы \r\n              <span>\r\n                (2)\r\n              </span>\r\n            </li>\r\n            <li>Фриланс\r\n              <span>\r\n                (2)\r\n              </span>\r\n            </li>\r\n          </ul>\r\n      </div>\r\n   </div>\r\n  </div>\r\n    <div class=\"col-md-12 wrapper-body\">\r\n      <app-item-vacans *ngFor=\"let advert of adverts\" [advert]=\"advert\" [profile]=\"profile\"></app-item-vacans>\r\n    </div>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/vacans/vacans-right/vacans-right.component.sass":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".wrapper {\n  background-color: #F0F1F1;\n  padding: 0; }\n  .wrapper .header {\n    height: 52px;\n    background: white;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: end;\n        -ms-flex-align: end;\n            align-items: flex-end;\n    -webkit-box-pack: end;\n        -ms-flex-pack: end;\n            justify-content: flex-end; }\n  .wrapper .wrapper-body {\n    padding: 20px 0px;\n    background-color: #f6f7fa;\n    -webkit-box-shadow: inset 0 0 16px 3px #888;\n    box-shadow: inset 0 0 16px 3px #888;\n    height: calc(100vh - 126.41px);\n    max-height: calc(100vh - 126.41px);\n    overflow-y: scroll; }\n  .dropdawn-wrap {\n  position: relative;\n  width: 330px; }\n  .btn-left-sidebar {\n  border: 1px solid #e8ebf1;\n  background: none;\n  outline: none;\n  border-radius: 20px;\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 8px;\n  padding-left: 20px;\n  padding-right: 20px;\n  color: #6f7375;\n  font-size: 13PX;\n  font-weight: bold;\n  margin-bottom: 8px; }\n  .btn-left-sidebar i {\n    -webkit-transition: all 0.2s;\n    transition: all 0.2s;\n    font-size: 16px;\n    position: relative;\n    top: -2px; }\n  .active-btn {\n  border-radius: 20px 20px 0 0;\n  margin-bottom: 0px;\n  height: 44px; }\n  .active-btn i {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n  .dropdawn-btn {\n  background: white;\n  width: 100%;\n  position: absolute;\n  top: 43px;\n  z-index: 1000;\n  border-radius: 0 0 20px 20px;\n  overflow: hidden;\n  -webkit-box-shadow: 2px 6px 17px -5px rgba(0, 0, 0, 0.75);\n  box-shadow: 2px 6px 17px -5px rgba(0, 0, 0, 0.75);\n  border: 1px solid #e8ebf1;\n  border-top: 0; }\n  .dropdawn-btn ul {\n    list-style: none;\n    padding: 0;\n    margin: 0; }\n  .dropdawn-btn ul li {\n      padding: 0;\n      margin: 0;\n      width: 100%;\n      display: block;\n      color: #6f7375;\n      text-decoration: none;\n      padding: 7px;\n      padding-left: 20px; }\n  .dropdawn-btn ul li li:hover {\n        background: #f1f1f1; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/vacans/vacans-right/vacans-right.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VacansRightComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_service_profile_service__ = __webpack_require__("../../../../../src/app/shared/service/profile.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var VacansRightComponent = /** @class */ (function () {
-    function VacansRightComponent(profileService) {
-        this.profileService = profileService;
-    }
-    VacansRightComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.profileService.getProfile().subscribe(function (data) {
-            _this.profile = data.profile;
-        });
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-        __metadata("design:type", Object)
-    ], VacansRightComponent.prototype, "adverts", void 0);
-    VacansRightComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-vacans-right',
-            template: __webpack_require__("../../../../../src/app/app-wrapper/vacans/vacans-right/vacans-right.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app-wrapper/vacans/vacans-right/vacans-right.component.sass")]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_service_profile_service__["a" /* ProfileService */]])
-    ], VacansRightComponent);
-    return VacansRightComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/vacans/vacans.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<app-nav></app-nav>\r\n<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n    <app-vacans-left></app-vacans-left>\r\n    <app-vacans-right *ngIf=\"adverts.length > 0\" [adverts]=\"adverts\"></app-vacans-right>\r\n    <app-empty-vacans *ngIf=\"adverts.length === 0\"></app-empty-vacans>\r\n  </div>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/vacans/vacans.component.sass":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/app-wrapper/vacans/vacans.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VacansComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_service_vacans_service__ = __webpack_require__("../../../../../src/app/shared/service/vacans.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var VacansComponent = /** @class */ (function () {
-    function VacansComponent(vacansService) {
-        var _this = this;
-        this.vacansService = vacansService;
-        this.adverts = [];
-        this.vacansService.refreshEvent.subscribe(function (data) {
-            _this.getData();
-        });
-        this.getData();
-    }
-    VacansComponent.prototype.ngOnInit = function () {
-    };
-    VacansComponent.prototype.getData = function () {
-        var _this = this;
-        this.vacansService.getVac().subscribe(function (data) {
-            console.log(data);
-            _this.adverts = data.adverts;
-        });
-    };
-    VacansComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-vacans',
-            template: __webpack_require__("../../../../../src/app/app-wrapper/vacans/vacans.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app-wrapper/vacans/vacans.component.sass")]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_service_vacans_service__["a" /* VacansService */]])
-    ], VacansComponent);
-    return VacansComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/app.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<router-outlet></router-outlet>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/app.component.sass":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/app.component.ts":
+/***/ "./src/app/app.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1200,10 +49,10 @@ var AppComponent = /** @class */ (function () {
         this.title = 'app';
     }
     AppComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'app-root',
-            template: __webpack_require__("../../../../../src/app/app.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app.component.sass")]
+            template: __webpack_require__("./src/app/app.component.html"),
+            styles: [__webpack_require__("./src/app/app.component.css")]
         })
     ], AppComponent);
     return AppComponent;
@@ -1213,60 +62,29 @@ var AppComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/app.module.ts":
+/***/ "./src/app/app.module.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_routing__ = __webpack_require__("../../../../../src/app/app.routing.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__login_page_login_page_component__ = __webpack_require__("../../../../../src/app/login-page/login-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_wrapper_app_wrapper_component__ = __webpack_require__("../../../../../src/app/app-wrapper/app-wrapper.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_wrapper_chats_left_bar_chat_left_bar_chat_component__ = __webpack_require__("../../../../../src/app/app-wrapper/chats/left-bar-chat/left-bar-chat.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ngx_rating__ = __webpack_require__("../../../../ngx-rating/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ngx_rating___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_ngx_rating__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_wrapper_chats_middle_chat_middle_chat_component__ = __webpack_require__("../../../../../src/app/app-wrapper/chats/middle-chat/middle-chat.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_wrapper_chats_right_bar_chat_right_bar_chat_component__ = __webpack_require__("../../../../../src/app/app-wrapper/chats/right-bar-chat/right-bar-chat.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_wrapper_chats_chat_wrapper_chat_wrapper_component__ = __webpack_require__("../../../../../src/app/app-wrapper/chats/chat-wrapper/chat-wrapper.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_wrapper_nav_nav_component__ = __webpack_require__("../../../../../src/app/app-wrapper/nav/nav.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__app_wrapper_vacans_vacans_component__ = __webpack_require__("../../../../../src/app/app-wrapper/vacans/vacans.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__app_wrapper_vacans_vacans_left_vacans_left_component__ = __webpack_require__("../../../../../src/app/app-wrapper/vacans/vacans-left/vacans-left.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__app_wrapper_vacans_vacans_right_vacans_right_component__ = __webpack_require__("../../../../../src/app/app-wrapper/vacans/vacans-right/vacans-right.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__app_wrapper_vacans_vacans_right_item_vacans_item_vacans_component__ = __webpack_require__("../../../../../src/app/app-wrapper/vacans/vacans-right/item-vacans/item-vacans.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__app_wrapper_profile_profile_component__ = __webpack_require__("../../../../../src/app/app-wrapper/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__selected_item_service__ = __webpack_require__("../../../../../src/app/selected-item.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__shared_service_login_service__ = __webpack_require__("../../../../../src/app/shared/service/login.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__shared_service_guard_service__ = __webpack_require__("../../../../../src/app/shared/service/guard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__shared_service_chat_service__ = __webpack_require__("../../../../../src/app/shared/service/chat.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__shared_service_profile_service__ = __webpack_require__("../../../../../src/app/shared/service/profile.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__shared_service_vacans_service__ = __webpack_require__("../../../../../src/app/shared/service/vacans.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__app_wrapper_chats_empty_chat_empty_chat_component__ = __webpack_require__("../../../../../src/app/app-wrapper/chats/empty-chat/empty-chat.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__app_wrapper_vacans_empty_vacans_empty_vacans_component__ = __webpack_require__("../../../../../src/app/app-wrapper/vacans/empty-vacans/empty-vacans.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material_tabs__ = __webpack_require__("./node_modules/@angular/material/esm5/tabs.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__left_side_bar_left_side_bar_component__ = __webpack_require__("./src/app/left-side-bar/left-side-bar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__content_content_component__ = __webpack_require__("./src/app/content/content.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__content_middle_block_middle_block_component__ = __webpack_require__("./src/app/content/middle-block/middle-block.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__content_right_side_bar_right_side_bar_component__ = __webpack_require__("./src/app/content/right-side-bar/right-side-bar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__content_footer_content_footer_content_component__ = __webpack_require__("./src/app/content/footer-content/footer-content.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__selected_item_service__ = __webpack_require__("./src/app/selected-item.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
-
- // <-- #1 import module
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1283,33 +101,22 @@ var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* NgModule */])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_5__login_page_login_page_component__["a" /* LoginPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__app_wrapper_app_wrapper_component__["a" /* AppWrapperComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__app_wrapper_chats_left_bar_chat_left_bar_chat_component__["a" /* LeftBarChatComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__app_wrapper_chats_middle_chat_middle_chat_component__["a" /* MiddleChatComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__app_wrapper_chats_right_bar_chat_right_bar_chat_component__["a" /* RightBarChatComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__app_wrapper_chats_chat_wrapper_chat_wrapper_component__["a" /* ChatWrapperComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__app_wrapper_nav_nav_component__["a" /* NavComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__app_wrapper_vacans_vacans_component__["a" /* VacansComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__app_wrapper_vacans_vacans_left_vacans_left_component__["a" /* VacansLeftComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__app_wrapper_vacans_vacans_right_vacans_right_component__["a" /* VacansRightComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__app_wrapper_vacans_vacans_right_item_vacans_item_vacans_component__["a" /* ItemVacansComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__app_wrapper_profile_profile_component__["a" /* ProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_25__app_wrapper_chats_empty_chat_empty_chat_component__["a" /* EmptyChatComponent */],
-                __WEBPACK_IMPORTED_MODULE_26__app_wrapper_vacans_empty_vacans_empty_vacans_component__["a" /* EmptyVacansComponent */],
+                __WEBPACK_IMPORTED_MODULE_5__left_side_bar_left_side_bar_component__["a" /* LeftSideBarComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__content_content_component__["a" /* ContentComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__content_middle_block_middle_block_component__["a" /* MiddleBlockComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__content_right_side_bar_right_side_bar_component__["a" /* RightSideBarComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__content_footer_content_footer_content_component__["a" /* FooterContentComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2__app_routing__["a" /* ROUTING */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["ReactiveFormsModule"],
-                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormsModule"],
-                __WEBPACK_IMPORTED_MODULE_8_ngx_rating__["RatingModule"],
-                __WEBPACK_IMPORTED_MODULE_21__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_material_tabs__["a" /* MatTabsModule */],
+                __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */]
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_18__selected_item_service__["a" /* SelectedItemService */], __WEBPACK_IMPORTED_MODULE_19__shared_service_login_service__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_20__shared_service_guard_service__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_22__shared_service_chat_service__["a" /* ChatService */], __WEBPACK_IMPORTED_MODULE_23__shared_service_profile_service__["a" /* ProfileService */], __WEBPACK_IMPORTED_MODULE_24__shared_service_vacans_service__["a" /* VacansService */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_11__selected_item_service__["a" /* SelectedItemService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
@@ -1320,73 +127,26 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/app.routing.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export AppRoutes */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ROUTING; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__login_page_login_page_component__ = __webpack_require__("../../../../../src/app/login-page/login-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_wrapper_chats_chat_wrapper_chat_wrapper_component__ = __webpack_require__("../../../../../src/app/app-wrapper/chats/chat-wrapper/chat-wrapper.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_wrapper_vacans_vacans_component__ = __webpack_require__("../../../../../src/app/app-wrapper/vacans/vacans.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_wrapper_profile_profile_component__ = __webpack_require__("../../../../../src/app/app-wrapper/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_service_guard_service__ = __webpack_require__("../../../../../src/app/shared/service/guard.service.ts");
-
-
-
-
-
-
-var AppRoutes = [
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_1__login_page_login_page_component__["a" /* LoginPageComponent */] },
-    { path: 'chat', component: __WEBPACK_IMPORTED_MODULE_2__app_wrapper_chats_chat_wrapper_chat_wrapper_component__["a" /* ChatWrapperComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_5__shared_service_guard_service__["a" /* AuthGuard */]] },
-    { path: 'vacans', component: __WEBPACK_IMPORTED_MODULE_3__app_wrapper_vacans_vacans_component__["a" /* VacansComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_5__shared_service_guard_service__["a" /* AuthGuard */]] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_4__app_wrapper_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_5__shared_service_guard_service__["a" /* AuthGuard */]] },
-    { path: '', redirectTo: '/chat', pathMatch: 'full' },
-    { path: '**', redirectTo: '/chat', pathMatch: 'full' }
-];
-var ROUTING = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule */].forRoot(AppRoutes);
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/login-page/login-page.component.html":
+/***/ "./src/app/content/content.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"container-fluid wrapper\">\r\n  <div class=\"col-md-12\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4 col-md-offset-4 login\">\r\n        <h2>Log In Using Your Mobile</h2>\r\n        <div class=\"content-get-code\" *ngIf=\"getCodeShow\">\r\n          <form [formGroup]=\"loginForm\">\r\n            <label for=\"phone\">Please enter your phone number to receive the code:</label>\r\n            <input pattern=\"[0-9]*\" formControlName=\"phoneNumber\" id=\"phone\"  type=\"tel\" [(ngModel)]=\"phone\" >\r\n            <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"loginForm.invalid\" (click)=\"GetCode()\">Get Code</button>\r\n          </form>\r\n        </div>\r\n        <div class=\"content-get-code\" *ngIf=\"acceptCodeShow\">\r\n          <form [formGroup]=\"codeForm\">\r\n            <label for=\"code\">Enter code from SMS:</label>\r\n            <input formControlName=\"code\" id=\"code\" style=\"text-align: center;\"  type=\"text\" [(ngModel)]=\"code\">\r\n            <button class=\"btn btn-primary\" (click)=\"CheckCode()\" [disabled]=\"codeForm.invalid\">Accept Code</button>\r\n          </form>\r\n        </div>\r\n        <div class=\"register-user\" *ngIf=\"registerShow\" >\r\n          <form [formGroup]=\"nameForm\">\r\n            <div class=\"form-group\">\r\n              <label style=\"margin-top: 20px;\" for=\"name\">Name:</label>\r\n              <input formControlName=\"name\"  id=\"name\" style=\"text-align: center;\"  type=\"text\" [(ngModel)]=\"name\">\r\n            </div>\r\n            <button class=\"btn btn-primary\" (click)=\"reg()\" [disabled]=\"codeForm.invalid\">Register</button>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div> -->\r\n<div class=\"container-fluid wrapper\">\r\n  <div class=\"container\">\r\n    <div class=\"col-md-8 col-md-offset-2 login-form\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12 login-header\">\r\n          <div class=\"col-md-3\">\r\n            <img src=\"../../assets/logo.png\" alt=\"Logo\">\r\n          </div>\r\n          <div class=\"col-md-9\" style=\"padding: 0;\">\r\n            <span class=\"pull-right\" [ngClass]=\"{'span-active': getCodeShow || acceptCodeShow}\">Login</span>\r\n            <span class=\"pull-right\" [ngClass]=\"{'span-active': registerShow}\">Register</span>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12 login-body\">\r\n          <p>Welcome <span *ngIf=\"!registerShow\">back!</span></p>\r\n          <div *ngIf=\"getCodeShow || acceptCodeShow\" class=\"col-md-12 \">\r\n            <i class=\"fa fa-mobile\" aria-hidden=\"true\"></i>\r\n            <input type=\"text\" placeholder=\"Mobile phone\" [(ngModel)]=\"phone\" >\r\n          </div>\r\n          <div *ngIf=\"getCodeShow || acceptCodeShow\" class=\"col-md-12 input-row\">\r\n            <i class=\"material-icons\">lock_outline</i>\r\n            <!-- <i class=\"fa fa-lock\" aria-hidden=\"true\"></i> -->\r\n            <input type=\"text\" placeholder=\"Code from sms\" [(ngModel)]=\"code\">\r\n          </div>\r\n          <div *ngIf=\"registerShow\" class=\"col-md-12 input-row\">\r\n            <i class=\"fa fa-lock\" aria-hidden=\"true\"></i>\r\n            <input type=\"text\" placeholder=\"Name\" [(ngModel)]=\"name\">\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n              <button *ngIf=\"getCodeShow\" (click)=\"GetCode()\">\r\n                Enter\r\n                <i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i>\r\n              </button>\r\n              <button *ngIf=\"acceptCodeShow\" (click)=\"CheckCode()\">\r\n                Enter\r\n                <i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i>\r\n              </button>\r\n              <button *ngIf=\"registerShow\" (click)=\"reg()\">\r\n                Enter\r\n                <i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i>\r\n              </button>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = ""
 
 /***/ }),
 
-/***/ "../../../../../src/app/login-page/login-page.component.sass":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/app/content/content.component.html":
+/***/ (function(module, exports) {
 
-var escape = __webpack_require__("../../../../css-loader/lib/url/escape.js");
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".wrapper {\n  background-image: url(" + escape(__webpack_require__("../../../../../src/assets/bkg-login.png")) + ");\n  height: 100vh;\n  width: 100%;\n  background-size: 122%;\n  background-position-y: -302px;\n  background-position-x: -203px;\n  background-repeat: no-repeat; }\n  .wrapper .login-form {\n    margin-top: 45px;\n    -webkit-box-shadow: 10px 10px 90px -2px rgba(0, 0, 0, 0.49);\n    box-shadow: 10px 10px 90px -2px rgba(0, 0, 0, 0.49); }\n  .wrapper .login-header {\n    background-color: #0e1a35;\n    padding-top: 15px;\n    padding-right: 0; }\n  .wrapper .login-header span {\n      display: block;\n      color: #f2f3f4;\n      font-size: 14px;\n      margin: 17px 0 0 30px;\n      padding-bottom: 31px;\n      width: 100px;\n      text-align: center;\n      letter-spacing: 1.5px; }\n  .wrapper .login-header .span-active {\n      border-bottom: 4px solid #5584ff; }\n  .wrapper .login-header img {\n      width: 70px; }\n  .wrapper .login-body {\n    text-align: center;\n    background-color: #f6f7fa;\n    padding: 60px;\n    font-size: 16px; }\n  .wrapper .login-body button {\n      width: 45%;\n      margin-top: 50px;\n      background-color: #5584ff;\n      padding: 15px;\n      border-radius: 35px;\n      color: white;\n      outline: none;\n      border: none; }\n  .wrapper .login-body button:hover {\n        background-color: #1277f9;\n        cursor: pointer; }\n  .wrapper .login-body button i {\n        position: absolute;\n        right: 33%;\n        top: 64%;\n        font-size: 18px; }\n  .wrapper .login-body .input-row i {\n      position: absolute;\n      left: 145px;\n      top: 6px;\n      font-size: 18px;\n      color: #5584ff; }\n  .wrapper .login-body input {\n      background-color: transparent;\n      border: none;\n      border-bottom: 1px solid #d4d9e3;\n      width: 60%;\n      padding: 4px 10px 4px  40px;\n      outline: none;\n      margin-bottom: 30px;\n      color: #8492af; }\n  .wrapper .login-body input::-webkit-input-placeholder {\n        color: #8492af; }\n  .wrapper .login-body input:-ms-input-placeholder {\n        color: #8492af; }\n  .wrapper .login-body input::-ms-input-placeholder {\n        color: #8492af; }\n  .wrapper .login-body input::placeholder {\n        color: #8492af; }\n  .wrapper .login-body p {\n      font-size: 30px;\n      color: #8492af;\n      font-weight: 200;\n      margin-bottom: 50px; }\n  .wrapper .login-body p span {\n        color: #5584ff; }\n  .fa-mobile {\n  position: absolute;\n  left: 150px;\n  top: 6px;\n  font-size: 18px;\n  color: #5584ff; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
+module.exports = "<div class=\"col-md-9\" style=\"padding-right: 0;\">\r\n  <app-middle-block [photos]=\"photos\" ></app-middle-block>\r\n  <app-right-side-bar [photos]=\"photos\"></app-right-side-bar>\r\n  <app-footer-content></app-footer-content>\r\n</div>\r\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/login-page/login-page.component.ts":
+/***/ "./src/app/content/content.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPageComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_service_login_service__ = __webpack_require__("../../../../../src/app/shared/service/login.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_service_guard_service__ = __webpack_require__("../../../../../src/app/shared/service/guard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContentComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1397,117 +157,82 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-
-
-
-
-var ws = new WebSocket("wss://chatchatchat.ml/ws-api/", "protocolOne");
-var callbacks = {};
-ws.onmessage = function (e) {
-    console.log(e.data);
-    var m = JSON.parse(e.data);
-    callbacks[m.id](JSON.parse(m.payload));
-    delete callbacks[m.id];
-};
-var call = function (path, msg, callback) {
-    var id = 'r' + Math.random();
-    callbacks[id] = callback;
-    ws.send(JSON.stringify({
-        id: id,
-        path: path,
-        payload: JSON.stringify(msg),
-    }));
-};
-var LoginPageComponent = /** @class */ (function () {
-    function LoginPageComponent(fb, loginService, authGuard, router) {
-        this.fb = fb;
-        this.loginService = loginService;
-        this.authGuard = authGuard;
-        this.router = router;
-        this.getCodeShow = true;
-        this.acceptCodeShow = false;
-        this.registerShow = false;
-        this.phone = 80669461305;
-        this.name = "";
-        this.registration_token = "";
-        this.createForm();
+var ContentComponent = /** @class */ (function () {
+    function ContentComponent() {
+        this.photos = [
+            {
+                'globalName': 'Passport 2 from 2',
+                'details': [
+                    {
+                        'photoName': 'Passport1',
+                        'photoUrl': '../assets/passport.jpg'
+                    },
+                    {
+                        'photoName': 'Passport2',
+                        'photoUrl': '../assets/passport2.jpg'
+                    },
+                    {
+                        'photoName': 'Passport3',
+                        'photoUrl': '../assets/passport3.jpeg'
+                    },
+                ]
+            },
+            {
+                'globalName': 'Driver Licence 2 from 2',
+                'details': [
+                    {
+                        'photoName': 'Driver1',
+                        'photoUrl': '../assets/driver.jpg'
+                    },
+                    {
+                        'photoName': 'Driver2',
+                        'photoUrl': '../assets/driver2.jpg'
+                    },
+                    {
+                        'photoName': 'Driver3',
+                        'photoUrl': '../assets/driver3.jpg'
+                    },
+                ]
+            },
+        ];
     }
-    LoginPageComponent.prototype.createForm = function () {
-        this.loginForm = this.fb.group({
-            phoneNumber: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required] // <--- the FormControl called "name"
-        });
-        this.codeForm = this.fb.group(({
-            code: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required]
-        }));
-        this.nameForm = this.fb.group(({
-            name: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required]
-        }));
+    ContentComponent.prototype.ngOnInit = function () {
     };
-    LoginPageComponent.prototype.ngOnInit = function () {
-        // setTimeout(() => {
-        //   call("debug-listen-sms", {}, function(res) {
-        //     alert(res.text);
-        //   });
-        //   call("phone1", {phone: "34324234234"}, function(res) {
-        //     alert(res.text);
-        //   });
-        // }, 2222);
-    };
-    LoginPageComponent.prototype.GetCode = function () {
-        var _this = this;
-        this.getCodeShow = false;
-        this.acceptCodeShow = true;
-        this.loginService.sendPhone(this.phone).subscribe(function (data) {
-            console.log(data);
-            _this.challenge_id = data.challenge_id;
-            _this.code = 111111;
-        });
-    };
-    LoginPageComponent.prototype.CheckCode = function () {
-        var _this = this;
-        this.loginService.checkCode(this.phone, this.code, this.challenge_id).subscribe(function (data) {
-            console.log(data);
-            if (data.not_registered) {
-                _this.registration_token = data.not_registered.registration_token;
-                _this.getCodeShow = false;
-                _this.acceptCodeShow = false;
-                _this.registerShow = true;
-            }
-            else {
-                _this.authGuard.setCredentials(data.credentials);
-                _this.router.navigate(['/chat']);
-            }
-        });
-    };
-    LoginPageComponent.prototype.reg = function () {
-        var _this = this;
-        this.loginService.reg(this.phone, this.registration_token, this.name).subscribe(function (data) {
-            console.log(data);
-            _this.authGuard.setCredentials(data.credentials);
-            _this.router.navigate(['/chat']);
-        });
-    };
-    LoginPageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-login-page',
-            template: __webpack_require__("../../../../../src/app/login-page/login-page.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/login-page/login-page.component.sass")]
+    ContentComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'app-content',
+            template: __webpack_require__("./src/app/content/content.component.html"),
+            styles: [__webpack_require__("./src/app/content/content.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormBuilder"], __WEBPACK_IMPORTED_MODULE_2__shared_service_login_service__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_3__shared_service_guard_service__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]])
-    ], LoginPageComponent);
-    return LoginPageComponent;
+        __metadata("design:paramtypes", [])
+    ], ContentComponent);
+    return ContentComponent;
 }());
 
 
 
 /***/ }),
 
-/***/ "../../../../../src/app/selected-item.service.ts":
+/***/ "./src/app/content/footer-content/footer-content.component.css":
+/***/ (function(module, exports) {
+
+module.exports = "/deep/ .mat-tab-header-pagination  {\r\n  display: none !important;\r\n}\r\n\r\n/deep/ .mat-ripple-element {\r\n  display: none !important;\r\n}\r\n\r\n/*HIDE unuse elements in tabs*/\r\n\r\n.wrapper-footer{\r\n  clear: both;\r\n  padding-top: 5px;\r\n}\r\n\r\n/*STYLE TABS*/\r\n\r\n/deep/ .wrapper-footer .mat-tab-label {\r\n  background-color: #efeeef;\r\n  border: 1px solid #b7b3b3 ;\r\n  height: 25px!important;\r\n}\r\n\r\n/deep/  .mat-tab-label:hover {\r\n  background-color: #d5d4d5;\r\n}\r\n\r\n/deep/ .mat-tab-labels{\r\n  display: block!important;\r\n}\r\n\r\n/deep/ .wrapper-footer .mat-tab-label-active {\r\n  background-color: #fff;\r\n  border: 1px solid #b7b3b3;\r\n  font-weight: bold;\r\n  opacity: 1;\r\n}\r\n\r\n/*STYLE TABS*/\r\n\r\n/*CUSTOM STYLES*/\r\n\r\n.search{\r\n  padding: 10px 0;\r\n}\r\n\r\n.search input{\r\n  border: 1px solid #d9d7d9;\r\n  outline: none;\r\n  padding: 0 10px;\r\n  height: 26px;\r\n}\r\n\r\n.my-table{\r\n  padding: 5px 10px;\r\n  border: 1px solid #b7b3b3;\r\n  min-height: 173px;\r\n  max-height: 173px;\r\n  overflow-y: auto;\r\n}\r\n\r\n.my-table table{\r\n  width: 100%;\r\n}\r\n\r\n.my-table table td {\r\n  padding: 5px 10px;\r\n}\r\n\r\n.my-table table td:first-child {\r\n  font-weight: bold;\r\n}\r\n\r\n.my-table table td:nth-child(2) {\r\n  font-weight: bold;\r\n  padding-left: 20px;\r\n}\r\n\r\n.my-table table td:nth-child(3) {\r\n  font-weight: bold;\r\n  padding-left: 20px;\r\n  color: red;\r\n  text-align: center;\r\n}\r\n\r\n.my-table table td:nth-child(4) {\r\n  font-weight: bold;\r\n  padding-left: 10px;\r\n}\r\n\r\n.my-table table td:nth-child(3) i {\r\n  margin: 0 3px;\r\n}\r\n\r\n.my-table table {\r\n  border-collapse: collapse;\r\n}\r\n\r\n.my-table table, th, td {\r\n  border: 1px solid #b7b3b3;\r\n\r\n}\r\n\r\n.right-table {\r\n  padding: 5px 10px;\r\n  border: 1px solid #b7b3b3;\r\n  min-height: 173px;\r\n  max-height: 173px;\r\n  overflow-y: auto;\r\n  font-weight: bold;\r\n}\r\n\r\n.right-table table{\r\n  width: 100%;\r\n}\r\n\r\n.right-table table td {\r\n  padding: 5px 10px;\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/content/footer-content/footer-content.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"col md-12 wrapper-footer\">\r\n  <mat-tab-group [@.disabled]=\"true\">\r\n    <mat-tab label=\"Обзор дел\">\r\n      <div class=\"col-md-12 search\">\r\n        <span>Поиск:</span>\r\n        <input type=\"text\">\r\n      </div>\r\n      <div class=\"col-md-8 my-table table-responsive\">\r\n        <table class=\"table-striped\">\r\n          <tr>\r\n            <td>274485973645</td>\r\n            <td>Куренков В.А.</td>\r\n            <td>\r\n              <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n              <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n              <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n            </td>\r\n            <td>\r\n              10.03.18 17:04\r\n            </td>\r\n          </tr>\r\n          <tr>\r\n            <td>274485973645</td>\r\n            <td>Куренков В.А.</td>\r\n            <td>\r\n              <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n              <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n              <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n            </td>\r\n            <td>\r\n              10.03.18 17:04\r\n            </td>\r\n          </tr>\r\n          <tr>\r\n            <td>274485973645</td>\r\n            <td>Куренков В.А.</td>\r\n            <td>\r\n              <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n              <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n              <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n            </td>\r\n            <td>\r\n              10.03.18 17:04\r\n            </td>\r\n          </tr>\r\n          <tr>\r\n            <td>274485973645</td>\r\n            <td>Куренков В.А.</td>\r\n            <td>\r\n              <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n              <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n              <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n            </td>\r\n            <td>\r\n              10.03.18 17:04\r\n            </td>\r\n          </tr>\r\n          <tr>\r\n            <td>274485973645</td>\r\n            <td>Куренков В.А.</td>\r\n            <td>\r\n              <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n              <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n              <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n            </td>\r\n            <td>\r\n              10.03.18 17:04\r\n            </td>\r\n          </tr>          <tr>\r\n          <td>274485973645</td>\r\n          <td>Куренков В.А.</td>\r\n          <td>\r\n            <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n            <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n            <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n          </td>\r\n          <td>\r\n            10.03.18 17:04\r\n          </td>\r\n        </tr>\r\n          <tr>\r\n            <td>274485973645</td>\r\n            <td>Куренков В.А.</td>\r\n            <td>\r\n              <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n              <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n              <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\r\n            </td>\r\n            <td>\r\n              10.03.18 17:04\r\n            </td>\r\n          </tr>\r\n\r\n        </table>\r\n      </div>\r\n      <div class=\"col-md-4 right-table table-responsive\">\r\n        <table class=\"table-striped\">\r\n          <tr>\r\n            <td>10.03.18 17:04</td>\r\n            <td>Регистрация дела</td>\r\n            <td>\r\n              Куренков В.А.\r\n            </td>\r\n          </tr>\r\n          <tr>\r\n            <td>10.03.18 17:04</td>\r\n            <td>Регистрация дела</td>\r\n            <td>\r\n              Куренков В.А.\r\n            </td>\r\n          </tr>\r\n          <tr>\r\n            <td>10.03.18 17:04</td>\r\n            <td>Регистрация дела</td>\r\n            <td>\r\n              Куренков В.А.\r\n            </td>\r\n          </tr>\r\n          <tr>\r\n            <td>10.03.18 17:04</td>\r\n            <td>Регистрация дела</td>\r\n            <td>\r\n              Куренков В.А.\r\n            </td>\r\n          </tr>\r\n          <tr>\r\n            <td>10.03.18 17:04</td>\r\n            <td>Регистрация дела</td>\r\n            <td>\r\n              Куренков В.А.\r\n            </td>\r\n          </tr>\r\n          <tr>\r\n            <td>10.03.18 17:04</td>\r\n            <td>Регистрация дела</td>\r\n            <td>\r\n              Куренков В.А.\r\n            </td>\r\n          </tr>\r\n          <tr>\r\n            <td>10.03.18 17:04</td>\r\n            <td>Регистрация дела</td>\r\n            <td>\r\n              Куренков В.А.\r\n            </td>\r\n          </tr>\r\n        </table>\r\n\r\n      </div>\r\n    </mat-tab>\r\n    <mat-tab label=\"Работа с курьером\">Работа с курьером</mat-tab>\r\n    <mat-tab label=\"Служебная переписка\">Служебная переписка</mat-tab>\r\n    <mat-tab label=\"Дела от аварийных комиссаров\">Дела от аварийных комиссаров</mat-tab>\r\n    <mat-tab label=\"Проверка ОСАГО\">Проверка ОСАГО</mat-tab>\r\n  </mat-tab-group>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/content/footer-content/footer-content.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SelectedItemService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FooterContentComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1518,12 +243,249 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+var FooterContentComponent = /** @class */ (function () {
+    function FooterContentComponent() {
+    }
+    FooterContentComponent.prototype.ngOnInit = function () {
+    };
+    FooterContentComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'app-footer-content',
+            template: __webpack_require__("./src/app/content/footer-content/footer-content.component.html"),
+            styles: [__webpack_require__("./src/app/content/footer-content/footer-content.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], FooterContentComponent);
+    return FooterContentComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/content/middle-block/middle-block.component.css":
+/***/ (function(module, exports) {
+
+module.exports = "/*HIDE unuse elements in tabs*/\r\n/deep/ .mat-tab-header-pagination  {\r\n  display: none !important;\r\n}\r\n/deep/ .mat-ripple-element {\r\n  display: none !important;\r\n}\r\n/*HIDE unuse elements in tabs*/\r\n.wrapper-middle{\r\n  -webkit-box-shadow: 0 0 5px 3px #88888847;\r\n  box-shadow: 0 0 5px 3px #88888847;\r\n  padding: 0;\r\n}\r\n/*STYLE TABS*/\r\n/deep/ .wrapper-middle .mat-tab-label {\r\n  background-color: #efeeef;\r\n  border: 1px solid #b7b3b3 ;\r\n  height: 25px!important;\r\n  width: 180px!important;\r\n\r\n}\r\n/deep/ .mat-tab-label:hover {\r\n  background-color: #d5d4d5;\r\n}\r\n/deep/ .mat-tab-labels{\r\n  display: block!important;\r\n}\r\n/deep/ .wrapper-middle .mat-tab-label-active {\r\n  background-color: #fff;\r\n  border: 1px solid #b7b3b3;\r\n  font-weight: bold;\r\n  opacity: 1;\r\n}\r\n.tab-body{\r\n  border: 1px solid #cccbcc;\r\n  min-height: calc(100vh - 324px);\r\n  max-height: calc(100vh - 324px);\r\n  overflow-y: auto;\r\n  text-align: center;\r\n  padding-top: 10px;\r\n  padding-bottom: 10px;\r\n}\r\n.tab-body img {\r\n  width: 40%;\r\n}\r\n/deep/ .mat-tab-label-container {\r\n  border-right: 1px solid #cccbcc ;\r\n}\r\n.img-controls{\r\n  border-left: 1px solid #cccbcc;\r\n  border-right: 1px solid #cccbcc;\r\n  border-bottom: 1px solid #cccbcc;\r\n  text-align: center;\r\n  height: 40px ;\r\n  padding: 5px 0;\r\n}\r\n.img-controls span {\r\n  text-align: center;\r\n  background-color: #e8e6e8;\r\n  height: 100%;\r\n  display: inline-block;\r\n  vertical-align: bottom;\r\n  width: 30px;\r\n  border: 1px solid rgb(169, 169, 169);\r\n  cursor: pointer;\r\n}\r\n.img-controls span:hover {\r\n  background-color: #cccacc;\r\n}\r\n.img-controls i {\r\n  font-size: 25px;\r\n  font-weight: bolder;\r\n  color: #5698cf;\r\n  padding-top: 1px;\r\n}\r\n.img-controls select {\r\n  height: 100%;\r\n  width: 100px ;\r\n  background-color: #e8e6e8;\r\n  outline: none;\r\n}\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/content/middle-block/middle-block.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"col-md-9 wrapper-middle\">\r\n  <mat-tab-group [@.disabled]=\"true\">\r\n    <mat-tab label=\"Сопровождение дела\">\r\n      <div *ngIf= \"item !== undefined\">\r\n        <div class=\"col-md-12 tab-body\">\r\n          <img [src]=\"photos[item].details[index].photoUrl\" alt=\"passport\" (click)=\"test()\" >\r\n        </div>\r\n        <div class=\"col-md-12 img-controls\">\r\n          <select [(ngModel)]=\"index\">\r\n            <option *ngFor=\"let c of photos[item].details;let i = index\" [value]=\"i\">{{c.photoName}}</option>\r\n          </select>\r\n          <span (click)=\"prevPhoto()\">\r\n          <i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i>\r\n        </span>\r\n          <span (click)=\"nextPhoto()\">\r\n          <i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i>\r\n        </span>\r\n        </div>\r\n      </div>\r\n      <div *ngIf=\"item == undefined\" >\r\n        <div class=\"col-md-12 tab-body\" style=\"min-height: calc(100vh - 285px)\">\r\n          <p style=\"position: absolute;text-align: center;top: 41%;left: 40%;font-weight: bold;\">Нет изображения для просмотра</p>\r\n        </div>\r\n      </div>\r\n    </mat-tab>\r\n    <mat-tab label=\"Работа по ОСАГО\">\r\n      <div class=\"col-md-12 tab-body\">\r\n        asdasdadaLorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, natus, quasi! Atque cumque dicta dolore doloremque, dolores eum itaque laudantium maiores minus nobis quod similique sint voluptates? Assumenda exercitationem facilis, fugit magnam magni quidem. Cum iste labore libero minima quam quas quidem sunt ut vitae. Blanditiis consectetur doloremque eaque eligendi!\r\n      </div>\r\n    </mat-tab>\r\n  </mat-tab-group>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/content/middle-block/middle-block.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MiddleBlockComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__selected_item_service__ = __webpack_require__("./src/app/selected-item.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var MiddleBlockComponent = /** @class */ (function () {
+    function MiddleBlockComponent(selectedItem) {
+        this.selectedItem = selectedItem;
+        this.index = 0;
+    }
+    MiddleBlockComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.selectedItem.currentItem.subscribe(function (item) { return _this.item = item; });
+        this.selectedItem.currentPhoto.subscribe(function (index) { return _this.index = index; });
+    };
+    //   ngAfterViewChecked() {
+    //     this.detailPhotoIndex = this.index;
+    //     console.log(this.index);
+    //
+    // }
+    MiddleBlockComponent.prototype.nextPhoto = function () {
+        if (this.index < this.photos[this.item].details.length - 1) {
+            this.index = this.index + 1;
+            console.log(this.index);
+        }
+    };
+    MiddleBlockComponent.prototype.prevPhoto = function () {
+        if (this.index > 0) {
+            this.index = this.index - 1;
+            console.log(this.index);
+        }
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Input */])(),
+        __metadata("design:type", Object)
+    ], MiddleBlockComponent.prototype, "photos", void 0);
+    MiddleBlockComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'app-middle-block',
+            template: __webpack_require__("./src/app/content/middle-block/middle-block.component.html"),
+            styles: [__webpack_require__("./src/app/content/middle-block/middle-block.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__selected_item_service__["a" /* SelectedItemService */]])
+    ], MiddleBlockComponent);
+    return MiddleBlockComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/content/right-side-bar/right-side-bar.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ".wrapper-right-side{\r\n  border: 1px solid #cccbcc;\r\n  min-height: calc(100vh - 261px);\r\n  max-height: calc(100vh - 261px);\r\n  -webkit-box-shadow: 0 0 5px 3px #88888847;\r\n  box-shadow: 0 0 5px 3px #88888847;\r\n  padding-top: 17px;\r\n  width: 24%;\r\n  margin-left: 1%;\r\n}\r\n.wrapper-right-side p {\r\n  padding: 5px 17px;\r\n  margin-bottom: 0;\r\n}\r\n.wrapper-right-side p:hover{\r\n  cursor: pointer;\r\n  background-color: #e2e1e2\r\n}\r\n.wrapper-right-side .fa-ban{\r\n  font-size: 19px;\r\n  margin-right: 3px;\r\n  vertical-align: bottom;\r\n  color: red;\r\n}\r\n.wrapper-right-side .fa-check{\r\n  font-size: 19px;\r\n  vertical-align: bottom;\r\n  color: green;\r\n}\r\n.active {\r\n  background-color: #e2e1e2;\r\n}\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/content/right-side-bar/right-side-bar.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"col-md-3 wrapper-right-side\">\r\n  <div class=\"row\">\r\n    <p *ngFor=\"let photo of photos;let i = index\" (click)=\"selectItem(i)\" [ngClass]=\"{ 'active': mySelectedItem == i }\">\r\n      <span><i class=\"fa fa-check\" aria-hidden=\"true\"></i></span>\r\n      <span>{{ photo.globalName }}</span>\r\n    </p>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/content/right-side-bar/right-side-bar.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RightSideBarComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__selected_item_service__ = __webpack_require__("./src/app/selected-item.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var RightSideBarComponent = /** @class */ (function () {
+    function RightSideBarComponent(selectedItem) {
+        this.selectedItem = selectedItem;
+    }
+    RightSideBarComponent.prototype.ngOnInit = function () {
+    };
+    RightSideBarComponent.prototype.selectItem = function (index) {
+        this.mySelectedItem = index;
+        this.selectedItem.changeItem(this.mySelectedItem);
+        this.selectedItem.changePhoto(0);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Input */])(),
+        __metadata("design:type", Object)
+    ], RightSideBarComponent.prototype, "photos", void 0);
+    RightSideBarComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'app-right-side-bar',
+            template: __webpack_require__("./src/app/content/right-side-bar/right-side-bar.component.html"),
+            styles: [__webpack_require__("./src/app/content/right-side-bar/right-side-bar.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__selected_item_service__["a" /* SelectedItemService */]])
+    ], RightSideBarComponent);
+    return RightSideBarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/left-side-bar/left-side-bar.component.css":
+/***/ (function(module, exports) {
+
+module.exports = "/*HIDE unuse elements in tabs*/\r\n/deep/ .mat-tab-header-pagination  {\r\n  display: none !important;\r\n}\r\n/deep/ .mat-ripple-element {\r\n  display: none !important;\r\n}\r\n/*HIDE unuse elements in tabs*/\r\n.wrapper{\r\n  padding: 0;\r\n  -webkit-box-shadow: 0 0 5px 3px #88888847;\r\n  box-shadow: 0 0 5px 3px #88888847;\r\n}\r\n/*STYLE TABS*/\r\n/deep/ .wrapper .mat-tab-label {\r\n  background-color: #efeeef;\r\n  border: 1px solid #b7b3b3 ;\r\n  height: 25px!important;\r\n  min-width: 50%!important;\r\n  width: 50%;\r\n\r\n}\r\n/deep/  .mat-tab-label:hover {\r\n  background-color: #d5d4d5;\r\n}\r\n/deep/ .mat-tab-labels{\r\n  display: block!important;\r\n}\r\n/deep/ .wrapper .mat-tab-label-active {\r\n  background-color: #fff;\r\n  border: 1px solid #b7b3b3;\r\n  font-weight: bold;\r\n  opacity: 1;\r\n}\r\n.tab-body{\r\n  border-left: 1px solid #cccbcc;\r\n  border-right: 1px solid #cccbcc;\r\n  border-bottom: 1px solid #cccbcc;\r\n  padding-top: 10px;\r\n  min-height: calc(100vh - 264px); ;\r\n  max-height: calc(100vh - 264px);\r\n  overflow-y: auto;\r\n}\r\n.tab-body input {\r\n  width: 100%;\r\n  border: 1px solid #d9d7d9;\r\n  outline: none;\r\n  padding: 0 10px;\r\n  height: 26px;\r\n}\r\n.tab-body textarea {\r\n  width: 100%;\r\n  border: 1px solid #d9d7d9;\r\n  outline: none;\r\n  padding: 0 10px;\r\n  height: 50px;\r\n}\r\n.tab-body select {\r\n  width: 100%;\r\n  border: 1px solid #d9d7d9;\r\n  outline: none;\r\n  padding: 0 10px;\r\n  height: 26px;\r\n}\r\n.tab-body .col-md-5 {\r\n  padding: 0;\r\n}\r\n.tab-body .row {\r\n  margin: 10px 0;\r\n}\r\n.check input {\r\n  width: 15px;\r\n  vertical-align: middle;\r\n  margin-bottom: 3px;\r\n}\r\n.check span {\r\n\r\n}\r\n/*STYLE TABS*/\r\n/*FOOTER LEFT SIDE STYLES*/\r\n.left-side-footer span {\r\n  display: block;\r\n}\r\n.left-side-footer {\r\n  padding: 0;\r\n}\r\n.footer-body {\r\n  border-top: 1px solid #b7b3b3;\r\n  border-right: 1px solid #b7b3b3;\r\n  border-bottom: 1px solid #b7b3b3;\r\n  padding: 0;\r\n}\r\n.footer-body .row {\r\n  margin: 10px 0;\r\n  padding-left: 20px;\r\n}\r\n.footer-body .row:hover {\r\n  cursor: pointer;\r\n  background-color: #e2e1e2;\r\n}\r\n.controls{\r\n  border-right: 1px solid #b7b3b3;\r\n}\r\n.controls button  {\r\n  margin: 5px 5px;\r\n  background-color: buttonface\r\n}\r\n.controls select  {\r\n  margin: 5px 0px;\r\n  height: 26px;\r\n  background-color: buttonface;\r\n  width: 90px;\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/left-side-bar/left-side-bar.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"col-md-3 wrapper\">\r\n  <mat-tab-group [@.disabled]=\"true\">\r\n    <div class=\"col-md-12\">\r\n      <!--TAB ВОДИТЕЛЬ START-->\r\n      <mat-tab label=\"Водитель\">\r\n        <div class=\"col-md-12 tab-body\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-12 check\">\r\n              <input type=\"checkbox\">\r\n              <span>Транспортным средством управлял собственник</span>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <span style=\"font-weight: bold;\">Персональные данные:</span>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Имя:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Фамилия:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Отчество:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Паспорт серия номер:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Кем выдан:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <textarea></textarea>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Когда выдан:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"date\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Дата рождения:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"date\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Место рождения:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Адрес:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <textarea></textarea>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Дата выдачи ВУ:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"date\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Кем выдан ВУ:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Номер ВУ:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Страховой полис номер:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Страховая компания:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <select>\r\n                <option>Пункт 1</option>\r\n                <option>Пункт 2</option>\r\n              </select>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Адрес страховой:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <textarea></textarea>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Страховой полис годен до:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"date\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>E-mail:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"email\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Номер телефона 1:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"tel\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Номер телефона 2:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"tel\">\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </mat-tab>\r\n      <!--TAB ВОДИТЕЛЬ END-->\r\n\r\n      <!--TAB АВТОМОБИЛЬ START-->\r\n      <mat-tab label=\"Автомобиль\">\r\n        <div class=\"col-md-12 tab-body\">\r\n          <div class=\"row\">\r\n            <span style=\"font-weight: bold;\">Автомобиль:</span>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>Тип ТС:</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <select>\r\n                  <option>Пункт 1</option>\r\n                  <option>Пункт 2</option>\r\n                </select>\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>Гос. номер:</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <input type=\"text\">\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Марка:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <select>\r\n                <option>Пункт 1</option>\r\n                <option>Пункт 2</option>\r\n              </select>\r\n            </div>\r\n          </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>Модель:</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <select>\r\n                  <option>Пункт 1</option>\r\n                  <option>Пункт 2</option>\r\n                </select>\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>Страна производитель:</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <select>\r\n                  <option>Пункт 1</option>\r\n                  <option>Пункт 2</option>\r\n                </select>\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>Год выпуска ТС:</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <input type=\"number\">\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>Дата начала эксплуатации:</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <input type=\"date\">\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>Год выпуска кузова:</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <input type=\"number\">\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>Номер кузова(шасси):</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <input type=\"text\">\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>Номер рамы:</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <input type=\"text\">\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>Номер ПТС:</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <input type=\"text\">\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>Дата выдачи ПТС:</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <input type=\"date\">\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>Номер СоРТС:</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <input type=\"text\">\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>Дата выдачи СоРТС:</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <input type=\"date\">\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>VIN:</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <input type=\"text\">\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>Мощность(л.с):</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <input type=\"number\">\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>Цвет:</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <select>\r\n                  <option>Пункт 1</option>\r\n                  <option>Пункт 2</option>\r\n                </select>\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>Тип ЛКП:</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <select>\r\n                  <option>Пункт 1</option>\r\n                  <option>Пункт 2</option>\r\n                </select>\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>Пробег:</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <input type=\"text\">\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-5\">\r\n                <span>Номер двигателя:</span>\r\n              </div>\r\n              <div class=\"col-md-7\">\r\n                <input type=\"text\">\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </mat-tab>\r\n      <!--TAB АВТОМОБИЛЬ END-->\r\n    </div>\r\n    <div class=\"col-md-12\">\r\n      <mat-tab label=\"Сведенья о ДТП\">\r\n        <div class=\"col-md-12 tab-body\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Адрес:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Дата ДТП:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"date\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Стоимость уступаемых:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Цессионарий:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Коментарий:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </mat-tab>\r\n      <mat-tab label=\"Собственник\">\r\n        <div class=\"col-md-12 tab-body\">\r\n          <div class=\"row\">\r\n            <div style=\"padding: 0;\" class=\"col-md-12 check\">\r\n              <div class=\"col-md-12\">\r\n                <input type=\"radio\" id=\"contactChoice1\"\r\n                       name=\"contact\" value=\"phys\">\r\n                <label style=\"font-weight: normal;\" for=\"contactChoice1\">Физическое лицо</label>\r\n              </div>\r\n              <div class=\"col-md-12\">\r\n                <input type=\"radio\" id=\"contactChoice2\"\r\n                       name=\"contact\" value=\"urid\">\r\n                <label style=\"font-weight: normal;\" for=\"contactChoice2\">Юридическое лицо</label>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <span style=\"font-weight: bold;\">Персональные данные:</span>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Имя:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Фамилия:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Отчество:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Паспорт серия номер:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Кем выдан:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <textarea></textarea>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Когда выдан:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"date\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Дата рождения:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"date\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Место рождения:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Адрес:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <textarea></textarea>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Дата выдачи ВУ:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"date\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Кем выдан ВУ:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Номер ВУ:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Страховой полис номер:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"text\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Страховая компания:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <select>\r\n                <option>Пункт 1</option>\r\n                <option>Пункт 2</option>\r\n              </select>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Адрес страховой:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <textarea></textarea>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Страховой полис годен до:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"date\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>E-mail:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"email\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Номер телефона 1:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"tel\">\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"col-md-5\">\r\n              <span>Номер телефона 2:</span>\r\n            </div>\r\n            <div class=\"col-md-7\">\r\n              <input type=\"tel\">\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </mat-tab>\r\n    </div>\r\n  </mat-tab-group>\r\n  <div class=\"col-md-12 left-side-footer\">\r\n    <span style=\"padding: 3px 9px;border-right: 1px solid #b7b3b3;\">Участники ДТП</span>\r\n    <div class=\"col-md-12 footer-body\">\r\n      <div class=\"row\">\r\n        <span style=\"font-weight: bold;\">Куренков В.А( Пострадавший )</span>\r\n        <span>MAZDA MPV</span>\r\n        <span>Водитель: Куренков В.А </span>\r\n      </div>\r\n      <div class=\"row\">\r\n        <span style=\"font-weight: bold;\">Куренков В.А( Виновник )</span>\r\n        <span>MAZDA MPV</span>\r\n        <span>Водитель: Куренков В.А </span>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-md-12 controls\">\r\n      <button>Добавить</button>\r\n      <select>\r\n        <option>Виновник</option>\r\n        <option>Пострадавший</option>\r\n      </select>\r\n      <button>Удалить</button>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/left-side-bar/left-side-bar.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LeftSideBarComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var LeftSideBarComponent = /** @class */ (function () {
+    function LeftSideBarComponent() {
+    }
+    LeftSideBarComponent.prototype.ngOnInit = function () {
+    };
+    LeftSideBarComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'app-left-side-bar',
+            template: __webpack_require__("./src/app/left-side-bar/left-side-bar.component.html"),
+            styles: [__webpack_require__("./src/app/left-side-bar/left-side-bar.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], LeftSideBarComponent);
+    return LeftSideBarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/selected-item.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SelectedItemService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__ = __webpack_require__("./node_modules/rxjs/_esm5/BehaviorSubject.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
 var SelectedItemService = /** @class */ (function () {
     function SelectedItemService() {
-        this.changeEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.selectedItemSource = new __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__["a" /* BehaviorSubject */](undefined);
+        this.selectedPhoto = new __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__["a" /* BehaviorSubject */](0);
+        this.currentItem = this.selectedItemSource.asObservable();
+        this.currentPhoto = this.selectedPhoto.asObservable();
     }
+    SelectedItemService.prototype.changeItem = function (item) {
+        this.selectedItemSource.next(item);
+    };
+    SelectedItemService.prototype.changePhoto = function (index) {
+        this.selectedPhoto.next(index);
+    };
     SelectedItemService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* Injectable */])(),
         __metadata("design:paramtypes", [])
     ], SelectedItemService);
     return SelectedItemService;
@@ -1533,282 +495,7 @@ var SelectedItemService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/shared/service/chat.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__guard_service__ = __webpack_require__("../../../../../src/app/shared/service/guard.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var ChatService = /** @class */ (function () {
-    function ChatService(http, authGuard) {
-        this.http = http;
-        this.authGuard = authGuard;
-    }
-    ChatService.prototype.myChats = function () {
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_2__guard_service__["b" /* apiUrl */] + 'my-chats', this.authGuard.getCredentials());
-    };
-    ChatService.prototype.chatInfo = function (another_user_id, older_messages_token) {
-        var obj = this.authGuard.getCredentials();
-        obj.another_user_id = another_user_id;
-        if (older_messages_token) {
-            obj.older_messages_token = older_messages_token;
-        }
-        else {
-            delete obj.older_messages_token;
-        }
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_2__guard_service__["b" /* apiUrl */] + 'chat-info', obj);
-    };
-    ChatService.prototype.chatSend = function (another_user_id, answer_id, text) {
-        var obj = this.authGuard.getCredentials();
-        obj.another_user_id = another_user_id;
-        obj.answer_id = answer_id;
-        obj.text = text;
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_2__guard_service__["b" /* apiUrl */] + 'chat-send', obj);
-    };
-    ChatService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__guard_service__["a" /* AuthGuard */]])
-    ], ChatService);
-    return ChatService;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/shared/service/guard.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export url */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return apiUrl; });
-/* unused harmony export wsUrl */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuard; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-// export const url = 'ws://51.15.65.96:8080/';
-// export const apiUrl = 'http://51.15.65.96:8080/json-api/';
-// export const wsUrl = 'ws://51.15.65.96:8080/ws-api/';
-var url = 'wss://chatchatchat.ml/';
-var apiUrl = 'https://chatchatchat.ml/json-api/';
-var wsUrl = 'ws://51.15.65.96:8080/ws-api/';
-var AuthGuard = /** @class */ (function () {
-    function AuthGuard(router) {
-        this.router = router;
-        this.isLoggedIn = false;
-    }
-    AuthGuard.prototype.setCredentials = function (credentials) {
-        this.credentials = credentials;
-    };
-    AuthGuard.prototype.getCredentials = function () {
-        return this.credentials;
-    };
-    AuthGuard.prototype.canActivate = function () {
-        if (!this.credentials) {
-            this.router.navigate(['/login']);
-            return false;
-        }
-        else {
-            return true;
-        }
-    };
-    AuthGuard = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* Router */]])
-    ], AuthGuard);
-    return AuthGuard;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/shared/service/login.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__guard_service__ = __webpack_require__("../../../../../src/app/shared/service/guard.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var LoginService = /** @class */ (function () {
-    function LoginService(http) {
-        this.http = http;
-    }
-    LoginService.prototype.sendPhone = function (phone) {
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_2__guard_service__["b" /* apiUrl */] + 'phone1', { phone: phone.toString() });
-    };
-    LoginService.prototype.checkCode = function (phone, code, challenge_id) {
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_2__guard_service__["b" /* apiUrl */] + 'login3', { phone: phone.toString(), code: code.toString(), challenge_id: challenge_id.toString() });
-    };
-    LoginService.prototype.reg = function (phone, registration_token, name) {
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_2__guard_service__["b" /* apiUrl */] + 'register3', { phone: phone.toString(), registration_token: registration_token.toString(), name: name.toString() });
-    };
-    LoginService.prototype.debug = function () {
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_2__guard_service__["b" /* apiUrl */] + 'debug-listen-sms', {});
-    };
-    LoginService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
-    ], LoginService);
-    return LoginService;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/shared/service/profile.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__guard_service__ = __webpack_require__("../../../../../src/app/shared/service/guard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var ProfileService = /** @class */ (function () {
-    function ProfileService(http, authGuard) {
-        this.http = http;
-        this.authGuard = authGuard;
-        this.getProfile().subscribe(function (data) {
-            console.log(data);
-        });
-    }
-    ProfileService.prototype.getProfile = function () {
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_1__guard_service__["b" /* apiUrl */] + 'profile', this.authGuard.getCredentials());
-    };
-    ProfileService.prototype.setProfile = function (profile) {
-        var obj = this.authGuard.getCredentials();
-        profile.adverter_id = obj.user_id;
-        obj.profile = profile;
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_1__guard_service__["b" /* apiUrl */] + 'set-profile', obj);
-    };
-    ProfileService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_1__guard_service__["a" /* AuthGuard */]])
-    ], ProfileService);
-    return ProfileService;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/shared/service/vacans.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VacansService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__guard_service__ = __webpack_require__("../../../../../src/app/shared/service/guard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__profile_service__ = __webpack_require__("../../../../../src/app/shared/service/profile.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var VacansService = /** @class */ (function () {
-    function VacansService(http, authGuard, profileService) {
-        this.http = http;
-        this.authGuard = authGuard;
-        this.profileService = profileService;
-        this.refreshEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-    }
-    VacansService.prototype.createVac = function (advert) {
-        var obj = this.authGuard.getCredentials();
-        advert.adverter_id = obj.user_id;
-        obj.advert = advert;
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_1__guard_service__["b" /* apiUrl */] + 'advert', obj);
-    };
-    VacansService.prototype.getVac = function () {
-        var obj = this.authGuard.getCredentials();
-        obj.target_id = obj.user_id;
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_1__guard_service__["b" /* apiUrl */] + 'user-adverts', obj);
-    };
-    VacansService.prototype.closeVac = function (advert) {
-        console.log(advert);
-        var obj = this.authGuard.getCredentials();
-        obj.advert_id = advert.advert_id;
-        obj.location = advert.advert.location || "";
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_1__guard_service__["b" /* apiUrl */] + 'close-advert', this.authGuard.getCredentials());
-    };
-    VacansService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_1__guard_service__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_3__profile_service__["a" /* ProfileService */]])
-    ], VacansService);
-    return VacansService;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/assets/bkg-login.png":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "bkg-login.bc8b5fe5695017d3349c.png";
-
-/***/ }),
-
-/***/ "../../../../../src/environments/environment.ts":
+/***/ "./src/environments/environment.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1824,21 +511,21 @@ var environment = {
 
 /***/ }),
 
-/***/ "../../../../../src/main.ts":
+/***/ "./src/main.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/esm5/platform-browser-dynamic.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("./node_modules/@angular/platform-browser-dynamic/esm5/platform-browser-dynamic.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("./src/app/app.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
 
 
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });
@@ -1849,7 +536,7 @@ Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* pl
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("../../../../../src/main.ts");
+module.exports = __webpack_require__("./src/main.ts");
 
 
 /***/ })

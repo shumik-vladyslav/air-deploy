@@ -3,7 +3,7 @@ webpackJsonp(["styles"],{
 /***/ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./src/styles.css":
 /***/ (function(module, exports) {
 
-module.exports = "\n@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,400i,500,600,700');\n/* You can add global styles to this file, and also import other style files */\n.button{\n    border: none;\n    outline: none;\n    background: none;\n}\n.main-wrap{\n    font-family: 'Poppins';\n}\nhtml{\n   background: rgb(246, 247, 251);\n}\nbody{\n    min-height: 100vh;\n}"
+module.exports = "\n@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,400i,500,600,700');\n/* You can add global styles to this file, and also import other style files */\n.button{\n    border: none;\n    outline: none;\n    background: none;\n}\n.main-wrap{\n    font-family: 'Poppins';\n}\nhtml{\n   background: rgb(246, 247, 251);\n}\nbody{\n    min-height: 100vh;\n}\n@media screen and (min-width: 980px) {\n    .box-top, .body-content{\n        border: 1px solid #e2e8ee;\n    }\n}"
 
 /***/ }),
 

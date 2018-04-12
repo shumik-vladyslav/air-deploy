@@ -55,17 +55,17 @@
     "Definitive": " definitive ",
     "TEXT_BOT2": "and cannot be reverted. You will not be able to send KNKO tokens back to this platform. Only once the Kaenko App will be available in 2019, You will be able to transfer again your KNKO tokens to our network.",
     "SEND": "SEND KNKO TO YOUR ETH WALLET",
-    "YOUR_WALLET": "YOUR ETH WALLET"    
-    
+    "YOUR_WALLET": "YOUR ETH WALLET"
+
   },
   "REFERRALS": {
     "MY_REFERALS": "MY REFERRALS",
-    "ERNED": "ERNED THIS MONTH",
+    "ERNED": "EARNED THIS MONTH",
     "TOTAL_REFERRALS": "TOTAL EARNED BY REFERRALS",
     "FullName": "Full Name",
     "Username": "Username",
-    "AFFLIATES": "ALL AFFLIATES",   
-    "LINK": "MY AFFLIATE LINK"    
+    "AFFLIATES": "ALL AFFLIATES",
+    "LINK": "MY AFFLIATE LINK"
   },
   "SETTINGS": {
     "ChangePassword": "Change Password",
@@ -83,7 +83,7 @@
     "PROVINCE": "PROVINCE",
     "CITY": "CITY*",
     "COUNTRY": "COUNTRY*",
-    "TEXT_BOT": "To confirm your Address, please attach the document in jpj., png., pdf format. We accept either utility bill or bank statement whith your address and full name on it, no older than 3 month.",
+    "TEXT_BOT": "To confirm your Address, please attach the document in jpj., png., pdf format. We accept either utility bills or a bank statement with your address and full name on it, no older than 3 months.",
     "Address": "Home Address",
     "YOU": "Your",
     "ETH": "ETH WALLET"

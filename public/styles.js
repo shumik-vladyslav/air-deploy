@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n@import url(\"https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i\");\n@import url(\"https://fonts.googleapis.com/css?family=PT+Serif\");\n@import url(\"https://fonts.googleapis.com/css?family=Squada+One\");\n/* You can add global styles to this file, and also import other style files */\nbody {\n  margin: 0;\n  font-family: \"Open Sans\", sans-serif;\n  color: #2b3034; }\n.df {\n  display: flex; }\n.df-col {\n  display: flex;\n  flex-flow: column; }\n.jc-sb {\n  justify-content: space-between; }\n.ai-c {\n  align-items: center; }\n.df-centered {\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n.fs-30 {\n  font-size: 30px; }\n.fs-14 {\n  font-size: 14px; }\n.fs-10 {\n  font-size: 10px; }\n.text-bold {\n  font-weight: bold; }\n.mb-5 {\n  margin-bottom: 5px; }\n.mb-10 {\n  margin-bottom: 10px; }\n.m-0 {\n  margin: 0; }\n.light {\n  color: #17a0d9; }\n.color-dark {\n  color: #323232; }\n.color-gray-200 {\n  color: #b2b2b2; }\n"
+module.exports = "\n@import url(\"https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i\");\n@import url(\"https://fonts.googleapis.com/css?family=PT+Serif\");\n@import url(\"https://fonts.googleapis.com/css?family=Squada+One\");\n/* You can add global styles to this file, and also import other style files */\nbody {\n  margin: 0;\n  font-family: \"Open Sans\", sans-serif;\n  color: #2b3034; }\n.h-full {\n  height: 100%; }\n.df {\n  display: flex; }\n.df-rr {\n  display: flex;\n  flex-flow: row-reverse; }\n.df-col {\n  display: flex;\n  flex-flow: column; }\n.jc-sb {\n  justify-content: space-between; }\n.jc-fe {\n  justify-content: flex-end; }\n.ai-c {\n  align-items: center; }\n.df-centered {\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n.fs-40 {\n  font-size: 40px; }\n.fs-30 {\n  font-size: 30px; }\n.fs-20 {\n  font-size: 20px; }\n.fs-16 {\n  font-size: 16px; }\n.fs-14 {\n  font-size: 14px; }\n.fs-12 {\n  font-size: 12px; }\n.fs-10 {\n  font-size: 10px; }\n.text-bold {\n  font-weight: bold; }\n.mb-5 {\n  margin-bottom: 5px; }\n.mb-10 {\n  margin-bottom: 10px; }\n.m-0 {\n  margin: 0; }\n.mr-5 {\n  margin-right: 5px; }\n.ml-5 {\n  margin-left: 5px; }\n.light {\n  color: #17a0d9; }\n.color-dark {\n  color: #323232; }\n.color-gray-200 {\n  color: #b2b2b2; }\ndiv.controls > button {\n  outline: none; }\n@media screen and (max-width: 900px) {\n  .ng2-carouselamos-wrapper {\n    width: 900px !important; } }\n@media screen and (max-width: 320px) {\n  .ng2-carouselamos-wrapper {\n    width: 640 !important; } }\n@media screen and (min-width: 900px) {\n  .ng2-carouselamos-wrapper {\n    width: 900px !important; } }\n@media screen and (min-width: 1170px) {\n  .ng2-carouselamos-wrapper {\n    width: 1170px !important; } }\n@media screen and (min-width: 1280px) {\n  .ng2-carouselamos-wrapper {\n    width: 1100px !important; } }\n@media screen and (min-width: 1360px) {\n  .ng2-carouselamos-wrapper {\n    width: 1800px !important;\n    max-width: calc(100% - 170px);\n    margin: auto; } }\n"
 
 /***/ }),
 
@@ -539,7 +539,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/shumik/Documents/mov/src/styles.scss */"./src/styles.scss");
+module.exports = __webpack_require__(/*! C:\TASK\movemeback\src\styles.scss */"./src/styles.scss");
 
 
 /***/ })

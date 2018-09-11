@@ -331,8 +331,8 @@ label.review-label {
 .form-control {
     height: 36px !important;
     font-size: 16px;
-    color: #ccc;
-    /* color: rgb(0, 0, 0); */
+    /* color: #ccc; */
+    color: rgb(0, 0, 0);
     border:1px solid #b4b4b4;
     border-radius:0px;
 }
@@ -341,7 +341,8 @@ label.review-label {
 .custom-select {
     border-radius: 0px;
     height: 36px !important;
-    color: #ccc;
+    /* color: #ccc; */
+    color: rgb(0, 0, 0);
     font-size: 16px;
 }
 .custome-file{

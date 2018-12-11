@@ -1,0 +1,118 @@
+{
+"Products": {
+	"ProductDetail": [
+		{
+			"Code": "AAA1",
+			"Name": "Visitors to Canada Plus",
+			"OptionName": "$10,000",
+			"Cost": 20,
+			"Tax": 0,
+			"CoverageCode": "S",
+			"ChargeKeyDeductible": "DD~0",
+			"CoverageAmount": 0,
+			"DeductibleAmount": 0,
+			"ProductType": "VTC",
+			"SortOrder": 12,
+			"Description": "Visitors to Canada Plus"
+		},
+		{
+			"Code": "AAA2",
+			"Name": "Visitors to Canada Plus",
+			"OptionName": "$25,000",
+			"Cost": 22.32,
+			"Tax": 0,
+			"CoverageCode": "S",
+			"ChargeKeyDeductible": "DD~0",
+			"CoverageAmount": 0,
+			"DeductibleAmount": 0,
+			"ProductType": "VTC",
+			"SortOrder": 12,
+			"Description": "Visitors to Canada Plus"
+		},
+		{
+			"Code": "AAA3",
+			"Name": "Visitors to Canada Plus",
+			"OptionName": "$50,000",
+			"Cost": 24.84,
+			"Tax": 0,
+			"CoverageCode": "S",
+			"ChargeKeyDeductible": "DD~0",
+			"CoverageAmount": 0,
+			"DeductibleAmount": 0,
+			"ProductType": "VTC",
+			"SortOrder": 12,
+			"Description": "Visitors to Canada Plus"
+		},
+		{
+			"Code": "AAA4",
+			"Name": "Visitors to Canada Plus",
+			"OptionName": "$100,000",
+			"Cost": 34.2,
+			"Tax": 0,
+			"CoverageCode": "S",
+			"ChargeKeyDeductible": "DD~0",
+			"CoverageAmount": 0,
+			"DeductibleAmount": 0,
+			"ProductType": "VTC",
+			"SortOrder": 12,
+			"Description": "Visitors to Canada Plus"
+		},
+		{
+			"Code": "AAA5",
+			"Name": "Visitors to Canada Plus",
+			"OptionName": "$150,000",
+			"Cost": 41.58,
+			"Tax": 0,
+			"CoverageCode": "S",
+			"ChargeKeyDeductible": "DD~0",
+			"CoverageAmount": 0,
+			"DeductibleAmount": 0,
+			"ProductType": "VTC",
+			"SortOrder": 12,
+			"Description": "Visitors to Canada Plus"
+		},
+		{
+			"Code": "AAA6",
+			"Name": "Visitors to Canada Plus",
+			"OptionName": "$300,000",
+			"Cost": 63.36,
+			"Tax": 0,
+			"CoverageCode": "S",
+			"ChargeKeyDeductible": "DD~0",
+			"CoverageAmount": 0,
+			"DeductibleAmount": 0,
+			"ProductType": "VTC",
+			"SortOrder": 12,
+			"Description": "Visitors to Canada Plus"
+		},
+		{
+			"Code": "AAA7",
+			"Name": "Visitors to Canada Plus",
+			"OptionName": "$500,000",
+			"Cost": 67.77,
+			"Tax": 0,
+			"CoverageCode": "S",
+			"ChargeKeyDeductible": "DD~0",
+			"CoverageAmount": 0,
+			"DeductibleAmount": 0,
+			"ProductType": "VTC",
+			"SortOrder": 12,
+			"Description": "Visitors to Canada Plus"
+		},
+		{
+			"Code": "AAA8",
+			"Name": "Visitors to Canada Plus",
+			"OptionName": "$1,000,000",
+			"Cost": 73.26,
+			"Tax": 0,
+			"CoverageCode": "S",
+			"ChargeKeyDeductible": "DD~0",
+			"CoverageAmount": 0,
+			"DeductibleAmount": 0,
+			"ProductType": "VTC",
+			"SortOrder": 12,
+			"Description": "Visitors to Canada Plus"
+		}
+	]
+}
+}

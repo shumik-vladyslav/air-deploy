@@ -374,7 +374,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n\n<router-outlet></router-outlet>\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -565,7 +565,7 @@ module.exports = "label {\r\n  display: block;\r\n  font: 1rem \"Fira Sans\", sa
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"info\" class=\"main-area\">\r\n  <h2>1. Your Trip information</h2>\r\n  <div class=\"divider\"></div>\r\n  <form class=\"form-area\">\r\n    <div class=\"row\">\r\n      <div class=\"form-group col-md-6\">\r\n        <label for=\"country\">Destination</label>\r\n        <input [(ngModel)]=\"info.Destination\" name=\"destination\" type=\"text\" class=\"form-control\" id=\"country\"\r\n          placeholder=\"Canada\" disabled>\r\n      </div>\r\n      <div class=\"form-group col-md-6\">\r\n        <label for=\"province\">Province</label>\r\n        <select [(ngModel)]=\"info.Province\" name=\"province\" id=\"province\" #province=\"ngModel\" required class=\"form-control\">\r\n          <option value=\"\" hidden>Choose...</option>\r\n          <option>Ontario</option>\r\n          <option>Quebec</option>\r\n          <option>...</option>\r\n        </select>\r\n        <div [hidden]=\"!(!province.valid && showError)\" class=\"alert alert-danger\">\r\n          Province is required\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"form-group col-md-12\">\r\n        <label for=\"visitor_type\">Visitor Type</label>\r\n        <select [(ngModel)]=\"info.VisitorType\" name=\"visitorType\" id=\"visitor_type\" #visitorType=\"ngModel\" required\r\n          class=\"form-control\">\r\n          <option value=\"\" hidden>Select Visitor Type</option>\r\n          <option>Visitor</option>\r\n          <option>New Immigrant</option>\r\n          <option>Super Visa</option>\r\n          <option>Work or Student Visa</option>\r\n          <option>Returning Canadian</option>\r\n          <option>Other</option>\r\n        </select>\r\n        <div [hidden]=\"!(!visitorType.valid && showError)\" class=\"alert alert-danger\">\r\n          Visitor Type is required\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"form-group col-md-6\">\r\n        <label for=\"effectiveDave\">Effective Date</label>\r\n        <input (ngModelChange)=\"onChangeEffecctiveDate($event)\" [(ngModel)]=\"info.EffectiveDate\" name=\"effectiveDate\"\r\n          type=\"date\" class=\"form-control\" id=\"effectiveDave\" placeholder=\"Choose Date\" #effectiveDate=\"ngModel\"\r\n          required>\r\n        <div [hidden]=\"!(!effectiveDate.valid && showError)\" class=\"alert alert-danger\">\r\n          Effective Date is required\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group col-md-6\">\r\n        <label for=\"exiryDate\">Expiry Date</label>\r\n        <input [(ngModel)]=\"info.ExpiryDate\" name=\"expiryDate\" type=\"date\" class=\"form-control\" id=\"exiryDate\"\r\n          placeholder=\"Choose Date\" #expiryDate=\"ngModel\" required>\r\n        <div [hidden]=\"!(!expiryDate.valid && showError)\" class=\"alert alert-danger\">\r\n          Expiry Date is required\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"form-group col-md-6\">\r\n        <label for=\"visitor_type\">Number of Travelers (Max 10 travelers)</label>\r\n        <select (ngModelChange)=\"onChangeNumPeople($event)\" [(ngModel)]=\"info.NumberOfTravelers\" id=\"visitor_type\"\r\n          class=\"form-control\" name=\"numTravel\" #numTravel=\"ngModel\" required>\r\n          <option value=\"\" hidden>Select Number</option>\r\n          <option *ngFor=\"let num of numPeople\"> {{num}} </option>\r\n        </select>\r\n        <div [hidden]=\"!(!numTravel.valid && showError)\" class=\"alert alert-danger\">\r\n          Number of Travelers is required\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div *ngIf=\"info.NumberOfTravelers >= 3\" class=\"row\">\r\n      <div class=\"form-group col-md-6\">\r\n        <label for=\"coverage-type\">Coverage Type</label><br />\r\n        <label class=\"radio-inline\"><input (ngModelChange)=\"onChangeCoverageType($event)\" [(ngModel)]=\"info.CoverageType\"\r\n            value=\"Companion\" id=\"coverage-type\" type=\"radio\" name=\"coverage-type\" checked>Traveling\r\n          Companion</label>\r\n      </div>\r\n      <div class=\"form-group col-md-6\">\r\n        <label for=\"destination\"> &nbsp; </label><br />\r\n        <label class=\"radio-inline\"><input (ngModelChange)=\"onChangeCoverageType($event)\" [(ngModel)]=\"info.CoverageType\"\r\n            value=\"Family\" type=\"radio\" name=\"coverage-type\">Family</label>\r\n      </div>\r\n    </div>\r\n    <div *ngFor=\"let item of travelers; let i=index\">\r\n      <div *ngIf=\"travelers.length < 3 || (travelers.length >= 3 && info.CoverageType == 'Companion')\" class=\"row\">\r\n        <div class=\"form-group col-md-3 dd\">\r\n          <label for=\"month\">Birth Date of Applicant {{i+1}}</label>\r\n          <select (ngModelChange)=\"onChangeMonth($event, i)\" [(ngModel)]=\"item.Month\" name=\"month{{i}}\" id=\"month\"\r\n            class=\"form-control\" #month=\"ngModel\" required>\r\n            <option value=\"\" hidden>Month</option>\r\n            <option *ngFor=\"let month of months\">{{month}}</option>\r\n          </select>\r\n          <div [hidden]=\"!(!month.valid && showError)\" class=\"alert alert-danger\">\r\n            Month is required\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group col-md-3\">\r\n          <label for=\"day\">&nbsp; &nbsp; </label>\r\n          <select (ngModelChange)=\"onChangeDay($event, i)\" [(ngModel)]=\"item.Day\" name=\"day{{i}}\" id=\"day\" class=\"form-control\"\r\n            #day=\"ngModel\" required>\r\n            <option value=\"\" hidden>Day</option>\r\n            <option *ngFor=\"let day of item.daysInMonth\">{{day}}</option>\r\n          </select>\r\n          <div [hidden]=\"!(!day.valid && showError)\" class=\"alert alert-danger\">\r\n            Day is required\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group col-md-3\">\r\n          <label for=\"year\">&nbsp; &nbsp; </label>\r\n          <select (ngModelChange)=\"onChangeYear($event, i)\" [(ngModel)]=\"item.Year\" name=\"year{{i}}\" id=\"year\" class=\"form-control\"\r\n            #year=\"ngModel\" required>\r\n            <option value=\"\" hidden>Year</option>\r\n            <option *ngFor=\"let year of years\">{{year}}</option>\r\n          </select>\r\n          <div [hidden]=\"!(!year.valid && showError)\" class=\"alert alert-danger\">\r\n            Year is required\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group col-md-3\">\r\n          <label for=\"age\">Age</label>\r\n          <input [(ngModel)]=\"item.Age\" [ngModelOptions]=\"{standalone: true}\" readonly type=\"text\" class=\"form-control\"\r\n            id=\"age\" placeholder=\"Years\">\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div *ngIf=\"travelers.length >= 3 && info.CoverageType == 'Family'\" class=\"row\">\r\n      <div class=\"form-group col-md-3 dd\">\r\n        <label class=\"text-no-wrap\" for=\"month\">Birth date of eldest family member</label>\r\n        <select (ngModelChange)=\"onChangeMonth($event, 0)\" [(ngModel)]=\"travelers[0].Month\" name=\"month{{i}}\" id=\"month\" class=\"form-control\"\r\n          #month=\"ngModel\" required>\r\n          <option value=\"\" hidden>Month</option>\r\n          <option *ngFor=\"let month of months\">{{month}}</option>\r\n        </select>\r\n        <div [hidden]=\"!(!month.valid && showError)\" class=\"alert alert-danger\">\r\n            Month is required\r\n          </div>\r\n      </div>\r\n      <div class=\"form-group col-md-3\">\r\n        <label for=\"day\">&nbsp; &nbsp; </label>\r\n        <select (ngModelChange)=\"onChangeDay($event, 0)\" [(ngModel)]=\"travelers[0].Day\" name=\"day{{i}}\" id=\"day\" class=\"form-control\"\r\n          #day=\"ngModel\" required>\r\n          <option value=\"\" hidden>Day</option>\r\n          <option *ngFor=\"let day of travelers[0].daysInMonth\">{{day}}</option>\r\n        </select>\r\n        <div [hidden]=\"!(!day.valid && showError)\" class=\"alert alert-danger\">\r\n            Day is required\r\n          </div>\r\n      </div>\r\n      <div class=\"form-group col-md-3\">\r\n        <label for=\"year\">&nbsp; &nbsp; </label>\r\n        <select (ngModelChange)=\"onChangeYear($event, 0)\" [(ngModel)]=\"travelers[0].Year\" name=\"year{{i}}\" id=\"year\" class=\"form-control\"\r\n          #year=\"ngModel\" required>\r\n          <option value=\"\" hidden>Year</option>\r\n          <option *ngFor=\"let year of years\">{{year}}</option>\r\n        </select>\r\n        <div [hidden]=\"!(!year.valid && showError)\" class=\"alert alert-danger\">\r\n            Year is required\r\n          </div>\r\n      </div>\r\n      <div class=\"form-group col-md-3\">\r\n        <label for=\"age\">Age</label>\r\n        <input [(ngModel)]=\"travelers[0].Age\" [ngModelOptions]=\"{standalone: true}\" readonly type=\"text\" class=\"form-control\"\r\n          id=\"age\" placeholder=\"Years\">\r\n      </div>\r\n    </div>\r\n    <button (click)=\"next()\" type=\"submit\" class=\"btn btn-primary btn-style pull-right\">Get a\r\n      Quote</button>\r\n  </form>\r\n</div>"
+module.exports = "<div *ngIf=\"userInput\" class=\"main-area\">\r\n  <h2>1. Your Trip information</h2>\r\n  <div class=\"divider\"></div>\r\n  <form class=\"form-area\">\r\n    <div class=\"row\">\r\n      <div class=\"form-group col-md-6\">\r\n        <label for=\"country\">Destination</label>\r\n        <input [(ngModel)]=\"userInput.Destination\" name=\"destination\" type=\"text\" class=\"form-control\" id=\"country\"\r\n               placeholder=\"Canada\" disabled>\r\n      </div>\r\n      <div class=\"form-group col-md-6\">\r\n        <label for=\"province\">Province</label>\r\n        <select [(ngModel)]=\"userInput.Province\" name=\"province\" id=\"province\" #province=\"ngModel\" required class=\"form-control\">\r\n          <option value=\"\" hidden>Choose...</option>\r\n          <option>Ontario</option>\r\n          <option>Quebec</option>\r\n          <option>...</option>\r\n        </select>\r\n        <div [hidden]=\"!(!province.valid && isErrorVisible)\" class=\"alert alert-danger\">\r\n          Province is required\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"form-group col-md-12\">\r\n        <label for=\"visitor_type\">Visitor Type</label>\r\n        <select [(ngModel)]=\"userInput.VisitorType\" name=\"visitorType\" id=\"visitor_type\" #visitorType=\"ngModel\" required\r\n                class=\"form-control\">\r\n          <option value=\"\" hidden>Select Visitor Type</option>\r\n          <option>Visitor</option>\r\n          <option>New Immigrant</option>\r\n          <option>Super Visa</option>\r\n          <option>Work or Student Visa</option>\r\n          <option>Returning Canadian</option>\r\n          <option>Other</option>\r\n        </select>\r\n        <div [hidden]=\"!(!visitorType.valid && isErrorVisible)\" class=\"alert alert-danger\">\r\n          Visitor Type is required\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"form-group col-md-6\">\r\n        <label for=\"effectiveDave\">Effective Date</label>\r\n        <input (ngModelChange)=\"onChangeEffecctiveDate($event)\" [(ngModel)]=\"userInput.EffectiveDate\" name=\"effectiveDate\"\r\n               type=\"date\" class=\"form-control\" id=\"effectiveDave\" placeholder=\"Choose Date\" max=\"2200-12-31\" #effectiveDate=\"ngModel\"\r\n               required>\r\n        <div [hidden]=\"!(!effectiveDate.valid && isErrorVisible)\" class=\"alert alert-danger\">\r\n          Effective Date is required\r\n        </div>\r\n        <div [hidden]=\"!(compareTwoDates() && isErrorVisible)\" class=\"alert alert-danger\">\r\n          Please check your date\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group col-md-6\">\r\n        <label for=\"exiryDate\">Expiry Date</label>\r\n        <input [(ngModel)]=\"userInput.ExpiryDate\" name=\"expiryDate\" type=\"date\" class=\"form-control\" id=\"exiryDate\"\r\n               placeholder=\"Choose Date\" max=\"2200-12-31\" #expiryDate=\"ngModel\" required>\r\n        <div [hidden]=\"!(!expiryDate.valid && isErrorVisible)\" class=\"alert alert-danger\">\r\n          Expiry Date is required\r\n        </div>\r\n        <div [hidden]=\"!(compareTwoDates() && isErrorVisible)\" class=\"alert alert-danger\">\r\n          Please check your date\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"form-group col-md-6\">\r\n        <label for=\"visitor_type\">Number of Travelers (Max 10 travelers)</label>\r\n        <select (ngModelChange)=\"onChangeNumPeople($event)\" [(ngModel)]=\"userInput.NumberOfTravelers\" id=\"visitor_type\"\r\n                class=\"form-control\" name=\"numTravel\" #numTravel=\"ngModel\" required>\r\n          <option value=\"\" hidden>Select Number</option>\r\n          <option *ngFor=\"let num of numPeople\"> {{num}} </option>\r\n        </select>\r\n        <div [hidden]=\"!(!numTravel.valid && isErrorVisible)\" class=\"alert alert-danger\">\r\n          Number of Travelers is required\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div *ngIf=\"userInput.NumberOfTravelers >= 3\" class=\"row\">\r\n      <div class=\"form-group col-md-6\">\r\n        <label for=\"coverage-type\">Coverage Type</label><br />\r\n        <label class=\"radio-inline\"><input (ngModelChange)=\"onChangeCoverageType($event)\" [(ngModel)]=\"userInput.CoverageType\"\r\n            value=\"Companion\" id=\"coverage-type\" type=\"radio\" name=\"coverage-type\" checked>Traveling\r\n          Companion</label>\r\n      </div>\r\n      <div class=\"form-group col-md-6\">\r\n        <label for=\"destination\"> &nbsp; </label><br />\r\n        <label class=\"radio-inline\"><input (ngModelChange)=\"onChangeCoverageType($event)\" [(ngModel)]=\"userInput.CoverageType\"\r\n            value=\"Family\" type=\"radio\" name=\"coverage-type\">Family</label>\r\n      </div>\r\n    </div>\r\n    <div *ngFor=\"let item of travelersInput; let i=index\">\r\n      <div *ngIf=\"travelersInput.length < 3 || (travelersInput.length >= 3 && userInput.CoverageType == 'Companion')\" class=\"row\">\r\n        <div class=\"form-group col-md-3 dd\">\r\n          <label for=\"month\">Birth Date of Applicant {{i+1}}</label>\r\n          <select (ngModelChange)=\"onChangeMonth($event, i)\" [(ngModel)]=\"item.Month\" name=\"month{{i}}\" id=\"month\"\r\n            class=\"form-control\" #month=\"ngModel\" required>\r\n            <option value=\"\" hidden>Month</option>\r\n            <option *ngFor=\"let month of months\">{{month}}</option>\r\n          </select>\r\n          <div [hidden]=\"!(!month.valid && isErrorVisible)\" class=\"alert alert-danger\">\r\n            Month is required\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group col-md-3\">\r\n          <label for=\"day\">&nbsp; &nbsp; </label>\r\n          <select (ngModelChange)=\"onChangeDay($event, i)\" [(ngModel)]=\"item.Day\" name=\"day{{i}}\" id=\"day\" class=\"form-control\"\r\n            #day=\"ngModel\" required>\r\n            <option value=\"\" hidden>Day</option>\r\n            <option *ngFor=\"let day of item.daysInMonth\">{{day}}</option>\r\n          </select>\r\n          <div [hidden]=\"!(!day.valid && isErrorVisible)\" class=\"alert alert-danger\">\r\n            Day is required\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group col-md-3\">\r\n          <label for=\"year\">&nbsp; &nbsp; </label>\r\n          <select (ngModelChange)=\"onChangeYear($event, i)\" [(ngModel)]=\"item.Year\" name=\"year{{i}}\" id=\"year\" class=\"form-control\"\r\n            #year=\"ngModel\" required>\r\n            <option value=\"\" hidden>Year</option>\r\n            <option *ngFor=\"let year of years\">{{year}}</option>\r\n          </select>\r\n          <div [hidden]=\"!(!year.valid && isErrorVisible)\" class=\"alert alert-danger\">\r\n            Year is required\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group col-md-3\">\r\n          <label for=\"age\">Age</label>\r\n          <input [(ngModel)]=\"item.Age\" [ngModelOptions]=\"{standalone: true}\" readonly type=\"text\" class=\"form-control\"\r\n            id=\"age\" placeholder=\"Years\">\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div *ngIf=\"travelersInput.length >= 3 && userInput.CoverageType == 'Family'\" class=\"row\">\r\n      <div class=\"form-group col-md-3 dd\">\r\n        <label class=\"text-no-wrap\" for=\"month\">Birth date of eldest family member</label>\r\n        <select (ngModelChange)=\"onChangeMonth($event, 0)\" [(ngModel)]=\"travelersInput[0].Month\" name=\"month{{i}}\" id=\"month\" class=\"form-control\"\r\n                #month=\"ngModel\" required>\r\n          <option value=\"\" hidden>Month</option>\r\n          <option *ngFor=\"let month of months\">{{month}}</option>\r\n        </select>\r\n        <div [hidden]=\"!(!month.valid && isErrorVisible)\" class=\"alert alert-danger\">\r\n            Month is required\r\n          </div>\r\n      </div>\r\n      <div class=\"form-group col-md-3\">\r\n        <label for=\"day\">&nbsp; &nbsp; </label>\r\n        <select (ngModelChange)=\"onChangeDay($event, 0)\" [(ngModel)]=\"travelersInput[0].Day\" name=\"day{{i}}\" id=\"day\" class=\"form-control\"\r\n                #day=\"ngModel\" required>\r\n          <option value=\"\" hidden>Day</option>\r\n          <option *ngFor=\"let day of travelersInput[0].daysInMonth\">{{day}}</option>\r\n        </select>\r\n        <div [hidden]=\"!(!day.valid && isErrorVisible)\" class=\"alert alert-danger\">\r\n            Day is required\r\n          </div>\r\n      </div>\r\n      <div class=\"form-group col-md-3\">\r\n        <label for=\"year\">&nbsp; &nbsp; </label>\r\n        <select (ngModelChange)=\"onChangeYear($event, 0)\" [(ngModel)]=\"travelersInput[0].Year\" name=\"year{{i}}\" id=\"year\" class=\"form-control\"\r\n                #year=\"ngModel\" required>\r\n          <option value=\"\" hidden>Year</option>\r\n          <option *ngFor=\"let year of years\">{{year}}</option>\r\n        </select>\r\n        <div [hidden]=\"!(!year.valid && isErrorVisible)\" class=\"alert alert-danger\">\r\n            Year is required\r\n          </div>\r\n      </div>\r\n      <div class=\"form-group col-md-3\">\r\n        <label for=\"age\">Age</label>\r\n        <input [(ngModel)]=\"travelersInput[0].Age\" [ngModelOptions]=\"{standalone: true}\" readonly type=\"text\" class=\"form-control\"\r\n               id=\"age\" placeholder=\"Years\">\r\n      </div>\r\n    </div>\r\n    <button (click)=\"next()\" type=\"submit\" class=\"btn btn-primary btn-style pull-right\">Get a\r\n      Quote</button>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -592,43 +592,49 @@ __webpack_require__.r(__webpack_exports__);
 
 var Step1Component = /** @class */ (function () {
     function Step1Component(infoService, router) {
+        var _this = this;
         this.infoService = infoService;
         this.router = router;
         this.numPeople = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
-        this.travelers = [];
-        this.coverageType = false;
         this.months = moment__WEBPACK_IMPORTED_MODULE_2__["months"]();
         this.years = [];
         this.daysInMonth = [];
-        this.showError = false;
-        this.info = Object.assign({}, this.infoService.getTripQuote());
-    }
-    Step1Component.prototype.ngOnInit = function () {
-        for (var i = 1900; i < moment__WEBPACK_IMPORTED_MODULE_2__().year(); i++) {
+        this.travelersInput = [];
+        this.isErrorVisible = false;
+        for (var i = moment__WEBPACK_IMPORTED_MODULE_2__().year(); i >= 1920; i--) {
             this.years.push(i);
         }
         for (var i = 1; i <= 31; i++) {
             this.daysInMonth.push(i);
         }
+        this.userInput = Object.assign({}, this.infoService.getTripQuote());
+        if (this.infoService.infoQuote.tripQuote.Travelers[0].Age != "") {
+            this.travelersInput = this.infoService.infoQuote.tripQuote.Travelers;
+            this.travelersInput.forEach(function (element) {
+                element['daysInMonth'] = _this.daysInMonth;
+            });
+        }
+    }
+    Step1Component.prototype.ngOnInit = function () {
         this.infoService.stepEvent.emit('');
     };
     Step1Component.prototype.ngAfterViewInit = function () {
         var today = new Date();
-        var tomorrow = new Date(today.setDate(today.getDate() + 1)).toISOString().split('T')[0];
+        this.tomorrowDate = new Date(today.setDate(today.getDate() + 1)).toISOString().split('T')[0];
         var afterTomorrow = new Date(today.setDate(today.getDate() + 1)).toISOString().split('T')[0];
-        document.getElementById("effectiveDave").setAttribute('min', tomorrow);
+        document.getElementById("effectiveDave").setAttribute('min', this.tomorrowDate);
         document.getElementById("exiryDate").setAttribute('min', afterTomorrow);
     };
     Step1Component.prototype.onChangeEffecctiveDate = function (e) {
-        this.info.ExpiryDate = "";
+        this.userInput.ExpiryDate = "";
         var today = new Date(e);
         var afterTomorrow = new Date(today.setDate(today.getDate() + 1)).toISOString().split('T')[0];
         document.getElementById("exiryDate").setAttribute('min', afterTomorrow);
     };
     Step1Component.prototype.onChangeNumPeople = function (e) {
-        this.travelers = [];
+        this.travelersInput = [];
         for (var i = 0; i < e; i++) {
-            this.travelers.push({
+            this.travelersInput.push({
                 Year: "",
                 Month: "",
                 Day: "",
@@ -638,47 +644,45 @@ var Step1Component = /** @class */ (function () {
         }
     };
     Step1Component.prototype.onChangeDay = function (e, index) {
-        this.travelers[index].Day = e;
+        this.travelersInput[index].Day = e;
         this.getAge(index);
     };
     Step1Component.prototype.onChangeMonth = function (e, index) {
-        this.travelers[index].daysInMonth = [];
-        this.travelers[index].Month = e;
+        this.travelersInput[index].daysInMonth = [];
+        this.travelersInput[index].Month = e;
         var days = moment__WEBPACK_IMPORTED_MODULE_2__(e + "/2016", "MMMM/YYYY").daysInMonth();
         for (var i = 1; i <= days; i++) {
-            this.travelers[index].daysInMonth.push(i + "");
+            this.travelersInput[index].daysInMonth.push(i + "");
         }
         this.getAge(index);
     };
     Step1Component.prototype.onChangeYear = function (e, index) {
-        this.travelers[index].Year = e;
+        this.travelersInput[index].Year = e;
         this.getAge(index);
     };
     Step1Component.prototype.onChangeCoverageType = function (e) {
-        this.result = true;
-        this.onChangeNumPeople(this.info.NumberOfTravelers);
-        if (this.info.NumberOfTravelers >= 3 && e == "Family") {
-            this.info.Travelers.push(this.travelers[0]);
+        this.isFormValid = true;
+        this.onChangeNumPeople(this.userInput.NumberOfTravelers);
+        if (this.userInput.NumberOfTravelers >= 3 && e == "Family") {
+            this.userInput.Travelers.push(this.travelersInput[0]);
         }
         else {
-            this.info.Travelers = this.travelers;
+            this.userInput.Travelers = this.travelersInput;
         }
     };
     Step1Component.prototype.getAge = function (index) {
-        if (this.travelers[index].Year && this.travelers[index].Month && this.travelers[index].Day) {
-            this.travelers[index].Age = moment__WEBPACK_IMPORTED_MODULE_2__().diff(this.travelers[index].Year + "/" + this.travelers[index].Month + "/" + this.travelers[index].Day, 'years');
-            var duration = moment__WEBPACK_IMPORTED_MODULE_2__["duration"](moment__WEBPACK_IMPORTED_MODULE_2__(this.info.ExpiryDate).diff(moment__WEBPACK_IMPORTED_MODULE_2__(this.info.EffectiveDate)));
-            this.info.TripDuration = duration.asDays() + "";
-            if (this.info.CoverageType != "Family") {
-                this.info.Travelers = [];
-                for (var index_1 = 0; index_1 < this.travelers.length; index_1++) {
-                    var birthday = this.travelers[index_1].Year + "-" + this.travelers[index_1].Month + "-" + this.travelers[index_1].Day;
+        if (this.travelersInput[index].Year && this.travelersInput[index].Month && this.travelersInput[index].Day) {
+            this.travelersInput[index].Age = moment__WEBPACK_IMPORTED_MODULE_2__().diff(this.travelersInput[index].Year + "/" + this.travelersInput[index].Month + "/" + this.travelersInput[index].Day, 'years');
+            if (this.userInput.CoverageType != "Family") {
+                this.userInput.Travelers = [];
+                for (var index_1 = 0; index_1 < this.travelersInput.length; index_1++) {
+                    var birthday = this.travelersInput[index_1].Year + "-" + this.travelersInput[index_1].Month + "-" + this.travelersInput[index_1].Day;
                     birthday = moment__WEBPACK_IMPORTED_MODULE_2__(birthday).format('DD-MMMM-YYYY');
-                    var age = this.travelers[index_1].Age;
-                    this.info.Travelers.push({
-                        Year: this.travelers[index_1].Year,
-                        Month: this.travelers[index_1].Month,
-                        Day: this.travelers[index_1].Day,
+                    var age = this.travelersInput[index_1].Age;
+                    this.userInput.Travelers.push({
+                        Year: this.travelersInput[index_1].Year,
+                        Month: this.travelersInput[index_1].Month,
+                        Day: this.travelersInput[index_1].Day,
                         Birthday: birthday,
                         Age: age,
                         Gender: "",
@@ -688,14 +692,14 @@ var Step1Component = /** @class */ (function () {
                 }
             }
             else {
-                this.info.Travelers = [];
-                var birthday = this.travelers[0].Year + "-" + this.travelers[0].Month + "-" + this.travelers[0].Day;
+                this.userInput.Travelers = [];
+                var birthday = this.travelersInput[0].Year + "-" + this.travelersInput[0].Month + "-" + this.travelersInput[0].Day;
                 birthday = moment__WEBPACK_IMPORTED_MODULE_2__(birthday).format('DD-MMMM-YYYY');
-                var age = this.travelers[0].Age;
-                this.info.Travelers.push({
-                    Year: this.travelers[index].Year,
-                    Month: this.travelers[index].Month,
-                    Day: this.travelers[index].Day,
+                var age = this.travelersInput[0].Age;
+                this.userInput.Travelers.push({
+                    Year: this.travelersInput[index].Year,
+                    Month: this.travelersInput[index].Month,
+                    Day: this.travelersInput[index].Day,
                     Birthday: birthday,
                     Age: age,
                     Gender: "",
@@ -707,26 +711,40 @@ var Step1Component = /** @class */ (function () {
     };
     Step1Component.prototype.asValid = function () {
         var invalidAge = 0;
-        this.info.Travelers.forEach(function (traveler) {
+        this.userInput.Travelers.forEach(function (traveler) {
             if (traveler.Age == "" || traveler.age == "") {
                 invalidAge++;
             }
         });
         if (invalidAge == 0) {
-            this.result = false;
+            this.isFormValid = false;
         }
         else {
-            this.result = true;
+            this.isFormValid = true;
         }
-        return !this.info.Destination || !this.info.Province || !this.info.VisitorType ||
-            !this.info.EffectiveDate || !this.info.ExpiryDate || !this.info.NumberOfTravelers || this.result;
+        return !this.userInput.Destination || !this.userInput.Province || !this.userInput.VisitorType ||
+            !this.userInput.EffectiveDate || !this.userInput.ExpiryDate || !this.userInput.NumberOfTravelers || this.isFormValid ||
+            this.compareTwoDates();
+    };
+    Step1Component.prototype.compareTwoDates = function () {
+        if (new Date(this.userInput.ExpiryDate) <= new Date(this.userInput.EffectiveDate) ||
+            new Date(this.userInput.EffectiveDate) < new Date(this.tomorrowDate)) {
+            this.isFormValid = false;
+            return true;
+        }
+        else {
+            return false;
+        }
     };
     Step1Component.prototype.next = function () {
-        this.showError = true;
+        this.isErrorVisible = true;
         if (this.asValid() == false) {
+            var duration = moment__WEBPACK_IMPORTED_MODULE_2__["duration"](moment__WEBPACK_IMPORTED_MODULE_2__(this.userInput.ExpiryDate).diff(moment__WEBPACK_IMPORTED_MODULE_2__(this.userInput.EffectiveDate)));
+            this.userInput.TripDuration = duration.asDays() + "";
             this.infoService.step1Complete = true;
-            this.infoService.infoQuote.tripQuote.Travelers = this.travelers;
-            this.infoService.setTripQuote(this.info);
+            this.infoService.infoQuote.tripQuote.Travelers = this.travelersInput;
+            this.infoService.setTripQuote(this.userInput);
+            this.infoService.infoQuote.tripQuote.Address.province = this.userInput.Province;
             this.router.navigate(['/quote/step2']);
         }
     };
@@ -763,7 +781,7 @@ module.exports = ".btn-style2 {\r\n    background: #7482a2;\r\n    width: 164px;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"ProductDetail\" class=\"main-area\">\r\n  <h2>2. Select Coverage</h2>\r\n  <div class=\"divider\"></div>\r\n  <div class=\"form-wrap form-area\">\r\n    <div class=\"row\">\r\n      <div class=\"form-group col-md-6 col-sm-6 col-xs-6\">\r\n        <label for=\"destination\">Amount (CAD)</label><br />\r\n        <label *ngFor=\"let item of ProductDetail; let i = index\" class=\"radio-inline\">\r\n          <input type=\"radio\"  value=\"{{item.OptionName}}\"  \r\n          [(ngModel)]=\"covarageData.Amount\" (ngModelChange)=\"onChangeAmount($event, i)\" \r\n          [ngModelOptions]=\"{standalone: true}\" name=\"optradioAmount\"\r\n          [checked]=\"covarageData.Amount === item.OptionName\">\r\n          {{item.OptionName}} </label><br />\r\n      </div>\r\n      <div class=\"form-group col-md-6  col-sm-6 col-xs-6\" id=\"cheap_form\">\r\n        <label for=\"destination\">Premium (CAD)</label><br />\r\n        <input *ngFor=\"let item of ProductDetail;let i = index\" type=\"text\" class=\"form-control\" \r\n         disabled placeholder=\"${{item.Cost}}\" name='i{{i}}' [ngStyle]=\"{'background': covarageData.Amount === item.OptionName ? '#c3dcf3':''}\">\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <label for=\"destination\">Select Deductible</label><br />\r\n        <div id=\"cheap_radio\">\r\n          <label class=\"radio-inline\"><input type=\"radio\" name=\"optradios\" [(ngModel)]=\"covarageData.SelectDeductible\" value=\"$0\" [checked]=\"covarageData.SelectDeductible === '$0'\">$0</label>\r\n          <label class=\"radio-inline\"><input type=\"radio\" name=\"optradios\" [(ngModel)]=\"covarageData.SelectDeductible\" value=\"$100\" [checked]=\"covarageData.SelectDeductible === '$100'\">$100</label>\r\n          <label class=\"radio-inline\"><input type=\"radio\" name=\"optradios\" [(ngModel)]=\"covarageData.SelectDeductible\" value=\"$250\" [checked]=\"covarageData.SelectDeductible === '$250'\">$250</label>\r\n          <label class=\"radio-inline\"><input type=\"radio\" name=\"optradios\" [(ngModel)]=\"covarageData.SelectDeductible\" value=\"$1,000\" [checked]=\"covarageData.SelectDeductible === '$1,000'\">$1,000</label>\r\n          <label class=\"radio-inline\"><input type=\"radio\" name=\"optradios\" [(ngModel)]=\"covarageData.SelectDeductible\" value=\"$3,000\" [checked]=\"covarageData.SelectDeductible === '$3,000'\">$3,000</label>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"discount_area\">\r\n        <div class=\"form-group col-md-3 col-sm-5 col-xs-5\">\r\n          <label for=\"Discount\">Discount</label><br />\r\n          <input [(ngModel)]=\"covarageData.Discount\" type=\"text\" class=\"form-control\" id=\"Discount\" placeholder=\"50%\">\r\n        </div>\r\n        <div class=\"form-group col-md-6 col-sm-7 col-xs-7\">\r\n          <label for=\"Discount\">Total Premium Due</label><br />\r\n          <h5>$ {{covarageData.Premium}}</h5>\r\n          <a href=\"#\">See what's covered. </a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"submit_area\">\r\n        <div class=\"col-md-6\">\r\n          <button (click)=\"back()\" type=\"button\" class=\"btn btn-primary btn-style2 pull-left\">Previous Step</button>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n          <button (click)=\"next()\" type=\"submit\" class=\"btn btn-primary btn-style pull-right\">Apply Now</button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<div *ngIf=\"ProductDetail\" class=\"main-area\">\r\n  <h2>2. Select Coverage</h2>\r\n  <div class=\"divider\"></div>\r\n  <div class=\"form-wrap form-area\">\r\n    <div class=\"row\">\r\n      <div class=\"form-group col-md-6 col-sm-6 col-xs-6\">\r\n        <label for=\"destination\">Amount (CAD)</label><br />\r\n        <label *ngFor=\"let item of ProductDetail; let i = index\" class=\"radio-inline\">\r\n          <input type=\"radio\"  value=\"{{item.OptionName}}\"  \r\n          [(ngModel)]=\"covarageData.Amount\" (ngModelChange)=\"onChangeAmount($event, i)\" \r\n          [ngModelOptions]=\"{standalone: true}\" name=\"optradioAmount\"\r\n          [checked]=\"covarageData.Amount === item.OptionName\">\r\n          {{item.OptionName}} </label><br />\r\n      </div>\r\n      <div class=\"form-group col-md-6  col-sm-6 col-xs-6\" id=\"price_area\">\r\n        <label>Premium (CAD)</label><br />\r\n        <label *ngFor=\"let item of ProductDetail;let i = index\"\r\n               class=\"form-control premium\"\r\n               [ngStyle]=\"{'background': covarageData.Amount === item.OptionName ? '#c3dcf3':'#F5F8FF'}\">${{item.Cost}}</label>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12\">\r\n        <label for=\"destination\">Select Deductible</label><br />\r\n        <div id=\"cheap_radio\">\r\n          <label class=\"radio-inline\"><input type=\"radio\" name=\"optradios\" [(ngModel)]=\"covarageData.SelectDeductible\" value=\"$0\" [checked]=\"covarageData.SelectDeductible === '$0'\">$0</label>\r\n          <label class=\"radio-inline\"><input type=\"radio\" name=\"optradios\" [(ngModel)]=\"covarageData.SelectDeductible\" value=\"$100\" [checked]=\"covarageData.SelectDeductible === '$100'\">$100</label>\r\n          <label class=\"radio-inline\"><input type=\"radio\" name=\"optradios\" [(ngModel)]=\"covarageData.SelectDeductible\" value=\"$250\" [checked]=\"covarageData.SelectDeductible === '$250'\">$250</label>\r\n          <label class=\"radio-inline\"><input type=\"radio\" name=\"optradios\" [(ngModel)]=\"covarageData.SelectDeductible\" value=\"$1,000\" [checked]=\"covarageData.SelectDeductible === '$1,000'\">$1,000</label>\r\n          <label class=\"radio-inline\"><input type=\"radio\" name=\"optradios\" [(ngModel)]=\"covarageData.SelectDeductible\" value=\"$3,000\" [checked]=\"covarageData.SelectDeductible === '$3,000'\">$3,000</label>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"discount_area\">\r\n        <div class=\"form-group col-md-3 col-sm-5 col-xs-5\">\r\n          <label for=\"Discount\">Discount</label><br />\r\n          <input [(ngModel)]=\"covarageData.Discount\" type=\"text\" class=\"form-control\" id=\"Discount\" placeholder=\"50%\">\r\n        </div>\r\n        <div class=\"form-group col-md-6 col-sm-7 col-xs-7\">\r\n          <label for=\"Discount\">Total Premium Due</label><br />\r\n          <h5>$ {{covarageData.Premium}}</h5>\r\n          <a>See what's covered. </a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"submit_area\">\r\n        <div class=\"col-md-6\">\r\n          <button (click)=\"back()\" type=\"button\" class=\"btn btn-primary btn-style2 pull-left\">Previous Step</button>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n          <button (click)=\"next()\" type=\"submit\" class=\"btn btn-primary btn-style pull-right\">Apply Now</button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -790,6 +808,9 @@ var Step2Component = /** @class */ (function () {
         var _this = this;
         this.infoService = infoService;
         this.router = router;
+        if (infoService.step1Complete != true) {
+            this.router.navigate(['/quote/step1']);
+        }
         this.covarageData = Object.assign({}, this.infoService.getSelectCoverage());
         this.infoService.getCovaregeData().then(function (data) {
             return new Promise(function (resolve) {
@@ -850,7 +871,7 @@ module.exports = ".btn-style2 {\r\n    background: #7482a2;\r\n    width: 164px;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-area\">\r\n  <h2>3. Fill Application</h2>\r\n  <div class=\"divider\"></div>\r\n  <form class=\"form-area\">\r\n    <div id=\"full_application_form\">\r\n      <div *ngFor=\"let traveler of Travelers; let i=index\">\r\n        <h2>Applicant {{i+1}}</h2>\r\n        <div class=\"row\">\r\n          <div class=\"form-group col-md-6\">\r\n            <label for=\"destination\">First Name</label>\r\n            <input [(ngModel)]=\"traveler.FirstName\" name=\"firstName{{i}}\" type=\"text\" class=\"form-control\" id=\"Destination\" placeholder=\"John\"\r\n            #firstName=\"ngModel\" required>\r\n            <div [hidden]=\"!(!firstName.valid && showError)\" class=\"alert alert-danger\">\r\n                First Name is required\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group col-md-6\">\r\n            <label for=\"destination\">Last Name</label>\r\n            <input [(ngModel)]=\"traveler.LastName\" name=\"lastName{{i}}\" type=\"text\" class=\"form-control\" id=\"Destination\" placeholder=\"Smith\"\r\n              #lastName=\"ngModel\" required>\r\n              <div [hidden]=\"!(!lastName.valid && showError)\" class=\"alert alert-danger\">\r\n                  Last Name is required\r\n              </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"form-group col-md-3 col-xs-4\">\r\n            <label for=\"inputState\">Birth Date </label>\r\n            <select (ngModelChange)=\"onChangeMonth($event, i)\" [(ngModel)]=\"traveler.Month\" name=\"month{{i}}\" id=\"inputState\" class=\"form-control\" \r\n              #month=\"ngModel\" required>\r\n              <option value=\"\" hidden>{{traveler.Month}}</option>\r\n              <option *ngFor=\"let month of months\">{{month}}</option>\r\n            </select>\r\n            <div [hidden]=\"!(!month.valid && showError)\" class=\"alert alert-danger\">\r\n                Month is required\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group col-md-3  col-xs-4\">\r\n            <label for=\"inputState\"> &nbsp; &nbsp; </label>\r\n            <select (ngModelChange)=\"onChangeDay($event, i)\" [(ngModel)]=\"traveler.Day\"  name=\"day{{i}}\" id=\"inputState\" class=\"form-control\" \r\n              #day=\"ngModel\" required>\r\n              <option value=\"\" hidden>{{traveler.Day}}</option>\r\n              <option *ngFor=\"let day of daysInMonth\">{{day}}</option>\r\n            </select>\r\n            <div [hidden]=\"!(!day.valid && showError)\" class=\"alert alert-danger\">\r\n                Day is required\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group col-md-3 col-xs-4\">\r\n            <label for=\"inputState\"> &nbsp; &nbsp; </label>\r\n            <select (ngModelChange)=\"onChangeYear($event, i)\" [(ngModel)]=\"traveler.Year\" name=\"year{{i}}\" id=\"inputState\" class=\"form-control\" \r\n              #Year=\"ngModel\" required>\r\n              <option value=\"\" hidden>{{traveler.Year}}</option>\r\n              <option *ngFor=\"let year of years\">{{year}}</option>\r\n            </select>\r\n            <div [hidden]=\"!(!Year.valid && showError)\" class=\"alert alert-danger\">\r\n                Year is required\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group col-md-3  col-xs-4\">\r\n            <label for=\"age_input\">Age</label>\r\n            <input [(ngModel)]=\"traveler.Age\" name=\"age{{i}}\" readonly type=\"text\" \r\n              class=\"form-control\" id=\"age_input\" placeholder=\"Years\">\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12\">\r\n            <label for=\"destination\">Gender</label><br />\r\n            <div id=\"cheap_radio\">\r\n              <label class=\"radio-inline\"><input [(ngModel)]=\"traveler.Gender\" value=\"Male\" type=\"radio\" name=\"optradios{{i}}\" #optradios=\"ngModel\" required>Male</label>\r\n              <label class=\"radio-inline\"><input [(ngModel)]=\"traveler.Gender\" value=\"Female\" type=\"radio\" name=\"optradios{{i}}\" #optradios=\"ngModel\" required>Female</label>\r\n              <div [hidden]=\"!(!traveler.Gender && showError)\" class=\"alert alert-danger\">\r\n                  Gender is required\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <hr />\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <h4>Address in Canada</h4>\r\n        </div>\r\n        <div class=\"col-md-12 form-group\">\r\n          <label for=\"street_addr\">Street Address</label>\r\n          <input [(ngModel)]=\"Address.street\" name=\"street\" type=\"text\" class=\"form-control\" id=\"street_addr\" placeholder=\"115 Benton Underpass Suite 664\" \r\n            #street=\"ngModel\" required>\r\n          <div [hidden]=\"!(!street.valid && showError)\" class=\"alert alert-danger\">\r\n              Street is required\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group col-md-6 col-xs-6\">\r\n          <label for=\"unum\">Unit Number</label>\r\n          <input [(ngModel)]=\"Address.unitNum\" name=\"unitNum\" type=\"text\" class=\"form-control\" id=\"unum\" placeholder=\"112\" \r\n            #unitNum=\"ngModel\" required>\r\n          <div [hidden]=\"!(!unitNum.valid && showError)\" class=\"alert alert-danger\">\r\n              Unit Number is required\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group col-md-6 col-xs-6\">\r\n          <label for=\"city\">City</label>\r\n          <input [(ngModel)]=\"Address.city\" name=\"city\" type=\"text\" class=\"form-control\" id=\"city\" placeholder=\"Toronto\" \r\n            #city=\"ngModel\" required>\r\n          <div [hidden]=\"!(!city.valid && showError)\" class=\"alert alert-danger\">\r\n              City is required\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group col-md-6 col-xs-6\">\r\n          <label for=\"Province\">Province</label>\r\n          <input [(ngModel)]=\"Address.province\" name=\"province\" type=\"text\" class=\"form-control\" id=\"Province\" placeholder=\"416-444-4444\" \r\n            #province=\"ngModel\" required>\r\n          <div [hidden]=\"!(!province.valid && showError)\" class=\"alert alert-danger\">\r\n              Province is required\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group col-md-6 col-xs-6\">\r\n          <label for=\"work\">Work Phone</label>\r\n          <input [(ngModel)]=\"Address.workPhone\" name=\"workPhone\" type=\"text\" class=\"form-control\" id=\"work\" placeholder=\"416-618-5234\" \r\n            #workPhone=\"ngModel\" required>\r\n          <div [hidden]=\"!(!workPhone.valid && showError)\" class=\"alert alert-danger\">\r\n              Work Phone is required\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group col-md-6 col-xs-6\">\r\n          <label for=\"email\">Email</label>\r\n          <input [(ngModel)]=\"Address.email\" name=\"email\" type=\"email\" class=\"form-control\" id=\"email\" placeholder=\"tabitha_haley@gmail.com\" \r\n            #email=\"ngModel\" required email>\r\n          <div [hidden]=\"!(!email.valid && showError)\" class=\"alert alert-danger\">\r\n              Email is required\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group col-md-6 col-xs-6\">\r\n          <label for=\"veremail\">Verify Email</label>\r\n          <input [(ngModel)]=\"Address.verifyEmail\" name=\"verifyEmail\" type=\"email\" class=\"form-control\" id=\"veremail\" placeholder=\"tabitha_haley@gmail.com\" \r\n            #verifyEmail=\"ngModel\" required email>\r\n          <div [hidden]=\"!(!(Address.verifyEmail==Address.email) && showError)\" class=\"alert alert-danger\">\r\n              You must verify your email\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"submit_area\">\r\n          <div class=\"col-md-6\">\r\n            <button (click)=\"back()\" type=\"button\" class=\"btn btn-primary btn-style2 pull-left\">Previous Step</button>\r\n          </div>\r\n          <div class=\"col-md-6\">\r\n            <button (click)=\"next()\" type=\"button\" class=\"btn btn-primary btn-style pull-right\">Go to Payment</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </form>\r\n</div>"
+module.exports = "<div class=\"main-area\">\r\n  <h2>3. Fill Application</h2>\r\n  <div class=\"divider\"></div>\r\n  <form class=\"form-area\">\r\n    <div id=\"full_application_form\">\r\n      <div *ngFor=\"let traveler of Travelers; let i=index\">\r\n        <h4>Applicant {{i+1}}</h4>\r\n        <div class=\"row\">\r\n          <div class=\"form-group col-md-6\">\r\n            <label for=\"destination\">First Name</label>\r\n            <input [(ngModel)]=\"traveler.FirstName\" name=\"firstName{{i}}\" type=\"text\" class=\"form-control\" id=\"Destination\" placeholder=\"\"\r\n            #firstName=\"ngModel\" required>\r\n            <div [hidden]=\"!(!firstName.valid && isFormValid)\" class=\"alert alert-danger\">\r\n                First Name is required\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group col-md-6\">\r\n            <label for=\"destination\">Last Name</label>\r\n            <input [(ngModel)]=\"traveler.LastName\" name=\"lastName{{i}}\" type=\"text\" class=\"form-control\" id=\"Destination\" placeholder=\"\"\r\n              #lastName=\"ngModel\" required>\r\n              <div [hidden]=\"!(!lastName.valid && isFormValid)\" class=\"alert alert-danger\">\r\n                  Last Name is required\r\n              </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"form-group col-md-3 col-xs-4\">\r\n            <label for=\"inputState\">Birth Date </label>\r\n            <select (ngModelChange)=\"onChangeMonth($event, i)\" [(ngModel)]=\"traveler.Month\" name=\"month{{i}}\" id=\"inputState\" class=\"form-control\" \r\n              #month=\"ngModel\" required>\r\n              <option value=\"\" hidden>{{traveler.Month}}</option>\r\n              <option *ngFor=\"let month of months\">{{month}}</option>\r\n            </select>\r\n            <div [hidden]=\"!(!month.valid && isFormValid)\" class=\"alert alert-danger\">\r\n                Month is required\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group col-md-3  col-xs-4\">\r\n            <label for=\"inputState\"> &nbsp; &nbsp; </label>\r\n            <select (ngModelChange)=\"onChangeDay($event, i)\" [(ngModel)]=\"traveler.Day\"  name=\"day{{i}}\" id=\"inputState\" class=\"form-control\" \r\n              #day=\"ngModel\" required>\r\n              <option value=\"\" hidden>{{traveler.Day}}</option>\r\n              <option *ngFor=\"let day of daysInMonth\">{{day}}</option>\r\n            </select>\r\n            <div [hidden]=\"!(!day.valid && isFormValid)\" class=\"alert alert-danger\">\r\n                Day is required\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group col-md-3 col-xs-4\">\r\n            <label for=\"inputState\"> &nbsp; &nbsp; </label>\r\n            <select (ngModelChange)=\"onChangeYear($event, i)\" [(ngModel)]=\"traveler.Year\" name=\"year{{i}}\" id=\"inputState\" class=\"form-control\" \r\n              #Year=\"ngModel\" required>\r\n              <option value=\"\" hidden>{{traveler.Year}}</option>\r\n              <option *ngFor=\"let year of years\">{{year}}</option>\r\n            </select>\r\n            <div [hidden]=\"!(!Year.valid && isFormValid)\" class=\"alert alert-danger\">\r\n                Year is required\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group col-md-3  col-xs-4\">\r\n            <label for=\"age_input\">Age</label>\r\n            <input [(ngModel)]=\"traveler.Age\" name=\"age{{i}}\" readonly type=\"text\" \r\n              class=\"form-control\" id=\"age_input\" placeholder=\"Years\">\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12\">\r\n            <label for=\"destination\">Gender</label><br />\r\n            <div id=\"cheap_radio\">\r\n              <label class=\"radio-inline\"><input [(ngModel)]=\"traveler.Gender\" value=\"Male\" type=\"radio\" name=\"optradios{{i}}\" #optradios=\"ngModel\" required>Male</label>\r\n              <label class=\"radio-inline\"><input [(ngModel)]=\"traveler.Gender\" value=\"Female\" type=\"radio\" name=\"optradios{{i}}\" #optradios=\"ngModel\" required>Female</label>\r\n              <div [hidden]=\"!(!traveler.Gender && isFormValid)\" class=\"alert alert-danger\">\r\n                  Gender is required\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <hr />\r\n      <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n          <h4>Address in Canada</h4>\r\n        </div>\r\n        <div class=\"col-md-12 form-group\">\r\n          <label for=\"street_addr\">Street Address <span class=\"pill required\">REQUIRED</span></label>\r\n          <input [(ngModel)]=\"Address.street\" name=\"street\" type=\"text\" class=\"form-control\" id=\"street_addr\" placeholder=\"\"\r\n            #street=\"ngModel\" required>\r\n          <div [hidden]=\"!(!street.valid && isFormValid)\" class=\"alert alert-danger\">\r\n              Street is required\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group col-md-6 col-xs-6\">\r\n          <label for=\"unum\">Unit Number</label>\r\n          <input [(ngModel)]=\"Address.unitNum\" name=\"unitNum\" type=\"text\" class=\"form-control\" id=\"unum\" placeholder=\"\">\r\n        </div>\r\n        <div class=\"form-group col-md-6 col-xs-6\">\r\n          <label for=\"city\">City</label>\r\n          <input [(ngModel)]=\"Address.city\" name=\"city\" type=\"text\" class=\"form-control\" id=\"city\" placeholder=\"\"\r\n            #city=\"ngModel\" required>\r\n          <div [hidden]=\"!(!city.valid && isFormValid)\" class=\"alert alert-danger\">\r\n              City is required\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group col-md-6 col-xs-6\">\r\n            <label for=\"province\">Province</label>\r\n            <select [(ngModel)]=\"Address.province\" name=\"province\" id=\"province\" #province=\"ngModel\" required class=\"form-control\">\r\n              <option value=\"\" hidden>Choose...</option>\r\n              <option>Ontario</option>\r\n              <option>Quebec</option>\r\n              <option>...</option>\r\n            </select>\r\n            <div [hidden]=\"!(!province.valid && isFormValid)\" class=\"alert alert-danger\">\r\n              Province is required\r\n            </div>\r\n        </div>\r\n        <div class=\"form-group col-md-6 col-xs-6\">\r\n          <label for=\"work\">Work Phone</label>\r\n          <input [(ngModel)]=\"Address.workPhone\" name=\"workPhone\" type=\"text\" class=\"form-control\" id=\"work\" placeholder=\"\"\r\n            minlength=\"10\" maxlength=\"10\" #workPhone=\"ngModel\" required pattern=\"[0-9]{10}\">\r\n          <div [hidden]=\"!(!workPhone.valid && isFormValid)\" class=\"alert alert-danger\">\r\n              Work Phone is incorrect\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group col-md-6 col-xs-6\">\r\n          <label for=\"email\">Email</label>\r\n          <input [(ngModel)]=\"Address.email\" name=\"email\" type=\"email\" class=\"form-control\" id=\"email\" placeholder=\"\"\r\n            #email=\"ngModel\" required email>\r\n          <div [hidden]=\"!(!email.valid && isFormValid)\" class=\"alert alert-danger\">\r\n              Email is required\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group col-md-6 col-xs-6\">\r\n          <label for=\"veremail\">Verify Email</label>\r\n          <input [(ngModel)]=\"Address.verifyEmail\" name=\"verifyEmail\" type=\"email\" class=\"form-control\" id=\"veremail\" placeholder=\"\"\r\n            #verifyEmail=\"ngModel\" required email>\r\n          <div [hidden]=\"!(!(Address.verifyEmail==Address.email) && isFormValid)\" class=\"alert alert-danger\">\r\n              You must verify your email\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"submit_area\">\r\n          <div class=\"col-md-6\">\r\n            <button (click)=\"back()\" type=\"button\" class=\"btn btn-primary btn-style2 pull-left\">Previous Step</button>\r\n          </div>\r\n          <div class=\"col-md-6\">\r\n            <button (click)=\"next()\" type=\"button\" class=\"btn btn-primary btn-style pull-right\">Go to Payment</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -892,7 +913,10 @@ var Step3Component = /** @class */ (function () {
             verifyEmail: "",
         };
         this.Travelers = [];
-        this.showError = false;
+        this.isFormValid = false;
+        if (infoService.step1Complete != true && infoService.step2Complete != true) {
+            this.router.navigate(['/quote/step1']);
+        }
         if (infoService.infoQuote.tripQuote.Travelers.length != +infoService.infoQuote.tripQuote.NumberOfTravelers) {
             for (var index = 1; index < +infoService.infoQuote.tripQuote.NumberOfTravelers; index++) {
                 this.Travelers.push({
@@ -911,10 +935,11 @@ var Step3Component = /** @class */ (function () {
         else {
             this.Travelers = infoService.infoQuote.tripQuote.Travelers;
         }
+        this.Address.province = infoService.infoQuote.tripQuote.Province;
         this.Address = infoService.infoQuote.tripQuote.Address;
     }
     Step3Component.prototype.ngOnInit = function () {
-        for (var i = 1900; i < moment__WEBPACK_IMPORTED_MODULE_4__().year(); i++) {
+        for (var i = moment__WEBPACK_IMPORTED_MODULE_4__().year(); i >= 1920; i--) {
             this.years.push(i);
         }
         for (var i = 1; i <= 31; i++) {
@@ -953,7 +978,8 @@ var Step3Component = /** @class */ (function () {
                 element.Gender && element.FirstName && element.LastName) {
                 filledData++;
             }
-            if (filledData == _this.Travelers.length) {
+            if (filledData == _this.Travelers.length && _this.Address.email == _this.Address.verifyEmail &&
+                _this.Address.workPhone.match("[0-9]{10}").length == 1) {
                 checkAllInput = false;
             }
             else {
@@ -961,10 +987,10 @@ var Step3Component = /** @class */ (function () {
             }
         });
         return !this.Address.city || !this.Address.email || !this.Address.province || !this.Address.street ||
-            !this.Address.unitNum || !this.Address.verifyEmail || !this.Address.workPhone || checkAllInput;
+            !this.Address.verifyEmail || !this.Address.workPhone || checkAllInput;
     };
     Step3Component.prototype.next = function () {
-        this.showError = true;
+        this.isFormValid = true;
         if (this.asValid() == false) {
             this.infoService.step3Complete = true;
             this.infoService.infoQuote.tripQuote.Travelers = this.Travelers;
@@ -1035,6 +1061,9 @@ var Step4Component = /** @class */ (function () {
     function Step4Component(router, infoService) {
         this.router = router;
         this.infoService = infoService;
+        if (infoService.step1Complete != true && infoService.step2Complete != true && infoService.step3Complete != true) {
+            this.router.navigate(['/quote/step1']);
+        }
     }
     Step4Component.prototype.ngOnInit = function () {
         this.infoService.stepEvent.emit('');
@@ -1223,7 +1252,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\User\source\repos\quoteapp\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\User\source\repos\nickyaro\src\main.ts */"./src/main.ts");
 
 
 /***/ })

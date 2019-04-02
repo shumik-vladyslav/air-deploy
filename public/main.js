@@ -40,6 +40,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_content_management_content_management_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main/content-management/content-management.component */ "./src/app/main/content-management/content-management.component.ts");
 /* harmony import */ var _main_widget_management_widget_management_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./main/widget-management/widget-management.component */ "./src/app/main/widget-management/widget-management.component.ts");
 /* harmony import */ var _main_content_management_article_article_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./main/content-management/article/article.component */ "./src/app/main/content-management/article/article.component.ts");
+/* harmony import */ var _main_widget_management_new_widget_new_widget_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./main/widget-management/new-widget/new-widget.component */ "./src/app/main/widget-management/new-widget/new-widget.component.ts");
+/* harmony import */ var _main_widget_management_new_widget_content_content_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./main/widget-management/new-widget/content/content.component */ "./src/app/main/widget-management/new-widget/content/content.component.ts");
+/* harmony import */ var _main_widget_management_new_widget_customize_customize_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./main/widget-management/new-widget/customize/customize.component */ "./src/app/main/widget-management/new-widget/customize/customize.component.ts");
+/* harmony import */ var _main_widget_management_new_widget_emded_emded_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./main/widget-management/new-widget/emded/emded.component */ "./src/app/main/widget-management/new-widget/emded/emded.component.ts");
+/* harmony import */ var _main_widget_management_new_widget_requests_requests_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./main/widget-management/new-widget/requests/requests.component */ "./src/app/main/widget-management/new-widget/requests/requests.component.ts");
+/* harmony import */ var _main_widget_management_new_widget_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./main/widget-management/new-widget/statistics/statistics.component */ "./src/app/main/widget-management/new-widget/statistics/statistics.component.ts");
+
+
+
+
+
+
 
 
 
@@ -56,6 +68,28 @@ var routes = [
             { path: 'widget-manage', component: _main_widget_management_widget_management_component__WEBPACK_IMPORTED_MODULE_5__["WidgetManagementComponent"] },
             { path: 'article/:id', component: _main_content_management_article_article_component__WEBPACK_IMPORTED_MODULE_6__["ArticleComponent"] },
             { path: 'article', component: _main_content_management_article_article_component__WEBPACK_IMPORTED_MODULE_6__["ArticleComponent"] },
+            {
+                path: 'new-widget',
+                component: _main_widget_management_new_widget_new_widget_component__WEBPACK_IMPORTED_MODULE_7__["NewWidgetComponent"],
+                children: [
+                    { path: 'content/:id', component: _main_widget_management_new_widget_content_content_component__WEBPACK_IMPORTED_MODULE_8__["ContentComponent"] },
+                    { path: 'customize/:id', component: _main_widget_management_new_widget_customize_customize_component__WEBPACK_IMPORTED_MODULE_9__["CustomizeComponent"] },
+                    { path: 'emded/:id', component: _main_widget_management_new_widget_emded_emded_component__WEBPACK_IMPORTED_MODULE_10__["EmdedComponent"] },
+                    { path: 'requests/:id', component: _main_widget_management_new_widget_requests_requests_component__WEBPACK_IMPORTED_MODULE_11__["RequestsComponent"] },
+                    { path: 'statistics/:id', component: _main_widget_management_new_widget_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_12__["StatisticsComponent"] },
+                ]
+            },
+            {
+                path: 'new-widget',
+                component: _main_widget_management_new_widget_new_widget_component__WEBPACK_IMPORTED_MODULE_7__["NewWidgetComponent"],
+                children: [
+                    { path: 'content', component: _main_widget_management_new_widget_content_content_component__WEBPACK_IMPORTED_MODULE_8__["ContentComponent"] },
+                    { path: 'customize', component: _main_widget_management_new_widget_customize_customize_component__WEBPACK_IMPORTED_MODULE_9__["CustomizeComponent"] },
+                    { path: 'emded', component: _main_widget_management_new_widget_emded_emded_component__WEBPACK_IMPORTED_MODULE_10__["EmdedComponent"] },
+                    { path: 'requests', component: _main_widget_management_new_widget_requests_requests_component__WEBPACK_IMPORTED_MODULE_11__["RequestsComponent"] },
+                    { path: 'statistics', component: _main_widget_management_new_widget_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_12__["StatisticsComponent"] },
+                ]
+            },
         ]
     }
 ];
@@ -163,6 +197,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_directives_click_outside_directive__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./shared/directives/click-outside.directive */ "./src/app/shared/directives/click-outside.directive.ts");
 /* harmony import */ var _main_content_management_link_article_link_article_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./main/content-management/link-article/link-article.component */ "./src/app/main/content-management/link-article/link-article.component.ts");
 /* harmony import */ var _shared_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./shared/dialog/dialog.component */ "./src/app/shared/dialog/dialog.component.ts");
+/* harmony import */ var _main_widget_management_new_widget_new_widget_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./main/widget-management/new-widget/new-widget.component */ "./src/app/main/widget-management/new-widget/new-widget.component.ts");
+/* harmony import */ var ngx_clipboard__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ngx-clipboard */ "./node_modules/ngx-clipboard/fesm5/ngx-clipboard.js");
+/* harmony import */ var _main_widget_management_new_widget_content_content_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./main/widget-management/new-widget/content/content.component */ "./src/app/main/widget-management/new-widget/content/content.component.ts");
+/* harmony import */ var _main_widget_management_new_widget_customize_customize_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./main/widget-management/new-widget/customize/customize.component */ "./src/app/main/widget-management/new-widget/customize/customize.component.ts");
+/* harmony import */ var _main_widget_management_new_widget_emded_emded_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./main/widget-management/new-widget/emded/emded.component */ "./src/app/main/widget-management/new-widget/emded/emded.component.ts");
+/* harmony import */ var _main_widget_management_new_widget_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./main/widget-management/new-widget/statistics/statistics.component */ "./src/app/main/widget-management/new-widget/statistics/statistics.component.ts");
+/* harmony import */ var _main_widget_management_new_widget_requests_requests_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./main/widget-management/new-widget/requests/requests.component */ "./src/app/main/widget-management/new-widget/requests/requests.component.ts");
 
 
 
@@ -174,6 +215,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // prime Modules
+
+
+
+
+
+
+
 
 
 
@@ -198,13 +246,20 @@ var AppModule = /** @class */ (function () {
                 _main_content_management_article_article_component__WEBPACK_IMPORTED_MODULE_16__["ArticleComponent"],
                 _shared_directives_click_outside_directive__WEBPACK_IMPORTED_MODULE_17__["ClickOutsideDirective"],
                 _main_content_management_link_article_link_article_component__WEBPACK_IMPORTED_MODULE_18__["LinkArticleComponent"],
-                _shared_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_19__["DialogComponent"]
+                _shared_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_19__["DialogComponent"],
+                _main_widget_management_new_widget_new_widget_component__WEBPACK_IMPORTED_MODULE_20__["NewWidgetComponent"],
+                _main_widget_management_new_widget_content_content_component__WEBPACK_IMPORTED_MODULE_22__["ContentComponent"],
+                _main_widget_management_new_widget_customize_customize_component__WEBPACK_IMPORTED_MODULE_23__["CustomizeComponent"],
+                _main_widget_management_new_widget_emded_emded_component__WEBPACK_IMPORTED_MODULE_24__["EmdedComponent"],
+                _main_widget_management_new_widget_statistics_statistics_component__WEBPACK_IMPORTED_MODULE_25__["StatisticsComponent"],
+                _main_widget_management_new_widget_requests_requests_component__WEBPACK_IMPORTED_MODULE_26__["RequestsComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormsModule"],
+                ngx_clipboard__WEBPACK_IMPORTED_MODULE_21__["ClipboardModule"],
                 // prime Modules
                 primeng_button__WEBPACK_IMPORTED_MODULE_10__["ButtonModule"],
                 primeng_dropdown__WEBPACK_IMPORTED_MODULE_11__["DropdownModule"],
@@ -1195,6 +1250,440 @@ var MainComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/main/widget-management/new-widget/content/content.component.html":
+/*!**********************************************************************************!*\
+  !*** ./src/app/main/widget-management/new-widget/content/content.component.html ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  content works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/main/widget-management/new-widget/content/content.component.scss":
+/*!**********************************************************************************!*\
+  !*** ./src/app/main/widget-management/new-widget/content/content.component.scss ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21haW4vd2lkZ2V0LW1hbmFnZW1lbnQvbmV3LXdpZGdldC9jb250ZW50L2NvbnRlbnQuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/main/widget-management/new-widget/content/content.component.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/main/widget-management/new-widget/content/content.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: ContentComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentComponent", function() { return ContentComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_main_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/main.service */ "./src/app/shared/services/main.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+var ContentComponent = /** @class */ (function () {
+    function ContentComponent(mainService, router, activatedRoute) {
+        this.mainService = mainService;
+        this.router = router;
+        this.activatedRoute = activatedRoute;
+        this.activatedRoute.params.subscribe(function (params) {
+            console.log(params);
+        });
+        this.data = this.mainService.getWidget();
+    }
+    ContentComponent.prototype.ngOnInit = function () {
+    };
+    ContentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-content',
+            template: __webpack_require__(/*! ./content.component.html */ "./src/app/main/widget-management/new-widget/content/content.component.html"),
+            styles: [__webpack_require__(/*! ./content.component.scss */ "./src/app/main/widget-management/new-widget/content/content.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_main_service__WEBPACK_IMPORTED_MODULE_2__["MainService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
+    ], ContentComponent);
+    return ContentComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/main/widget-management/new-widget/customize/customize.component.html":
+/*!**************************************************************************************!*\
+  !*** ./src/app/main/widget-management/new-widget/customize/customize.component.html ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  customize works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/main/widget-management/new-widget/customize/customize.component.scss":
+/*!**************************************************************************************!*\
+  !*** ./src/app/main/widget-management/new-widget/customize/customize.component.scss ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21haW4vd2lkZ2V0LW1hbmFnZW1lbnQvbmV3LXdpZGdldC9jdXN0b21pemUvY3VzdG9taXplLmNvbXBvbmVudC5zY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/main/widget-management/new-widget/customize/customize.component.ts":
+/*!************************************************************************************!*\
+  !*** ./src/app/main/widget-management/new-widget/customize/customize.component.ts ***!
+  \************************************************************************************/
+/*! exports provided: CustomizeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomizeComponent", function() { return CustomizeComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_main_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/main.service */ "./src/app/shared/services/main.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+var CustomizeComponent = /** @class */ (function () {
+    function CustomizeComponent(mainService, router, activatedRoute) {
+        this.mainService = mainService;
+        this.router = router;
+        this.activatedRoute = activatedRoute;
+        this.activatedRoute.params.subscribe(function (params) {
+            console.log(params);
+        });
+        this.data = this.mainService.getWidget();
+    }
+    CustomizeComponent.prototype.ngOnInit = function () {
+    };
+    CustomizeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-customize',
+            template: __webpack_require__(/*! ./customize.component.html */ "./src/app/main/widget-management/new-widget/customize/customize.component.html"),
+            styles: [__webpack_require__(/*! ./customize.component.scss */ "./src/app/main/widget-management/new-widget/customize/customize.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_main_service__WEBPACK_IMPORTED_MODULE_2__["MainService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
+    ], CustomizeComponent);
+    return CustomizeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/main/widget-management/new-widget/emded/emded.component.html":
+/*!******************************************************************************!*\
+  !*** ./src/app/main/widget-management/new-widget/emded/emded.component.html ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  emded works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/main/widget-management/new-widget/emded/emded.component.scss":
+/*!******************************************************************************!*\
+  !*** ./src/app/main/widget-management/new-widget/emded/emded.component.scss ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21haW4vd2lkZ2V0LW1hbmFnZW1lbnQvbmV3LXdpZGdldC9lbWRlZC9lbWRlZC5jb21wb25lbnQuc2NzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/main/widget-management/new-widget/emded/emded.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/main/widget-management/new-widget/emded/emded.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: EmdedComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EmdedComponent", function() { return EmdedComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_main_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/main.service */ "./src/app/shared/services/main.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+var EmdedComponent = /** @class */ (function () {
+    function EmdedComponent(mainService, router, activatedRoute) {
+        this.mainService = mainService;
+        this.router = router;
+        this.activatedRoute = activatedRoute;
+        this.activatedRoute.params.subscribe(function (params) {
+            console.log(params);
+        });
+        this.data = this.mainService.getWidget();
+    }
+    EmdedComponent.prototype.ngOnInit = function () {
+    };
+    EmdedComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-emded',
+            template: __webpack_require__(/*! ./emded.component.html */ "./src/app/main/widget-management/new-widget/emded/emded.component.html"),
+            styles: [__webpack_require__(/*! ./emded.component.scss */ "./src/app/main/widget-management/new-widget/emded/emded.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_main_service__WEBPACK_IMPORTED_MODULE_2__["MainService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
+    ], EmdedComponent);
+    return EmdedComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/main/widget-management/new-widget/new-widget.component.html":
+/*!*****************************************************************************!*\
+  !*** ./src/app/main/widget-management/new-widget/new-widget.component.html ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"display: flex; flex-flow: column; justify-content: space-between; height: calc(100vh - 81px);\">\n  <div class=\"head\">\n    <div class=\"df ai-c jc-b full-width\">\n      <div class=\"c-p df ai-c\">\n        <div [routerLink]=\"[ '/widget-manage' ]\">\n          <img class=\"m-r-5\" width=\"28px\" src=\"assets/img/arrow-back.png\" alt=\"\">\n        </div>\n        <div class=\"fs-20 m-r-30\">\n          Edit Widget\n        </div>\n        <input maxlength=\"16\" type=\"text\" [(ngModel)]=\"widgetName\" placeholder=\"Widget name\" pInputText />\n      </div>\n      <div class=\"df\">\n        <div class=\"df ai-c m-r-30 c-p\">\n          <img class=\"m-r-5\" width=\"28px\" src=\"assets/img/view.png\" alt=\"\">\n          <div class=\"color-primary fs-14\">Widget Preview</div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"df \">\n    <div class=\"side-bar\">\n      <div class=\"p-t-20\">\n        <div class=\"side-bar__header\">\n          <p><span>Build</span></p>\n        </div>\n        <div (click)=\"goToTab('/new-widget/content')\" [ngClass]=\"{'active': router.url.slice(0, 12 + 7) === '/new-widget/content'}\" class=\"side-bar--item\">\n          <div>\n            <img class=\"inactive\" src=\"assets/img/query.png\" alt=\"\">\n            <img class=\"active\" src=\"assets/img/quest_blue.png\" alt=\"\">\n          </div>\n          <p class=\"bar-text\"><span>Content</span></p>\n        </div>\n        <div (click)=\"goToTab('/new-widget/customize')\" [ngClass]=\"{'active': router.url.slice(0, 12 + 9) === '/new-widget/customize'}\" class=\"side-bar--item\">\n          <div>\n            <img class=\"inactive\" src=\"assets/img/sheet.png\" alt=\"\">\n            <img class=\"active\" src=\"assets/img/cust_blue.png\" alt=\"\">\n          </div>\n          <p class=\"bar-text\"><span>Customize</span></p>\n        </div>\n        <div (click)=\"goToTab('/new-widget/emded')\" [ngClass]=\"{'active': router.url.slice(0, 12 + 5) === '/new-widget/emded'}\" class=\"side-bar--item\">\n          <div>\n            <img class=\"inactive\" src=\"assets/img/codee.png\" alt=\"\">\n            <img class=\"active\" src=\"assets/img/code__blue.png\" alt=\"\">\n          </div>\n          <p class=\"bar-text\"><span>Embed</span></p>\n        </div>\n      </div>\n      <div class=\"side-bar_wrap\">\n        <div class=\"manage\">\n          <div class=\"side-bar__header\">\n            <p><span>Manage</span></p>\n          </div>\n          <div (click)=\"goToTab('/new-widget/statistics')\" [ngClass]=\"{'active': router.url.slice(0, 12 + 10) === '/new-widget/statistics'}\" class=\"side-bar--item\">\n            <div>\n              <img class=\"inactive\" src=\"assets/img/statistics.png\" alt=\"\">\n              <img class=\"active\" src=\"assets/img/statistics_blue.png\" alt=\"\">\n            </div>\n            <p class=\"bar-text\"><span>Statistics</span></p>\n          </div>\n          <div (click)=\"goToTab('/new-widget/requests')\" [ngClass]=\"{'active': router.url.slice(0, 12 + 8) === '/new-widget/requests'}\" class=\"side-bar--item\">\n            <div>\n              <img class=\"inactive\" src=\"assets/img/request.png\" alt=\"\">\n              <img class=\"active\" src=\"assets/img/request__blue.png\" alt=\"\">\n            </div>\n            <p class=\"bar-text\"><span>Requests</span></p>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"content\">\n\n      <router-outlet></router-outlet>\n\n    </div>\n  </div>\n\n  <div class=\"foot\">\n    <div class=\"m-r-30\">\n      <button (click)=\"save()\" class=\"button-default\">Save</button>\n    </div>\n    <div class=\"m-r-30\">\n      <button (click)=\"cancel()\" class=\"button-default\">Cancel</button>\n    </div>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/main/widget-management/new-widget/new-widget.component.scss":
+/*!*****************************************************************************!*\
+  !*** ./src/app/main/widget-management/new-widget/new-widget.component.scss ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".head {\n  padding-left: 30px;\n  display: flex;\n  flex-flow: column;\n  align-items: flex-start;\n  justify-content: center;\n  min-height: 81px;\n  background-color: #e4e4e4; }\n\n.foot {\n  padding-left: 30px;\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  min-height: 81px;\n  background-color: #e4e4e4; }\n\n.side-bar {\n  width: 100px;\n  min-width: 100px;\n  background: inherit;\n  background-color: #f2f2f2; }\n\n.side-bar--item {\n    width: 94px;\n    height: 93px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    margin: 6px auto 0 auto;\n    cursor: pointer; }\n\n.side-bar_wrap {\n  padding-top: 20px; }\n\n.build {\n  height: 360px; }\n\n.side-bar__header {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 36px;\n  background-color: #2292a1;\n  font-size: 18px;\n  font-weight: 700;\n  color: #ffffff; }\n\n.bar-text {\n  font-size: 12px;\n  color: #666666;\n  margin: 7px 0 0 0; }\n\n.side-bar--item img.active {\n  display: none; }\n\n.wrside-bar--itemap img.inactive {\n  display: block; }\n\n.side-bar--item.active img.inactive {\n  display: none; }\n\n.side-bar--item.active img.active {\n  display: block; }\n\n.bar-text.active {\n  color: #2292a1; }\n\n.side-bar--item.active > p {\n  color: #2292a1; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3NodW1pay9Eb2N1bWVudHMva21zLXNwb3Qvc3JjL2FwcC9tYWluL3dpZGdldC1tYW5hZ2VtZW50L25ldy13aWRnZXQvbmV3LXdpZGdldC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUNsQixhQUFhO0VBQ2IsaUJBQWlCO0VBQ2pCLHVCQUF1QjtFQUN2Qix1QkFBdUI7RUFDdkIsZ0JBQWdCO0VBQ2hCLHlCQUF3QyxFQUFBOztBQUUxQztFQUNFLGtCQUFrQjtFQUNsQixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLHlCQUF5QjtFQUN6QixnQkFBZ0I7RUFDaEIseUJBQXdDLEVBQUE7O0FBRzFDO0VBQ0UsWUFBWTtFQUNaLGdCQUFnQjtFQUNoQixtQkFBbUI7RUFDbkIseUJBQXdDLEVBQUE7O0FBQ3hDO0lBQ0UsV0FBVztJQUNYLFlBQVk7SUFDWixhQUFhO0lBQ2Isc0JBQXNCO0lBQ3RCLG1CQUFtQjtJQUNuQix1QkFBdUI7SUFDdkIsdUJBQXVCO0lBQ3ZCLGVBQWUsRUFBQTs7QUFHbkI7RUFDRSxpQkFBaUIsRUFBQTs7QUFFbkI7RUFDRSxhQUFhLEVBQUE7O0FBRWY7RUFDRSxhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2QixZQUFZO0VBQ1oseUJBQXVDO0VBQ3ZDLGVBQWU7RUFDZixnQkFBZ0I7RUFDaEIsY0FBYyxFQUFBOztBQUdoQjtFQUNFLGVBQWU7RUFDZixjQUFjO0VBQ2QsaUJBQWlCLEVBQUE7O0FBR25CO0VBQ0UsYUFBYSxFQUFBOztBQUVmO0VBQ0UsY0FBYyxFQUFBOztBQUVoQjtFQUNFLGFBQWEsRUFBQTs7QUFFZjtFQUNFLGNBQWMsRUFBQTs7QUFHaEI7RUFDRSxjQUE0QixFQUFBOztBQUU5QjtFQUNFLGNBQWMsRUFBQSIsImZpbGUiOiJzcmMvYXBwL21haW4vd2lkZ2V0LW1hbmFnZW1lbnQvbmV3LXdpZGdldC9uZXctd2lkZ2V0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmhlYWQge1xuICBwYWRkaW5nLWxlZnQ6IDMwcHg7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZmxvdzogY29sdW1uO1xuICBhbGlnbi1pdGVtczogZmxleC1zdGFydDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIG1pbi1oZWlnaHQ6IDgxcHg7XG4gIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMjI4LCAyMjgsIDIyOCwgMSk7XG59XG4uZm9vdCB7XG4gIHBhZGRpbmctbGVmdDogMzBweDtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBmbGV4LWVuZDtcbiAgbWluLWhlaWdodDogODFweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyMjgsIDIyOCwgMjI4LCAxKTtcbn1cblxuLnNpZGUtYmFyIHtcbiAgd2lkdGg6IDEwMHB4O1xuICBtaW4td2lkdGg6IDEwMHB4O1xuICBiYWNrZ3JvdW5kOiBpbmhlcml0O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI0MiwgMjQyLCAyNDIsIDEpO1xuICAmLS1pdGVtIHtcbiAgICB3aWR0aDogOTRweDtcbiAgICBoZWlnaHQ6IDkzcHg7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgbWFyZ2luOiA2cHggYXV0byAwIGF1dG87XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICB9XG59XG4uc2lkZS1iYXJfd3JhcCB7XG4gIHBhZGRpbmctdG9wOiAyMHB4O1xufVxuLmJ1aWxkIHtcbiAgaGVpZ2h0OiAzNjBweDtcbn1cbi5zaWRlLWJhcl9faGVhZGVyIHtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGhlaWdodDogMzZweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgzNCwgMTQ2LCAxNjEsIDEpO1xuICBmb250LXNpemU6IDE4cHg7XG4gIGZvbnQtd2VpZ2h0OiA3MDA7XG4gIGNvbG9yOiAjZmZmZmZmO1xufVxuXG4uYmFyLXRleHQge1xuICBmb250LXNpemU6IDEycHg7XG4gIGNvbG9yOiAjNjY2NjY2O1xuICBtYXJnaW46IDdweCAwIDAgMDtcbn1cblxuLnNpZGUtYmFyLS1pdGVtIGltZy5hY3RpdmUge1xuICBkaXNwbGF5OiBub25lO1xufVxuLndyc2lkZS1iYXItLWl0ZW1hcCBpbWcuaW5hY3RpdmUge1xuICBkaXNwbGF5OiBibG9jaztcbn1cbi5zaWRlLWJhci0taXRlbS5hY3RpdmUgaW1nLmluYWN0aXZlIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cbi5zaWRlLWJhci0taXRlbS5hY3RpdmUgaW1nLmFjdGl2ZSB7XG4gIGRpc3BsYXk6IGJsb2NrO1xufVxuXG4uYmFyLXRleHQuYWN0aXZlIHtcbiAgY29sb3I6IHJnYmEoMzQsIDE0NiwgMTYxLCAxKTtcbn1cbi5zaWRlLWJhci0taXRlbS5hY3RpdmUgPiBwIHtcbiAgY29sb3I6ICMyMjkyYTE7XG59XG4iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/main/widget-management/new-widget/new-widget.component.ts":
+/*!***************************************************************************!*\
+  !*** ./src/app/main/widget-management/new-widget/new-widget.component.ts ***!
+  \***************************************************************************/
+/*! exports provided: NewWidgetComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewWidgetComponent", function() { return NewWidgetComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_main_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/main.service */ "./src/app/shared/services/main.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+var NewWidgetComponent = /** @class */ (function () {
+    function NewWidgetComponent(mainService, router, activatedRoute) {
+        this.mainService = mainService;
+        this.router = router;
+        this.activatedRoute = activatedRoute;
+        this.data = this.mainService.getWidget();
+        var curentId = +this.router.url.split('/')[this.router.url.split('/').length - 1];
+        this.activatedRoute.params.subscribe(function (params) {
+        });
+        if (!isNaN(curentId)) {
+            this.id = curentId;
+            for (var key in this.data) {
+                if (+this.data[key].id === +this.id) {
+                    this.dataToEdit = this.data[key];
+                    this.widgetName = this.dataToEdit.name;
+                }
+            }
+        }
+    }
+    NewWidgetComponent.prototype.ngOnInit = function () {
+    };
+    NewWidgetComponent.prototype.save = function () {
+        if (!this.id) {
+            this.mainService.addWidget(this.widgetName);
+        }
+        else {
+            this.dataToEdit.name = this.widgetName;
+            this.mainService.editWidget(this.dataToEdit);
+        }
+        this.router.navigateByUrl('/widget-manage');
+    };
+    NewWidgetComponent.prototype.cancel = function () {
+        this.widgetName = null;
+        this.dataToEdit = {};
+        this.router.navigateByUrl('/widget-manage');
+    };
+    NewWidgetComponent.prototype.goToTab = function (url) {
+        if (!isNaN(this.id)) {
+            this.router.navigate([url + '/' + this.id]);
+        }
+        else {
+            this.router.navigateByUrl(url);
+        }
+    };
+    NewWidgetComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-new-widget',
+            template: __webpack_require__(/*! ./new-widget.component.html */ "./src/app/main/widget-management/new-widget/new-widget.component.html"),
+            styles: [__webpack_require__(/*! ./new-widget.component.scss */ "./src/app/main/widget-management/new-widget/new-widget.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_main_service__WEBPACK_IMPORTED_MODULE_2__["MainService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
+    ], NewWidgetComponent);
+    return NewWidgetComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/main/widget-management/new-widget/requests/requests.component.html":
+/*!************************************************************************************!*\
+  !*** ./src/app/main/widget-management/new-widget/requests/requests.component.html ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  requests works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/main/widget-management/new-widget/requests/requests.component.scss":
+/*!************************************************************************************!*\
+  !*** ./src/app/main/widget-management/new-widget/requests/requests.component.scss ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21haW4vd2lkZ2V0LW1hbmFnZW1lbnQvbmV3LXdpZGdldC9yZXF1ZXN0cy9yZXF1ZXN0cy5jb21wb25lbnQuc2NzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/main/widget-management/new-widget/requests/requests.component.ts":
+/*!**********************************************************************************!*\
+  !*** ./src/app/main/widget-management/new-widget/requests/requests.component.ts ***!
+  \**********************************************************************************/
+/*! exports provided: RequestsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RequestsComponent", function() { return RequestsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_main_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/main.service */ "./src/app/shared/services/main.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+var RequestsComponent = /** @class */ (function () {
+    function RequestsComponent(mainService, router, activatedRoute) {
+        this.mainService = mainService;
+        this.router = router;
+        this.activatedRoute = activatedRoute;
+        this.activatedRoute.params.subscribe(function (params) {
+            console.log(params);
+        });
+        this.data = this.mainService.getWidget();
+    }
+    RequestsComponent.prototype.ngOnInit = function () {
+    };
+    RequestsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-requests',
+            template: __webpack_require__(/*! ./requests.component.html */ "./src/app/main/widget-management/new-widget/requests/requests.component.html"),
+            styles: [__webpack_require__(/*! ./requests.component.scss */ "./src/app/main/widget-management/new-widget/requests/requests.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_main_service__WEBPACK_IMPORTED_MODULE_2__["MainService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
+    ], RequestsComponent);
+    return RequestsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/main/widget-management/new-widget/statistics/statistics.component.html":
+/*!****************************************************************************************!*\
+  !*** ./src/app/main/widget-management/new-widget/statistics/statistics.component.html ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  statistics works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/main/widget-management/new-widget/statistics/statistics.component.scss":
+/*!****************************************************************************************!*\
+  !*** ./src/app/main/widget-management/new-widget/statistics/statistics.component.scss ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21haW4vd2lkZ2V0LW1hbmFnZW1lbnQvbmV3LXdpZGdldC9zdGF0aXN0aWNzL3N0YXRpc3RpY3MuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/main/widget-management/new-widget/statistics/statistics.component.ts":
+/*!**************************************************************************************!*\
+  !*** ./src/app/main/widget-management/new-widget/statistics/statistics.component.ts ***!
+  \**************************************************************************************/
+/*! exports provided: StatisticsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StatisticsComponent", function() { return StatisticsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_main_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/main.service */ "./src/app/shared/services/main.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+var StatisticsComponent = /** @class */ (function () {
+    function StatisticsComponent(mainService, router, activatedRoute) {
+        this.mainService = mainService;
+        this.router = router;
+        this.activatedRoute = activatedRoute;
+        this.activatedRoute.params.subscribe(function (params) {
+            console.log(params);
+        });
+        this.data = this.mainService.getWidget();
+    }
+    StatisticsComponent.prototype.ngOnInit = function () {
+    };
+    StatisticsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-statistics',
+            template: __webpack_require__(/*! ./statistics.component.html */ "./src/app/main/widget-management/new-widget/statistics/statistics.component.html"),
+            styles: [__webpack_require__(/*! ./statistics.component.scss */ "./src/app/main/widget-management/new-widget/statistics/statistics.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_main_service__WEBPACK_IMPORTED_MODULE_2__["MainService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
+    ], StatisticsComponent);
+    return StatisticsComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/main/widget-management/widget-management.component.html":
 /*!*************************************************************************!*\
   !*** ./src/app/main/widget-management/widget-management.component.html ***!
@@ -1202,7 +1691,7 @@ var MainComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  widget-management works!\n</p>\n"
+module.exports = "<div class=\"w-management__header\">\n  <h3 class=\"w-manage-title\">Manage and customize the SPOT widgets in your site</h3>\n  <p><span>A short help text will appear here with an option to read more / go to the full manual</span></p>\n</div>\n<div class=\"w-management-main\">\n\n  <div class=\"df wrap\">\n    <div *ngFor=\"let widget of widgetData; let i = index\" class=\"widget-wrap\">\n      <div (mouseenter)=\"showAction = i\" (mouseleave)=\"showAction = null\" class=\"widget-card\">\n        <div class=\"widget-head\">\n          <div class=\"head-logo\">\n            <img class=\"logo-img\" src=\"assets/img/umbrella.gif\" alt=\"umbrella\">\n          </div>\n          <p>\n            <span *ngIf=\"edit !== i\" (dblclick)=\"edit = i;\">{{widget.name}}</span>\n            <span *ngIf=\"edit === i\" class=\"df ai-c\">\n              <input maxlength=\"16\" [(ngModel)]=\"widget.name\" class=\"assistant-input m-0 name-field\" type=\"text\" name=\"\"\n                placeholder=\"\">\n              <button class=\"button-default btn-ok\" (click)=\"edit = null\">Ok</button>\n            </span>\n          </p>\n        </div>\n        <input class=\"assistant-input\" type=\"text\" name=\"\" placeholder=\"\">\n        <div class=\"frequent-questions\">\n          <div *ngFor=\"let ques of widget.quesions; let iQues = index\">\n            <p *ngIf=\"iQues <= 5 \">\n              <span>{{ques}}</span>\n            </p>\n          </div>\n        </div>\n        <div *ngIf=\"showAction === i\" class=\"widget-more\">\n          <div class=\"wid-wrap\">\n            <a [routerLink]=\"[ '/new-widget/content', widget.id]\" class=\"more-info\" title=\"Edit\">\n              <img src=\"assets/img/pen.png\" alt=\"pic\">\n            </a>\n            <a (click)=\"dublicateWidget(widget, i)\" class=\"more-info\" title=\"Dublicate\">\n              <img src=\"assets/img/copy.png\" alt=\"pic\">\n            </a>\n            <a (click)=\"showCode = true\" class=\"more-info\" title=\"Copy Code\">\n              <img src=\"assets/img/code.png\" alt=\"pic\">\n            </a>\n            <a [routerLink]=\"[ '/new-widget/statistics', widget.id]\" class=\"more-info\" title=\"Usage Statistics\">\n              <img src=\"assets/img/diagram.png\" alt=\"pic\">\n            </a>\n            <a class=\"more-info\" title=\"Preview Widget\">\n              <img src=\"assets/img/eye.png\" alt=\"pic\">\n            </a>\n            <a (click)=\"detaleItem('dialog', i)\" class=\"more-info\" title=\"Delete\">\n              <img src=\"assets/img/bucket.png\" alt=\"pic\">\n            </a>\n          </div>\n        </div>\n      </div>\n      <p *ngIf=\"widget.demo\" class=\"widget_text\"><span>Use this demo widget to explore what options are available for\n          you</span></p>\n    </div>\n  </div>\n\n  <div class=\"widget-wrap\">\n    <div class=\"add_new-widget\" [routerLink]=\"[ '/new-widget/content' ]\">\n      <p class=\"add\"><span>Add new widget</span></p>\n      <img src=\"assets/img/cross.png\" alt=\"cross\">\n    </div>\n    <p class=\"widget_text\"><span>Click to create your new widget</span></p>\n  </div>\n</div>\n\n<div *ngIf=\"showCode\" (click)=\"showCode = false\" class=\"bg-modal\"></div>\n<div *ngIf=\"showCode\" class=\"modal\">\n  <div class=\"modal-body-wrap\">\n    <div class=\"modal-body p-0\" style=\"width: 80vw; max-width: 600px;\">\n      <div class=\"modal-head\">\n        <span class=\"fs-13\"><b>Copy Widget Code</b></span>\n        <img (click)=\"showCode = false\" class=\"c-p\" width=\"25px\" src=\"assets/img/times-black.png\" alt=\"\">\n      </div>\n      <div class=\"code-wrap\">\n        {{code}}\n      </div>\n      <div class=\"df ai-c jc-c p-t-20 p-b-20\">\n        <button class=\"button-default bg-gray m-r-30\" ngxClipboard [cbContent]=\"code\">Copy Code</button>\n        <button class=\"button-default bg-gray\" (click)=\"showCode = false\">Close</button>\n      </div>\n    </div>\n  </div>\n</div>\n\n<app-dialog *ngIf=\"showDeleteDialog\" [question]=\"'Are you sure you would like to delete this widget?'\" (result)=\"detaleItem('delete', null, $event)\"></app-dialog>"
 
 /***/ }),
 
@@ -1213,7 +1702,7 @@ module.exports = "<p>\n  widget-management works!\n</p>\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21haW4vd2lkZ2V0LW1hbmFnZW1lbnQvd2lkZ2V0LW1hbmFnZW1lbnQuY29tcG9uZW50LnNjc3MifQ== */"
+module.exports = "p {\n  margin: 0; }\n\n.w-management__header {\n  text-align: center;\n  font-size: 16px;\n  color: #999999;\n  margin: 60px 0 20px 0;\n  line-height: 2.5; }\n\n.w-manage-title {\n  color: #333333;\n  font-weight: 400; }\n\n.w-management-main {\n  display: flex;\n  padding: 0 40px; }\n\n.widget-card {\n  position: relative;\n  width: 257px;\n  min-width: 257px;\n  height: 256px;\n  background: inherit;\n  background-color: white;\n  border: 1px solid #cccccc; }\n\n.add_new-widget {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  justify-content: center;\n  font-weight: 700;\n  color: #cccccc;\n  width: 257px;\n  height: 256px;\n  background: url(/assets/img/dashed.png);\n  background-size: 100% 100%;\n  cursor: pointer; }\n\n.add {\n  display: block;\n  margin-bottom: 15px; }\n\n.widget-wrap {\n  width: 259px;\n  margin: 20px 25px; }\n\n.widget-head {\n  display: flex;\n  align-items: center;\n  font-size: 14px;\n  font-weight: 700;\n  color: #ffffff;\n  height: 38px;\n  background: inherit;\n  background-color: #003366;\n  padding-right: 12px; }\n\n.head-logo {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 33px;\n  min-width: 33px;\n  height: 33px;\n  border-radius: 50%;\n  background-color: #f2f2f2;\n  overflow: hidden;\n  margin: 0 10px; }\n\n.widget_text {\n  font-size: 14px;\n  color: #999999;\n  margin: 15px 0; }\n\n.logo-img {\n  width: 24px;\n  height: 24px; }\n\n.assistant-input {\n  min-height: 30px;\n  width: -webkit-fill-available;\n  background-color: white;\n  border: 1px solid #999999;\n  outline: none;\n  padding-left: 8px;\n  margin: 21px 12px 17px 12px; }\n\n.frequent-questions {\n  font-size: 11px;\n  color: #1e1e1e;\n  line-height: 2;\n  padding-left: 28px; }\n\n.widget-more {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  background: rgba(177, 178, 180, 0.4);\n  top: 0;\n  pointer-events: none; }\n\n.wid-wrap {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-items: flex-end;\n  width: 100%;\n  margin-top: 62px; }\n\n.more-info {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 50px;\n  height: 50px;\n  background: #ffffff;\n  border-radius: 50%;\n  margin: 20px 10px 20px 10px;\n  cursor: pointer;\n  padding: 11px;\n  box-sizing: border-box;\n  pointer-events: all; }\n\n.more-info img {\n    width: 100%; }\n\n.name-field {\n  position: relative;\n  z-index: 1;\n  width: 100%; }\n\n.btn-ok {\n  position: relative;\n  z-index: 1;\n  min-width: 30px; }\n\n.modal-head {\n  height: 57px;\n  background: inherit;\n  background-color: #f2f2f2;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 20px;\n  padding: 0 30px; }\n\n.code-wrap {\n  border-width: 1px;\n  border-style: solid;\n  border-color: #cccccc;\n  border-radius: 0px;\n  padding: 5px;\n  max-height: 70vh;\n  overflow-y: auto;\n  width: calc(100% - 60px);\n  margin: auto;\n  white-space: pre-line; }\n\n.code-wrap::-webkit-scrollbar {\n    background-color: #f2f2f2;\n    border: none;\n    border-radius: 4px;\n    width: 11px; }\n\n.code-wrap::-webkit-scrollbar-thumb {\n    width: 7px;\n    background-color: #999999;\n    border: none;\n    border-radius: 4px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3NodW1pay9Eb2N1bWVudHMva21zLXNwb3Qvc3JjL2FwcC9tYWluL3dpZGdldC1tYW5hZ2VtZW50L3dpZGdldC1tYW5hZ2VtZW50LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsU0FBUyxFQUFBOztBQUVYO0VBQ0Usa0JBQWtCO0VBQ2xCLGVBQWU7RUFDZixjQUFjO0VBQ2QscUJBQXFCO0VBQ3JCLGdCQUFnQixFQUFBOztBQUVsQjtFQUNFLGNBQWM7RUFDZCxnQkFBZ0IsRUFBQTs7QUFFbEI7RUFDRSxhQUFhO0VBQ2IsZUFBZSxFQUFBOztBQUVqQjtFQUNFLGtCQUFrQjtFQUNsQixZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsdUJBQXdDO0VBQ3hDLHlCQUF3QyxFQUFBOztBQUUxQztFQUNFLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsc0JBQXNCO0VBQ3RCLHVCQUF1QjtFQUN2QixnQkFBZ0I7RUFDaEIsY0FBYztFQUNkLFlBQVk7RUFDWixhQUFhO0VBQ2IsdUNBQXVDO0VBQ3ZDLDBCQUEwQjtFQUMxQixlQUFlLEVBQUE7O0FBRWpCO0VBQ0UsY0FBYztFQUNkLG1CQUFtQixFQUFBOztBQUVyQjtFQUNFLFlBQVk7RUFDWixpQkFBaUIsRUFBQTs7QUFFbkI7RUFDRSxhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLGVBQWU7RUFDZixnQkFBZ0I7RUFDaEIsY0FBYztFQUNkLFlBQVk7RUFDWixtQkFBbUI7RUFDbkIseUJBQXFDO0VBQ3JDLG1CQUFtQixFQUFBOztBQUVyQjtFQUNFLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLFdBQVc7RUFDWCxlQUFlO0VBQ2YsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsZ0JBQWdCO0VBQ2hCLGNBQWMsRUFBQTs7QUFFaEI7RUFDRSxlQUFlO0VBQ2YsY0FBYztFQUNkLGNBQWMsRUFBQTs7QUFFaEI7RUFDRSxXQUFXO0VBQ1gsWUFBWSxFQUFBOztBQUVkO0VBQ0UsZ0JBQWdCO0VBQ2hCLDZCQUE2QjtFQUM3Qix1QkFBd0M7RUFDeEMseUJBQXdDO0VBQ3hDLGFBQWE7RUFDYixpQkFBaUI7RUFDakIsMkJBQTJCLEVBQUE7O0FBRTdCO0VBQ0UsZUFBZTtFQUNmLGNBQWM7RUFDZCxjQUFjO0VBQ2Qsa0JBQWtCLEVBQUE7O0FBRXBCO0VBQ0Usa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxZQUFZO0VBQ1osb0NBQW9DO0VBQ3BDLE1BQU07RUFDTixvQkFBb0IsRUFBQTs7QUFFdEI7RUFDRSxhQUFhO0VBQ2IsZUFBZTtFQUNmLHVCQUF1QjtFQUN2QixxQkFBcUI7RUFDckIsV0FBVztFQUNYLGdCQUFnQixFQUFBOztBQUVsQjtFQUNFLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLFdBQVc7RUFDWCxZQUFZO0VBQ1osbUJBQW1CO0VBQ25CLGtCQUFrQjtFQUNsQiwyQkFBMkI7RUFDM0IsZUFBZTtFQUNmLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsbUJBQW1CLEVBQUE7O0FBWnJCO0lBY0ksV0FBVyxFQUFBOztBQUdmO0VBQ0Usa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixXQUFXLEVBQUE7O0FBRWI7RUFDRSxrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLGVBQWUsRUFBQTs7QUFFakI7RUFDRSxZQUFZO0VBQ1osbUJBQW1CO0VBQ25CLHlCQUF3QztFQUN4QyxhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLDhCQUE4QjtFQUM5QixtQkFBbUI7RUFDbkIsZUFBZSxFQUFBOztBQUVqQjtFQUNFLGlCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIscUJBQW9DO0VBQ3BDLGtCQUFrQjtFQUNsQixZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLGdCQUFnQjtFQUNoQix3QkFBd0I7RUFDeEIsWUFBWTtFQUNaLHFCQUFxQixFQUFBOztBQVZ2QjtJQVlJLHlCQUF3QztJQUN4QyxZQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLFdBQVcsRUFBQTs7QUFmZjtJQWtCSSxVQUFVO0lBQ1YseUJBQXdDO0lBQ3hDLFlBQVk7SUFDWixrQkFBa0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL21haW4vd2lkZ2V0LW1hbmFnZW1lbnQvd2lkZ2V0LW1hbmFnZW1lbnQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJwIHtcbiAgbWFyZ2luOiAwO1xufVxuLnctbWFuYWdlbWVudF9faGVhZGVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBmb250LXNpemU6IDE2cHg7XG4gIGNvbG9yOiAjOTk5OTk5O1xuICBtYXJnaW46IDYwcHggMCAyMHB4IDA7XG4gIGxpbmUtaGVpZ2h0OiAyLjU7XG59XG4udy1tYW5hZ2UtdGl0bGUge1xuICBjb2xvcjogIzMzMzMzMztcbiAgZm9udC13ZWlnaHQ6IDQwMDtcbn1cbi53LW1hbmFnZW1lbnQtbWFpbiB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIHBhZGRpbmc6IDAgNDBweDtcbn1cbi53aWRnZXQtY2FyZCB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgd2lkdGg6IDI1N3B4O1xuICBtaW4td2lkdGg6IDI1N3B4O1xuICBoZWlnaHQ6IDI1NnB4O1xuICBiYWNrZ3JvdW5kOiBpbmhlcml0O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDEpO1xuICBib3JkZXI6IDFweCBzb2xpZCByZ2JhKDIwNCwgMjA0LCAyMDQsIDEpO1xufVxuLmFkZF9uZXctd2lkZ2V0IHtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGZvbnQtd2VpZ2h0OiA3MDA7XG4gIGNvbG9yOiAjY2NjY2NjO1xuICB3aWR0aDogMjU3cHg7XG4gIGhlaWdodDogMjU2cHg7XG4gIGJhY2tncm91bmQ6IHVybCgvYXNzZXRzL2ltZy9kYXNoZWQucG5nKTtcbiAgYmFja2dyb3VuZC1zaXplOiAxMDAlIDEwMCU7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbi5hZGQge1xuICBkaXNwbGF5OiBibG9jaztcbiAgbWFyZ2luLWJvdHRvbTogMTVweDtcbn1cbi53aWRnZXQtd3JhcCB7XG4gIHdpZHRoOiAyNTlweDtcbiAgbWFyZ2luOiAyMHB4IDI1cHg7XG59XG4ud2lkZ2V0LWhlYWQge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBmb250LXNpemU6IDE0cHg7XG4gIGZvbnQtd2VpZ2h0OiA3MDA7XG4gIGNvbG9yOiAjZmZmZmZmO1xuICBoZWlnaHQ6IDM4cHg7XG4gIGJhY2tncm91bmQ6IGluaGVyaXQ7XG4gIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgNTEsIDEwMiwgMSk7XG4gIHBhZGRpbmctcmlnaHQ6IDEycHg7XG59XG4uaGVhZC1sb2dvIHtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIHdpZHRoOiAzM3B4O1xuICBtaW4td2lkdGg6IDMzcHg7XG4gIGhlaWdodDogMzNweDtcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjJmMmYyO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBtYXJnaW46IDAgMTBweDtcbn1cbi53aWRnZXRfdGV4dCB7XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgY29sb3I6ICM5OTk5OTk7XG4gIG1hcmdpbjogMTVweCAwO1xufVxuLmxvZ28taW1nIHtcbiAgd2lkdGg6IDI0cHg7XG4gIGhlaWdodDogMjRweDtcbn1cbi5hc3Npc3RhbnQtaW5wdXQge1xuICBtaW4taGVpZ2h0OiAzMHB4O1xuICB3aWR0aDogLXdlYmtpdC1maWxsLWF2YWlsYWJsZTtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAxKTtcbiAgYm9yZGVyOiAxcHggc29saWQgcmdiYSgxNTMsIDE1MywgMTUzLCAxKTtcbiAgb3V0bGluZTogbm9uZTtcbiAgcGFkZGluZy1sZWZ0OiA4cHg7XG4gIG1hcmdpbjogMjFweCAxMnB4IDE3cHggMTJweDtcbn1cbi5mcmVxdWVudC1xdWVzdGlvbnMge1xuICBmb250LXNpemU6IDExcHg7XG4gIGNvbG9yOiAjMWUxZTFlO1xuICBsaW5lLWhlaWdodDogMjtcbiAgcGFkZGluZy1sZWZ0OiAyOHB4O1xufVxuLndpZGdldC1tb3JlIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDE3NywgMTc4LCAxODAsIDAuNCk7XG4gIHRvcDogMDtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG59XG4ud2lkLXdyYXAge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LXdyYXA6IHdyYXA7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBhbGlnbi1pdGVtczogZmxleC1lbmQ7XG4gIHdpZHRoOiAxMDAlO1xuICBtYXJnaW4tdG9wOiA2MnB4O1xufVxuLm1vcmUtaW5mbyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICB3aWR0aDogNTBweDtcbiAgaGVpZ2h0OiA1MHB4O1xuICBiYWNrZ3JvdW5kOiAjZmZmZmZmO1xuICBib3JkZXItcmFkaXVzOiA1MCU7XG4gIG1hcmdpbjogMjBweCAxMHB4IDIwcHggMTBweDtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBwYWRkaW5nOiAxMXB4O1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICBwb2ludGVyLWV2ZW50czogYWxsO1xuICBpbWcge1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG59XG4ubmFtZS1maWVsZCB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgei1pbmRleDogMTtcbiAgd2lkdGg6IDEwMCU7XG59XG4uYnRuLW9rIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB6LWluZGV4OiAxO1xuICBtaW4td2lkdGg6IDMwcHg7XG59XG4ubW9kYWwtaGVhZCB7XG4gIGhlaWdodDogNTdweDtcbiAgYmFja2dyb3VuZDogaW5oZXJpdDtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyNDIsIDI0MiwgMjQyLCAxKTtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xuICBwYWRkaW5nOiAwIDMwcHg7XG59XG4uY29kZS13cmFwIHtcbiAgYm9yZGVyLXdpZHRoOiAxcHg7XG4gIGJvcmRlci1zdHlsZTogc29saWQ7XG4gIGJvcmRlci1jb2xvcjogcmdiYSgyMDQsIDIwNCwgMjA0LCAxKTtcbiAgYm9yZGVyLXJhZGl1czogMHB4O1xuICBwYWRkaW5nOiA1cHg7XG4gIG1heC1oZWlnaHQ6IDcwdmg7XG4gIG92ZXJmbG93LXk6IGF1dG87XG4gIHdpZHRoOiBjYWxjKDEwMCUgLSA2MHB4KTtcbiAgbWFyZ2luOiBhdXRvO1xuICB3aGl0ZS1zcGFjZTogcHJlLWxpbmU7XG4gICY6Oi13ZWJraXQtc2Nyb2xsYmFyIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI0MiwgMjQyLCAyNDIsIDEpO1xuICAgIGJvcmRlcjogbm9uZTtcbiAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgd2lkdGg6IDExcHg7XG4gIH1cbiAgJjo6LXdlYmtpdC1zY3JvbGxiYXItdGh1bWIge1xuICAgIHdpZHRoOiA3cHg7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgxNTMsIDE1MywgMTUzLCAxKTtcbiAgICBib3JkZXI6IG5vbmU7XG4gICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICB9XG59XG4iXX0= */"
 
 /***/ }),
 
@@ -1229,12 +1718,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WidgetManagementComponent", function() { return WidgetManagementComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_main_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/main.service */ "./src/app/shared/services/main.service.ts");
+
 
 
 var WidgetManagementComponent = /** @class */ (function () {
-    function WidgetManagementComponent() {
+    function WidgetManagementComponent(mainService) {
+        this.mainService = mainService;
+        this.showAction = null;
+        this.edit = null;
+        this.widgetNameDemo = 'Demo Assistant';
+        this.code = "\n  <script src=\"https://code.jquery.com/jquery-3.1.1.min.js\"></script>\n  \n  <script src=\"https://code.highcharts.com/highcharts.js\"></script>\n  \n  <script src=\"https://code.highcharts.com/modules/data.js\"></script>\n  \n  <script src=\"https://code.highcharts.com/modules/series-label.js\"></script>\n  \n  <script src=\"https://code.highcharts.com/modules/exporting.js\"></script>\n  \n  <script src=\"https://code.highcharts.com/modules/export-data.js\"></script>\n  \n  \n  \n  <!-- Additional files for the Highslide popup effect -->\n  \n  <script src=\"https://www.highcharts.com/media/com_demo/js/highslide-full.min.js\"></script>\n  \n  <script src=\"https://www.highcharts.com/media/com_demo/js/highslide.config.js\" charset=\"utf-8\"></script>\n  \n  <link rel=\"stylesheet\" type=\"text/css\" href=\"https://www.highcharts.com/media/com_demo/css/highslide.css\" />\n  \n  \n  \n  <div id=\"container\" style=\"min-width: 310px; height: 400px; margin: 0 auto\"></div>\n  \n  <script src=\"https://code.jquery.com/jquery-3.1.1.min.js\"></script>\n  \n  <script src=\"https://code.highcharts.com/highcharts.js\"></script>\n  \n  <script src=\"https://code.highcharts.com/modules/data.js\"></script>\n  \n  <script src=\"https://code.highcharts.com/modules/series-label.js\"></script>\n  \n  <script src=\"https://code.highcharts.com/modules/exporting.js\"></script>";
+        this.widgetData = [];
     }
     WidgetManagementComponent.prototype.ngOnInit = function () {
+        this.widgetData = this.mainService.getWidget();
+    };
+    WidgetManagementComponent.prototype.detaleItem = function (flag, index, event) {
+        if (flag === 'dialog') {
+            this.deleteIndex = index;
+            this.showDeleteDialog = true;
+        }
+        else if (event) {
+            this.widgetData.splice(this.deleteIndex, 1);
+            console.log('delete elem', index + 1);
+            this.showDeleteDialog = false;
+        }
+        else if (!event) {
+            this.showDeleteDialog = false;
+        }
+    };
+    WidgetManagementComponent.prototype.dublicateWidget = function (item, index) {
+        this.widgetData.splice(index, 0, Object.assign({}, item));
     };
     WidgetManagementComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1242,7 +1757,7 @@ var WidgetManagementComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./widget-management.component.html */ "./src/app/main/widget-management/widget-management.component.html"),
             styles: [__webpack_require__(/*! ./widget-management.component.scss */ "./src/app/main/widget-management/widget-management.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_main_service__WEBPACK_IMPORTED_MODULE_2__["MainService"]])
     ], WidgetManagementComponent);
     return WidgetManagementComponent;
 }());
@@ -1418,6 +1933,68 @@ var HeaderComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], HeaderComponent);
     return HeaderComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/services/main.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/shared/services/main.service.ts ***!
+  \*************************************************/
+/*! exports provided: MainService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainService", function() { return MainService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var MainService = /** @class */ (function () {
+    function MainService() {
+        this.widgetData = [
+            {
+                name: 'Demo Assistant',
+                quesions: [
+                    'Frequently asked question 1',
+                    'Frequently asked question 2',
+                    'Frequently asked question 3',
+                    'Frequently asked question 4',
+                    'Frequently asked question 5',
+                ],
+                demo: true,
+                id: 1
+            }
+        ];
+    }
+    MainService.prototype.addWidget = function (item) {
+        this.widgetData.push({
+            name: item,
+            quesions: [],
+            demo: false,
+            id: this.widgetData.length + 1
+        });
+    };
+    MainService.prototype.editWidget = function (item) {
+        for (var key in this.widgetData) {
+            if (this.widgetData[key].id === item.id) {
+                this.widgetData[key] = item;
+            }
+        }
+    };
+    MainService.prototype.getWidget = function () {
+        return this.widgetData;
+    };
+    MainService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], MainService);
+    return MainService;
 }());
 
 

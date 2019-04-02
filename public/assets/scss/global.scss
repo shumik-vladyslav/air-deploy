@@ -175,6 +175,9 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  &.bg-gray{
+    background: rgba(204, 204, 204, 1);
+  }
 }
 .pi-caret-right {
   width: 20px;

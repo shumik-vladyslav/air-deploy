@@ -300,7 +300,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"head\">\n  <div class=\"df ai-c jc-b full-width\">\n    <div (click)=\"dialog = true\" class=\"c-p df ai-c\">\n      <div>\n        <img class=\"m-r-5\" width=\"28px\" src=\"assets/img/arrow-back.png\" alt=\"\">\n      </div>\n      <div class=\"fs-20\">\n        Edit Article\n      </div>\n    </div>\n    <div class=\"df\">\n      <div class=\"df ai-c m-r-15 c-p\">\n        <img class=\"m-r-5\" width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n        <div class=\"color-primary fs-14\">Delete Article</div>\n      </div>\n      <div (click)=\"showPreview = true\" class=\"df ai-c m-r-30 c-p\">\n        <img class=\"m-r-5\" width=\"28px\" src=\"assets/img/view.png\" alt=\"\">\n        <div class=\"color-primary fs-14\">Preview</div>\n      </div>\n      <div class=\"pos-r\">\n        <input type=\"text\" placeholder=\"Search in article\" pInputText />\n        <div class=\"icon-input\">\n          <img width=\"20px\" src=\"assets/img/search.png\" alt=\"\">\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"fs-13 m-t-10 p-l-35\">\n    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, deleniti!\n  </div>\n</div>\n\n<div class=\"content-wrap\">\n  <div class=\"half-width\">\n    <div class=\"side-head\">\n      <div>\n        Article\n      </div>\n      <div class=\"df ai-c color-primary\">\n        <div class=\"c-p m-r-15\">\n          <img src=\"assets/img/text-icon.png\"  (click)=\"copyClip()\" alt=\"\">\n        </div>\n        <div class=\"c-p m-r-25 pos-r\">\n          <img src=\"assets/img/text-icon.png\" alt=\"\">\n          <div class=\"close-icon-text\">\n            <div class=\"line1\"></div>\n            <div class=\"line2\"></div>\n          </div>\n        </div>\n        <div (clickOutside)=\"showAddSection = false\" class=\"df ai-c c-p pos-r\">\n          <img (click)=\"showAddSection = !showAddSection\" alt=\"\" class=\"m-r-10 c-p\" src=\"assets/img/addArtictes.png\">\n          <div class=\"m-r-30\"> Add Section </div>\n          <div *ngIf=\"showAddSection\" class=\"add-section-drb\">\n            <div (click)=\"addSection('text')\" class=\"add-section-drb--item\">\n              <div class=\"icon-wrap\">\n                <img src=\"assets/img/text-drb.png\" alt=\"\">\n              </div>\n              <div>\n                Text\n              </div>\n            </div>\n            <div (click)=\"addSection('picture')\" class=\"add-section-drb--item\">\n              <div class=\"icon-wrap\">\n                <img src=\"assets/img/img-drb.png\" alt=\"\">\n              </div>\n              <div>\n                Picture\n              </div>\n            </div>\n            <div (click)=\"addSection('video')\" class=\"add-section-drb--item\">\n              <div class=\"icon-wrap\">\n                <img src=\"assets/img/video-drb.png\" alt=\"\">\n              </div>\n              <div>\n                Video\n              </div>\n            </div>\n            <div (click)=\"addSection('link')\" class=\"add-section-drb--item\">\n              <div class=\"icon-wrap\">\n                <img src=\"assets/img/link-drb.png\" alt=\"\">\n              </div>\n              <div>\n                Link\n              </div>\n            </div>\n            <div (click)=\"addSection('button')\" class=\"add-section-drb--item\">\n              <div class=\"icon-wrap\">\n                <img src=\"assets/img/button-drb.png\" alt=\"\">\n              </div>\n              <div>\n                Button\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"tags-wrap\">\n      <div class=\"m-r-20 p-t-12\">\n        Tags:\n      </div>\n      <div *ngFor=\"let tag of dataToEdit.tegs; let i = index\" class=\"chips\">\n        {{tag}}\n        <img (click)=\"detaleItem(dataToEdit.tegs, i)\" class=\"close c-p\" src=\"assets/img/close.png\" alt=\"\">\n      </div>\n      <input [(ngModel)]=\"addTagField\" class=\"add-tag\" type=\"text\" (keyup.enter)=\"addTags(dataToEdit.tegs, addTagField)\"\n        placeholder=\"Add tag\" pInputText />\n    </div>\n    <div class=\"body-side body-side-scroll\" id=\"editBox\" style=\"min-height: calc(100% - 55px); padding: 20px;\">\n      <div class=\"df ai-c m-b-30\">\n        <div class=\"m-r-15\">\n          Title:\n        </div>\n        <input class=\"full-width\" [(ngModel)]=\"dataToEdit.title\" type=\"text\" pInputText value=\"3D touch\" />\n      </div>\n      <div *ngFor=\"let item of sectionData; let i = index\">\n        <div class=\"article-section\">\n          <div class=\"actions-row\">\n            <button (click)=\"moveTop(item, i)\" class=\"top\">\n              <img src=\"assets/img/arrow.png\" alt=\"\">\n            </button>\n            <button (click)=\"moveBot(item, i)\" class=\"bot\">\n              <img src=\"assets/img/arrow.png\" alt=\"\">\n            </button>\n            <button *ngIf=\"showEdit !== i\" (click)=\"showEdit = i\">\n              Edit Section\n            </button>\n            <button *ngIf=\"showEdit === i\" (click)=\"showEdit = null\">\n              Save Section\n            </button>\n            <button (click)=\"detaleItem(sectionData, i)\">\n              Delete Section\n            </button>\n          </div>\n          <div class=\"article-section-body\">\n            <div *ngIf=\"item.text\">\n              <div id=\"text{{i}}\" class=\"text\" (click)=\"selectionId = i\">\n                {{item.text}}\n              </div>\n              <textarea *ngIf=\"showEdit === i\" [(ngModel)]=\"item.text\"></textarea>\n            </div>\n            <div class=\"text-center\" *ngIf=\"item.picture\">\n              <img style=\"max-width: 70%; max-height: 400px\" [src]=\"item.picture\" alt=\"\">\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"half-width\">\n    <div class=\"side-head\">\n      <div>\n        Questions\n      </div>\n      <div class=\"df ai-c\">\n        <img (click)=\"editQuestion()\" width=\"20px\" class=\"m-r-20 c-p\" src=\"assets/img/editArticle.png\" alt=\"\">\n        <img (click)=\"showArticle = true\" width=\"20px\" class=\"m-r-20 c-p\" src=\"assets/img/fasten.png\" alt=\"\">\n        <img (click)=\"deleteQuestion()\" width=\"18px\" class=\"c-p\" src=\"assets/img/trash.png\" alt=\"\">\n      </div>\n    </div>\n    <div class=\"body-side\">\n      <div *ngFor=\"let item of questions; let i = index\" class=\"articles-row jc-b\">\n        <div class=\"df ai-c\">\n          <input class=\"m-r-20\" [(ngModel)]=\"item.checked\" type=\"checkbox\">\n          <div class=\"icon-wrap\">\n            <img src=\"assets/img/text-icon.png\" alt=\"\">\n          </div>\n          <div (dblclick)=\"item.edit = true\" *ngIf=\"!item.edit\"> {{item.question}} </div>\n          <div class=\"df ai-c wrap\" *ngIf=\"item.edit\">\n            <input type=\"text\" [(ngModel)]=\"item.question\" pInputText />\n            <button *ngIf=\"item.edit\" (click)=\"item.edit = false; item.checked = false\" class=\"button-default\">\n              Save\n            </button>\n          </div>\n        </div>\n        <div (click)=\"detaleItem(questions, i)\" class=\"c-p icons\">\n          <img alt=\"\" src=\"assets/img/trash.png\" width=\"18px\">\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div *ngIf=\"showPreview\" (click)=\"showPreview = false\" class=\"bg-modal\"></div>\n<div *ngIf=\"showPreview\" class=\"modal\">\n  <div class=\"modal-body-wrap\">\n    <div class=\"modal-body\" style=\"width: 80vw; max-width: 600px; padding: 40px;\">\n      <div class=\"fs-20 color-dark m-b-40 df jc-b ai-c\">\n        <div>\n          {{dataToEdit.title}}\n        </div>\n        <div class=\"c-p\" (click)=\"showPreview = false\">\n          <img width=\"17px\" src=\"assets/img/times-black.png\" alt=\"\">\n        </div>\n      </div>\n      <div *ngFor=\"let item of sectionData\">\n        <p *ngIf=\"item.text\" class=\"m-b-40\">\n          {{item.text}}\n        </p>\n        <div *ngIf=\"item.picture\" class=\"text-center\">\n          <img style=\"max-height: 400px; max-width: 80%;\" [src]=\"item.picture\" alt=\"\">\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<app-link-article [show]=\"showArticle\" (hide)=\"showArticle = false\"></app-link-article>\n<app-dialog *ngIf=\"dialog\" [question]=\"'Are you sure you want to discard all changes?'\" (result)=\"answer($event)\"></app-dialog>"
+module.exports = "<div class=\"head\">\n  <div class=\"df ai-c jc-b full-width\">\n    <div (click)=\"dialog = true\" class=\"c-p df ai-c\">\n      <div>\n        <img class=\"m-r-5\" width=\"28px\" src=\"assets/img/arrow-back.png\" alt=\"\">\n      </div>\n      <div class=\"fs-20\">\n        Edit Article\n      </div>\n    </div>\n    <div class=\"df\">\n      <div class=\"df ai-c m-r-15 c-p\">\n        <img class=\"m-r-5\" width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n        <div class=\"color-primary fs-14\">Delete Article</div>\n      </div>\n      <div (click)=\"showPreview = true\" class=\"df ai-c m-r-30 c-p\">\n        <img class=\"m-r-5\" width=\"28px\" src=\"assets/img/view.png\" alt=\"\">\n        <div class=\"color-primary fs-14\">Preview</div>\n      </div>\n      <div class=\"pos-r\">\n        <input type=\"text\" placeholder=\"Search in article\" pInputText />\n        <div class=\"icon-input\">\n          <img width=\"20px\" src=\"assets/img/search.png\" alt=\"\">\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"fs-13 m-t-10 p-l-35\">\n    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, deleniti!\n  </div>\n</div>\n\n<div class=\"content-wrap\">\n  <div class=\"half-width\">\n    <div class=\"side-head\">\n      <div>\n        Article\n      </div>\n      <div class=\"df ai-c color-primary\">\n        <div class=\"c-p m-r-15\">\n          <img src=\"assets/img/text-icon.png\"  (click)=\"copyClip()\" alt=\"\">\n        </div>\n        <div class=\"c-p m-r-25 pos-r\">\n          <img src=\"assets/img/text-icon.png\" alt=\"\">\n          <div class=\"close-icon-text\">\n            <div class=\"line1\"></div>\n            <div class=\"line2\"></div>\n          </div>\n        </div>\n        <div (clickOutside)=\"showAddSection = false\" class=\"df ai-c c-p pos-r\">\n          <img (click)=\"showAddSection = !showAddSection\" alt=\"\" class=\"m-r-10 c-p\" src=\"assets/img/addArtictes.png\">\n          <div class=\"m-r-30\"> Add Section </div>\n          <div *ngIf=\"showAddSection\" class=\"add-section-drb\">\n            <div (click)=\"addSection('text')\" class=\"add-section-drb--item\">\n              <div class=\"icon-wrap\">\n                <img src=\"assets/img/text-drb.png\" alt=\"\">\n              </div>\n              <div>\n                Text\n              </div>\n            </div>\n            <div (click)=\"addSection('picture')\" class=\"add-section-drb--item\">\n              <div class=\"icon-wrap\">\n                <img src=\"assets/img/img-drb.png\" alt=\"\">\n              </div>\n              <div>\n                Picture\n              </div>\n            </div>\n            <div (click)=\"addSection('video')\" class=\"add-section-drb--item\">\n              <div class=\"icon-wrap\">\n                <img src=\"assets/img/video-drb.png\" alt=\"\">\n              </div>\n              <div>\n                Video\n              </div>\n            </div>\n            <div (click)=\"addSection('link')\" class=\"add-section-drb--item\">\n              <div class=\"icon-wrap\">\n                <img src=\"assets/img/link-drb.png\" alt=\"\">\n              </div>\n              <div>\n                Link\n              </div>\n            </div>\n            <div (click)=\"addSection('button')\" class=\"add-section-drb--item\">\n              <div class=\"icon-wrap\">\n                <img src=\"assets/img/button-drb.png\" alt=\"\">\n              </div>\n              <div>\n                Button\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"tags-wrap\">\n      <div class=\"m-r-20 p-t-12\">\n        Tags:\n      </div>\n      <div *ngFor=\"let tag of dataToEdit.tegs; let i = index\" class=\"chips\">\n        {{tag}}\n        <img (click)=\"detaleItem(dataToEdit.tegs, i)\" class=\"close c-p\" src=\"assets/img/close-chips.png\" alt=\"\">\n      </div>\n      <input [(ngModel)]=\"addTagField\" class=\"add-tag\" type=\"text\" (keyup.enter)=\"addTags(dataToEdit.tegs, addTagField)\"\n        placeholder=\"Add tag\" pInputText />\n    </div>\n    <div class=\"body-side body-side-scroll\" id=\"editBox\" style=\"min-height: calc(100% - 55px); padding: 20px;\">\n      <div class=\"df ai-c m-b-30\">\n        <div class=\"m-r-15\">\n          Title:\n        </div>\n        <input class=\"full-width\" [(ngModel)]=\"dataToEdit.title\" type=\"text\" pInputText value=\"3D touch\" />\n      </div>\n      <div *ngFor=\"let item of sectionData; let i = index\">\n        <div class=\"article-section\">\n          <div class=\"actions-row\">\n            <button (click)=\"moveTop(item, i)\" class=\"top\">\n              <img src=\"assets/img/arrow.png\" alt=\"\">\n            </button>\n            <button (click)=\"moveBot(item, i)\" class=\"bot\">\n              <img src=\"assets/img/arrow.png\" alt=\"\">\n            </button>\n            <button *ngIf=\"showEdit !== i\" (click)=\"showEdit = i\">\n              Edit Section\n            </button>\n            <button *ngIf=\"showEdit === i\" (click)=\"showEdit = null\">\n              Save Section\n            </button>\n            <button (click)=\"detaleItem(sectionData, i)\">\n              Delete Section\n            </button>\n          </div>\n          <div class=\"article-section-body\">\n            <div *ngIf=\"item.text\">\n              <div id=\"text{{i}}\" class=\"text\" (click)=\"selectionId = i\">\n                {{item.text}}\n              </div>\n              <textarea *ngIf=\"showEdit === i\" [(ngModel)]=\"item.text\"></textarea>\n            </div>\n            <div class=\"text-center\" *ngIf=\"item.picture\">\n              <img style=\"max-width: 70%; max-height: 400px\" [src]=\"item.picture\" alt=\"\">\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"half-width\">\n    <div class=\"side-head\">\n      <div>\n        Questions\n      </div>\n      <div class=\"df ai-c\">\n        <img (click)=\"editQuestion()\" width=\"20px\" class=\"m-r-20 c-p\" src=\"assets/img/editArticle.png\" alt=\"\">\n        <img (click)=\"showArticle = true\" width=\"20px\" class=\"m-r-20 c-p\" src=\"assets/img/fasten.png\" alt=\"\">\n        <img (click)=\"deleteQuestion()\" width=\"18px\" class=\"c-p\" src=\"assets/img/trash.png\" alt=\"\">\n      </div>\n    </div>\n    <div class=\"body-side\">\n      <div *ngFor=\"let item of questions; let i = index\" class=\"articles-row jc-b\">\n        <div class=\"df ai-c\">\n          <input class=\"m-r-20\" [(ngModel)]=\"item.checked\" type=\"checkbox\">\n          <div class=\"icon-wrap\">\n            <img src=\"assets/img/text-icon.png\" alt=\"\">\n          </div>\n          <div (dblclick)=\"item.edit = true\" *ngIf=\"!item.edit\"> {{item.question}} </div>\n          <div class=\"df ai-c wrap\" *ngIf=\"item.edit\">\n            <input type=\"text\" [(ngModel)]=\"item.question\" pInputText />\n            <button *ngIf=\"item.edit\" (click)=\"item.edit = false; item.checked = false\" class=\"button-default\">\n              Save\n            </button>\n          </div>\n        </div>\n        <div (click)=\"detaleItem(questions, i)\" class=\"c-p icons\">\n          <img alt=\"\" src=\"assets/img/trash.png\" width=\"18px\">\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div *ngIf=\"showPreview\" (click)=\"showPreview = false\" class=\"bg-modal\"></div>\n<div *ngIf=\"showPreview\" class=\"modal\">\n  <div class=\"modal-body-wrap\">\n    <div class=\"modal-body\" style=\"width: 80vw; max-width: 600px; padding: 40px;\">\n      <div class=\"fs-20 color-dark m-b-40 df jc-b ai-c\">\n        <div>\n          {{dataToEdit.title}}\n        </div>\n        <div class=\"c-p\" (click)=\"showPreview = false\">\n          <img width=\"17px\" src=\"assets/img/times-black.png\" alt=\"\">\n        </div>\n      </div>\n      <div *ngFor=\"let item of sectionData\">\n        <p *ngIf=\"item.text\" class=\"m-b-40\">\n          {{item.text}}\n        </p>\n        <div *ngIf=\"item.picture\" class=\"text-center\">\n          <img style=\"max-height: 400px; max-width: 80%;\" [src]=\"item.picture\" alt=\"\">\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<app-link-article [show]=\"showArticle\" (hide)=\"showArticle = false\"></app-link-article>\n<app-dialog *ngIf=\"dialog\" [question]=\"'Are you sure you want to discard all changes?'\" (result)=\"answer($event)\"></app-dialog>\n<app-dialog *ngIf=\"showDialogDelete\" [question]=\"'Are you sure you want to delete this Item?'\" (result)=\"detaleItem(null, null, $event)\"></app-dialog>\n"
 
 /***/ }),
 
@@ -328,14 +328,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var src_app_shared_services_main_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/main.service */ "./src/app/shared/services/main.service.ts");
+
 
 
 
 var ArticleComponent = /** @class */ (function () {
-    function ArticleComponent(activatedRoute, route) {
+    function ArticleComponent(activatedRoute, route, mainService) {
         this.activatedRoute = activatedRoute;
         this.route = route;
-        this.articlesData = [
+        this.mainService = mainService;
+        this.data = [
             { id: "1", name: "iPhone 7", checked: false, type: "folder" },
             { id: "2", name: "iPhone 6", checked: false, type: "folder" },
             { id: "3", name: "iPhone 5", checked: false, type: "folder" },
@@ -369,8 +372,8 @@ var ArticleComponent = /** @class */ (function () {
             { question: 'test', checked: false, edit: false },
             { question: 'test', checked: false, edit: false },
         ];
-        // tslint:disable-next-line:max-line-length
-        this.text = "3D Touch is multitouch made multidimensional. With it you can press deeply to launch actions instead of apps, reply to notifications, preview messages and links, switch keyboards, switch apps, animate Live Photos, vary stroke width, and more. It's like a wormhole through iOS that lets you move around faster than ever.  If you have an iPhone 6s or later, you can also press firmly (3D Touch) on an app icon to bring up quick actions. All apps have quick actions, even if it's simply the standard App Store app shortcut that lets you share the app with someone else. Some apps have several quick actions, including dynamic quick actions that update based on the last person you contacted, article you read, show you watched, etc. Tap on an action to go directly to that feature or content in the app.";
+        // this.data = 
+        console.log(this.mainService.data);
     }
     ArticleComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -379,9 +382,9 @@ var ArticleComponent = /** @class */ (function () {
             var id = params;
             _this.id = id.id;
             console.log(id);
-            for (var key in _this.articlesData) {
-                if (_this.articlesData[key].id === id.id) {
-                    _this.dataToEdit = _this.articlesData[key];
+            for (var key in _this.data) {
+                if (_this.data[key].id === id.id) {
+                    _this.dataToEdit = _this.data[key];
                 }
             }
             console.log(_this.dataToEdit, 'dataToEdit');
@@ -410,9 +413,21 @@ var ArticleComponent = /** @class */ (function () {
         }
         console.log(this.sectionData, 'this.sectionData');
     };
-    ArticleComponent.prototype.detaleItem = function (data, index) {
-        data.splice(index, 1);
-        console.log('delete elem', index + 1);
+    ArticleComponent.prototype.detaleItem = function (data, index, event) {
+        if (data !== null || index !== null) {
+            this.dataDelete = data;
+            this.indexDelete = index;
+            this.showDialogDelete = true;
+        }
+        else {
+            if (!event) {
+                this.showDialogDelete = false;
+            }
+            else {
+                this.showDialogDelete = false;
+                this.dataDelete.splice(this.indexDelete, 1);
+            }
+        }
     };
     ArticleComponent.prototype.deleteQuestion = function () {
         this.questions = this.questions.filter(function (item) {
@@ -493,7 +508,7 @@ var ArticleComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./article.component.html */ "./src/app/main/content-management/article/article.component.html"),
             styles: [__webpack_require__(/*! ./article.component.scss */ "./src/app/main/content-management/article/article.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], src_app_shared_services_main_service__WEBPACK_IMPORTED_MODULE_3__["MainService"]])
     ], ArticleComponent);
     return ArticleComponent;
 }());
@@ -509,7 +524,7 @@ var ArticleComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"head\">\n\n  <div class=\"df full-width\">\n    <div class=\"pos-r\">\n      <p-dropdown class=\"search-dropdown\" [(ngModel)]=\"selectedSearchIn\" [options]=\"searchIn\"></p-dropdown>\n      <label class=\"lable-drb\">Search in</label>\n    </div>\n    <div class=\"input-search pos-r\">\n      <input type=\"text\" [(ngModel)]=\"searchText\" (ngModelChange)=\"searchTextChange($event)\" placeholder=\"Search content / tag\"\n        pInputText />\n      <div *ngIf=\"searchText.length && searchResultData.length\" class=\"serch-result-dropdawn\">\n        <div (click)=\"openSearch(); searchText = ''\" *ngFor=\"let item of searchResultData\" class=\"serch-result-dropdawn--item\">\n          <div class=\"serch-result-dropdawn--icon-wrap\">\n            <img *ngIf=\"item.type === 'teg'\" src=\"assets/img/stiket.png\" alt=\"\">\n            <img *ngIf=\"item.type === 'text'\" src=\"assets/img/file.png\" alt=\"\">\n          </div>\n          <div>\n            <div class=\"serch-result-dropdawn--lable\">\n              {{item.label}}\n            </div>\n          </div>\n        </div>\n        <div (click)=\"openSearch(); searchText = ''\" class=\"serch-result-dropdawn--foot\">\n          More results\n        </div>\n      </div>\n      <!-- (focus)=\"openSearch()\" -->\n      <div class=\"icon-input\">\n        <img *ngIf=\"!searchResult\" class=\"c-p\" width=\"20px\" src=\"assets/img/search.png\" alt=\"\">\n        <img *ngIf=\"searchResult\" (click)=\"closeSearch(); searchText = ''\" class=\"c-p\" width=\"20px\" src=\"assets/img/times-black.png\"\n          alt=\"\">\n      </div>\n    </div>\n  </div>\n  <div class=\"df\">\n    <div class=\"df ai-c c-p m-r-40 text-wrap-none\">\n      <img class=\"m-r-10\" src=\"assets/img/folder-open.png\" alt=\"\">\n      Load Files\n    </div>\n    <div (click)=\"openDubicate()\" class=\"df ai-c c-p text-wrap-none\">\n      <img class=\"m-r-10\" src=\"assets/img/files-group.png\" alt=\"\">\n      Duplicates\n      <div class=\"m-l-10 nitif-circle\">\n        7\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"content-wrap\">\n\n  <div *ngIf=\"folders\" class=\"folder-side\">\n    <div class=\"side-head\">\n      <div>\n        Folders\n      </div>\n      <div class=\"df ai-c\">\n        <div (click)=\"addFolder()\" class=\"m-r-40 c-p\">\n          <img src=\"assets/img/addFolderTree.png\" alt=\"\">\n        </div>\n        <div (click)=\"expandetTree()\" class=\"c-p arrow-right\">\n          <img class=\"animate\" [ngClass]=\"{'rotate--90': collapsFolderFlag}\" src=\"assets/img/arrow.png\" alt=\"\">\n        </div>\n      </div>\n    </div>\n    <div class=\"body-side\">\n      <p-tree [value]=\"filesTree0\" selectionMode=\"single\"\n      draggableNodes=\"true\" droppableNodes=\"true\" draggableScope=\"a\" droppableScope=\"c\"\n      (onNodeUnselect)=\"onNodeUnselect($event)\" (onNodeSelect)=\"onNodeSelect($event,i)\">\n        <ng-template let-node pTemplate=\"text\">\n          <!-- <span  title=\"Double click to rename\" (dblclick)=\"newFolderName = true; \">{{node.type}}</span> -->\n          <!-- <app-dialog-folder-name *ngIf=\"newFolderName\" [fieldValue]=\"node.label\" [title]=\"'Add New Folder'\" (result)=\"node.label = $event; newFolderName = false;\"></app-dialog-folder-name> -->\n        </ng-template>\n        <ng-template let-node pTemplate=\"folder\">\n          <span  \n      title=\"Double click to rename\" (dblclick)=\"newFolderName[node.id] = true; \">{{node.label}}</span>\n          <app-dialog-folder-name *ngIf=\"newFolderName[node.id]\" [fieldValue]=\"node.label\" [title]=\"'Add New Folder'\" (result)=\"renameNode(data, node.id, $event);node.label = $event; newFolderName[node.id] = false;\"></app-dialog-folder-name>\n        </ng-template>\n      </p-tree>\n    </div>\n  </div>\n\n  <div *ngIf=\"welcome\" class=\"folder-side full-width m-r-0\">\n    <div class=\"side-head\"></div>\n    <div (onNodeDrop)=\"onDrop($event)\" (drop)=\"onDrop($event)\" class=\"body-side col jc-c ai-c text-center\">\n      <div class=\"m-b-20\">\n        Welcome to SPOT\n      </div>\n      <div class=\"m-b-20\">\n        To create your content repository, start by loading source files <br>\n        Word and PDF file are accepted\n      </div>\n      <label class=\"c-p ai-c df\">\n        <img class=\"m-r-20\" src=\"assets/img/folder-open.png\" alt=\"\">\n        Load Files\n      </label>\n    </div>\n  </div>\n\n  <div *ngIf=\"dublicate\" class=\"articles-side full-width\">\n    <div class=\"side-head\">\n      <div>\n        Duplicate Questions\n      </div>\n      <div (click)=\"backContent()\" class=\"df ai-c c-p\">\n        <img width=\"16px\" class=\"m-r-5 rotate--90\" src=\"assets/img/caret.png\" alt=\"\">\n        <div>\n          Back to content\n        </div>\n      </div>\n    </div>\n    <div class=\"body-side\">\n      <div *ngFor=\"let item of dublicateQuestionData; let i = index;\">\n        <div *ngIf=\"item.questions.length\" class=\"question-row\">\n          <div (click)=\"item.open = !item.open; \" class=\"question-row-head\">\n            <div [ngClass]=\"{'rotate-270': item.open}\" class=\"m-r-10 icon animate rotate-180\">\n              <img src=\"assets/img/caret-ques.png\" alt=\"\">\n            </div>\n            <div>\n              {{item.name}} ({{item.questions.length}})\n            </div>\n          </div>\n          <div *ngIf=\"item.open\" class=\"question-row-body\">\n            <div>\n              <div *ngFor=\"let dublicate of item.questions; let subIndex = index;\" class=\"question-item\">\n                <div>\n                  <div class=\"fs-12 m-n-7\">\n                    {{dublicate.name}}\n                  </div>\n                  <div class=\"color-gray-600\">\n                    {{dublicate.path}}\n                  </div>\n                </div>\n                <div (click)=\"detaleItem(item.questions, subIndex)\" class=\"trash-icon\">\n                  <img width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n                </div>\n              </div>\n            </div>\n            <div class=\"df jc-e p-r-40 m-t-20\">\n              <div class=\"df ai-c c-p\">\n                <img class=\"m-r-5\" src=\"assets/img/succsess.png\" alt=\"\">\n                Keep Duplicates\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"searchResult\" class=\"articles-side full-width \">\n    <div class=\"side-head\">\n      <div>\n        Search Results\n      </div>\n      <div class=\"df ai-c color-primary\">\n        <img [routerLink]=\"['/article']\" class=\"m-r-10 c-p\" src=\"assets/img/addArtictes.png\" alt=\"\">\n        <div class=\"m-r-30\">\n          Add Article\n        </div>\n        <img (click)=\"deleteSearchResults()\" class=\"c-p m-r-40\" width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n        <div (click)=\"backContent()\" class=\"df ai-c c-p\">\n          <img width=\"16px\" class=\"m-r-5 rotate--90\" src=\"assets/img/caret.png\" alt=\"\">\n          <div>\n            Back to content\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"body-side body-side-scroll\">\n      <div *ngFor=\"let item of searchResultData; let i = index\" class=\"search-row \">\n        <div>\n          <input class=\"m-r-20 m-t-0\" [(ngModel)]=\"item.element.checked\" type=\"checkbox\">\n        </div>\n        <div (click)=\"selectType(item.element, i)\">\n          <div class=\"df ai-c jc-b m-b-7\">\n            <div>\n              {{item.element.title}}\n            </div>\n            <div (click)=\"detaleItem(searchResultData, i)\" class=\"c-p delete-icon\">\n              <img width=\"18px\" src=\"assets/img/trash.png\" alt=\"\">\n            </div>\n          </div>\n          <div class=\"stick-row\">\n            <div *ngFor=\"let tag of item.element.tegs\" class=\"ai-c df m-r-10\">\n              <img class=\"m-r-3\" src=\"assets/img/stiket.png\" alt=\"\">\n              <div class=\"context\">\n                {{tag}}\n              </div>\n            </div>\n          </div>\n          <div class=\"description\">\n            <p class=\"context\" style=\"margin: 0; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;\">\n              {{item.element.text}}\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"articles && selectedType\" class=\"articles-side\">\n    <div class=\"side-head\">\n      <div>\n        Articles\n      </div>\n      <div class=\"df ai-c color-primary\">\n        <img [routerLink]=\"['/article']\" class=\"m-r-10 c-p\" src=\"assets/img/addArtictes.png\" alt=\"\">\n        <div class=\"m-r-30\">\n          Add Article\n        </div>\n        <img (click)=\"deleteArticles()\" class=\"c-p\" width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n      </div>\n    </div>\n    <div class=\"body-side\">\n      <div *ngFor=\"let item of articlesDataArr; let i = index\" (click)=\"selectType(item, i)\" class=\"articles-row jc-b\">\n        <div class=\"df ai-c\">\n          <input [(ngModel)]=\"item.checked\" class=\"m-r-20\" type=\"checkbox\">\n          <i *ngIf=\"item.type === 'folder'\" class=\"m-r-5\" class=\"fa fa-folder m-r-20 icon-folder\"></i>\n          <div>\n            {{item.label}}\n          </div>\n        </div>\n        <div (click)=\"detaleItem(articlesDataArr, item.id)\" class=\"c-p icons\">\n          <img width=\"18px\" src=\"assets/img/trash.png\" alt=\"\">\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"article && selectedText\" class=\"article-side\">\n    <div class=\"side-head\">\n      <div>\n        Article\n      </div>\n      <div class=\"df ai-c\">\n        <img (click)=\"selectedTextAction('prev')\" class=\"m-r-10 c-p\" src=\"assets/img/arrow-left.png\" alt=\"\">\n        {{editPageCount / 5}} of {{ editPageCountValue }}\n        <img (click)=\"selectedTextAction('next')\" class=\"m-l-10 rotate-180 c-p\" src=\"assets/img/arrow-left.png\" alt=\"\">\n      </div>\n      <div class=\"df ai-c\">\n        <div class=\"m-r-30 c-p\">\n          <img [routerLink]=\"[ '/article', id]\" a src=\"assets/img/editArticle.png\" alt=\"\">\n        </div>\n        <img class=\"c-p\" width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n      </div>\n    </div>\n    <div class=\"body-side text-left\">\n      <div class=\"tags-wrap\">\n        <div class=\"m-r-20 p-t-12\">\n          Tags:\n        </div>\n        <div *ngFor=\"let tags of selectedText.tegs; let i = index\" class=\"chips\">\n          {{tags}}\n          <img (click)=\"detaleItem(selectedText.tegs, i)\" class=\"close c-p\" src=\"assets/img/close.png\" alt=\"\">\n        </div>\n        <input [(ngModel)]=\"addTagField\" class=\"add-tag\" type=\"text\" (keyup.enter)=\"addTags(selectedText.tegs, addTagField)\"\n          placeholder=\"Add tag\" pInputText />\n      </div>\n      <div class=\"p-t-10 p-l-25 p-r-25 p-b-25\">\n        <p class=\"fs-11\">\n          Content > Tecnical > Phones > iPhone > iPhone 9 >\n        </p>\n        <h4 class=\"fs-14\">\n          {{\n          selectedText.title\n          }}\n        </h4>\n        <p class=\"fs-12\">\n          <span *ngFor=\"let item of previewText\">\n            {{item}}.\n          </span>\n        </p>\n      </div>\n      <div class=\"title-row jc-b bg\">\n        <div class=\"df ai-c\">\n          <div class=\"fs-14\">\n            Questions\n          </div>\n        </div>\n        <div class=\"df ai-c\">\n          <img (click)=\"deleteQuestion()\" class=\"c-p m-r-5\" width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n          <img (click)=\"showArticle = true\" class=\"c-p\" width=\"18px\" src=\"assets/img/fasten.png\" alt=\"\">\n        </div>\n      </div>\n      <div *ngFor=\"let item of selectedText.questins; let i = index\" class=\"articles-row jc-b\">\n        <div class=\"df ai-c\">\n          <input [(ngModel)]=\"questuonSettings[i]\" class=\"m-r-20\" type=\"checkbox\">\n          <div>\n            {{item}}\n          </div>\n        </div>\n        <div class=\"c-p icons df ai-c\">\n          <img (click)=\"detaleItem(selectedText.questins, i)\" class=\"c-p m-r-5\" width=\"22px\" src=\"assets/img/trash.png\"\n            alt=\"\">\n          <img (click)=\"showArticle = true\" class=\"c-p\" width=\"18px\" src=\"assets/img/fasten.png\" alt=\"\">\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>\n\n<app-link-article [show]=\"showArticle\" (hide)=\"showArticle = false\"></app-link-article>\n<app-dialog *ngIf=\"showDialogDelete\" [question]=\"'Are you sure you want to delete this Item?'\" (result)=\"detaleItem(null, null, $event)\"></app-dialog>"
+module.exports = "<div class=\"head\">\n\n  <div class=\"df full-width\">\n    <div class=\"pos-r\">\n      <p-dropdown class=\"search-dropdown\" [(ngModel)]=\"selectedSearchIn\" [options]=\"searchIn\"></p-dropdown>\n      <label class=\"lable-drb\">Search in</label>\n    </div>\n    <div class=\"input-search pos-r\">\n      <input type=\"text\" [(ngModel)]=\"searchText\" (ngModelChange)=\"searchTextChange($event)\" placeholder=\"Search content / tag\"\n        pInputText />\n      <div *ngIf=\"searchText.length && searchResultData.length\" class=\"serch-result-dropdawn\">\n        <div (click)=\"openSearch(); searchText = ''\" *ngFor=\"let item of searchResultData\" class=\"serch-result-dropdawn--item\">\n          <div class=\"serch-result-dropdawn--icon-wrap\">\n            <img *ngIf=\"item.type === 'teg'\" src=\"assets/img/stiket.png\" alt=\"\">\n            <img *ngIf=\"item.type === 'text'\" src=\"assets/img/file.png\" alt=\"\">\n          </div>\n          <div>\n            <div class=\"serch-result-dropdawn--lable\">\n              {{item.label}}\n            </div>\n          </div>\n        </div>\n        <div (click)=\"openSearch(); searchText = ''\" class=\"serch-result-dropdawn--foot\">\n          More results\n        </div>\n      </div>\n      <!-- (focus)=\"openSearch()\" -->\n      <div class=\"icon-input\">\n        <img *ngIf=\"!searchResult\" class=\"c-p\" width=\"20px\" src=\"assets/img/search.png\" alt=\"\">\n        <img *ngIf=\"searchResult\" (click)=\"closeSearch(); searchText = ''\" class=\"c-p\" width=\"20px\" src=\"assets/img/times-black.png\"\n          alt=\"\">\n      </div>\n    </div>\n  </div>\n  <div class=\"df\">\n    <div class=\"df ai-c c-p m-r-40 text-wrap-none\">\n      <img class=\"m-r-10\" src=\"assets/img/folder-open.png\" alt=\"\">\n      Load Files\n    </div>\n    <div (click)=\"openDubicate()\" class=\"df ai-c c-p text-wrap-none\">\n      <img class=\"m-r-10\" src=\"assets/img/files-group.png\" alt=\"\">\n      Duplicates\n      <div class=\"m-l-10 nitif-circle\">\n        7\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"content-wrap\">\n\n  <div *ngIf=\"folders\" class=\"folder-side\">\n    <div class=\"side-head\">\n      <div>\n        Folders\n      </div>\n      <div class=\"df ai-c\">\n        <div (click)=\"addFolder()\" class=\"m-r-40 c-p\">\n          <img src=\"assets/img/addFolderTree.png\" alt=\"\">\n        </div>\n        <div (click)=\"expandetTree()\" class=\"c-p arrow-right\">\n          <img class=\"animate\" [ngClass]=\"{'rotate--90': collapsFolderFlag}\" src=\"assets/img/arrow.png\" alt=\"\">\n        </div>\n      </div>\n    </div>\n    <div class=\"body-side\">\n      <p-tree [value]=\"filesTree0\" selectionMode=\"single\"\n      draggableNodes=\"true\" droppableNodes=\"true\" draggableScope=\"a\" droppableScope=\"c\"\n      (onNodeUnselect)=\"onNodeUnselect($event)\" (onNodeSelect)=\"onNodeSelect($event,i)\">\n        <ng-template let-node pTemplate=\"text\">\n          <!-- <span  title=\"Double click to rename\" (dblclick)=\"newFolderName = true; \">{{node.type}}</span> -->\n          <!-- <app-dialog-folder-name *ngIf=\"newFolderName\" [fieldValue]=\"node.label\" [title]=\"'Add New Folder'\" (result)=\"node.label = $event; newFolderName = false;\"></app-dialog-folder-name> -->\n        </ng-template>\n        <ng-template let-node pTemplate=\"folder\">\n          <span  \n      title=\"Double click to rename\" (dblclick)=\"newFolderName[node.id] = true; \">{{node.label}}</span>\n          <app-dialog-folder-name *ngIf=\"newFolderName[node.id]\" [fieldValue]=\"node.label\" [title]=\"'Add New Folder'\" (result)=\"renameNode(data, node.id, $event);node.label = $event; newFolderName[node.id] = false;\"></app-dialog-folder-name>\n        </ng-template>\n      </p-tree>\n    </div>\n  </div>\n\n  <div *ngIf=\"welcome\" class=\"folder-side full-width m-r-0\">\n    <div class=\"side-head\"></div>\n    <div (onNodeDrop)=\"onDrop($event)\" (drop)=\"onDrop($event)\" class=\"body-side col jc-c ai-c text-center\">\n      <div class=\"m-b-20\">\n        Welcome to SPOT\n      </div>\n      <div class=\"m-b-20\">\n        To create your content repository, start by loading source files <br>\n        Word and PDF file are accepted\n      </div>\n      <label class=\"c-p ai-c df\">\n        <img class=\"m-r-20\" src=\"assets/img/folder-open.png\" alt=\"\">\n        Load Files\n      </label>\n    </div>\n  </div>\n\n  <div *ngIf=\"dublicate\" class=\"articles-side full-width\">\n    <div class=\"side-head\">\n      <div>\n        Duplicate Questions\n      </div>\n      <div (click)=\"backContent()\" class=\"df ai-c c-p\">\n        <img width=\"16px\" class=\"m-r-5 rotate--90\" src=\"assets/img/caret.png\" alt=\"\">\n        <div>\n          Back to content\n        </div>\n      </div>\n    </div>\n    <div class=\"body-side\">\n      <div *ngFor=\"let item of dublicateQuestionData; let i = index;\">\n        <div *ngIf=\"item.questions.length\" class=\"question-row\">\n          <div (click)=\"item.open = !item.open; \" class=\"question-row-head\">\n            <div [ngClass]=\"{'rotate-270': item.open}\" class=\"m-r-10 icon animate rotate-180\">\n              <img src=\"assets/img/caret-ques.png\" alt=\"\">\n            </div>\n            <div>\n              {{item.name}} ({{item.questions.length}})\n            </div>\n          </div>\n          <div *ngIf=\"item.open\" class=\"question-row-body\">\n            <div>\n              <div *ngFor=\"let dublicate of item.questions; let subIndex = index;\" class=\"question-item\">\n                <div>\n                  <div class=\"fs-12 m-n-7\">\n                    {{dublicate.name}}\n                  </div>\n                  <div class=\"color-gray-600\">\n                    {{dublicate.path}}\n                  </div>\n                </div>\n                <div (click)=\"detaleItem(item.questions, subIndex)\" class=\"trash-icon\">\n                  <img width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n                </div>\n              </div>\n            </div>\n            <div class=\"df jc-e p-r-40 m-t-20\">\n              <div class=\"df ai-c c-p\">\n                <img class=\"m-r-5\" src=\"assets/img/succsess.png\" alt=\"\">\n                Keep Duplicates\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"searchResult\" class=\"articles-side full-width \">\n    <div class=\"side-head\">\n      <div>\n        Search Results\n      </div>\n      <div class=\"df ai-c color-primary\">\n        <img [routerLink]=\"['/article']\" class=\"m-r-10 c-p\" src=\"assets/img/addArtictes.png\" alt=\"\">\n        <div class=\"m-r-30\">\n          Add Article\n        </div>\n        <img (click)=\"deleteSearchResults()\" class=\"c-p m-r-40\" width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n        <div (click)=\"backContent()\" class=\"df ai-c c-p\">\n          <img width=\"16px\" class=\"m-r-5 rotate--90\" src=\"assets/img/caret.png\" alt=\"\">\n          <div>\n            Back to content\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"body-side body-side-scroll\">\n      <div *ngFor=\"let item of searchResultData; let i = index\" class=\"search-row \">\n        <div>\n          <input class=\"m-r-20 m-t-0\" [(ngModel)]=\"item.element.checked\" type=\"checkbox\">\n        </div>\n        <div (click)=\"selectType(item.element, i)\">\n          <div class=\"df ai-c jc-b m-b-7\">\n            <div>\n              {{item.element.title}}\n            </div>\n            <div (click)=\"detaleItem(searchResultData, i)\" class=\"c-p delete-icon\">\n              <img width=\"18px\" src=\"assets/img/trash.png\" alt=\"\">\n            </div>\n          </div>\n          <div class=\"stick-row\">\n            <div *ngFor=\"let tag of item.element.tegs\" class=\"ai-c df m-r-10\">\n              <img class=\"m-r-3\" src=\"assets/img/stiket.png\" alt=\"\">\n              <div class=\"context\">\n                {{tag}}\n              </div>\n            </div>\n          </div>\n          <div class=\"description\">\n            <p class=\"context\" style=\"margin: 0; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;\">\n              {{item.element.text}}\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"articles && selectedType\" class=\"articles-side\">\n    <div class=\"side-head\">\n      <div>\n        Articles\n      </div>\n      <div class=\"df ai-c color-primary\">\n        <img [routerLink]=\"['/article']\" class=\"m-r-10 c-p\" src=\"assets/img/addArtictes.png\" alt=\"\">\n        <div class=\"m-r-30\">\n          Add Article\n        </div>\n        <img (click)=\"deleteArticles()\" class=\"c-p\" width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n      </div>\n    </div>\n    <div class=\"body-side\">\n      <div *ngFor=\"let item of articlesDataArr; let i = index\" (click)=\"selectType(item, i)\" class=\"articles-row jc-b\">\n        <div class=\"df ai-c\">\n          <input [(ngModel)]=\"item.checked\" class=\"m-r-20\" type=\"checkbox\">\n          <i *ngIf=\"item.type === 'folder'\" class=\"m-r-5\" class=\"fa fa-folder m-r-20 icon-folder\"></i>\n          <div>\n            {{item.label}}\n          </div>\n        </div>\n        <div (click)=\"detaleItem(articlesDataArr, item.id, false, 'article')\" class=\"c-p icons\">\n          <img width=\"18px\" src=\"assets/img/trash.png\" alt=\"\">\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"article && selectedText\" class=\"article-side\">\n    <div class=\"side-head\">\n      <div>\n        Article\n      </div>\n      <div class=\"df ai-c\">\n        <img (click)=\"selectedTextAction('prev')\" class=\"m-r-10 c-p\" src=\"assets/img/arrow-left.png\" alt=\"\">\n        {{editPageCount / 5}} of {{ editPageCountValue }}\n        <img (click)=\"selectedTextAction('next')\" class=\"m-l-10 rotate-180 c-p\" src=\"assets/img/arrow-left.png\" alt=\"\">\n      </div>\n      <div class=\"df ai-c\">\n        <div class=\"m-r-30 c-p\">\n          <img [routerLink]=\"[ '/article', id]\" a src=\"assets/img/editArticle.png\" alt=\"\">\n        </div>\n        <img class=\"c-p\" width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n      </div>\n    </div>\n    <div class=\"body-side text-left\">\n      <div class=\"tags-wrap\">\n        <div class=\"m-r-20 p-t-12\">\n          Tags:\n        </div>\n        <div *ngFor=\"let tags of selectedText.tegs; let i = index\" class=\"chips\">\n          {{tags}}\n          <img (click)=\"detaleItem(selectedText.tegs, i)\" class=\"close c-p\" src=\"assets/img/close-chips.png\" alt=\"\">\n        </div>\n        <input [(ngModel)]=\"addTagField\" class=\"add-tag\" type=\"text\" (keyup.enter)=\"addTags(selectedText.tegs, addTagField)\"\n          placeholder=\"Add tag\" pInputText />\n      </div>\n      <div class=\"p-t-10 p-l-25 p-r-25 p-b-25\">\n        <p class=\"fs-11\">\n          Content > Tecnical > Phones > iPhone > iPhone 9 >\n        </p>\n        <h4 class=\"fs-14\">\n          {{\n          selectedText.title\n          }}\n        </h4>\n        <p class=\"fs-12\">\n          <span *ngFor=\"let item of previewText\">\n            {{item}}.\n          </span>\n        </p>\n      </div>\n      <div class=\"title-row jc-b bg\">\n        <div class=\"df ai-c\">\n          <div class=\"fs-14\">\n            Questions\n          </div>\n        </div>\n        <div class=\"df ai-c\">\n          <img (click)=\"deleteQuestion()\" class=\"c-p m-r-5\" width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n          <img (click)=\"showArticle = true\" class=\"c-p\" width=\"18px\" src=\"assets/img/fasten.png\" alt=\"\">\n        </div>\n      </div>\n      <div *ngFor=\"let item of selectedText.questins; let i = index\" class=\"articles-row jc-b\">\n        <div class=\"df ai-c\">\n          <input [(ngModel)]=\"questuonSettings[i]\" class=\"m-r-20\" type=\"checkbox\">\n          <div>\n            {{item}}\n          </div>\n        </div>\n        <div class=\"c-p icons df ai-c\">\n          <img (click)=\"detaleItem(selectedText.questins, i)\" class=\"c-p m-r-5\" width=\"22px\" src=\"assets/img/trash.png\"\n            alt=\"\">\n          <img (click)=\"showArticle = true\" class=\"c-p\" width=\"18px\" src=\"assets/img/fasten.png\" alt=\"\">\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>\n\n<app-link-article [show]=\"showArticle\" (hide)=\"showArticle = false\"></app-link-article>\n<app-dialog *ngIf=\"showDialogDelete\" [question]=\"'Are you sure you want to delete this Item?'\" (result)=\"detaleItem(null, null, $event)\"></app-dialog>"
 
 /***/ }),
 
@@ -538,12 +553,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var primeng_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! primeng/api */ "./node_modules/primeng/api.js");
 /* harmony import */ var primeng_api__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(primeng_api__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var src_app_shared_services_main_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/main.service */ "./src/app/shared/services/main.service.ts");
+
 
 
 
 var ContentManagementComponent = /** @class */ (function () {
-    function ContentManagementComponent(eeDragDropService) {
+    function ContentManagementComponent(eeDragDropService, mainService) {
         this.eeDragDropService = eeDragDropService;
+        this.mainService = mainService;
         this.article = true;
         this.articles = true;
         this.searchResult = false;
@@ -554,151 +572,6 @@ var ContentManagementComponent = /** @class */ (function () {
         this.math = Math;
         this.questuonSettings = {};
         this.newFolderName = {};
-        this.data = [
-            {
-                id: "d1",
-                label: "Devices",
-                data: "Node 0",
-                expandedIcon: "fa fa-folder-open",
-                collapsedIcon: "fa fa-folder",
-                leaf: false,
-                expanded: false,
-                type: "folder",
-                children: [
-                    {
-                        id: "and1",
-                        label: "Android",
-                        data: "Node 0",
-                        expandedIcon: "fa fa-folder-open",
-                        collapsedIcon: "fa fa-folder",
-                        type: "folder",
-                        children: [
-                            {
-                                id: "1",
-                                label: "Android 7",
-                                checked: false,
-                                type: "folder",
-                                expandedIcon: "fa fa-folder-open",
-                                collapsedIcon: "fa fa-folder"
-                            },
-                            {
-                                id: "2",
-                                label: "Android 6",
-                                checked: false,
-                                type: "folder",
-                                expandedIcon: "fa fa-folder-open",
-                                collapsedIcon: "fa fa-folder"
-                            },
-                            {
-                                id: "3",
-                                label: "Android 5",
-                                checked: false,
-                                type: "folder",
-                                expandedIcon: "fa fa-folder-open",
-                                collapsedIcon: "fa fa-folder"
-                            },
-                            {
-                                id: "4",
-                                label: "text",
-                                checked: false,
-                                type: "text",
-                                title: "Using 3D touch",
-                                tegs: ["3d touch", "screen"],
-                                questins: [
-                                    "Which iPhone, iPad, and iPod touch models support iOS 1?",
-                                    "Which iPhone, iPad, and iPod touch models support iOS 2?",
-                                    "Which iPhone, iPad, and iPod touch models support iOS 3?",
-                                    "Which iPhone, iPad, and iPod touch models support iOS 4?",
-                                    "Which iPhone, iPad, and iPod touch models support iOS 5?"
-                                ],
-                                text: "3D Touch is multitouch made multidimensional. With it you can press deeply to launch actions instead of apps, reply to notifications, preview messages and links, switch keyboards, switch apps, animate Live Photos, vary stroke width, and more. It's like a wormhole through iOS that lets you move around faster than ever.\n              3D Touch is multitouch made multidimensional. With it you can press3D Touch is multitouch made multidimensional. With it you can press deeply to launch actions instead of apps, reply to notifications, preview messages and links, switch keyboards, switch apps, animate Live Photos, vary stroke width, and more. It's like a wormhole through iOS that lets you move around faster than ever.\n              3D Touch is multitouch made multidimensional. With it you can press3D Touch is multitouch made multidimensional. With it you can press deeply to launch actions instead of apps, reply to notifications, preview messages and links, switch keyboards, switch apps, animate Live Photos, vary stroke width, and more. It's like a wormhole through iOS that lets you move around faster than ever.\n              3D Touch is multitouch made multidimensional. With it you can press3D Touch is multitouch made multidimensional. With it you can press deeply to launch actions instead of apps, reply to notifications, preview messages and links, switch keyboards, switch apps, animate Live Photos, vary stroke width, and more. It's like a wormhole through iOS that lets you move around faster than ever.\n              3D Touch is multitouch made multidimensional. With it you can press deeply to launch actions instead of apps, reply to notifications, preview messages and links, switch keyboards, switch apps, animate Live Photos, vary stroke width, and more. It's like a wormhole through iOS that lets you move around faster than ever."
-                            },
-                            {
-                                id: "5",
-                                label: "text 5",
-                                checked: false,
-                                type: "text",
-                                questins: [
-                                    "Using 3D touch models support iOS 12?",
-                                    "Which iPhone, iPad, and iPod touch models support iOS 10?"
-                                ],
-                                tegs: ["multi", "using"],
-                                title: "Using 3D touch",
-                                text: "multitouch sdfsdfsdfsd sdfs dfs dfsd fsdf sdf sdfsdfsdfsdfsdf"
-                            }
-                        ]
-                    },
-                    {
-                        label: "Apple",
-                        id: "a1",
-                        data: "Node 1",
-                        type: "folder",
-                        expandedIcon: "fa fa-folder-open",
-                        collapsedIcon: "fa fa-folder",
-                        children: [
-                            {
-                                id: "Apple1",
-                                label: "Apple 7",
-                                checked: false,
-                                type: "folder",
-                                expandedIcon: "fa fa-folder-open",
-                                collapsedIcon: "fa fa-folder"
-                            },
-                            {
-                                id: "Apple2",
-                                label: "Apple 6",
-                                checked: false,
-                                type: "folder",
-                                expandedIcon: "fa fa-folder-open",
-                                collapsedIcon: "fa fa-folder"
-                            },
-                            {
-                                id: "Apple3",
-                                label: "Apple 5",
-                                checked: false,
-                                type: "folder",
-                                expandedIcon: "fa fa-folder-open",
-                                collapsedIcon: "fa fa-folder"
-                            }
-                        ]
-                    },
-                    {
-                        label: "Windows",
-                        id: "w1",
-                        data: "Node 2",
-                        type: "folder",
-                        expandedIcon: "fa fa-folder-open",
-                        collapsedIcon: "fa fa-folder",
-                        children: [
-                            {
-                                id: "Windows1",
-                                label: "Windows 7",
-                                checked: false,
-                                type: "folder",
-                                expandedIcon: "fa fa-folder-open",
-                                collapsedIcon: "fa fa-folder"
-                            },
-                            {
-                                id: "Windows2",
-                                label: "Windows 6",
-                                checked: false,
-                                type: "folder",
-                                expandedIcon: "fa fa-folder-open",
-                                collapsedIcon: "fa fa-folder"
-                            },
-                            {
-                                id: "Windows3",
-                                label: "Windows 5",
-                                checked: false,
-                                type: "folder",
-                                expandedIcon: "fa fa-folder-open",
-                                collapsedIcon: "fa fa-folder"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ];
         this.dublicateQuestionData = [
             {
                 name: " How do I use the 3D touch?",
@@ -745,77 +618,14 @@ var ContentManagementComponent = /** @class */ (function () {
                 ]
             }
         ];
-        this.articlesData = {
-            Android: [
-                { id: "1", name: "Android 7", checked: false, type: "folder" },
-                { id: "2", name: "Android 6", checked: false, type: "folder" },
-                { id: "3", name: "Android 5", checked: false, type: "folder" },
-                {
-                    id: "4",
-                    name: "text",
-                    checked: false,
-                    type: "text",
-                    title: "Using 3D touch",
-                    tegs: ["3d touch", "screen"],
-                    questins: [
-                        "Which iPhone, iPad, and iPod touch models support iOS 1?",
-                        "Which iPhone, iPad, and iPod touch models support iOS 2?",
-                        "Which iPhone, iPad, and iPod touch models support iOS 3?",
-                        "Which iPhone, iPad, and iPod touch models support iOS 4?",
-                        "Which iPhone, iPad, and iPod touch models support iOS 5?"
-                    ],
-                    text: "3D Touch is multitouch made multidimensional. With it you can press deeply to launch actions instead of apps, reply to notifications, preview messages and links, switch keyboards, switch apps, animate Live Photos, vary stroke width, and more. It's like a wormhole through iOS that lets you move around faster than ever.\n        3D Touch is multitouch made multidimensional. With it you can press3D Touch is multitouch made multidimensional. With it you can press deeply to launch actions instead of apps, reply to notifications, preview messages and links, switch keyboards, switch apps, animate Live Photos, vary stroke width, and more. It's like a wormhole through iOS that lets you move around faster than ever.\n        3D Touch is multitouch made multidimensional. With it you can press3D Touch is multitouch made multidimensional. With it you can press deeply to launch actions instead of apps, reply to notifications, preview messages and links, switch keyboards, switch apps, animate Live Photos, vary stroke width, and more. It's like a wormhole through iOS that lets you move around faster than ever.\n        3D Touch is multitouch made multidimensional. With it you can press3D Touch is multitouch made multidimensional. With it you can press deeply to launch actions instead of apps, reply to notifications, preview messages and links, switch keyboards, switch apps, animate Live Photos, vary stroke width, and more. It's like a wormhole through iOS that lets you move around faster than ever.\n        3D Touch is multitouch made multidimensional. With it you can press deeply to launch actions instead of apps, reply to notifications, preview messages and links, switch keyboards, switch apps, animate Live Photos, vary stroke width, and more. It's like a wormhole through iOS that lets you move around faster than ever."
-                },
-                {
-                    id: "5",
-                    name: "text 5",
-                    checked: false,
-                    type: "text",
-                    questins: [
-                        "Using 3D touch models support iOS 12?",
-                        "Which iPhone, iPad, and iPod touch models support iOS 10?"
-                    ],
-                    tegs: ["multi", "using"],
-                    title: "Using 3D touch",
-                    text: "multitouch sdfsdfsdfsd sdfs dfs dfsd fsdf sdf sdfsdfsdfsdfsdf"
-                }
-            ],
-            Apple: [
-                { id: "1", name: "iPhone 7", checked: false, type: "folder" },
-                { id: "2", name: "iPhone 6", checked: false, type: "folder" },
-                { id: "3", name: "iPhone 5", checked: false, type: "folder" },
-                {
-                    id: "5",
-                    name: "text 5",
-                    checked: false,
-                    type: "text",
-                    questins: [
-                        "Using 3D touch models support iOS 12?",
-                        "Which iPhone, iPad, and iPod touch models support iOS 10?"
-                    ],
-                    tegs: ["multi", "using"],
-                    title: "Using 3D touch",
-                    text: "2 sdfs dfs dfsd fsdf sdf sdfsdfsdfsdfsdf"
-                }
-            ],
-            Windows: [
-                { id: "1", name: "w1", checked: false, type: "folder" },
-                { id: "2", name: "w2", checked: false, type: "folder" },
-                { id: "3", name: "w3", checked: false, type: "folder" }
-            ],
-            Devices: [
-                { id: "1", name: "Windows", checked: false, type: "folder" },
-                { id: "2", name: "Apple", checked: false, type: "folder" },
-                { id: "3", name: "Android", checked: false, type: "folder" }
-            ]
-        };
         this.searchText = "";
         this.searchResultData = [];
+        this.data = this.mainService.data;
     }
     ContentManagementComponent.prototype.searchTextChange = function (e) {
         var _this = this;
         this.searchResultData = [];
-        this.articlesData[this.selectedType].forEach(function (element, index) {
+        this.data[this.selectedType].forEach(function (element, index) {
             if (element.type === "text") {
                 if (element.text.includes(e)) {
                     _this.searchResultData.push({
@@ -1011,10 +821,11 @@ var ContentManagementComponent = /** @class */ (function () {
         this.folders = true;
         this.dublicate = false;
     };
-    ContentManagementComponent.prototype.detaleItem = function (data, index, event) {
+    ContentManagementComponent.prototype.detaleItem = function (data, index, event, flag) {
         if (data !== null || index !== null) {
             this.dataDelete = data;
             this.indexDelete = index;
+            this.deleteFlag = flag;
             this.showDialogDelete = true;
         }
         else {
@@ -1022,9 +833,16 @@ var ContentManagementComponent = /** @class */ (function () {
                 this.showDialogDelete = false;
             }
             else {
-                this.removeFolder(this.data, this.indexDelete);
-                this.removeFolder(this.arr, this.indexDelete);
-                this.showDialogDelete = false;
+                if (this.deleteFlag === 'article') {
+                    this.removeFolder(this.data, this.indexDelete);
+                    this.removeFolder(this.arr, this.indexDelete);
+                    this.showDialogDelete = false;
+                    this.deleteFlag = null;
+                }
+                else {
+                    this.dataDelete.splice(this.indexDelete, 1);
+                    this.showDialogDelete = false;
+                }
             }
         }
     };
@@ -1121,7 +939,7 @@ var ContentManagementComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./content-management.component.html */ "./src/app/main/content-management/content-management.component.html"),
             styles: [__webpack_require__(/*! ./content-management.component.scss */ "./src/app/main/content-management/content-management.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [primeng_api__WEBPACK_IMPORTED_MODULE_2__["TreeDragDropService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [primeng_api__WEBPACK_IMPORTED_MODULE_2__["TreeDragDropService"], src_app_shared_services_main_service__WEBPACK_IMPORTED_MODULE_3__["MainService"]])
     ], ContentManagementComponent);
     return ContentManagementComponent;
 }());
@@ -1137,7 +955,7 @@ var ContentManagementComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"show\" class=\"bg-modal\"></div>\n<div *ngIf=\"show\" class=\"modal\">\n  <div class=\"modal-body-wrap\">\n    <div class=\"modal-body p-0\" style=\"width: 90vw;\">\n      <div class=\"title-modal jc-b\">\n        <div class=\"fw-600 fs-16\">\n          Link to Article\n        </div>\n        <div (click)=\"close()\" class=\"c-p\">\n          <img width=\"18px\" src=\"assets/img/times-black.png\" alt=\"\">\n        </div>\n      </div>\n      <div class=\"content-modal\">\n\n        <div class=\"df\" style=\"padding-left: 245px; margin-bottom: 20px;\">\n          <div class=\"pos-r\">\n            <p-dropdown class=\"search-dropdown\" [(ngModel)]=\"selectedSearchIn\" [options]=\"searchIn\"></p-dropdown>\n            <label class=\"lable-drb\">Search in</label>\n          </div>\n          <div class=\"input-search pos-r\">\n            <input type=\"text\" [(ngModel)]=\"searchText\" (ngModelChange)=\"searchTextChange($event)\" placeholder=\"Search content / tag\"\n              pInputText />\n            <div *ngIf=\"searchText.length && searchResultData.length\" class=\"serch-result-dropdawn\">\n              <div (click)=\"openSearch(); searchText = ''\" *ngFor=\"let item of searchResultData\" class=\"serch-result-dropdawn--item\">\n                <div class=\"serch-result-dropdawn--icon-wrap\">\n                  <img *ngIf=\"item.type === 'teg'\" src=\"assets/img/stiket.png\" alt=\"\">\n                  <img *ngIf=\"item.type === 'text'\" src=\"assets/img/file.png\" alt=\"\">\n                </div>\n                <div>\n                  <div class=\"serch-result-dropdawn--lable\">\n                    {{item.label}}\n                  </div>\n                </div>\n              </div>\n              <div (click)=\"openSearch(); searchText = ''\" class=\"serch-result-dropdawn--foot\">\n                More results\n              </div>\n            </div>\n            <!-- (focus)=\"openSearch()\" -->\n            <div class=\"icon-input\">\n              <img *ngIf=\"!searchResult\" class=\"c-p\" width=\"20px\" src=\"assets/img/search.png\" alt=\"\">\n              <img *ngIf=\"searchResult\" (click)=\"closeSearch(); searchText = ''\" class=\"c-p\" width=\"20px\" src=\"assets/img/times-black.png\"\n                alt=\"\">\n            </div>\n          </div>\n        </div>\n\n        <div class=\"content-wrap\">\n\n          <div *ngIf=\"folders\" class=\"folder-side\">\n            <div class=\"side-head\">\n              <div>\n                Folders\n              </div>\n              <div class=\"df ai-c\">\n                <div (click)=\"addFolder()\" class=\"m-r-40 c-p\">\n                  <img src=\"assets/img/addFolderTree.png\" alt=\"\">\n                </div>\n                <div (click)=\"expandetTree()\" class=\"c-p arrow-right\">\n                  <img class=\"animate\" src=\"assets/img/arrow.png\" alt=\"\">\n                </div>\n              </div>\n            </div>\n            <div class=\"body-side\">\n              <p-tree [value]=\"filesTree0\" selectionMode=\"single\" (onNodeSelect)=\"onNodeSelect($event,i)\">\n                <ng-template let-node pTemplate=\"default\">\n                  <div class=\"df ai-c\">\n                    <input *ngIf=\"!node.label\" [(ngModel)]=\"newText\" type=\"text\" pInputText style=\"width: 85px\">\n                    <button *ngIf=\"!node.label\" (click)=\"node.label = newText; newText = ''\" class=\"button-default m-l-5\"\n                      style=\"min-width: 35px;\">ok</button>\n                  </div>\n                  <span *ngIf=\"node.label\">{{node.label}}</span>\n                </ng-template>\n              </p-tree>\n            </div>\n          </div>\n\n          <div *ngIf=\"searchResult\" class=\"articles-side full-width \">\n            <div class=\"side-head\">\n              <div>\n                Search Results\n              </div>\n              <div class=\"df ai-c color-primary\">\n                <img [routerLink]=\"['/article']\" class=\"m-r-10 c-p\" src=\"assets/img/addArtictes.png\" alt=\"\">\n                <div class=\"m-r-30\">\n                  Add Article\n                </div>\n                <img (click)=\"deleteSearchResults()\" class=\"c-p m-r-40\" width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n                <div (click)=\"backContent()\" class=\"df ai-c c-p\">\n                  <img width=\"16px\" class=\"m-r-5 rotate--90\" src=\"assets/img/caret.png\" alt=\"\">\n                  <div>\n                    Back to content\n                  </div>\n                </div>\n              </div>\n            </div>\n            <div class=\"body-side body-side-scroll\">\n              <div *ngFor=\"let item of searchResultData; let i = index\" class=\"search-row \">\n                <div>\n                  <input class=\"m-r-20 m-t-0\" [(ngModel)]=\"item.element.checked\" type=\"checkbox\">\n                </div>\n                <div (click)=\"selectType(item.element, i)\">\n                  <div class=\"df ai-c jc-b m-b-7\">\n                    <div>\n                      {{item.element.title}}\n                    </div>\n                    <div (click)=\"detaleItem(searchResultData, i)\" class=\"c-p delete-icon\">\n                      <img width=\"18px\" src=\"assets/img/trash.png\" alt=\"\">\n                    </div>\n                  </div>\n                  <div class=\"stick-row\">\n                    <div *ngFor=\"let tag of item.element.tegs\" class=\"ai-c df m-r-10\">\n                      <img class=\"m-r-3\" src=\"assets/img/stiket.png\" alt=\"\">\n                      <div class=\"context\">\n                        {{tag}}\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"description\">\n                    <p class=\"context\" style=\"margin: 0; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;\">\n                      {{item.element.text}}\n                    </p>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <div *ngIf=\"articles\" class=\"articles-side\">\n            <div class=\"side-head\">\n              <div>\n                Articles\n              </div>\n              <div class=\"df ai-c color-primary\">\n                <img [routerLink]=\"['/article']\" class=\"m-r-10 c-p\" src=\"assets/img/addArtictes.png\" alt=\"\">\n                <div class=\"m-r-30\">\n                  Add Article\n                </div>\n                <img (click)=\"deleteArticles()\" class=\"c-p\" width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n              </div>\n            </div>\n            <div class=\"body-side\">\n              <div *ngFor=\"let item of articlesData[selectedType]; let i = index\" (click)=\"selectType(item, i)\" class=\"articles-row jc-b\">\n                <div class=\"df ai-c\">\n                  <input [(ngModel)]=\"item.checked\" class=\"m-r-20\" type=\"checkbox\">\n                  <i *ngIf=\"item.type === 'folder'\" class=\"m-r-5\" class=\"fa fa-folder m-r-20 icon-folder\"></i>\n                  <div>\n                    {{item.name}}\n                  </div>\n                </div>\n                <div (click)=\"detaleItem(articlesData[selectedType], i)\" class=\"c-p icons\">\n                  <img width=\"18px\" src=\"assets/img/trash.png\" alt=\"\">\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <div *ngIf=\"article && selectedText\" class=\"article-side\">\n            <div class=\"side-head\">\n              <div>\n                Article\n              </div>\n              <div class=\"df ai-c\">\n                <img (click)=\"selectedTextAction('prev')\" class=\"m-r-10 c-p\" src=\"assets/img/arrow-left.png\" alt=\"\">\n                {{editPageCount / 5}} of {{ editPageCountValue }}\n                <img (click)=\"selectedTextAction('next')\" class=\"m-l-10 rotate-180 c-p\" src=\"assets/img/arrow-left.png\"\n                  alt=\"\">\n              </div>\n              <div class=\"df ai-c\">\n                <div class=\"m-r-30 c-p\">\n                  <img [routerLink]=\"[ '/article', id]\" a src=\"assets/img/editArticle.png\" alt=\"\">\n                </div>\n                <img class=\"c-p\" width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n              </div>\n            </div>\n            <div class=\"body-side text-left\">\n              <div class=\"tags-wrap\">\n                <div class=\"m-r-20 p-t-12\">\n                  Tags:\n                </div>\n                <div *ngFor=\"let tags of selectedText.tegs; let i = index\" class=\"chips\">\n                  {{tags}}\n                  <img (click)=\"detaleItem(selectedText.tegs, i)\" class=\"close c-p\" src=\"assets/img/close.png\" alt=\"\">\n                </div>\n                <input [(ngModel)]=\"addTagField\" class=\"add-tag\" type=\"text\" (keyup.enter)=\"addTags(selectedText.tegs, addTagField)\"\n                  placeholder=\"Add tag\" pInputText />\n              </div>\n              <div class=\"p-t-10 p-l-25 p-r-25 p-b-25\">\n                <p class=\"fs-11\">\n                  Content > Tecnical > Phones > iPhone > iPhone 9 >\n                </p>\n                <h4 class=\"fs-14\">\n                  {{\n                  selectedText.title\n                  }}\n                </h4>\n                <p class=\"fs-12\">\n                  <span *ngFor=\"let item of previewText\">\n                    {{item}}.\n                  </span>\n                </p>\n              </div>\n              <div class=\"title-row jc-b bg\">\n                <div class=\"df ai-c\">\n                  <div class=\"fs-14\">\n                    Questions\n                  </div>\n                </div>\n                <div class=\"df ai-c\">\n                  <img (click)=\"deleteQuestion()\" class=\"c-p m-r-5\" width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n                  <img (click)=\"showArticle = true\" class=\"c-p\" width=\"18px\" src=\"assets/img/fasten.png\" alt=\"\">\n                </div>\n              </div>\n              <div *ngFor=\"let item of selectedText.questins; let i = index\" class=\"articles-row jc-b\">\n                <div class=\"df ai-c\">\n                  <input [(ngModel)]=\"questuonSettings[i]\" class=\"m-r-20\" type=\"checkbox\">\n                  <div>\n                    {{item}}\n                  </div>\n                </div>\n                <div class=\"c-p icons df ai-c\">\n                  <img (click)=\"detaleItem(selectedText.questins, i)\" class=\"c-p m-r-5\" width=\"22px\" src=\"assets/img/trash.png\"\n                    alt=\"\">\n                  <img (click)=\"showArticle = true\" class=\"c-p\" width=\"18px\" src=\"assets/img/fasten.png\" alt=\"\">\n                </div>\n              </div>\n            </div>\n          </div>\n\n        </div>\n\n      </div>\n      <div class=\"title-modal p-r-60 jc-e\">\n        <button class=\"button-default m-r-20\">Link</button>\n        <button (click)=\"close()\" class=\"button-default\">Cancel</button>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<div *ngIf=\"show\" class=\"bg-modal\"></div>\n<div *ngIf=\"show\" class=\"modal\">\n  <div class=\"modal-body-wrap\">\n    <div class=\"modal-body p-0\" style=\"width: 90vw;\">\n      <div class=\"title-modal jc-b\">\n        <div class=\"fw-600 fs-16\">\n          Link to Article\n        </div>\n        <div (click)=\"close()\" class=\"c-p\">\n          <img width=\"18px\" src=\"assets/img/times-black.png\" alt=\"\">\n        </div>\n      </div>\n      <div class=\"content-modal\">\n\n        <div class=\"df\" style=\"padding-left: 245px; margin-bottom: 20px;\">\n          <div class=\"pos-r\">\n            <p-dropdown class=\"search-dropdown\" [(ngModel)]=\"selectedSearchIn\" [options]=\"searchIn\"></p-dropdown>\n            <label class=\"lable-drb\">Search in</label>\n          </div>\n          <div class=\"input-search pos-r\">\n            <input type=\"text\" [(ngModel)]=\"searchText\" (ngModelChange)=\"searchTextChange($event)\" placeholder=\"Search content / tag\"\n              pInputText />\n            <div *ngIf=\"searchText.length && searchResultData.length\" class=\"serch-result-dropdawn\">\n              <div (click)=\"openSearch(); searchText = ''\" *ngFor=\"let item of searchResultData\" class=\"serch-result-dropdawn--item\">\n                <div class=\"serch-result-dropdawn--icon-wrap\">\n                  <img *ngIf=\"item.type === 'teg'\" src=\"assets/img/stiket.png\" alt=\"\">\n                  <img *ngIf=\"item.type === 'text'\" src=\"assets/img/file.png\" alt=\"\">\n                </div>\n                <div>\n                  <div class=\"serch-result-dropdawn--lable\">\n                    {{item.label}}\n                  </div>\n                </div>\n              </div>\n              <div (click)=\"openSearch(); searchText = ''\" class=\"serch-result-dropdawn--foot\">\n                More results\n              </div>\n            </div>\n            <!-- (focus)=\"openSearch()\" -->\n            <div class=\"icon-input\">\n              <img *ngIf=\"!searchResult\" class=\"c-p\" width=\"20px\" src=\"assets/img/search.png\" alt=\"\">\n              <img *ngIf=\"searchResult\" (click)=\"closeSearch(); searchText = ''\" class=\"c-p\" width=\"20px\" src=\"assets/img/times-black.png\"\n                alt=\"\">\n            </div>\n          </div>\n        </div>\n\n        <div class=\"content-wrap\">\n\n          <div *ngIf=\"folders\" class=\"folder-side\">\n            <div class=\"side-head\">\n              <div>\n                Folders\n              </div>\n              <div class=\"df ai-c\">\n                <div (click)=\"addFolder()\" class=\"m-r-40 c-p\">\n                  <img src=\"assets/img/addFolderTree.png\" alt=\"\">\n                </div>\n                <div (click)=\"expandetTree()\" class=\"c-p arrow-right\">\n                  <img class=\"animate\" src=\"assets/img/arrow.png\" alt=\"\">\n                </div>\n              </div>\n            </div>\n            <div class=\"body-side\">\n              <p-tree [value]=\"filesTree0\" selectionMode=\"single\" (onNodeSelect)=\"onNodeSelect($event,i)\">\n                <ng-template let-node pTemplate=\"default\">\n                  <div class=\"df ai-c\">\n                    <input *ngIf=\"!node.label\" [(ngModel)]=\"newText\" type=\"text\" pInputText style=\"width: 85px\">\n                    <button *ngIf=\"!node.label\" (click)=\"node.label = newText; newText = ''\" class=\"button-default m-l-5\"\n                      style=\"min-width: 35px;\">ok</button>\n                  </div>\n                  <span *ngIf=\"node.label\">{{node.label}}</span>\n                </ng-template>\n              </p-tree>\n            </div>\n          </div>\n\n          <div *ngIf=\"searchResult\" class=\"articles-side full-width \">\n            <div class=\"side-head\">\n              <div>\n                Search Results\n              </div>\n              <div class=\"df ai-c color-primary\">\n                <img [routerLink]=\"['/article']\" class=\"m-r-10 c-p\" src=\"assets/img/addArtictes.png\" alt=\"\">\n                <div class=\"m-r-30\">\n                  Add Article\n                </div>\n                <img (click)=\"deleteSearchResults()\" class=\"c-p m-r-40\" width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n                <div (click)=\"backContent()\" class=\"df ai-c c-p\">\n                  <img width=\"16px\" class=\"m-r-5 rotate--90\" src=\"assets/img/caret.png\" alt=\"\">\n                  <div>\n                    Back to content\n                  </div>\n                </div>\n              </div>\n            </div>\n            <div class=\"body-side body-side-scroll\">\n              <div *ngFor=\"let item of searchResultData; let i = index\" class=\"search-row \">\n                <div>\n                  <input class=\"m-r-20 m-t-0\" [(ngModel)]=\"item.element.checked\" type=\"checkbox\">\n                </div>\n                <div (click)=\"selectType(item.element, i)\">\n                  <div class=\"df ai-c jc-b m-b-7\">\n                    <div>\n                      {{item.element.title}}\n                    </div>\n                    <div (click)=\"detaleItem(searchResultData, i)\" class=\"c-p delete-icon\">\n                      <img width=\"18px\" src=\"assets/img/trash.png\" alt=\"\">\n                    </div>\n                  </div>\n                  <div class=\"stick-row\">\n                    <div *ngFor=\"let tag of item.element.tegs\" class=\"ai-c df m-r-10\">\n                      <img class=\"m-r-3\" src=\"assets/img/stiket.png\" alt=\"\">\n                      <div class=\"context\">\n                        {{tag}}\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"description\">\n                    <p class=\"context\" style=\"margin: 0; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;\">\n                      {{item.element.text}}\n                    </p>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <div *ngIf=\"articles\" class=\"articles-side\">\n            <div class=\"side-head\">\n              <div>\n                Articles\n              </div>\n              <div class=\"df ai-c color-primary\">\n                <img [routerLink]=\"['/article']\" class=\"m-r-10 c-p\" src=\"assets/img/addArtictes.png\" alt=\"\">\n                <div class=\"m-r-30\">\n                  Add Article\n                </div>\n                <img (click)=\"deleteArticles()\" class=\"c-p\" width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n              </div>\n            </div>\n            <div class=\"body-side\">\n              <div *ngFor=\"let item of articlesData[selectedType]; let i = index\" (click)=\"selectType(item, i)\" class=\"articles-row jc-b\">\n                <div class=\"df ai-c\">\n                  <input [(ngModel)]=\"item.checked\" class=\"m-r-20\" type=\"checkbox\">\n                  <i *ngIf=\"item.type === 'folder'\" class=\"m-r-5\" class=\"fa fa-folder m-r-20 icon-folder\"></i>\n                  <div>\n                    {{item.name}}\n                  </div>\n                </div>\n                <div (click)=\"detaleItem(articlesData[selectedType], i)\" class=\"c-p icons\">\n                  <img width=\"18px\" src=\"assets/img/trash.png\" alt=\"\">\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <div *ngIf=\"article && selectedText\" class=\"article-side\">\n            <div class=\"side-head\">\n              <div>\n                Article\n              </div>\n              <div class=\"df ai-c\">\n                <img (click)=\"selectedTextAction('prev')\" class=\"m-r-10 c-p\" src=\"assets/img/arrow-left.png\" alt=\"\">\n                {{editPageCount / 5}} of {{ editPageCountValue }}\n                <img (click)=\"selectedTextAction('next')\" class=\"m-l-10 rotate-180 c-p\" src=\"assets/img/arrow-left.png\"\n                  alt=\"\">\n              </div>\n              <div class=\"df ai-c\">\n                <div class=\"m-r-30 c-p\">\n                  <img [routerLink]=\"[ '/article', id]\" a src=\"assets/img/editArticle.png\" alt=\"\">\n                </div>\n                <img class=\"c-p\" width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n              </div>\n            </div>\n            <div class=\"body-side text-left\">\n              <div class=\"tags-wrap\">\n                <div class=\"m-r-20 p-t-12\">\n                  Tags:\n                </div>\n                <div *ngFor=\"let tags of selectedText.tegs; let i = index\" class=\"chips\">\n                  {{tags}}\n                  <img (click)=\"detaleItem(selectedText.tegs, i)\" class=\"close c-p\" src=\"assets/img/close-chips.png\" alt=\"\">\n                </div>\n                <input [(ngModel)]=\"addTagField\" class=\"add-tag\" type=\"text\" (keyup.enter)=\"addTags(selectedText.tegs, addTagField)\"\n                  placeholder=\"Add tag\" pInputText />\n              </div>\n              <div class=\"p-t-10 p-l-25 p-r-25 p-b-25\">\n                <p class=\"fs-11\">\n                  Content > Tecnical > Phones > iPhone > iPhone 9 >\n                </p>\n                <h4 class=\"fs-14\">\n                  {{\n                  selectedText.title\n                  }}\n                </h4>\n                <p class=\"fs-12\">\n                  <span *ngFor=\"let item of previewText\">\n                    {{item}}.\n                  </span>\n                </p>\n              </div>\n              <div class=\"title-row jc-b bg\">\n                <div class=\"df ai-c\">\n                  <div class=\"fs-14\">\n                    Questions\n                  </div>\n                </div>\n                <div class=\"df ai-c\">\n                  <img (click)=\"deleteQuestion()\" class=\"c-p m-r-5\" width=\"22px\" src=\"assets/img/trash.png\" alt=\"\">\n                  <img (click)=\"showArticle = true\" class=\"c-p\" width=\"18px\" src=\"assets/img/fasten.png\" alt=\"\">\n                </div>\n              </div>\n              <div *ngFor=\"let item of selectedText.questins; let i = index\" class=\"articles-row jc-b\">\n                <div class=\"df ai-c\">\n                  <input [(ngModel)]=\"questuonSettings[i]\" class=\"m-r-20\" type=\"checkbox\">\n                  <div>\n                    {{item}}\n                  </div>\n                </div>\n                <div class=\"c-p icons df ai-c\">\n                  <img (click)=\"detaleItem(selectedText.questins, i)\" class=\"c-p m-r-5\" width=\"22px\" src=\"assets/img/trash.png\"\n                    alt=\"\">\n                  <img (click)=\"showArticle = true\" class=\"c-p\" width=\"18px\" src=\"assets/img/fasten.png\" alt=\"\">\n                </div>\n              </div>\n            </div>\n          </div>\n\n        </div>\n\n      </div>\n      <div class=\"title-modal p-r-60 jc-e\">\n        <button class=\"button-default m-r-20\">Link</button>\n        <button (click)=\"close()\" class=\"button-default\">Cancel</button>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1610,7 +1428,7 @@ var WidgetChatComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"df jc-b m-b-20\">\n  <div>\n    <div class=\"fs-20 m-b-10 color-dark\">\n      SELECT CONTENT\n    </div>\n    <div class=\"fs-14\">\n      Select the articles used in this widget\n    </div>\n  </div>\n  <div class=\"df ai-c\">\n    <div (click)=\"showTopQuestions()\" class=\"df ai-c c-p m-r-20\">\n      <i class=\"far fa-star fs-24 color-primary m-r-10\"></i>\n      <span class=\"color-primary fs-12 text-wrap-none\">Top Questions</span>\n    </div>\n    <div class=\"input-search pos-r\">\n      <input type=\"text\" [(ngModel)]=\"searchText\" (ngModelChange)=\"searchTextChange($event)\" placeholder=\"Search content / tag\"\n        pInputText />\n      <div *ngIf=\"searchText.length && searchResultData.length\" class=\"serch-result-dropdawn\">\n        <div (click)=\"openSearch(); searchText = ''\" *ngFor=\"let item of searchResultData\" class=\"serch-result-dropdawn--item\">\n          <div class=\"serch-result-dropdawn--icon-wrap\">\n            <img *ngIf=\"item.type === 'teg'\" src=\"assets/img/stiket.png\" alt=\"\">\n            <img *ngIf=\"item.type === 'text'\" src=\"assets/img/file.png\" alt=\"\">\n          </div>\n          <div>\n            <div class=\"serch-result-dropdawn--lable\">\n              {{item.label}}\n            </div>\n          </div>\n        </div>\n        <div (click)=\"openSearch(); searchText = ''\" class=\"serch-result-dropdawn--foot\">\n          More results\n        </div>\n      </div>\n      <div class=\"icon-input\">\n        <img *ngIf=\"!searchResult\" class=\"c-p\" width=\"20px\" src=\"assets/img/search.png\" alt=\"\">\n        <img *ngIf=\"searchResult\" (click)=\"closeSearch(); searchText = ''\" class=\"c-p\" width=\"20px\" src=\"assets/img/times-black.png\"\n          alt=\"\">\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"content-wrap\">\n\n  <div *ngIf=\"folders\" class=\"folder-side\">\n    <div class=\"side-head\">\n      <div>\n        Folders\n      </div>\n    </div>\n    <div class=\"body-side\">\n      <p-tree [value]=\"filesTree0\" selectionMode=\"single\" (onNodeSelect)=\"onNodeSelect($event,i)\">\n        <ng-template let-node pTemplate=\"default\">\n          <div class=\"df ai-c\">\n            <input *ngIf=\"!node.label\" [(ngModel)]=\"newText\" type=\"text\" pInputText style=\"width: 85px\">\n            <button *ngIf=\"!node.label\" (click)=\"node.label = newText; newText = ''\" class=\"button-default m-l-5\" style=\"min-width: 35px;\">ok</button>\n          </div>\n          <span *ngIf=\"node.label\">{{node.label}}</span>\n        </ng-template>\n      </p-tree>\n    </div>\n  </div>\n\n  <div *ngIf=\"searchResult\" class=\"articles-side full-width \">\n    <div class=\"side-head\">\n      <div>\n        Search Results\n      </div>\n      <div class=\"df ai-c color-primary\">\n        <div (click)=\"backContent()\" class=\"df ai-c c-p\">\n          <img width=\"16px\" class=\"m-r-5 rotate--90\" src=\"assets/img/caret.png\" alt=\"\">\n          <div>\n            Back to content\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"body-side body-side-scroll\">\n      <div *ngFor=\"let item of searchResultData; let i = index\" class=\"search-row \">\n        <div (click)=\"selectType(item.element, i)\">\n          <div class=\"df ai-c jc-b m-b-7\">\n            <div>\n              {{item.element.title}}\n            </div>\n            <div class=\"c-p delete-icon\">\n              <img width=\"24px\" src=\"assets/img/add-to-widget.png\" alt=\"\">\n            </div>\n          </div>\n          <div class=\"stick-row\">\n            <div *ngFor=\"let tag of item.element.tegs\" class=\"ai-c df m-r-10\">\n              <img class=\"m-r-3\" src=\"assets/img/stiket.png\" alt=\"\">\n              <div class=\"context\">\n                {{tag}}\n              </div>\n            </div>\n          </div>\n          <div class=\"description\">\n            <p class=\"context\" style=\"margin: 0; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;\">\n              {{item.element.text}}\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"topQuestions\" class=\"articles-side full-width \">\n    <div class=\"side-head\">\n      <div>\n        Top Questions\n      </div>\n      <div class=\"df ai-c color-primary\">\n        <div (click)=\"backContent()\" class=\"df ai-c c-p\">\n          <img width=\"16px\" class=\"m-r-5 rotate--90\" src=\"assets/img/caret.png\" alt=\"\">\n          <div>\n            Back to content\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"body-side body-side-scroll\">\n      <div *ngFor=\"let item of selectedTopQuestion; let i = index\" class=\"search-row \">\n        <div class=\"df ai-c jc-b m-b-7 full-width \">\n          <div>\n            {{item.name}}\n          </div>\n          <div class=\"c-p\">\n            <div (click)=\"addTopQuestion(item, i);\" class=\"m-l-10 c-p df ai-c fs-20 star\">\n              <i *ngIf=\"!item.favorite\" class=\"far fa-star color-primary\"></i>\n              <i *ngIf=\"item.favorite\" class=\"fas fa-star\"></i>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"articles && selectedType\" class=\"articles-side\">\n    <div class=\"side-head p-l-20\">\n      <div class=\"df\">\n        <div class=\"m-r-20\">\n          <input type=\"checkbox\">\n        </div>\n        <div>\n          Select Articles/Folders\n        </div>\n      </div>\n    </div>\n    <div class=\"body-side\">\n      <div *ngFor=\"let item of articlesData[selectedType]; let i = index\" (click)=\"selectType(item, i)\" class=\"articles-row jc-b\">\n        <div class=\"df ai-c\">\n          <input [(ngModel)]=\"item.checked\" class=\"m-r-20\" type=\"checkbox\">\n          <i *ngIf=\"item.type === 'folder'\" class=\"m-r-5\" class=\"fa fa-folder m-r-20 icon-folder\"></i>\n          <div>\n            {{item.name}}\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"article && selectedItem\" class=\"article-side\">\n    <div class=\"side-head\">\n      <div>\n        Article\n      </div>\n    </div>\n    <div class=\"body-side text-left\">\n      <div class=\"tags-wrap\">\n        <div class=\"m-r-20 fs-11\">\n          Tags:\n        </div>\n        <div *ngFor=\"let tags of selectedItem.tegs; let i = index\" class=\"fs-13 m-r-20 color-primary\">\n          {{tags}}\n        </div>\n      </div>\n      <div class=\"p-t-10 p-l-25 p-r-25 p-b-25\">\n        <h4 class=\"fs-14\">\n          {{selectedItem.title}}\n        </h4>\n        <p class=\"fs-12\">\n          {{selectedItem.text}}\n        </p>\n      </div>\n      <div class=\"title-row jc-b bg\">\n        <div class=\"df ai-c\">\n          <div class=\"fs-14\">\n            Questions\n          </div>\n        </div>\n      </div>\n      <div *ngFor=\"let item of selectedItem.questions; let i = index\" class=\"articles-row jc-b\">\n        <div class=\"df ai-c\">\n          <div>\n            {{item.name}}\n          </div>\n        </div>\n        <div (click)=\"addTopQuestion(item, i);\" class=\"m-l-10 c-p df ai-c fs-20 star\">\n          <i *ngIf=\"!item.favorite\" class=\"far fa-star color-primary\"></i>\n          <i *ngIf=\"item.favorite\" class=\"fas fa-star\"></i>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>"
+module.exports = "<div class=\"df jc-b m-b-20\">\n  <div>\n    <div class=\"fs-20 m-b-10 color-dark\">\n      SELECT CONTENT\n    </div>\n    <div class=\"fs-14\">\n      Select the articles used in this widget\n    </div>\n  </div>\n  <div class=\"df ai-c\">\n    <div (click)=\"showTopQuestions()\" class=\"df ai-c c-p m-r-20\">\n      <i class=\"far fa-star fs-24 color-primary m-r-10\"></i>\n      <span class=\"color-primary fs-12 text-wrap-none\">Top Questions</span>\n    </div>\n    <div class=\"input-search pos-r\">\n      <input type=\"text\" [(ngModel)]=\"searchText\" (ngModelChange)=\"searchTextChange($event)\" placeholder=\"Search content / tag\"\n        pInputText />\n      <div *ngIf=\"searchText.length && searchResultData.length\" class=\"serch-result-dropdawn\">\n        <div (click)=\"openSearch(); searchText = ''\" *ngFor=\"let item of searchResultData\" class=\"serch-result-dropdawn--item\">\n          <div class=\"serch-result-dropdawn--icon-wrap\">\n            <img *ngIf=\"item.type === 'teg'\" src=\"assets/img/stiket.png\" alt=\"\">\n            <img *ngIf=\"item.type === 'text'\" src=\"assets/img/file.png\" alt=\"\">\n          </div>\n          <div>\n            <div class=\"serch-result-dropdawn--lable\">\n              {{item.label}}\n            </div>\n          </div>\n        </div>\n        <div (click)=\"openSearch(); searchText = ''\" class=\"serch-result-dropdawn--foot\">\n          More results\n        </div>\n      </div>\n      <div class=\"icon-input\">\n        <img *ngIf=\"!searchResult\" class=\"c-p\" width=\"20px\" src=\"assets/img/search.png\" alt=\"\">\n        <img *ngIf=\"searchResult\" (click)=\"closeSearch(); searchText = ''\" class=\"c-p\" width=\"20px\" src=\"assets/img/times-black.png\"\n          alt=\"\">\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"content-wrap\">\n\n  <div *ngIf=\"folders\" class=\"folder-side\">\n    <div class=\"side-head\">\n      <div>\n        Folders\n      </div>\n    </div>\n    <div class=\"body-side\">\n      <p-tree [value]=\"filesTree0\" selectionMode=\"checkbox\" draggableNodes=\"true\" droppableNodes=\"true\" draggableScope=\"a\"\n        droppableScope=\"c\" (onNodeUnselect)=\"onNodeUnselect($event)\" (onNodeSelect)=\"onNodeSelect($event,i)\">\n        <ng-template let-node pTemplate=\"text\">\n        </ng-template>\n        <ng-template let-node pTemplate=\"folder\">\n          <span>{{node.label}}</span>\n        </ng-template>\n      </p-tree>\n    </div>\n  </div>\n\n  <div *ngIf=\"searchResult\" class=\"articles-side full-width \">\n    <div class=\"side-head\">\n      <div>\n        Search Results\n      </div>\n      <div class=\"df ai-c color-primary\">\n        <div (click)=\"backContent()\" class=\"df ai-c c-p\">\n          <img width=\"16px\" class=\"m-r-5 rotate--90\" src=\"assets/img/caret.png\" alt=\"\">\n          <div>\n            Back to content\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"body-side body-side-scroll\">\n      <div *ngFor=\"let item of searchResultData; let i = index\" class=\"search-row \">\n        <div (click)=\"selectType(item.element, i)\">\n          <div class=\"df ai-c jc-b m-b-7\">\n            <div>\n              {{item.element.title}}\n            </div>\n            <div class=\"c-p delete-icon\">\n              <img width=\"24px\" src=\"assets/img/add-to-widget.png\" alt=\"\">\n            </div>\n          </div>\n          <div class=\"stick-row\">\n            <div *ngFor=\"let tag of item.element.tegs\" class=\"ai-c df m-r-10\">\n              <img class=\"m-r-3\" src=\"assets/img/stiket.png\" alt=\"\">\n              <div class=\"context\">\n                {{tag}}\n              </div>\n            </div>\n          </div>\n          <div class=\"description\">\n            <p class=\"context\" style=\"margin: 0; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;\">\n              {{item.element.text}}\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"topQuestions\" class=\"articles-side full-width \">\n    <div class=\"side-head\">\n      <div>\n        Top Questions\n      </div>\n      <div class=\"df ai-c color-primary\">\n        <div (click)=\"backContent()\" class=\"df ai-c c-p\">\n          <img width=\"16px\" class=\"m-r-5 rotate--90\" src=\"assets/img/caret.png\" alt=\"\">\n          <div>\n            Back to content\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"body-side body-side-scroll\">\n      <div *ngFor=\"let item of selectedTopQuestion; let i = index\" class=\"search-row \">\n        <div class=\"df ai-c jc-b m-b-7 full-width \">\n          <div>\n            {{item.name}}\n          </div>\n          <div class=\"c-p\">\n            <div (click)=\"addTopQuestion(item, i);\" class=\"m-l-10 c-p df ai-c fs-20 star\">\n              <i *ngIf=\"!item.favorite\" class=\"far fa-star color-primary\"></i>\n              <i *ngIf=\"item.favorite\" class=\"fas fa-star\"></i>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"articles && selectedType\" class=\"articles-side\">\n    <div class=\"side-head p-l-20\">\n      <div class=\"df\">\n        <div class=\"m-r-20\">\n          <input type=\"checkbox\">\n        </div>\n        <div>\n          Select Articles/Folders\n        </div>\n      </div>\n    </div>\n    <div class=\"body-side\">\n      <div *ngFor=\"let item of articlesData[selectedType]; let i = index\" (click)=\"selectType(item, i)\" class=\"articles-row jc-b\">\n        <div class=\"df ai-c\">\n          <input [(ngModel)]=\"item.checked\" class=\"m-r-20\" type=\"checkbox\">\n          <i *ngIf=\"item.type === 'folder'\" class=\"m-r-5\" class=\"fa fa-folder m-r-20 icon-folder\"></i>\n          <div>\n            {{item.name}}\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"article && selectedItem\" class=\"article-side\">\n    <div class=\"side-head\">\n      <div>\n        Article\n      </div>\n      <div class=\"c-p df ai-c\">\n        <img width=\"24px\" class=\"m-r-10\" src=\"assets/img/add-to-widget.png\" alt=\"\">\n        <span class=\"color-primary fs-12\">Add to widget</span>\n      </div>\n    </div>\n    <div class=\"body-side text-left\">\n      <div class=\"tags-wrap\">\n        <div class=\"m-r-20 fs-11\">\n          Tags:\n        </div>\n        <div *ngFor=\"let tags of selectedItem.tegs; let i = index\" class=\"fs-13 m-r-20 color-primary\">\n          {{tags}}\n        </div>\n      </div>\n      <div class=\"p-t-10 p-l-25 p-r-25 p-b-25\">\n        <h4 class=\"fs-14\">\n          {{selectedItem.title}}\n        </h4>\n        <p class=\"fs-12\">\n          {{selectedItem.text}}\n        </p>\n      </div>\n      <div class=\"title-row jc-b bg\">\n        <div class=\"df ai-c\">\n          <div class=\"fs-14\">\n            Questions\n          </div>\n        </div>\n      </div>\n      <div *ngFor=\"let item of selectedItem.questions; let i = index\" class=\"articles-row jc-b\">\n        <div class=\"df ai-c\">\n          <div>\n            {{item.name}}\n          </div>\n        </div>\n        <div (click)=\"addTopQuestion(item, i);\" class=\"m-l-10 c-p df ai-c fs-20 star\">\n          <i *ngIf=\"!item.favorite\" class=\"far fa-star color-primary\"></i>\n          <i *ngIf=\"item.favorite\" class=\"fas fa-star\"></i>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>"
 
 /***/ }),
 
@@ -1847,10 +1665,27 @@ var ContentComponent = /** @class */ (function () {
             });
         }, 100);
     };
+    ContentComponent.prototype.onNodeUnselect = function (e) {
+        this.selectedFolder = null;
+    };
     ContentComponent.prototype.onNodeSelect = function (e, i) {
         console.log(e);
         this.selectedType = e.node.label;
         this.selectedFolder = e.node;
+        this.search(this.data, e.node.id);
+    };
+    ContentComponent.prototype.search = function (arr, id) {
+        for (var _i = 0, arr_1 = arr; _i < arr_1.length; _i++) {
+            var item = arr_1[_i];
+            if (item.id === id) {
+                if (item.children) {
+                    this.articlesDataArr = item.children;
+                }
+            }
+            if (item.children) {
+                this.search(item.children, id);
+            }
+        }
     };
     ContentComponent.prototype.selectType = function (item, index) {
         if (item.type === 'text') {
@@ -2733,6 +2568,151 @@ __webpack_require__.r(__webpack_exports__);
 
 var MainService = /** @class */ (function () {
     function MainService() {
+        this.data = [
+            {
+                id: "d1",
+                label: "Devices",
+                data: "Node 0",
+                expandedIcon: "fa fa-folder-open",
+                collapsedIcon: "fa fa-folder",
+                leaf: false,
+                expanded: false,
+                type: "folder",
+                children: [
+                    {
+                        id: "and1",
+                        label: "Android",
+                        data: "Node 0",
+                        expandedIcon: "fa fa-folder-open",
+                        collapsedIcon: "fa fa-folder",
+                        type: "folder",
+                        children: [
+                            {
+                                id: "1",
+                                label: "Android 7",
+                                checked: false,
+                                type: "folder",
+                                expandedIcon: "fa fa-folder-open",
+                                collapsedIcon: "fa fa-folder"
+                            },
+                            {
+                                id: "2",
+                                label: "Android 6",
+                                checked: false,
+                                type: "folder",
+                                expandedIcon: "fa fa-folder-open",
+                                collapsedIcon: "fa fa-folder"
+                            },
+                            {
+                                id: "3",
+                                label: "Android 5",
+                                checked: false,
+                                type: "folder",
+                                expandedIcon: "fa fa-folder-open",
+                                collapsedIcon: "fa fa-folder"
+                            },
+                            {
+                                id: "4",
+                                label: "text",
+                                checked: false,
+                                type: "text",
+                                title: "Using 3D touch",
+                                tegs: ["3d touch", "screen"],
+                                questins: [
+                                    "Which iPhone, iPad, and iPod touch models support iOS 1?",
+                                    "Which iPhone, iPad, and iPod touch models support iOS 2?",
+                                    "Which iPhone, iPad, and iPod touch models support iOS 3?",
+                                    "Which iPhone, iPad, and iPod touch models support iOS 4?",
+                                    "Which iPhone, iPad, and iPod touch models support iOS 5?"
+                                ],
+                                text: "3D Touch is multitouch made multidimensional. With it you can press deeply to launch actions instead of apps, reply to notifications, preview messages and links, switch keyboards, switch apps, animate Live Photos, vary stroke width, and more. It's like a wormhole through iOS that lets you move around faster than ever.\n              3D Touch is multitouch made multidimensional. With it you can press3D Touch is multitouch made multidimensional. With it you can press deeply to launch actions instead of apps, reply to notifications, preview messages and links, switch keyboards, switch apps, animate Live Photos, vary stroke width, and more. It's like a wormhole through iOS that lets you move around faster than ever.\n              3D Touch is multitouch made multidimensional. With it you can press3D Touch is multitouch made multidimensional. With it you can press deeply to launch actions instead of apps, reply to notifications, preview messages and links, switch keyboards, switch apps, animate Live Photos, vary stroke width, and more. It's like a wormhole through iOS that lets you move around faster than ever.\n              3D Touch is multitouch made multidimensional. With it you can press3D Touch is multitouch made multidimensional. With it you can press deeply to launch actions instead of apps, reply to notifications, preview messages and links, switch keyboards, switch apps, animate Live Photos, vary stroke width, and more. It's like a wormhole through iOS that lets you move around faster than ever.\n              3D Touch is multitouch made multidimensional. With it you can press deeply to launch actions instead of apps, reply to notifications, preview messages and links, switch keyboards, switch apps, animate Live Photos, vary stroke width, and more. It's like a wormhole through iOS that lets you move around faster than ever."
+                            },
+                            {
+                                id: "5",
+                                label: "text 5",
+                                checked: false,
+                                type: "text",
+                                questins: [
+                                    "Using 3D touch models support iOS 12?",
+                                    "Which iPhone, iPad, and iPod touch models support iOS 10?"
+                                ],
+                                tegs: ["multi", "using"],
+                                title: "Using 3D touch",
+                                text: "multitouch sdfsdfsdfsd sdfs dfs dfsd fsdf sdf sdfsdfsdfsdfsdf"
+                            }
+                        ]
+                    },
+                    {
+                        label: "Apple",
+                        id: "a1",
+                        data: "Node 1",
+                        type: "folder",
+                        expandedIcon: "fa fa-folder-open",
+                        collapsedIcon: "fa fa-folder",
+                        children: [
+                            {
+                                id: "Apple1",
+                                label: "Apple 7",
+                                checked: false,
+                                type: "folder",
+                                expandedIcon: "fa fa-folder-open",
+                                collapsedIcon: "fa fa-folder"
+                            },
+                            {
+                                id: "Apple2",
+                                label: "Apple 6",
+                                checked: false,
+                                type: "folder",
+                                expandedIcon: "fa fa-folder-open",
+                                collapsedIcon: "fa fa-folder"
+                            },
+                            {
+                                id: "Apple3",
+                                label: "Apple 5",
+                                checked: false,
+                                type: "folder",
+                                expandedIcon: "fa fa-folder-open",
+                                collapsedIcon: "fa fa-folder"
+                            }
+                        ]
+                    },
+                    {
+                        label: "Windows",
+                        id: "w1",
+                        data: "Node 2",
+                        type: "folder",
+                        expandedIcon: "fa fa-folder-open",
+                        collapsedIcon: "fa fa-folder",
+                        children: [
+                            {
+                                id: "Windows1",
+                                label: "Windows 7",
+                                checked: false,
+                                type: "folder",
+                                expandedIcon: "fa fa-folder-open",
+                                collapsedIcon: "fa fa-folder"
+                            },
+                            {
+                                id: "Windows2",
+                                label: "Windows 6",
+                                checked: false,
+                                type: "folder",
+                                expandedIcon: "fa fa-folder-open",
+                                collapsedIcon: "fa fa-folder"
+                            },
+                            {
+                                id: "Windows3",
+                                label: "Windows 5",
+                                checked: false,
+                                type: "folder",
+                                expandedIcon: "fa fa-folder-open",
+                                collapsedIcon: "fa fa-folder"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ];
         this.widgetData = [
             {
                 name: 'Demo Assistant',

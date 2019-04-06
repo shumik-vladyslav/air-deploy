@@ -222,3 +222,19 @@ button {
 .color-dark {
   color: #1e1e1e;
 }
+.ui-chkbox-icon.ui-clickable.pi.pi-minus::before {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  background: #6e6e6e;
+  top: 2px;
+  position: relative;
+  color: #ffffff00;
+}
+.ui-chkbox-icon.ui-clickable.pi.pi-check::before {
+  color: #6e6e6e;
+}
+body .ui-tree .ui-tree-container .ui-treenode .ui-treenode-content .ui-treenode-label.ui-state-highlight{
+  color: #2292A1 !important;
+  background: none !important;
+}

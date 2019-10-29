@@ -114,13 +114,23 @@
     display: none !important;
 }
 
+.logo-wrapper {
+    display: flex;
+}
+
 @media screen and (max-width: 992px) {
     .clear-table {
         display: block;
         padding-left: 0 !important;
 
-        &:first-child {
+        td {
             padding-left: 0 !important;
+            width: calc(100% / 4) !important;
+            display: block;
+
+            &:first-child {
+                padding-left: 0 !important;
+            }
         }
     }
 }

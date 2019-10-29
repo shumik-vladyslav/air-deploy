@@ -23786,1983 +23786,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.js ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*!
- * 
- *             jsPDF AutoTable plugin v3.2.9
- *             
- *             Copyright (c) 2014 Simon Bengtsson, https://github.com/simonbengtsson/jsPDF-AutoTable
- *             Licensed under the MIT License.
- *             http://opensource.org/licenses/mit-license
- *             
- *             * /if (typeof window === 'object') window.jspdfAutoTableVersion = '" + newVersion + "';/*"
- *         
- */
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(true)
-		module.exports = factory(__webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.min.js"));
-	else { var i, a; }
-})(window, function(__WEBPACK_EXTERNAL_MODULE__7__) {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var defaultsDocument = null;
-var previousTableState;
-var tableState = null;
-exports.globalDefaults = {};
-exports.documentDefaults = {};
-function default_1() {
-    return tableState;
-}
-exports.default = default_1;
-function getGlobalOptions() {
-    return exports.globalDefaults;
-}
-exports.getGlobalOptions = getGlobalOptions;
-function getDocumentOptions() {
-    return exports.documentDefaults;
-}
-exports.getDocumentOptions = getDocumentOptions;
-var TableState = /** @class */ (function () {
-    function TableState(doc) {
-        this.doc = doc;
-    }
-    TableState.prototype.pageHeight = function () {
-        return this.pageSize().height;
-    };
-    ;
-    TableState.prototype.pageWidth = function () {
-        return this.pageSize().width;
-    };
-    ;
-    TableState.prototype.pageSize = function () {
-        var pageSize = this.doc.internal.pageSize;
-        // JSPDF 1.4 uses get functions instead of properties on pageSize
-        if (pageSize.width == null) {
-            pageSize = {
-                width: pageSize.getWidth(),
-                height: pageSize.getHeight()
-            };
-        }
-        return pageSize;
-    };
-    ;
-    TableState.prototype.scaleFactor = function () {
-        return this.doc.internal.scaleFactor;
-    };
-    ;
-    TableState.prototype.pageNumber = function () {
-        var pageInfo = this.doc.internal.getCurrentPageInfo();
-        if (!pageInfo) {
-            // Only recent versions of jspdf has pageInfo
-            return this.doc.internal.getNumberOfPages();
-        }
-        return pageInfo.pageNumber;
-    };
-    return TableState;
-}());
-function setupState(doc) {
-    previousTableState = tableState;
-    tableState = new TableState(doc);
-    if (doc !== defaultsDocument) {
-        defaultsDocument = doc;
-        exports.documentDefaults = {};
-    }
-}
-exports.setupState = setupState;
-function resetState() {
-    tableState = previousTableState;
-}
-exports.resetState = resetState;
-function setDefaults(defaults, doc) {
-    if (doc === void 0) { doc = null; }
-    if (doc) {
-        exports.documentDefaults = defaults || {};
-        defaultsDocument = doc;
-    }
-    else {
-        exports.globalDefaults = defaults || {};
-    }
-}
-exports.setDefaults = setDefaults;
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var config_1 = __webpack_require__(2);
-var state_1 = __webpack_require__(0);
-var polyfills_1 = __webpack_require__(3);
-function getStringWidth(text, styles) {
-    applyStyles(styles);
-    var textArr = Array.isArray(text) ? text : [text];
-    var widestLineWidth = textArr
-        .map(function (text) { return state_1.default().doc.getTextWidth(text); })
-        // Shave off a few digits for potential improvement in width calculation
-        .map(function (val) { return Math.floor(val * 10000) / 10000; })
-        .reduce(function (a, b) { return Math.max(a, b); }, 0);
-    var fontSize = styles.fontSize / state_1.default().scaleFactor();
-    return widestLineWidth;
-}
-exports.getStringWidth = getStringWidth;
-/**
- * Ellipsize the text to fit in the width
- */
-function ellipsize(text, width, styles, ellipsizeStr) {
-    if (ellipsizeStr === void 0) { ellipsizeStr = '...'; }
-    if (Array.isArray(text)) {
-        var value_1 = [];
-        text.forEach(function (str, i) {
-            value_1[i] = ellipsize(str, width, styles, ellipsizeStr);
-        });
-        return value_1;
-    }
-    var precision = 10000 * state_1.default().scaleFactor();
-    width = Math.ceil(width * precision) / precision;
-    if (width >= getStringWidth(text, styles)) {
-        return text;
-    }
-    while (width < getStringWidth(text + ellipsizeStr, styles)) {
-        if (text.length <= 1) {
-            break;
-        }
-        text = text.substring(0, text.length - 1);
-    }
-    return text.trim() + ellipsizeStr;
-}
-exports.ellipsize = ellipsize;
-function addTableBorder() {
-    var table = state_1.default().table;
-    var styles = { lineWidth: table.settings.tableLineWidth, lineColor: table.settings.tableLineColor };
-    applyStyles(styles);
-    var fs = getFillStyle(styles);
-    if (fs) {
-        state_1.default().doc.rect(table.pageStartX, table.pageStartY, table.width, table.cursor.y - table.pageStartY, fs);
-    }
-}
-exports.addTableBorder = addTableBorder;
-function getFillStyle(styles) {
-    var drawLine = styles.lineWidth > 0;
-    var drawBackground = styles.fillColor || styles.fillColor === 0;
-    if (drawLine && drawBackground) {
-        return 'DF'; // Fill then stroke
-    }
-    else if (drawLine) {
-        return 'S'; // Only stroke (transparent background)
-    }
-    else if (drawBackground) {
-        return 'F'; // Only fill, no stroke
-    }
-    else {
-        return false;
-    }
-}
-exports.getFillStyle = getFillStyle;
-function applyUserStyles() {
-    applyStyles(state_1.default().table.userStyles);
-}
-exports.applyUserStyles = applyUserStyles;
-function applyStyles(styles) {
-    var doc = state_1.default().doc;
-    var styleModifiers = {
-        fillColor: doc.setFillColor,
-        textColor: doc.setTextColor,
-        fontStyle: doc.setFontStyle,
-        lineColor: doc.setDrawColor,
-        lineWidth: doc.setLineWidth,
-        font: doc.setFont,
-        fontSize: doc.setFontSize
-    };
-    Object.keys(styleModifiers).forEach(function (name) {
-        var style = styles[name];
-        var modifier = styleModifiers[name];
-        if (typeof style !== 'undefined') {
-            if (Array.isArray(style)) {
-                modifier.apply(this, style);
-            }
-            else {
-                modifier(style);
-            }
-        }
-    });
-}
-exports.applyStyles = applyStyles;
-// This is messy, only keep array and number format the next major version
-function marginOrPadding(value, defaultValue) {
-    var newValue = {};
-    if (Array.isArray(value)) {
-        if (value.length >= 4) {
-            newValue = { 'top': value[0], 'right': value[1], 'bottom': value[2], 'left': value[3] };
-        }
-        else if (value.length === 3) {
-            newValue = { 'top': value[0], 'right': value[1], 'bottom': value[2], 'left': value[1] };
-        }
-        else if (value.length === 2) {
-            newValue = { 'top': value[0], 'right': value[1], 'bottom': value[0], 'left': value[1] };
-        }
-        else if (value.length === 1) {
-            value = value[0];
-        }
-        else {
-            value = defaultValue;
-        }
-    }
-    else if (typeof value === 'object') {
-        if (value['vertical']) {
-            value['top'] = value['vertical'];
-            value['bottom'] = value['vertical'];
-        }
-        if (value['horizontal']) {
-            value['right'] = value['horizontal'];
-            value['left'] = value['horizontal'];
-        }
-        for (var _i = 0, _a = ['top', 'right', 'bottom', 'left']; _i < _a.length; _i++) {
-            var side = _a[_i];
-            newValue[side] = (value[side] || value[side] === 0) ? value[side] : defaultValue;
-        }
-    }
-    if (typeof value === 'number') {
-        newValue = { 'top': value, 'right': value, 'bottom': value, 'left': value };
-    }
-    return newValue;
-}
-exports.marginOrPadding = marginOrPadding;
-function styles(styles) {
-    styles = Array.isArray(styles) ? styles : [styles];
-    return polyfills_1.assign.apply(void 0, __spreadArrays([config_1.defaultStyles()], styles));
-}
-exports.styles = styles;
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * Ratio between font size and font height. The number comes from jspdf's source code
- */
-exports.FONT_ROW_RATIO = 1.15;
-var state_1 = __webpack_require__(0);
-function defaultConfig() {
-    return {
-        // Html content
-        html: null,
-        // Custom content
-        head: null,
-        body: null,
-        foot: null,
-        // Properties
-        includeHiddenHtml: false,
-        startY: null,
-        margin: 40 / state_1.default().scaleFactor(),
-        pageBreak: 'auto',
-        rowPageBreak: 'auto',
-        tableWidth: 'auto',
-        showHead: 'everyPage',
-        showFoot: 'everyPage',
-        tableLineWidth: 0,
-        tableLineColor: 200,
-        tableId: null,
-        // Styling
-        theme: 'striped',
-        useCss: false,
-        styles: {},
-        headStyles: {},
-        bodyStyles: {},
-        footStyles: {},
-        alternateRowStyles: {},
-        columnStyles: {},
-        // Hooks
-        // Use to change the content of the cell before width calculations etc are performed
-        didParseCell: function (data) {
-        },
-        willDrawCell: function (data) {
-        },
-        // Use to draw additional content such as images in table cells
-        didDrawCell: function (data) {
-        },
-        // Use to draw additional content to each page such as headers and footers
-        didDrawPage: function (data) {
-        },
-    };
-}
-exports.defaultConfig = defaultConfig;
-// Base style for all themes
-function defaultStyles() {
-    return {
-        font: "helvetica",
-        fontStyle: 'normal',
-        overflow: 'linebreak',
-        fillColor: false,
-        textColor: 20,
-        halign: 'left',
-        valign: 'top',
-        fontSize: 10,
-        cellPadding: 5 / state_1.default().scaleFactor(),
-        lineColor: 200,
-        lineWidth: 0 / state_1.default().scaleFactor(),
-        cellWidth: 'auto',
-        minCellHeight: 0
-    };
-}
-exports.defaultStyles = defaultStyles;
-/**
- * Styles for the themes (overriding the default styles)
- */
-function getTheme(name) {
-    var themes = {
-        'striped': {
-            table: { fillColor: 255, textColor: 80, fontStyle: 'normal' },
-            head: { textColor: 255, fillColor: [41, 128, 185], fontStyle: 'bold' },
-            body: {},
-            foot: { textColor: 255, fillColor: [41, 128, 185], fontStyle: 'bold' },
-            alternateRow: { fillColor: 245 }
-        },
-        'grid': {
-            table: { fillColor: 255, textColor: 80, fontStyle: 'normal', lineWidth: 0.1 },
-            head: { textColor: 255, fillColor: [26, 188, 156], fontStyle: 'bold', lineWidth: 0 },
-            body: {},
-            foot: { textColor: 255, fillColor: [26, 188, 156], fontStyle: 'bold', lineWidth: 0 },
-            alternateRow: {}
-        },
-        'plain': {
-            head: { fontStyle: 'bold' },
-            foot: { fontStyle: 'bold' }
-        }
-    };
-    return themes[name];
-}
-exports.getTheme = getTheme;
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/*
- * Include common small polyfills instead of requiring the user to to do it
- */
-Object.defineProperty(exports, "__esModule", { value: true });
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
-function assign(target) {
-    'use strict';
-    var varArgs = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        varArgs[_i - 1] = arguments[_i];
-    }
-    if (target == null) { // TypeError if undefined or null
-        throw new TypeError('Cannot convert undefined or null to object');
-    }
-    var to = Object(target);
-    for (var index = 1; index < arguments.length; index++) {
-        var nextSource = arguments[index];
-        if (nextSource != null) { // Skip over if undefined or null
-            for (var nextKey in nextSource) {
-                // Avoid bugs when hasOwnProperty is shadowed
-                if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
-                    to[nextKey] = nextSource[nextKey];
-                }
-            }
-        }
-    }
-    return to;
-}
-exports.assign = assign;
-
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var config_1 = __webpack_require__(2);
-var state_1 = __webpack_require__(0);
-var HookData_1 = __webpack_require__(10);
-var common_1 = __webpack_require__(1);
-var assign = __webpack_require__(5);
-var CellHooks = /** @class */ (function () {
-    function CellHooks() {
-        this.didParseCell = [];
-        this.willDrawCell = [];
-        this.didDrawCell = [];
-        this.didDrawPage = [];
-    }
-    return CellHooks;
-}());
-var Table = /** @class */ (function () {
-    function Table() {
-        this.columns = [];
-        this.head = [];
-        this.body = [];
-        this.foot = [];
-        this.height = 0;
-        this.width = 0;
-        this.preferredWidth = 0;
-        this.wrappedWidth = 0;
-        this.minWidth = 0;
-        this.headHeight = 0;
-        this.footHeight = 0;
-        this.startPageNumber = 1;
-        this.pageNumber = 1;
-        this.styles = {
-            styles: {},
-            headStyles: {},
-            bodyStyles: {},
-            footStyles: {},
-            alternateRowStyles: {},
-            columnStyles: {},
-        };
-        this.cellHooks = new CellHooks();
-    }
-    Object.defineProperty(Table.prototype, "pageCount", {
-        get: function () {
-            return this.pageNumber;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Table.prototype.allRows = function () {
-        return this.head.concat(this.body).concat(this.foot);
-    };
-    Table.prototype.callCellHooks = function (handlers, cell, row, column) {
-        for (var _i = 0, handlers_1 = handlers; _i < handlers_1.length; _i++) {
-            var handler = handlers_1[_i];
-            if (handler(new HookData_1.CellHookData(cell, row, column)) === false) {
-                return false;
-            }
-        }
-        return true;
-    };
-    Table.prototype.callEndPageHooks = function () {
-        common_1.applyUserStyles();
-        for (var _i = 0, _a = this.cellHooks.didDrawPage; _i < _a.length; _i++) {
-            var handler = _a[_i];
-            handler(new HookData_1.HookData());
-        }
-    };
-    Table.prototype.margin = function (side) {
-        return common_1.marginOrPadding(this.settings.margin, config_1.defaultConfig().margin)[side];
-    };
-    return Table;
-}());
-exports.Table = Table;
-var Row = /** @class */ (function () {
-    function Row(raw, index, section) {
-        this.cells = {};
-        this.height = 0;
-        this.maxCellHeight = 0;
-        this.pageNumber = 1;
-        this.spansMultiplePages = false;
-        this.raw = raw;
-        if (raw._element) {
-            this.raw = raw._element;
-        }
-        this.index = index;
-        this.section = section;
-    }
-    Object.defineProperty(Row.prototype, "pageCount", {
-        get: function () {
-            return this.pageNumber;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Row.prototype.canEntireRowFit = function (height) {
-        return this.maxCellHeight <= height;
-    };
-    Row.prototype.getMinimumRowHeight = function () {
-        var _this = this;
-        return state_1.default().table.columns.reduce(function (acc, column) {
-            var cell = _this.cells[column.index];
-            if (!cell)
-                return 0;
-            var fontHeight = cell.styles.fontSize / state_1.default().scaleFactor() * config_1.FONT_ROW_RATIO;
-            var vPadding = cell.padding('vertical');
-            var oneRowHeight = vPadding + fontHeight;
-            return oneRowHeight > acc ? oneRowHeight : acc;
-        }, 0);
-    };
-    return Row;
-}());
-exports.Row = Row;
-var Cell = /** @class */ (function () {
-    function Cell(raw, themeStyles, section) {
-        this.contentHeight = 0;
-        this.contentWidth = 0;
-        this.wrappedWidth = 0;
-        this.minWidth = 0;
-        this.textPos = {};
-        this.height = 0;
-        this.width = 0;
-        this.rowSpan = raw && raw.rowSpan || 1;
-        this.colSpan = raw && raw.colSpan || 1;
-        this.styles = assign(themeStyles, raw && raw.styles || {});
-        this.section = section;
-        var text;
-        var content = raw && raw.content != null ? raw.content : raw;
-        content = content && content.title != null ? content.title : content;
-        this.raw = raw && raw._element ? raw._element : raw;
-        // Stringify 0 and false, but not undefined or null
-        text = content != null ? '' + content : '';
-        var splitRegex = /\r\n|\r|\n/g;
-        this.text = text.split(splitRegex);
-    }
-    Cell.prototype.getContentHeight = function () {
-        var lineCount = Array.isArray(this.text) ? this.text.length : 1;
-        var fontHeight = this.styles.fontSize / state_1.default().scaleFactor() * config_1.FONT_ROW_RATIO;
-        return lineCount * fontHeight + this.padding('vertical');
-    };
-    Cell.prototype.padding = function (name) {
-        var padding = common_1.marginOrPadding(this.styles.cellPadding, common_1.styles([]).cellPadding);
-        if (name === 'vertical') {
-            return padding.top + padding.bottom;
-        }
-        else if (name === 'horizontal') {
-            return padding.left + padding.right;
-        }
-        else {
-            return padding[name];
-        }
-    };
-    return Cell;
-}());
-exports.Cell = Cell;
-var Column = /** @class */ (function () {
-    function Column(dataKey, raw, index) {
-        this.preferredWidth = 0;
-        this.minWidth = 0;
-        this.wrappedWidth = 0;
-        this.width = 0;
-        this.dataKey = dataKey;
-        this.raw = raw;
-        this.index = index;
-    }
-    return Column;
-}());
-exports.Column = Column;
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/*
-object-assign
-(c) Sindre Sorhus
-@license MIT
-*/
-
-
-/* eslint-disable no-unused-vars */
-var getOwnPropertySymbols = Object.getOwnPropertySymbols;
-var hasOwnProperty = Object.prototype.hasOwnProperty;
-var propIsEnumerable = Object.prototype.propertyIsEnumerable;
-
-function toObject(val) {
-	if (val === null || val === undefined) {
-		throw new TypeError('Object.assign cannot be called with null or undefined');
-	}
-
-	return Object(val);
-}
-
-function shouldUseNative() {
-	try {
-		if (!Object.assign) {
-			return false;
-		}
-
-		// Detect buggy property enumeration order in older V8 versions.
-
-		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
-		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
-		test1[5] = 'de';
-		if (Object.getOwnPropertyNames(test1)[0] === '5') {
-			return false;
-		}
-
-		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
-		var test2 = {};
-		for (var i = 0; i < 10; i++) {
-			test2['_' + String.fromCharCode(i)] = i;
-		}
-		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
-			return test2[n];
-		});
-		if (order2.join('') !== '0123456789') {
-			return false;
-		}
-
-		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
-		var test3 = {};
-		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
-			test3[letter] = letter;
-		});
-		if (Object.keys(Object.assign({}, test3)).join('') !==
-				'abcdefghijklmnopqrst') {
-			return false;
-		}
-
-		return true;
-	} catch (err) {
-		// We don't expect any of the above to throw, but better to be safe.
-		return false;
-	}
-}
-
-module.exports = shouldUseNative() ? Object.assign : function (target, source) {
-	var from;
-	var to = toObject(target);
-	var symbols;
-
-	for (var s = 1; s < arguments.length; s++) {
-		from = Object(arguments[s]);
-
-		for (var key in from) {
-			if (hasOwnProperty.call(from, key)) {
-				to[key] = from[key];
-			}
-		}
-
-		if (getOwnPropertySymbols) {
-			symbols = getOwnPropertySymbols(from);
-			for (var i = 0; i < symbols.length; i++) {
-				if (propIsEnumerable.call(from, symbols[i])) {
-					to[symbols[i]] = from[symbols[i]];
-				}
-			}
-		}
-	}
-
-	return to;
-};
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var cssParser_1 = __webpack_require__(13);
-var state_1 = __webpack_require__(0);
-function parseHtml(input, includeHiddenHtml, useCss) {
-    if (includeHiddenHtml === void 0) { includeHiddenHtml = false; }
-    if (useCss === void 0) { useCss = false; }
-    var tableElement;
-    if (typeof input === 'string') {
-        tableElement = window.document.querySelector(input);
-    }
-    else {
-        tableElement = input;
-    }
-    if (!tableElement) {
-        console.error("Html table could not be found with input: ", input);
-        return;
-    }
-    var head = parseTableSection(window, tableElement.tHead, includeHiddenHtml, useCss);
-    var body = [];
-    for (var i = 0; i < tableElement.tBodies.length; i++) {
-        body = body.concat(parseTableSection(window, tableElement.tBodies[i], includeHiddenHtml, useCss));
-    }
-    var foot = parseTableSection(window, tableElement.tFoot, includeHiddenHtml, useCss);
-    return { head: head, body: body, foot: foot };
-}
-exports.parseHtml = parseHtml;
-function parseTableSection(window, sectionElement, includeHidden, useCss) {
-    var results = [];
-    if (!sectionElement) {
-        return results;
-    }
-    for (var i = 0; i < sectionElement.rows.length; i++) {
-        var row = sectionElement.rows[i];
-        var resultRow = [];
-        var rowStyles = useCss ? cssParser_1.parseCss(row, state_1.default().scaleFactor(), ['cellPadding', 'lineWidth', 'lineColor']) : {};
-        for (var i_1 = 0; i_1 < row.cells.length; i_1++) {
-            var cell = row.cells[i_1];
-            var style = window.getComputedStyle(cell);
-            if (includeHidden || style.display !== 'none') {
-                var cellStyles = useCss ? cssParser_1.parseCss(cell, state_1.default().scaleFactor()) : {};
-                resultRow.push({
-                    rowSpan: cell.rowSpan,
-                    colSpan: cell.colSpan,
-                    styles: useCss ? cellStyles : null,
-                    _element: cell,
-                    content: parseCellContent(cell)
-                });
-            }
-        }
-        if (resultRow.length > 0 && (includeHidden || rowStyles.display !== 'none')) {
-            resultRow._element = row;
-            results.push(resultRow);
-        }
-    }
-    return results;
-}
-function parseCellContent(orgCell) {
-    // Work on cloned node to make sure no changes are applied to html table
-    var cell = orgCell.cloneNode(true);
-    // Remove extra space and line breaks in markup to make it more similar to
-    // what would be shown in html
-    cell.innerHTML = cell.innerHTML
-        .replace(/\n/g, '')
-        .replace(/ +/g, ' ');
-    // Preserve <br> tags as line breaks in the pdf
-    cell.innerHTML = cell.innerHTML
-        .split('<br>')
-        .map(function (part) { return part.trim(); })
-        .join('\n');
-    // innerText for ie
-    return cell.innerText || cell.textContent || '';
-}
-
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__7__;
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tableDrawer_1 = __webpack_require__(9);
-var widthCalculator_1 = __webpack_require__(11);
-var inputParser_1 = __webpack_require__(12);
-var state_1 = __webpack_require__(0);
-__webpack_require__(15);
-var common_1 = __webpack_require__(1);
-var htmlParser_1 = __webpack_require__(6);
-var jsPDF = __webpack_require__(7);
-function autoTable() {
-    var args = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        args[_i] = arguments[_i];
-    }
-    state_1.setupState(this);
-    // 1. Parse and unify user input
-    var table = inputParser_1.parseInput(args);
-    // 2. Calculate preliminary table, column, row and cell dimensions
-    widthCalculator_1.calculateWidths(table);
-    // 3. Output table to pdf
-    tableDrawer_1.drawTable(table);
-    table.finalY = table.cursor.y;
-    this.previousAutoTable = table;
-    this.lastAutoTable = table;
-    this.autoTable.previous = table; // Deprecated
-    common_1.applyUserStyles();
-    state_1.resetState();
-    return this;
-}
-jsPDF.API.autoTable = autoTable;
-// Assign false to enable `doc.lastAutoTable.finalY || 40` sugar;
-jsPDF.API.lastAutoTable = false;
-jsPDF.API.previousAutoTable = false; // deprecated in v3
-jsPDF.API.autoTable.previous = false; // deprecated in v3
-jsPDF.API.autoTableSetDefaults = function (defaults) {
-    state_1.setDefaults(defaults, this);
-    return this;
-};
-jsPDF.autoTableSetDefaults = function (defaults, doc) {
-    state_1.setDefaults(defaults, doc);
-    return this;
-};
-jsPDF.API.autoTableHtmlToJson = function (tableElem, includeHiddenElements) {
-    includeHiddenElements = includeHiddenElements || false;
-    if (!tableElem || !(tableElem instanceof HTMLTableElement)) {
-        console.error("A HTMLTableElement has to be sent to autoTableHtmlToJson");
-        return null;
-    }
-    var _a = htmlParser_1.parseHtml(tableElem, includeHiddenElements, false), head = _a.head, body = _a.body, foot = _a.foot;
-    var firstRow = head[0] || body[0] || foot[0];
-    return { columns: firstRow, rows: body, data: body };
-};
-/**
- * @deprecated
- */
-jsPDF.API.autoTableEndPosY = function () {
-    console.error("Use of deprecated function: autoTableEndPosY. Use doc.previousAutoTable.finalY instead.");
-    var prev = this.previousAutoTable;
-    if (prev.cursor && typeof prev.cursor.y === 'number') {
-        return prev.cursor.y;
-    }
-    else {
-        return 0;
-    }
-};
-/**
- * @deprecated
- */
-jsPDF.API.autoTableAddPageContent = function (hook) {
-    console.error("Use of deprecated function: autoTableAddPageContent. Use jsPDF.autoTableSetDefaults({didDrawPage: () => {}}) instead.");
-    if (!jsPDF.API.autoTable.globalDefaults) {
-        jsPDF.API.autoTable.globalDefaults = {};
-    }
-    jsPDF.API.autoTable.globalDefaults.addPageContent = hook;
-    return this;
-};
-/**
- * @deprecated
- */
-jsPDF.API.autoTableAddPage = function () {
-    console.error("Use of deprecated function: autoTableAddPage. Use doc.addPage()");
-    this.addPage();
-    return this;
-};
-
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var config_1 = __webpack_require__(2);
-var common_1 = __webpack_require__(1);
-var models_1 = __webpack_require__(4);
-var state_1 = __webpack_require__(0);
-var assign = __webpack_require__(5);
-function drawTable(table) {
-    var settings = table.settings;
-    table.cursor = {
-        x: table.margin('left'),
-        y: settings.startY == null ? table.margin('top') : settings.startY
-    };
-    var minTableBottomPos = settings.startY + table.margin('bottom') + table.headHeight + table.footHeight;
-    if (settings.pageBreak === 'avoid') {
-        minTableBottomPos += table.height;
-    }
-    if (settings.pageBreak === 'always' || settings.startY != null && settings.startY !== false && minTableBottomPos > state_1.default().pageHeight()) {
-        nextPage(state_1.default().doc);
-        table.cursor.y = table.margin('top');
-    }
-    table.pageStartX = table.cursor.x;
-    table.pageStartY = table.cursor.y;
-    table.startPageNumber = state_1.default().pageNumber();
-    // An empty row used to cached cells those break through page
-    common_1.applyUserStyles();
-    if (settings.showHead === true || settings.showHead === 'firstPage' || settings.showHead === 'everyPage') {
-        table.head.forEach(function (row) { return printRow(row); });
-    }
-    common_1.applyUserStyles();
-    table.body.forEach(function (row, index) {
-        printFullRow(row, index === table.body.length - 1);
-    });
-    common_1.applyUserStyles();
-    if (settings.showFoot === true || settings.showFoot === 'lastPage' || settings.showFoot === 'everyPage') {
-        table.foot.forEach(function (row) { return printRow(row); });
-    }
-    common_1.addTableBorder();
-    table.callEndPageHooks();
-}
-exports.drawTable = drawTable;
-function getRemainingLineCount(cell, remainingPageSpace) {
-    var fontHeight = cell.styles.fontSize / state_1.default().scaleFactor() * config_1.FONT_ROW_RATIO;
-    var vPadding = cell.padding('vertical');
-    var remainingLines = Math.floor((remainingPageSpace - vPadding) / fontHeight);
-    return Math.max(0, remainingLines);
-}
-function modifyRowToFit(row, remainingPageSpace, table) {
-    var remainderRow = new models_1.Row(row.raw, -1, row.section);
-    remainderRow.spansMultiplePages = true;
-    row.spansMultiplePages = true;
-    row.height = 0;
-    row.maxCellHeight = 0;
-    for (var _i = 0, _a = table.columns; _i < _a.length; _i++) {
-        var column = _a[_i];
-        var cell = row.cells[column.index];
-        if (!cell)
-            continue;
-        if (!Array.isArray(cell.text)) {
-            cell.text = [cell.text];
-        }
-        var remainderCell = new models_1.Cell(cell.raw, {}, cell.section);
-        remainderCell = assign(remainderCell, cell);
-        remainderCell.textPos = assign({}, cell.textPos);
-        remainderCell.text = [];
-        var remainingLineCount = getRemainingLineCount(cell, remainingPageSpace);
-        if (cell.text.length > remainingLineCount) {
-            remainderCell.text = cell.text.splice(remainingLineCount, cell.text.length);
-        }
-        cell.contentHeight = cell.getContentHeight();
-        if (cell.contentHeight > row.height) {
-            row.height = cell.contentHeight;
-            row.maxCellHeight = cell.contentHeight;
-        }
-        remainderCell.contentHeight = remainderCell.getContentHeight();
-        if (remainderCell.contentHeight > remainderRow.height) {
-            remainderRow.height = remainderCell.contentHeight;
-            remainderRow.maxCellHeight = remainderCell.contentHeight;
-        }
-        remainderRow.cells[column.index] = remainderCell;
-    }
-    for (var _b = 0, _c = table.columns; _b < _c.length; _b++) {
-        var column = _c[_b];
-        var remainderCell = remainderRow.cells[column.index];
-        if (remainderCell) {
-            remainderCell.height = remainderRow.height;
-        }
-        var cell = row.cells[column.index];
-        if (cell) {
-            cell.height = row.height;
-        }
-    }
-    return remainderRow;
-}
-function shouldPrintOnCurrentPage(row, remainingPageSpace, table) {
-    var pageHeight = state_1.default().pageHeight();
-    var marginHeight = table.margin('top') - table.margin('bottom');
-    var maxTableHeight = pageHeight - marginHeight;
-    var minRowFits = row.getMinimumRowHeight() < remainingPageSpace;
-    if (row.getMinimumRowHeight() > maxTableHeight) {
-        console.error("Will not be able to print row " + row.index + " correctly since it's minimum height is larger than page height");
-        return true;
-    }
-    var rowHasRowSpanCell = table.columns.filter(function (column) {
-        var cell = row.cells[column.index];
-        if (!cell)
-            return false;
-        return cell.rowSpan > 1;
-    }).length > 0;
-    if (!minRowFits) {
-        return false;
-    }
-    var rowHigherThanPage = row.maxCellHeight > maxTableHeight;
-    if (rowHigherThanPage) {
-        if (rowHasRowSpanCell) {
-            console.error("The content of row " + row.index + " will not be drawn correctly since drawing rows with a height larger than the page height and has cells with rowspans is not supported.");
-        }
-        return true;
-    }
-    if (rowHasRowSpanCell) {
-        // Currently a new page is required whenever a rowspan row don't fit a page.
-        return false;
-    }
-    if (table.settings.rowPageBreak === 'avoid') {
-        return false;
-    }
-    // In all other cases print the row on current page
-    return true;
-}
-function printFullRow(row, isLastRow) {
-    var table = state_1.default().table;
-    var remainingPageSpace = getRemainingPageSpace(isLastRow);
-    if (row.canEntireRowFit(remainingPageSpace)) {
-        printRow(row);
-    }
-    else {
-        if (shouldPrintOnCurrentPage(row, remainingPageSpace, table)) {
-            var remainderRow = modifyRowToFit(row, remainingPageSpace, table);
-            printRow(row);
-            addPage();
-            printFullRow(remainderRow, isLastRow);
-        }
-        else {
-            addPage();
-            printFullRow(row, isLastRow);
-        }
-    }
-}
-function printRow(row) {
-    var table = state_1.default().table;
-    table.cursor.x = table.margin('left');
-    row.y = table.cursor.y;
-    row.x = table.cursor.x;
-    for (var _i = 0, _a = table.columns; _i < _a.length; _i++) {
-        var column = _a[_i];
-        var cell = row.cells[column.index];
-        if (!cell) {
-            table.cursor.x += column.width;
-            continue;
-        }
-        common_1.applyStyles(cell.styles);
-        cell.x = table.cursor.x;
-        cell.y = row.y;
-        if (cell.styles.valign === 'top') {
-            cell.textPos.y = table.cursor.y + cell.padding('top');
-        }
-        else if (cell.styles.valign === 'bottom') {
-            cell.textPos.y = table.cursor.y + cell.height - cell.padding('bottom');
-        }
-        else {
-            cell.textPos.y = table.cursor.y + cell.height / 2;
-        }
-        if (cell.styles.halign === 'right') {
-            cell.textPos.x = cell.x + cell.width - cell.padding('right');
-        }
-        else if (cell.styles.halign === 'center') {
-            cell.textPos.x = cell.x + cell.width / 2;
-        }
-        else {
-            cell.textPos.x = cell.x + cell.padding('left');
-        }
-        if (table.callCellHooks(table.cellHooks.willDrawCell, cell, row, column) === false) {
-            table.cursor.x += column.width;
-            continue;
-        }
-        var fillStyle = common_1.getFillStyle(cell.styles);
-        if (fillStyle) {
-            state_1.default().doc.rect(cell.x, table.cursor.y, cell.width, cell.height, fillStyle);
-        }
-        state_1.default().doc.autoTableText(cell.text, cell.textPos.x, cell.textPos.y, {
-            halign: cell.styles.halign,
-            valign: cell.styles.valign,
-            maxWidth: Math.ceil(cell.width - cell.padding('left') - cell.padding('right'))
-        });
-        table.callCellHooks(table.cellHooks.didDrawCell, cell, row, column);
-        table.cursor.x += column.width;
-    }
-    table.cursor.y += row.height;
-}
-function getRemainingPageSpace(isLastRow) {
-    var table = state_1.default().table;
-    var bottomContentHeight = table.margin('bottom');
-    var showFoot = table.settings.showFoot;
-    if (showFoot === true || showFoot === 'everyPage' || (showFoot === 'lastPage' && isLastRow)) {
-        bottomContentHeight += table.footHeight;
-    }
-    return state_1.default().pageHeight() - table.cursor.y - bottomContentHeight;
-}
-function addPage() {
-    var table = state_1.default().table;
-    common_1.applyUserStyles();
-    if (table.settings.showFoot === true || table.settings.showFoot === 'everyPage') {
-        table.foot.forEach(function (row) { return printRow(row); });
-    }
-    table.finalY = table.cursor.y;
-    // Add user content just before adding new page ensure it will
-    // be drawn above other things on the page
-    table.callEndPageHooks();
-    common_1.addTableBorder();
-    nextPage(state_1.default().doc);
-    table.pageNumber++;
-    table.cursor = { x: table.margin('left'), y: table.margin('top') };
-    table.pageStartX = table.cursor.x;
-    table.pageStartY = table.cursor.y;
-    if (table.settings.showHead === true || table.settings.showHead === 'everyPage') {
-        table.head.forEach(function (row) { return printRow(row); });
-    }
-}
-exports.addPage = addPage;
-function nextPage(doc) {
-    var current = state_1.default().pageNumber();
-    doc.setPage(current + 1);
-    var newCurrent = state_1.default().pageNumber();
-    if (newCurrent === current) {
-        doc.addPage();
-    }
-}
-
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var state_1 = __webpack_require__(0);
-var HookData = /** @class */ (function () {
-    function HookData() {
-        var table = state_1.default().table;
-        this.table = table;
-        this.pageNumber = table.pageNumber;
-        this.settings = table.settings;
-        this.cursor = table.cursor;
-        this.doc = state_1.default().doc;
-    }
-    Object.defineProperty(HookData.prototype, "pageCount", {
-        get: function () {
-            return this.pageNumber;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    return HookData;
-}());
-exports.HookData = HookData;
-var CellHookData = /** @class */ (function (_super) {
-    __extends(CellHookData, _super);
-    function CellHookData(cell, row, column) {
-        var _this = _super.call(this) || this;
-        _this.cell = cell;
-        _this.row = row;
-        _this.column = column;
-        _this.section = row.section;
-        return _this;
-    }
-    return CellHookData;
-}(HookData));
-exports.CellHookData = CellHookData;
-
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var common_1 = __webpack_require__(1);
-var state_1 = __webpack_require__(0);
-/**
- * Calculate the column widths
- */
-function calculateWidths(table) {
-    var columnMinWidth = 10 / state_1.default().scaleFactor();
-    if (columnMinWidth * table.columns.length > table.width) {
-        console.error('Columns could not fit on page');
-    }
-    else if (table.minWidth > table.width) {
-        // Would be nice to improve the user experience of this
-        console.error("Column widths too wide and can't fit page");
-    }
-    var copy = table.columns.slice(0);
-    distributeWidth(copy, table.width, table.wrappedWidth);
-    applyColSpans(table);
-    fitContent(table);
-    applyRowSpans(table);
-}
-exports.calculateWidths = calculateWidths;
-function applyRowSpans(table) {
-    var rowSpanCells = {};
-    var colRowSpansLeft = 1;
-    var all = table.allRows();
-    for (var rowIndex = 0; rowIndex < all.length; rowIndex++) {
-        var row = all[rowIndex];
-        for (var _i = 0, _a = table.columns; _i < _a.length; _i++) {
-            var column = _a[_i];
-            var data = rowSpanCells[column.index];
-            if (colRowSpansLeft > 1) {
-                colRowSpansLeft--;
-                delete row.cells[column.index];
-            }
-            else if (data) {
-                data.cell.height += row.height;
-                if (data.cell.height > row.maxCellHeight) {
-                    data.row.maxCellHeight = data.cell.height;
-                }
-                colRowSpansLeft = data.cell.colSpan;
-                delete row.cells[column.index];
-                data.left--;
-                if (data.left <= 1) {
-                    delete rowSpanCells[column.index];
-                }
-            }
-            else {
-                var cell = row.cells[column.index];
-                if (!cell) {
-                    continue;
-                }
-                cell.height = row.height;
-                if (cell.rowSpan > 1) {
-                    var remaining = all.length - rowIndex;
-                    var left = cell.rowSpan > remaining ? remaining : cell.rowSpan;
-                    rowSpanCells[column.index] = { cell: cell, left: left, row: row };
-                }
-            }
-        }
-        if (row.section === 'head') {
-            table.headHeight += row.maxCellHeight;
-        }
-        if (row.section === 'foot') {
-            table.footHeight += row.maxCellHeight;
-        }
-        table.height += row.height;
-    }
-}
-function applyColSpans(table) {
-    var all = table.allRows();
-    for (var rowIndex = 0; rowIndex < all.length; rowIndex++) {
-        var row = all[rowIndex];
-        var colSpanCell = null;
-        var combinedColSpanWidth = 0;
-        var colSpansLeft = 0;
-        for (var columnIndex = 0; columnIndex < table.columns.length; columnIndex++) {
-            var column = table.columns[columnIndex];
-            var cell = null;
-            // Width and colspan
-            colSpansLeft -= 1;
-            if (colSpansLeft > 1 && table.columns[columnIndex + 1]) {
-                combinedColSpanWidth += column.width;
-                delete row.cells[column.index];
-                continue;
-            }
-            else if (colSpanCell) {
-                cell = colSpanCell;
-                delete row.cells[column.index];
-                colSpanCell = null;
-            }
-            else {
-                cell = row.cells[column.index];
-                if (!cell)
-                    continue;
-                colSpansLeft = cell.colSpan;
-                combinedColSpanWidth = 0;
-                if (cell.colSpan > 1) {
-                    colSpanCell = cell;
-                    combinedColSpanWidth += column.width;
-                    continue;
-                }
-            }
-            cell.width = column.width + combinedColSpanWidth;
-        }
-    }
-}
-function fitContent(table) {
-    var rowSpanHeight = { count: 0, height: 0 };
-    for (var _i = 0, _a = table.allRows(); _i < _a.length; _i++) {
-        var row = _a[_i];
-        for (var _b = 0, _c = table.columns; _b < _c.length; _b++) {
-            var column = _c[_b];
-            var cell = row.cells[column.index];
-            if (!cell)
-                continue;
-            common_1.applyStyles(cell.styles);
-            var textSpace = cell.width - cell.padding('horizontal');
-            if (cell.styles.overflow === 'linebreak') {
-                // Add one pt to textSpace to fix rounding error
-                cell.text = state_1.default().doc.splitTextToSize(cell.text, textSpace + 1 / (state_1.default().scaleFactor() || 1), { fontSize: cell.styles.fontSize });
-            }
-            else if (cell.styles.overflow === 'ellipsize') {
-                cell.text = common_1.ellipsize(cell.text, textSpace, cell.styles);
-            }
-            else if (cell.styles.overflow === 'hidden') {
-                cell.text = common_1.ellipsize(cell.text, textSpace, cell.styles, '');
-            }
-            else if (typeof cell.styles.overflow === 'function') {
-                cell.text = cell.styles.overflow(cell.text, textSpace);
-            }
-            cell.contentHeight = cell.getContentHeight();
-            if (cell.styles.minCellHeight > cell.contentHeight) {
-                cell.contentHeight = cell.styles.minCellHeight;
-            }
-            var realContentHeight = cell.contentHeight / cell.rowSpan;
-            if (cell.rowSpan > 1 && (rowSpanHeight.count * rowSpanHeight.height < realContentHeight * cell.rowSpan)) {
-                rowSpanHeight = { height: realContentHeight, count: cell.rowSpan };
-            }
-            else if (rowSpanHeight && rowSpanHeight.count > 0) {
-                if (rowSpanHeight.height > realContentHeight) {
-                    realContentHeight = rowSpanHeight.height;
-                }
-            }
-            if (realContentHeight > row.height) {
-                row.height = realContentHeight;
-                row.maxCellHeight = realContentHeight;
-            }
-        }
-        rowSpanHeight.count--;
-    }
-}
-function distributeWidth(autoColumns, availableSpace, wrappedAutoColumnsWidth) {
-    var diffWidth = availableSpace - wrappedAutoColumnsWidth;
-    for (var i = 0; i < autoColumns.length; i++) {
-        var column = autoColumns[i];
-        var ratio = column.wrappedWidth / wrappedAutoColumnsWidth;
-        var suggestedChange = diffWidth * ratio;
-        var suggestedWidth = column.wrappedWidth + suggestedChange;
-        var hasCustomWidth = false;
-        for (var _i = 0, _a = state_1.default().table.allRows(); _i < _a.length; _i++) {
-            var row = _a[_i];
-            var cell = row.cells[column.index];
-            if (cell && typeof cell.styles.cellWidth === 'number') {
-                hasCustomWidth = true;
-                break;
-            }
-        }
-        if (suggestedWidth < column.minWidth || hasCustomWidth) {
-            // Add 1 to minWidth as linebreaks calc otherwise sometimes made two rows
-            column.width = column.minWidth + 1 / state_1.default().scaleFactor();
-            wrappedAutoColumnsWidth -= column.wrappedWidth;
-            availableSpace -= column.width;
-            autoColumns.splice(i, 1);
-            distributeWidth(autoColumns, availableSpace, wrappedAutoColumnsWidth);
-            break;
-        }
-        column.width = suggestedWidth;
-    }
-}
-
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var models_1 = __webpack_require__(4);
-var config_1 = __webpack_require__(2);
-var htmlParser_1 = __webpack_require__(6);
-var polyfills_1 = __webpack_require__(3);
-var common_1 = __webpack_require__(1);
-var state_1 = __webpack_require__(0);
-var inputValidator_1 = __webpack_require__(14);
-/**
- * Create models from the user input
- */
-function parseInput(args) {
-    var tableOptions = parseUserArguments(args);
-    var globalOptions = state_1.getGlobalOptions();
-    var documentOptions = state_1.getDocumentOptions();
-    var allOptions = [globalOptions, documentOptions, tableOptions];
-    inputValidator_1.default(allOptions);
-    var table = new models_1.Table();
-    state_1.default().table = table;
-    table.id = tableOptions.tableId;
-    var doc = state_1.default().doc;
-    table.userStyles = {
-        // Setting to black for versions of jspdf without getTextColor
-        textColor: doc.getTextColor ? doc.getTextColor() : 0,
-        fontSize: doc.internal.getFontSize(),
-        fontStyle: doc.internal.getFont().fontStyle,
-        font: doc.internal.getFont().fontName
-    };
-    var _loop_1 = function (styleProp) {
-        var styles = allOptions.map(function (opts) { return opts[styleProp] || {}; });
-        table.styles[styleProp] = polyfills_1.assign.apply(void 0, __spreadArrays([{}], styles));
-    };
-    // Merge styles one level deeper
-    for (var _i = 0, _a = Object.keys(table.styles); _i < _a.length; _i++) {
-        var styleProp = _a[_i];
-        _loop_1(styleProp);
-    }
-    // Append hooks
-    for (var _b = 0, allOptions_1 = allOptions; _b < allOptions_1.length; _b++) {
-        var opts = allOptions_1[_b];
-        for (var _c = 0, _d = Object.keys(table.cellHooks); _c < _d.length; _c++) {
-            var hookName = _d[_c];
-            if (opts && typeof opts[hookName] === 'function') {
-                table.cellHooks[hookName].push(opts[hookName]);
-            }
-        }
-    }
-    table.settings = polyfills_1.assign.apply(void 0, __spreadArrays([{}, config_1.defaultConfig()], allOptions));
-    table.settings.margin = common_1.marginOrPadding(table.settings.margin, config_1.defaultConfig().margin);
-    if (table.settings.theme === 'auto') {
-        table.settings.theme = table.settings.useCss ? 'plain' : 'striped';
-    }
-    if (table.settings.startY === false) {
-        delete table.settings.startY;
-    }
-    var previous = state_1.default().doc.previousAutoTable;
-    var isSamePageAsPrevious = previous && previous.startPageNumber + previous.pageNumber - 1 === state_1.default().pageNumber();
-    if (table.settings.startY == null && isSamePageAsPrevious) {
-        table.settings.startY = previous.finalY + 20 / state_1.default().scaleFactor();
-    }
-    var htmlContent = {};
-    if (table.settings.html) {
-        htmlContent = htmlParser_1.parseHtml(table.settings.html, table.settings.includeHiddenHtml, table.settings.useCss) || {};
-    }
-    table.settings.head = htmlContent.head || table.settings.head || [];
-    table.settings.body = htmlContent.body || table.settings.body || [];
-    table.settings.foot = htmlContent.foot || table.settings.foot || [];
-    parseContent(table);
-    table.minWidth = table.columns.reduce(function (total, col) { return (total + col.minWidth); }, 0);
-    table.wrappedWidth = table.columns.reduce(function (total, col) { return (total + col.wrappedWidth); }, 0);
-    if (typeof table.settings.tableWidth === 'number') {
-        table.width = table.settings.tableWidth;
-    }
-    else if (table.settings.tableWidth === 'wrap') {
-        table.width = table.wrappedWidth;
-    }
-    else {
-        table.width = state_1.default().pageWidth() - table.margin('left') - table.margin('right');
-    }
-    return table;
-}
-exports.parseInput = parseInput;
-function parseUserArguments(args) {
-    // Normal initialization on format doc.autoTable(options)
-    if (args.length === 1) {
-        return args[0];
-    }
-    else {
-        // Deprecated initialization on format doc.autoTable(columns, body, [options])
-        var opts = args[2] || {};
-        opts.body = args[1];
-        opts.columns = args[0];
-        opts.columns.forEach(function (col) {
-            // Support v2 title prop in v3
-            if (typeof col === 'object' && col.header == null) {
-                col.header = col.title;
-            }
-        });
-        return opts;
-    }
-}
-function parseContent(table) {
-    var settings = table.settings;
-    table.columns = getTableColumns(settings);
-    var _loop_2 = function (sectionName) {
-        var rowSpansLeftForColumn = {};
-        var sectionRows = settings[sectionName];
-        if (sectionRows.length === 0 && settings.columns && sectionName !== 'body') {
-            // If no head or foot is set, try generating one with content in columns
-            var sectionRow = generateSectionRowFromColumnData(table, sectionName);
-            if (sectionRow) {
-                sectionRows.push(sectionRow);
-            }
-        }
-        sectionRows.forEach(function (rawRow, rowIndex) {
-            var skippedRowForRowSpans = 0;
-            var row = new models_1.Row(rawRow, rowIndex, sectionName);
-            table[sectionName].push(row);
-            var colSpansAdded = 0;
-            var columnSpansLeft = 0;
-            for (var _i = 0, _a = table.columns; _i < _a.length; _i++) {
-                var column = _a[_i];
-                if (rowSpansLeftForColumn[column.index] == null || rowSpansLeftForColumn[column.index].left === 0) {
-                    if (columnSpansLeft === 0) {
-                        var rawCell = void 0;
-                        if (Array.isArray(rawRow)) {
-                            rawCell = rawRow[column.index - colSpansAdded - skippedRowForRowSpans];
-                        }
-                        else {
-                            rawCell = rawRow[column.dataKey];
-                        }
-                        var styles = cellStyles(sectionName, column, rowIndex);
-                        var cell = new models_1.Cell(rawCell, styles, sectionName);
-                        // dataKey is not used internally anymore but keep for backwards compat in hooks
-                        row.cells[column.dataKey] = cell;
-                        row.cells[column.index] = cell;
-                        columnSpansLeft = cell.colSpan - 1;
-                        rowSpansLeftForColumn[column.index] = { left: cell.rowSpan - 1, times: columnSpansLeft };
-                    }
-                    else {
-                        columnSpansLeft--;
-                        colSpansAdded++;
-                    }
-                }
-                else {
-                    rowSpansLeftForColumn[column.index].left--;
-                    columnSpansLeft = rowSpansLeftForColumn[column.index].times;
-                    skippedRowForRowSpans++;
-                }
-            }
-        });
-    };
-    for (var _i = 0, _a = ['head', 'body', 'foot']; _i < _a.length; _i++) {
-        var sectionName = _a[_i];
-        _loop_2(sectionName);
-    }
-    table.allRows().forEach(function (row) {
-        for (var _i = 0, _a = table.columns; _i < _a.length; _i++) {
-            var column = _a[_i];
-            var cell = row.cells[column.index];
-            if (!cell)
-                continue;
-            table.callCellHooks(table.cellHooks.didParseCell, cell, row, column);
-            cell.contentWidth = cell.padding('horizontal') + common_1.getStringWidth(cell.text, cell.styles);
-            if (typeof cell.styles.cellWidth === 'number') {
-                cell.minWidth = cell.styles.cellWidth;
-                cell.wrappedWidth = cell.styles.cellWidth;
-            }
-            else if (cell.styles.cellWidth === 'wrap') {
-                cell.minWidth = cell.contentWidth;
-                cell.wrappedWidth = cell.contentWidth;
-            }
-            else { // auto
-                var defaultMinWidth = 10 / state_1.default().scaleFactor();
-                cell.minWidth = cell.styles.minCellWidth || defaultMinWidth;
-                cell.wrappedWidth = cell.contentWidth;
-                if (cell.minWidth > cell.wrappedWidth) {
-                    cell.wrappedWidth = cell.minWidth;
-                }
-            }
-        }
-    });
-    table.allRows().forEach(function (row) {
-        for (var _i = 0, _a = table.columns; _i < _a.length; _i++) {
-            var column = _a[_i];
-            var cell = row.cells[column.index];
-            // For now we ignore the minWidth and wrappedWidth of colspan cells when calculating colspan widths.
-            // Could probably be improved upon however.
-            if (cell && cell.colSpan === 1) {
-                if (cell.wrappedWidth > column.wrappedWidth) {
-                    column.wrappedWidth = cell.wrappedWidth;
-                }
-                if (cell.minWidth > column.minWidth) {
-                    column.minWidth = cell.minWidth;
-                }
-            }
-            else {
-                // Respect cellWidth set in columnStyles even if there is no cells for this column
-                // or of it the column only have colspan cells. Since the width of colspan cells
-                // does not affect the width of columns, setting columnStyles cellWidth enables the
-                // user to at least do it manually.
-                // Note that this is not perfect for now since for example row and table styles are
-                // not accounted for
-                var columnStyles = table.styles.columnStyles[column.dataKey] || table.styles.columnStyles[column.index] || {};
-                var cellWidth = columnStyles.cellWidth;
-                if (cellWidth) {
-                    column.minWidth = cellWidth;
-                    column.wrappedWidth = cellWidth;
-                }
-            }
-            if (cell) {
-                // Make sure all columns get at least min width even though width calculations are not based on them
-                if (cell.colSpan > 1 && !column.minWidth) {
-                    column.minWidth = cell.minWidth;
-                }
-                if (cell.colSpan > 1 && !column.wrappedWidth) {
-                    column.wrappedWidth = cell.minWidth;
-                }
-                table.callCellHooks(table.cellHooks.didParseCell, cell, row, column);
-            }
-        }
-    });
-}
-function generateSectionRowFromColumnData(table, sectionName) {
-    var sectionRow = {};
-    table.columns
-        .forEach(function (col) {
-        var columnData = col.raw;
-        if (sectionName === 'head') {
-            var val = columnData && columnData.header ? columnData.header : columnData;
-            if (val) {
-                sectionRow[col.dataKey] = val;
-            }
-        }
-        else if (sectionName === 'foot' && columnData.footer) {
-            sectionRow[col.dataKey] = columnData.footer;
-        }
-    });
-    return Object.keys(sectionRow).length > 0 ? sectionRow : null;
-}
-function getTableColumns(settings) {
-    if (settings.columns) {
-        var cols = settings.columns.map(function (input, index) {
-            var key = input.dataKey || input.key || index;
-            return new models_1.Column(key, input, index);
-        });
-        return cols;
-    }
-    else {
-        var firstRow_1 = settings.head[0] || settings.body[0] || settings.foot[0] || [];
-        var columns_1 = [];
-        Object.keys(firstRow_1)
-            .filter(function (key) { return key !== '_element'; })
-            .forEach(function (key) {
-            var colSpan = firstRow_1[key] && firstRow_1[key].colSpan ? firstRow_1[key].colSpan : 1;
-            for (var i = 0; i < colSpan; i++) {
-                var id = void 0;
-                if (Array.isArray(firstRow_1)) {
-                    id = columns_1.length;
-                }
-                else {
-                    id = key + (i > 0 ? "_" + i : '');
-                }
-                columns_1.push(new models_1.Column(id, id, columns_1.length));
-            }
-        });
-        return columns_1;
-    }
-}
-function cellStyles(sectionName, column, rowIndex) {
-    var table = state_1.default().table;
-    var theme = config_1.getTheme(table.settings.theme);
-    var otherStyles = [theme.table, theme[sectionName], table.styles.styles, table.styles[sectionName + "Styles"]];
-    var columnStyles = table.styles.columnStyles[column.dataKey] || table.styles.columnStyles[column.index] || {};
-    var colStyles = sectionName === 'body' ? columnStyles : {};
-    var rowStyles = sectionName === 'body' && rowIndex % 2 === 0 ? polyfills_1.assign({}, theme.alternateRow, table.styles.alternateRowStyles) : {};
-    return polyfills_1.assign.apply(void 0, __spreadArrays([config_1.defaultStyles()], __spreadArrays(otherStyles, [rowStyles, colStyles])));
-}
-
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-// Limitations
-// - No support for border spacing
-// - No support for transparency
-var common_1 = __webpack_require__(1);
-var state_1 = __webpack_require__(0);
-function parseCss(element, scaleFactor, ignored) {
-    if (ignored === void 0) { ignored = []; }
-    var result = {};
-    var style = window.getComputedStyle(element);
-    function assign(name, value, accepted) {
-        if (accepted === void 0) { accepted = []; }
-        if ((accepted.length === 0 || accepted.indexOf(value) !== -1) && ignored.indexOf(name) === -1) {
-            if (value === 0 || value) {
-                result[name] = value;
-            }
-        }
-    }
-    var pxScaleFactor = 96 / 72;
-    assign('fillColor', parseColor(element, 'backgroundColor'));
-    assign('fontStyle', parseFontStyle(style));
-    assign('textColor', parseColor(element, 'color'));
-    assign('halign', style.textAlign, ['left', 'right', 'center', 'justify']);
-    assign('valign', style.verticalAlign, ['middle', 'bottom', 'top']);
-    assign('fontSize', parseInt(style.fontSize || '') / pxScaleFactor);
-    assign('cellPadding', parsePadding(style.padding, style.fontSize, style.lineHeight, scaleFactor));
-    // style.borderWidth only works in chrome (borderTopWidth etc works in firefox and ie as well)
-    assign('lineWidth', parseInt(style.borderTopWidth || '') / pxScaleFactor / scaleFactor);
-    assign('lineColor', parseColor(element, 'borderTopColor'));
-    var font = (style.fontFamily || '').toLowerCase();
-    if (state_1.default().doc.getFontList()[font]) {
-        assign('font', font);
-    }
-    return result;
-}
-exports.parseCss = parseCss;
-function parseFontStyle(style) {
-    var res = '';
-    if (style.fontWeight === 'bold' || style.fontWeight === 'bolder' || parseInt(style.fontWeight) >= 700) {
-        res += 'bold';
-    }
-    if (style.fontStyle === 'italic' || style.fontStyle === 'oblique') {
-        res += 'italic';
-    }
-    return res;
-}
-function parseColor(element, colorProp) {
-    var cssColor = realColor(element, colorProp);
-    if (!cssColor)
-        return null;
-    var rgba = cssColor.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d*\.?\d*))?\)$/);
-    if (!rgba || !Array.isArray(rgba)) {
-        return null;
-    }
-    var color = [parseInt(rgba[1]), parseInt(rgba[2]), parseInt(rgba[3])];
-    var alpha = parseInt(rgba[4]);
-    if (alpha === 0 || isNaN(color[0]) || isNaN(color[1]) || isNaN(color[2])) {
-        return null;
-    }
-    return color;
-}
-function realColor(elem, colorProp) {
-    if (!elem)
-        return null;
-    var bg = window.getComputedStyle(elem)[colorProp];
-    if (bg === 'rgba(0, 0, 0, 0)' || bg === 'transparent' || bg === 'initial' || bg === 'inherit') {
-        return realColor(elem.parentElement, colorProp);
-    }
-    else {
-        return bg;
-    }
-}
-function parsePadding(val, fontSize, lineHeight, scaleFactor) {
-    if (!val)
-        return null;
-    var pxScaleFactor = (96 / (72 / scaleFactor));
-    var linePadding = (parseInt(lineHeight) - parseInt(fontSize)) / scaleFactor / 2;
-    var padding = val.split(' ').map(function (n) {
-        return parseInt(n) / pxScaleFactor;
-    });
-    padding = common_1.marginOrPadding(padding, 0);
-    if (linePadding > padding.top) {
-        padding.top = linePadding;
-    }
-    if (linePadding > padding.bottom) {
-        padding.bottom = linePadding;
-    }
-    return padding;
-}
-
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var common_1 = __webpack_require__(1);
-function default_1(allOptions) {
-    var _loop_1 = function (settings) {
-        if (settings && typeof settings !== 'object') {
-            console.error("The options parameter should be of type object, is: " + typeof settings);
-        }
-        if (typeof settings.extendWidth !== 'undefined') {
-            settings.tableWidth = settings.extendWidth ? 'auto' : 'wrap';
-            console.error("Use of deprecated option: extendWidth, use tableWidth instead.");
-        }
-        if (typeof settings.margins !== 'undefined') {
-            if (typeof settings.margin === 'undefined')
-                settings.margin = settings.margins;
-            console.error("Use of deprecated option: margins, use margin instead.");
-        }
-        if (settings.startY && typeof settings.startY !== 'number') {
-            console.error('Invalid value for startY option', settings.startY);
-            delete settings.startY;
-        }
-        if (!settings.didDrawPage && (settings.afterPageContent || settings.beforePageContent || settings.afterPageAdd)) {
-            console.error("The afterPageContent, beforePageContent and afterPageAdd hooks are deprecated. Use didDrawPage instead");
-            settings.didDrawPage = function (data) {
-                common_1.applyUserStyles();
-                if (settings.beforePageContent)
-                    settings.beforePageContent(data);
-                common_1.applyUserStyles();
-                if (settings.afterPageContent)
-                    settings.afterPageContent(data);
-                common_1.applyUserStyles();
-                if (settings.afterPageAdd && data.pageNumber > 1) {
-                    data.afterPageAdd(data);
-                }
-                common_1.applyUserStyles();
-            };
-        }
-        ["createdHeaderCell", "drawHeaderRow", "drawRow", "drawHeaderCell"].forEach(function (name) {
-            if (settings[name]) {
-                console.error("The \"" + name + "\" hook has changed in version 3.0, check the changelog for how to migrate.");
-            }
-        });
-        [['showFoot', 'showFooter'], ['showHead', 'showHeader'], ['didDrawPage', 'addPageContent'], ['didParseCell', 'createdCell'], ['headStyles', 'headerStyles']].forEach(function (_a) {
-            var current = _a[0], deprecated = _a[1];
-            if (settings[deprecated]) {
-                console.error("Use of deprecated option " + deprecated + ". Use " + current + " instead");
-                settings[current] = settings[deprecated];
-            }
-        });
-        [['padding', 'cellPadding'], ['lineHeight', 'rowHeight'], 'fontSize', 'overflow'].forEach(function (o) {
-            var deprecatedOption = typeof o === 'string' ? o : o[0];
-            var style = typeof o === 'string' ? o : o[1];
-            if (typeof settings[deprecatedOption] !== 'undefined') {
-                if (typeof settings.styles[style] === 'undefined') {
-                    settings.styles[style] = settings[deprecatedOption];
-                }
-                console.error("Use of deprecated option: " + deprecatedOption + ", use the style " + style + " instead.");
-            }
-        });
-        for (var _i = 0, _a = ['styles', 'bodyStyles', 'headStyles', 'footStyles']; _i < _a.length; _i++) {
-            var styleProp = _a[_i];
-            checkStyles(settings[styleProp] || {});
-        }
-        var columnStyles = settings['columnStyles'] || {};
-        for (var _b = 0, _c = Object.keys(columnStyles); _b < _c.length; _b++) {
-            var key = _c[_b];
-            checkStyles(columnStyles[key] || {});
-        }
-    };
-    for (var _i = 0, allOptions_1 = allOptions; _i < allOptions_1.length; _i++) {
-        var settings = allOptions_1[_i];
-        _loop_1(settings);
-    }
-}
-exports.default = default_1;
-function checkStyles(styles) {
-    if (styles.rowHeight) {
-        console.error("Use of deprecated style rowHeight. It is renamed to minCellHeight.");
-        if (!styles.minCellHeight) {
-            styles.minCellHeight = styles.rowHeight;
-        }
-    }
-    else if (styles.columnWidth) {
-        console.error("Use of deprecated style columnWidth. It is renamed to cellWidth.");
-        if (!styles.cellWidth) {
-            styles.cellWidth = styles.columnWidth;
-        }
-    }
-}
-
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var jsPDF = __webpack_require__(7);
-/**
- * Improved text function with halign and valign support
- * Inspiration from: http://stackoverflow.com/questions/28327510/align-text-right-using-jspdf/28433113#28433113
- */
-jsPDF.API.autoTableText = function (text, x, y, styles) {
-    styles = styles || {};
-    var FONT_ROW_RATIO = 1.15;
-    if (typeof x !== 'number' || typeof y !== 'number') {
-        console.error('The x and y parameters are required. Missing for text: ', text);
-    }
-    var k = this.internal.scaleFactor;
-    var fontSize = this.internal.getFontSize() / k;
-    var splitRegex = /\r\n|\r|\n/g;
-    var splitText = null;
-    var lineCount = 1;
-    if (styles.valign === 'middle' || styles.valign === 'bottom' || styles.halign === 'center' || styles.halign === 'right') {
-        splitText = typeof text === 'string' ? text.split(splitRegex) : text;
-        lineCount = splitText.length || 1;
-    }
-    // Align the top
-    y += fontSize * (2 - FONT_ROW_RATIO);
-    if (styles.valign === 'middle')
-        y -= (lineCount / 2) * fontSize * FONT_ROW_RATIO;
-    else if (styles.valign === 'bottom')
-        y -= lineCount * fontSize * FONT_ROW_RATIO;
-    if (styles.halign === 'center' || styles.halign === 'right') {
-        var alignSize = fontSize;
-        if (styles.halign === 'center')
-            alignSize *= 0.5;
-        if (lineCount >= 1) {
-            for (var iLine = 0; iLine < splitText.length; iLine++) {
-                this.text(splitText[iLine], x - this.getStringUnitWidth(splitText[iLine]) * alignSize, y);
-                y += fontSize * FONT_ROW_RATIO;
-            }
-            return this;
-        }
-        x -= this.getStringUnitWidth(text) * alignSize;
-    }
-    if (styles.halign === 'justify') {
-        this.text(text, x, y, { maxWidth: styles.maxWidth || 100, align: 'justify' });
-    }
-    else {
-        this.text(text, x, y);
-    }
-    return this;
-};
-
-
-/***/ })
-/******/ ]);
-});
-
-/***/ }),
-
 /***/ "./node_modules/jspdf/dist/jspdf.min.js":
 /*!**********************************************!*\
   !*** ./node_modules/jspdf/dist/jspdf.min.js ***!
@@ -45798,7 +43821,7 @@ module.exports = "<div class=\"content\">\n  <div class=\"mb-12\" fxLayout='row'
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"settings-sidebar\">\n  <mat-card>\n    <div class=\"gab\">\n      <div class=\"smart-select\" (click)=\"$event.stopPropagation(); menuTrigger.openMenu()\">\n        <mat-form-field class=\"full-width\">\n          <mat-label>Select a campaign</mat-label>\n          <mat-select [(ngModel)]=\"selectedCampaign\">\n            <mat-option [value]=\"selectedCampaign\">\n              {{selectedCampaign?.campaignName}}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n      <div class=\"campaign-input-container\">\n        <div #menuTrigger=\"matMenuTrigger\" [matMenuTriggerFor]=\"menu\">\n        </div>\n        <mat-menu #menu=\"matMenu\">\n          <section class=\"popup-content\" (click)=\"$event.stopPropagation();\">\n            <table mat-table [dataSource]=\"dataSource\" multiTemplateDataRows class=\"mat-elevation-z8\">\n              <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of columnsToDisplay\">\n                <th mat-header-cell *matHeaderCellDef> {{columnsName[column]}} </th>\n                <td mat-cell *matCellDef=\"let element\">\n                  <!-- <img *ngIf=\"column === 'brand'\" width=\"45px\" style=\"min-width: 45px; margin-top: 5px;\"\n                    [src]=\"element[column]\" alt=\"\">\n                  <span *ngIf=\"column !== 'brand'\">{{element[column]}}</span> -->\n                  <span>{{element[column]}}</span>\n                </td>\n              </ng-container>\n\n              <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay\"></tr>\n              <tr mat-row *matRowDef=\"let element; columns: columnsToDisplay;\"\n                (click)=\"selectCampaign(element); menuTrigger.closeMenu()\" class=\"example-element-row\"></tr>\n            </table>\n            <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n          </section>\n        </mat-menu>\n      </div>\n    </div>\n    <div class=\"gab\" fxLayout=\"row\" fxLayoutAlign=\" center\">\n      <mat-form-field class=\"full-width\">\n        <mat-label>Select a date interval</mat-label>\n        <mat-select [(value)]=\"selectedInterval\" (openedChange)=\"cerf()\">\n          <mat-option *ngFor=\"let item of dateIntervals; let i = index;\" (click)=\"getTimeInterval(item)\"\n            [value]=\"item.value\">\n            {{item.viewValue}}\n          </mat-option>\n        </mat-select>\n      </mat-form-field>\n    </div>\n    <div class=\"gab\">\n      <mat-tab-group #channelsTabGroup *ngIf=\"sourceType && playsStationsList\"  [(selectedIndex)]=\"selectedIndex\">\n        <mat-tab *ngFor=\"let tab of sourceType\" [label]=\"tab.name\">\n          <ng-template mat-tab-label>\n            <div *ngIf=\"tab.name === 'Tv'\" fxLayout=\"row\" fxLayoutAlign=\"center center\" fxLayoutGap=\"20px\">\n              <span>TV</span>\n              <i class=\"material-icons\">\n                tv\n              </i>\n            </div>\n            <div *ngIf=\"tab.name === 'Radio'\" fxLayout=\"row\" fxLayoutAlign=\"center center\" fxLayoutGap=\"20px\">\n              <span>Radio</span>\n              <i class=\"material-icons\">\n                radio\n              </i>\n            </div>\n          </ng-template>\n          <mat-form-field class=\"full-width m-t-10\">\n            <mat-label>Filter Channels</mat-label>\n            <mat-select>\n              <mat-option *ngFor=\"let item of filterChannelsTv\" [value]=\"item.value\">\n                {{item.viewValue}}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n          <div class=\"scrollable-station-list\">\n            <div *ngFor=\"let channel of playsStationsList\">\n              <div \n                *ngIf=\"channel.sourceTypeUuid === tab.sourceTypeUuid\" \n                class=\"station-item\" \n                [ngClass]=\"{'active': selectedChannel === channel}\"\n                (click)=\"getSelectedChannel(channel)\"\n                >\n                <img width=\"30px\" class=\"mr-4\" [src]=\"'data:image/png;base64,' + channel.logo\" alt=\"\">\n                <span>{{channel.name}} (plays: {{channel.playsCount}})</span>\n              </div>\n            </div>\n          </div>\n        </mat-tab>\n      </mat-tab-group>\n    </div>\n    <div>\n      <mat-form-field class=\"full-width\">\n        <mat-label>Select a target</mat-label>\n        <mat-select [(value)]=\"selectedTarget\">\n          <mat-option *ngFor=\"let item of target\" [value]=\"item.name\" (click)=\"getSelectedTarget(item)\">\n            {{item.name}}\n          </mat-option>\n        </mat-select>\n      </mat-form-field>\n    </div>\n    <button (click)=\"closeSettings()\" class=\"close-btn\" mat-icon-button>\n      <mat-icon>close</mat-icon>\n    </button>\n  </mat-card>\n</div>"
+module.exports = "<div class=\"settings-sidebar\">\n  <mat-card>\n    <div class=\"gab\">\n      <div class=\"smart-select\" (click)=\"$event.stopPropagation(); menuTrigger.openMenu()\">\n        <mat-form-field class=\"full-width\">\n          <mat-label>{{'Select a campaign' | translate}}</mat-label>\n          <mat-select [(ngModel)]=\"selectedCampaign\">\n            <mat-option [value]=\"selectedCampaign\">\n              {{selectedCampaign?.campaignName}}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n      <div class=\"campaign-input-container\">\n        <div #menuTrigger=\"matMenuTrigger\" [matMenuTriggerFor]=\"menu\">\n        </div>\n        <mat-menu #menu=\"matMenu\">\n          <section class=\"popup-content\" (click)=\"$event.stopPropagation();\">\n            <table mat-table [dataSource]=\"dataSource\" multiTemplateDataRows class=\"mat-elevation-z8\">\n              <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of columnsToDisplay\">\n                <th mat-header-cell *matHeaderCellDef> {{columnsName[column]}} </th>\n                <td mat-cell *matCellDef=\"let element\">\n                  <!-- <img *ngIf=\"column === 'brand'\" width=\"45px\" style=\"min-width: 45px; margin-top: 5px;\"\n                    [src]=\"element[column]\" alt=\"\">\n                  <span *ngIf=\"column !== 'brand'\">{{element[column]}}</span> -->\n                  <span>{{element[column]}}</span>\n                </td>\n              </ng-container>\n\n              <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay\"></tr>\n              <tr mat-row *matRowDef=\"let element; columns: columnsToDisplay;\"\n                (click)=\"selectCampaign(element); menuTrigger.closeMenu()\" class=\"example-element-row\"></tr>\n            </table>\n            <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n          </section>\n        </mat-menu>\n      </div>\n    </div>\n    <div class=\"gab\" fxLayout=\"row\" fxLayoutAlign=\" center\">\n      <mat-form-field class=\"full-width\">\n        <mat-label>{{'Select a date interval' | translate}}</mat-label>\n        <mat-select [(value)]=\"selectedInterval\" (openedChange)=\"cangeInterval()\">\n          <mat-option *ngFor=\"let item of dateIntervals; let i = index;\" (click)=\"getTimeInterval(item)\"\n            [value]=\"item.value\">\n            {{item.viewValue}}\n          </mat-option>\n        </mat-select>\n      </mat-form-field>\n    </div>\n    <div class=\"gab\">\n      <mat-tab-group #channelsTabGroup *ngIf=\"sourceType && playsStationsList\"  [(selectedIndex)]=\"selectedIndex\">\n        <mat-tab *ngFor=\"let tab of sourceType\" [label]=\"tab.name\">\n          <ng-template mat-tab-label>\n            <div *ngIf=\"tab.name === 'Tv'\" fxLayout=\"row\" fxLayoutAlign=\"center center\" fxLayoutGap=\"20px\">\n              <span>{{'TV' | translate}}</span>\n              <i class=\"material-icons\">\n                tv\n              </i>\n            </div>\n            <div *ngIf=\"tab.name === 'Radio'\" fxLayout=\"row\" fxLayoutAlign=\"center center\" fxLayoutGap=\"20px\">\n              <span>{{'Radio' | translate}}</span>\n              <i class=\"material-icons\">\n                radio\n              </i>\n            </div>\n          </ng-template>\n          <mat-form-field  *ngIf=\"tab.name === 'Tv'\" class=\"full-width m-t-10\">\n            <mat-label>{{'Filter Channels' | translate}}</mat-label>\n            <mat-select>\n              <mat-option value=\"item.value\">\n                {{'All channels' | translate}}\n              </mat-option>\n              <mat-option value=\"item.value\">\n                {{'National channels' | translate}}\n              </mat-option>\n              <mat-option value=\"item.value\">\n                {{'Sky channels' | translate}}\n              </mat-option>\n              <mat-option value=\"item.value\">\n                {{'Mediaset Premium channels' | translate}}\n              </mat-option>\n              <mat-option value=\"item.value\">\n                {{'Local channels' | translate}}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field  *ngIf=\"tab.name === 'Radio'\" class=\"full-width m-t-10\">\n            <mat-label>{{'Filter Channels' | translate}}</mat-label>\n            <mat-select>\n              <mat-option value=\"item.value\">\n                {{'All channels' | translate}}\n              </mat-option>\n              <mat-option value=\"item.value\">\n                {{'National channels' | translate}}\n              </mat-option>\n              <mat-option value=\"item.value\">\n                {{'Local channels' | translate}}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n          <div class=\"scrollable-station-list\">\n            <div *ngFor=\"let channel of playsStationsList\">\n              <div \n                *ngIf=\"channel.sourceTypeUuid === tab.sourceTypeUuid\" \n                class=\"station-item\" \n                [ngClass]=\"{'active': selectedChannel === channel}\"\n                (click)=\"getSelectedChannel(channel)\"\n                >\n                <img width=\"30px\" class=\"mr-4\" [src]=\"'data:image/png;base64,' + channel.logo\" alt=\"\">\n                <span>{{channel.name}} (plays: {{channel.playsCount}})</span>\n              </div>\n            </div>\n          </div>\n        </mat-tab>\n      </mat-tab-group>\n    </div>\n    <div>\n      <mat-form-field class=\"full-width\">\n        <mat-label>{{'Select a target' | translate}}</mat-label>\n        <mat-select [(value)]=\"selectedTarget\">\n          <mat-option *ngFor=\"let item of target\" [value]=\"item.name\" (click)=\"getSelectedTarget(item)\">\n            {{item.name}}\n          </mat-option>\n        </mat-select>\n      </mat-form-field>\n    </div>\n    <button (click)=\"closeSettings()\" class=\"close-btn\" mat-icon-button>\n      <mat-icon>close</mat-icon>\n    </button>\n  </mat-card>\n</div>"
 
 /***/ }),
 
@@ -45809,7 +43832,7 @@ module.exports = "<div class=\"settings-sidebar\">\n  <mat-card>\n    <div class
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"height: calc(100% - 41px)\">\n  <mat-tab-group style=\"height: 100%;\">\n    <mat-tab [label]=\"'By week' | translate\">\n      <ng-template matTabContent>\n        <app-post-evaluation-tab-date [compaignId]=\"compaignId\" [compaignSettings]=\"campaignSettings\">\n        </app-post-evaluation-tab-date>\n      </ng-template>\n    </mat-tab>\n    <mat-tab [label]=\"'Day to day' | translate\">\n      <ng-template matTabContent>\n        <app-post-evaluation-tab-day-to-day [compaignSettings]=\"campaignSettings\" [compaignId]=\"compaignId\">\n        </app-post-evaluation-tab-day-to-day>\n      </ng-template>\n    </mat-tab>\n    <mat-tab [label]=\"'By dealership' | translate\">\n      <ng-template matTabContent>\n        <app-post-evaluation-tab-dealership [compaignSettings]=\"campaignSettings\"></app-post-evaluation-tab-dealership>\n      </ng-template>\n    </mat-tab>\n    <mat-tab [label]=\"'By channel' | translate\">\n      <ng-template matTabContent>\n        <app-post-evaluation-tab-channel [compaignSettings]=\"campaignSettings\"></app-post-evaluation-tab-channel>\n      </ng-template>\n    </mat-tab>\n    <mat-tab [label]=\"'By time-slot' | translate\">\n      <ng-template matTabContent>\n        <app-post-evaluation-tab-time-slot></app-post-evaluation-tab-time-slot>\n      </ng-template>\n    </mat-tab>\n    <mat-tab [label]=\"'Pre-post matching' | translate\">\n      <ng-template matTabContent>\n        <app-post-evaluation-tab-pre-post-matching></app-post-evaluation-tab-pre-post-matching>\n      </ng-template>\n    </mat-tab>\n    <mat-tab [label]=\"'Summary' | translate\">\n      <ng-template matTabContent>\n        <app-post-evaluation-tab-summary></app-post-evaluation-tab-summary>\n      </ng-template>\n    </mat-tab>\n  </mat-tab-group>\n  <div class=\"settings-tables\" [ngClass]=\"{'inactive': !openSettings}\" [@enterAnimation]=\"openSettings\">\n    <app-capmaigns-settings [compaignId]=\"compaignId\" (getSettings)=\"getSettings($event)\"></app-capmaigns-settings>\n  </div>\n</div>"
+module.exports = "<div style=\"height: calc(100% - 41px)\">\n  <mat-tab-group style=\"height: 100%;\">\n    <mat-tab [label]=\"'By week' | translate\">\n      <ng-template matTabContent>\n        <app-post-evaluation-tab-date [compaignId]=\"compaignId\" [compaignSettings]=\"campaignSettings\">\n        </app-post-evaluation-tab-date>\n      </ng-template>\n    </mat-tab>\n    <mat-tab [label]=\"'Day to day' | translate\">\n      <ng-template matTabContent>\n        <app-post-evaluation-tab-day-to-day [compaignSettings]=\"campaignSettings\" [compaignId]=\"compaignId\">\n        </app-post-evaluation-tab-day-to-day>\n      </ng-template>\n    </mat-tab>\n    <mat-tab [label]=\"'By dealership' | translate\">\n      <ng-template matTabContent>\n        <app-post-evaluation-tab-dealership [compaignSettings]=\"campaignSettings\"></app-post-evaluation-tab-dealership>\n      </ng-template>\n    </mat-tab>\n    <mat-tab [label]=\"'By channel' | translate\">\n      <ng-template matTabContent>\n        <app-post-evaluation-tab-channel [compaignSettings]=\"campaignSettings\"></app-post-evaluation-tab-channel>\n      </ng-template>\n    </mat-tab>\n    <mat-tab [label]=\"'By time-slot' | translate\">\n      <ng-template matTabContent>\n        <app-post-evaluation-tab-time-slot [compaignSettings]=\"campaignSettings\"></app-post-evaluation-tab-time-slot>\n      </ng-template>\n    </mat-tab>\n    <mat-tab [label]=\"'Pre-post matching' | translate\">\n      <ng-template matTabContent>\n        <app-post-evaluation-tab-pre-post-matching [compaignSettings]=\"campaignSettings\"></app-post-evaluation-tab-pre-post-matching>\n      </ng-template>\n    </mat-tab>\n    <mat-tab [label]=\"'Summary' | translate\">\n      <ng-template matTabContent>\n        <app-post-evaluation-tab-summary [compaignSettings]=\"campaignSettings\"></app-post-evaluation-tab-summary>\n      </ng-template>\n    </mat-tab>\n  </mat-tab-group>\n  <div class=\"settings-tables\" [ngClass]=\"{'inactive': !openSettings}\" [@enterAnimation]=\"openSettings\">\n    <app-capmaigns-settings [compaignId]=\"compaignId\" (getSettings)=\"getSettings($event)\"></app-capmaigns-settings>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -45820,7 +43843,7 @@ module.exports = "<div style=\"height: calc(100% - 41px)\">\n  <mat-tab-group st
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content-table-main\">\n  <div>\n    <mat-card style=\"margin: 0; margin-bottom: 10px;\">\n      <table class=\"clear-table stats\">\n        <tr>\n          <td>\n            <b>{{'Campaign' | translate}}</b>: {{campaignStats?.campaignName}}\n          </td>\n          <td>\n            <b>{{'Company' | translate}}</b>: {{campaignStats?.companyName}}\n          </td>\n          <td>\n            <b>{{'Brand' | translate}}</b>: {{campaignStats?.brandName}}\n          </td>\n          <td>\n            <b>{{'Product' | translate}}</b>: {{campaignStats?.productName}}\n          </td>\n        </tr>\n      </table>\n    </mat-card>\n  </div>\n  <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" fxLayoutGap=\"10px\">\n    <mat-form-field>\n      <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n    </mat-form-field>\n    <div fxLayout=\"row\" fxLayoutAlign=\"end none\" fxLayoutGap=\"10px\">\n      <button mat-raised-button (click)=\"select.open()\">\n        {{'show/hide columns' | translate}}\n      </button>\n      <div class=\"select-hidden\">\n        <mat-form-field>\n          <mat-label>Toppings</mat-label>\n          <mat-select #select [(ngModel)]=\"selectedToppingList\" (selectionChange)=\"columnVisible()\"\n            [formControl]=\"toppings\" multiple>\n            <mat-option *ngFor=\"let topping of toppingList\" [value]=\"topping\">\n              <span *ngIf=\"topping  !== '' && topping  !== ' '\">\n                {{topping}}\n              </span>\n              <span *ngIf=\"topping  === ' '\">\n                Brad\n              </span>\n              <span *ngIf=\"topping  === ''\">\n                Channel logo\n              </span>\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n      <button [matMenuTriggerFor]=\"menu\" mat-raised-button color=\"accent\">{{'export' | translate}}</button>\n      <mat-menu #menu=\"matMenu\">\n        <button mat-menu-item (click)=\"download('pdf')\">PDF</button>\n        <button mat-menu-item (click)=\"download('csv')\">CSV</button>\n      </mat-menu>\n    </div>\n  </div>\n\n  <table mat-table [dataSource]=\"dataSource\" matSort multiTemplateDataRows class=\"mat-elevation-z8\">\n    <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of columnsToDisplay\">\n      <th mat-header-cell *matHeaderCellDef mat-sort-header\n        [ngClass]=\"{'hide-arrow': column === 'sourceLogo' || column === 'dealershipLogo'}\"> {{columnsName[column]}}\n      </th>\n      <td mat-cell *matCellDef=\"let element\">\n        <div *ngIf=\"column === 'sourceLogo' || column === 'dealershipLogo'\" class=\"table-logo-wrap\">\n          <img *ngIf=\"column === 'dealershipLogo'\" width=\"65px\" style=\"min-width: 65px\"\n            [src]=\"'data:image/png;base64,' + element[column]\" alt=\"\">\n          <img *ngIf=\"column === 'sourceLogo'\" width=\"45px\" style=\"min-width: 45px\"\n            [src]=\"'data:image/png;base64,' + element[column]\" alt=\"\">\n        </div>\n        <span *ngIf=\"column !== 'sourceLogo' && column !== 'dealershipLogo'\">{{element[column]}}</span>\n      </td>\n      <td mat-footer-cell *matFooterCellDef=\"let element\">\n        <b>\n          <span *ngIf=\"column === 'sourceLogo' && column !== 'dealershipLogo'\">Total</span>\n          <span\n            *ngIf=\"column !== 'dealershipLogo' && column !== 'sourceLogo'\">{{getTotalValue(mockedData, column)}}</span>\n        </b>\n      </td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay; sticky: true\"></tr>\n    <tr mat-row *matRowDef=\"let element; columns: columnsToDisplay;\" class=\"example-element-row\"></tr>\n    <tr mat-footer-row *matFooterRowDef=\"columnsToDisplay; sticky: true\"></tr>\n  </table>\n  <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n</div>\n\n<div class=\"handle\" (click)=\"openSettings()\">\n  <button mat-fab color=\"primary\">\n    <mat-icon class=\"spin text-white\">settings</mat-icon>\n  </button>\n</div>"
+module.exports = "<div class=\"content-table-main\">\n  <div>\n    <mat-card style=\"margin: 0; margin-bottom: 10px;\">\n      <table class=\"clear-table stats\">\n        <tr>\n          <td style=\"padding-left: 5px !important;\">\n            <b>{{'Campaign' | translate}}</b>: {{campaignStats?.campaignName}}\n          </td>\n          <td>\n            <b>{{'Company' | translate}}</b>: {{campaignStats?.companyName}}\n          </td>\n          <td>\n            <b>{{'Brand' | translate}}</b>: {{campaignStats?.brandName}}\n          </td>\n          <td>\n            <b>{{'Product' | translate}}</b>: {{campaignStats?.productName}}\n          </td>\n        </tr>\n      </table>\n    </mat-card>\n  </div>\n  <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" fxLayoutGap=\"10px\">\n    <mat-form-field>\n      <input matInput (keyup)=\"applyFilter($event.target.value)\" [placeholder]=\"'Filter' | translate\">\n    </mat-form-field>\n    <div fxLayout=\"row\" fxLayoutAlign=\"end none\" fxLayoutGap=\"10px\">\n      <button mat-raised-button (click)=\"select.open()\">\n        {{'show/hide columns' | translate}}\n      </button>\n      <div class=\"select-hidden\">\n        <mat-form-field>\n          <mat-label>Toppings</mat-label>\n          <mat-select #select [(ngModel)]=\"selectedToppingList\" (selectionChange)=\"columnVisible()\"\n            [formControl]=\"toppings\" multiple>\n            <mat-option *ngFor=\"let topping of toppingList\" [value]=\"topping\">\n              <span *ngIf=\"topping  !== '' && topping  !== ' '\">\n                {{topping}}\n              </span>\n              <span *ngIf=\"topping  === ' '\">\n                Brad\n              </span>\n              <span *ngIf=\"topping  === ''\">\n                Channel logo\n              </span>\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n      <button [matMenuTriggerFor]=\"menu\" mat-raised-button color=\"accent\">{{'export' | translate}}</button>\n      <mat-menu #menu=\"matMenu\">\n        <button mat-menu-item (click)=\"download('pdf')\">PDF</button>\n        <button mat-menu-item (click)=\"download('csv')\">CSV</button>\n      </mat-menu>\n    </div>\n  </div>\n\n  <table mat-table [dataSource]=\"dataSource\" matSort multiTemplateDataRows class=\"mat-elevation-z8\">\n    <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of columnsToDisplay\">\n      <th mat-header-cell *matHeaderCellDef mat-sort-header\n        [ngClass]=\"{'hide-arrow': column === 'sourceLogo' || column === 'dealershipLogo'}\"> {{columnsName[column]}}\n      </th>\n      <td mat-cell *matCellDef=\"let element\">\n        <div *ngIf=\"column === 'sourceLogo' || column === 'dealershipLogo'\" class=\"table-logo-wrap\">\n          <img *ngIf=\"column === 'dealershipLogo'\" width=\"65px\" style=\"min-width: 65px\"\n            [src]=\"'data:image/png;base64,' + element[column]\" alt=\"\">\n          <img *ngIf=\"column === 'sourceLogo'\" width=\"45px\" style=\"min-width: 45px\"\n            [src]=\"'data:image/png;base64,' + element[column]\" alt=\"\">\n        </div>\n        <span *ngIf=\"column !== 'sourceLogo' && column !== 'dealershipLogo'\">{{element[column]}}</span>\n      </td>\n      <td mat-footer-cell *matFooterCellDef=\"let element\">\n        <b>\n          <span *ngIf=\"column === 'sourceLogo' && column !== 'dealershipLogo'\">Total</span>\n          <span\n            *ngIf=\"column !== 'dealershipLogo' && column !== 'sourceLogo'\">{{getTotalValue(mockedData, column)}}</span>\n        </b>\n      </td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay; sticky: true\"></tr>\n    <tr mat-row *matRowDef=\"let element; columns: columnsToDisplay;\" class=\"example-element-row\"></tr>\n    <tr mat-footer-row *matFooterRowDef=\"columnsToDisplay; sticky: true\"></tr>\n  </table>\n  <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n</div>\n\n<div class=\"handle\" (click)=\"openSettings()\">\n  <button mat-fab color=\"primary\">\n    <mat-icon class=\"spin text-white\">settings</mat-icon>\n  </button>\n</div>"
 
 /***/ }),
 
@@ -45831,7 +43854,7 @@ module.exports = "<div class=\"content-table-main\">\n  <div>\n    <mat-card sty
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content-table-main\">\n  <div>\n    <mat-card style=\"margin: 0; margin-bottom: 10px;\">\n      <table class=\"clear-table stats\">\n        <tr>\n          <td>\n            <b>{{'Campaign' | translate}}</b>: {{campaignStats?.campaignName}}\n          </td>\n          <td>\n            <b>{{'Company' | translate}}</b>: {{campaignStats?.companyName}}\n          </td>\n          <td>\n            <b>{{'Brand' | translate}}</b>: {{campaignStats?.brandName}}\n          </td>\n          <td>\n            <b>{{'Product' | translate}}</b>: {{campaignStats?.productName}}\n          </td>\n        </tr>\n      </table>\n    </mat-card>\n  </div>\n  <div fxLayout=\"row\" fxLayoutAlign=\"end none\" fxLayoutGap=\"10px\" class=\"example-button-row\">\n    <button mat-raised-button (click)=\"select.open()\">\n      {{'show/hide columns' | translate}}\n    </button>\n\n    <div class=\"select-hidden\">\n      <mat-form-field>\n        <mat-label>Toppings</mat-label>\n        <mat-select #select [(ngModel)]=\"selectedToppingList\" (selectionChange)=\"columnVisible()\"\n          [formControl]=\"toppings\" multiple>\n          <mat-option *ngFor=\"let topping of toppingList\" [value]=\"topping\">{{topping}}</mat-option>\n        </mat-select>\n      </mat-form-field>\n    </div>\n    <button [matMenuTriggerFor]=\"menu\" mat-raised-button color=\"accent\">{{'export' | translate}}</button>\n    <mat-menu #menu=\"matMenu\">\n      <button mat-menu-item (click)=\"download('pdf')\">PDF</button>\n      <button mat-menu-item (click)=\"download('csv')\">CSV</button>\n    </mat-menu>\n  </div>\n\n  <table mat-table [dataSource]=\"dataSource\" matSort multiTemplateDataRows class=\"mat-elevation-z8\">\n    <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of columnsToDisplay\">\n      <th mat-header-cell *matHeaderCellDef mat-sort-header\n        [ngClass]=\"{'hide-arrow': column === 'sourceLogo' || column === 'dealershipLogo'}\"\n        [ngStyle]=\"{'min-width': column === 'week' ? '200px' : 'unset'}\">\n        {{columnsName[column]}} </th>\n      <td mat-cell *matCellDef=\"let element\" [ngStyle]=\"{'min-width': column === 'week' ? '200px' : 'unset'}\">\n        {{element[column]}} </td>\n      <td mat-footer-cell *matFooterCellDef=\"let element\">\n        <b>\n          <span *ngIf=\"column === 'week'\">Total</span>\n          <span *ngIf=\"column !== 'week'\">{{getTotalValue(mockedData, column)}}</span>\n        </b>\n      </td>\n    </ng-container>\n\n    <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->\n    <ng-container matColumnDef=\"expandedDetail\">\n      <td mat-cell *matCellDef=\"let element\" style=\"padding: 0 !important;\" [attr.colspan]=\"columnsToDisplay.length\">\n        <div class=\"example-element-detail\" [ngClass]=\"{'expanded': element === expandedElement}\">\n          <ng-container matColumnDef=\"expandedDetail\">\n            <table class=\"sub-table\" mat-table [dataSource]=\"getMaTable(element.daysData)\" multiTemplateDataRows>\n\n              <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of columnsToDisplay\">\n                <th mat-header-cell *matHeaderCellDef [ngStyle]=\"{'min-width': column === 'week' ? '200px' : 'unset'}\">\n                  {{columnsName[column]}} </th>\n                <td mat-cell *matCellDef=\"let element\" class=\"subtable-cell\"\n                  [ngStyle]=\"{'min-width': column === 'week' ? '200px' : 'unset'}\"> {{element[column]}} </td>\n              </ng-container>\n\n              <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay\" style=\"height: 0; overflow: hidden; opacity: 0;\">\n              </tr>\n              <tr class=\"subtable-body-row\" mat-row *matRowDef=\"let element; columns: columnsToDisplay;\">\n              </tr>\n            </table>\n          </ng-container>\n        </div>\n      </td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay; sticky: true\"></tr>\n    <tr mat-row *matRowDef=\"let element; columns: columnsToDisplay;\" class=\"example-element-row\"\n      (click)=\"expandedElement = expandedElement === element ? null : element\">\n    </tr>\n    <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\n    <tr mat-footer-row *matFooterRowDef=\"columnsToDisplay; sticky: true\"></tr>\n  </table>\n  <mat-paginator [pageSizeOptions]=\"[2, 5, 10, 25, 100]\"></mat-paginator>\n</div>\n\n<div class=\"handle\" (click)=\"openSettings()\">\n  <button mat-fab color=\"primary\">\n    <mat-icon class=\"spin text-white\">settings</mat-icon>\n  </button>\n</div>"
+module.exports = "<div class=\"content-table-main\">\n  <div>\n    <mat-card style=\"margin: 0; margin-bottom: 10px;\">\n      <table class=\"clear-table stats\">\n        <tr>\n          <td style=\"padding-left: 5px !important;\">\n            <b>{{'Campaign' | translate}}</b>: {{campaignStats?.campaignName}}\n          </td>\n          <td>\n            <b>{{'Company' | translate}}</b>: {{campaignStats?.companyName}}\n          </td>\n          <td>\n            <b>{{'Brand' | translate}}</b>: {{campaignStats?.brandName}}\n          </td>\n          <td>\n            <b>{{'Product' | translate}}</b>: {{campaignStats?.productName}}\n          </td>\n        </tr>\n      </table>\n    </mat-card>\n  </div>\n  <div fxLayout=\"row\" fxLayoutAlign=\"end none\" fxLayoutGap=\"10px\" class=\"example-button-row\">\n    <button mat-raised-button (click)=\"select.open()\">\n      {{'show/hide columns' | translate}}\n    </button>\n\n    <div class=\"select-hidden\">\n      <mat-form-field>\n        <mat-label>Toppings</mat-label>\n        <mat-select #select [(ngModel)]=\"selectedToppingList\" (selectionChange)=\"columnVisible()\"\n          [formControl]=\"toppings\" multiple>\n          <mat-option *ngFor=\"let topping of toppingList\" [value]=\"topping\">{{topping}}</mat-option>\n        </mat-select>\n      </mat-form-field>\n    </div>\n    <button [matMenuTriggerFor]=\"menu\" mat-raised-button color=\"accent\">{{'export' | translate}}</button>\n    <mat-menu #menu=\"matMenu\">\n      <button mat-menu-item (click)=\"download('pdf')\">PDF</button>\n      <button mat-menu-item (click)=\"download('csv')\">CSV</button>\n    </mat-menu>\n  </div>\n\n  <table mat-table [dataSource]=\"dataSource\" matSort multiTemplateDataRows class=\"mat-elevation-z8\">\n    <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of columnsToDisplay\">\n      <th mat-header-cell *matHeaderCellDef mat-sort-header\n        [ngClass]=\"{'hide-arrow': column === 'sourceLogo' || column === 'dealershipLogo'}\"\n        [ngStyle]=\"{'min-width': column === 'week' ? '220px' : 'unset', 'width': column === 'week' ? '220px' : 'unset'}\">\n        {{columnsName[column]}} </th>\n      <td mat-cell *matCellDef=\"let element\" [ngStyle]=\"{'min-width': column === 'week' ? '220px' : 'unset', 'width': column === 'week' ? '220px' : 'unset'}\">\n        {{element[column]}} </td>\n      <td mat-footer-cell *matFooterCellDef=\"let element\">\n        <b>\n          <span *ngIf=\"column === 'week'\">Total</span>\n          <span *ngIf=\"column !== 'week'\">{{getTotalValue(mockedData, column)}}</span>\n        </b>\n      </td>\n    </ng-container>\n\n    <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->\n    <ng-container matColumnDef=\"expandedDetail\">\n      <td mat-cell *matCellDef=\"let element\" style=\"padding: 0 !important;\" [attr.colspan]=\"columnsToDisplay.length\">\n        <div class=\"example-element-detail\" [ngClass]=\"{'expanded': element === expandedElement}\">\n          <ng-container matColumnDef=\"expandedDetail\">\n            <table class=\"sub-table\" mat-table [dataSource]=\"getMaTable(element.daysData)\" multiTemplateDataRows>\n\n              <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of columnsToDisplay\">\n                <th mat-header-cell *matHeaderCellDef [ngStyle]=\"{'min-width': column === 'week' ? '220px' : 'unset', 'width': column === 'week' ? '220px' : 'unset'}\">\n                  {{columnsName[column]}} </th>\n                <td mat-cell *matCellDef=\"let element\" class=\"subtable-cell\"\n                  [ngStyle]=\"{'min-width': column === 'week' ? '220px' : 'unset', 'width': column === 'week' ? '220px' : 'unset'}\"> {{element[column]}} </td>\n              </ng-container>\n\n              <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay\" style=\"height: 0; overflow: hidden; opacity: 0;\">\n              </tr>\n              <tr class=\"subtable-body-row\" mat-row *matRowDef=\"let element; columns: columnsToDisplay;\">\n              </tr>\n            </table>\n          </ng-container>\n        </div>\n      </td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay; sticky: true\"></tr>\n    <tr mat-row *matRowDef=\"let element; columns: columnsToDisplay;\" class=\"example-element-row\"\n      (click)=\"expandedElement = expandedElement === element ? null : element\">\n    </tr>\n    <tr mat-row *matRowDef=\"let row; columns: ['expandedDetail']\" class=\"example-detail-row\"></tr>\n    <tr mat-footer-row *matFooterRowDef=\"columnsToDisplay; sticky: true\"></tr>\n  </table>\n  <mat-paginator [pageSizeOptions]=\"[2, 5, 10, 25, 100]\"></mat-paginator>\n</div>\n\n<div class=\"handle\" (click)=\"openSettings()\">\n  <button mat-fab color=\"primary\">\n    <mat-icon class=\"spin text-white\">settings</mat-icon>\n  </button>\n</div>"
 
 /***/ }),
 
@@ -45842,7 +43865,7 @@ module.exports = "<div class=\"content-table-main\">\n  <div>\n    <mat-card sty
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content-table-main\">\n  <div>\n    <mat-card style=\"margin: 0; margin-bottom: 10px;\">\n      <table class=\"clear-table stats\">\n        <tr>\n          <td>\n            <b>{{'Campaign' | translate}}</b>: {{campaignStats?.campaignName}}\n          </td>\n          <td>\n            <b>{{'Company' | translate}}</b>: {{campaignStats?.companyName}}\n          </td>\n          <td>\n            <b>{{'Brand' | translate}}</b>: {{campaignStats?.brandName}}\n          </td>\n          <td>\n            <b>{{'Product' | translate}}</b>: {{campaignStats?.productName}}\n          </td>\n        </tr>\n      </table>\n    </mat-card>\n  </div>\n  <div fxLayout=\"row\" fxLayoutAlign=\"end none\" fxLayoutGap=\"10px\" class=\"example-button-row\">\n    <button mat-raised-button (click)=\"select.open()\">\n      {{'show/hide columns' | translate}}\n    </button>\n    <div class=\"select-hidden\">\n      <mat-form-field>\n        <mat-label>Toppings</mat-label>\n        <mat-select #select [(ngModel)]=\"selectedToppingList\" (selectionChange)=\"columnVisible()\"\n          [formControl]=\"toppings\" multiple>\n          <mat-option *ngFor=\"let topping of toppingList\" [value]=\"topping\">\n            <span *ngIf=\"topping  !== '' && topping  !== ' '\">\n              {{topping}}\n            </span>\n            <span *ngIf=\"topping  === ' '\">\n              Brad\n            </span>\n            <span *ngIf=\"topping  === ''\">\n              Channel logo\n            </span>\n          </mat-option>\n        </mat-select>\n      </mat-form-field>\n    </div>\n    <button [matMenuTriggerFor]=\"menu\" mat-raised-button color=\"accent\">{{'export' | translate}}</button>\n    <mat-menu #menu=\"matMenu\">\n      <button mat-menu-item (click)=\"download('pdf')\">PDF</button>\n      <button mat-menu-item (click)=\"download('csv')\">CSV</button>\n    </mat-menu>\n  </div>\n  <table mat-table [dataSource]=\"dataSource\" matSort class=\"mat-elevation-z8\">\n    <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of columnsToDisplay\">\n      <th mat-header-cell *matHeaderCellDef mat-sort-header\n        [ngClass]=\"{'hide-arrow': column === 'sourceLogo' || column === 'dealershipLogo'}\"> {{columnsName[column]}}\n      </th>\n      <td mat-cell *matCellDef=\"let element\">\n        <div *ngIf=\"column === 'sourceLogo' || column === 'dealershipLogo'\" class=\"table-logo-wrap\">\n          <img *ngIf=\"column === 'sourceLogo'\" width=\"45px\" style=\"min-width: 45px\"\n            [src]=\"'data:image/png;base64,' + element[column]\" alt=\"\">\n          <img *ngIf=\"column === 'dealershipLogo'\" width=\"65px\" style=\"min-width: 65px\"\n            [src]=\"'data:image/png;base64,' + element[column]\" alt=\"\">\n        </div>\n        <span\n          *ngIf=\"column !== 'dealershipLogo' && column !== 'audio' && column !== 'sourceLogo'\">{{element[column]}}</span>\n        <span *ngIf=\"column === 'audio'\">\n          <button [matMenuTriggerFor]=\"menu\" mat-icon-button (click)=\"$event.stopPropagation();\">\n            <mat-icon>play_circle_outline</mat-icon>\n          </button>\n          <mat-menu #menu=\"matMenu\">\n            <button (click)=\"openDialog(element[column], element)\" mat-menu-item>\n              <span>Buffer: None</span>\n            </button>\n            <button (click)=\"openDialog(element[column], element)\" mat-menu-item>\n              <span>Buffer: 5+5 seconds</span>\n            </button>\n            <button (click)=\"openDialog(element[column], element)\" mat-menu-item>\n              <span>Buffer: 10+10 seconds</span>\n            </button>\n            <button (click)=\"openDialog(element[column], element)\" mat-menu-item>\n              <span>Buffer: Play Preroll Buffer</span>\n            </button>\n            <button (click)=\"openDialog(element[column], element)\" mat-menu-item>\n              <mat-icon>cloud_download</mat-icon>\n              <span>Download Clip</span>\n            </button>\n          </mat-menu>\n        </span>\n      </td>\n      <td mat-footer-cell *matFooterCellDef=\"let element\">\n        <b>\n          <span *ngIf=\"column === 'sourceLogo'\">Total</span>\n          <span\n            *ngIf=\"column !== 'dealershipLogo' && column !== 'sourceLogo'\">{{getTotalValue(mockedData, column)}}</span>\n        </b>\n      </td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay; sticky: true\"></tr>\n    <tr mat-row *matRowDef=\"let element; columns: columnsToDisplay;\" class=\"example-element-row\"></tr>\n    <tr mat-footer-row *matFooterRowDef=\"columnsToDisplay; sticky: true\"></tr>\n  </table>\n  <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n</div>\n\n<div class=\"handle\" (click)=\"openSettings()\">\n  <button mat-fab color=\"primary\">\n    <mat-icon class=\"spin text-white\">settings</mat-icon>\n  </button>\n</div>"
+module.exports = "<div class=\"content-table-main\">\n  <div>\n    <mat-card style=\"margin: 0; margin-bottom: 10px;\">\n      <table class=\"clear-table stats\">\n        <tr>\n          <td style=\"padding-left: 5px !important;\">\n            <b>{{'Campaign' | translate}}</b>: {{campaignStats?.campaignName}}\n          </td>\n          <td>\n            <b>{{'Company' | translate}}</b>: {{campaignStats?.companyName}}\n          </td>\n          <td>\n            <b>{{'Brand' | translate}}</b>: {{campaignStats?.brandName}}\n          </td>\n          <td>\n            <b>{{'Product' | translate}}</b>: {{campaignStats?.productName}}\n          </td>\n        </tr>\n      </table>\n    </mat-card>\n  </div>\n  <div fxLayout=\"row\" fxLayoutAlign=\"end none\" fxLayoutGap=\"10px\" class=\"example-button-row\">\n    <button mat-raised-button (click)=\"select.open()\">\n      {{'show/hide columns' | translate}}\n    </button>\n    <div class=\"select-hidden\">\n      <mat-form-field>\n        <mat-label>Toppings</mat-label>\n        <mat-select #select [(ngModel)]=\"selectedToppingList\" (selectionChange)=\"columnVisible()\"\n          [formControl]=\"toppings\" multiple>\n          <mat-option *ngFor=\"let topping of toppingList\" [value]=\"topping\">\n            <span *ngIf=\"topping  !== '' && topping  !== ' '\">\n              {{topping}}\n            </span>\n            <span *ngIf=\"topping  === ' '\">\n              Brad\n            </span>\n            <span *ngIf=\"topping  === ''\">\n              Channel logo\n            </span>\n          </mat-option>\n        </mat-select>\n      </mat-form-field>\n    </div>\n    <button [matMenuTriggerFor]=\"menu\" mat-raised-button color=\"accent\">{{'export' | translate}}</button>\n    <mat-menu #menu=\"matMenu\">\n      <button mat-menu-item (click)=\"download('pdf')\">PDF</button>\n      <button mat-menu-item (click)=\"download('csv')\">CSV</button>\n    </mat-menu>\n  </div>\n  <table mat-table [dataSource]=\"dataSource\" matSort class=\"mat-elevation-z8\">\n    <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of columnsToDisplay\">\n      <th mat-header-cell *matHeaderCellDef mat-sort-header\n        [ngClass]=\"{'hide-arrow': column === 'sourceLogo' || column === 'dealershipLogo'}\"> {{columnsName[column]}}\n      </th>\n      <td mat-cell *matCellDef=\"let element\">\n        <div *ngIf=\"column === 'sourceLogo' || column === 'dealershipLogo'\" class=\"table-logo-wrap\">\n          <img *ngIf=\"column === 'sourceLogo'\" width=\"45px\" style=\"min-width: 45px\"\n            [src]=\"'data:image/png;base64,' + element[column]\" alt=\"\">\n          <img *ngIf=\"column === 'dealershipLogo'\" width=\"65px\" style=\"min-width: 65px\"\n            [src]=\"'data:image/png;base64,' + element[column]\" alt=\"\">\n        </div>\n        <span\n          *ngIf=\"column !== 'dealershipLogo' && column !== 'audio' && column !== 'sourceLogo'\">{{element[column]}}</span>\n        <span *ngIf=\"column === 'audio'\">\n          <button [matMenuTriggerFor]=\"menu\" mat-icon-button (click)=\"$event.stopPropagation();\">\n            <mat-icon>play_circle_outline</mat-icon>\n          </button>\n          <mat-menu #menu=\"matMenu\">\n            <button (click)=\"openDialog(element[column], element)\" mat-menu-item>\n              <span>Buffer: None</span>\n            </button>\n            <button (click)=\"openDialog(element[column], element)\" mat-menu-item>\n              <span>Buffer: 5+5 seconds</span>\n            </button>\n            <button (click)=\"openDialog(element[column], element)\" mat-menu-item>\n              <span>Buffer: 10+10 seconds</span>\n            </button>\n            <button (click)=\"openDialog(element[column], element)\" mat-menu-item>\n              <span>Buffer: Play Preroll Buffer</span>\n            </button>\n            <button (click)=\"openDialog(element[column], element)\" mat-menu-item>\n              <mat-icon>cloud_download</mat-icon>\n              <span>Download Clip</span>\n            </button>\n          </mat-menu>\n        </span>\n      </td>\n      <td mat-footer-cell *matFooterCellDef=\"let element\">\n        <b>\n          <span *ngIf=\"column === 'sourceLogo'\">Total</span>\n          <span\n            *ngIf=\"column !== 'dealershipLogo' && column !== 'sourceLogo'\">{{getTotalValue(mockedData, column)}}</span>\n        </b>\n      </td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay; sticky: true\"></tr>\n    <tr mat-row *matRowDef=\"let element; columns: columnsToDisplay;\" class=\"example-element-row\"></tr>\n    <tr mat-footer-row *matFooterRowDef=\"columnsToDisplay; sticky: true\"></tr>\n  </table>\n  <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n</div>\n\n<div class=\"handle\" (click)=\"openSettings()\">\n  <button mat-fab color=\"primary\">\n    <mat-icon class=\"spin text-white\">settings</mat-icon>\n  </button>\n</div>"
 
 /***/ }),
 
@@ -45853,7 +43876,7 @@ module.exports = "<div class=\"content-table-main\">\n  <div>\n    <mat-card sty
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content-table-main\">\n  <div>\n    <mat-card style=\"margin: 0; margin-bottom: 10px;\">\n      <table class=\"clear-table stats\">\n        <tr>\n          <td>\n            <b>{{'Campaign' | translate}}</b>: {{campaignStats?.campaignName}}\n          </td>\n          <td>\n            <b>{{'Company' | translate}}</b>: {{campaignStats?.companyName}}\n          </td>\n          <td>\n            <b>{{'Brand' | translate}}</b>: {{campaignStats?.brandName}}\n          </td>\n          <td>\n            <b>{{'Product' | translate}}</b>: {{campaignStats?.productName}}\n          </td>\n        </tr>\n      </table>\n    </mat-card>\n  </div>\n  <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" fxLayoutGap=\"10px\">\n    <mat-form-field>\n      <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n    </mat-form-field>\n    <div fxLayout=\"row\" fxLayoutAlign=\"end none\" fxLayoutGap=\"10px\">\n      <button mat-raised-button (click)=\"select.open()\">\n        {{'show/hide columns' | translate}}\n      </button>\n      <div class=\"select-hidden\">\n        <mat-form-field>\n          <mat-label>Toppings</mat-label>\n          <mat-select #select [(ngModel)]=\"selectedToppingList\" (selectionChange)=\"columnVisible()\"\n            [formControl]=\"toppings\" multiple>\n            <mat-option *ngFor=\"let topping of toppingList\" [value]=\"topping\">\n              <span *ngIf=\"topping  !== ''\">\n                {{topping}}\n              </span>\n              <span *ngIf=\"topping  === ''\">\n                Icon\n              </span>\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n      <button [matMenuTriggerFor]=\"menu\" mat-raised-button color=\"accent\">{{'export' | translate}}</button>\n      <mat-menu #menu=\"matMenu\">\n        <button mat-menu-item (click)=\"download('pdf')\">PDF</button>\n        <button mat-menu-item (click)=\"download('csv')\">CSV</button>\n      </mat-menu>\n    </div>\n  </div>\n\n  <table mat-table [dataSource]=\"dataSource\" matSort multiTemplateDataRows class=\"mat-elevation-z8\">\n    <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of columnsToDisplay\">\n      <th mat-header-cell *matHeaderCellDef mat-sort-header\n        [ngClass]=\"{'hide-arrow': column === 'sourceLogo' || column === 'dealershipLogo'}\"> {{columnsName[column]}}\n      </th>\n      <td mat-cell *matCellDef=\"let element\">\n        <img *ngIf=\"column === 'dealershipLogo'\" width=\"65px\" style=\"min-width: 65px\"\n          [src]=\"'data:image/png;base64,' + element[column]\" alt=\"\">\n        <span *ngIf=\" column !=='dealershipLogo'\">{{element[column]}}</span>\n      </td>\n      <td mat-footer-cell *matFooterCellDef=\" let element\">\n        <b>\n          <span *ngIf=\"column === 'dealershipLogo'\">Total</span>\n          <span *ngIf=\"column !== 'dealershipLogo'\">{{getTotalValue(mockedData, column)}}</span>\n        </b>\n      </td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay; sticky: true\"></tr>\n    <tr mat-row *matRowDef=\"let element; columns: columnsToDisplay;\" class=\"example-element-row\"></tr>\n    <tr mat-footer-row *matFooterRowDef=\"columnsToDisplay; sticky: true\"></tr>\n  </table>\n  <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n</div>\n\n<div class=\"handle\" (click)=\"openSettings()\">\n  <button mat-fab color=\"primary\">\n    <mat-icon class=\"spin text-white\">settings</mat-icon>\n  </button>\n</div>"
+module.exports = "<div class=\"content-table-main\">\n  <div>\n    <mat-card style=\"margin: 0; margin-bottom: 10px;\">\n      <table class=\"clear-table stats\">\n        <tr>\n          <td style=\"padding-left: 5px !important;\">\n            <b>{{'Campaign' | translate}}</b>: {{campaignStats?.campaignName}}\n          </td>\n          <td>\n            <b>{{'Company' | translate}}</b>: {{campaignStats?.companyName}}\n          </td>\n          <td>\n            <b>{{'Brand' | translate}}</b>: {{campaignStats?.brandName}}\n          </td>\n          <td>\n            <b>{{'Product' | translate}}</b>: {{campaignStats?.productName}}\n          </td>\n        </tr>\n      </table>\n    </mat-card>\n  </div>\n  <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" fxLayoutGap=\"10px\">\n    <mat-form-field>\n      <input matInput (keyup)=\"applyFilter($event.target.value)\"  [placeholder]=\"'Filter' | translate\">\n    </mat-form-field>\n    <div fxLayout=\"row\" fxLayoutAlign=\"end none\" fxLayoutGap=\"10px\">\n      <button mat-raised-button (click)=\"select.open()\">\n        {{'show/hide columns' | translate}}\n      </button>\n      <div class=\"select-hidden\">\n        <mat-form-field>\n          <mat-label>Toppings</mat-label>\n          <mat-select #select [(ngModel)]=\"selectedToppingList\" (selectionChange)=\"columnVisible()\"\n            [formControl]=\"toppings\" multiple>\n            <mat-option *ngFor=\"let topping of toppingList\" [value]=\"topping\">\n              <span *ngIf=\"topping  !== ''\">\n                {{topping}}\n              </span>\n              <span *ngIf=\"topping  === ''\">\n                Icon\n              </span>\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n      <button [matMenuTriggerFor]=\"menu\" mat-raised-button color=\"accent\">{{'export' | translate}}</button>\n      <mat-menu #menu=\"matMenu\">\n        <button mat-menu-item (click)=\"download('pdf')\">PDF</button>\n        <button mat-menu-item (click)=\"download('csv')\">CSV</button>\n      </mat-menu>\n    </div>\n  </div>\n\n  <table mat-table [dataSource]=\"dataSource\" matSort multiTemplateDataRows class=\"mat-elevation-z8\">\n    <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of columnsToDisplay\">\n      <th mat-header-cell *matHeaderCellDef mat-sort-header\n        [ngClass]=\"{'hide-arrow': column === 'sourceLogo' || column === 'dealershipLogo'}\"> {{columnsName[column]}}\n      </th>\n      <td mat-cell *matCellDef=\"let element\">\n        <img *ngIf=\"column === 'dealershipLogo'\" width=\"65px\" style=\"min-width: 65px\"\n          [src]=\"'data:image/png;base64,' + element[column]\" alt=\"\">\n        <span *ngIf=\" column !=='dealershipLogo'\">{{element[column]}}</span>\n      </td>\n      <td mat-footer-cell *matFooterCellDef=\" let element\">\n        <b>\n          <span *ngIf=\"column === 'dealershipLogo'\">Total</span>\n          <span *ngIf=\"column !== 'dealershipLogo'\">{{getTotalValue(mockedData, column)}}</span>\n        </b>\n      </td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay; sticky: true\"></tr>\n    <tr mat-row *matRowDef=\"let element; columns: columnsToDisplay;\" class=\"example-element-row\"></tr>\n    <tr mat-footer-row *matFooterRowDef=\"columnsToDisplay; sticky: true\"></tr>\n  </table>\n  <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n</div>\n\n<div class=\"handle\" (click)=\"openSettings()\">\n  <button mat-fab color=\"primary\">\n    <mat-icon class=\"spin text-white\">settings</mat-icon>\n  </button>\n</div>"
 
 /***/ }),
 
@@ -45864,7 +43887,7 @@ module.exports = "<div class=\"content-table-main\">\n  <div>\n    <mat-card sty
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "<div class=\"content-table-main\">\r\n    <div>\r\n        <mat-card style=\"margin: 0; margin-bottom: 10px;\">\r\n            <table class=\"clear-table stats\">\r\n                <tr>\r\n                    <td style=\"padding-left: 5px !important;\">\r\n                        <b>{{'Campaign' | translate}}</b>: {{campaignStats?.campaignName}}\r\n                    </td>\r\n                    <td>\r\n                        <b>{{'Company' | translate}}</b>: {{campaignStats?.companyName}}\r\n                    </td>\r\n                    <td>\r\n                        <b>{{'Brand' | translate}}</b>: {{campaignStats?.brandName}}\r\n                    </td>\r\n                    <td>\r\n                        <b>{{'Product' | translate}}</b>: {{campaignStats?.productName}}\r\n                    </td>\r\n                </tr>\r\n            </table>\r\n        </mat-card>\r\n    </div>\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"end none\" fxLayoutGap=\"10px\" class=\"example-button-row\">\r\n        <button mat-raised-button (click)=\"select.open()\">\r\n            {{'show/hide columns' | translate}}\r\n        </button>\r\n        <div class=\"select-hidden\">\r\n            <mat-form-field>\r\n                <mat-label>Toppings</mat-label>\r\n                <mat-select #select [(ngModel)]=\"selectedToppingList\" (selectionChange)=\"columnVisible()\"\r\n                    [formControl]=\"toppings\" multiple>\r\n                    <mat-option *ngFor=\"let topping of toppingList\" [value]=\"topping\">\r\n                        <span *ngIf=\"topping  !== '' && topping  !== ' '\">\r\n                            {{topping}}\r\n                        </span>\r\n                        <span *ngIf=\"topping  === ' '\">\r\n                            Brad\r\n                        </span>\r\n                        <span *ngIf=\"topping  === ''\">\r\n                            Channel logo\r\n                        </span>\r\n                    </mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n        </div>\r\n        <button [matMenuTriggerFor]=\"menu\" mat-raised-button color=\"accent\">{{'export' | translate}}</button>\r\n        <mat-menu #menu=\"matMenu\">\r\n            <button mat-menu-item (click)=\"download('pdf')\">PDF</button>\r\n            <button mat-menu-item (click)=\"download('csv')\">CSV</button>\r\n        </mat-menu>\r\n    </div>\r\n    <table mat-table [dataSource]=\"dataSource\" matSort class=\"mat-elevation-z8\">\r\n        <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of columnsToDisplay\">\r\n            <th mat-header-cell *matHeaderCellDef mat-sort-header\r\n                [ngClass]=\"{'hide-arrow': column === 'sourceLogo' || column === 'dealershipLogo'}\">\r\n                {{columnsName[column]}}\r\n            </th>\r\n            <td mat-cell *matCellDef=\"let element\">\r\n                <div *ngIf=\"column === 'sourceLogo' || column === 'dealershipLogo'\" class=\"table-logo-wrap\">\r\n                    <img *ngIf=\"column === 'sourceLogo'\" width=\"45px\" style=\"min-width: 45px\"\r\n                        [src]=\"'data:image/png;base64,' + element[column]\" alt=\"\">\r\n                    <img *ngIf=\"column === 'dealershipLogo'\" width=\"65px\" style=\"min-width: 65px\"\r\n                        [src]=\"'data:image/png;base64,' + element[column]\" alt=\"\">\r\n                </div>\r\n                <span\r\n                    *ngIf=\"column !== 'dealershipLogo' && column !== 'audio' && column !== 'sourceLogo'\">{{element[column]}}</span>\r\n                <span *ngIf=\"column === 'audio'\">\r\n                    <button [matMenuTriggerFor]=\"menu\" mat-icon-button (click)=\"$event.stopPropagation();\">\r\n                        <mat-icon>play_circle_outline</mat-icon>\r\n                    </button>\r\n                    <mat-menu #menu=\"matMenu\">\r\n                        <button (click)=\"openDialog(element[column], element)\" mat-menu-item>\r\n                            <span>Buffer: None</span>\r\n                        </button>\r\n                        <button (click)=\"openDialog(element[column], element)\" mat-menu-item>\r\n                            <span>Buffer: 5+5 seconds</span>\r\n                        </button>\r\n                        <button (click)=\"openDialog(element[column], element)\" mat-menu-item>\r\n                            <span>Buffer: 10+10 seconds</span>\r\n                        </button>\r\n                        <button (click)=\"openDialog(element[column], element)\" mat-menu-item>\r\n                            <span>Buffer: Play Preroll Buffer</span>\r\n                        </button>\r\n                        <button (click)=\"openDialog(element[column], element)\" mat-menu-item>\r\n                            <mat-icon>cloud_download</mat-icon>\r\n                            <span>Download Clip</span>\r\n                        </button>\r\n                    </mat-menu>\r\n                </span>\r\n            </td>\r\n            <td mat-footer-cell *matFooterCellDef=\"let element\">\r\n                <b>\r\n                    <span *ngIf=\"column === 'sourceLogo'\">Total</span>\r\n                    <span\r\n                        *ngIf=\"column !== 'dealershipLogo' && column !== 'sourceLogo'\">{{getTotalValue(mockedData, column)}}</span>\r\n                </b>\r\n            </td>\r\n        </ng-container>\r\n\r\n        <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay; sticky: true\"></tr>\r\n        <tr mat-row *matRowDef=\"let element; columns: columnsToDisplay;\" class=\"example-element-row\"></tr>\r\n        <tr mat-footer-row *matFooterRowDef=\"columnsToDisplay; sticky: true\"></tr>\r\n    </table>\r\n    <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\r\n</div>\r\n\r\n<div class=\"handle\" (click)=\"openSettings()\">\r\n    <button mat-fab color=\"primary\">\r\n        <mat-icon class=\"spin text-white\">settings</mat-icon>\r\n    </button>\r\n</div>"
 
 /***/ }),
 
@@ -45875,7 +43898,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"content-table-main\">\n  <div fxLayout=\"row\" fxLayoutAlign=\"end none\" fxLayoutGap=\"20px\" class=\"example-button-row\">\n    <button mat-raised-button>\n      show/hide columns\n    </button>\n    <button mat-raised-button color=\"accent\">export</button>\n  </div>\n  <table class=\"station-table\">\n    <tr class=\"station-table-titles-wrapper\">\n      <th class=\"table-title empty\"></th>\n      <th class=\"table-title empty\"></th>\n      <th class=\"table-title first-play\">First-Play</th>\n      <th class=\"table-title last-play\">Last-Play</th>\n      <th class=\"table-title total-plays\">Total plays</th>\n      <th class=\"table-title day-time\">Day-time</th>\n      <th class=\"table-title prime-time\">Prime-time</th>\n      <th class=\"table-title night-time\">Night-Time</th>\n      <th class=\"table-title grps\">GRP's</th>\n      <th class=\"table-title reach\">Reach</th>\n      <th class=\"table-title reach-precent\">Reach %</th>\n      <th class=\"table-title avgfreq\">AvgFreq</th>\n      <th class=\"table-title before-last-col\">1+(000)</th>\n      <th class=\"table-title last-col\">1+(%)</th>\n    </tr>\n    <tr class=\"table-content-row\" *ngFor=\"let radio of mockedRadioList\">\n      <td class=\"table-cell\">\n        <div class=\"table-cell-data radio-image-wrapper\">\n          <ng-container *ngIf=\"radio?.name === 'publitalia'\">\n            <img src=\"assets/images/Logo_DeeJay.png\" alt=\"img\" class=\"radio-image small\" />\n          </ng-container>\n          <ng-container *ngIf=\"radio?.name === 'publicita'\">\n            <img src=\"assets/images/rtl-radio-logo.png\" alt=\"img\" class=\"radio-image small\" />\n          </ng-container>\n        </div>\n      </td>\n      <td class=\"table-cell\">\n        <div class=\"table-cell-data radio-image-wrapper\">\n          <ng-container *ngIf=\"radio?.name === 'publitalia'\">\n            <img src=\"assets/images/publitalia-radio-logo.png\" alt=\"img\" class=\"radio-image\" />\n          </ng-container>\n          <ng-container *ngIf=\"radio?.name === 'publicita'\">\n            <img src=\"assets/images/publitalia-radio-logo.png\" alt=\"img\" class=\"radio-image\" />\n          </ng-container>\n        </div>\n      </td>\n      <td class=\"table-cell first-play\">\n        <div class=\"table-cell-data\">\n          {{radio?.firstPlay}}\n        </div>\n      </td>\n      <td class=\"table-cell last-play\">\n        <div class=\"table-cell-data\">\n          {{radio?.lastPlay}}\n        </div>\n      </td>\n      <td class=\"table-cell total-plays\">\n        <div class=\"table-cell-data\">\n          {{radio?.totalPlays}}\n        </div>\n      </td>\n      <td class=\"table-cell day-time\">\n        <div class=\"table-cell-data\">\n          {{radio?.dayTime}}\n        </div>\n      </td>\n      <td class=\"table-cell prime-time\">\n        <div class=\"table-cell-data\">\n          {{radio?.primeTime}}\n        </div>\n      </td>\n      <td class=\"table-cell night-time\">\n        <div class=\"table-cell-data\">\n          {{radio?.nightTime}}\n        </div>\n      </td>\n      <td class=\"table-cell grps\">\n        <div class=\"table-cell-data\">\n          {{radio?.grps}}\n        </div>\n      </td>\n      <td class=\"table-cell reach\">\n        <div class=\"table-cell-data\">\n          {{radio?.reach}}\n        </div>\n      </td>\n      <td class=\"table-cell reach-precent\">\n        <div class=\"table-cell-data\">\n          {{radio?.reachPercent}}\n        </div>\n      </td>\n      <td class=\"table-cell avgfreq\">\n        <div class=\"table-cell-data\">\n          {{radio?.avgFreq}}\n        </div>\n      </td>\n      <td class=\"table-cell before-last-col\">\n        <div class=\"table-cell-data\">\n          {{radio?.beforeLast}}\n        </div>\n      </td>\n      <td class=\"table-cell last-col\">\n        <div class=\"table-cell-data\">\n          {{radio?.last}}\n        </div>\n      </td>\n\n    </tr>\n  </table>\n</div> -->\n<div class=\"content-table-main\">\n  <div>\n    <mat-card style=\"margin: 0; margin-bottom: 10px;\">\n      <table class=\"clear-table\">\n        <tr>\n          <td>\n            <b>{{'Campaign' | translate}}</b>:\n          </td>\n          <td>\n            <b>{{'Company' | translate}}</b>:\n          </td>\n          <td>\n            <b>{{'Brand' | translate}}</b>:\n          </td>\n          <td>\n            <b>{{'Product' | translate}}</b>:\n          </td>\n        </tr>\n      </table>\n    </mat-card>\n  </div>\n  <div fxLayout=\"row\" fxLayoutAlign=\"end none\" fxLayoutGap=\"10px\" class=\"example-button-row\">\n    <button mat-raised-button (click)=\"select.open()\">\n      {{'show/hide columns' | translate}}\n    </button>\n    <div class=\"select-hidden\">\n      <mat-form-field>\n        <mat-label>Toppings</mat-label>\n        <mat-select #select [(ngModel)]=\"selectedToppingList\" (selectionChange)=\"columnVisible()\"\n          [formControl]=\"toppings\" multiple>\n          <mat-option *ngFor=\"let topping of toppingList\" [value]=\"topping\">\n            <span *ngIf=\"topping  !== ''\">\n              {{topping}}\n            </span>\n            <span *ngIf=\"topping  === ''\">\n              Icon\n            </span>\n          </mat-option>\n        </mat-select>\n      </mat-form-field>\n    </div>\n    <button mat-raised-button color=\"accent\">{{'export' | translate}}</button>\n  </div>\n\n  <table mat-table [dataSource]=\"dataSource\" multiTemplateDataRows class=\"mat-elevation-z8\">\n    <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of columnsToDisplay\">\n      <th mat-header-cell *matHeaderCellDef> {{columnsName[column]}} </th>\n      <td mat-cell *matCellDef=\"let element\">\n        <img *ngIf=\"column === 'icon'\" width=\"65px\" style=\"min-width: 65px\" [src]=\"element[column]\" alt=\"\">\n        <span *ngIf=\"column !== 'icon'\">{{element[column]}}</span>\n      </td>\n      <td mat-footer-cell *matFooterCellDef=\"let element\">\n        <b>\n          <span *ngIf=\"column === 'icon'\">Total</span>\n          <span *ngIf=\"column !== 'icon'\">Value</span>\n        </b>\n      </td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay; sticky: true\"></tr>\n    <tr mat-row *matRowDef=\"let element; columns: columnsToDisplay;\" class=\"example-element-row\"></tr>\n    <tr mat-footer-row *matFooterRowDef=\"columnsToDisplay; sticky: true\"></tr>\n  </table>\n  <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n</div>\n\n<div class=\"handle\" (click)=\"openSettings()\">\n  <button mat-fab color=\"primary\">\n    <mat-icon class=\"spin text-white\">settings</mat-icon>\n  </button>\n</div>"
+module.exports = "<div class=\"content-table-main\">\n    <div>\n      <mat-card style=\"margin: 0; margin-bottom: 10px;\">\n        <table class=\"clear-table stats\">\n          <tr>\n            <td style=\"padding-left: 5px !important;\">\n              <b>{{'Campaign' | translate}}</b>: {{campaignStats?.campaignName}}\n            </td>\n            <td>\n              <b>{{'Company' | translate}}</b>: {{campaignStats?.companyName}}\n            </td>\n            <td>\n              <b>{{'Brand' | translate}}</b>: {{campaignStats?.brandName}}\n            </td>\n            <td>\n              <b>{{'Product' | translate}}</b>: {{campaignStats?.productName}}\n            </td>\n          </tr>\n        </table>\n      </mat-card>\n    </div>\n    <div fxLayout=\"row\" fxLayoutAlign=\"end none\" fxLayoutGap=\"10px\" class=\"example-button-row\">\n      <button mat-raised-button (click)=\"select.open()\">\n        {{'show/hide columns' | translate}}\n      </button>\n      <div class=\"select-hidden\">\n        <mat-form-field>\n          <mat-label>Toppings</mat-label>\n          <mat-select #select [(ngModel)]=\"selectedToppingList\" (selectionChange)=\"columnVisible()\"\n            [formControl]=\"toppings\" multiple>\n            <mat-option *ngFor=\"let topping of toppingList\" [value]=\"topping\">\n              <span>\n                {{topping}}\n              </span>\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n      <button [matMenuTriggerFor]=\"menu\" mat-raised-button color=\"accent\">{{'export' | translate}}</button>\n      <mat-menu #menu=\"matMenu\">\n        <button mat-menu-item (click)=\"download('pdf')\">PDF</button>\n        <button mat-menu-item (click)=\"download('csv')\">CSV</button>\n      </mat-menu>\n    </div>\n    <table mat-table [dataSource]=\"dataSource\" matSort class=\"mat-elevation-z8\">\n      <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of columnsToDisplay\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{columnsName[column]}}\n        </th>\n        <td mat-cell *matCellDef=\"let element\">\n          <span>{{element[column]}}</span>\n        </td>\n        <td mat-footer-cell *matFooterCellDef=\"let element\">\n          <b>\n            <span *ngIf=\"column === 'Campaign'\">Total</span>\n            <span\n              *ngIf=\"column !== 'Campaign'\">{{getTotalValue(mockedData, column)}}</span>\n          </b>\n        </td>\n      </ng-container>\n  \n      <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay; sticky: true\"></tr>\n      <tr mat-row *matRowDef=\"let element; columns: columnsToDisplay;\" class=\"example-element-row\"></tr>\n      <tr mat-footer-row *matFooterRowDef=\"columnsToDisplay; sticky: true\"></tr>\n    </table>\n    <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n  </div>\n  \n  <div class=\"handle\" (click)=\"openSettings()\">\n    <button mat-fab color=\"primary\">\n      <mat-icon class=\"spin text-white\">settings</mat-icon>\n    </button>\n  </div>"
 
 /***/ }),
 
@@ -45886,7 +43909,7 @@ module.exports = "<!-- <div class=\"content-table-main\">\n  <div fxLayout=\"row
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "<div class=\"content-table-main\">\r\n    <div>\r\n        <mat-card style=\"margin: 0; margin-bottom: 10px;\">\r\n            <table class=\"clear-table stats\">\r\n                <tr>\r\n                    <td style=\"padding-left: 5px !important;\">\r\n                        <b>{{'Campaign' | translate}}</b>: {{campaignStats?.campaignName}}\r\n                    </td>\r\n                    <td>\r\n                        <b>{{'Company' | translate}}</b>: {{campaignStats?.companyName}}\r\n                    </td>\r\n                    <td>\r\n                        <b>{{'Brand' | translate}}</b>: {{campaignStats?.brandName}}\r\n                    </td>\r\n                    <td>\r\n                        <b>{{'Product' | translate}}</b>: {{campaignStats?.productName}}\r\n                    </td>\r\n                </tr>\r\n            </table>\r\n        </mat-card>\r\n    </div>\r\n    <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" fxLayoutGap=\"10px\">\r\n        <mat-form-field>\r\n            <mat-label>{{'Analysis by' | translate}}</mat-label>\r\n            <mat-select [(ngModel)]=\"selectedFilter\">\r\n                <mat-option value=\"by date\">{{'Date' | translate}}</mat-option>\r\n                <mat-option value=\"day-to-day\">{{'Day-to-day' | translate}}</mat-option>\r\n                <mat-option value=\"by dealership\">{{'Dealership' | translate}}</mat-option>\r\n                <mat-option value=\"by channel\">{{'Channel' | translate}}</mat-option>\r\n            </mat-select>\r\n        </mat-form-field>\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"end none\" fxLayoutGap=\"10px\" class=\"example-button-row\">\r\n            <button mat-raised-button (click)=\"select.open()\">\r\n                {{'show/hide columns' | translate}}\r\n            </button>\r\n            <div class=\"select-hidden\">\r\n                <mat-form-field>\r\n                    <mat-label>Toppings</mat-label>\r\n                    <mat-select #select [(ngModel)]=\"selectedToppingList\" (selectionChange)=\"columnVisible()\"\r\n                        [formControl]=\"toppings\" multiple>\r\n                        <mat-option *ngFor=\"let topping of toppingList\" [value]=\"topping\">\r\n                            <span>\r\n                                {{topping}}\r\n                            </span>\r\n                        </mat-option>\r\n                    </mat-select>\r\n                </mat-form-field>\r\n            </div>\r\n            <button [matMenuTriggerFor]=\"menu\" mat-raised-button color=\"accent\">{{'export' | translate}}</button>\r\n            <mat-menu #menu=\"matMenu\">\r\n                <button mat-menu-item (click)=\"download('pdf')\">PDF</button>\r\n                <button mat-menu-item (click)=\"download('csv')\">CSV</button>\r\n            </mat-menu>\r\n        </div>\r\n    </div>\r\n\r\n    <table mat-table [dataSource]=\"dataSource\" matSort class=\"mat-elevation-z8\">\r\n        <ng-container matColumnDef=\"{{column}}\" *ngFor=\"let column of columnsToDisplay\">\r\n            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{columnsName[column]}}\r\n            </th>\r\n            <td mat-cell *matCellDef=\"let element\">\r\n                <span>{{element[column]}}</span>\r\n            </td>\r\n            <td mat-footer-cell *matFooterCellDef=\"let element\">\r\n                <b>\r\n                    <span *ngIf=\"column === 'Campaign'\">Total</span>\r\n                    <span *ngIf=\"column !== 'Campaign'\">{{getTotalValue(mockedData, column)}}</span>\r\n                </b>\r\n            </td>\r\n        </ng-container>\r\n\r\n        <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay; sticky: true\"></tr>\r\n        <tr mat-row *matRowDef=\"let element; columns: columnsToDisplay;\" class=\"example-element-row\"></tr>\r\n        <tr mat-footer-row *matFooterRowDef=\"columnsToDisplay; sticky: true\"></tr>\r\n    </table>\r\n    <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\r\n</div>\r\n\r\n<div class=\"handle\" (click)=\"openSettings()\">\r\n    <button mat-fab color=\"primary\">\r\n        <mat-icon class=\"spin text-white\">settings</mat-icon>\r\n    </button>\r\n</div>"
 
 /***/ }),
 
@@ -55908,6 +53931,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/Rx */ "./node_modules/rxjs-compat/_esm2015/Rx.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/esm2015/ngx-translate-core.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_9__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -55926,6 +53951,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 let DashboardPageComponent = class DashboardPageComponent {
     constructor(dialog, campaignService, chRef, router, translate) {
         this.dialog = dialog;
@@ -55934,21 +53960,18 @@ let DashboardPageComponent = class DashboardPageComponent {
         this.router = router;
         this.translate = translate;
         this.mockedData = [];
-        this.columnsToDisplay = ['playButton', 'campaignName', 'brandName',
-            'spotVersionsCount', 'firstPlay',
-            'lastPlay', 'playsCount', 'channelsCount', 'tvPlaysCount', 'radioPlaysCount'
+        this.columnsToDisplay = ['playButton', 'campaignName', 'companyName',
+            'brandName', 'productName',
+            'spotVersionsCount', 'firstPlay'
         ];
         this.columnsName = {
             playButton: '',
             campaignName: 'Campaign',
+            companyName: 'Company',
             brandName: 'Brand',
-            spotVersionsCount: 'Versions',
-            firstPlay: 'First-Play',
-            lastPlay: 'Last-Play',
-            playsCount: 'Plays',
-            channelsCount: 'Channels',
-            tvPlaysCount: 'TV Plays',
-            radioPlaysCount: 'Radio Plays'
+            productName: 'Product',
+            spotVersionsCount: 'Spots',
+            firstPlay: 'Creation Date'
         };
         this.campaignService.getCampaignsList().subscribe(campaignsData => {
             console.log(campaignsData);
@@ -55960,6 +53983,7 @@ let DashboardPageComponent = class DashboardPageComponent {
                 t.forEach(element => {
                     console.log(element);
                     element['playButton'] = '';
+                    element['firstPlay'] = moment__WEBPACK_IMPORTED_MODULE_9__(element['firstPlay']).format('YYYY-MM-DD HH:mm');
                     this.mockedData.push(element);
                 });
                 this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](this.mockedData);
@@ -55988,28 +54012,22 @@ let DashboardPageComponent = class DashboardPageComponent {
             this.columnsName = {
                 playButton: '',
                 campaignName: res['Campaign'],
+                companyName: res['Company'],
                 brandName: res['Brand'],
-                spotVersionsCount: res['Versions'],
-                firstPlay: res['First-Play'],
-                lastPlay: res['Last-Play'],
-                playsCount: res['Plays'],
-                channelsCount: res['Channels'],
-                tvPlaysCount: res['TV Plays	'],
-                radioPlaysCount: res['Radio Plays']
+                productName: res['Product'],
+                spotVersionsCount: res['Spots'],
+                firstPlay: res['Creation Date']
             };
         });
         this.translate.onLangChange.subscribe(res => {
             this.columnsName = {
                 playButton: '',
                 campaignName: res.translations['Campaign'],
+                companyName: res.translations['Company'],
                 brandName: res.translations['Brand'],
-                spotVersionsCount: res.translations['Versions'],
-                firstPlay: res.translations['First-Play'],
-                lastPlay: res.translations['Last-Play'],
-                playsCount: res.translations['Plays'],
-                channelsCount: res.translations['Channels'],
-                tvPlaysCount: res.translations['TV Plays	'],
-                radioPlaysCount: res.translations['Radio Plays']
+                productName: res.translations['Product'],
+                spotVersionsCount: res.translations['Spots'],
+                firstPlay: res.translations['Creation Date']
             };
             // this.chRef.detectChanges();
         });
@@ -56341,13 +54359,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var app_shared_services_main_campaign_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/shared/services/main/campaign.service */ "./src/app/shared/services/main/campaign.service.ts");
 /* harmony import */ var app_shared_services_main_post_eval_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! app/shared/services/main/post-eval.service */ "./src/app/shared/services/main/post-eval.service.ts");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
-/* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/Rx */ "./node_modules/rxjs-compat/_esm2015/Rx.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var app_shared_services_main_audience_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! app/shared/services/main/audience.service */ "./src/app/shared/services/main/audience.service.ts");
-/* harmony import */ var app_shared_services_main_source_type_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! app/shared/services/main/source-type.service */ "./src/app/shared/services/main/source-type.service.ts");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var app_shared_services_main_audience_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! app/shared/services/main/audience.service */ "./src/app/shared/services/main/audience.service.ts");
+/* harmony import */ var app_shared_services_main_source_type_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! app/shared/services/main/source-type.service */ "./src/app/shared/services/main/source-type.service.ts");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/esm2015/ngx-translate-core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/Rx */ "./node_modules/rxjs-compat/_esm2015/Rx.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_12__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56369,8 +54388,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 let CampaignsSettingsComponent = class CampaignsSettingsComponent {
-    constructor(postEvalutionSettingsService, campaignService, postEvalService, chRef, location, router, audienceService, sourceTypeService) {
+    constructor(postEvalutionSettingsService, campaignService, postEvalService, chRef, location, router, audienceService, sourceTypeService, translate) {
         this.postEvalutionSettingsService = postEvalutionSettingsService;
         this.campaignService = campaignService;
         this.postEvalService = postEvalService;
@@ -56379,6 +54399,7 @@ let CampaignsSettingsComponent = class CampaignsSettingsComponent {
         this.router = router;
         this.audienceService = audienceService;
         this.sourceTypeService = sourceTypeService;
+        this.translate = translate;
         this.getSettings = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"];
         this.campaignSettings = {};
         this.selectedInterval = 'This month';
@@ -56435,19 +54456,21 @@ let CampaignsSettingsComponent = class CampaignsSettingsComponent {
             campaignName: 'Campaign name',
             companyName: 'Campany name',
             brandName: 'Company',
-            productName: 'Brand',
+            productName: 'Brand'
         };
     }
     ngOnInit() {
         console.log('start');
-        Object(rxjs__WEBPACK_IMPORTED_MODULE_6__["forkJoin"])([
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_10__["forkJoin"])([
             this.getAudienceTargetsList(),
             this.initSelectedCampaign(),
             this.getCampaignsListTable(),
             this.getSourceType(),
             this.initTimeInterval()
         ]).subscribe(t => {
-            this.changeSelectedTab();
+            setTimeout(() => {
+                this.changeSelectedTab();
+            }, 100);
             this.campaignSettings = {
                 campaignUuid: this.selectedCompaignId,
                 sourceTypeUuid: this.selectedChannel.sourceTypeUuid,
@@ -56469,11 +54492,11 @@ let CampaignsSettingsComponent = class CampaignsSettingsComponent {
             });
         });
     }
-    cerf() {
+    cangeInterval() {
         this.dateIntervals.forEach((element, index) => {
             if (!element.isFinished && element.value === 'Last flight') {
-                element.endUtc = moment__WEBPACK_IMPORTED_MODULE_11__(new Date).toISOString();
-                element.viewValue = 'From ' + moment__WEBPACK_IMPORTED_MODULE_11__(element.startUtc).format('YYYY-MM-DD HH:mm') + " to " + moment__WEBPACK_IMPORTED_MODULE_11__(new Date).format('YYYY-MM-DD HH:mm'),
+                element.endUtc = moment__WEBPACK_IMPORTED_MODULE_12__(new Date).toISOString();
+                element.viewValue = 'From ' + moment__WEBPACK_IMPORTED_MODULE_12__(element.startUtc).format('YYYY-MM-DD HH:mm') + " to " + moment__WEBPACK_IMPORTED_MODULE_12__(new Date).format('YYYY-MM-DD HH:mm'),
                     // this.dateIntervals[index].endUtc = moment(new Date).format('YYYY-MM-DD HH:mm:ss')
                     console.log(element.endUtc);
                 console.log(this.dateIntervals);
@@ -56487,28 +54510,28 @@ let CampaignsSettingsComponent = class CampaignsSettingsComponent {
             this.dateIntervals = [
                 {
                     value: 'This month',
-                    viewValue: 'This month',
+                    viewValue: this.intevalLables['This month'],
                     startUtc: '',
                     endUtc: '',
                     isFinished: false,
                 },
                 {
                     value: 'Last 3 months',
-                    viewValue: 'Last 3 months',
+                    viewValue: this.intevalLables['Last 3 months'],
                     startUtc: '',
                     endUtc: '',
                     isFinished: false,
                 },
                 {
                     value: 'Last 6 months',
-                    viewValue: 'Last 6 months',
+                    viewValue: this.intevalLables['Last 6 months'],
                     startUtc: '',
                     endUtc: '',
                     isFinished: false,
                 },
                 {
                     value: 'Last 12 months',
-                    viewValue: 'Last 12 months',
+                    viewValue: this.intevalLables['Last 12 months'],
                     startUtc: '',
                     endUtc: '',
                     isFinished: false,
@@ -56520,7 +54543,7 @@ let CampaignsSettingsComponent = class CampaignsSettingsComponent {
                     startUtc: element.startUtc,
                     endUtc: element.endUtc,
                     isFinished: element.isFinished,
-                    viewValue: 'From ' + moment__WEBPACK_IMPORTED_MODULE_11__(element.startUtc).format('YYYY-MM-DD HH:mm') + " to " + moment__WEBPACK_IMPORTED_MODULE_11__(element.endUtc).format('YYYY-MM-DD HH:mm'),
+                    viewValue: 'From ' + moment__WEBPACK_IMPORTED_MODULE_12__(element.startUtc).format('YYYY-MM-DD HH:mm') + " to " + moment__WEBPACK_IMPORTED_MODULE_12__(element.endUtc).format('YYYY-MM-DD HH:mm'),
                 };
                 this.dateIntervals.unshift(obj);
             });
@@ -56530,28 +54553,28 @@ let CampaignsSettingsComponent = class CampaignsSettingsComponent {
             this.dateIntervals = [
                 {
                     value: 'This month',
-                    viewValue: 'This month',
+                    viewValue: this.intevalLables['This month'],
                     startUtc: '',
                     endUtc: '',
                     isFinished: false,
                 },
                 {
                     value: 'Last 3 months',
-                    viewValue: 'Last 3 months',
+                    viewValue: this.intevalLables['Last 3 months'],
                     startUtc: '',
                     endUtc: '',
                     isFinished: false,
                 },
                 {
                     value: 'Last 6 months',
-                    viewValue: 'Last 6 months',
+                    viewValue: this.intevalLables['Last 6 months'],
                     startUtc: '',
                     endUtc: '',
                     isFinished: false,
                 },
                 {
                     value: 'Last 12 months',
-                    viewValue: 'Last 12 months',
+                    viewValue: this.intevalLables['Last 12 months'],
                     startUtc: '',
                     endUtc: '',
                     isFinished: false,
@@ -56580,7 +54603,7 @@ let CampaignsSettingsComponent = class CampaignsSettingsComponent {
                 });
             }
             else {
-                rxjs__WEBPACK_IMPORTED_MODULE_6__["Observable"].forkJoin([this.campaignService.getCampaignsList()]).subscribe(t => {
+                rxjs__WEBPACK_IMPORTED_MODULE_10__["Observable"].forkJoin([this.campaignService.getCampaignsList()]).subscribe(t => {
                     this.campaignService.getCompaignStatistics(t[0][0]['campaignUuid']).subscribe(res => {
                         this.selectedCampaign = res;
                         console.log(this.selectedCampaign);
@@ -56607,8 +54630,8 @@ let CampaignsSettingsComponent = class CampaignsSettingsComponent {
             let dateStart = new Date;
             let dateEnd = new Date;
             dateStart.setMonth(dateStart.getMonth() - 1);
-            this.startTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_11__(dateStart).toISOString();
-            this.endTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_11__(dateEnd).toISOString();
+            this.startTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_12__(dateStart).toISOString();
+            this.endTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_12__(dateEnd).toISOString();
             this.fullWeeksOnly = false;
             resolve('initTimeInterval');
         });
@@ -56623,26 +54646,26 @@ let CampaignsSettingsComponent = class CampaignsSettingsComponent {
         }
         else if (e.value === 'This month') {
             dateStart.setMonth(dateStart.getMonth() - 1);
-            this.startTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_11__(dateStart).toISOString();
-            this.endTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_11__(dateEnd).toISOString();
+            this.startTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_12__(dateStart).toISOString();
+            this.endTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_12__(dateEnd).toISOString();
             this.fullWeeksOnly = false;
         }
         else if (e.value === 'Last 3 months') {
             dateStart.setMonth(dateStart.getMonth() - 3);
-            this.startTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_11__(dateStart).toISOString();
-            this.endTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_11__(dateEnd).toISOString();
+            this.startTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_12__(dateStart).toISOString();
+            this.endTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_12__(dateEnd).toISOString();
             this.fullWeeksOnly = true;
         }
         else if (e.value === 'Last 6 months') {
             dateStart.setMonth(dateStart.getMonth() - 6);
-            this.startTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_11__(dateStart).toISOString();
-            this.endTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_11__(dateEnd).toISOString();
+            this.startTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_12__(dateStart).toISOString();
+            this.endTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_12__(dateEnd).toISOString();
             this.fullWeeksOnly = true;
         }
         else if (e.value === 'Last 12 months') {
             dateStart.setMonth(dateStart.getMonth() - 12);
-            this.startTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_11__(dateStart).toISOString();
-            this.endTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_11__(dateEnd).toISOString();
+            this.startTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_12__(dateStart).toISOString();
+            this.endTimestampUtc = moment__WEBPACK_IMPORTED_MODULE_12__(dateEnd).toISOString();
             this.fullWeeksOnly = true;
         }
         ;
@@ -56656,7 +54679,7 @@ let CampaignsSettingsComponent = class CampaignsSettingsComponent {
                 this.observableList = [];
                 this.getObservableList(this.campaignsList);
                 console.log(this.observableList);
-                rxjs__WEBPACK_IMPORTED_MODULE_6__["Observable"].forkJoin(this.observableList).subscribe(t => {
+                rxjs__WEBPACK_IMPORTED_MODULE_10__["Observable"].forkJoin(this.observableList).subscribe(t => {
                     this.mockedData = [];
                     t.forEach(element => {
                         this.mockedData.push(element);
@@ -56692,6 +54715,42 @@ let CampaignsSettingsComponent = class CampaignsSettingsComponent {
         return this.observableList;
     }
     ngAfterViewInit() {
+        this.translate.getTranslation(this.translate.currentLang).subscribe((res) => {
+            console.log(res);
+            this.columnsName = {
+                campaignName: res['Campaign name'],
+                companyName: res['Campany name'],
+                brandName: res['Company'],
+                productName: res['Brand']
+            };
+            this.intevalLables = {
+                "This month": res['This month'],
+                "Last 3 months": res['Last 3 months'],
+                "Last 6 months": res['Last 6 months'],
+                "Last 12 months": res['Last 12 months']
+            };
+            this.chRef.detectChanges();
+        });
+        this.translate.onLangChange.subscribe(res => {
+            console.log(res);
+            this.columnsName = {
+                campaignName: res.translations['Campaign name'],
+                companyName: res.translations['Campany name'],
+                brandName: res.translations['Company'],
+                productName: res.translations['Brand'],
+            };
+            this.intevalLables = {
+                "This month": res.translations['This month'],
+                "Last 3 months": res.translations['Last 3 months'],
+                "Last 6 months": res.translations['Last 6 months'],
+                "Last 12 months": res.translations['Last 12 months']
+            };
+            this.campaignService.getCompaignFlights(this.selectedCompaignId).subscribe(data => {
+                this.getDateIntervalsOptions(data);
+                this.chRef.detectChanges();
+            });
+            this.chRef.detectChanges();
+        });
     }
     selectCampaign(element) {
         this.selectedCampaign = element;
@@ -56765,9 +54824,10 @@ CampaignsSettingsComponent.ctorParameters = () => [
     { type: app_shared_services_main_post_eval_service__WEBPACK_IMPORTED_MODULE_4__["PostEvalService"] },
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"] },
     { type: _angular_common__WEBPACK_IMPORTED_MODULE_5__["Location"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"] },
-    { type: app_shared_services_main_audience_service__WEBPACK_IMPORTED_MODULE_9__["AudienceService"] },
-    { type: app_shared_services_main_source_type_service__WEBPACK_IMPORTED_MODULE_10__["SourceTypeService"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
+    { type: app_shared_services_main_audience_service__WEBPACK_IMPORTED_MODULE_7__["AudienceService"] },
+    { type: app_shared_services_main_source_type_service__WEBPACK_IMPORTED_MODULE_8__["SourceTypeService"] },
+    { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_9__["TranslateService"] }
 ];
 __decorate([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('compaignId'),
@@ -56796,9 +54856,10 @@ CampaignsSettingsComponent = __decorate([
         app_shared_services_main_post_eval_service__WEBPACK_IMPORTED_MODULE_4__["PostEvalService"],
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"],
         _angular_common__WEBPACK_IMPORTED_MODULE_5__["Location"],
-        _angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"],
-        app_shared_services_main_audience_service__WEBPACK_IMPORTED_MODULE_9__["AudienceService"],
-        app_shared_services_main_source_type_service__WEBPACK_IMPORTED_MODULE_10__["SourceTypeService"]])
+        _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"],
+        app_shared_services_main_audience_service__WEBPACK_IMPORTED_MODULE_7__["AudienceService"],
+        app_shared_services_main_source_type_service__WEBPACK_IMPORTED_MODULE_8__["SourceTypeService"],
+        _ngx_translate_core__WEBPACK_IMPORTED_MODULE_9__["TranslateService"]])
 ], CampaignsSettingsComponent);
 
 
@@ -57164,13 +55225,13 @@ __decorate([
     __metadata("design:type", _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatPaginator"])
 ], PostEvaluationTabChannelComponent.prototype, "paginator", void 0);
 __decorate([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('compaignSettings'),
-    __metadata("design:type", Object)
-], PostEvaluationTabChannelComponent.prototype, "compaignSettings", void 0);
-__decorate([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatSort"], { static: true }),
     __metadata("design:type", _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatSort"])
 ], PostEvaluationTabChannelComponent.prototype, "sort", void 0);
+__decorate([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('compaignSettings'),
+    __metadata("design:type", Object)
+], PostEvaluationTabChannelComponent.prototype, "compaignSettings", void 0);
 PostEvaluationTabChannelComponent = __decorate([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
         selector: 'app-post-evaluation-tab-channel',
@@ -57196,7 +55257,7 @@ PostEvaluationTabChannelComponent = __decorate([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "td,\nth {\n  padding: 5px !important; }\n  td:last-child,\n  th:last-child {\n    padding-right: 20px !important; }\n  td:first-child,\n  th:first-child {\n    padding-left: 20px !important; }\n  table[mat-table] td,\ntable[mat-table] th {\n  padding: 5px !important; }\n  table[mat-table] td:last-child,\n  table[mat-table] th:last-child {\n    padding-right: 20px !important; }\n  table[mat-table] td:first-child,\n  table[mat-table] th:first-child {\n    padding-left: 20px !important; }\n  table[mat-table] th {\n  white-space: nowrap; }\n  .content-table-main {\n  padding: 0 20px;\n  padding-top: 20px; }\n  table {\n  width: 100%; }\n  tr.example-detail-row {\n  height: 0; }\n  tr.example-element-row {\n  cursor: pointer; }\n  tr.example-element-row:not(.example-expanded-row):hover {\n  background: rgba(0, 0, 0, 0.1); }\n  tr.example-element-row:not(.example-expanded-row):active {\n  background: #efefef; }\n  .example-element-row td {\n  border-bottom-width: 0; }\n  .example-element-detail {\n  overflow: hidden;\n  padding-left: 0px;\n  max-height: 0;\n  transition: all 0.3s; }\n  .example-element-detail.expanded {\n    max-height: 10000px; }\n  .example-detail-row > td {\n  padding: 0 20px !important; }\n  .example-button-row {\n  margin-bottom: 20px; }\n  .handle {\n  position: fixed;\n  bottom: 30px;\n  right: 30px;\n  z-index: 111; }\n  .clear-table td {\n  width: calc(100% / 4); }\n  .table-wrap {\n  max-height: calc(100vh - 380px);\n  overflow: auto; }\n  .subtable-body-row {\n  background: #00000005; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlld3Mvb3RoZXJzL3Bvc3QtZXZhbHVhdGlvbi1wYWdlL3RhYnMtY29udGVudC9wb3N0LWV2YWx1YXRpb24tdGFiLWRhdGUvQzpcXFVzZXJzXFxVc2VyXFxEb2N1bWVudHNcXEdpdEh1YlxcU3BvdENoZWNrX1YzX0NsaWVudC9zcmNcXGFwcFxcdmlld3NcXG90aGVyc1xccG9zdC1ldmFsdWF0aW9uLXBhZ2VcXHRhYnMtY29udGVudFxccG9zdC1ldmFsdWF0aW9uLXRhYi1kYXRlXFxwb3N0LWV2YWx1YXRpb24tdGFiLWRhdGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0VBRUUsdUJBQXVCLEVBQUE7RUFGekI7O0lBS0ksOEJBQThCLEVBQUE7RUFMbEM7O0lBU0ksNkJBQTZCLEVBQUE7RUFJakM7O0VBSUksdUJBQXVCLEVBQUE7RUFKM0I7O0lBT00sOEJBQThCLEVBQUE7RUFQcEM7O0lBV00sNkJBQTZCLEVBQUE7RUFYbkM7RUFnQkksbUJBQW1CLEVBQUE7RUFJdkI7RUFDRSxlQUFlO0VBQ2YsaUJBQWlCLEVBQUE7RUFHbkI7RUFDRSxXQUFXLEVBQUE7RUFHYjtFQUNFLFNBQVMsRUFBQTtFQUdYO0VBQ0UsZUFBZSxFQUFBO0VBR2pCO0VBQ0UsOEJBQThCLEVBQUE7RUFHaEM7RUFDRSxtQkFBbUIsRUFBQTtFQUdyQjtFQUNFLHNCQUFzQixFQUFBO0VBR3hCO0VBQ0UsZ0JBQWdCO0VBQ2hCLGlCQUFpQjtFQUNqQixhQUFhO0VBQ2Isb0JBQW9CLEVBQUE7RUFKdEI7SUFPSSxtQkFBbUIsRUFBQTtFQUl2QjtFQUNFLDBCQUEwQixFQUFBO0VBRzVCO0VBQ0UsbUJBQW1CLEVBQUE7RUFHckI7RUFDRSxlQUFlO0VBQ2YsWUFBWTtFQUNaLFdBQVc7RUFDWCxZQUFZLEVBQUE7RUFHZDtFQUVJLHFCQUFxQixFQUFBO0VBSXpCO0VBQ0UsK0JBQStCO0VBQy9CLGNBQWMsRUFBQTtFQUdoQjtFQUNFLHFCQUFxQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvdmlld3Mvb3RoZXJzL3Bvc3QtZXZhbHVhdGlvbi1wYWdlL3RhYnMtY29udGVudC9wb3N0LWV2YWx1YXRpb24tdGFiLWRhdGUvcG9zdC1ldmFsdWF0aW9uLXRhYi1kYXRlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGQsXG50aCB7XG4gIHBhZGRpbmc6IDVweCAhaW1wb3J0YW50O1xuXG4gICY6bGFzdC1jaGlsZCB7XG4gICAgcGFkZGluZy1yaWdodDogMjBweCAhaW1wb3J0YW50O1xuICB9XG5cbiAgJjpmaXJzdC1jaGlsZCB7XG4gICAgcGFkZGluZy1sZWZ0OiAyMHB4ICFpbXBvcnRhbnQ7XG4gIH1cbn1cblxudGFibGVbbWF0LXRhYmxlXSB7XG5cbiAgdGQsXG4gIHRoIHtcbiAgICBwYWRkaW5nOiA1cHggIWltcG9ydGFudDtcblxuICAgICY6bGFzdC1jaGlsZCB7XG4gICAgICBwYWRkaW5nLXJpZ2h0OiAyMHB4ICFpbXBvcnRhbnQ7XG4gICAgfVxuXG4gICAgJjpmaXJzdC1jaGlsZCB7XG4gICAgICBwYWRkaW5nLWxlZnQ6IDIwcHggIWltcG9ydGFudDtcbiAgICB9XG4gIH1cblxuICB0aCB7XG4gICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcbiAgfVxufVxuXG4uY29udGVudC10YWJsZS1tYWluIHtcbiAgcGFkZGluZzogMCAyMHB4O1xuICBwYWRkaW5nLXRvcDogMjBweDtcbn1cblxudGFibGUge1xuICB3aWR0aDogMTAwJTtcbn1cblxudHIuZXhhbXBsZS1kZXRhaWwtcm93IHtcbiAgaGVpZ2h0OiAwO1xufVxuXG50ci5leGFtcGxlLWVsZW1lbnQtcm93IHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG50ci5leGFtcGxlLWVsZW1lbnQtcm93Om5vdCguZXhhbXBsZS1leHBhbmRlZC1yb3cpOmhvdmVyIHtcbiAgYmFja2dyb3VuZDogcmdiYSgwLCAwLCAwLCAwLjEpO1xufVxuXG50ci5leGFtcGxlLWVsZW1lbnQtcm93Om5vdCguZXhhbXBsZS1leHBhbmRlZC1yb3cpOmFjdGl2ZSB7XG4gIGJhY2tncm91bmQ6ICNlZmVmZWY7XG59XG5cbi5leGFtcGxlLWVsZW1lbnQtcm93IHRkIHtcbiAgYm9yZGVyLWJvdHRvbS13aWR0aDogMDtcbn1cblxuLmV4YW1wbGUtZWxlbWVudC1kZXRhaWwge1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBwYWRkaW5nLWxlZnQ6IDBweDtcbiAgbWF4LWhlaWdodDogMDtcbiAgdHJhbnNpdGlvbjogYWxsIDAuM3M7XG5cbiAgJi5leHBhbmRlZCB7XG4gICAgbWF4LWhlaWdodDogMTAwMDBweDtcbiAgfVxufVxuXG4uZXhhbXBsZS1kZXRhaWwtcm93PnRkIHtcbiAgcGFkZGluZzogMCAyMHB4ICFpbXBvcnRhbnQ7XG59XG5cbi5leGFtcGxlLWJ1dHRvbi1yb3cge1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xufVxuXG4uaGFuZGxlIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBib3R0b206IDMwcHg7XG4gIHJpZ2h0OiAzMHB4O1xuICB6LWluZGV4OiAxMTE7XG59XG5cbi5jbGVhci10YWJsZSB7XG4gIHRkIHtcbiAgICB3aWR0aDogY2FsYygxMDAlIC8gNCk7XG4gIH1cbn1cblxuLnRhYmxlLXdyYXAge1xuICBtYXgtaGVpZ2h0OiBjYWxjKDEwMHZoIC0gMzgwcHgpO1xuICBvdmVyZmxvdzogYXV0bztcbn1cblxuLnN1YnRhYmxlLWJvZHktcm93IHtcbiAgYmFja2dyb3VuZDogIzAwMDAwMDA1O1xufSJdfQ== */"
+module.exports = "td,\nth {\n  padding: 5px !important;\n  width: 100px !important; }\n  td:last-child,\n  th:last-child {\n    padding-right: 20px !important; }\n  td:first-child,\n  th:first-child {\n    padding-left: 20px !important; }\n  table[mat-table] td,\ntable[mat-table] th {\n  padding: 5px !important; }\n  table[mat-table] td:last-child,\n  table[mat-table] th:last-child {\n    padding-right: 20px !important; }\n  table[mat-table] td:first-child,\n  table[mat-table] th:first-child {\n    padding-left: 20px !important; }\n  table[mat-table] th {\n  white-space: nowrap; }\n  .content-table-main {\n  padding: 0 20px;\n  padding-top: 20px; }\n  table {\n  width: 100%; }\n  tr.example-detail-row {\n  height: 0; }\n  tr.example-element-row {\n  cursor: pointer; }\n  tr.example-element-row:not(.example-expanded-row):hover {\n  background: rgba(0, 0, 0, 0.1); }\n  tr.example-element-row:not(.example-expanded-row):active {\n  background: #efefef; }\n  .example-element-row td {\n  border-bottom-width: 0; }\n  .example-element-detail {\n  overflow: hidden;\n  padding-left: 0px;\n  max-height: 0;\n  transition: all 0.3s; }\n  .example-element-detail.expanded {\n    max-height: 10000px; }\n  .example-detail-row > td {\n  padding: 0 20px !important; }\n  .example-button-row {\n  margin-bottom: 20px; }\n  .handle {\n  position: fixed;\n  bottom: 30px;\n  right: 30px;\n  z-index: 111; }\n  .clear-table td {\n  width: calc(100% / 4); }\n  .table-wrap {\n  max-height: calc(100vh - 380px);\n  overflow: auto; }\n  .subtable-body-row {\n  background: #00000005; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlld3Mvb3RoZXJzL3Bvc3QtZXZhbHVhdGlvbi1wYWdlL3RhYnMtY29udGVudC9wb3N0LWV2YWx1YXRpb24tdGFiLWRhdGUvQzpcXFVzZXJzXFxVc2VyXFxEb2N1bWVudHNcXEdpdEh1YlxcU3BvdENoZWNrX1YzX0NsaWVudC9zcmNcXGFwcFxcdmlld3NcXG90aGVyc1xccG9zdC1ldmFsdWF0aW9uLXBhZ2VcXHRhYnMtY29udGVudFxccG9zdC1ldmFsdWF0aW9uLXRhYi1kYXRlXFxwb3N0LWV2YWx1YXRpb24tdGFiLWRhdGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0VBRUUsdUJBQXVCO0VBQ3ZCLHVCQUF1QixFQUFBO0VBSHpCOztJQU1JLDhCQUE4QixFQUFBO0VBTmxDOztJQVVJLDZCQUE2QixFQUFBO0VBSWpDOztFQUlJLHVCQUF1QixFQUFBO0VBSjNCOztJQU9NLDhCQUE4QixFQUFBO0VBUHBDOztJQVdNLDZCQUE2QixFQUFBO0VBWG5DO0VBZ0JJLG1CQUFtQixFQUFBO0VBSXZCO0VBQ0UsZUFBZTtFQUNmLGlCQUFpQixFQUFBO0VBR25CO0VBQ0UsV0FBVyxFQUFBO0VBR2I7RUFDRSxTQUFTLEVBQUE7RUFHWDtFQUNFLGVBQWUsRUFBQTtFQUdqQjtFQUNFLDhCQUE4QixFQUFBO0VBR2hDO0VBQ0UsbUJBQW1CLEVBQUE7RUFHckI7RUFDRSxzQkFBc0IsRUFBQTtFQUd4QjtFQUNFLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsYUFBYTtFQUNiLG9CQUFvQixFQUFBO0VBSnRCO0lBT0ksbUJBQW1CLEVBQUE7RUFJdkI7RUFDRSwwQkFBMEIsRUFBQTtFQUc1QjtFQUNFLG1CQUFtQixFQUFBO0VBR3JCO0VBQ0UsZUFBZTtFQUNmLFlBQVk7RUFDWixXQUFXO0VBQ1gsWUFBWSxFQUFBO0VBR2Q7RUFFSSxxQkFBcUIsRUFBQTtFQUl6QjtFQUNFLCtCQUErQjtFQUMvQixjQUFjLEVBQUE7RUFHaEI7RUFDRSxxQkFBcUIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL290aGVycy9wb3N0LWV2YWx1YXRpb24tcGFnZS90YWJzLWNvbnRlbnQvcG9zdC1ldmFsdWF0aW9uLXRhYi1kYXRlL3Bvc3QtZXZhbHVhdGlvbi10YWItZGF0ZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbInRkLFxudGgge1xuICBwYWRkaW5nOiA1cHggIWltcG9ydGFudDtcbiAgd2lkdGg6IDEwMHB4ICFpbXBvcnRhbnQ7XG5cbiAgJjpsYXN0LWNoaWxkIHtcbiAgICBwYWRkaW5nLXJpZ2h0OiAyMHB4ICFpbXBvcnRhbnQ7XG4gIH1cblxuICAmOmZpcnN0LWNoaWxkIHtcbiAgICBwYWRkaW5nLWxlZnQ6IDIwcHggIWltcG9ydGFudDtcbiAgfVxufVxuXG50YWJsZVttYXQtdGFibGVdIHtcblxuICB0ZCxcbiAgdGgge1xuICAgIHBhZGRpbmc6IDVweCAhaW1wb3J0YW50O1xuXG4gICAgJjpsYXN0LWNoaWxkIHtcbiAgICAgIHBhZGRpbmctcmlnaHQ6IDIwcHggIWltcG9ydGFudDtcbiAgICB9XG5cbiAgICAmOmZpcnN0LWNoaWxkIHtcbiAgICAgIHBhZGRpbmctbGVmdDogMjBweCAhaW1wb3J0YW50O1xuICAgIH1cbiAgfVxuXG4gIHRoIHtcbiAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICB9XG59XG5cbi5jb250ZW50LXRhYmxlLW1haW4ge1xuICBwYWRkaW5nOiAwIDIwcHg7XG4gIHBhZGRpbmctdG9wOiAyMHB4O1xufVxuXG50YWJsZSB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG50ci5leGFtcGxlLWRldGFpbC1yb3cge1xuICBoZWlnaHQ6IDA7XG59XG5cbnRyLmV4YW1wbGUtZWxlbWVudC1yb3cge1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5cbnRyLmV4YW1wbGUtZWxlbWVudC1yb3c6bm90KC5leGFtcGxlLWV4cGFuZGVkLXJvdyk6aG92ZXIge1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuMSk7XG59XG5cbnRyLmV4YW1wbGUtZWxlbWVudC1yb3c6bm90KC5leGFtcGxlLWV4cGFuZGVkLXJvdyk6YWN0aXZlIHtcbiAgYmFja2dyb3VuZDogI2VmZWZlZjtcbn1cblxuLmV4YW1wbGUtZWxlbWVudC1yb3cgdGQge1xuICBib3JkZXItYm90dG9tLXdpZHRoOiAwO1xufVxuXG4uZXhhbXBsZS1lbGVtZW50LWRldGFpbCB7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHBhZGRpbmctbGVmdDogMHB4O1xuICBtYXgtaGVpZ2h0OiAwO1xuICB0cmFuc2l0aW9uOiBhbGwgMC4zcztcblxuICAmLmV4cGFuZGVkIHtcbiAgICBtYXgtaGVpZ2h0OiAxMDAwMHB4O1xuICB9XG59XG5cbi5leGFtcGxlLWRldGFpbC1yb3c+dGQge1xuICBwYWRkaW5nOiAwIDIwcHggIWltcG9ydGFudDtcbn1cblxuLmV4YW1wbGUtYnV0dG9uLXJvdyB7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG59XG5cbi5oYW5kbGUge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGJvdHRvbTogMzBweDtcbiAgcmlnaHQ6IDMwcHg7XG4gIHotaW5kZXg6IDExMTtcbn1cblxuLmNsZWFyLXRhYmxlIHtcbiAgdGQge1xuICAgIHdpZHRoOiBjYWxjKDEwMCUgLyA0KTtcbiAgfVxufVxuXG4udGFibGUtd3JhcCB7XG4gIG1heC1oZWlnaHQ6IGNhbGMoMTAwdmggLSAzODBweCk7XG4gIG92ZXJmbG93OiBhdXRvO1xufVxuXG4uc3VidGFibGUtYm9keS1yb3cge1xuICBiYWNrZ3JvdW5kOiAjMDAwMDAwMDU7XG59Il19 */"
 
 /***/ }),
 
@@ -57222,8 +55283,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.min.js");
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(jspdf__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! jspdf-autotable */ "./node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.js");
-/* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(jspdf_autotable__WEBPACK_IMPORTED_MODULE_10__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57233,7 +55292,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -57529,8 +55587,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.min.js");
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(jspdf__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! jspdf-autotable */ "./node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.js");
-/* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(jspdf_autotable__WEBPACK_IMPORTED_MODULE_12__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57540,7 +55596,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -57847,8 +55902,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.min.js");
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(jspdf__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! jspdf-autotable */ "./node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.js");
-/* harmony import */ var jspdf_autotable__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(jspdf_autotable__WEBPACK_IMPORTED_MODULE_10__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57858,7 +55911,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -58108,7 +56160,7 @@ PostEvaluationTabDealershipComponent = __decorate([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "td {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.122);\n  padding: 10px 0 !important; }\n  td:first-child {\n    padding-left: 20px !important; }\n  td:last-child {\n    padding-right: 20px !important; }\n  th {\n  padding: 10px 0 !important; }\n  th:first-child {\n    padding-left: 20px !important; }\n  th:last-child {\n    padding-right: 20px !important; }\n  .station-table {\n  padding: 20px 0 !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlld3Mvb3RoZXJzL3Bvc3QtZXZhbHVhdGlvbi1wYWdlL3RhYnMtY29udGVudC9wb3N0LWV2YWx1YXRpb24tdGFiLXByZS1wb3N0LW1hdGNoaW5nL0M6XFxVc2Vyc1xcVXNlclxcRG9jdW1lbnRzXFxHaXRIdWJcXFNwb3RDaGVja19WM19DbGllbnQvc3JjXFxhcHBcXHZpZXdzXFxvdGhlcnNcXHBvc3QtZXZhbHVhdGlvbi1wYWdlXFx0YWJzLWNvbnRlbnRcXHBvc3QtZXZhbHVhdGlvbi10YWItcHJlLXBvc3QtbWF0Y2hpbmdcXHBvc3QtZXZhbHVhdGlvbi10YWItcHJlLXBvc3QtbWF0Y2hpbmcuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFDRSw2Q0FBK0M7RUFDL0MsMEJBQTBCLEVBQUE7RUFGNUI7SUFLSSw2QkFBNkIsRUFBQTtFQUxqQztJQVNJLDhCQUE4QixFQUFBO0VBSWxDO0VBQ0UsMEJBQTBCLEVBQUE7RUFENUI7SUFJSSw2QkFBNkIsRUFBQTtFQUpqQztJQVFJLDhCQUE4QixFQUFBO0VBSWxDO0VBQ0UsMEJBQTBCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC92aWV3cy9vdGhlcnMvcG9zdC1ldmFsdWF0aW9uLXBhZ2UvdGFicy1jb250ZW50L3Bvc3QtZXZhbHVhdGlvbi10YWItcHJlLXBvc3QtbWF0Y2hpbmcvcG9zdC1ldmFsdWF0aW9uLXRhYi1wcmUtcG9zdC1tYXRjaGluZy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxuXG50ZCB7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCBoc2xhKDAsIDAlLCAwJSwgMC4xMjIpO1xuICBwYWRkaW5nOiAxMHB4IDAgIWltcG9ydGFudDtcblxuICAmOmZpcnN0LWNoaWxkIHtcbiAgICBwYWRkaW5nLWxlZnQ6IDIwcHggIWltcG9ydGFudDtcbiAgfVxuXG4gICY6bGFzdC1jaGlsZCB7XG4gICAgcGFkZGluZy1yaWdodDogMjBweCAhaW1wb3J0YW50O1xuICB9XG59XG5cbnRoIHtcbiAgcGFkZGluZzogMTBweCAwICFpbXBvcnRhbnQ7XG5cbiAgJjpmaXJzdC1jaGlsZCB7XG4gICAgcGFkZGluZy1sZWZ0OiAyMHB4ICFpbXBvcnRhbnQ7XG4gIH1cblxuICAmOmxhc3QtY2hpbGQge1xuICAgIHBhZGRpbmctcmlnaHQ6IDIwcHggIWltcG9ydGFudDtcbiAgfVxufVxuXG4uc3RhdGlvbi10YWJsZSB7XG4gIHBhZGRpbmc6IDIwcHggMCAhaW1wb3J0YW50O1xufSJdfQ== */"
+module.exports = "td,\nth {\n  padding: 5px !important; }\n  td:last-child,\n  th:last-child {\n    padding-right: 20px !important; }\n  td:first-child,\n  th:first-child {\n    padding-left: 20px !important; }\n  .content-table-main {\n  padding: 0 20px;\n  padding-top: 20px; }\n  table {\n  width: 100%; }\n  tr.example-detail-row {\n  height: 0; }\n  .example-element-row td {\n  border-bottom-width: 0; }\n  .example-element-detail {\n  overflow: hidden;\n  padding-left: 40px; }\n  .example-detail-row > td {\n  padding: 0 20px !important; }\n  .example-button-row {\n  margin-bottom: 20px; }\n  .handle {\n  position: fixed;\n  bottom: 30px;\n  right: 30px;\n  z-index: 111; }\n  .clear-table td {\n  width: calc(100% / 4); }\n  .table-logo-wrap {\n  display: flex;\n  align-items: center;\n  width: 100%;\n  height: 100%; }\n  .table-wrap {\n  max-height: calc(100vh - 500px);\n  overflow: auto; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlld3Mvb3RoZXJzL3Bvc3QtZXZhbHVhdGlvbi1wYWdlL3RhYnMtY29udGVudC9wb3N0LWV2YWx1YXRpb24tdGFiLXByZS1wb3N0LW1hdGNoaW5nL0M6XFxVc2Vyc1xcVXNlclxcRG9jdW1lbnRzXFxHaXRIdWJcXFNwb3RDaGVja19WM19DbGllbnQvc3JjXFxhcHBcXHZpZXdzXFxvdGhlcnNcXHBvc3QtZXZhbHVhdGlvbi1wYWdlXFx0YWJzLWNvbnRlbnRcXHBvc3QtZXZhbHVhdGlvbi10YWItcHJlLXBvc3QtbWF0Y2hpbmdcXHBvc3QtZXZhbHVhdGlvbi10YWItcHJlLXBvc3QtbWF0Y2hpbmcuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0VBRUUsdUJBQXVCLEVBQUE7RUFGekI7O0lBS0ksOEJBQThCLEVBQUE7RUFMbEM7O0lBU0ksNkJBQTZCLEVBQUE7RUFJakM7RUFDRSxlQUFlO0VBQ2YsaUJBQWlCLEVBQUE7RUFHbkI7RUFDRSxXQUFXLEVBQUE7RUFHYjtFQUNFLFNBQVMsRUFBQTtFQUdYO0VBQ0Usc0JBQXNCLEVBQUE7RUFHeEI7RUFDRSxnQkFBZ0I7RUFDaEIsa0JBQWtCLEVBQUE7RUFHcEI7RUFDRSwwQkFBMEIsRUFBQTtFQUc1QjtFQUNFLG1CQUFtQixFQUFBO0VBR3JCO0VBQ0UsZUFBZTtFQUNmLFlBQVk7RUFDWixXQUFXO0VBQ1gsWUFBWSxFQUFBO0VBR2Q7RUFFSSxxQkFBcUIsRUFBQTtFQUl6QjtFQUNFLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsV0FBVztFQUNYLFlBQVksRUFBQTtFQUdkO0VBQ0UsK0JBQStCO0VBQy9CLGNBQWMsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL290aGVycy9wb3N0LWV2YWx1YXRpb24tcGFnZS90YWJzLWNvbnRlbnQvcG9zdC1ldmFsdWF0aW9uLXRhYi1wcmUtcG9zdC1tYXRjaGluZy9wb3N0LWV2YWx1YXRpb24tdGFiLXByZS1wb3N0LW1hdGNoaW5nLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGQsXG50aCB7XG4gIHBhZGRpbmc6IDVweCAhaW1wb3J0YW50O1xuXG4gICY6bGFzdC1jaGlsZCB7XG4gICAgcGFkZGluZy1yaWdodDogMjBweCAhaW1wb3J0YW50O1xuICB9XG5cbiAgJjpmaXJzdC1jaGlsZCB7XG4gICAgcGFkZGluZy1sZWZ0OiAyMHB4ICFpbXBvcnRhbnQ7XG4gIH1cbn1cblxuLmNvbnRlbnQtdGFibGUtbWFpbiB7XG4gIHBhZGRpbmc6IDAgMjBweDtcbiAgcGFkZGluZy10b3A6IDIwcHg7XG59XG5cbnRhYmxlIHtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbnRyLmV4YW1wbGUtZGV0YWlsLXJvdyB7XG4gIGhlaWdodDogMDtcbn1cblxuLmV4YW1wbGUtZWxlbWVudC1yb3cgdGQge1xuICBib3JkZXItYm90dG9tLXdpZHRoOiAwO1xufVxuXG4uZXhhbXBsZS1lbGVtZW50LWRldGFpbCB7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHBhZGRpbmctbGVmdDogNDBweDtcbn1cblxuLmV4YW1wbGUtZGV0YWlsLXJvdz50ZCB7XG4gIHBhZGRpbmc6IDAgMjBweCAhaW1wb3J0YW50O1xufVxuXG4uZXhhbXBsZS1idXR0b24tcm93IHtcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcbn1cblxuLmhhbmRsZSB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgYm90dG9tOiAzMHB4O1xuICByaWdodDogMzBweDtcbiAgei1pbmRleDogMTExO1xufVxuXG4uY2xlYXItdGFibGUge1xuICB0ZCB7XG4gICAgd2lkdGg6IGNhbGMoMTAwJSAvIDQpO1xuICB9XG59XG5cbi50YWJsZS1sb2dvLXdyYXAge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuXG4udGFibGUtd3JhcCB7XG4gIG1heC1oZWlnaHQ6IGNhbGMoMTAwdmggLSA1MDBweCk7XG4gIG92ZXJmbG93OiBhdXRvO1xufSJdfQ== */"
 
 /***/ }),
 
@@ -58123,6 +56175,19 @@ module.exports = "td {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.122);\n  padd
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostEvaluationTabPrePostMatchingComponent", function() { return PostEvaluationTabPrePostMatchingComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _angular_material_sort__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/sort */ "./node_modules/@angular/material/esm2015/sort.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var app_shared_services_post_evalution_settings_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! app/shared/services/post-evalution-settings.service */ "./src/app/shared/services/post-evalution-settings.service.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+/* harmony import */ var app_shared_components_modals_modal_video_modal_video_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! app/shared/components/modals/modal-video/modal-video.component */ "./src/app/shared/components/modals/modal-video/modal-video.component.ts");
+/* harmony import */ var app_shared_services_main_campaign_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! app/shared/services/main/campaign.service */ "./src/app/shared/services/main/campaign.service.ts");
+/* harmony import */ var app_shared_services_main_post_eval_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! app/shared/services/main/post-eval.service */ "./src/app/shared/services/main/post-eval.service.ts");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/esm2015/ngx-translate-core.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.min.js");
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(jspdf__WEBPACK_IMPORTED_MODULE_11__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58133,18 +56198,253 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
+
+
+
+
+
+
+
+
 let PostEvaluationTabPrePostMatchingComponent = class PostEvaluationTabPrePostMatchingComponent {
-    constructor() { }
+    constructor(campaignService, chRef, postEvalutionSettingsService, dialog, translate, postEvalService) {
+        this.campaignService = campaignService;
+        this.chRef = chRef;
+        this.postEvalutionSettingsService = postEvalutionSettingsService;
+        this.dialog = dialog;
+        this.translate = translate;
+        this.postEvalService = postEvalService;
+        this.toppings = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]();
+        this.toppingList = [];
+        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](this.mockedData);
+        this.columnsToDisplay = ['sourceLogo', 'dealershipLogo', 'audio',
+            'spotName', 'sheduledDateTime',
+            'detectedDateTime', 'timeDifference', 'notes'
+        ];
+        this.columnsName = {
+            sourceLogo: ' ',
+            dealershipLogo: '',
+            audio: 'Audio',
+            spotName: 'Spot name',
+            sheduledDateTime: 'Sheduled Date/Time',
+            detectedDateTime: 'Detected Date/Time',
+            timeDifference: 'Time Difference',
+            notes: 'Notes',
+        };
+    }
+    getData() {
+        this.postEvalService.getDayToDay(this.compaignSettings).subscribe(data => {
+            console.log(data, 'getDayToDay');
+            this.mockedData = [];
+            let arr = data;
+            arr.forEach(element => {
+                let obj = {
+                    sourceLogo: element.source.logo,
+                    dealershipLogo: element.dealership.logo,
+                    audio: 'assets/examples/audio/y2mate.com-gotye_somebody_that_i_used_to_know_feat_kimbra_official_music_video_8UVNT4wvIGY.mp3',
+                    spotName: element.amr,
+                    sheduledDateTime: moment__WEBPACK_IMPORTED_MODULE_10__(element.timestampUtc).format('DD/MM/YYYY HH:mm:ss'),
+                    detectedDateTime: moment__WEBPACK_IMPORTED_MODULE_10__(element.timestampUtc).format('DD/MM/YYYY HH:mm:ss'),
+                    timeDifference: moment__WEBPACK_IMPORTED_MODULE_10__(element.timestampUtc).format('HH:mm:ss'),
+                    notes: element.amr
+                };
+                this.mockedData.push(obj);
+            });
+            this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](this.mockedData);
+            this.dataSource.paginator = this.paginator;
+            this.dataSource.sort = this.sort;
+            console.log(this.mockedData, 'this.mockedData');
+        });
+        this.campaignService.getCompaignStatistics(this.compaignSettings.campaignUuid).subscribe(data => {
+            this.campaignStats = data;
+            this.chRef.detectChanges();
+        });
+    }
+    ngAfterViewInit() {
+        this.translate.getTranslation(this.translate.currentLang).subscribe((res) => {
+            this.columnsName = {
+                sourceLogo: ' ',
+                dealershipLogo: '',
+                audio: res['Audio'],
+                spotName: res['Spot name'],
+                sheduledDateTime: res['Sheduled Date/Time'],
+                detectedDateTime: res['Detected Date/Time'],
+                timeDifference: res['Time Difference'],
+                notes: res['Notes']
+            };
+            this.toppingList = [];
+            for (const key in this.columnsName) {
+                if (this.columnsName.hasOwnProperty(key)) {
+                    const element = this.columnsName[key];
+                    this.toppingList.push(element);
+                }
+            }
+            this.selectedToppingList = this.toppingList;
+        });
+        this.translate.onLangChange.subscribe(res => {
+            console.log(res);
+            this.columnsName = {
+                sourceLogo: ' ',
+                dealershipLogo: '',
+                audio: res.translations['Audio'],
+                spotName: res.translations['Spot name'],
+                sheduledDateTime: res.translations['Sheduled Date/Time'],
+                detectedDateTime: res.translations['Detected Date/Time'],
+                timeDifference: res.translations['Time Difference'],
+                notes: res.translations['Notes']
+            };
+            this.toppingList = [];
+            for (const key in this.columnsName) {
+                if (this.columnsName.hasOwnProperty(key)) {
+                    const element = this.columnsName[key];
+                    this.toppingList.push(element);
+                }
+            }
+            this.selectedToppingList = this.toppingList;
+            // this.chRef.detectChanges();
+        });
+        this.dataSource.paginator = this.paginator;
+    }
+    ngOnChanges(changes) {
+        if (this.compaignSettings) {
+            this.getData();
+            this.chRef.detectChanges();
+        }
+    }
     ngOnInit() {
     }
+    columnVisible() {
+        let index = 0;
+        let newColumnsToDisplay = [];
+        for (const key in this.columnsName) {
+            this.selectedToppingList.forEach(element => {
+                if (element === this.columnsName[key]) {
+                    newColumnsToDisplay.push(key);
+                }
+            });
+            index++;
+        }
+        this.columnsToDisplay = newColumnsToDisplay;
+    }
+    openSettings() {
+        this.postEvalutionSettingsService.open.emit(true);
+    }
+    download(type) {
+        let json = [];
+        this.mockedData.forEach(element => {
+            let row1 = Object.assign({}, element);
+            delete row1['daysData'];
+            delete row1['dealershipLogo'];
+            delete row1['sourceLogo'];
+            delete row1['audio'];
+            json.push(row1);
+            // element.daysData.forEach(row2 => {
+            //   json.push(row2);
+            // });
+        });
+        let fields = Object.keys(json[0]);
+        if (type === 'csv') {
+            let replacer = function (key, value) { return value === null ? '' : value; };
+            let csv = json.map(function (row) {
+                return fields.map(function (fieldName) {
+                    return JSON.stringify(row[fieldName], replacer);
+                }).join(',');
+            });
+            csv.unshift(fields.join(','));
+            let csvContent = "data:text/csv;charset=utf-8," + csv.join('\r\n');
+            var encodedUri = encodeURI(csvContent);
+            var link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "my_data.csv");
+            document.body.appendChild(link);
+            link.click();
+        }
+        else if (type === 'pdf') {
+            const doc = new jspdf__WEBPACK_IMPORTED_MODULE_11__();
+            let rows = [];
+            json.forEach((row, index) => {
+                let columns = fields;
+                let newRow = [];
+                columns.forEach((col, index) => {
+                    newRow.push([row[col]]);
+                });
+                rows.push(newRow);
+            });
+            doc.autoTable(fields, rows, {
+                styles: { fontSize: 6 },
+            });
+            doc.save('Test.pdf');
+        }
+        else if (type === 'xls') {
+        }
+    }
+    getTotalValue(data, column) {
+        if (data) {
+            let value = 0;
+            data.forEach(element => {
+                if (!isNaN(+element[column])) {
+                    value += +element[column];
+                }
+                else {
+                    return value = '';
+                }
+            });
+            if (value) {
+                return Math.round(value * 100) / 100;
+            }
+        }
+    }
+    openDialog(source, el) {
+        const dialogRef = this.dialog.open(app_shared_components_modals_modal_video_modal_video_component__WEBPACK_IMPORTED_MODULE_6__["ModalVideoComponent"], {
+            width: '600px',
+            data: {
+                source: source,
+                title: el['spotName'],
+                list: false,
+                type: "audio"
+            }
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+            console.log(result);
+        });
+    }
 };
+PostEvaluationTabPrePostMatchingComponent.ctorParameters = () => [
+    { type: app_shared_services_main_campaign_service__WEBPACK_IMPORTED_MODULE_7__["CampaignService"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"] },
+    { type: app_shared_services_post_evalution_settings_service__WEBPACK_IMPORTED_MODULE_4__["PostEvalutionSettingsService"] },
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__["MatDialog"] },
+    { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_9__["TranslateService"] },
+    { type: app_shared_services_main_post_eval_service__WEBPACK_IMPORTED_MODULE_8__["PostEvalService"] }
+];
+__decorate([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatPaginator"], { static: false }),
+    __metadata("design:type", _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatPaginator"])
+], PostEvaluationTabPrePostMatchingComponent.prototype, "paginator", void 0);
+__decorate([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(_angular_material_sort__WEBPACK_IMPORTED_MODULE_2__["MatSort"], { static: true }),
+    __metadata("design:type", _angular_material_sort__WEBPACK_IMPORTED_MODULE_2__["MatSort"])
+], PostEvaluationTabPrePostMatchingComponent.prototype, "sort", void 0);
+__decorate([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('compaignSettings'),
+    __metadata("design:type", Object)
+], PostEvaluationTabPrePostMatchingComponent.prototype, "compaignSettings", void 0);
 PostEvaluationTabPrePostMatchingComponent = __decorate([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
         selector: 'app-post-evaluation-tab-pre-post-matching',
         template: __webpack_require__(/*! raw-loader!./post-evaluation-tab-pre-post-matching.component.html */ "./node_modules/raw-loader/index.js!./src/app/views/others/post-evaluation-page/tabs-content/post-evaluation-tab-pre-post-matching/post-evaluation-tab-pre-post-matching.component.html"),
         styles: [__webpack_require__(/*! ./post-evaluation-tab-pre-post-matching.component.scss */ "./src/app/views/others/post-evaluation-page/tabs-content/post-evaluation-tab-pre-post-matching/post-evaluation-tab-pre-post-matching.component.scss")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [app_shared_services_main_campaign_service__WEBPACK_IMPORTED_MODULE_7__["CampaignService"],
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"],
+        app_shared_services_post_evalution_settings_service__WEBPACK_IMPORTED_MODULE_4__["PostEvalutionSettingsService"],
+        _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__["MatDialog"],
+        _ngx_translate_core__WEBPACK_IMPORTED_MODULE_9__["TranslateService"],
+        app_shared_services_main_post_eval_service__WEBPACK_IMPORTED_MODULE_8__["PostEvalService"]])
 ], PostEvaluationTabPrePostMatchingComponent);
 
 
@@ -58174,9 +56474,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostEvaluationTabSummaryComponent", function() { return PostEvaluationTabSummaryComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var app_shared_services_post_evalution_settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/shared/services/post-evalution-settings.service */ "./src/app/shared/services/post-evalution-settings.service.ts");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/esm2015/ngx-translate-core.js");
+/* harmony import */ var _angular_material_sort__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/sort */ "./node_modules/@angular/material/esm2015/sort.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var app_shared_services_post_evalution_settings_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! app/shared/services/post-evalution-settings.service */ "./src/app/shared/services/post-evalution-settings.service.ts");
+/* harmony import */ var app_shared_services_main_campaign_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! app/shared/services/main/campaign.service */ "./src/app/shared/services/main/campaign.service.ts");
+/* harmony import */ var app_shared_services_main_post_eval_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! app/shared/services/main/post-eval.service */ "./src/app/shared/services/main/post-eval.service.ts");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/esm2015/ngx-translate-core.js");
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.min.js");
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(jspdf__WEBPACK_IMPORTED_MODULE_8__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58191,246 +56496,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
+
 let PostEvaluationTabSummaryComponent = class PostEvaluationTabSummaryComponent {
-    constructor(postEvalutionSettingsService, translate, chRef) {
+    constructor(campaignService, chRef, postEvalutionSettingsService, translate, postEvalService) {
+        this.campaignService = campaignService;
+        this.chRef = chRef;
         this.postEvalutionSettingsService = postEvalutionSettingsService;
         this.translate = translate;
-        this.chRef = chRef;
-        this.toppings = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]();
+        this.postEvalService = postEvalService;
+        this.toppings = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]();
         this.toppingList = [];
-        this.mockedData = [
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-            {
-                Campaign: 'Campaign ',
-                playsPre: '1',
-                playsPost: '2',
-                gprsPre: '10s',
-                gprsPost: 'tmp',
-                gprsPrePost: 'tmp',
-                avgFreq: 'tmp',
-                beforeLast: 'tmp',
-                last: 'tmp,'
-            },
-        ];
         this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](this.mockedData);
         this.columnsToDisplay = ['Campaign', 'playsPre',
             'playsPost', 'gprsPre',
@@ -58448,13 +56526,35 @@ let PostEvaluationTabSummaryComponent = class PostEvaluationTabSummaryComponent 
             beforeLast: '1+ (000)',
             last: '1+ (%)'
         };
-        for (const key in this.columnsName) {
-            if (this.columnsName.hasOwnProperty(key)) {
-                const element = this.columnsName[key];
-                this.toppingList.push(element);
-            }
-        }
-        this.selectedToppingList = this.toppingList;
+    }
+    getData() {
+        this.postEvalService.getDayToDay(this.compaignSettings).subscribe(data => {
+            console.log(data, 'getDayToDay');
+            this.mockedData = [];
+            let arr = data;
+            arr.forEach(element => {
+                let obj = {
+                    Campaign: element.amr,
+                    playsPre: element.amr,
+                    playsPost: element.amr,
+                    gprsPre: element.amr,
+                    gprsPost: element.amr,
+                    gprsPrePost: element.amr,
+                    avgFreq: element.amr,
+                    beforeLast: element.amr,
+                    last: element.amr
+                };
+                this.mockedData.push(obj);
+            });
+            this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](this.mockedData);
+            this.dataSource.paginator = this.paginator;
+            this.dataSource.sort = this.sort;
+            console.log(this.mockedData, 'this.mockedData');
+        });
+        this.campaignService.getCompaignStatistics(this.compaignSettings.campaignUuid).subscribe(data => {
+            this.campaignStats = data;
+            this.chRef.detectChanges();
+        });
     }
     ngAfterViewInit() {
         this.translate.getTranslation(this.translate.currentLang).subscribe((res) => {
@@ -58501,7 +56601,14 @@ let PostEvaluationTabSummaryComponent = class PostEvaluationTabSummaryComponent 
             this.selectedToppingList = this.toppingList;
             // this.chRef.detectChanges();
         });
-        this.dataSource.paginator = this.paginator;
+    }
+    ngOnChanges(changes) {
+        if (this.compaignSettings) {
+            this.getData();
+            this.chRef.detectChanges();
+        }
+    }
+    ngOnInit() {
     }
     columnVisible() {
         let index = 0;
@@ -58519,27 +56626,102 @@ let PostEvaluationTabSummaryComponent = class PostEvaluationTabSummaryComponent 
     openSettings() {
         this.postEvalutionSettingsService.open.emit(true);
     }
-    ngOnInit() {
+    download(type) {
+        let json = [];
+        this.mockedData.forEach(element => {
+            let row1 = Object.assign({}, element);
+            delete row1['daysData'];
+            delete row1['dealershipLogo'];
+            delete row1['sourceLogo'];
+            delete row1['audio'];
+            json.push(row1);
+            // element.daysData.forEach(row2 => {
+            //   json.push(row2);
+            // });
+        });
+        let fields = Object.keys(json[0]);
+        if (type === 'csv') {
+            let replacer = function (key, value) { return value === null ? '' : value; };
+            let csv = json.map(function (row) {
+                return fields.map(function (fieldName) {
+                    return JSON.stringify(row[fieldName], replacer);
+                }).join(',');
+            });
+            csv.unshift(fields.join(','));
+            let csvContent = "data:text/csv;charset=utf-8," + csv.join('\r\n');
+            var encodedUri = encodeURI(csvContent);
+            var link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "my_data.csv");
+            document.body.appendChild(link);
+            link.click();
+        }
+        else if (type === 'pdf') {
+            const doc = new jspdf__WEBPACK_IMPORTED_MODULE_8__();
+            let rows = [];
+            json.forEach((row, index) => {
+                let columns = fields;
+                let newRow = [];
+                columns.forEach((col, index) => {
+                    newRow.push([row[col]]);
+                });
+                rows.push(newRow);
+            });
+            doc.autoTable(fields, rows, {
+                styles: { fontSize: 6 },
+            });
+            doc.save('Test.pdf');
+        }
+        else if (type === 'xls') {
+        }
+    }
+    getTotalValue(data, column) {
+        if (data) {
+            let value = 0;
+            data.forEach(element => {
+                if (!isNaN(+element[column])) {
+                    value += +element[column];
+                }
+                else {
+                    return value = '';
+                }
+            });
+            if (value) {
+                return Math.round(value * 100) / 100;
+            }
+        }
     }
 };
 PostEvaluationTabSummaryComponent.ctorParameters = () => [
-    { type: app_shared_services_post_evalution_settings_service__WEBPACK_IMPORTED_MODULE_3__["PostEvalutionSettingsService"] },
-    { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"] },
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"] }
+    { type: app_shared_services_main_campaign_service__WEBPACK_IMPORTED_MODULE_5__["CampaignService"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"] },
+    { type: app_shared_services_post_evalution_settings_service__WEBPACK_IMPORTED_MODULE_4__["PostEvalutionSettingsService"] },
+    { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateService"] },
+    { type: app_shared_services_main_post_eval_service__WEBPACK_IMPORTED_MODULE_6__["PostEvalService"] }
 ];
 __decorate([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatPaginator"], { static: false }),
     __metadata("design:type", _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatPaginator"])
 ], PostEvaluationTabSummaryComponent.prototype, "paginator", void 0);
+__decorate([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(_angular_material_sort__WEBPACK_IMPORTED_MODULE_2__["MatSort"], { static: true }),
+    __metadata("design:type", _angular_material_sort__WEBPACK_IMPORTED_MODULE_2__["MatSort"])
+], PostEvaluationTabSummaryComponent.prototype, "sort", void 0);
+__decorate([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('compaignSettings'),
+    __metadata("design:type", Object)
+], PostEvaluationTabSummaryComponent.prototype, "compaignSettings", void 0);
 PostEvaluationTabSummaryComponent = __decorate([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
         selector: 'app-post-evaluation-tab-summary',
         template: __webpack_require__(/*! raw-loader!./post-evaluation-tab-summary.component.html */ "./node_modules/raw-loader/index.js!./src/app/views/others/post-evaluation-page/tabs-content/post-evaluation-tab-summary/post-evaluation-tab-summary.component.html"),
         styles: [__webpack_require__(/*! ./post-evaluation-tab-summary.component.scss */ "./src/app/views/others/post-evaluation-page/tabs-content/post-evaluation-tab-summary/post-evaluation-tab-summary.component.scss")]
     }),
-    __metadata("design:paramtypes", [app_shared_services_post_evalution_settings_service__WEBPACK_IMPORTED_MODULE_3__["PostEvalutionSettingsService"],
-        _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"],
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]])
+    __metadata("design:paramtypes", [app_shared_services_main_campaign_service__WEBPACK_IMPORTED_MODULE_5__["CampaignService"],
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"],
+        app_shared_services_post_evalution_settings_service__WEBPACK_IMPORTED_MODULE_4__["PostEvalutionSettingsService"],
+        _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateService"],
+        app_shared_services_main_post_eval_service__WEBPACK_IMPORTED_MODULE_6__["PostEvalService"]])
 ], PostEvaluationTabSummaryComponent);
 
 
@@ -58553,7 +56735,7 @@ PostEvaluationTabSummaryComponent = __decorate([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "td {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.122);\n  padding: 10px 0 !important; }\n  td:first-child {\n    padding-left: 20px !important; }\n  td:last-child {\n    padding-right: 20px !important; }\n  th {\n  padding: 10px 0 !important; }\n  th:first-child {\n    padding-left: 20px !important; }\n  th:last-child {\n    padding-right: 20px !important; }\n  .station-table {\n  padding: 20px 0 !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlld3Mvb3RoZXJzL3Bvc3QtZXZhbHVhdGlvbi1wYWdlL3RhYnMtY29udGVudC9wb3N0LWV2YWx1YXRpb24tdGFiLXRpbWUtc2xvdC9DOlxcVXNlcnNcXFVzZXJcXERvY3VtZW50c1xcR2l0SHViXFxTcG90Q2hlY2tfVjNfQ2xpZW50L3NyY1xcYXBwXFx2aWV3c1xcb3RoZXJzXFxwb3N0LWV2YWx1YXRpb24tcGFnZVxcdGFicy1jb250ZW50XFxwb3N0LWV2YWx1YXRpb24tdGFiLXRpbWUtc2xvdFxccG9zdC1ldmFsdWF0aW9uLXRhYi10aW1lLXNsb3QuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFDRSw2Q0FBK0M7RUFDL0MsMEJBQTBCLEVBQUE7RUFGNUI7SUFLSSw2QkFBNkIsRUFBQTtFQUxqQztJQVNJLDhCQUE4QixFQUFBO0VBSWxDO0VBQ0UsMEJBQTBCLEVBQUE7RUFENUI7SUFJSSw2QkFBNkIsRUFBQTtFQUpqQztJQVFJLDhCQUE4QixFQUFBO0VBSWxDO0VBQ0UsMEJBQTBCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC92aWV3cy9vdGhlcnMvcG9zdC1ldmFsdWF0aW9uLXBhZ2UvdGFicy1jb250ZW50L3Bvc3QtZXZhbHVhdGlvbi10YWItdGltZS1zbG90L3Bvc3QtZXZhbHVhdGlvbi10YWItdGltZS1zbG90LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG5cbnRkIHtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIGhzbGEoMCwgMCUsIDAlLCAwLjEyMik7XG4gIHBhZGRpbmc6IDEwcHggMCAhaW1wb3J0YW50O1xuXG4gICY6Zmlyc3QtY2hpbGQge1xuICAgIHBhZGRpbmctbGVmdDogMjBweCAhaW1wb3J0YW50O1xuICB9XG5cbiAgJjpsYXN0LWNoaWxkIHtcbiAgICBwYWRkaW5nLXJpZ2h0OiAyMHB4ICFpbXBvcnRhbnQ7XG4gIH1cbn1cblxudGgge1xuICBwYWRkaW5nOiAxMHB4IDAgIWltcG9ydGFudDtcblxuICAmOmZpcnN0LWNoaWxkIHtcbiAgICBwYWRkaW5nLWxlZnQ6IDIwcHggIWltcG9ydGFudDtcbiAgfVxuXG4gICY6bGFzdC1jaGlsZCB7XG4gICAgcGFkZGluZy1yaWdodDogMjBweCAhaW1wb3J0YW50O1xuICB9XG59XG5cbi5zdGF0aW9uLXRhYmxlIHtcbiAgcGFkZGluZzogMjBweCAwICFpbXBvcnRhbnQ7XG59Il19 */"
+module.exports = "td,\nth {\n  padding: 5px !important; }\n  td:last-child,\n  th:last-child {\n    padding-right: 20px !important; }\n  td:first-child,\n  th:first-child {\n    padding-left: 20px !important; }\n  .content-table-main {\n  padding: 0 20px;\n  padding-top: 20px; }\n  table {\n  width: 100%; }\n  tr.example-detail-row {\n  height: 0; }\n  .example-element-row td {\n  border-bottom-width: 0; }\n  .example-element-detail {\n  overflow: hidden;\n  padding-left: 40px; }\n  .example-detail-row > td {\n  padding: 0 20px !important; }\n  .example-button-row {\n  margin-bottom: 20px; }\n  .handle {\n  position: fixed;\n  bottom: 30px;\n  right: 30px;\n  z-index: 111; }\n  .clear-table td {\n  width: calc(100% / 4); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlld3Mvb3RoZXJzL3Bvc3QtZXZhbHVhdGlvbi1wYWdlL3RhYnMtY29udGVudC9wb3N0LWV2YWx1YXRpb24tdGFiLXRpbWUtc2xvdC9DOlxcVXNlcnNcXFVzZXJcXERvY3VtZW50c1xcR2l0SHViXFxTcG90Q2hlY2tfVjNfQ2xpZW50L3NyY1xcYXBwXFx2aWV3c1xcb3RoZXJzXFxwb3N0LWV2YWx1YXRpb24tcGFnZVxcdGFicy1jb250ZW50XFxwb3N0LWV2YWx1YXRpb24tdGFiLXRpbWUtc2xvdFxccG9zdC1ldmFsdWF0aW9uLXRhYi10aW1lLXNsb3QuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0VBRUUsdUJBQXVCLEVBQUE7RUFGekI7O0lBS0ksOEJBQThCLEVBQUE7RUFMbEM7O0lBU0ksNkJBQTZCLEVBQUE7RUFJakM7RUFDRSxlQUFlO0VBQ2YsaUJBQWlCLEVBQUE7RUFHbkI7RUFDRSxXQUFXLEVBQUE7RUFHYjtFQUNFLFNBQVMsRUFBQTtFQUdYO0VBQ0Usc0JBQXNCLEVBQUE7RUFHeEI7RUFDRSxnQkFBZ0I7RUFDaEIsa0JBQWtCLEVBQUE7RUFHcEI7RUFDRSwwQkFBMEIsRUFBQTtFQUc1QjtFQUNFLG1CQUFtQixFQUFBO0VBRXJCO0VBQ0UsZUFBZTtFQUNmLFlBQVk7RUFDWixXQUFXO0VBQ1gsWUFBWSxFQUFBO0VBRWQ7RUFFSSxxQkFBcUIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL290aGVycy9wb3N0LWV2YWx1YXRpb24tcGFnZS90YWJzLWNvbnRlbnQvcG9zdC1ldmFsdWF0aW9uLXRhYi10aW1lLXNsb3QvcG9zdC1ldmFsdWF0aW9uLXRhYi10aW1lLXNsb3QuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJ0ZCxcbnRoIHtcbiAgcGFkZGluZzogNXB4ICFpbXBvcnRhbnQ7XG5cbiAgJjpsYXN0LWNoaWxkIHtcbiAgICBwYWRkaW5nLXJpZ2h0OiAyMHB4ICFpbXBvcnRhbnQ7XG4gIH1cblxuICAmOmZpcnN0LWNoaWxkIHtcbiAgICBwYWRkaW5nLWxlZnQ6IDIwcHggIWltcG9ydGFudDtcbiAgfVxufVxuXG4uY29udGVudC10YWJsZS1tYWluIHtcbiAgcGFkZGluZzogMCAyMHB4O1xuICBwYWRkaW5nLXRvcDogMjBweDtcbn1cblxudGFibGUge1xuICB3aWR0aDogMTAwJTtcbn1cblxudHIuZXhhbXBsZS1kZXRhaWwtcm93IHtcbiAgaGVpZ2h0OiAwO1xufVxuXG4uZXhhbXBsZS1lbGVtZW50LXJvdyB0ZCB7XG4gIGJvcmRlci1ib3R0b20td2lkdGg6IDA7XG59XG5cbi5leGFtcGxlLWVsZW1lbnQtZGV0YWlsIHtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgcGFkZGluZy1sZWZ0OiA0MHB4O1xufVxuXG4uZXhhbXBsZS1kZXRhaWwtcm93PnRkIHtcbiAgcGFkZGluZzogMCAyMHB4ICFpbXBvcnRhbnQ7XG59XG5cbi5leGFtcGxlLWJ1dHRvbi1yb3cge1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xufVxuLmhhbmRsZSB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgYm90dG9tOiAzMHB4O1xuICByaWdodDogMzBweDtcbiAgei1pbmRleDogMTExO1xufVxuLmNsZWFyLXRhYmxlIHtcbiAgdGQge1xuICAgIHdpZHRoOiBjYWxjKDEwMCUgLyA0KTtcbiAgfVxufSJdfQ== */"
 
 /***/ }),
 
@@ -58568,6 +56750,15 @@ module.exports = "td {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.122);\n  padd
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostEvaluationTabTimeSlot", function() { return PostEvaluationTabTimeSlot; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _angular_material_sort__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/sort */ "./node_modules/@angular/material/esm2015/sort.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var app_shared_services_post_evalution_settings_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! app/shared/services/post-evalution-settings.service */ "./src/app/shared/services/post-evalution-settings.service.ts");
+/* harmony import */ var app_shared_services_main_campaign_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! app/shared/services/main/campaign.service */ "./src/app/shared/services/main/campaign.service.ts");
+/* harmony import */ var app_shared_services_main_post_eval_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! app/shared/services/main/post-eval.service */ "./src/app/shared/services/main/post-eval.service.ts");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/esm2015/ngx-translate-core.js");
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.min.js");
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(jspdf__WEBPACK_IMPORTED_MODULE_8__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58578,18 +56769,237 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
+
+
+
+
+
 let PostEvaluationTabTimeSlot = class PostEvaluationTabTimeSlot {
-    constructor() { }
+    constructor(campaignService, chRef, postEvalutionSettingsService, translate, postEvalService) {
+        this.campaignService = campaignService;
+        this.chRef = chRef;
+        this.postEvalutionSettingsService = postEvalutionSettingsService;
+        this.translate = translate;
+        this.postEvalService = postEvalService;
+        this.toppings = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]();
+        this.toppingList = [];
+        this.selectedFilter = "by date";
+        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](this.mockedData);
+        this.columnsToDisplay = ['Campaign', 'playsPre',
+            'playsPost', 'gprsPre',
+            'gprsPost', 'gprsPrePost', 'avgFreq',
+            'beforeLast', 'last'
+        ];
+        this.columnsName = {
+            Campaign: 'Campaign',
+            playsPre: 'Plays (pre)',
+            playsPost: 'Plays (post)',
+            gprsPre: 'GRP\'s (pre)',
+            gprsPost: 'GRP\'s (post)',
+            gprsPrePost: 'GRP\'s pre/post %',
+            avgFreq: 'AvgFreq',
+            beforeLast: '1+ (000)',
+            last: '1+ (%)'
+        };
+    }
+    getData() {
+        this.postEvalService.getDayToDay(this.compaignSettings).subscribe(data => {
+            console.log(data, 'getDayToDay');
+            this.mockedData = [];
+            let arr = data;
+            arr.forEach(element => {
+                let obj = {
+                    Campaign: element.amr,
+                    playsPre: element.amr,
+                    playsPost: element.amr,
+                    gprsPre: element.amr,
+                    gprsPost: element.amr,
+                    gprsPrePost: element.amr,
+                    avgFreq: element.amr,
+                    beforeLast: element.amr,
+                    last: element.amr
+                };
+                this.mockedData.push(obj);
+            });
+            this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](this.mockedData);
+            this.dataSource.paginator = this.paginator;
+            this.dataSource.sort = this.sort;
+            console.log(this.mockedData, 'this.mockedData');
+        });
+        this.campaignService.getCompaignStatistics(this.compaignSettings.campaignUuid).subscribe(data => {
+            this.campaignStats = data;
+            this.chRef.detectChanges();
+        });
+    }
+    ngAfterViewInit() {
+        this.translate.getTranslation(this.translate.currentLang).subscribe((res) => {
+            this.columnsName = {
+                Campaign: res['Campaign'],
+                playsPre: res['Plays (pre)'],
+                playsPost: res['Plays (post)'],
+                gprsPre: res['GRPs (pre)'],
+                gprsPost: res['GRPs (post)'],
+                gprsPrePost: res['GRPs pre/post %'],
+                avgFreq: res['AvgFreq'],
+                beforeLast: '1+ (000)',
+                last: '1+ (%)'
+            };
+            this.toppingList = [];
+            for (const key in this.columnsName) {
+                if (this.columnsName.hasOwnProperty(key)) {
+                    const element = this.columnsName[key];
+                    this.toppingList.push(element);
+                }
+            }
+            this.selectedToppingList = this.toppingList;
+        });
+        this.translate.onLangChange.subscribe(res => {
+            console.log(res);
+            this.columnsName = {
+                Campaign: res.translations['Campaign'],
+                playsPre: res.translations['Plays (pre)'],
+                playsPost: res.translations['Plays (post)'],
+                gprsPre: res.translations['GRPs (pre)'],
+                gprsPost: res.translations['GRPs (post)'],
+                gprsPrePost: res.translations['GRPs pre/post %'],
+                avgFreq: res.translations['AvgFreq'],
+                beforeLast: '1+ (000)',
+                last: '1+ (%)'
+            };
+            this.toppingList = [];
+            for (const key in this.columnsName) {
+                if (this.columnsName.hasOwnProperty(key)) {
+                    const element = this.columnsName[key];
+                    this.toppingList.push(element);
+                }
+            }
+            this.selectedToppingList = this.toppingList;
+            // this.chRef.detectChanges();
+        });
+    }
+    ngOnChanges(changes) {
+        if (this.compaignSettings) {
+            this.getData();
+            this.chRef.detectChanges();
+        }
+    }
     ngOnInit() {
     }
+    columnVisible() {
+        let index = 0;
+        let newColumnsToDisplay = [];
+        for (const key in this.columnsName) {
+            this.selectedToppingList.forEach(element => {
+                if (element === this.columnsName[key]) {
+                    newColumnsToDisplay.push(key);
+                }
+            });
+            index++;
+        }
+        this.columnsToDisplay = newColumnsToDisplay;
+    }
+    openSettings() {
+        this.postEvalutionSettingsService.open.emit(true);
+    }
+    download(type) {
+        let json = [];
+        this.mockedData.forEach(element => {
+            let row1 = Object.assign({}, element);
+            delete row1['daysData'];
+            delete row1['dealershipLogo'];
+            delete row1['sourceLogo'];
+            delete row1['audio'];
+            json.push(row1);
+            // element.daysData.forEach(row2 => {
+            //   json.push(row2);
+            // });
+        });
+        let fields = Object.keys(json[0]);
+        if (type === 'csv') {
+            let replacer = function (key, value) { return value === null ? '' : value; };
+            let csv = json.map(function (row) {
+                return fields.map(function (fieldName) {
+                    return JSON.stringify(row[fieldName], replacer);
+                }).join(',');
+            });
+            csv.unshift(fields.join(','));
+            let csvContent = "data:text/csv;charset=utf-8," + csv.join('\r\n');
+            var encodedUri = encodeURI(csvContent);
+            var link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "my_data.csv");
+            document.body.appendChild(link);
+            link.click();
+        }
+        else if (type === 'pdf') {
+            const doc = new jspdf__WEBPACK_IMPORTED_MODULE_8__();
+            let rows = [];
+            json.forEach((row, index) => {
+                let columns = fields;
+                let newRow = [];
+                columns.forEach((col, index) => {
+                    newRow.push([row[col]]);
+                });
+                rows.push(newRow);
+            });
+            doc.autoTable(fields, rows, {
+                styles: { fontSize: 6 },
+            });
+            doc.save('Test.pdf');
+        }
+        else if (type === 'xls') {
+        }
+    }
+    getTotalValue(data, column) {
+        if (data) {
+            let value = 0;
+            data.forEach(element => {
+                if (!isNaN(+element[column])) {
+                    value += +element[column];
+                }
+                else {
+                    return value = '';
+                }
+            });
+            if (value) {
+                return Math.round(value * 100) / 100;
+            }
+        }
+    }
 };
+PostEvaluationTabTimeSlot.ctorParameters = () => [
+    { type: app_shared_services_main_campaign_service__WEBPACK_IMPORTED_MODULE_5__["CampaignService"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"] },
+    { type: app_shared_services_post_evalution_settings_service__WEBPACK_IMPORTED_MODULE_4__["PostEvalutionSettingsService"] },
+    { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateService"] },
+    { type: app_shared_services_main_post_eval_service__WEBPACK_IMPORTED_MODULE_6__["PostEvalService"] }
+];
+__decorate([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatPaginator"], { static: false }),
+    __metadata("design:type", _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatPaginator"])
+], PostEvaluationTabTimeSlot.prototype, "paginator", void 0);
+__decorate([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(_angular_material_sort__WEBPACK_IMPORTED_MODULE_2__["MatSort"], { static: true }),
+    __metadata("design:type", _angular_material_sort__WEBPACK_IMPORTED_MODULE_2__["MatSort"])
+], PostEvaluationTabTimeSlot.prototype, "sort", void 0);
+__decorate([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('compaignSettings'),
+    __metadata("design:type", Object)
+], PostEvaluationTabTimeSlot.prototype, "compaignSettings", void 0);
 PostEvaluationTabTimeSlot = __decorate([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
         selector: 'app-post-evaluation-tab-time-slot',
         template: __webpack_require__(/*! raw-loader!./post-evaluation-tab-time-slot.component.html */ "./node_modules/raw-loader/index.js!./src/app/views/others/post-evaluation-page/tabs-content/post-evaluation-tab-time-slot/post-evaluation-tab-time-slot.component.html"),
         styles: [__webpack_require__(/*! ./post-evaluation-tab-time-slot.component.scss */ "./src/app/views/others/post-evaluation-page/tabs-content/post-evaluation-tab-time-slot/post-evaluation-tab-time-slot.component.scss")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [app_shared_services_main_campaign_service__WEBPACK_IMPORTED_MODULE_5__["CampaignService"],
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"],
+        app_shared_services_post_evalution_settings_service__WEBPACK_IMPORTED_MODULE_4__["PostEvalutionSettingsService"],
+        _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateService"],
+        app_shared_services_main_post_eval_service__WEBPACK_IMPORTED_MODULE_6__["PostEvalService"]])
 ], PostEvaluationTabTimeSlot);
 
 

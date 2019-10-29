@@ -38,6 +38,7 @@
   "AvgFreq": "AvgFreq",
   "Week": "Week",
   "Spots": "Spots",
+  "Creation Date": "Creation Date",
   "Day-time": "Day-time",
   "Prime-time": "Prime-time",
   "Night-Time": "Night-Time",
@@ -53,5 +54,33 @@
   "Account Settings": "Account Settings",
   "Theme Settings": "Theme Settings",
   "Disable alerts": "Disable alerts",
-  "Sign out": "Sign out"
+  "Sign out": "Sign out",
+
+  "Sheduled Date/Time": "Sheduled Date/Time",
+  "Detected Date/Time": "Detected Date/Time",
+  "Time Difference": "Time Difference",
+  "Notes": "Notes",
+
+  "Select a campaign": "Select a campaign",
+  "Select a date interval": "Select a date interval",
+  "Select a target": "Select a target",
+  "Filter Channels": "Filter Channels",
+  "Campaign name": "Campaign name",
+  "Campany name": "Campany name",
+  "Radio": "Radio",
+  "TV": "TV",
+  "Last 3 months": "Last 3 month",
+  "This month": "This month",
+  "Last 6 months": "Last 6 month",
+  "Last 12 months": "Last 12 month",
+
+  "Filter": "Filter",
+  "Analysis by": "Analysis by",
+  "Day-to-day": "Day-to-day",
+  "Date": "Date",
+  "Sky channels": "Sky channels",
+  "Mediaset Premium channels": "Mediaset Premium channels",
+  "All channels": "All channels",
+  "National channels": "National channels",
+  "Local channels": "Local channels"
 }

@@ -293,7 +293,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\n<app-customizer></app-customizer>"
+module.exports = "<router-outlet></router-outlet>\n<app-customizer></app-customizer>\n<div *ngIf=\"loading\" class=\"app-loader\">\n    <div class=\"spinner\">\n        <div class=\"double-bounce1 mat-bg-primary\" style=\"background: #fcc02e;\"></div>\n        <div class=\"double-bounce2 mat-bg-accent\" style=\"background: #03a9f4;\"></div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -525,7 +525,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = ".app-loader{\r\n    z-index: 1;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxVQUFVO0FBQ2QiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hcHAtbG9hZGVye1xyXG4gICAgei1pbmRleDogMTtcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -546,6 +546,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_services_theme_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./shared/services/theme.service */ "./src/app/shared/services/theme.service.ts");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var _shared_services_layout_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./shared/services/layout.service */ "./src/app/shared/services/layout.service.ts");
+/* harmony import */ var _shared_services_main_loading_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./shared/services/main/loading.service */ "./src/app/shared/services/main/loading.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -562,8 +563,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 let AppComponent = class AppComponent {
-    constructor(title, router, activeRoute, routePartsService, themeService, layout, renderer) {
+    constructor(title, router, activeRoute, routePartsService, themeService, layout, renderer, loadingService, chRef) {
         this.title = title;
         this.router = router;
         this.activeRoute = activeRoute;
@@ -571,8 +573,14 @@ let AppComponent = class AppComponent {
         this.themeService = themeService;
         this.layout = layout;
         this.renderer = renderer;
+        this.loadingService = loadingService;
+        this.chRef = chRef;
         this.appTitle = 'Egret';
         this.pageTitle = '';
+        this.loadingService.show.subscribe(res => {
+            this.loading = res;
+            this.chRef.detectChanges();
+        });
     }
     ngOnInit() {
         this.changePageTitle();
@@ -602,7 +610,9 @@ AppComponent.ctorParameters = () => [
     { type: _shared_services_route_parts_service__WEBPACK_IMPORTED_MODULE_3__["RoutePartsService"] },
     { type: _shared_services_theme_service__WEBPACK_IMPORTED_MODULE_4__["ThemeService"] },
     { type: _shared_services_layout_service__WEBPACK_IMPORTED_MODULE_6__["LayoutService"] },
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"] }
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"] },
+    { type: _shared_services_main_loading_service__WEBPACK_IMPORTED_MODULE_7__["LoadingService"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"] }
 ];
 AppComponent = __decorate([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -616,7 +626,9 @@ AppComponent = __decorate([
         _shared_services_route_parts_service__WEBPACK_IMPORTED_MODULE_3__["RoutePartsService"],
         _shared_services_theme_service__WEBPACK_IMPORTED_MODULE_4__["ThemeService"],
         _shared_services_layout_service__WEBPACK_IMPORTED_MODULE_6__["LayoutService"],
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]])
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"],
+        _shared_services_main_loading_service__WEBPACK_IMPORTED_MODULE_7__["LoadingService"],
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]])
 ], AppComponent);
 
 
@@ -4841,6 +4853,43 @@ CampaignService = __decorate([
     }),
     __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
 ], CampaignService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/services/main/loading.service.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/shared/services/main/loading.service.ts ***!
+  \*********************************************************/
+/*! exports provided: LoadingService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadingService", function() { return LoadingService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+let LoadingService = class LoadingService {
+    constructor() {
+        this.show = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"];
+    }
+};
+LoadingService = __decorate([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+        providedIn: 'root'
+    }),
+    __metadata("design:paramtypes", [])
+], LoadingService);
 
 
 

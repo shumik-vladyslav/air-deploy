@@ -84,5 +84,16 @@
   "Disable alerts": "Disattiva notifiche",
   "Sign out": "Esci",
   "Spot name": "Spot name",
-  "Channel": "Channel"
+  "Channel": "Channel",
+  
+  "Dealership logo": "Dealership logo",
+  "Channe logo": "Channe logo",
+  "Dealership name": "Dealership name",
+  "Channe name": "Channe name",
+  "Time slots plays": "Time slots plays",
+  "Total": "Total",
+  "Day end time": "Day end time",
+  "Day start time": "Day start time",
+  "Logo": "Logo",
+  "Name": "Name"
 }

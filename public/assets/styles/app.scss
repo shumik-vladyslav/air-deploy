@@ -119,6 +119,15 @@
     align-items: center;
 }
 
+.matrix-header > div.mat-sort-header-container > button.mat-sort-header-button{
+    width: 100%;
+}
+.scroll-table-warap{
+    width: 100%;
+    overflow-y: auto;
+    max-height: calc(100vh - 396px );
+    min-height: 250px;
+}
 @media screen and (max-width: 992px) {
     .clear-table {
         display: block;
